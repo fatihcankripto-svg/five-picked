@@ -18,11 +18,10 @@ export default function AboutPage() {
       <h2>Why we exist</h2>
       <p>
         Choosing software has become exhausting. Search for almost any tool and you will find lists of 15, 25 or 50
-        options, many of them padded, outdated or written mainly to collect clicks. More choice rarely makes the
-        decision easier.
+        options that are long, hard to compare and quickly out of date. More choice rarely makes the decision easier.
       </p>
       <p>
-        We think a shorter list, chosen carefully and explained honestly, is far more useful. So every category on
+        We think a shorter list, chosen carefully and explained clearly, is far more useful. So every category on
         FIVE PICKED has exactly five picks, ranked 1 to 5, with a plain-language note on who each one is best for.
       </p>
 
@@ -35,10 +34,10 @@ export default function AboutPage() {
 
       <h2>How we stay independent</h2>
       <p>
-        We do not accept payment for placement or rankings. Some links on the site may earn us a commission, which
-        helps keep FIVE PICKED running, but it never changes what you pay and it does not decide which tools appear
-        or how they are ordered. Our <Link href="/how-we-choose">method</Link> and{' '}
-        <Link href="/affiliate-disclosure">affiliate disclosure</Link> explain this in detail.
+        FIVE PICKED is published independently. We do not accept payment for placement or rankings. Some links on the
+        site may earn us a commission, which helps keep FIVE PICKED running and never changes what you pay. Our{' '}
+        <Link href="/how-we-choose">method</Link> and <Link href="/affiliate-disclosure">affiliate disclosure</Link>{' '}
+        explain this in detail.
       </p>
 
       <h2>What you will not find here</h2>
