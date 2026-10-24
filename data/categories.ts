@@ -269,7 +269,98 @@ export const categories: Category[] = [
     name: 'VPN & Security',
     description:
       'Tools that help protect your privacy and accounts online, including VPNs, password managers and security suites.',
-    tools: placeholderTools('VPN and security'),
+    tools: [
+  {
+    slug: "nordvpn",
+    name: "NordVPN",
+    tagline: "A fast, well-rounded VPN with extra security tools built in.",
+    bestFor: "Everyday privacy, streaming and public Wi-Fi protection",
+    whatItDoes:
+      "NordVPN encrypts your internet connection and hides your real location. It runs on phones, computers and many other devices, and has a large network of servers worldwide.",
+    strengths: [
+      "Fast connections thanks to its own NordLynx protocol",
+      "Threat Protection to help block malicious sites and trackers",
+      "Its no-logs policy has been checked by independent audits",
+      "30-day money-back guarantee",
+    ],
+    goodToKnow:
+      "Long plans are much cheaper than monthly billing, and renewal prices are higher than the first-term price.",
+    startingPrice: "From about $3.50/month (2-year plan)",
+    officialUrl: "https://nordvpn.com",
+  },
+  {
+    slug: "surfshark",
+    name: "Surfshark",
+    tagline: "Low-cost VPN with unlimited devices on one account.",
+    bestFor: "Families and anyone with many devices on a budget",
+    whatItDoes:
+      "Surfshark protects your connection and hides your location, and you can use it on as many devices as you like with a single subscription.",
+    strengths: [
+      "Unlimited simultaneous devices",
+      "One of the lowest long-term prices among major VPNs",
+      "Built-in ad and malware blocking",
+      "30-day money-back guarantee",
+    ],
+    goodToKnow:
+      "The low price is for long plans paid upfront, and renewals cost more than the first term.",
+    startingPrice: "From about $2.50/month (2-year plan)",
+    officialUrl: "https://surfshark.com",
+  },
+  {
+    slug: "expressvpn",
+    name: "ExpressVPN",
+    tagline: "Premium VPN known for simplicity and reliability.",
+    bestFor: "People who want an easy, polished app and don’t mind paying a bit more",
+    whatItDoes:
+      "ExpressVPN encrypts your traffic and lets you connect to servers in many countries with very little setup. Its apps are designed to be simple to use.",
+    strengths: [
+      "Very easy to use on all major devices",
+      "Servers run on RAM only, so data is wiped on every restart",
+      "Security setup has been reviewed by independent auditors",
+      "30-day money-back guarantee",
+    ],
+    goodToKnow:
+      "Plans and prices have changed often this year, so check the current price before you buy.",
+    startingPrice: "From about $2.50/month (2-year plan)",
+    officialUrl: "https://www.expressvpn.com",
+  },
+  {
+    slug: "proton-vpn",
+    name: "Proton VPN",
+    tagline: "Privacy-first VPN from the team behind Proton Mail, with a free plan.",
+    bestFor: "Privacy-minded users and anyone who wants to try a VPN for free first",
+    whatItDoes:
+      "Proton VPN hides your location and encrypts your connection. It has a free plan with no data limit, and paid plans that unlock more servers and features.",
+    strengths: [
+      "A free plan with no data cap",
+      "Open-source apps that independent experts can inspect",
+      "Secure Core option routes traffic through extra servers for more privacy",
+      "Based in Switzerland, known for strong privacy laws",
+    ],
+    goodToKnow:
+      "The free plan has fewer servers and lower speeds than paid plans, and long-term pricing is slightly higher than the cheapest rivals.",
+    startingPrice: "Free plan available; paid from about $3/month (2-year plan)",
+    officialUrl: "https://protonvpn.com",
+  },
+  {
+    slug: "private-internet-access",
+    name: "Private Internet Access",
+    tagline: "Budget VPN with lots of settings for people who like control.",
+    bestFor: "Budget buyers and users who like to customize their VPN",
+    whatItDoes:
+      "Private Internet Access (PIA) encrypts your connection and lets you connect on unlimited devices. It offers more settings than most VPNs, so you can tune it to your needs.",
+    strengths: [
+      "Unlimited devices on one subscription",
+      "Very low price on the longest plan",
+      "Many customization options",
+      "Open-source apps and a 30-day money-back guarantee",
+    ],
+    goodToKnow:
+      "It is a US-based company and has no free plan; the lowest price needs a 3-year commitment paid upfront.",
+    startingPrice: "From about $2/month (3-year plan)",
+    officialUrl: "https://www.privateinternetaccess.com",
+  },
+],
   },
   {
     slug: 'online-courses',
