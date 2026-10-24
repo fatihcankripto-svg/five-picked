@@ -151,10 +151,7 @@ export const categories: Category[] = [
             startingPrice: "Free tier available; paid from about $7–9/month",
             officialUrl: "https://klingai.com/",
           },
-            goodToKnow: "The free plan adds a watermark and has weekly limits, and AI generation is capped by plan.",
-            startingPrice: "Free plan available; paid from about $25/month",
-            officialUrl: "https://invideo.io",
-          },
+            
           {
             slug: "pictory",
             name: "Pictory",
