@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <ContentPage
       eyebrow="Privacy"
       title="Privacy policy"
-      intro="FIVE PICKED is designed to collect as little information about you as possible. This page explains what that means in practice."
+      intro="FIVE PICKED is designed to collect as little information about you as possible. This page explains what that means in practice. Last updated: October 24, 2026."
     >
       <h2>No accounts, no forms</h2>
       <p>
@@ -37,27 +37,42 @@ export default function PrivacyPage() {
       <h2>Cookies</h2>
       <p>
         FIVE PICKED does not set cookies for tracking or advertising. Because of this, you will not see a cookie
-        banner.
+        banner on our site. Websites you visit through our links may set their own cookies, as described below.
       </p>
 
-      <h2>Links to other websites</h2>
+      <h2>Links to other websites and affiliate links</h2>
       <p>
         When you click &ldquo;Visit website&rdquo;, you leave FIVE PICKED and go to a third-party site. Some of these
-        links may be affiliate links, which means the destination site may record that you arrived from us. Those
-        sites have their own privacy policies, and we encourage you to read them.
+        links are affiliate links. When you use one, the destination site or an affiliate network it works with may
+        use cookies or similar technology to record that you arrived from FIVE PICKED, so that we can be credited for
+        the referral. This happens on their side, after you click, and we do not receive your personal information
+        from it. These companies have their own privacy policies, and we encourage you to read them.
       </p>
 
       <h2>Emailing us</h2>
       <p>
         If you choose to email us at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>, we will use your
         message and email address only to reply to you. We do not add you to any list and do not share your message
-        with third parties.
+        with third parties. You can ask us to delete your messages at any time.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Depending on where you live, you may have rights over your personal data, such as the right to ask what we
+        hold about you or to ask us to delete it. Because we collect almost no personal data, there is usually
+        little to share or delete. If you have a request, email us and we will respond.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        FIVE PICKED is not directed at children under 13, and we do not knowingly collect personal information from
+        them.
       </p>
 
       <h2>Changes</h2>
       <p>
-        If we ever change how we handle information, we will update this page. If you have any questions, email us
-        at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
+        If we ever change how we handle information, we will update this page and the date above. If you have any
+        questions, email us at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
       </p>
     </ContentPage>
   )
