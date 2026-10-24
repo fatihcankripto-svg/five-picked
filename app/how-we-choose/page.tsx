@@ -4,7 +4,7 @@ import { ContentPage, contentMetadata } from '@/components/content-page'
 export const metadata = contentMetadata({
   title: 'How We Choose',
   description:
-    'How FIVE PICKED researches, compares and ranks tools. Why every list has exactly five picks, and why commissions never decide the order.',
+    'How FIVE PICKED researches, compares and ranks tools, and why every list has exactly five picks.',
   path: '/how-we-choose',
 })
 
@@ -25,8 +25,9 @@ export default function HowWeChoosePage() {
       <h2>2. We research widely</h2>
       <p>
         We look at the tools people commonly consider in each category, plus credible alternatives that deserve more
-        attention. We read official documentation, pricing pages and plan limits, and where it makes sense we try the
-        product ourselves. We pay attention to what is included, what costs extra, and what is easy to miss.
+        attention. We read official documentation, pricing pages and plan limits, cross-check them against
+        independent reviews and user feedback, and use products ourselves where we can. We pay attention to what is
+        included, what costs extra, and what is easy to miss.
       </p>
 
       <h2>3. We compare on a consistent set of questions</h2>
@@ -62,11 +63,12 @@ export default function HowWeChoosePage() {
         means it is a better fit for a narrower group.
       </p>
 
-      <h2>What never affects a ranking</h2>
+      <h2>How this site is funded</h2>
       <p>
-        Some links on FIVE PICKED may earn us a commission. Whether a tool has an affiliate program, and how much it
-        might pay, plays no part in whether it appears or where it ranks. We do not accept payment for placement.
-        You can read more in our <Link href="/affiliate-disclosure">affiliate disclosure</Link>.
+        Some links on FIVE PICKED may earn us a commission at no extra cost to you. This helps fund our research and
+        keeps the site free to read. We recommend tools we believe will genuinely help our readers, and we never
+        accept payment for placement. You can read more in our{' '}
+        <Link href="/affiliate-disclosure">affiliate disclosure</Link>.
       </p>
 
       <h2>What we do not do</h2>
