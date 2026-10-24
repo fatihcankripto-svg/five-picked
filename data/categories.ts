@@ -367,7 +367,98 @@ export const categories: Category[] = [
     name: 'Online Courses',
     description:
       'Platforms for learning new skills online, from short practical lessons to structured, in-depth programs.',
-    tools: placeholderTools('online learning'),
+    tools: [
+  {
+    slug: "coursera",
+    name: "Coursera",
+    tagline: "University and industry courses with certificates you can add to your CV.",
+    bestFor: "Career changers and anyone who wants recognized certificates",
+    whatItDoes:
+      "Coursera offers thousands of courses and certificate programs from universities and companies. You can watch many courses for free, and pay only if you want the certificate or graded work.",
+    strengths: [
+      "Huge range: business, tech, data, health, languages and more",
+      "Courses from well-known universities and companies",
+      "Many courses can be audited for free",
+      "Coursera Plus gives unlimited access for one price",
+    ],
+    goodToKnow:
+      "Certificates and graded work need a paid plan, and individual courses are priced separately from Coursera Plus.",
+    startingPrice: "Free to start; Coursera Plus from about $59/month",
+    officialUrl: "https://www.coursera.org",
+  },
+  {
+    slug: "datacamp",
+    name: "DataCamp",
+    tagline: "Learn data skills by writing real code, step by step.",
+    bestFor: "Beginners and professionals learning Python, SQL, data and AI",
+    whatItDoes:
+      "DataCamp teaches data analysis and AI skills through short lessons with exercises you complete right in your browser. It has guided career tracks, so you always know what to learn next.",
+    strengths: [
+      "Hands-on exercises instead of just watching videos",
+      "Focused on data, Python, SQL and AI",
+      "Clear learning paths for beginners",
+      "A free plan lets you try the first chapter of every course",
+    ],
+    goodToKnow:
+      "Annual plans are billed upfront and usually can’t be refunded, and prices have changed a few times this year, so check before you buy.",
+    startingPrice: "Free plan available; Premium from about $28/month (billed yearly)",
+    officialUrl: "https://www.datacamp.com",
+  },
+  {
+    slug: "skillshare",
+    name: "Skillshare",
+    tagline: "Thousands of practical classes for creative and everyday skills.",
+    bestFor: "Creative hobbies and practical skills like design, writing and photography",
+    whatItDoes:
+      "Skillshare is a membership with a very large library of short, project-based classes taught by working creators and professionals.",
+    strengths: [
+      "Huge library covering design, illustration, writing, photography and more",
+      "Short classes you can finish in a weekend",
+      "Project-based learning",
+      "Offline viewing in the mobile app",
+    ],
+    goodToKnow:
+      "It mainly sells yearly memberships, and it does not give completion certificates.",
+    startingPrice: "From about $14/month (billed yearly)",
+    officialUrl: "https://www.skillshare.com",
+  },
+  {
+    slug: "scrimba",
+    name: "Scrimba",
+    tagline: "Learn to code in an interactive player where you can edit the lesson itself.",
+    bestFor: "Beginners learning web development, JavaScript and React",
+    whatItDoes:
+      "Scrimba teaches coding with interactive video lessons. You can pause at any moment and edit the teacher’s code right inside the player, then run it yourself.",
+    strengths: [
+      "Pause and edit the instructor’s code directly in the lesson",
+      "A free tier with complete courses, including React",
+      "Guided learning paths for web development",
+      "Pro plan adds more courses and certificates",
+    ],
+    goodToKnow:
+      "It focuses on coding only, so it is not the right choice if you want other subjects.",
+    startingPrice: "Free tier available; Pro from about $24.50/month (billed yearly)",
+    officialUrl: "https://scrimba.com",
+  },
+  {
+    slug: "masterclass",
+    name: "MasterClass",
+    tagline: "Learn from famous experts in beautifully produced classes.",
+    bestFor: "Curious people who want inspiration from top names in their field",
+    whatItDoes:
+      "MasterClass offers over 200 video classes taught by well-known experts in areas such as cooking, writing, business, music and more.",
+    strengths: [
+      "High-quality, cinematic video production",
+      "Wide range of topics from famous teachers",
+      "Easy to watch on TV, phone or computer",
+      "30-day money-back guarantee",
+    ],
+    goodToKnow:
+      "It is billed yearly only and renews automatically, and it does not give completion certificates.",
+    startingPrice: "From about $10/month (billed yearly)",
+    officialUrl: "https://www.masterclass.com",
+  },
+],
   },
   {
     slug: 'email-marketing',
