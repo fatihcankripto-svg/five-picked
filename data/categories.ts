@@ -171,7 +171,98 @@ export const categories: Category[] = [
     name: 'Web Hosting & Domains',
     description:
       'Reliable places to host your website and register your domain, from simple personal sites to growing businesses.',
-    tools: placeholderTools('web hosting and domain'),
+        tools: [
+      {
+        slug: 'hostinger',
+        name: 'Hostinger',
+        tagline: 'Low-cost hosting that is quick to set up and easy to manage.',
+        bestFor: 'Beginners, bloggers and small business sites on a budget',
+        whatItDoes:
+          'Hostinger offers shared, WordPress, cloud and VPS hosting with its own simple control panel. You can launch a site in a few clicks, and longer plans include a free domain for the first year.',
+        strengths: [
+          'Very affordable entry prices',
+          'Simple control panel that is easy to learn',
+          'Fast servers and free SSL certificates',
+          '30-day money-back guarantee',
+        ],
+        goodToKnow:
+          'The lowest advertised prices need a long commitment, and plans renew at a higher price. Check the renewal price before you buy.',
+        startingPrice: 'From about $3/month (long-term intro price)',
+        officialUrl: 'https://www.hostinger.com/',
+      },
+      {
+        slug: 'bluehost',
+        name: 'Bluehost',
+        tagline: 'A well-known host with a strong focus on WordPress beginners.',
+        bestFor: 'First-time WordPress site owners',
+        whatItDoes:
+          'Bluehost provides shared, WordPress, WooCommerce and VPS hosting. It installs WordPress for you, includes a free domain for the first year on most plans, and offers round-the-clock support.',
+        strengths: [
+          'Easy WordPress setup for beginners',
+          'Free domain for the first year on most plans',
+          'Free SSL certificate included',
+          '24/7 support',
+        ],
+        goodToKnow:
+          'Intro prices apply to the first term only. At the time of writing, the Starter plan renews at around $10/month on a 36-month term.',
+        startingPrice: 'From about $4/month (36-month intro price)',
+        officialUrl: 'https://www.bluehost.com/',
+      },
+      {
+        slug: 'cloudways',
+        name: 'Cloudways',
+        tagline: 'Managed cloud hosting that lets you pick your own infrastructure.',
+        bestFor: 'Growing sites, agencies and people who want more control',
+        whatItDoes:
+          'Cloudways sets up and manages servers on providers such as DigitalOcean, Vultr and Google Cloud. You choose the server size, pay for what you use, and it handles updates, backups and security tools.',
+        strengths: [
+          'Pay-as-you-go pricing with hourly billing',
+          'Choice of several cloud providers',
+          'Free migration for WordPress sites',
+          'Easy to upgrade server size as you grow',
+        ],
+        goodToKnow:
+          'It is a little more technical than shared hosting. Email is not included and is an add-on. A free 3-day trial is available.',
+        startingPrice: 'From about $11–14/month, pay as you go',
+        officialUrl: 'https://www.cloudways.com/',
+      },
+      {
+        slug: 'kinsta',
+        name: 'Kinsta',
+        tagline: 'Premium managed hosting built only for WordPress.',
+        bestFor: 'Busy WordPress sites and businesses that value speed and support',
+        whatItDoes:
+          'Kinsta runs WordPress sites on Google Cloud. It handles server setup, daily backups and security, and gives you tools such as staging sites so you can test changes safely.',
+        strengths: [
+          'Fast, reliable performance for WordPress',
+          'Daily backups and staging environments',
+          'Dashboard made for WordPress users',
+          'Expert support focused on WordPress',
+        ],
+        goodToKnow:
+          'It is the most expensive option in this list and works with WordPress only. Plans are limited by monthly visits.',
+        startingPrice: 'From about $35/month',
+        officialUrl: 'https://kinsta.com/',
+      },
+      {
+        slug: 'namecheap',
+        name: 'Namecheap',
+        tagline: 'A trusted place to register domains, with budget hosting too.',
+        bestFor: 'Registering a domain and starting a simple site at low cost',
+        whatItDoes:
+          'Namecheap is a long-running domain registrar that also sells shared hosting, VPS and email. It is a popular choice for buying a domain name and managing it in one clear dashboard.',
+        strengths: [
+          'Low-priced domain registration',
+          'Free domain privacy protection on many domains',
+          'Simple dashboard for managing domains',
+          'Budget hosting plans for small sites',
+        ],
+        goodToKnow:
+          'Promotional domain prices often rise at renewal, so check the renewal price before you buy.',
+        startingPrice: 'Domains from a few dollars in year one; hosting from about $2–3/month',
+        officialUrl: 'https://www.namecheap.com/',
+      },
+    ],
   },
   {
     slug: 'vpn-and-security',
