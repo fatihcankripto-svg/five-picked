@@ -304,10 +304,7 @@ export const categories: Category[] = [
             startingPrice: "Free plan available; paid from about $6/month (billed annually)",
             officialUrl: "https://www.freepik.com/",
           },
-            goodToKnow: "Video generation uses credits quickly, so check how many clips your plan covers.",
-            startingPrice: "Free plan available; see website for paid plans",
-            officialUrl: "https://klingai.com",
-          },
+            
         ],
       },
       {
