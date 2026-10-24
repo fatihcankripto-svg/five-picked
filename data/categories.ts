@@ -8,8 +8,8 @@
  *
  * Outbound buttons use `affiliateUrl` when present, otherwise `officialUrl`.
  *
- * All tools below are clearly marked placeholders ("Tool 1" … "Tool 5").
- * Replace them with real entries before publishing.
+ * Lists that still use `placeholderTools(...)` are clearly marked placeholders
+ * ("Tool 1" … "Tool 5"). Replace them with real entries before publishing.
  */
 
 export type Tool = {
@@ -161,7 +161,7 @@ export const categories: Category[] = [
         slug: 'chatbots',
         name: 'Chatbots',
         description:
-          'General-purpose AI assistants for answering questions, drafting text and thinking through problems.',
+          'Tools that let you build your own AI chatbot for your website or business, trained on your content to answer visitors’ questions around the clock.',
         tools: placeholderTools('AI chatbot'),
       },
     ],
@@ -171,7 +171,7 @@ export const categories: Category[] = [
     name: 'Web Hosting & Domains',
     description:
       'Reliable places to host your website and register your domain, from simple personal sites to growing businesses.',
-        tools: [
+    tools: [
       {
         slug: 'hostinger',
         name: 'Hostinger',
@@ -270,97 +270,97 @@ export const categories: Category[] = [
     description:
       'Tools that help protect your privacy and accounts online, including VPNs, password managers and security suites.',
     tools: [
-  {
-    slug: "nordvpn",
-    name: "NordVPN",
-    tagline: "A fast, well-rounded VPN with extra security tools built in.",
-    bestFor: "Everyday privacy, streaming and public Wi-Fi protection",
-    whatItDoes:
-      "NordVPN encrypts your internet connection and hides your real location. It runs on phones, computers and many other devices, and has a large network of servers worldwide.",
-    strengths: [
-      "Fast connections thanks to its own NordLynx protocol",
-      "Threat Protection to help block malicious sites and trackers",
-      "Its no-logs policy has been checked by independent audits",
-      "30-day money-back guarantee",
+      {
+        slug: 'nordvpn',
+        name: 'NordVPN',
+        tagline: 'A fast, well-rounded VPN with extra security tools built in.',
+        bestFor: 'Everyday privacy, streaming and public Wi-Fi protection',
+        whatItDoes:
+          'NordVPN encrypts your internet connection and hides your real location. It runs on phones, computers and many other devices, and has a large network of servers worldwide.',
+        strengths: [
+          'Fast connections thanks to its own NordLynx protocol',
+          'Threat Protection to help block malicious sites and trackers',
+          'Its no-logs policy has been checked by independent audits',
+          '30-day money-back guarantee',
+        ],
+        goodToKnow:
+          'Long plans are much cheaper than monthly billing, and renewal prices are higher than the first-term price.',
+        startingPrice: 'From about $3.50/month (2-year plan)',
+        officialUrl: 'https://nordvpn.com',
+      },
+      {
+        slug: 'surfshark',
+        name: 'Surfshark',
+        tagline: 'Low-cost VPN with unlimited devices on one account.',
+        bestFor: 'Families and anyone with many devices on a budget',
+        whatItDoes:
+          'Surfshark protects your connection and hides your location, and you can use it on as many devices as you like with a single subscription.',
+        strengths: [
+          'Unlimited simultaneous devices',
+          'One of the lowest long-term prices among major VPNs',
+          'Built-in ad and malware blocking',
+          '30-day money-back guarantee',
+        ],
+        goodToKnow:
+          'The low price is for long plans paid upfront, and renewals cost more than the first term.',
+        startingPrice: 'From about $2.50/month (2-year plan)',
+        officialUrl: 'https://surfshark.com',
+      },
+      {
+        slug: 'expressvpn',
+        name: 'ExpressVPN',
+        tagline: 'Premium VPN known for simplicity and reliability.',
+        bestFor: 'People who want an easy, polished app and don’t mind paying a bit more',
+        whatItDoes:
+          'ExpressVPN encrypts your traffic and lets you connect to servers in many countries with very little setup. Its apps are designed to be simple to use.',
+        strengths: [
+          'Very easy to use on all major devices',
+          'Servers run on RAM only, so data is wiped on every restart',
+          'Security setup has been reviewed by independent auditors',
+          '30-day money-back guarantee',
+        ],
+        goodToKnow:
+          'Plans and prices have changed often this year, so check the current price before you buy.',
+        startingPrice: 'From about $2.50/month (2-year plan)',
+        officialUrl: 'https://www.expressvpn.com',
+      },
+      {
+        slug: 'proton-vpn',
+        name: 'Proton VPN',
+        tagline: 'Privacy-first VPN from the team behind Proton Mail, with a free plan.',
+        bestFor: 'Privacy-minded users and anyone who wants to try a VPN for free first',
+        whatItDoes:
+          'Proton VPN hides your location and encrypts your connection. It has a free plan with no data limit, and paid plans that unlock more servers and features.',
+        strengths: [
+          'A free plan with no data cap',
+          'Open-source apps that independent experts can inspect',
+          'Secure Core option routes traffic through extra servers for more privacy',
+          'Based in Switzerland, known for strong privacy laws',
+        ],
+        goodToKnow:
+          'The free plan has fewer servers and lower speeds than paid plans, and long-term pricing is slightly higher than the cheapest rivals.',
+        startingPrice: 'Free plan available; paid from about $3/month (2-year plan)',
+        officialUrl: 'https://protonvpn.com',
+      },
+      {
+        slug: 'private-internet-access',
+        name: 'Private Internet Access',
+        tagline: 'Budget VPN with lots of settings for people who like control.',
+        bestFor: 'Budget buyers and users who like to customize their VPN',
+        whatItDoes:
+          'Private Internet Access (PIA) encrypts your connection and lets you connect on unlimited devices. It offers more settings than most VPNs, so you can tune it to your needs.',
+        strengths: [
+          'Unlimited devices on one subscription',
+          'Very low price on the longest plan',
+          'Many customization options',
+          'Open-source apps and a 30-day money-back guarantee',
+        ],
+        goodToKnow:
+          'It is a US-based company and has no free plan; the lowest price needs a 3-year commitment paid upfront.',
+        startingPrice: 'From about $2/month (3-year plan)',
+        officialUrl: 'https://www.privateinternetaccess.com',
+      },
     ],
-    goodToKnow:
-      "Long plans are much cheaper than monthly billing, and renewal prices are higher than the first-term price.",
-    startingPrice: "From about $3.50/month (2-year plan)",
-    officialUrl: "https://nordvpn.com",
-  },
-  {
-    slug: "surfshark",
-    name: "Surfshark",
-    tagline: "Low-cost VPN with unlimited devices on one account.",
-    bestFor: "Families and anyone with many devices on a budget",
-    whatItDoes:
-      "Surfshark protects your connection and hides your location, and you can use it on as many devices as you like with a single subscription.",
-    strengths: [
-      "Unlimited simultaneous devices",
-      "One of the lowest long-term prices among major VPNs",
-      "Built-in ad and malware blocking",
-      "30-day money-back guarantee",
-    ],
-    goodToKnow:
-      "The low price is for long plans paid upfront, and renewals cost more than the first term.",
-    startingPrice: "From about $2.50/month (2-year plan)",
-    officialUrl: "https://surfshark.com",
-  },
-  {
-    slug: "expressvpn",
-    name: "ExpressVPN",
-    tagline: "Premium VPN known for simplicity and reliability.",
-    bestFor: "People who want an easy, polished app and don’t mind paying a bit more",
-    whatItDoes:
-      "ExpressVPN encrypts your traffic and lets you connect to servers in many countries with very little setup. Its apps are designed to be simple to use.",
-    strengths: [
-      "Very easy to use on all major devices",
-      "Servers run on RAM only, so data is wiped on every restart",
-      "Security setup has been reviewed by independent auditors",
-      "30-day money-back guarantee",
-    ],
-    goodToKnow:
-      "Plans and prices have changed often this year, so check the current price before you buy.",
-    startingPrice: "From about $2.50/month (2-year plan)",
-    officialUrl: "https://www.expressvpn.com",
-  },
-  {
-    slug: "proton-vpn",
-    name: "Proton VPN",
-    tagline: "Privacy-first VPN from the team behind Proton Mail, with a free plan.",
-    bestFor: "Privacy-minded users and anyone who wants to try a VPN for free first",
-    whatItDoes:
-      "Proton VPN hides your location and encrypts your connection. It has a free plan with no data limit, and paid plans that unlock more servers and features.",
-    strengths: [
-      "A free plan with no data cap",
-      "Open-source apps that independent experts can inspect",
-      "Secure Core option routes traffic through extra servers for more privacy",
-      "Based in Switzerland, known for strong privacy laws",
-    ],
-    goodToKnow:
-      "The free plan has fewer servers and lower speeds than paid plans, and long-term pricing is slightly higher than the cheapest rivals.",
-    startingPrice: "Free plan available; paid from about $3/month (2-year plan)",
-    officialUrl: "https://protonvpn.com",
-  },
-  {
-    slug: "private-internet-access",
-    name: "Private Internet Access",
-    tagline: "Budget VPN with lots of settings for people who like control.",
-    bestFor: "Budget buyers and users who like to customize their VPN",
-    whatItDoes:
-      "Private Internet Access (PIA) encrypts your connection and lets you connect on unlimited devices. It offers more settings than most VPNs, so you can tune it to your needs.",
-    strengths: [
-      "Unlimited devices on one subscription",
-      "Very low price on the longest plan",
-      "Many customization options",
-      "Open-source apps and a 30-day money-back guarantee",
-    ],
-    goodToKnow:
-      "It is a US-based company and has no free plan; the lowest price needs a 3-year commitment paid upfront.",
-    startingPrice: "From about $2/month (3-year plan)",
-    officialUrl: "https://www.privateinternetaccess.com",
-  },
-],
   },
   {
     slug: 'online-courses',
@@ -368,104 +368,195 @@ export const categories: Category[] = [
     description:
       'Platforms for learning new skills online, from short practical lessons to structured, in-depth programs.',
     tools: [
-  {
-    slug: "coursera",
-    name: "Coursera",
-    tagline: "University and industry courses with certificates you can add to your CV.",
-    bestFor: "Career changers and anyone who wants recognized certificates",
-    whatItDoes:
-      "Coursera offers thousands of courses and certificate programs from universities and companies. You can watch many courses for free, and pay only if you want the certificate or graded work.",
-    strengths: [
-      "Huge range: business, tech, data, health, languages and more",
-      "Courses from well-known universities and companies",
-      "Many courses can be audited for free",
-      "Coursera Plus gives unlimited access for one price",
+      {
+        slug: 'coursera',
+        name: 'Coursera',
+        tagline: 'University and industry courses with certificates you can add to your CV.',
+        bestFor: 'Career changers and anyone who wants recognized certificates',
+        whatItDoes:
+          'Coursera offers thousands of courses and certificate programs from universities and companies. You can watch many courses for free, and pay only if you want the certificate or graded work.',
+        strengths: [
+          'Huge range: business, tech, data, health, languages and more',
+          'Courses from well-known universities and companies',
+          'Many courses can be audited for free',
+          'Coursera Plus gives unlimited access for one price',
+        ],
+        goodToKnow:
+          'Certificates and graded work need a paid plan, and individual courses are priced separately from Coursera Plus.',
+        startingPrice: 'Free to start; Coursera Plus from about $59/month',
+        officialUrl: 'https://www.coursera.org',
+      },
+      {
+        slug: 'datacamp',
+        name: 'DataCamp',
+        tagline: 'Learn data skills by writing real code, step by step.',
+        bestFor: 'Beginners and professionals learning Python, SQL, data and AI',
+        whatItDoes:
+          'DataCamp teaches data analysis and AI skills through short lessons with exercises you complete right in your browser. It has guided career tracks, so you always know what to learn next.',
+        strengths: [
+          'Hands-on exercises instead of just watching videos',
+          'Focused on data, Python, SQL and AI',
+          'Clear learning paths for beginners',
+          'A free plan lets you try the first chapter of every course',
+        ],
+        goodToKnow:
+          'Annual plans are billed upfront and usually can’t be refunded, and prices have changed a few times this year, so check before you buy.',
+        startingPrice: 'Free plan available; Premium from about $28/month (billed yearly)',
+        officialUrl: 'https://www.datacamp.com',
+      },
+      {
+        slug: 'skillshare',
+        name: 'Skillshare',
+        tagline: 'Thousands of practical classes for creative and everyday skills.',
+        bestFor: 'Creative hobbies and practical skills like design, writing and photography',
+        whatItDoes:
+          'Skillshare is a membership with a very large library of short, project-based classes taught by working creators and professionals.',
+        strengths: [
+          'Huge library covering design, illustration, writing, photography and more',
+          'Short classes you can finish in a weekend',
+          'Project-based learning',
+          'Offline viewing in the mobile app',
+        ],
+        goodToKnow:
+          'It mainly sells yearly memberships, and it does not give completion certificates.',
+        startingPrice: 'From about $14/month (billed yearly)',
+        officialUrl: 'https://www.skillshare.com',
+      },
+      {
+        slug: 'scrimba',
+        name: 'Scrimba',
+        tagline: 'Learn to code in an interactive player where you can edit the lesson itself.',
+        bestFor: 'Beginners learning web development, JavaScript and React',
+        whatItDoes:
+          'Scrimba teaches coding with interactive video lessons. You can pause at any moment and edit the teacher’s code right inside the player, then run it yourself.',
+        strengths: [
+          'Pause and edit the instructor’s code directly in the lesson',
+          'A free tier with complete courses, including React',
+          'Guided learning paths for web development',
+          'Pro plan adds more courses and certificates',
+        ],
+        goodToKnow:
+          'It focuses on coding only, so it is not the right choice if you want other subjects.',
+        startingPrice: 'Free tier available; Pro from about $24.50/month (billed yearly)',
+        officialUrl: 'https://scrimba.com',
+      },
+      {
+        slug: 'masterclass',
+        name: 'MasterClass',
+        tagline: 'Learn from famous experts in beautifully produced classes.',
+        bestFor: 'Curious people who want inspiration from top names in their field',
+        whatItDoes:
+          'MasterClass offers over 200 video classes taught by well-known experts in areas such as cooking, writing, business, music and more.',
+        strengths: [
+          'High-quality, cinematic video production',
+          'Wide range of topics from famous teachers',
+          'Easy to watch on TV, phone or computer',
+          '30-day money-back guarantee',
+        ],
+        goodToKnow:
+          'It is billed yearly only and renews automatically, and it does not give completion certificates.',
+        startingPrice: 'From about $10/month (billed yearly)',
+        officialUrl: 'https://www.masterclass.com',
+      },
     ],
-    goodToKnow:
-      "Certificates and graded work need a paid plan, and individual courses are priced separately from Coursera Plus.",
-    startingPrice: "Free to start; Coursera Plus from about $59/month",
-    officialUrl: "https://www.coursera.org",
-  },
-  {
-    slug: "datacamp",
-    name: "DataCamp",
-    tagline: "Learn data skills by writing real code, step by step.",
-    bestFor: "Beginners and professionals learning Python, SQL, data and AI",
-    whatItDoes:
-      "DataCamp teaches data analysis and AI skills through short lessons with exercises you complete right in your browser. It has guided career tracks, so you always know what to learn next.",
-    strengths: [
-      "Hands-on exercises instead of just watching videos",
-      "Focused on data, Python, SQL and AI",
-      "Clear learning paths for beginners",
-      "A free plan lets you try the first chapter of every course",
-    ],
-    goodToKnow:
-      "Annual plans are billed upfront and usually can’t be refunded, and prices have changed a few times this year, so check before you buy.",
-    startingPrice: "Free plan available; Premium from about $28/month (billed yearly)",
-    officialUrl: "https://www.datacamp.com",
-  },
-  {
-    slug: "skillshare",
-    name: "Skillshare",
-    tagline: "Thousands of practical classes for creative and everyday skills.",
-    bestFor: "Creative hobbies and practical skills like design, writing and photography",
-    whatItDoes:
-      "Skillshare is a membership with a very large library of short, project-based classes taught by working creators and professionals.",
-    strengths: [
-      "Huge library covering design, illustration, writing, photography and more",
-      "Short classes you can finish in a weekend",
-      "Project-based learning",
-      "Offline viewing in the mobile app",
-    ],
-    goodToKnow:
-      "It mainly sells yearly memberships, and it does not give completion certificates.",
-    startingPrice: "From about $14/month (billed yearly)",
-    officialUrl: "https://www.skillshare.com",
-  },
-  {
-    slug: "scrimba",
-    name: "Scrimba",
-    tagline: "Learn to code in an interactive player where you can edit the lesson itself.",
-    bestFor: "Beginners learning web development, JavaScript and React",
-    whatItDoes:
-      "Scrimba teaches coding with interactive video lessons. You can pause at any moment and edit the teacher’s code right inside the player, then run it yourself.",
-    strengths: [
-      "Pause and edit the instructor’s code directly in the lesson",
-      "A free tier with complete courses, including React",
-      "Guided learning paths for web development",
-      "Pro plan adds more courses and certificates",
-    ],
-    goodToKnow:
-      "It focuses on coding only, so it is not the right choice if you want other subjects.",
-    startingPrice: "Free tier available; Pro from about $24.50/month (billed yearly)",
-    officialUrl: "https://scrimba.com",
-  },
-  {
-    slug: "masterclass",
-    name: "MasterClass",
-    tagline: "Learn from famous experts in beautifully produced classes.",
-    bestFor: "Curious people who want inspiration from top names in their field",
-    whatItDoes:
-      "MasterClass offers over 200 video classes taught by well-known experts in areas such as cooking, writing, business, music and more.",
-    strengths: [
-      "High-quality, cinematic video production",
-      "Wide range of topics from famous teachers",
-      "Easy to watch on TV, phone or computer",
-      "30-day money-back guarantee",
-    ],
-    goodToKnow:
-      "It is billed yearly only and renews automatically, and it does not give completion certificates.",
-    startingPrice: "From about $10/month (billed yearly)",
-    officialUrl: "https://www.masterclass.com",
-  },
-],
   },
   {
     slug: 'email-marketing',
     name: 'Email Marketing',
     description:
-      'Services for building an email list, sending newsletters and automating campaigns without the headache.',
-    tools: placeholderTools('email marketing'),
+      'The best email marketing software for building your list, sending newsletters and automating campaigns, with free options for beginners.',
+    tools: [
+      {
+        slug: 'mailerlite',
+        name: 'MailerLite',
+        tagline: 'Simple, friendly email marketing that doesn’t need a manual.',
+        bestFor: 'Beginners, bloggers and small businesses',
+        whatItDoes:
+          'MailerLite lets you design emails with a drag-and-drop editor, set up automations, build sign-up forms and landing pages, and even run a simple website, all from one clean dashboard.',
+        strengths: [
+          'Clean, beginner-friendly editor',
+          'Automations, forms and landing pages included',
+          'A free plan to get started',
+          'Affordable paid plans for growing lists',
+        ],
+        goodToKnow:
+          'The free plan has limits, and extras like more users and advanced tools need a paid plan. Prices rise as your list grows.',
+        startingPrice: 'Free plan available; paid from about $10/month',
+        officialUrl: 'https://www.mailerlite.com',
+      },
+      {
+        slug: 'kit',
+        name: 'Kit',
+        tagline: 'Email built for creators who want to turn an audience into income.',
+        bestFor: 'Bloggers, YouTubers, podcasters and course creators',
+        whatItDoes:
+          'Kit (formerly ConvertKit) helps creators grow an email list, send newsletters and automate follow-ups. You can also sell digital products and paid newsletters straight from your emails.',
+        strengths: [
+          'Made for creators, with simple automations',
+          'Sell digital products and paid newsletters',
+          'Landing pages and sign-up forms included',
+          'A free plan to get started',
+        ],
+        goodToKnow:
+          'Paid plans get pricey as your list grows, and prices have gone up recently, so compare before you commit.',
+        startingPrice: 'Free plan available; paid from about $33/month (billed yearly)',
+        officialUrl: 'https://kit.com',
+      },
+      {
+        slug: 'getresponse',
+        name: 'GetResponse',
+        tagline: 'A full marketing toolbox: email, landing pages and webinars under one roof.',
+        bestFor: 'Small businesses and online sellers who want more than newsletters',
+        whatItDoes:
+          'GetResponse combines email marketing with landing pages, automation, webinar tools and a website builder, so you can run a whole campaign from a single account.',
+        strengths: [
+          'Email, landing pages and webinar tools in one place',
+          'Automation workflows for follow-ups',
+          'Templates and AI helpers to write faster',
+          '14-day free trial',
+        ],
+        goodToKnow:
+          'Some features, such as webinars, sit on higher plans, and costs climb as your list grows.',
+        startingPrice: '14-day free trial; paid from about $19/month',
+        officialUrl: 'https://www.getresponse.com',
+      },
+      {
+        slug: 'beehiiv',
+        name: 'beehiiv',
+        tagline: 'A newsletter platform built to grow and monetize your audience.',
+        bestFor: 'Writers and publishers building a newsletter business',
+        whatItDoes:
+          'beehiiv is made specifically for newsletters. You write and send your issues, grow your readership with built-in tools, and can earn money through ads and paid subscriptions.',
+        strengths: [
+          'Built just for newsletters',
+          'Built-in tools to grow and monetize your audience',
+          'Unlimited sends on every plan',
+          'A free plan to get started',
+        ],
+        goodToKnow:
+          'beehiiv changed its plans and prices in October 2026, and most monetization tools need a paid plan, so check the latest details.',
+        startingPrice: 'Free plan for up to 2,500 subscribers; paid from about $45/month',
+        officialUrl: 'https://www.beehiiv.com',
+      },
+      {
+        slug: 'systeme-io',
+        name: 'Systeme.io',
+        tagline: 'Email, sales funnels and online courses in one account, at a friendly price.',
+        bestFor: 'Beginners who want to sell online without paying for five different tools',
+        whatItDoes:
+          'Systeme.io puts email marketing, sales funnels, a website builder and online courses into one account. It is popular with people launching their first digital product.',
+        strengths: [
+          'Email, funnels, courses and websites in one place',
+          'A free plan to get started',
+          'No transaction fees charged on your sales',
+          'Simple, low-cost paid plans',
+        ],
+        goodToKnow:
+          'Design options are more limited than dedicated website builders, and the interface can take a little getting used to.',
+        startingPrice: 'Free plan available; paid from about $17/month',
+        officialUrl: 'https://systeme.io',
+      },
+    ],
   },
   {
     slug: 'video-and-design-software',
@@ -521,15 +612,197 @@ export const categories: Category[] = [
     slug: 'freelance-platforms',
     name: 'Freelance Platforms',
     description:
-      'Marketplaces for finding freelance work or hiring skilled freelancers for your next project.',
-    tools: placeholderTools('freelance platform'),
+      'The best freelance platforms for finding work or hiring skilled freelancers, from quick one-off jobs to long-term projects.',
+    tools: [
+      {
+        slug: 'fiverr',
+        name: 'Fiverr',
+        tagline: 'Hire a freelancer for almost anything, with clear prices upfront.',
+        bestFor: 'Quick, fixed-price jobs, and freelancers who want to sell their services',
+        whatItDoes:
+          'Fiverr is a marketplace where freelancers sell their work as ready-made packages, such as logos, videos, writing and programming. You browse offers, compare prices and order.',
+        strengths: [
+          'Huge range of services in one place',
+          'Fixed-price packages make costs clear',
+          'Reviews and ratings help you choose',
+          'Easy for freelancers to set up a profile',
+        ],
+        goodToKnow:
+          'Service fees apply to both buyers and sellers, and quality varies, so check reviews and portfolios before you order.',
+        startingPrice: 'Free to join; you pay per service (sellers set their own prices)',
+        officialUrl: 'https://www.fiverr.com',
+      },
+      {
+        slug: 'upwork',
+        name: 'Upwork',
+        tagline: 'A big marketplace for long-term freelance work and hiring.',
+        bestFor: 'Ongoing projects and businesses hiring skilled remote talent',
+        whatItDoes:
+          'Upwork connects clients and freelancers for projects of any size. You can post a job and receive proposals, or search profiles and invite people directly.',
+        strengths: [
+          'Large pool of freelancers in many fields',
+          'Hourly and fixed-price contracts',
+          'Payment protection tools for both sides',
+          'Good for ongoing, long-term work',
+        ],
+        goodToKnow:
+          'Freelancers pay service fees and clients may pay a marketplace fee, so check the current fee rules before you start.',
+        startingPrice: 'Free to join; fees apply on contracts',
+        officialUrl: 'https://www.upwork.com',
+      },
+      {
+        slug: '99designs',
+        name: '99designs',
+        tagline: 'Design contests where many designers compete for your project.',
+        bestFor: 'Logos, branding and packaging when you want lots of ideas to choose from',
+        whatItDoes:
+          'With 99designs you describe the design you need and receive concepts from many designers. You pick a favorite and work with that designer to finish it. You can also hire one designer directly.',
+        strengths: [
+          'See many ideas from different designers',
+          'Fixed-price contest packages',
+          'Full ownership of the final design',
+          'A satisfaction guarantee on contests',
+        ],
+        goodToKnow:
+          'It costs more than casual marketplaces, and refund options narrow as a contest moves forward.',
+        startingPrice: 'Logo contests from about $250',
+        officialUrl: 'https://99designs.com',
+      },
+      {
+        slug: 'freelancer-com',
+        name: 'Freelancer.com',
+        tagline: 'A global marketplace where freelancers bid on your project.',
+        bestFor: 'Clients who like comparing bids, and freelancers looking for projects',
+        whatItDoes:
+          'Freelancer.com lets you post a project and receive bids from freelancers around the world. It also offers contests, so you can collect ideas for logos and other creative work.',
+        strengths: [
+          'Global talent pool across many skills',
+          'Compare bids to find the right price',
+          'Contests for creative work',
+          'Milestone payments help protect your budget',
+        ],
+        goodToKnow:
+          'With so many bidders, take time to review profiles and past work before you choose.',
+        startingPrice: 'Free to join; fees apply on projects',
+        officialUrl: 'https://www.freelancer.com',
+      },
+      {
+        slug: 'toptal',
+        name: 'Toptal',
+        tagline: 'Hand-vetted freelancers for projects that really matter.',
+        bestFor: 'Businesses that need experienced developers, designers or finance experts',
+        whatItDoes:
+          'Toptal screens freelancers before they join and matches you with talent for your project, so you spend less time sorting through applications.',
+        strengths: [
+          'Talent is screened before joining',
+          'Matching service saves hiring time',
+          'Strong for developers, designers and finance experts',
+          'A trial period lets you test a match first',
+        ],
+        goodToKnow:
+          'It is aimed at businesses, and rates are higher than on open marketplaces, so it is not for tiny budgets.',
+        startingPrice: 'No fixed price; you pay your matched freelancer’s rate',
+        officialUrl: 'https://www.toptal.com',
+      },
+    ],
   },
   {
     slug: 'language-learning',
     name: 'Language Learning',
     description:
-      'Apps and services that help you learn a new language, build vocabulary and practice speaking.',
-    tools: placeholderTools('language learning'),
+      'The best ways to learn a new language online, from quick daily apps to live classes and one-to-one tutors.',
+    tools: [
+      {
+        slug: 'babbel',
+        name: 'Babbel',
+        tagline: 'Practical, conversation-first lessons you can finish in minutes.',
+        bestFor: 'Beginners who want to start speaking quickly',
+        whatItDoes:
+          'Babbel is a language app with short lessons built around real-life conversations, grammar tips and speech practice, in more than a dozen languages.',
+        strengths: [
+          'Short lessons that fit a busy day',
+          'Conversation-first approach',
+          'Covers many popular languages',
+          'First lesson is free to try',
+        ],
+        goodToKnow:
+          'It is a paid subscription after the first lesson, and longer plans cost far less per month than short ones.',
+        startingPrice: 'From about $9/month (12-month plan)',
+        officialUrl: 'https://www.babbel.com',
+      },
+      {
+        slug: 'lingoda',
+        name: 'Lingoda',
+        tagline: 'Live small-group classes with certified teachers, on your schedule.',
+        bestFor: 'Learners who want structure and live speaking practice',
+        whatItDoes:
+          'Lingoda runs live online classes in small groups, or one-to-one, that follow a clear level system from beginner to advanced.',
+        strengths: [
+          'Live classes with certified teachers',
+          'Small groups for real speaking practice',
+          'Clear levels from beginner to advanced',
+          'Many class times to choose from',
+        ],
+        goodToKnow:
+          'It costs more than apps because you are paying for live teaching, and prices vary by language and number of classes.',
+        startingPrice: 'Group classes from about $40 per 4 weeks',
+        officialUrl: 'https://www.lingoda.com',
+      },
+      {
+        slug: 'italki',
+        name: 'italki',
+        tagline: 'Find a private tutor to fit almost any budget.',
+        bestFor: 'Learners who want one-to-one speaking practice',
+        whatItDoes:
+          'italki is a marketplace of language tutors and teachers. You choose a person you like, book a time and pay per lesson, with no subscription.',
+        strengths: [
+          'Tutors for a very wide range of languages',
+          'No subscription; pay only for lessons you book',
+          'Casual conversation partners and professional teachers',
+          'Low-cost trial lessons',
+        ],
+        goodToKnow:
+          'Quality depends on the tutor you pick, so read reviews and try a trial lesson first.',
+        startingPrice: 'Free to join; lessons from about $5/hour (tutors set their own prices)',
+        officialUrl: 'https://www.italki.com',
+      },
+      {
+        slug: 'preply',
+        name: 'Preply',
+        tagline: 'One-to-one online tutoring with tutors you can compare and choose.',
+        bestFor: 'Learners who want a personal tutor and flexible scheduling',
+        whatItDoes:
+          'Preply matches you with online tutors for private lessons. You filter by language, price and availability, try a trial lesson, then book regular sessions.',
+        strengths: [
+          'Large choice of tutors in many languages',
+          'Filter by price, schedule and reviews',
+          'Trial lessons to test a tutor',
+          'No long contract required',
+        ],
+        goodToKnow:
+          'Lesson prices vary a lot between tutors, so compare a few before settling on one.',
+        startingPrice: 'Free to join; lessons from about $5/hour (tutors set their own prices)',
+        officialUrl: 'https://preply.com',
+      },
+      {
+        slug: 'rocket-languages',
+        name: 'Rocket Languages',
+        tagline: 'Audio-first courses that train you to actually speak.',
+        bestFor: 'Self-study learners who like listening and speaking practice',
+        whatItDoes:
+          'Rocket Languages offers structured courses built around audio lessons, with voice recognition so you can practice pronunciation, plus reading and writing exercises.',
+        strengths: [
+          'Audio-first lessons that build listening and speaking skills',
+          'Voice recognition to practice pronunciation',
+          'A one-time payment option for lifetime access',
+          'Lessons can be used offline',
+        ],
+        goodToKnow:
+          'It covers fewer languages than Babbel, and the one-time price is higher upfront than a monthly app.',
+        startingPrice: 'From about $150 one-time (lifetime access)',
+        officialUrl: 'https://www.rocketlanguages.com',
+      },
+    ],
   },
 ]
 
