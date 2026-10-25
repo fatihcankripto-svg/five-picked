@@ -1,21 +1,39 @@
-import { Check, Info } from 'lucide-react'
+import { Check, Info, Star } from 'lucide-react'
 import type { Tool } from '@/data/categories'
 import { RankBadge } from '@/components/rank-badge'
 import { VisitButton } from '@/components/visit-button'
+import { cn } from '@/lib/utils'
 
 export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
   const headingId = `${tool.slug}-heading`
+  const isTop = rank === 1
 
   return (
     <div className="fp-scroll">
       <article
         id={tool.slug}
         aria-labelledby={headingId}
-        className="fp-lift rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/25 sm:p-8"
+        className={cn(
+          'fp-lift relative isolate overflow-hidden rounded-2xl border bg-card p-6 transition-colors hover:border-primary/25 sm:p-8',
+          isTop ? 'border-primary/40 bg-linear-to-br from-primary/[0.08] to-card' : 'border-border',
+        )}
       >
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-2 -top-4 -z-10 select-none text-[8rem] font-bold leading-none tracking-tighter text-foreground/[0.04] sm:text-[11rem]"
+        >
+          {rank}
+        </span>
+
         <header className="flex items-start gap-5">
           <RankBadge rank={rank} />
           <div className="min-w-0">
+            {isTop && (
+              <span className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest text-primary">
+                <Star aria-hidden="true" className="size-3 fill-primary" />
+                Top pick
+              </span>
+            )}
             <h3 id={headingId} className="text-2xl font-semibold text-foreground">
               {tool.name}
             </h3>
