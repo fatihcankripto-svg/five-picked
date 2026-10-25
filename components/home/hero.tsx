@@ -41,7 +41,7 @@ export function Hero() {
           >
             <span className="block">The 5 best tools,</span>
             <span className="block">
-              <span className="inline-block whitespace-nowrap bg-linear-to-r from-[oklch(0.94_0.09_92)] to-[oklch(0.8_0.14_75)] bg-clip-text pb-1 pr-1 font-serif font-medium italic text-transparent">
+              <span className="inline-block whitespace-nowrap bg-linear-to-r from-[oklch(0.94_0.09_92)] to-[oklch(0.8_0.14_75)] bg-clip-text pb-1 pr-1 font-bold text-transparent">
                 hand-picked
               </span>{' '}
               for you
