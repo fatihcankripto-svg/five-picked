@@ -158,6 +158,25 @@
   }
 }
 
+/* Reading progress bar in the header. Hidden where scroll-driven animation is unsupported. */
+.fp-progress {
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes fp-progress {
+      to {
+        transform: scaleX(1);
+      }
+    }
+    .fp-progress {
+      animation: fp-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @keyframes fp-fade-up {
     from {
@@ -216,6 +235,18 @@
     }
   }
 
+  @keyframes fp-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
   .fp-reveal {
     animation: fp-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
     animation-delay: calc(var(--fp-i, 0) * 90ms);
@@ -239,6 +270,17 @@
 
   .fp-gradient-text {
     animation: fp-shimmer 8s linear infinite;
+  }
+
+  .fp-pulse {
+    animation: fp-pulse 2.4s ease-in-out infinite;
+    animation-delay: calc(var(--fp-i, 0) * 200ms);
+  }
+
+  /* The logo ring spins on hover or keyboard focus. */
+  .fp-logo:hover .fp-logo-orbit,
+  .fp-logo:focus-visible .fp-logo-orbit {
+    animation: fp-spin 5s linear infinite;
   }
 
   .fp-marquee-track {
