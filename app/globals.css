@@ -77,3 +77,83 @@
     }
   }
 }
+
+/* ---------- FIVE PICKED motion and glow (CSS only) ---------- */
+
+/* Soft amber and blue glow, used behind the hero. Static, no motion. */
+.fp-aurora {
+  background:
+    radial-gradient(60% 50% at 50% 0%, oklch(0.82 0.145 75 / 18%), transparent 70%),
+    radial-gradient(40% 40% at 85% 20%, oklch(0.6 0.12 262 / 22%), transparent 70%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fp-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fp-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fp-glow {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  /* Fades in on page load. Set --fp-i (0, 1, 2...) on the element to stagger. */
+  .fp-reveal {
+    animation: fp-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--fp-i, 0) * 80ms);
+  }
+
+  /* Gentle floating, for the big "5". */
+  .fp-float {
+    animation: fp-float 6s ease-in-out infinite;
+  }
+
+  /* Slow breathing glow. */
+  .fp-glow {
+    animation: fp-glow 5s ease-in-out infinite;
+  }
+
+  /* Card lifts and gets an amber edge on hover. */
+  .fp-lift {
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .fp-lift:hover {
+    transform: translateY(-4px);
+    border-color: oklch(0.82 0.145 75 / 45%);
+    box-shadow: 0 18px 40px -18px oklch(0.82 0.145 75 / 35%);
+  }
+
+  /* Fades in while scrolling into view. Browsers without support show it normally. */
+  @supports (animation-timeline: view()) {
+    .fp-scroll {
+      animation: fp-fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
