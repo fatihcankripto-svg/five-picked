@@ -5,7 +5,12 @@ import { absoluteUrl, staticPages } from '@/lib/site'
 export const dynamic = 'force-static'
 
 const guidesLastModified = new Date('2026-10-25T00:00:00Z')
-const guidePaths = ['/guides/hostinger-vs-bluehost', '/guides/how-to-choose-a-vpn']
+const guidePaths = [
+  '/guides/hostinger-vs-bluehost',
+  '/guides/how-to-choose-a-vpn',
+  '/guides/best-ai-video-tools-for-beginners',
+  '/guides/shared-vs-cloud-vs-managed-wordpress-hosting',
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(`${lastUpdated}T00:00:00Z`)
