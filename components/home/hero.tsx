@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { categories } from '@/data/categories'
+import { CountUp } from '@/components/count-up'
 
 const delay = (i: number) => ({ '--fp-i': i }) as CSSProperties
 
@@ -12,9 +13,9 @@ const toolCount = categories.reduce((total, category) => {
 }, 0)
 
 const stats = [
-  { value: String(categories.length), label: 'Categories' },
-  { value: String(toolCount), label: 'Hand-picked tools' },
-  { value: '5', label: 'Picks in every list' },
+  { value: categories.length, label: 'Categories' },
+  { value: toolCount, label: 'Hand-picked tools' },
+  { value: 5, label: 'Picks in every list' },
 ]
 
 export function Hero() {
@@ -73,7 +74,7 @@ export function Hero() {
                 <dt className="sr-only">{stat.label}</dt>
                 <dd>
                   <span className="fp-gradient-text block text-3xl font-bold tracking-tight sm:text-4xl">
-                    {stat.value}
+                    <CountUp value={stat.value} />
                   </span>
                   <span className="mt-1 block text-xs uppercase tracking-widest text-muted-foreground">
                     {stat.label}
