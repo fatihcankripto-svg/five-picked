@@ -10,6 +10,10 @@ const guidePaths = [
   '/guides/how-to-choose-a-vpn',
   '/guides/best-ai-video-tools-for-beginners',
   '/guides/shared-vs-cloud-vs-managed-wordpress-hosting',
+  '/guides/fliki-vs-pictory',
+  '/guides/tidio-vs-chatbase',
+  '/guides/nordvpn-vs-surfshark',
+  '/guides/best-ai-meeting-note-takers',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
