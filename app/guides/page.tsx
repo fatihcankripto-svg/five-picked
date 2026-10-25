@@ -9,6 +9,26 @@ export const metadata = contentMetadata({
 
 const guides = [
   {
+    href: '/guides/best-ai-meeting-note-takers',
+    title: 'Best AI meeting note takers',
+    summary: 'What Fireflies, tl;dv, Notta and Otter each do best.',
+  },
+  {
+    href: '/guides/nordvpn-vs-surfshark',
+    title: 'NordVPN vs Surfshark: which VPN should you choose?',
+    summary: 'Devices, speed, audits, price and who each VPN suits.',
+  },
+  {
+    href: '/guides/tidio-vs-chatbase',
+    title: 'Tidio vs Chatbase: which chatbot platform fits your business?',
+    summary: 'A support suite with AI versus a focused AI chatbot builder.',
+  },
+  {
+    href: '/guides/fliki-vs-pictory',
+    title: 'Fliki vs Pictory: which AI video tool is better?',
+    summary: 'Repurposing content versus voice-first video creation.',
+  },
+  {
     href: '/guides/best-ai-video-tools-for-beginners',
     title: 'Best AI video tools for beginners',
     summary: 'What Pictory, Fliki, Synthesia, Kling AI and ElevenLabs each do best.',
