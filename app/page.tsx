@@ -1,4 +1,5 @@
 import { Hero } from '@/components/home/hero'
+import { CategoryMarquee } from '@/components/home/category-marquee'
 import { CategoryGrid } from '@/components/home/category-grid'
 import { HowWeChooseStrip } from '@/components/home/how-we-choose-strip'
 import { AboutTeaser } from '@/components/home/about-teaser'
@@ -20,6 +21,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
+      <CategoryMarquee />
       <CategoryGrid />
       <HowWeChooseStrip />
       <AboutTeaser />
