@@ -47,6 +47,10 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
+      <div
+        aria-hidden="true"
+        className="fp-progress pointer-events-none absolute inset-x-0 -bottom-px h-0.5 bg-primary"
+      />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
         <Logo onClick={closeAll} />
 
