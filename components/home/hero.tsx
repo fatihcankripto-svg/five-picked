@@ -36,15 +36,12 @@ export function Hero() {
             Independent recommendations
           </p>
           <h1
-            className="fp-reveal mt-6 text-[1.95rem] font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            className="fp-reveal mt-6 text-[1.95rem] font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             style={delay(1)}
           >
             <span className="block">The 5 best tools,</span>
             <span className="block">
-              <span className="inline-block whitespace-nowrap bg-linear-to-r from-[oklch(0.94_0.09_92)] to-[oklch(0.8_0.14_75)] bg-clip-text pb-1 pr-1 font-bold text-transparent">
-                hand-picked
-              </span>{' '}
-              for you
+              <span className="whitespace-nowrap">hand-picked</span> for you
             </span>
           </h1>
           <p
