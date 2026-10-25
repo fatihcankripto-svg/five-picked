@@ -9,6 +9,11 @@ export const metadata = contentMetadata({
 
 const guides = [
   {
+    href: '/guides/how-to-choose-a-vpn',
+    title: 'How to choose a VPN',
+    summary: 'What a VPN does, what to check before you pick one, and which suits you.',
+  },
+  {
     href: '/guides/hostinger-vs-bluehost',
     title: 'Hostinger vs Bluehost: which is better for beginners?',
     summary: 'Pricing, ease of use, support and who each host suits.',
