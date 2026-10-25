@@ -78,20 +78,91 @@
   }
 }
 
-/* ---------- FIVE PICKED motion and glow (CSS only) ---------- */
+/* ---------- FIVE PICKED visual effects ---------- */
 
-/* Soft amber and blue glow, used behind the hero. Static, no motion. */
+/* Colorful glow behind the hero: amber, violet and blue. Static. */
 .fp-aurora {
   background:
-    radial-gradient(60% 50% at 50% 0%, oklch(0.82 0.145 75 / 18%), transparent 70%),
-    radial-gradient(40% 40% at 85% 20%, oklch(0.6 0.12 262 / 22%), transparent 70%);
+    radial-gradient(55% 55% at 50% -5%, oklch(0.82 0.145 75 / 26%), transparent 70%),
+    radial-gradient(45% 45% at 92% 18%, oklch(0.62 0.2 285 / 28%), transparent 70%),
+    radial-gradient(40% 40% at 5% 80%, oklch(0.6 0.15 240 / 22%), transparent 70%);
+}
+
+/* Fine grid that fades out toward the edges. */
+.fp-grid-bg {
+  background-image:
+    linear-gradient(oklch(1 0 0 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 5%) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+/* Gold to orange gradient text. First and last stops match, so the shimmer loops cleanly. */
+.fp-gradient-text {
+  background-image: linear-gradient(
+    100deg,
+    oklch(0.9 0.13 90) 0%,
+    oklch(0.8 0.16 70) 35%,
+    oklch(0.72 0.18 35) 65%,
+    oklch(0.9 0.13 90) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glowing dot, used on the orbit ring. */
+.fp-dot {
+  box-shadow: 0 0 18px 4px oklch(0.82 0.145 75 / 60%);
+}
+
+/* Spotlight card: an amber light follows the mouse. Needs --mx and --my from script. */
+.fp-spot {
+  position: relative;
+  isolation: isolate;
+}
+.fp-spot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    oklch(0.82 0.145 75 / 18%),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.fp-spot:hover::before {
+  opacity: 1;
+}
+
+/* Marquee: without motion, show the categories as a wrapped row instead. */
+.fp-marquee-track {
+  display: flex;
+  width: max-content;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fp-marquee-track {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .fp-marquee-dup {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   @keyframes fp-fade-up {
     from {
       opacity: 0;
-      transform: translateY(14px);
+      transform: translateY(18px);
     }
     to {
       opacity: 1;
@@ -102,10 +173,10 @@
   @keyframes fp-float {
     0%,
     100% {
-      transform: translateY(0);
+      transform: translateY(0) rotate(-2deg);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-22px) rotate(2deg);
     }
   }
 
@@ -113,29 +184,70 @@
     0%,
     100% {
       opacity: 0.35;
+      transform: scale(0.95);
     }
     50% {
-      opacity: 0.6;
+      opacity: 0.75;
+      transform: scale(1.08);
     }
   }
 
-  /* Fades in on page load. Set --fp-i (0, 1, 2...) on the element to stagger. */
+  @keyframes fp-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fp-spin-rev {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes fp-shimmer {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes fp-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   .fp-reveal {
-    animation: fp-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: calc(var(--fp-i, 0) * 80ms);
+    animation: fp-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--fp-i, 0) * 90ms);
   }
 
-  /* Gentle floating, for the big "5". */
   .fp-float {
-    animation: fp-float 6s ease-in-out infinite;
+    animation: fp-float 7s ease-in-out infinite;
   }
 
-  /* Slow breathing glow. */
   .fp-glow {
     animation: fp-glow 5s ease-in-out infinite;
   }
 
-  /* Card lifts and gets an amber edge on hover. */
+  .fp-spin {
+    animation: fp-spin 40s linear infinite;
+  }
+
+  .fp-spin-rev {
+    animation: fp-spin-rev 60s linear infinite;
+  }
+
+  .fp-gradient-text {
+    animation: fp-shimmer 8s linear infinite;
+  }
+
+  .fp-marquee-track {
+    animation: fp-marquee 45s linear infinite;
+  }
+  .fp-marquee:hover .fp-marquee-track {
+    animation-play-state: paused;
+  }
+
   .fp-lift {
     transition:
       transform 0.25s ease,
@@ -143,12 +255,11 @@
       box-shadow 0.25s ease;
   }
   .fp-lift:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     border-color: oklch(0.82 0.145 75 / 45%);
-    box-shadow: 0 18px 40px -18px oklch(0.82 0.145 75 / 35%);
+    box-shadow: 0 20px 44px -18px oklch(0.82 0.145 75 / 40%);
   }
 
-  /* Fades in while scrolling into view. Browsers without support show it normally. */
   @supports (animation-timeline: view()) {
     .fp-scroll {
       animation: fp-fade-up linear both;
