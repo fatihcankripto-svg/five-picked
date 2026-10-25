@@ -43,6 +43,7 @@ export function SiteHeader() {
   }
 
   const activeCategory = pathname.split('/')[1]
+  const onGuides = pathname.startsWith('/guides')
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
@@ -86,6 +87,13 @@ export function SiteHeader() {
               </div>
             )}
           </div>
+          <Link
+            href="/guides"
+            aria-current={onGuides ? 'page' : undefined}
+            className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground aria-[current=page]:text-foreground"
+          >
+            Guides
+          </Link>
           <Link
             href="/how-we-choose"
             aria-current={pathname === '/how-we-choose' ? 'page' : undefined}
@@ -135,6 +143,14 @@ export function SiteHeader() {
             ))}
           </ul>
           <div className="mt-4 border-t border-border pt-4">
+            <Link
+              href="/guides"
+              onClick={closeAll}
+              aria-current={onGuides ? 'page' : undefined}
+              className="block rounded-lg px-3 py-3 text-base text-foreground hover:bg-accent aria-[current=page]:text-primary"
+            >
+              Guides
+            </Link>
             <Link
               href="/how-we-choose"
               onClick={closeAll}
