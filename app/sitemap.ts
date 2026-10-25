@@ -4,6 +4,9 @@ import { absoluteUrl, staticPages } from '@/lib/site'
 
 export const dynamic = 'force-static'
 
+const guidesLastModified = new Date('2026-10-25T00:00:00Z')
+const guidePaths = ['/guides/hostinger-vs-bluehost']
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(`${lastUpdated}T00:00:00Z`)
 
@@ -16,9 +19,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ])
 
+  const guidePages = [
+    { url: absoluteUrl('/guides'), lastModified: guidesLastModified, priority: 0.7 },
+    ...guidePaths.map((path) => ({
+      url: absoluteUrl(path),
+      lastModified: guidesLastModified,
+      priority: 0.7,
+    })),
+  ]
+
   return [
     { url: absoluteUrl('/'), lastModified, priority: 1 },
     ...listPages,
+    ...guidePages,
     ...staticPages.map((page) => ({ url: absoluteUrl(page.href), lastModified, priority: 0.5 })),
   ]
 }
