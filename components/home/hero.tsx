@@ -23,7 +23,7 @@ export function Hero() {
       <div aria-hidden="true" className="fp-aurora pointer-events-none absolute inset-0" />
       <div aria-hidden="true" className="fp-grid-bg pointer-events-none absolute inset-0" />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-5 pb-14 pt-12 sm:px-8 md:grid-cols-[1.2fr_1fr] md:gap-10 md:pb-20 md:pt-20">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-4 px-5 pb-14 pt-8 sm:px-8 md:grid-cols-[1.2fr_1fr] md:gap-10 md:pb-20 md:pt-20">
         <div className="order-2 md:order-1">
           <p
             className="fp-reveal text-xs font-medium uppercase tracking-[0.2em] text-primary"
@@ -35,7 +35,9 @@ export function Hero() {
             className="fp-reveal mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl"
             style={delay(1)}
           >
-            The <span className="fp-gradient-text">5 best tools</span>, hand-picked for you
+            The{' '}
+            <span className="font-bold text-primary [text-shadow:0_0_32px_oklch(0.82_0.145_75/55%)]">5</span>{' '}
+            best tools, <span className="whitespace-nowrap">hand-picked</span> for you
           </h1>
           <p
             className="fp-reveal mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty"
@@ -82,7 +84,7 @@ export function Hero() {
           className="fp-reveal order-1 flex justify-center md:order-2 md:justify-end"
           style={delay(3)}
         >
-          <div className="relative flex aspect-square w-[15rem] items-center justify-center sm:w-[20rem] md:w-[24rem] lg:w-[28rem]">
+          <div className="relative flex aspect-square w-[12.5rem] items-center justify-center sm:w-[20rem] md:w-[24rem] lg:w-[28rem]">
             <span className="fp-glow absolute inset-[12%] rounded-full bg-primary/30 blur-3xl" />
 
             <div className="fp-spin absolute inset-0 rounded-full border border-dashed border-primary/30">
@@ -99,7 +101,7 @@ export function Hero() {
 
             <div className="fp-spin-rev absolute inset-[10%] rounded-full border border-border" />
 
-            <span className="fp-float fp-gradient-text relative select-none text-[9rem] font-bold leading-none tracking-tighter sm:text-[12.5rem] md:text-[15rem] lg:text-[18rem]">
+            <span className="fp-float fp-gradient-text relative select-none text-[7.5rem] font-bold leading-none tracking-tighter sm:text-[12.5rem] md:text-[15rem] lg:text-[18rem]">
               5
             </span>
           </div>
