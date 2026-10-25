@@ -9,6 +9,16 @@ export const metadata = contentMetadata({
 
 const guides = [
   {
+    href: '/guides/best-ai-video-tools-for-beginners',
+    title: 'Best AI video tools for beginners',
+    summary: 'What Pictory, Fliki, Synthesia, Kling AI and ElevenLabs each do best.',
+  },
+  {
+    href: '/guides/shared-vs-cloud-vs-managed-wordpress-hosting',
+    title: 'Shared vs cloud vs managed WordPress hosting',
+    summary: 'The main hosting types explained, and which one you actually need.',
+  },
+  {
     href: '/guides/how-to-choose-a-vpn',
     title: 'How to choose a VPN',
     summary: 'What a VPN does, what to check before you pick one, and which suits you.',
