@@ -9,6 +9,7 @@ export function RankBadge({ rank, size = 'lg' }: { rank: number; size?: 'sm' | '
         rank === 1
           ? 'bg-primary text-primary-foreground'
           : 'border border-primary/40 text-primary',
+        rank === 1 && size === 'lg' && 'shadow-[0_0_28px_-4px] shadow-primary/70',
       )}
     >
       <span className="sr-only">Rank </span>
