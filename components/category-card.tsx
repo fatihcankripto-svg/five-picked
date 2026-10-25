@@ -60,6 +60,7 @@ export function CategoryCard({
   name,
   description,
   meta,
+  number,
   headingLevel = 'h3',
 }: {
   href: string
@@ -67,6 +68,7 @@ export function CategoryCard({
   name: string
   description: string
   meta: string
+  number?: string
   headingLevel?: 'h2' | 'h3'
 }) {
   const Icon = icons[slug] ?? Layers
@@ -82,10 +84,20 @@ export function CategoryCard({
         <span className="flex size-10 items-center justify-center rounded-xl bg-secondary text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
           <Icon aria-hidden="true" className="size-5" />
         </span>
-        <ArrowUpRight
-          aria-hidden="true"
-          className="size-5 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
-        />
+        <div className="flex items-center gap-3">
+          {number && (
+            <span
+              aria-hidden="true"
+              className="text-xs font-semibold tabular-nums tracking-[0.2em] text-muted-foreground/70"
+            >
+              {number}
+            </span>
+          )}
+          <ArrowUpRight
+            aria-hidden="true"
+            className="size-5 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
+          />
+        </div>
       </div>
       <Heading className="mt-6 text-lg font-semibold text-foreground text-pretty">{name}</Heading>
       <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{description}</p>
