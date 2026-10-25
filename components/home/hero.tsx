@@ -26,18 +26,26 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-4 px-5 pb-14 pt-8 sm:px-8 md:grid-cols-[1.2fr_1fr] md:gap-10 md:pb-20 md:pt-20">
         <div className="order-2 md:order-1">
           <p
-            className="fp-reveal text-xs font-medium uppercase tracking-[0.2em] text-primary"
+            className="fp-reveal inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-primary"
             style={delay(0)}
           >
+            <span
+              aria-hidden="true"
+              className="size-1.5 rounded-full bg-primary shadow-[0_0_10px_2px] shadow-primary/70"
+            />
             Independent recommendations
           </p>
           <h1
-            className="fp-reveal mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl"
+            className="fp-reveal mt-6 text-[1.95rem] font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             style={delay(1)}
           >
-            The{' '}
-            <span className="font-bold text-primary [text-shadow:0_0_32px_oklch(0.82_0.145_75/55%)]">5</span>{' '}
-            best tools, <span className="whitespace-nowrap">hand-picked</span> for you
+            <span className="block">The 5 best tools,</span>
+            <span className="block">
+              <span className="inline-block whitespace-nowrap bg-linear-to-r from-[oklch(0.94_0.09_92)] to-[oklch(0.8_0.14_75)] bg-clip-text pb-1 pr-1 font-serif font-medium italic text-transparent">
+                hand-picked
+              </span>{' '}
+              for you
+            </span>
           </h1>
           <p
             className="fp-reveal mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty"
