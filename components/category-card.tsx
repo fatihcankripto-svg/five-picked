@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import type { MouseEvent } from 'react'
 import {
   ArrowUpRight,
   Bot,
@@ -45,6 +48,12 @@ const icons: Record<string, LucideIcon> = {
   automation: Workflow,
 }
 
+function followMouse(event: MouseEvent<HTMLAnchorElement>) {
+  const rect = event.currentTarget.getBoundingClientRect()
+  event.currentTarget.style.setProperty('--mx', `${event.clientX - rect.left}px`)
+  event.currentTarget.style.setProperty('--my', `${event.clientY - rect.top}px`)
+}
+
 export function CategoryCard({
   href,
   slug,
@@ -66,10 +75,11 @@ export function CategoryCard({
   return (
     <Link
       href={href}
-      className="fp-lift group flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40 hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2"
+      onMouseMove={followMouse}
+      className="fp-lift fp-spot group flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40 hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2"
     >
       <div className="flex items-start justify-between">
-        <span className="flex size-10 items-center justify-center rounded-xl bg-secondary text-primary transition-transform duration-300 group-hover:scale-110">
+        <span className="flex size-10 items-center justify-center rounded-xl bg-secondary text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
           <Icon aria-hidden="true" className="size-5" />
         </span>
         <ArrowUpRight
