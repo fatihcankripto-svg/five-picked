@@ -1,17 +1,27 @@
 import Link from 'next/link'
 import { categories } from '@/data/categories'
 import { Logo } from '@/components/logo'
+import { FiveDots } from '@/components/five-dots'
 import { siteConfig, staticPages } from '@/lib/site'
 
 export function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="mt-24 border-t border-border">
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+    <footer className="relative mt-24 overflow-hidden border-t border-border">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-20 -right-6 select-none text-[22rem] font-bold leading-none tracking-tighter text-primary/[0.05]"
+      >
+        5
+      </span>
+
+      <div className="relative mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
             <Logo />
+            <FiveDots />
+            <p className="text-sm font-medium text-foreground">Five picks. No more, no less.</p>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               {siteConfig.tagline} An independent recommendation site.
             </p>
