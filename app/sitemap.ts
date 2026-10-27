@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { categories, lastUpdated } from '@/data/categories'
+import { reviews } from '@/data/reviews'
 import { absoluteUrl, staticPages } from '@/lib/site'
 
 export const dynamic = 'force-static'
@@ -37,9 +38,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 
+  const reviewPages = reviews.map((review) => ({
+    url: absoluteUrl(`/reviews/${review.toolSlug}`),
+    lastModified: new Date(`${review.updated}T00:00:00Z`),
+    priority: 0.8,
+  }))
+
   return [
     { url: absoluteUrl('/'), lastModified, priority: 1 },
     ...listPages,
+    ...reviewPages,
     ...guidePages,
     ...staticPages.map((page) => ({ url: absoluteUrl(page.href), lastModified, priority: 0.5 })),
   ]
