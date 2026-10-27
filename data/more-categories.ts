@@ -430,6 +430,25 @@ export const extraCategories: Category[] = [
               startingPrice: 'Free trial available; paid from about $79/year',
               officialUrl: 'https://www.tiller.com/',
             },
+                        {
+              slug: 'changed',
+              name: 'Changed',
+              tagline: 'Round up your everyday spending and put the change toward your debt.',
+              bestFor: 'People paying off student loans or other debt who want to do it on autopilot',
+              whatItDoes:
+                'Changed is a debt payoff app. It tracks your spending, rounds each purchase up to the next dollar, and sends the saved change toward your loans or credit cards.',
+              strengths: [
+                'Round-ups make extra payments without much effort',
+                'Savings goals, such as an emergency fund, in the same app',
+                'Progress tracking so you can see your debt shrink',
+                'Works for student loans, credit cards, mortgages and more',
+              ],
+              goodToKnow:
+                'It is a debt payoff tool more than a classic budgeting app, and it is a US service. Changed is not a bank, so read the account terms before you sign up.',
+              startingPrice: 'From about $6/month',
+              officialUrl: 'https://www.gochanged.com/',
+            },
+
             {
               slug: 'finaciti',
               name: 'Finaciti',
