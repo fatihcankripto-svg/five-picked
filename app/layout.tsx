@@ -8,6 +8,12 @@ import './globals.css'
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
+// Impact site verification (value attribute, as Impact requires)
+const impactVerification = {
+  value: '98978513-749d-4770-bc38-46b0733c82e9',
+  content: '98978513-749d-4770-bc38-46b0733c82e9',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -47,6 +53,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
+      <head>
+        <meta name="impact-site-verification" {...impactVerification} />
+      </head>
       <body className="flex min-h-dvh flex-col font-sans antialiased">
         <a
           href="#main"
