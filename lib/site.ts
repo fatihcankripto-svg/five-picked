@@ -1,4 +1,5 @@
-import { categories, type Category, type Subcategory, type Tool } from '@/data/categories'
+import { type Category, type Subcategory, type Tool } from '@/data/categories'
+import { allCategories } from '@/data/all-categories'
 
 export const siteConfig = {
   name: 'FIVE PICKED',
@@ -21,7 +22,7 @@ export const staticPages = [
 ] as const
 
 export function getCategory(slug: string): Category | undefined {
-  return categories.find((category) => category.slug === slug)
+  return allCategories.find((category) => category.slug === slug)
 }
 
 export function getSubcategory(
