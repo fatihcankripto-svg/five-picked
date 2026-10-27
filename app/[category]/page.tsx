@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { categories } from '@/data/categories'
+import { allCategories } from '@/data/all-categories'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CategoryCard } from '@/components/category-card'
 import { RankedList } from '@/components/ranked-list'
@@ -10,7 +10,7 @@ import { getCategory } from '@/lib/site'
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return categories.map((category) => ({ category: category.slug }))
+  return allCategories.map((category) => ({ category: category.slug }))
 }
 
 type Props = { params: Promise<{ category: string }> }
@@ -20,10 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategory(slug)
   if (!category) return {}
 
-  const isHub = Boolean(category.subcategories)
-  const title = isHub ? `${category.name}: 5 Categories, 5 Picks Each` : `${category.name}: The 5 Best Picks`
+  const subCount = category.subcategories?.length ?? 0
+  const isHub = subCount > 0
+  const title = isHub
+    ? `${category.name}: ${subCount} Categories, 5 Picks Each`
+    : `${category.name}: The 5 Best Picks`
   const description = isHub
-    ? `${category.description} Explore 5 focused categories, each with exactly 5 hand-picked tools.`
+    ? `${category.description} Explore ${subCount} focused categories, each with exactly 5 hand-picked tools.`
     : `${category.description} See our 5 hand-picked tools, ranked 1 to 5.`
   const path = `/${category.slug}`
 
@@ -54,11 +57,13 @@ export default async function CategoryPage({ params }: Props) {
     )
   }
 
+  const subCount = category.subcategories?.length ?? 0
+
   return (
     <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
       <Breadcrumbs items={[{ label: category.name }]} />
       <header className="mt-10 max-w-3xl">
-        <SectionMarker label="5 categories" />
+        <SectionMarker label={`${subCount} categories`} />
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
           {category.name}
         </h1>
