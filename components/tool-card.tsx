@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { Check, Info, Star } from 'lucide-react'
 import type { Tool } from '@/data/categories'
+import { getReview } from '@/data/reviews'
 import { RankBadge } from '@/components/rank-badge'
 import { VisitButton } from '@/components/visit-button'
 import { cn } from '@/lib/utils'
@@ -7,6 +9,7 @@ import { cn } from '@/lib/utils'
 export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
   const headingId = `${tool.slug}-heading`
   const isTop = rank === 1
+  const review = getReview(tool.slug)
 
   return (
     <div className="fp-scroll">
@@ -76,7 +79,17 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
           <p className="text-sm text-muted-foreground">
             Starting price: <span className="font-semibold text-foreground">{tool.startingPrice}</span>
           </p>
-          <VisitButton tool={tool} />
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            {review && (
+              <Link
+                href={`/reviews/${review.toolSlug}`}
+                className="inline-flex h-10 items-center justify-center rounded-lg border border-border px-4 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-accent"
+              >
+                Read our review
+              </Link>
+            )}
+            <VisitButton tool={tool} />
+          </div>
         </footer>
       </article>
     </div>
