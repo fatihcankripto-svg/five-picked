@@ -1,20 +1,15 @@
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { categories } from '@/data/categories'
+import { allCategories } from '@/data/all-categories'
+import { countAllLiveTools } from '@/lib/category-stats'
 import { CountUp } from '@/components/count-up'
 
 const delay = (i: number) => ({ '--fp-i': i }) as CSSProperties
 
-const toolCount = categories.reduce((total, category) => {
-  const direct = category.tools?.length ?? 0
-  const nested = (category.subcategories ?? []).reduce((sum, sub) => sum + sub.tools.length, 0)
-  return total + direct + nested
-}, 0)
-
 const stats = [
-  { value: categories.length, label: 'Categories' },
-  { value: toolCount, label: 'Hand-picked tools' },
+  { value: allCategories.length, label: 'Categories' },
+  { value: countAllLiveTools(), label: 'Hand-picked tools' },
   { value: 5, label: 'Picks in every list' },
 ]
 
