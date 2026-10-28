@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
-import { categories } from '@/data/categories'
+import { allCategories } from '@/data/all-categories'
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
 
@@ -75,7 +75,7 @@ export function SiteHeader() {
                 className="absolute right-0 top-full mt-2 w-[34rem] rounded-xl border border-border bg-popover p-2 shadow-2xl shadow-black/40 animate-in fade-in-0"
               >
                 <ul className="grid grid-cols-2 gap-1">
-                  {categories.map((category) => (
+                  {allCategories.map((category) => (
                     <li key={category.slug}>
                       <Link
                         href={`/${category.slug}`}
@@ -133,7 +133,7 @@ export function SiteHeader() {
             Categories
           </p>
           <ul className="flex flex-col">
-            {categories.map((category) => (
+            {allCategories.map((category) => (
               <li key={category.slug}>
                 <Link
                   href={`/${category.slug}`}
