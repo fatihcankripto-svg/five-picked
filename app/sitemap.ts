@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { categories, lastUpdated } from '@/data/categories'
+import { lastUpdated, type Tool } from '@/data/categories'
+import { allCategories } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
 import { absoluteUrl, staticPages } from '@/lib/site'
 
@@ -17,17 +18,29 @@ const guidePaths = [
   '/guides/best-ai-meeting-note-takers',
 ]
 
+/** A list is "full" when none of its 5 slots is a "Coming soon" placeholder. */
+function isFull(tools: Tool[]) {
+  return tools.every((tool) => (tool as Tool & { comingSoon?: boolean }).comingSoon !== true)
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(`${lastUpdated}T00:00:00Z`)
 
-  const listPages = categories.flatMap((category) => [
-    { url: absoluteUrl(`/${category.slug}`), lastModified, priority: 0.9 },
-    ...(category.subcategories ?? []).map((sub) => ({
-      url: absoluteUrl(`/${category.slug}/${sub.slug}`),
-      lastModified,
-      priority: 0.8,
-    })),
-  ])
+  const listPages = allCategories.flatMap((category) => {
+    const fullSubs = (category.subcategories ?? []).filter((sub) => isFull(sub.tools))
+    const categoryIsReady = category.tools ? isFull(category.tools) : fullSubs.length > 0
+
+    if (!categoryIsReady) return []
+
+    return [
+      { url: absoluteUrl(`/${category.slug}`), lastModified, priority: 0.9 },
+      ...fullSubs.map((sub) => ({
+        url: absoluteUrl(`/${category.slug}/${sub.slug}`),
+        lastModified,
+        priority: 0.8,
+      })),
+    ]
+  })
 
   const guidePages = [
     { url: absoluteUrl('/guides'), lastModified: guidesLastModified, priority: 0.7 },
