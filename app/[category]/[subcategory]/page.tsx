@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { categories } from '@/data/categories'
+import { allCategories } from '@/data/all-categories'
 import { RankedList } from '@/components/ranked-list'
 import { getCategory, getSubcategory } from '@/lib/site'
 
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return categories.flatMap((category) =>
+  return allCategories.flatMap((category) =>
     (category.subcategories ?? []).map((sub) => ({
       category: category.slug,
       subcategory: sub.slug,
