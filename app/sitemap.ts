@@ -4,6 +4,7 @@ import { allCategories } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
 import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
 import { absoluteUrl, staticPages } from '@/lib/site'
+import { freePages, freePagesUpdated } from '@/lib/free-pages'
 
 export const dynamic = 'force-static'
 
@@ -59,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const alternativesModified = new Date(`${alternativesUpdated}T00:00:00Z`)
+  { url: absoluteUrl('/free'), lastModified: new Date(`${freePagesUpdated}T00:00:00Z`), priority: 0.8 },
+...freePages.map((page) => ({
+  url: absoluteUrl(`/free/${page.slug}`),
+  lastModified: new Date(`${freePagesUpdated}T00:00:00Z`),
+  priority: 0.7,
+})),
   const alternativePages = [
     { url: absoluteUrl('/alternatives'), lastModified: alternativesModified, priority: 0.6 },
     ...getAllAlternativePages().map((page) => ({
