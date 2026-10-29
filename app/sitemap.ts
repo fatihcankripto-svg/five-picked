@@ -4,6 +4,7 @@ import { allCategories } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
 import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
 import { freePages, freePagesUpdated } from '@/lib/free-pages'
+import { comparePages, comparePagesUpdated } from '@/lib/compare-pages'
 const toolsLastModified = new Date('2026-10-29T00:00:00Z')
 import { absoluteUrl, staticPages } from '@/lib/site'
 
@@ -87,6 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...guidePages,
     ...alternativePages,
     ...freeRoutes,
+    { url: absoluteUrl('/compare'), lastModified: new Date(`${comparePagesUpdated}T00:00:00Z`), priority: 0.7 },
+...comparePages.map((page) => ({
+  url: absoluteUrl(`/compare/${page.slug}`),
+  lastModified: new Date(`${comparePagesUpdated}T00:00:00Z`),
+  priority: 0.7,
+})),
     { url: absoluteUrl('/tools/text-to-speech-duration'), lastModified: toolsLastModified, priority: 0.8 },
     { url: absoluteUrl('/tools/freelance-fee-calculator'), lastModified: toolsLastModified, priority: 0.8 },
     ...staticPages.map((page) => ({ url: absoluteUrl(page.href), lastModified, priority: 0.5 })),
