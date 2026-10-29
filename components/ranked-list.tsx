@@ -5,6 +5,7 @@ import { Breadcrumbs, type Crumb } from '@/components/breadcrumbs'
 import { ComparisonTable } from '@/components/comparison-table'
 import { SectionMarker } from '@/components/section-marker'
 import { ToolCard } from '@/components/tool-card'
+import { getAllAlternativePages } from '@/lib/alternatives'
 import { absoluteUrl, formatDate, getOutboundLink } from '@/lib/site'
 
 export function RankedList({
@@ -38,6 +39,11 @@ export function RankedList({
       url: getOutboundLink(tool).href,
     })),
   }
+
+  // Alternatives pages that exist for tools in this list. Empty list = section hidden.
+  const alternativePages = getAllAlternativePages().filter((page) =>
+    tools.some((tool) => tool.slug === page.slug),
+  )
 
   return (
     <div className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
@@ -98,6 +104,29 @@ export function RankedList({
           ))}
         </ol>
       </section>
+
+      {alternativePages.length > 0 && (
+        <section aria-labelledby="alternatives" className="mt-14">
+          <h2 id="alternatives" className="text-xl font-semibold text-foreground">
+            Not sure about a pick? See the alternatives
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            Each page shows the other four tools in this list and explains when each one makes more sense.
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-3">
+            {alternativePages.map((page) => (
+              <li key={page.slug}>
+                <Link
+                  href={`/alternatives/${page.slug}`}
+                  className="fp-lift inline-block rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground hover:text-primary"
+                >
+                  {page.tool.name} alternatives
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <aside className="mt-14 rounded-2xl border border-border p-6 text-sm leading-relaxed text-muted-foreground">
         Rankings reflect our independent judgment of fit, quality and value for most people. Commissions never
