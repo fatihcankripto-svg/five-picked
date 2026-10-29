@@ -3,8 +3,8 @@ import { lastUpdated, type Tool } from '@/data/categories'
 import { allCategories } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
 import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
-import { absoluteUrl, staticPages } from '@/lib/site'
 import { freePages, freePagesUpdated } from '@/lib/free-pages'
+import { absoluteUrl, staticPages } from '@/lib/site'
 
 export const dynamic = 'force-static'
 
@@ -58,12 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(`${review.updated}T00:00:00Z`),
     priority: 0.8,
   }))
-{ url: absoluteUrl('/free'), lastModified: new Date(`${freePagesUpdated}T00:00:00Z`), priority: 0.8 },
-...freePages.map((page) => ({
-  url: absoluteUrl(`/free/${page.slug}`),
-  lastModified: new Date(`${freePagesUpdated}T00:00:00Z`),
-  priority: 0.7,
-})),
+
   const alternativesModified = new Date(`${alternativesUpdated}T00:00:00Z`)
   const alternativePages = [
     { url: absoluteUrl('/alternatives'), lastModified: alternativesModified, priority: 0.6 },
@@ -74,12 +69,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 
+  const freeModified = new Date(`${freePagesUpdated}T00:00:00Z`)
+  const freeRoutes = [
+    { url: absoluteUrl('/free'), lastModified: freeModified, priority: 0.8 },
+    ...freePages.map((page) => ({
+      url: absoluteUrl(`/free/${page.slug}`),
+      lastModified: freeModified,
+      priority: 0.7,
+    })),
+  ]
+
   return [
     { url: absoluteUrl('/'), lastModified, priority: 1 },
     ...listPages,
     ...reviewPages,
     ...guidePages,
     ...alternativePages,
+    ...freeRoutes,
     ...staticPages.map((page) => ({ url: absoluteUrl(page.href), lastModified, priority: 0.5 })),
   ]
 }
