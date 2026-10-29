@@ -5,6 +5,7 @@ import { reviews } from '@/data/reviews'
 import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
 import { freePages, freePagesUpdated } from '@/lib/free-pages'
 import { comparePages, comparePagesUpdated } from '@/lib/compare-pages'
+import { quizPages, quizPagesUpdated } from '@/lib/quiz-pages'
 const toolsLastModified = new Date('2026-10-29T00:00:00Z')
 import { absoluteUrl, staticPages } from '@/lib/site'
 
@@ -92,6 +93,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 ...comparePages.map((page) => ({
   url: absoluteUrl(`/compare/${page.slug}`),
   lastModified: new Date(`${comparePagesUpdated}T00:00:00Z`),
+  priority: 0.7,
+})),
+    { url: absoluteUrl('/quiz'), lastModified: new Date(`${quizPagesUpdated}T00:00:00Z`), priority: 0.7 },
+...quizPages.map((page) => ({
+  url: absoluteUrl(`/quiz/${page.slug}`),
+  lastModified: new Date(`${quizPagesUpdated}T00:00:00Z`),
   priority: 0.7,
 })),
     { url: absoluteUrl('/tools/text-to-speech-duration'), lastModified: toolsLastModified, priority: 0.8 },
