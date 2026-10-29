@@ -87,6 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...guidePages,
     ...alternativePages,
     ...freeRoutes,
+    { url: absoluteUrl('/tools/text-to-speech-duration'), lastModified: toolsLastModified, priority: 0.8 },
     { url: absoluteUrl('/tools/freelance-fee-calculator'), lastModified: toolsLastModified, priority: 0.8 },
     ...staticPages.map((page) => ({ url: absoluteUrl(page.href), lastModified, priority: 0.5 })),
   ]
