@@ -17,13 +17,13 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
         id={tool.slug}
         aria-labelledby={headingId}
         className={cn(
-          'fp-lift relative isolate overflow-hidden rounded-2xl border bg-card p-6 transition-colors hover:border-primary/25 sm:p-8',
-          isTop ? 'border-primary/40 bg-linear-to-br from-primary/[0.08] to-card' : 'border-border',
+          'relative isolate overflow-hidden rounded-3xl p-6 sm:p-10 transition-all duration-500',
+          isTop ? 'fp-card-top-pick' : 'fp-card-glass'
         )}
       >
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -right-2 -top-4 -z-10 select-none text-[8rem] font-bold leading-none tracking-tighter text-foreground/[0.04] sm:text-[11rem]"
+          className="pointer-events-none absolute -right-4 -top-8 -z-10 select-none text-[10rem] font-bold leading-none tracking-tighter text-foreground/[0.03] sm:text-[14rem]"
         >
           {rank}
         </span>
@@ -32,34 +32,36 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
           <RankBadge rank={rank} />
           <div className="min-w-0">
             {isTop && (
-              <span className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-widest text-primary">
-                <Star aria-hidden="true" className="size-3 fill-primary" />
+              <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-primary/50 bg-primary/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary shadow-[0_0_15px_-3px] shadow-primary/40">
+                <Star aria-hidden="true" className="size-3.5 fill-primary" />
                 Top pick
               </span>
             )}
-            <h3 id={headingId} className="text-2xl font-semibold text-foreground">
+            <h3 id={headingId} className={cn("text-2xl sm:text-3xl font-bold tracking-tight", isTop ? "text-primary" : "text-foreground")}>
               {tool.name}
             </h3>
-            <p className="mt-1 leading-relaxed text-muted-foreground text-pretty">{tool.tagline}</p>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground/90 text-pretty">{tool.tagline}</p>
           </div>
         </header>
 
-        <div className="mt-6 inline-flex flex-wrap items-baseline gap-x-2 gap-y-1 rounded-lg bg-secondary px-3 py-2 text-sm">
-          <span className="font-medium uppercase tracking-widest text-primary text-xs">Best for</span>
-          <span className="text-foreground">{tool.bestFor}</span>
+        <div className="mt-8 inline-flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl bg-background/40 border border-white/5 px-4 py-2.5 text-sm backdrop-blur-sm">
+          <span className="font-bold uppercase tracking-widest text-primary text-xs">Best for</span>
+          <span className="text-foreground font-medium">{tool.bestFor}</span>
         </div>
 
-        <div className="mt-6 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h4 className="text-sm font-semibold text-foreground">What it does</h4>
-            <p className="mt-2 leading-relaxed text-muted-foreground">{tool.whatItDoes}</p>
+            <h4 className="text-sm font-bold text-foreground tracking-wide uppercase">What it does</h4>
+            <p className="mt-3 leading-relaxed text-muted-foreground/90">{tool.whatItDoes}</p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-foreground">Strengths</h4>
-            <ul className="mt-2 flex flex-col gap-2">
+            <h4 className="text-sm font-bold text-foreground tracking-wide uppercase">Strengths</h4>
+            <ul className="mt-3 flex flex-col gap-3">
               {tool.strengths.map((strength) => (
-                <li key={strength} className="flex gap-2.5 text-sm leading-relaxed text-muted-foreground">
-                  <Check aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" />
+                <li key={strength} className="flex gap-3 text-sm leading-relaxed text-muted-foreground/90">
+                  <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <Check aria-hidden="true" className="size-3 text-primary" />
+                  </span>
                   {strength}
                 </li>
               ))}
@@ -67,23 +69,23 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
           </div>
         </div>
 
-        <div className="mt-6 flex gap-3 rounded-xl border border-border p-4">
-          <Info aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+        <div className="mt-8 flex gap-4 rounded-2xl bg-background/30 border border-white/5 p-5">
+          <Info aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-primary/70" />
           <p className="text-sm leading-relaxed text-muted-foreground">
-            <span className="font-semibold text-foreground">Good to know: </span>
+            <span className="font-bold text-foreground">Good to know: </span>
             {tool.goodToKnow}
           </p>
         </div>
 
-        <footer className="mt-6 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <footer className="mt-8 flex flex-col gap-5 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
-            Starting price: <span className="font-semibold text-foreground">{tool.startingPrice}</span>
+            Starting price: <span className="font-bold text-foreground text-base">{tool.startingPrice}</span>
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             {review && (
               <Link
                 href={`/reviews/${review.toolSlug}`}
-                className="inline-flex h-10 items-center justify-center rounded-lg border border-border px-4 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-accent"
+                className="inline-flex h-11 items-center justify-center rounded-xl bg-background/50 border border-white/10 px-5 text-sm font-semibold text-foreground transition-all hover:bg-accent hover:border-primary/30"
               >
                 Read our review
               </Link>
