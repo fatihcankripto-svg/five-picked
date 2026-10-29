@@ -8,6 +8,14 @@ import { allCategories } from '@/data/all-categories'
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
 
+const primaryLinks = [
+  { href: '/compare', label: 'Compare' },
+  { href: '/quiz', label: 'Quiz' },
+  { href: '/free', label: 'Free tools' },
+  { href: '/guides', label: 'Guides' },
+  { href: '/how-we-choose', label: 'How we choose' },
+] as const
+
 export function SiteHeader() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -43,7 +51,8 @@ export function SiteHeader() {
   }
 
   const activeCategory = pathname.split('/')[1]
-  const onGuides = pathname.startsWith('/guides')
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/')
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
@@ -91,20 +100,17 @@ export function SiteHeader() {
               </div>
             )}
           </div>
-          <Link
-            href="/guides"
-            aria-current={onGuides ? 'page' : undefined}
-            className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground aria-[current=page]:text-foreground"
-          >
-            Guides
-          </Link>
-          <Link
-            href="/how-we-choose"
-            aria-current={pathname === '/how-we-choose' ? 'page' : undefined}
-            className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground aria-[current=page]:text-foreground"
-          >
-            How we choose
-          </Link>
+
+          {primaryLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground aria-[current=page]:text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <button
@@ -146,23 +152,24 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 border-t border-border pt-4">
-            <Link
-              href="/guides"
-              onClick={closeAll}
-              aria-current={onGuides ? 'page' : undefined}
-              className="block rounded-lg px-3 py-3 text-base text-foreground hover:bg-accent aria-[current=page]:text-primary"
-            >
-              Guides
-            </Link>
-            <Link
-              href="/how-we-choose"
-              onClick={closeAll}
-              className="block rounded-lg px-3 py-3 text-base text-foreground hover:bg-accent"
-            >
-              How we choose
-            </Link>
-          </div>
+
+          <p className="mt-6 px-3 pb-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+            More
+          </p>
+          <ul className="flex flex-col">
+            {primaryLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={closeAll}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                  className="block rounded-lg px-3 py-3 text-base text-foreground hover:bg-accent aria-[current=page]:text-primary"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
       )}
     </header>
