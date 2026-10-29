@@ -84,6 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: absoluteUrl('/'), lastModified, priority: 1 },
+    { url: absoluteUrl('/categories'), lastModified, priority: 0.9 },
     ...listPages,
     ...reviewPages,
     ...guidePages,
