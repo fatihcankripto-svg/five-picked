@@ -67,6 +67,18 @@ export function SiteHeader() {
     setMobileCategoriesOpen(false)
   }, [pathname])
 
+  // Scroll kilidi: menü açıldığında arka plan kaymasın
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
   const closeAll = () => {
     setOpenDesktop(null)
     setMobileOpen(false)
@@ -88,7 +100,7 @@ export function SiteHeader() {
         <div
           aria-hidden="true"
           onClick={closeAll}
-          className="fixed inset-0 top-16 z-40 bg-background/80 backdrop-blur-sm"
+          className="fixed inset-0 top-16 z-40 bg-background/80 backdrop-blur-md animate-in fade-in-0"
         />
       )}
 
@@ -105,9 +117,9 @@ export function SiteHeader() {
                   href={section.href}
                   aria-current={isActive(section.href) ? 'page' : undefined}
                   className={cn(
-                    'rounded-md px-3.5 py-2 text-base font-semibold transition-colors',
+                    'rounded-md px-3.5 py-2 text-base font-semibold transition-all duration-300',
                     isActive(section.href)
-                      ? 'bg-accent text-primary'
+                      ? 'bg-accent text-primary shadow-sm'
                       : 'text-foreground hover:bg-accent hover:text-primary',
                   )}
                 >
@@ -123,10 +135,9 @@ export function SiteHeader() {
                 <button
                   type="button"
                   aria-expanded={isOpen}
-                  aria-controls={`menu-${section.id}`}
                   onClick={() => setOpenDesktop(isOpen ? null : section.id)}
                   className={cn(
-                    'flex items-center gap-1.5 rounded-md px-3.5 py-2 text-base font-semibold transition-colors',
+                    'flex items-center gap-1.5 rounded-md px-3.5 py-2 text-base font-semibold transition-all duration-300',
                     isOpen
                       ? 'bg-accent text-primary'
                       : 'text-foreground hover:bg-accent hover:text-primary',
@@ -134,22 +145,20 @@ export function SiteHeader() {
                 >
                   {section.label}
                   <ChevronDown
-                    aria-hidden="true"
-                    className={cn('size-4 transition-transform', isOpen && 'rotate-180')}
+                    className={cn('size-4 transition-transform duration-300', isOpen && 'rotate-180')}
                   />
                 </button>
                 {isOpen && (
                   <div
-                    id={`menu-${section.id}`}
-                    className="absolute right-0 top-full mt-2 w-[34rem] rounded-xl border border-border bg-card p-3 shadow-xl animate-in fade-in-0"
+                    className="absolute right-0 top-full mt-2 w-[34rem] rounded-xl border border-border bg-card p-4 shadow-2xl animate-in slide-in-from-top-2 fade-in-0 duration-200"
                   >
-                    <ul className="grid grid-cols-2 gap-1">
+                    <ul className="grid grid-cols-2 gap-2">
                       {section.items.map((item) => (
                         <li key={item.href}>
                           <Link
                             href={item.href}
                             onClick={closeAll}
-                            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary hover:translate-x-1"
                           >
                             {item.label}
                           </Link>
@@ -173,63 +182,83 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {/* MOBİL TAM EKRAN MENÜ (Burası kesinlikle opak) */}
-      {mobileOpen && (
-        <div className="fixed inset-0 top-16 z-50 bg-background md:hidden">
-          <nav className="flex h-full flex-col overflow-y-auto px-5 pb-10 pt-4">
-            <ul className="flex flex-col gap-2">
-              {topLevel.map((section) => {
-                if (section.kind === 'link') {
-                  return (
-                    <li key={section.id}>
-                      <Link
-                        href={section.href}
-                        onClick={closeAll}
-                        className="block rounded-xl px-4 py-3.5 text-lg font-semibold text-foreground hover:bg-accent"
-                      >
-                        {section.label}
-                      </Link>
-                    </li>
-                  )
-                }
-
+      {/* MOBİL TAM EKRAN MENÜ (Animasyonlu ve Opak) */}
+      <div 
+        className={cn(
+          "fixed inset-0 top-16 z-50 bg-background transition-all duration-300 ease-in-out md:hidden flex flex-col",
+          mobileOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible pointer-events-none"
+        )}
+      >
+        <nav className="flex h-full flex-col overflow-y-auto px-5 pb-10 pt-6">
+          <ul className="flex flex-col gap-2">
+            {topLevel.map((section, index) => {
+              if (section.kind === 'link') {
                 return (
-                  <li key={section.id} className="flex flex-col">
-                    <button
-                      type="button"
-                      onClick={() => setMobileCategoriesOpen((open) => !open)}
-                      className="flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold text-foreground hover:bg-accent"
+                  <li 
+                    key={section.id}
+                    style={{ animationDelay: `${index * 50}ms` }}
+                    className={cn("animate-in slide-in-from-bottom-2 fade-in-0 duration-300 fill-mode-both", !mobileOpen && "animate-none")}
+                  >
+                    <Link
+                      href={section.href}
+                      onClick={closeAll}
+                      className="block rounded-xl px-4 py-3.5 text-lg font-semibold text-foreground transition-colors hover:bg-accent hover:text-primary"
                     >
                       {section.label}
-                      <ChevronDown
-                        className={cn('size-5 transition-transform duration-200', mobileCategoriesOpen && 'rotate-180')}
-                      />
-                    </button>
-                    
-                    {mobileCategoriesOpen && (
-                      <div className="mt-2 mb-4 rounded-xl bg-card p-2 border border-border">
-                        <ul className="flex flex-col">
-                          {section.items.map((item) => (
-                            <li key={item.href}>
-                              <Link
-                                href={item.href}
-                                onClick={closeAll}
-                                className="block rounded-lg px-4 py-2.5 text-base text-muted-foreground hover:bg-accent hover:text-foreground"
-                              >
-                                {item.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                    </Link>
                   </li>
                 )
-              })}
-            </ul>
-          </nav>
-        </div>
-      )}
+              }
+
+              return (
+                <li 
+                  key={section.id} 
+                  style={{ animationDelay: `${index * 50}ms` }}
+                  className={cn("flex flex-col animate-in slide-in-from-bottom-2 fade-in-0 duration-300 fill-mode-both", !mobileOpen && "animate-none")}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setMobileCategoriesOpen((open) => !open)}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold transition-colors",
+                      mobileCategoriesOpen ? "text-primary bg-primary/5" : "text-foreground hover:bg-accent hover:text-primary"
+                    )}
+                  >
+                    {section.label}
+                    <ChevronDown
+                      className={cn('size-5 transition-transform duration-300', mobileCategoriesOpen && 'rotate-180')}
+                    />
+                  </button>
+                  
+                  {/* Kategori Alt Listesi - Animasyonlu */}
+                  <div 
+                    className={cn(
+                      "grid transition-all duration-300 ease-in-out",
+                      mobileCategoriesOpen ? "grid-rows-[1fr] opacity-100 mt-2 mb-4" : "grid-rows-[0fr] opacity-0"
+                    )}
+                  >
+                    <div className="overflow-hidden rounded-xl bg-card border border-border">
+                      <ul className="flex flex-col p-2">
+                        {section.items.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              onClick={closeAll}
+                              className="block rounded-lg px-4 py-3 text-base text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:text-primary hover:translate-x-1"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }
