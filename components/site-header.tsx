@@ -94,6 +94,7 @@ export function SiteHeader() {
       <div className="relative z-50 mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
         <Logo onClick={closeAll} />
 
+        {/* DESKTOP MENU */}
         <nav ref={navRef} aria-label="Main" className="hidden items-center gap-1 md:flex">
           {topLevel.map((section) => {
             if (section.kind === 'link') {
@@ -140,16 +141,16 @@ export function SiteHeader() {
                 {isOpen && (
                   <div
                     id={`menu-${section.id}`}
-                    className="absolute right-0 top-full mt-2 w-[34rem] rounded-xl border border-border bg-popover p-2 shadow-2xl shadow-black/60 animate-in fade-in-0"
+                    className="absolute right-0 top-full mt-2 w-[34rem] rounded-xl border border-border/50 bg-popover/95 p-3 shadow-2xl shadow-black/80 backdrop-blur-xl animate-in fade-in-0"
                   >
-                    <ul className="grid grid-cols-2 gap-0.5">
+                    <ul className="grid grid-cols-2 gap-1">
                       {section.items.map((item) => (
                         <li key={item.href}>
                           <Link
                             href={item.href}
                             onClick={closeAll}
                             aria-current={isActive(item.href) ? 'page' : undefined}
-                            className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground aria-[current=page]:text-primary"
+                            className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary aria-[current=page]:text-primary"
                           >
                             {item.label}
                           </Link>
@@ -163,6 +164,7 @@ export function SiteHeader() {
           })}
         </nav>
 
+        {/* MOBILE TOGGLE */}
         <button
           type="button"
           className="flex size-10 items-center justify-center rounded-md text-foreground md:hidden"
@@ -179,77 +181,82 @@ export function SiteHeader() {
         </button>
       </div>
 
+      {/* MOBILE MENU */}
       {mobileOpen && (
-        <nav
-          id="mobile-menu"
-          aria-label="Mobile"
-          className="relative z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-background px-5 pb-8 pt-4 animate-in fade-in-0 md:hidden"
-        >
-          <ul className="flex flex-col">
-            {topLevel.map((section) => {
-              if (section.kind === 'link') {
+        <div className="fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-xl md:hidden animate-in fade-in-0">
+          <nav
+            id="mobile-menu"
+            aria-label="Mobile"
+            className="flex h-[calc(100dvh-4rem)] flex-col overflow-y-auto px-5 pb-8 pt-4"
+          >
+            <ul className="flex flex-col gap-1">
+              {topLevel.map((section) => {
+                if (section.kind === 'link') {
+                  return (
+                    <li key={section.id}>
+                      <Link
+                        href={section.href}
+                        onClick={closeAll}
+                        aria-current={isActive(section.href) ? 'page' : undefined}
+                        className={cn(
+                          'block rounded-xl px-4 py-3.5 text-lg font-semibold transition-colors',
+                          isActive(section.href)
+                            ? 'bg-primary/15 text-primary'
+                            : 'text-foreground hover:bg-accent hover:text-primary',
+                        )}
+                      >
+                        {section.label}
+                      </Link>
+                    </li>
+                  )
+                }
+
+                // Categories Dropdown
                 return (
-                  <li key={section.id}>
-                    <Link
-                      href={section.href}
-                      onClick={closeAll}
-                      aria-current={isActive(section.href) ? 'page' : undefined}
+                  <li key={section.id} className="flex flex-col">
+                    <button
+                      type="button"
+                      aria-expanded={mobileCategoriesOpen}
+                      onClick={() => setMobileCategoriesOpen((open) => !open)}
                       className={cn(
-                        'block rounded-lg px-3 py-3.5 text-lg font-semibold transition-colors',
-                        isActive(section.href)
-                          ? 'bg-accent/70 text-primary'
+                        'flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold transition-colors',
+                        mobileCategoriesOpen
+                          ? 'bg-primary/15 text-primary'
                           : 'text-foreground hover:bg-accent hover:text-primary',
                       )}
                     >
                       {section.label}
-                    </Link>
+                      <ChevronDown
+                        aria-hidden="true"
+                        className={cn('size-5 transition-transform duration-300', mobileCategoriesOpen && 'rotate-180')}
+                      />
+                    </button>
+                    
+                    {/* Mobile Dropdown Items - No boring lines, just clean boxes */}
+                    {mobileCategoriesOpen && (
+                      <div className="mt-2 mb-4 rounded-2xl bg-accent/40 p-2 animate-in slide-in-from-top-2 fade-in-0">
+                        <ul className="flex flex-col">
+                          {section.items.map((item) => (
+                            <li key={item.href}>
+                              <Link
+                                href={item.href}
+                                onClick={closeAll}
+                                aria-current={isActive(item.href) ? 'page' : undefined}
+                                className="block rounded-lg px-4 py-3 text-base text-muted-foreground transition-colors hover:bg-background/80 hover:text-primary aria-[current=page]:text-primary"
+                              >
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </li>
                 )
-              }
-
-              return (
-                <li key={section.id} className="border-b border-border/60 last:border-b-0">
-                  <button
-                    type="button"
-                    aria-expanded={mobileCategoriesOpen}
-                    aria-controls={`mobile-${section.id}`}
-                    onClick={() => setMobileCategoriesOpen((open) => !open)}
-                    className={cn(
-                      'flex w-full items-center justify-between rounded-lg px-3 py-3.5 text-lg font-semibold transition-colors',
-                      mobileCategoriesOpen
-                        ? 'bg-accent/70 text-primary'
-                        : 'text-foreground hover:bg-accent hover:text-primary',
-                    )}
-                  >
-                    {section.label}
-                    <ChevronDown
-                      aria-hidden="true"
-                      className={cn('size-5 transition-transform', mobileCategoriesOpen && 'rotate-180')}
-                    />
-                  </button>
-                  {mobileCategoriesOpen && (
-                    <div id={`mobile-${section.id}`} className="pb-3">
-                      <ul className="flex flex-col">
-                        {section.items.map((item) => (
-                          <li key={item.href}>
-                            <Link
-                              href={item.href}
-                              onClick={closeAll}
-                              aria-current={isActive(item.href) ? 'page' : undefined}
-                              className="block rounded-lg px-3 py-2.5 text-base text-muted-foreground hover:bg-accent hover:text-foreground aria-[current=page]:text-primary"
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+              })}
+            </ul>
+          </nav>
+        </div>
       )}
     </header>
   )
