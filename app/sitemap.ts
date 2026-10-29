@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { lastUpdated, type Tool } from '@/data/categories'
 import { allCategories } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
+import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
 import { absoluteUrl, staticPages } from '@/lib/site'
 
 export const dynamic = 'force-static'
@@ -57,11 +58,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const alternativesModified = new Date(`${alternativesUpdated}T00:00:00Z`)
+  const alternativePages = [
+    { url: absoluteUrl('/alternatives'), lastModified: alternativesModified, priority: 0.6 },
+    ...getAllAlternativePages().map((page) => ({
+      url: absoluteUrl(`/alternatives/${page.slug}`),
+      lastModified: alternativesModified,
+      priority: 0.7,
+    })),
+  ]
+
   return [
     { url: absoluteUrl('/'), lastModified, priority: 1 },
     ...listPages,
     ...reviewPages,
     ...guidePages,
+    ...alternativePages,
     ...staticPages.map((page) => ({ url: absoluteUrl(page.href), lastModified, priority: 0.5 })),
   ]
 }
