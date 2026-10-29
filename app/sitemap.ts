@@ -58,14 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(`${review.updated}T00:00:00Z`),
     priority: 0.8,
   }))
-
-  const alternativesModified = new Date(`${alternativesUpdated}T00:00:00Z`)
-  { url: absoluteUrl('/free'), lastModified: new Date(`${freePagesUpdated}T00:00:00Z`), priority: 0.8 },
+{ url: absoluteUrl('/free'), lastModified: new Date(`${freePagesUpdated}T00:00:00Z`), priority: 0.8 },
 ...freePages.map((page) => ({
   url: absoluteUrl(`/free/${page.slug}`),
   lastModified: new Date(`${freePagesUpdated}T00:00:00Z`),
   priority: 0.7,
 })),
+  const alternativesModified = new Date(`${alternativesUpdated}T00:00:00Z`)
   const alternativePages = [
     { url: absoluteUrl('/alternatives'), lastModified: alternativesModified, priority: 0.6 },
     ...getAllAlternativePages().map((page) => ({
