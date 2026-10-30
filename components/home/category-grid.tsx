@@ -16,7 +16,7 @@ export function CategoryGrid() {
           Start with what you need
         </h2>
         <p className="mt-4 leading-relaxed text-muted-foreground">
-          {allCategories.length} categories. Each one leads to a short, ranked list of five tools worth your time.
+          {allCategories.length} categories to explore. Published lists contain five picks; categories still in research are clearly marked.
         </p>
         <FiveDots className="mt-6" />
       </div>

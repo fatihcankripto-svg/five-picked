@@ -1,4 +1,4 @@
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories as allCategories } from '@/data/all-categories'
 import { blogPosts } from '@/lib/blog-pages'
 import { reviews } from '@/data/reviews'
 import { comparePages } from '@/lib/compare-pages'

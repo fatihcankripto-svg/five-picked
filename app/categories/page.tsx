@@ -9,7 +9,7 @@ import { absoluteUrl } from '@/lib/site'
 const path = '/categories'
 const title = 'All categories — FIVE PICKED'
 const description =
-  'Every FIVE PICKED category in one place. Each one lists exactly 5 hand-picked tools, ranked 1 to 5, with a clear note on who each suits.'
+  'Explore our recommendation categories, including those in research. Every published list contains five tools; larger categories have several focused lists.'
 
 export const metadata: Metadata = {
   title,
@@ -27,7 +27,7 @@ export default function CategoriesHubPage() {
     description,
     url: absoluteUrl(path),
     hasPart: allCategories.map((category) => ({
-      '@type': 'Article',
+      '@type': 'WebPage',
       name: category.name,
       description: category.description,
       url: absoluteUrl(`/${category.slug}`),
@@ -49,8 +49,8 @@ export default function CategoriesHubPage() {
           Every category, in one place
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground text-pretty">
-          Each category lists exactly 5 hand-picked tools, ranked 1 to 5, with a clear note on who
-          each one is best for. Pick a category to see its picks.
+          Every published list contains five hand-picked tools. Larger categories contain several
+          focused lists; categories still being researched are marked as selection in progress.
         </p>
       </header>
 

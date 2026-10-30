@@ -10,7 +10,7 @@ import { editorialDates } from '@/lib/editorial-dates'
  * Facts (prices, strengths) always come from the data files, never from here.
  */
 
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories as allCategories } from '@/data/all-categories'
 import type { Tool } from '@/data/categories'
 
 /** Update this date whenever you edit the copy below. ISO format. */

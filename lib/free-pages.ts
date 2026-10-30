@@ -6,7 +6,7 @@ import { editorialDates } from '@/lib/editorial-dates'
  * Copy is hand-written per page so Google never sees thin, template-only pages.
  */
 
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories as allCategories } from '@/data/all-categories'
 import type { Tool } from '@/data/categories'
 
 export const freePagesUpdated = editorialDates.free

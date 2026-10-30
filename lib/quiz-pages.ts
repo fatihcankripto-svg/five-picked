@@ -5,7 +5,7 @@ import { editorialDates } from '@/lib/editorial-dates'
  * A quiz only appears when its list is fully populated (no "Coming soon").
  */
 
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories as allCategories } from '@/data/all-categories'
 import type { Category, Tool } from '@/data/categories'
 
 export const quizPagesUpdated = editorialDates.quizzes

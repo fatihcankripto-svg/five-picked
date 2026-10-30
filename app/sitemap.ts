@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { allCategories, isCompleteList } from '@/data/all-categories'
+import { publishedCategories as allCategories, isCompleteList } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
 import { blogPosts } from '@/lib/blog-pages'
 import { comparePages, comparePagesUpdated } from '@/lib/compare-pages'

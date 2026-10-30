@@ -5,7 +5,7 @@ import { editorialDates } from '@/lib/editorial-dates'
  * cover a pair (/guides/...) are skipped to avoid duplicate content.
  */
 
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories as allCategories } from '@/data/all-categories'
 import type { Tool } from '@/data/categories'
 
 export const comparePagesUpdated = editorialDates.comparisons

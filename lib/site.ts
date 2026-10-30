@@ -1,5 +1,5 @@
 import { type Category, type Subcategory, type Tool } from '@/data/categories'
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories as allCategories } from '@/data/all-categories'
 
 export const siteConfig = {
   name: 'FIVE PICKED',

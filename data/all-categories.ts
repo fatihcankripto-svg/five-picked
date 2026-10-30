@@ -15,13 +15,17 @@ export function isCompleteList(tools: Tool[]) {
   )
 }
 
-/** Only complete, public lists may be used by navigation, counts and content. */
-export const allCategories: Category[] = categoryRegistry.flatMap((category) => {
-  if (category.hidden) return []
-  if (category.tools) return isCompleteList(category.tools) ? [category] : []
-  const subcategories = category.subcategories?.filter((sub) => isCompleteList(sub.tools)) ?? []
-  return subcategories.length ? [{ ...category, subcategories }] : []
-})
+/** Visible topic hubs: only an explicit hidden flag removes a category. */
+export const allCategories: Category[] = categoryRegistry
+  .filter((category) => !category.hidden)
+  .map((category) => category.subcategories
+    ? { ...category, subcategories: category.subcategories.filter((sub) => isCompleteList(sub.tools)) }
+    : category)
+
+/** Publishing and tool indexes must never include partial five-tool lists. */
+export const publishedCategories = allCategories.filter((category) =>
+  category.tools ? isCompleteList(category.tools) : Boolean(category.subcategories?.length),
+)
 
 const seen = new Set<string>()
 for (const category of categoryRegistry) {

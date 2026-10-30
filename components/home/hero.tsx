@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { allCategories } from '@/data/all-categories'
-import { countAllLiveTools } from '@/lib/category-stats'
+import { catalogStats } from '@/lib/category-stats'
 
 const delay = (i: number) => ({ '--fp-i': i }) as CSSProperties
 
 const stats = [
-  { value: allCategories.length, label: 'Categories' },
-  { value: countAllLiveTools(), label: 'Hand-picked tools' },
+  { value: catalogStats.categories, label: 'Categories' },
+  { value: catalogStats.tools, label: 'Hand-picked tools' },
   { value: 5, label: 'Picks in every list' },
 ]
 
@@ -43,7 +42,7 @@ export function Hero() {
             className="fp-reveal mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty"
             style={delay(2)}
           >
-            No endless lists. Every category gets exactly five tools, ranked 1 to 5, so you can choose with
+            No endless lists. Every published list has exactly five tools, ranked 1 to 5, so you can choose with
             confidence and get back to work.
           </p>
           <div className="fp-reveal mt-9 flex flex-col gap-3 sm:flex-row" style={delay(3)}>
@@ -77,6 +76,7 @@ export function Hero() {
               </div>
             ))}
           </dl>
+          <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{catalogStats.lists} complete lists across {catalogStats.readyCategories} ready categories; {catalogStats.categories - catalogStats.readyCategories} more categories in research. Categories can contain several lists.</p>
         </div>
 
         <div
