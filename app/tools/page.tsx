@@ -1,0 +1,4 @@
+import Link from 'next/link'
+import { ContentPage, contentMetadata } from '@/components/content-page'
+export const metadata = contentMetadata({ title: 'Free planning calculators', description: 'Estimate narration length and freelance platform fees with browser-only calculators. No login, tracking or cookies.', path: '/tools' })
+export default function ToolsPage() { return <ContentPage eyebrow="Free tools" title="Plan before you pay" intro="Simple estimates to help you plan a project. Calculations stay in your browser; no account is needed."><h2>Narration</h2><p><Link href="/tools/text-to-speech-duration">Text-to-speech duration calculator</Link> — estimate a script’s reading time at different speaking speeds.</p><h2>Freelancing</h2><p><Link href="/tools/freelance-fee-calculator">Freelance fee calculator</Link> — estimate take-home pay and compare fee scenarios. Confirm the current fee on the platform before quoting.</p></ContentPage> }

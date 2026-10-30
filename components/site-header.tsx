@@ -29,7 +29,6 @@ const topLevel: TopLevel[] = [
   { kind: 'link', id: 'free', label: 'Free picks', href: '/free' },
   { kind: 'link', id: 'guides', label: 'Guides', href: '/guides' },
   { kind: 'link', id: 'blog', label: 'Blog', href: '/blog' },
-  { kind: 'link', id: 'how', label: 'How we choose', href: '/how-we-choose' },
 ]
 
 export function SiteHeader() {
@@ -106,7 +105,7 @@ export function SiteHeader() {
       <div className="relative z-50 mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 bg-background">
         <Logo onClick={closeAll} />
 
-        <nav ref={navRef} aria-label="Main" className="hidden items-center gap-1 md:flex">
+        <nav ref={navRef} aria-label="Main" className="hidden items-center gap-1 lg:flex">
           {topLevel.map((section) => {
             if (section.kind === 'link') {
               return (
@@ -115,7 +114,7 @@ export function SiteHeader() {
                   href={section.href}
                   aria-current={isActive(section.href) ? 'page' : undefined}
                   className={cn(
-                    'rounded-md px-3.5 py-2 text-base font-semibold transition-all duration-300',
+                    'rounded-md px-2.5 py-2 text-sm font-semibold transition-all duration-300',
                     isActive(section.href)
                       ? 'bg-accent text-primary shadow-sm'
                       : 'text-foreground hover:bg-accent hover:text-primary',
@@ -135,7 +134,7 @@ export function SiteHeader() {
                   aria-expanded={isOpen}
                   onClick={() => setOpenDesktop(isOpen ? null : section.id)}
                   className={cn(
-                    'flex items-center gap-1.5 rounded-md px-3.5 py-2 text-base font-semibold transition-all duration-300',
+                    'flex items-center gap-1.5 rounded-md px-2.5 py-2 text-sm font-semibold transition-all duration-300',
                     isOpen
                       ? 'bg-accent text-primary'
                       : 'text-foreground hover:bg-accent hover:text-primary',
@@ -172,20 +171,23 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="relative z-50 flex size-10 items-center justify-center rounded-md text-foreground md:hidden"
+          className="relative z-50 flex size-10 items-center justify-center rounded-md text-foreground lg:hidden"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
           onClick={() => setMobileOpen((open) => !open)}
         >
           {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
       </div>
 
-      <div 
+      <div id="mobile-navigation" inert={!mobileOpen}
         className={cn(
-          "fixed inset-0 top-16 z-50 bg-background transition-all duration-300 ease-in-out md:hidden flex flex-col",
+          "fixed inset-0 top-16 z-50 bg-background transition-all duration-300 ease-in-out lg:hidden flex flex-col",
           mobileOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible pointer-events-none"
         )}
       >
-        <nav className="flex h-full flex-col overflow-y-auto px-5 pb-10 pt-6">
+        <nav aria-label="Mobile" className="flex h-full flex-col overflow-y-auto px-5 pb-10 pt-6">
           <ul className="flex flex-col gap-2">
             {topLevel.map((section, index) => {
               if (section.kind === 'link') {
@@ -214,6 +216,7 @@ export function SiteHeader() {
                 >
                   <button
                     type="button"
+                    aria-expanded={mobileCategoriesOpen}
                     onClick={() => setMobileCategoriesOpen((open) => !open)}
                     className={cn(
                       "flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-lg font-semibold transition-colors",
@@ -226,7 +229,7 @@ export function SiteHeader() {
                     />
                   </button>
                   
-                  <div 
+                  <div inert={!mobileCategoriesOpen}
                     className={cn(
                       "grid transition-all duration-300 ease-in-out",
                       mobileCategoriesOpen ? "grid-rows-[1fr] opacity-100 mt-2 mb-4" : "grid-rows-[0fr] opacity-0"

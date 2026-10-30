@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <FaqJsonLd post={post} />
       <BreadcrumbJsonLd post={post} />
 
-      <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-2">
             <li><Link href="/" className="hover:text-foreground">Home</Link></li>
@@ -109,7 +109,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="mt-12 rounded-xl border border-border bg-muted/30 p-5">
           <p className="text-sm font-semibold text-foreground">About {post.author}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            FIVE PICKED is an independent recommendation site. Every top-5 list is written by editors who test the tools, verify pricing against official sources, and update the picks as products change. We never rank a tool higher because of a partnership —{' '}
+            FIVE PICKED is an independent recommendation site. Our recommendations explain product fit and trade-offs using editorial research. They are not hands-on test reports unless a page includes a documented test. Check the official product website for current prices and limits. We never rank a tool higher because of a partnership —{' '}
             <Link href="/how-we-choose" className="font-medium text-primary hover:opacity-80">read how we choose</Link>.
           </p>
         </div>
@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
           </div>
         </footer>
-      </main>
+      </article>
     </>
   )
 }

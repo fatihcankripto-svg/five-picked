@@ -3,7 +3,6 @@ import type { CSSProperties } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { allCategories } from '@/data/all-categories'
 import { countAllLiveTools } from '@/lib/category-stats'
-import { CountUp } from '@/components/count-up'
 
 const delay = (i: number) => ({ '--fp-i': i }) as CSSProperties
 
@@ -69,7 +68,7 @@ export function Hero() {
                 <dt className="sr-only">{stat.label}</dt>
                 <dd>
                   <span className="fp-gradient-text block text-3xl font-bold tracking-tight sm:text-4xl">
-                    <CountUp value={stat.value} />
+                    {stat.value}
                   </span>
                   <span className="mt-1 block text-xs uppercase tracking-widest text-muted-foreground">
                     {stat.label}
@@ -86,9 +85,9 @@ export function Hero() {
           style={delay(3)}
         >
           <div className="relative flex aspect-square w-[12.5rem] items-center justify-center sm:w-[20rem] md:w-[24rem] lg:w-[28rem]">
-            <span className="fp-glow absolute inset-[12%] rounded-full bg-primary/30 blur-3xl" />
+            <span className="absolute inset-[12%] rounded-full bg-primary/30 blur-3xl" />
 
-            <div className="fp-spin absolute inset-0 rounded-full border border-dashed border-primary/30">
+            <div className="absolute inset-0 rounded-full border border-dashed border-primary/30">
               {[0, 1, 2, 3, 4].map((i) => (
                 <span
                   key={i}
@@ -100,9 +99,9 @@ export function Hero() {
               ))}
             </div>
 
-            <div className="fp-spin-rev absolute inset-[10%] rounded-full border border-border" />
+            <div className="absolute inset-[10%] rounded-full border border-border" />
 
-            <span className="fp-float fp-gradient-text relative select-none text-[7.5rem] font-bold leading-none tracking-tighter sm:text-[12.5rem] md:text-[15rem] lg:text-[18rem]">
+            <span className="fp-gradient-text relative select-none text-[7.5rem] font-bold leading-none tracking-tighter sm:text-[12.5rem] md:text-[15rem] lg:text-[18rem]">
               5
             </span>
           </div>

@@ -22,7 +22,7 @@ export function CategoryGrid() {
       </div>
 
       <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {allCategories.map((category, index) => (
+        {allCategories.slice(0, 6).map((category, index) => (
           <li key={category.slug}>
             <CategoryCard
               href={`/${category.slug}`}
@@ -35,6 +35,7 @@ export function CategoryGrid() {
           </li>
         ))}
       </ul>
+    <p className="mt-8"><a href="/categories" className="text-primary underline underline-offset-4">Explore all {allCategories.length} categories →</a></p>
     </section>
   )
 }

@@ -37,7 +37,7 @@ const bestAiContentMarketingContent = `
 <h3>Who it is for</h3>
 <p>Semrush fits teams who need one platform for research, planning, and tracking — content strategists, SEO leads, agencies, and anyone running more than one site. It is not the right first purchase for a solo blogger testing the waters, but it pays for itself quickly once content is a real revenue channel.</p>
 <h3>What to know before you buy</h3>
-<p>Semrush is expensive at roughly $140/month for the entry plan, and the interface is deep enough that setup takes a few hours. The free account and trial let you confirm the tool fits your workflow before committing. For more on Semrush and its competitors, see our <a href="/marketing-and-seo">marketing & SEO top 5</a>.</p>
+<p>Semrush is expensive at roughly $140/month for the entry plan, and the interface is deep enough that setup takes a few hours. The free account and trial let you confirm the tool fits your workflow before committing. For more on Semrush and its competitors, see our <a href="/ai-tools/marketing-and-seo">marketing & SEO top 5</a>.</p>
 
 <h2>2. Surfer SEO — best content optimization editor</h2>
 <h3>What it does best</h3>
@@ -92,7 +92,7 @@ const bestAiContentMarketingContent = `
 <p>Only if you are publishing regularly and using at least 2–3 of its core features (research, competitor analysis, content planning). For a solo writer or a brand new site, Semrush is overkill — start with a cheaper tool like NeuronWriter or a free tier, and upgrade once you are producing content consistently and tracking rankings matters more.</p>
 
 <h2>Final word</h2>
-<p>The five tools here are all strong — but they are not interchangeable. Choose one that matches the specific job you do most, use it well, and only add a second tool when the first one's limits start to slow you down. If you want to compare the tools side by side, our <a href="/marketing-and-seo">marketing & SEO category page</a> ranks all five in one place. For more content marketing essentials, explore <a href="/guides/best-ai-video-tools-for-beginners">AI video tools for beginners</a>, <a href="/compare/adobe-firefly-vs-ideogram">Adobe Firefly vs Ideogram</a> for visuals, or browse <a href="/categories">all categories</a> to see every top 5 on the site.</p>
+<p>The five tools here are all strong — but they are not interchangeable. Choose one that matches the specific job you do most, use it well, and only add a second tool when the first one's limits start to slow you down. If you want to compare the tools side by side, our <a href="/ai-tools/marketing-and-seo">marketing & SEO category page</a> ranks all five in one place. For more content marketing essentials, explore <a href="/guides/best-ai-video-tools-for-beginners">AI video tools for beginners</a>, <a href="/compare/adobe-firefly-vs-ideogram">Adobe Firefly vs Ideogram</a> for visuals, or browse <a href="/categories">all categories</a> to see every top 5 on the site.</p>
 `
 
 const semrushVsSurferContent = `
@@ -155,8 +155,8 @@ const semrushVsSurferContent = `
 <p><strong>NeuronWriter</strong> (around $23/month) covers optimization at a low price. Add a free Semrush account for basic keyword lookups, and upgrade to a paid plan only when you need deeper research or tracking.</p>
 
 <h2>Final verdict</h2>
-<p>Pick <strong>Surfer SEO</strong> if your bottleneck is making articles rank — you know what to write, you just need to write it better. Pick <strong>Semrush</strong> if your bottleneck is knowing what to write about in the first place. Pick <strong>both</strong> if content is a real revenue channel and you are publishing consistently. And if budget is tight, start with <a href="/marketing-and-seo">NeuronWriter from our marketing & SEO top 5</a> and upgrade when the limits start to hurt.</p>
-<p>For the full ranked list of tools in this category, see our <a href="/marketing-and-seo">marketing & SEO top 5</a>. If you are still building your stack, our <a href="/blog/best-ai-tools-for-content-marketing">best AI tools for content marketing guide</a> covers the wider workflow, and our <a href="/free/best-free-email-marketing-tools">free email marketing tools guide</a> covers the list-building side.</p>
+<p>Pick <strong>Surfer SEO</strong> if your bottleneck is making articles rank — you know what to write, you just need to write it better. Pick <strong>Semrush</strong> if your bottleneck is knowing what to write about in the first place. Pick <strong>both</strong> if content is a real revenue channel and you are publishing consistently. And if budget is tight, start with <a href="/ai-tools/marketing-and-seo">NeuronWriter from our marketing & SEO top 5</a> and upgrade when the limits start to hurt.</p>
+<p>For the full ranked list of tools in this category, see our <a href="/ai-tools/marketing-and-seo">marketing & SEO top 5</a>. If you are still building your stack, our <a href="/blog/best-ai-tools-for-content-marketing">best AI tools for content marketing guide</a> covers the wider workflow, and our <a href="/free/best-free-email-marketing-tools">free email marketing tools guide</a> covers the list-building side.</p>
 `
 
 const videoEditingContent = `
@@ -872,7 +872,7 @@ export const blogPosts: BlogPost[] = [
           'Only if you publish regularly and use at least 2–3 core features. For a solo writer or new site, start with NeuronWriter or a free tier, and upgrade once tracking rankings matters more.',
       },
     ],
-    relatedListPath: '/marketing-and-seo',
+    relatedListPath: '/ai-tools/marketing-and-seo',
     relatedListLabel: 'Marketing & SEO top 5',
     relatedLinks: [
       { path: '/free/best-free-email-marketing-tools', label: 'Best free email marketing tools' },
@@ -929,7 +929,7 @@ export const blogPosts: BlogPost[] = [
           'NeuronWriter (around $23/month) covers optimization at a low price. Add a free Semrush account for basic keyword lookups, and upgrade to a paid plan only when you need deeper research or tracking.',
       },
     ],
-    relatedListPath: '/marketing-and-seo',
+    relatedListPath: '/ai-tools/marketing-and-seo',
     relatedListLabel: 'Marketing & SEO top 5',
     relatedLinks: [
       { path: '/blog/best-ai-tools-for-content-marketing', label: 'Best AI tools for content marketing' },
