@@ -1,24 +1,42 @@
 import type { MetadataRoute } from 'next'
-import { contentLinks } from '@/lib/content-links'
-import { blogPosts } from '@/lib/blog-pages'
+import { allCategories, isCompleteList } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
+import { blogPosts } from '@/lib/blog-pages'
+import { comparePages, comparePagesUpdated } from '@/lib/compare-pages'
+import { freePages, freePagesUpdated } from '@/lib/free-pages'
+import { quizPages, quizPagesUpdated } from '@/lib/quiz-pages'
+import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
+import { guides } from '@/lib/guides'
 import { editorialDates } from '@/lib/editorial-dates'
 import { absoluteUrl, staticPages } from '@/lib/site'
+
 export const dynamic = 'force-static'
 
-/** Missing lastmod is preferable to an invented update date. */
-function updated(path: string): string | undefined {
-  if (path.startsWith('/blog/')) return blogPosts.find((p) => path === `/blog/${p.slug}`)?.updatedAt
-  if (path.startsWith('/reviews/')) return reviews.find((p) => path === `/reviews/${p.toolSlug}`)?.updated
-  if (path.startsWith('/guides/')) return path.endsWith('/ai-voice-commercial-use') ? editorialDates.commercialVoiceGuide : editorialDates.guides
-  if (path.startsWith('/compare/')) return editorialDates.comparisons
-  if (path.startsWith('/free/')) return editorialDates.free
-  if (path.startsWith('/quiz/')) return editorialDates.quizzes
-  if (path.startsWith('/alternatives/')) return editorialDates.alternatives
-  if (path.startsWith('/tools/')) return editorialDates.calculators
-  return undefined
-}
+/** Explicit route families, independent of the related-reading graph. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = new Set(['/', '/categories', '/guides', '/blog', '/reviews', '/compare', '/free', '/quiz', '/alternatives', ...staticPages.map((p) => p.href), ...contentLinks.map((p) => p.path)])
-  return [...paths].map((path) => ({ url: absoluteUrl(path), ...(updated(path) ? { lastModified: updated(path) } : {}) }))
+  const route = (path: string, lastModified?: string) => ({
+    url: absoluteUrl(path),
+    ...(lastModified ? { lastModified } : {}),
+  })
+  const categoryPages = allCategories.flatMap((category) => {
+    const subs = (category.subcategories ?? []).filter((sub) => isCompleteList(sub.tools))
+    if (category.hidden || (category.tools ? !isCompleteList(category.tools) : subs.length === 0)) return []
+    return [route(`/${category.slug}`, editorialDates.categories), ...subs.map((sub) => route(`/${category.slug}/${sub.slug}`, editorialDates.categories))]
+  })
+  const entries: MetadataRoute.Sitemap = [
+    route('/'), route('/categories'),
+    ...categoryPages,
+    route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.updatedAt)),
+    route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, comparePagesUpdated)),
+    route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, freePagesUpdated)),
+    route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
+    route('/guides'), ...guides.map((guide) => route(guide.path, guide.path === '/guides/ai-voice-commercial-use' ? editorialDates.commercialVoiceGuide : editorialDates.guides)),
+    route('/reviews'), ...reviews.map((review) => route(`/reviews/${review.toolSlug}`, review.updated)),
+    route('/alternatives'), ...getAllAlternativePages().map((page) => route(`/alternatives/${page.slug}`, alternativesUpdated)),
+    route('/tools'),
+    route('/tools/text-to-speech-duration', editorialDates.calculators),
+    route('/tools/freelance-fee-calculator', editorialDates.calculators),
+    ...staticPages.map((page) => route(page.href)),
+  ]
+  return [...new Map(entries.map((entry) => [entry.url, entry])).values()]
 }
