@@ -3,8 +3,8 @@
 ## Implemented
 
 - Preserve the navy/amber brand; remove marquee and hero counter/orbit motion; add comparisons, guides and recent articles to the homepage.
-- Publish only complete five-tool lists through `allCategories`. Editorial data remains in `categoryRegistry`; the four requested categories have `hidden: true`.
-- Personal Finance and Fitness & Nutrition also have no complete lists and are excluded automatically. Travel exposes only completed subcategories. Incomplete parent routes show a noindex holding page.
+- Publish only complete five-tool lists through `publishedCategories`; `allCategories` exposes the twelve unhidden topic hubs. Editorial data remains in `categoryRegistry`; the four requested categories have `hidden: true`.
+- Personal Finance and Fitness & Nutrition have no complete lists; the follow-up audit restored their visible topic hubs with selection-in-progress labels. Their partial lists remain unpublished. Travel exposes only completed subcategories. Incomplete parent routes show a noindex holding page.
 - Add a connected, topic-aware internal reading graph; every indexable generated page has at least three distinct referring pages.
 - Fix `/marketing-and-seo` links and retain a permanent redirect to `/ai-tools/marketing-and-seo`. Add missing tools and reviews indexes.
 - Add readable article typography, server-rendered contents navigation, consistent breadcrumbs and visible-text FAQ checks. Remove undocumented hands-on testing claims.
