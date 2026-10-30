@@ -1,3 +1,4 @@
+import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "Which tool is right for me?" quizzes.
  * One page per full list. Answers score against the tools in that list.
@@ -7,7 +8,7 @@
 import { allCategories } from '@/data/all-categories'
 import type { Category, Tool } from '@/data/categories'
 
-export const quizPagesUpdated = '2026-10-29'
+export const quizPagesUpdated = editorialDates.quizzes
 
 type MaybeSoon = Tool & { comingSoon?: boolean }
 

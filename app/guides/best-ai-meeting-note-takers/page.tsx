@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'Best AI Meeting Note Takers: Fireflies, tl;dv, Notta and Otter Compared',
   description:
-    'AI note takers record, transcribe and summarize your meetings. See what Fireflies, tl;dv, Notta and Otter each do best. Updated October 2026.',
+    'AI note takers record, transcribe and summarize your meetings. See what Fireflies, tl;dv, Notta and Otter each do best.',
   path: '/guides/best-ai-meeting-note-takers',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Best AI Meeting Note Takers: Fireflies, tl;dv, Notta and Otter Compared',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/best-ai-meeting-note-takers',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function BestAiMeetingNoteTakersPage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/best-ai-meeting-note-takers"
       eyebrow="Guide"
       title="Best AI meeting note takers"
-      intro="AI note takers join your calls, record and transcribe them, and write a summary with action items, so you can focus on the conversation. They are not all the same. This guide shows what each popular tool does best. Last updated October 25, 2026."
+      intro="AI note takers join your calls, record and transcribe them, and write a summary with action items, so you can focus on the conversation. They are not all the same. This guide shows what each popular tool does best."
     >
       <script
         type="application/ld+json"

@@ -1,3 +1,4 @@
+import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
 import { CalendarDays } from 'lucide-react'
 import { lastUpdated, type Tool } from '@/data/categories'
@@ -136,6 +137,7 @@ export function RankedList({
         </Link>
         .
       </aside>
+    <RelatedContent path={path} />
     </div>
   )
 }

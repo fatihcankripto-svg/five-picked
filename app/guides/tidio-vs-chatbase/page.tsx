@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'Tidio vs Chatbase: Which Chatbot Platform Fits Your Business?',
   description:
-    'Tidio is a customer support suite with AI. Chatbase is a focused AI chatbot builder. See the differences and which one fits your site. Updated October 2026.',
+    'Tidio is a customer support suite with AI. Chatbase is a focused AI chatbot builder. See the differences and which one fits your site.',
   path: '/guides/tidio-vs-chatbase',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Tidio vs Chatbase: Which Chatbot Platform Fits Your Business?',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/tidio-vs-chatbase',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function TidioVsChatbasePage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/tidio-vs-chatbase"
       eyebrow="Guide"
       title="Tidio vs Chatbase: which chatbot platform fits your business?"
-      intro="Both let you put an AI chatbot on your website without writing code, but they are built for different jobs. This guide explains the difference in plain English so you can choose the right one. Last updated October 25, 2026."
+      intro="Both let you put an AI chatbot on your website without writing code, but they are built for different jobs. This guide explains the difference in plain English so you can choose the right one."
     >
       <script
         type="application/ld+json"

@@ -112,7 +112,7 @@ export default async function ReviewPage({ params }: PageProps) {
   )
 
   return (
-    <ContentPage
+    <ContentPage path={`/reviews/${review.toolSlug}`}
       eyebrow="Review"
       title={review.headline}
       intro={`${review.intro} Last updated ${formatDate(review.updated)}.`}

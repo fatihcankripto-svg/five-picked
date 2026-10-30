@@ -101,7 +101,7 @@ export default async function AlternativesPage({ params }: Props) {
   }
 
   return (
-    <ContentPage
+    <ContentPage path={`/alternatives/${page.slug}`}
       eyebrow="Alternatives"
       title={`${tool.name} alternatives`}
       intro={`${tool.name} is ranked #${rank} in our ${listName} list, but it is not right for every job. Here are the other four picks, and when each one makes more sense. Last updated ${formatLongDate(alternativesUpdated)}.`}

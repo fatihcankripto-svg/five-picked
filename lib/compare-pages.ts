@@ -1,3 +1,4 @@
+import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "X vs Y" comparison pages.
  * Only pairs where both tools exist in the data files. Guides that already
@@ -7,7 +8,7 @@
 import { allCategories } from '@/data/all-categories'
 import type { Tool } from '@/data/categories'
 
-export const comparePagesUpdated = '2026-10-29'
+export const comparePagesUpdated = editorialDates.comparisons
 
 export type ComparePair = {
   slug: string

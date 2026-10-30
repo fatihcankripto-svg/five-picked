@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'Hostinger vs Bluehost: Which Is Better for Beginners?',
   description:
-    'Hostinger and Bluehost compared in plain English: pricing, ease of use, support and who each one suits. Updated October 2026.',
+    'Hostinger and Bluehost compared in plain English: pricing, ease of use, support and who each one suits.',
   path: '/guides/hostinger-vs-bluehost',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Hostinger vs Bluehost: Which Is Better for Beginners?',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/hostinger-vs-bluehost',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function HostingerVsBluehostPage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/hostinger-vs-bluehost"
       eyebrow="Guide"
       title="Hostinger vs Bluehost: which is better for beginners?"
-      intro="Both are popular, both are beginner-friendly, and both advertise very low prices. Here is how they actually differ, so you can pick the one that fits your first website. Last updated October 25, 2026."
+      intro="Both are popular, both are beginner-friendly, and both advertise very low prices. Here is how they actually differ, so you can pick the one that fits your first website."
     >
       <script
         type="application/ld+json"

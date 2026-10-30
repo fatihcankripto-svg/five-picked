@@ -1,3 +1,4 @@
+import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -175,6 +176,7 @@ export default async function ComparePage({ params }: Props) {
         </Link>
         .
       </aside>
+    <RelatedContent path={path} />
     </div>
   )
 }

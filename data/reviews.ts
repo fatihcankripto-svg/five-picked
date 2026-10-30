@@ -28,7 +28,7 @@ export const reviews: Review[] = [
     officialUrl: 'https://www.cloudways.com/',
     title: 'Cloudways Review (2026): Pricing and Who It’s For',
     description:
-      'An honest look at Cloudways managed cloud hosting: how it works, what it costs, what is included and who should choose it. Updated October 2026.',
+      'An honest look at Cloudways managed cloud hosting: how it works, what it costs, what is included and who should choose it.',
     headline: 'Cloudways review: managed cloud hosting, explained',
     intro:
       'Cloudways sits between cheap shared hosting and do-it-yourself servers. You pick a cloud provider and a server size, and Cloudways handles the setup and day-to-day management. This review explains how it works, what it costs and who it suits.',
@@ -145,7 +145,7 @@ export const reviews: Review[] = [
     officialUrl: 'https://www.babbel.com/',
     title: 'Babbel Review (2026): Pricing and Who It’s For',
     description:
-      'An honest look at Babbel: how its short lessons work, which languages it teaches, what it costs and who it suits. Updated October 2026.',
+      'An honest look at Babbel: how its short lessons work, which languages it teaches, what it costs and who it suits.',
     headline: 'Babbel review: short, conversation-focused language lessons',
     intro:
       'Babbel is a subscription language app built around short lessons that focus on practical conversation. This review covers how it works, what it costs and who is likely to get the most from it.',

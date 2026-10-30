@@ -1,3 +1,4 @@
+import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allCategories, categoryRegistry } from '@/data/all-categories'
@@ -95,6 +96,7 @@ export default async function CategoryPage({ params }: Props) {
           ))}
         </ul>
       </section>
+    <RelatedContent path={`/${category.slug}`} />
     </div>
   )
 }

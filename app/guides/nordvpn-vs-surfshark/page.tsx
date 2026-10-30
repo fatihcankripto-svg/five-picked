@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'NordVPN vs Surfshark: Which VPN Should You Choose?',
   description:
-    'NordVPN and Surfshark compared: devices, speed, audits, price and who each one suits. Updated October 2026.',
+    'NordVPN and Surfshark compared: devices, speed, audits, price and who each one suits.',
   path: '/guides/nordvpn-vs-surfshark',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'NordVPN vs Surfshark: Which VPN Should You Choose?',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/nordvpn-vs-surfshark',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function NordVpnVsSurfsharkPage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/nordvpn-vs-surfshark"
       eyebrow="Guide"
       title="NordVPN vs Surfshark: which VPN should you choose?"
-      intro="NordVPN and Surfshark are two of the most popular VPNs, and they are closer than most comparisons admit. The right pick usually comes down to how many devices you have and how you weigh price against polish. Last updated October 25, 2026."
+      intro="NordVPN and Surfshark are two of the most popular VPNs, and they are closer than most comparisons admit. The right pick usually comes down to how many devices you have and how you weigh price against polish."
     >
       <script
         type="application/ld+json"

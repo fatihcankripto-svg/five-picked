@@ -1,3 +1,4 @@
+import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "Free plan" pages.
  *
@@ -8,7 +9,7 @@
 import { allCategories } from '@/data/all-categories'
 import type { Tool } from '@/data/categories'
 
-export const freePagesUpdated = '2026-10-29'
+export const freePagesUpdated = editorialDates.free
 
 export type FreeFaq = { question: string; answer: string }
 

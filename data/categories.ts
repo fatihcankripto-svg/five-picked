@@ -1,3 +1,4 @@
+import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — single source of truth for all categories, subcategories and tools.
  *
@@ -42,7 +43,7 @@ export type Category = {
 }
 
 /** Shown as "Last updated" on every ranked list page. Use ISO format (YYYY-MM-DD). */
-export const lastUpdated = '2026-10-24'
+export const lastUpdated = editorialDates.categories
 
 /**
  * Generates 5 clearly marked placeholder tools for a list.

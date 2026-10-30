@@ -1,3 +1,4 @@
+import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
@@ -69,13 +70,19 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = getBlogPost(slug)
   if (!post) notFound()
 
+  const headings: { id: string; label: string }[] = []
+  const articleHtml = post.content.replace(/<h2>(.*?)<\/h2>/g, (_, label: string) => {
+    const id = `section-${headings.length + 1}`
+    headings.push({ id, label: label.replace(/<[^>]*>/g, '') })
+    return `<h2 id="${id}">${label}</h2>`
+  })
   const minutes = readingTimeMinutes(post.content)
   const related = getRelatedPosts(post, blogPosts, 3)
 
   return (
     <>
       <ArticleJsonLd post={post} />
-      <FaqJsonLd post={post} />
+
       <BreadcrumbJsonLd post={post} />
 
       <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
@@ -101,9 +108,10 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </header>
 
+        <nav aria-label="On this page" className="mt-8 rounded-xl border border-border p-5"><p className="font-semibold">On this page</p><ul className="mt-3 space-y-2 text-sm">{headings.map((heading) => <li key={heading.id}><a href={`#${heading.id}`} className="text-primary underline underline-offset-4">{heading.label}</a></li>)}</ul></nav>
         <div
           className="prose prose-invert mt-10 max-w-none prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: articleHtml }}
         />
 
         <div className="mt-12 rounded-xl border border-border bg-muted/30 p-5">
@@ -150,7 +158,8 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
           </div>
         </footer>
-      </article>
+      <RelatedContent path={`/blog/${post.slug}`} />
+    </article>
     </>
   )
 }

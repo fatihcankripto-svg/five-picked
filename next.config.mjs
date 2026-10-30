@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [{ source: '/marketing-and-seo', destination: '/ai-tools/marketing-and-seo', permanent: true }]
+  },
   images: {
     unoptimized: true,
   },

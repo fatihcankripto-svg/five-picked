@@ -1,3 +1,4 @@
+import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "X alternatives" pages.
  *
@@ -13,7 +14,7 @@ import { allCategories } from '@/data/all-categories'
 import type { Tool } from '@/data/categories'
 
 /** Update this date whenever you edit the copy below. ISO format. */
-export const alternativesUpdated = '2026-10-29'
+export const alternativesUpdated = editorialDates.alternatives
 
 export type Faq = { question: string; answer: string }
 export type GuideLink = { href: string; label: string }

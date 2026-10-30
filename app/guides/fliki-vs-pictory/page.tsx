@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'Fliki vs Pictory: Which AI Video Tool Is Better?',
   description:
-    'Fliki and Pictory both turn text into video, but they start from different places. See how they differ and which one fits your content. Updated October 2026.',
+    'Fliki and Pictory both turn text into video, but they start from different places. See how they differ and which one fits your content.',
   path: '/guides/fliki-vs-pictory',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Fliki vs Pictory: Which AI Video Tool Is Better?',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/fliki-vs-pictory',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function FlikiVsPictoryPage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/fliki-vs-pictory"
       eyebrow="Guide"
       title="Fliki vs Pictory: which AI video tool is better?"
-      intro="Both tools turn text into video, which makes them easy to confuse. In practice they start from different places. This guide shows where each one is strongest so you can pick the right one for your content. Last updated October 25, 2026."
+      intro="Both tools turn text into video, which makes them easy to confuse. In practice they start from different places. This guide shows where each one is strongest so you can pick the right one for your content."
     >
       <script
         type="application/ld+json"

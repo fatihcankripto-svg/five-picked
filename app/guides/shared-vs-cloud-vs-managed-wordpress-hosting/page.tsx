@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'Shared vs Cloud vs Managed WordPress Hosting: Which Do You Need?',
   description:
-    'Shared, VPS, cloud and managed WordPress hosting explained in plain English, with who each type suits. Updated October 2026.',
+    'Shared, VPS, cloud and managed WordPress hosting explained in plain English, with who each type suits.',
   path: '/guides/shared-vs-cloud-vs-managed-wordpress-hosting',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Shared vs Cloud vs Managed WordPress Hosting: Which Do You Need?',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/shared-vs-cloud-vs-managed-wordpress-hosting',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function HostingTypesPage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/shared-vs-cloud-vs-managed-wordpress-hosting"
       eyebrow="Guide"
       title="Shared vs cloud vs managed WordPress hosting"
-      intro="Hosting plans come with confusing names. This guide explains the main types in plain English, so you can pick the one that matches your site today and leave room to grow. Last updated October 25, 2026."
+      intro="Hosting plans come with confusing names. This guide explains the main types in plain English, so you can pick the one that matches your site today and leave room to grow."
     >
       <script
         type="application/ld+json"

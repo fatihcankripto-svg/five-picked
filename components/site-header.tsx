@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
-import { allCategories } from '@/data/all-categories'
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
 
@@ -12,12 +11,7 @@ type TopLevel =
   | { kind: 'dropdown'; id: string; label: string; items: { href: string; label: string }[] }
   | { kind: 'link'; id: string; label: string; href: string }
 
-const categoriesItems = allCategories.map((c) => ({
-  href: `/${c.slug}`,
-  label: c.name,
-}))
-
-const topLevel: TopLevel[] = [
+const makeTopLevel = (categoriesItems: { href: string; label: string }[]): TopLevel[] => [
   {
     kind: 'dropdown',
     id: 'categories',
@@ -31,7 +25,8 @@ const topLevel: TopLevel[] = [
   { kind: 'link', id: 'blog', label: 'Blog', href: '/blog' },
 ]
 
-export function SiteHeader() {
+export function SiteHeader({ categoriesItems }: { categoriesItems: { href: string; label: string }[] }) {
+  const topLevel = makeTopLevel(categoriesItems)
   const pathname = usePathname()
   const [openDesktop, setOpenDesktop] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)

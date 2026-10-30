@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'Best AI Video Tools for Beginners: Which One Fits You?',
   description:
-    'AI video tools do very different jobs. Here is what Pictory, Fliki, Synthesia, Kling AI and ElevenLabs each do best, and how to choose. Updated October 2026.',
+    'AI video tools do very different jobs. Here is what Pictory, Fliki, Synthesia, Kling AI and ElevenLabs each do best, and how to choose.',
   path: '/guides/best-ai-video-tools-for-beginners',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Best AI Video Tools for Beginners: Which One Fits You?',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/best-ai-video-tools-for-beginners',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function BestAiVideoToolsPage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/best-ai-video-tools-for-beginners"
       eyebrow="Guide"
       title="Best AI video tools for beginners"
-      intro="Not all AI video tools do the same job. Some turn articles into videos, some create a talking presenter, and some generate cinematic clips from a sentence. This guide helps you match the tool to what you want to make. Last updated October 25, 2026."
+      intro="Not all AI video tools do the same job. Some turn articles into videos, some create a talking presenter, and some generate cinematic clips from a sentence. This guide helps you match the tool to what you want to make."
     >
       <script
         type="application/ld+json"

@@ -1,10 +1,11 @@
+import { editorialDates } from '@/lib/editorial-dates'
 import Link from 'next/link'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
   title: 'How to Choose a VPN: A Plain-English Guide',
   description:
-    'What a VPN does, what it does not do, and what to check before you pick one. Plus which VPNs suit which kind of user. Updated October 2026.',
+    'What a VPN does, what it does not do, and what to check before you pick one. Plus which VPNs suit which kind of user.',
   path: '/guides/how-to-choose-a-vpn',
 })
 
@@ -12,8 +13,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'How to Choose a VPN: A Plain-English Guide',
-  datePublished: '2026-10-25',
-  dateModified: '2026-10-25',
+  datePublished: editorialDates.guides,
+  dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   mainEntityOfPage: 'https://fivepicked.com/guides/how-to-choose-a-vpn',
@@ -21,10 +22,10 @@ const articleJsonLd = {
 
 export default function HowToChooseAVpnPage() {
   return (
-    <ContentPage
+    <ContentPage path="/guides/how-to-choose-a-vpn"
       eyebrow="Guide"
       title="How to choose a VPN"
-      intro="VPN ads promise a lot. This guide explains in plain English what a VPN really does, what to check before you pick one, and which options suit which kind of person. Last updated October 25, 2026."
+      intro="VPN ads promise a lot. This guide explains in plain English what a VPN really does, what to check before you pick one, and which options suit which kind of person."
     >
       <script
         type="application/ld+json"
