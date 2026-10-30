@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { allCategories } from '@/data/all-categories'
+import { allCategories, categoryRegistry } from '@/data/all-categories'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CategoryCard } from '@/components/category-card'
 import { RankedList } from '@/components/ranked-list'
@@ -10,7 +10,7 @@ import { getCategory } from '@/lib/site'
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return allCategories.map((category) => ({ category: category.slug }))
+  return categoryRegistry.map((category) => ({ category: category.slug }))
 }
 
 type Props = { params: Promise<{ category: string }> }
@@ -18,7 +18,10 @@ type Props = { params: Promise<{ category: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: slug } = await params
   const category = getCategory(slug)
-  if (!category) return {}
+  if (!category) {
+    const hidden = categoryRegistry.find((entry) => entry.slug === slug)
+    return hidden ? { title: `${hidden.name}: Selection in progress`, description: `Our ${hidden.name} selection is being researched. Browse our complete recommendations instead.`, robots: { index: false, follow: true }, alternates: { canonical: `/${slug}` } } : {}
+  }
 
   const subCount = category.subcategories?.length ?? 0
   const isHub = subCount > 0
@@ -42,7 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CategoryPage({ params }: Props) {
   const { category: slug } = await params
   const category = getCategory(slug)
-  if (!category) notFound()
+  if (!category) {
+    const hidden = categoryRegistry.find((entry) => entry.slug === slug)
+    if (!hidden) notFound()
+    return <div className="mx-auto max-w-3xl px-5 py-16"><h1 className="text-3xl font-semibold">{hidden.name}: selection in progress</h1><p className="mt-5 text-muted-foreground">We publish a list only when all five recommendations are ready.</p><a href="/categories" className="mt-6 inline-block text-primary underline">Browse complete categories</a></div>
+  }
 
   if (category.tools) {
     return (

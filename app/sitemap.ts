@@ -1,7 +1,7 @@
 import { blogPosts } from '@/lib/blog-pages'
 import type { MetadataRoute } from 'next'
 import { lastUpdated, type Tool } from '@/data/categories'
-import { allCategories } from '@/data/all-categories'
+import { allCategories, isCompleteList } from '@/data/all-categories'
 import { reviews } from '@/data/reviews'
 import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
 import { freePages, freePagesUpdated } from '@/lib/free-pages'
@@ -26,7 +26,7 @@ const guidePaths = [
 
 /** A list is "full" when none of its 5 slots is a "Coming soon" placeholder. */
 function isFull(tools: Tool[]) {
-  return tools.every((tool) => (tool as Tool & { comingSoon?: boolean }).comingSoon !== true)
+  return isCompleteList(tools)
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

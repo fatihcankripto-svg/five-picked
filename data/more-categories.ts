@@ -337,6 +337,7 @@ export const extraCategories: Category[] = [
   },
   {
     slug: 'website-builders',
+    hidden: true,
     name: 'Website Builders',
     description:
       'Tools for designing and launching a website, from visual page builders to AI builders that start from a prompt.',
@@ -629,6 +630,7 @@ export const extraCategories: Category[] = [
   },
   {
     slug: 'gaming',
+    hidden: true,
     name: 'Gaming',
     description: 'Places to buy PC games and game keys, with sales and bundles.',
     tools: fillToFive(
@@ -657,6 +659,7 @@ export const extraCategories: Category[] = [
   },
   {
     slug: 'refurbished-electronics',
+    hidden: true,
     name: 'Refurbished Electronics',
     description: 'Marketplaces for buying professionally refurbished phones, laptops and gadgets.',
     tools: fillToFive(
@@ -685,6 +688,7 @@ export const extraCategories: Category[] = [
   },
   {
     slug: 'diy-legal',
+    hidden: true,
     name: 'DIY Legal',
     description: 'Self-help legal guides, forms and software for everyday legal needs.',
     tools: fillToFive(

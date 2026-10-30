@@ -33,6 +33,7 @@ export type Subcategory = {
 }
 
 export type Category = {
+  hidden?: boolean
   slug: string
   name: string
   description: string

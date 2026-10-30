@@ -33,7 +33,7 @@ const copies: FreeCopy[] = [
     slug: 'best-free-ai-video-tools',
     title: 'Best Free AI Video Tools',
     h1: 'The best free AI video tools',
-    metaTitle: 'Best Free AI Video Tools (2026) — 4 Tested Picks',
+    metaTitle: 'Best Free AI Video Tools (2026) — Free Plans and Trials',
     metaDescription:
       'The best AI video tools with a free plan, ranked and compared. See what each free tier actually includes before you upgrade.',
     intro:
@@ -442,7 +442,7 @@ function buildToolIndex(): Map<string, Tool> {
 
 const toolIndex = buildToolIndex()
 
-export const freePages: FreePage[] = copies.map((copy) => {
+export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.every((slug) => toolIndex.has(slug))).map((copy) => {
   const tools = copy.toolSlugs.map((slug) => {
     const tool = toolIndex.get(slug)
     if (!tool) {
