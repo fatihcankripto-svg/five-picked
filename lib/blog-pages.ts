@@ -642,8 +642,7 @@ export const blogPosts: BlogPost[] = [
       { path: '/categories', label: 'All categories' },
     ],
   },
-]
-{
+  {
   slug: 'skillshare-vs-masterclass',
   title: 'Skillshare vs MasterClass: Which One Is Actually Worth Paying For in 2026?',
   metaTitle: 'Skillshare vs MasterClass (2026) — Which Learning Subscription Fits You?',
@@ -699,6 +698,8 @@ export const blogPosts: BlogPost[] = [
     { path: '/categories', label: 'All categories' },
   ],
 },
+]
+
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug)
 }
