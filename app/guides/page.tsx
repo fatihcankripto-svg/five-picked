@@ -8,6 +8,7 @@ export const metadata = contentMetadata({
 })
 
 const guides = [
+  { href: '/guides/ai-voice-commercial-use', title: 'Can you use free AI voices commercially?', summary: 'Official ElevenLabs and Fliki licensing rules, and what an upgrade does not cover.' },
   {
     href: '/guides/best-ai-meeting-note-takers',
     title: 'Best AI meeting note takers',

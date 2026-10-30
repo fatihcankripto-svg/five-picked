@@ -51,3 +51,36 @@ sitemap_paths={e.text.removeprefix('https://fivepicked.com') or '/' for e in roo
 expected={p for p,v in pages.items() if not v.noindex} | {'/blog'}
 assert sitemap_paths == expected, f'Sitemap mismatch: missing {expected-sitemap_paths}, extra {sitemap_paths-expected}'
 print('PASS: unique metadata, valid canonical, no broken links, 3+ referring pages, sitemap parity and heading landmarks')
+
+# FAQ markup must describe visible text, never hidden extra answers.
+import json, re, html
+class VisibleText(HTMLParser):
+ def __init__(self): super().__init__(); self.skip=0; self.parts=[]
+ def handle_starttag(self,tag,attrs):
+  if tag in ('script','style'): self.skip+=1
+ def handle_endtag(self,tag):
+  if tag in ('script','style'): self.skip-=1
+ def handle_data(self,data):
+  if not self.skip:self.parts.append(data)
+def normalized(text):return ' '.join(html.unescape(text).split())
+def schema_nodes(value):
+ if isinstance(value,list):
+  for item in value:yield from schema_nodes(item)
+ elif isinstance(value,dict):
+  yield value
+  if '@graph' in value:yield from schema_nodes(value['@graph'])
+faq_count=0
+for file in Path('.next/server/app').rglob('*.html'):
+ raw=file.read_text(); visible=VisibleText(); visible.feed(raw); text=normalized(' '.join(visible.parts))
+ for data in re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>',raw,re.S):
+  for node in schema_nodes(json.loads(data)):
+   assert node.get('@type') != 'AggregateRating', f'Invented rating in {file}'
+   if node.get('@type')=='FAQPage':
+    for q in node['mainEntity']:
+     assert normalized(q['name']) in text, f'Non-visible FAQ question in {file}'
+     assert normalized(q['acceptedAnswer']['text']) in text, f'Non-visible FAQ answer in {file}'
+     faq_count+=1
+   if node.get('@type')=='BreadcrumbList':
+    entries=node['itemListElement']
+    assert [e['position'] for e in entries]==list(range(1,len(entries)+1)), f'Invalid breadcrumb order in {file}'
+print(f'PASS: JSON-LD parses, breadcrumb order is valid, {faq_count} FAQ answers match visible text')

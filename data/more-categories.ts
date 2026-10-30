@@ -20,7 +20,7 @@ function comingSoonTools(count: number, firstRank: number, topic: string): PickT
         'We are still researching this spot. We only add a tool once we are happy it deserves a place in the top five.',
       strengths: [],
       goodToKnow: 'Check back soon.',
-      startingPrice: '—',
+      startingPrice: 'See website',
       officialUrl: '#',
       comingSoon: true,
     }
@@ -61,7 +61,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'When a trip mixes separate tickets, a delay on one flight may not be covered by the next airline. Read the booking terms first.',
-              startingPrice: 'Free to search; you pay the fare',
+              startingPrice: 'See website',
               officialUrl: 'https://www.kiwi.com/',
             },
             {
@@ -79,7 +79,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Check the final price and any add-ons or membership offers at checkout, and remember that changes follow both eDreams and airline rules.',
-              startingPrice: 'Free to search; you pay the fare',
+              startingPrice: 'See website',
               officialUrl: 'https://www.edreams.com/',
             },
             {
@@ -97,7 +97,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Because you book through an agency, changes and refunds depend on both the agency and the airline. Check the rules before paying.',
-              startingPrice: 'Free to search; you pay the fare',
+              startingPrice: 'See website',
               officialUrl: 'https://www.cheapoair.com/',
             },
             {
@@ -115,7 +115,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Available payment methods depend on your country and the route, so check what is offered at checkout.',
-              startingPrice: 'Free to search; you pay the fare',
+              startingPrice: 'See website',
               officialUrl: 'https://www.alternativeairlines.com/',
             },
             {
@@ -133,7 +133,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Booking conditions vary by airline and hotel, so read the fare rules and cancellation terms before you pay.',
-              startingPrice: 'Free to search; you pay the fare',
+              startingPrice: 'See website',
               officialUrl: 'https://www.trip.com/',
             },
           ],
@@ -162,7 +162,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Cancellation rules differ from one experience to the next, so check each listing before booking.',
-              startingPrice: 'Free to browse; price per activity',
+              startingPrice: 'See website',
               officialUrl: 'https://www.viator.com/',
             },
             {
@@ -180,7 +180,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Cancellation terms depend on the activity, so read them on the listing before you book.',
-              startingPrice: 'Free to browse; price per activity',
+              startingPrice: 'See website',
               officialUrl: 'https://www.getyourguide.com/',
             },
             {
@@ -198,7 +198,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'It is more focused on tickets than on guided tours, so it suits independent sightseeing best.',
-              startingPrice: 'Free to browse; price per ticket',
+              startingPrice: 'See website',
               officialUrl: 'https://www.tiqets.com/',
             },
           ],
@@ -226,7 +226,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Routes, fares and luggage rules vary by country, so check the details for your trip.',
-              startingPrice: 'Free to search; fares vary by route',
+              startingPrice: 'See website',
               officialUrl: 'https://www.flixbus.com/',
             },
           ],
@@ -254,7 +254,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Insurance, extras and fuel rules vary by location, so read the rental terms before you confirm.',
-              startingPrice: 'Free to search; price per rental',
+              startingPrice: 'See website',
               officialUrl: 'https://www.europcar.com/',
             },
             {
@@ -271,7 +271,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Coverage and offers depend on the destination, so check availability for the country you are visiting.',
-              startingPrice: 'Free to search; price per rental',
+              startingPrice: 'See website',
               officialUrl: 'https://www.rentcars.com/',
             },
           ],
@@ -299,7 +299,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Your phone must support eSIM and be unlocked. Plans are focused on data, so check what is included before you buy.',
-              startingPrice: 'Prepaid plans; see website for current prices',
+              startingPrice: 'See website',
               officialUrl: 'https://saily.com/',
             },
           ],
@@ -326,7 +326,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'It is a membership, not a full travel insurance policy. Read exactly what is covered and who is eligible.',
-              startingPrice: 'See website for current membership prices',
+              startingPrice: 'See website',
               officialUrl: 'https://www.medjetassist.com/',
             },
           ],
@@ -358,7 +358,7 @@ export const extraCategories: Category[] = [
           ],
           goodToKnow:
             'It needs a WordPress site, and advanced features are on paid plans. See the website for current plans.',
-          startingPrice: 'Free version available; see website for Pro plans',
+          startingPrice: 'See website',
           officialUrl: 'https://elementor.com/',
         },
         {
@@ -376,7 +376,7 @@ export const extraCategories: Category[] = [
           ],
           goodToKnow:
             'Its community is smaller than the biggest builders, and some features sit on paid plans.',
-          startingPrice: 'Free version available; see website for paid plans',
+          startingPrice: 'See website',
           officialUrl: 'https://www.brizy.io/',
         },
         {
@@ -394,7 +394,7 @@ export const extraCategories: Category[] = [
           ],
           goodToKnow:
             'It runs on credits, so heavier use needs a paid plan. Private projects and custom domains start on the paid plan.',
-          startingPrice: 'Free plan available; paid from about $19/month',
+          startingPrice: 'See website',
           officialUrl: 'https://www.create.xyz/',
         },
       ],
@@ -428,7 +428,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'It is a subscription, and it suits people who are comfortable working in a spreadsheet.',
-              startingPrice: 'Free trial available; paid from about $79/year',
+              startingPrice: 'See website',
               officialUrl: 'https://www.tiller.com/',
             },
                         {
@@ -446,7 +446,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'It is a debt payoff tool more than a classic budgeting app, and it is a US service. Changed is not a bank, so read the account terms before you sign up.',
-              startingPrice: 'From about $6/month',
+              startingPrice: 'See website',
               officialUrl: 'https://www.gochanged.com/',
             },
 
@@ -465,7 +465,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'It is aimed mainly at the US, and paid plans cost more than a basic budgeting app. Check current prices.',
-              startingPrice: 'Free and paid options; paid plans around $20/month',
+              startingPrice: 'See website',
               officialUrl: 'https://finaciti.com/',
             },
           ],
@@ -492,7 +492,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'It is aimed at US customers. Compare plans and read what is covered before you subscribe.',
-              startingPrice: 'See website for current plans',
+              startingPrice: 'See website',
               officialUrl: 'https://www.identityiq.com/',
             },
           ],
@@ -520,7 +520,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Availability depends on your country, so check that Helcim serves your business location.',
-              startingPrice: 'No monthly fee; per-transaction pricing',
+              startingPrice: 'See website',
               officialUrl: 'https://www.helcim.com/',
             },
           ],
@@ -555,7 +555,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'The level of detail can feel like a lot if you only want a simple calorie count.',
-              startingPrice: 'Free plan available; Gold roughly $40–50/year (check website)',
+              startingPrice: 'See website',
               officialUrl: 'https://cronometer.com/',
             },
             {
@@ -573,7 +573,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'The free plan is limited, and some features need Premium. See the website for current pricing.',
-              startingPrice: 'Free plan available; see website for Premium',
+              startingPrice: 'See website',
               officialUrl: 'https://www.eatthismuch.com/',
             },
             {
@@ -591,7 +591,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'Full features need a subscription, and it covers the main nutrients rather than going as deep as specialist trackers. Published prices vary, so check the app.',
-              startingPrice: 'Free tier available; Premium about $10–20/month',
+              startingPrice: 'See website',
               officialUrl: 'https://www.welling.ai/',
             },
           ],
@@ -619,7 +619,7 @@ export const extraCategories: Category[] = [
               ],
               goodToKnow:
                 'The free plan only includes group classes. The full library needs the paid plan, which renews automatically.',
-              startingPrice: 'Free plan available; Unlimited from about $10/month (billed yearly)',
+              startingPrice: 'See website',
               officialUrl: 'https://fiit.tv/',
             },
           ],
@@ -650,7 +650,7 @@ export const extraCategories: Category[] = [
           ],
           goodToKnow:
             'Keys are redeemed on another platform, and some games have region restrictions, so check before you buy.',
-          startingPrice: 'Pay per game; prices vary',
+          startingPrice: 'See website',
           officialUrl: 'https://www.fanatical.com/',
         },
       ],
@@ -679,7 +679,7 @@ export const extraCategories: Category[] = [
           ],
           goodToKnow:
             'Sellers are independent refurbishers, so check the condition grade, warranty and return terms on each listing.',
-          startingPrice: 'Pay per device; prices vary',
+          startingPrice: 'See website',
           officialUrl: 'https://www.backmarket.com/',
         },
       ],
@@ -707,7 +707,7 @@ export const extraCategories: Category[] = [
           ],
           goodToKnow:
             'It is mainly US-focused and is not a substitute for a lawyer. Complex situations need professional advice.',
-          startingPrice: 'See website for current prices',
+          startingPrice: 'See website',
           officialUrl: 'https://www.nolo.com/',
         },
       ],

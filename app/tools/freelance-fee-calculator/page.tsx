@@ -1,3 +1,4 @@
+import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumbs } from '@/components/breadcrumbs'
@@ -8,7 +9,7 @@ import { absoluteUrl } from '@/lib/site'
 const path = '/tools/freelance-fee-calculator'
 const title = 'Fiverr & Upwork Fee Calculator (2026)'
 const description =
-  'Free Fiverr and Upwork fee calculator. Enter your order amount to see exactly what you keep after platform fees — in USD, EUR or GBP.'
+  'Free Fiverr and Upwork fee calculator. Enter your order amount to estimate what you keep after platform fees — in USD, EUR or GBP.'
 
 export const metadata: Metadata = {
   title,
@@ -27,22 +28,22 @@ const faqs = [
   {
     question: 'How much does Upwork take from freelancers?',
     answer:
-      'Upwork charges a flat 10% freelancer service fee on hourly and fixed-price contracts. On a $100 contract, you keep $90 before withdrawal fees.',
+      'Upwork lists a contract-specific freelancer fee from 0% to 15%. Use the rate shown in your proposal or offer. A 10% example on $100 leaves $90 before other costs.',
   },
   {
     question: 'Does the client also pay a fee on Upwork?',
     answer:
-      'Yes. Upwork charges clients a separate marketplace fee on top of your rate. That fee does not affect your net earnings, so this calculator only subtracts the 10% freelancer fee.',
+      'Yes. Upwork charges clients a separate marketplace fee on top of your rate. That fee does not affect your net earnings, so this calculator subtracts only the freelancer rate you enter.',
   },
   {
     question: 'Are these fees the same in every country?',
     answer:
-      'The percentage is the same, but some countries add local taxes or withdrawal fees on top. Check the platform’s official help centre for your country before you rely on these numbers.',
+      'Your applicable contract and any local taxes, conversion or withdrawal charges affect the total. Check the platform’s official help centre for your country before you rely on these numbers.',
   },
   {
     question: 'Which platform leaves me with more money?',
     answer:
-      'On the same order amount, Upwork’s 10% fee leaves you with more than Fiverr’s 20% fee. Fiverr offsets this with fixed-price packages and faster discovery, so the better choice depends on how you sell.',
+      'Compare the actual contract fee and any extra costs, then consider how each platform fits your service. A lower percentage alone does not guarantee higher earnings.',
   },
 ]
 
@@ -92,8 +93,8 @@ export default function Page() {
           Fiverr & Upwork fee calculator
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground text-pretty">
-          Enter an order amount to see exactly what you keep after platform fees. Uses the current
-          flat rates: 20% on Fiverr, 10% on Upwork. Nothing is sent to a server — everything runs in
+          Enter an order amount to estimate earnings before taxes and other charges. Fiverr uses
+          a 20% seller fee; enter your Upwork contract percentage (0–15%). Nothing is sent to a server — everything runs in
           your browser.
         </p>
       </header>
@@ -113,9 +114,7 @@ export default function Page() {
             $500 order costs you $100.
           </p>
           <p>
-            Upwork charges a flat <strong className="text-foreground">10% freelancer service fee</strong>{' '}
-            on both hourly and fixed-price contracts. Upwork previously used a sliding scale based
-            on lifetime billings, but that was replaced with a single rate.
+            Upwork lists a <strong className="text-foreground">0–15% contract-specific fee</strong>. The percentage is displayed when you submit a proposal or receive an offer and is fixed for that contract.
           </p>
           <p>
             Neither platform’s fee includes payment processing, currency conversion or withdrawal
@@ -149,6 +148,8 @@ export default function Page() {
         </Link>{' '}
         — Fiverr, Upwork and three other options, ranked with notes on who each one suits.
       </aside>
+      <p className="mt-6 text-sm text-muted-foreground">Sources checked October 31, 2026: <a className="text-primary underline" href="https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee">Upwork freelancer fee</a> and <a className="text-primary underline" href="https://help.fiverr.com/hc/en-us/articles/9234443621137-Your-earnings-page">Fiverr earnings</a>.</p>
+      <RelatedContent path={path} />
     </div>
   )
 }

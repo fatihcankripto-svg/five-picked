@@ -1,4 +1,5 @@
 export const guides = [
+  { path: '/guides/ai-voice-commercial-use', title: 'Can you use free AI voices commercially?', listPath: '/ai-tools/video-and-voice' },
   {
     "path": "/guides/nordvpn-vs-surfshark",
     "title": "NordVPN vs Surfshark: which VPN should you choose?",

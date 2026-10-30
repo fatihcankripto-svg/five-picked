@@ -13,7 +13,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Tidio vs Chatbase: Which Chatbot Platform Fits Your Business?',
-  datePublished: editorialDates.guides,
+  datePublished: editorialDates.guidesPublished,
   dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },

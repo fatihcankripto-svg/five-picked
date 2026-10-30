@@ -160,30 +160,30 @@ const copies: FreeCopy[] = [
   },
   {
     slug: 'vpns-with-a-free-plan',
-    title: 'VPNs With a Free Plan',
-    h1: 'VPNs with a free plan',
-    metaTitle: 'VPNs With a Free Plan (2026) — Which Are Actually Usable?',
+    title: 'VPN Free Plans, Trials and Refunds',
+    h1: 'VPN free plans vs trials: know the difference',
+    metaTitle: 'VPN Free Plans vs Trials: Proton, NordVPN and More',
     metaDescription:
-      'VPNs with a real free plan, ranked. See which free VPNs are usable, which cap your data, and when a cheap paid plan is worth it.',
+      'Compare Proton VPN’s ongoing free plan with trials and refund offers from four paid VPNs. Understand payment, cancellation and app-store conditions.',
     intro:
-      'Most “free VPNs” are not free in any useful sense: they cap your data, show ads, or log your activity. A few major VPNs still offer a genuine free tier, and one of them is the only free VPN we would recommend for everyday use. This page explains which VPN free plans are worth trying and what you give up compared to paying.',
+      'An ongoing free plan, a time-limited trial and a money-back guarantee are different offers. Among these five picks, Proton VPN offers an ongoing free plan. The other four are paid services with trial or refund options that depend on where you subscribe. Do not count a refund offer as free access: it may require payment first.',
     verdict:
-      'Proton VPN is the only free VPN in our top 5 we would recommend for daily use, because its free plan has no data cap. The others — NordVPN, Surfshark, ExpressVPN and PIA — are paid-only, but their long-term prices are low enough that a cheap paid plan usually beats a sketchy free VPN.',
+      'Start with Proton VPN if you need an ongoing free plan; its official pricing page confirms no data cap. For NordVPN, Surfshark, ExpressVPN and PIA, check the exact trial and refund terms for your device and purchase channel. Never assume an app-store purchase follows the provider’s website refund policy.',
     faqs: [
       {
         question: 'Is there a free VPN with no data limit?',
         answer:
-          'Proton VPN offers a free plan with no data cap, which is unusual. Most other free VPNs, including many you see advertised, limit you to a few hundred megabytes or a few hours per month.',
+          'Proton VPN’s official pricing page confirms an ongoing free plan without a data limit. The other four entries here are paid VPNs, not equivalent ongoing free plans.',
       },
       {
         question: 'Are free VPNs safe?',
         answer:
-          'Some are, many are not. A free VPN from a known, audited provider such as Proton VPN is generally safe. Unknown free VPNs may log your traffic, inject ads or sell data. Stick to brands you recognise.',
+          'A free price alone does not establish safety. Review the provider, privacy policy, security documentation and the permissions requested by its app. A familiar brand name is not a substitute for checking those details.',
       },
       {
         question: 'Is a cheap paid VPN better than a free one?',
         answer:
-          'For most people, yes. Long-term plans from NordVPN, Surfshark, ExpressVPN and PIA drop to around $2–3.50 per month, which is often worth paying to avoid the limits and risks of free VPNs.',
+          'A paid plan may suit you if you need features or locations not included in the free tier. Compare the total commitment and renewal price on each official website. See website for current pricing; do not choose by an unverified monthly headline.',
       },
     ],
     toolSlugs: ['proton-vpn', 'nordvpn', 'surfshark', 'expressvpn', 'private-internet-access'],
@@ -194,7 +194,7 @@ const copies: FreeCopy[] = [
     slug: 'best-free-email-marketing-tools',
     title: 'Best Free Email Marketing Tools',
     h1: 'The best free email marketing tools',
-    metaTitle: 'Best Free Email Marketing Tools (2026) — 4 Free Plans',
+    metaTitle: 'Free Email Marketing Plans and Trials Compared',
     metaDescription:
       'The best email marketing software with a free plan, ranked. See how many subscribers each free plan supports before you pay.',
     intro:

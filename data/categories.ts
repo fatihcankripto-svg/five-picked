@@ -118,7 +118,7 @@ function placeholderTools(topic: string): Tool[] {
   return profiles.map((profile, index) => ({
     slug: `tool-${index + 1}`,
     name: `Tool ${index + 1}`,
-    startingPrice: '[Placeholder] See website',
+    startingPrice: 'See website',
     officialUrl: 'https://example.com/',
     ...profile,
   }))
@@ -150,7 +150,7 @@ export const categories: Category[] = [
               "A free tier to try it",
             ],
             goodToKnow: "Videos use credits, and free access is limited and may add a watermark. Paid plans add faster queues and commercial-use rights.",
-            startingPrice: "Free tier available; paid from about $7–9/month",
+            startingPrice: 'See website',
             officialUrl: "https://klingai.com/",
           },
             
@@ -167,7 +167,7 @@ export const categories: Category[] = [
               "Free trial to test it first",
             ],
             goodToKnow: "Each plan limits how many videos you can make per month, so check the plan limits before you buy.",
-            startingPrice: "Free trial available; paid from about $25/month",
+            startingPrice: 'See website',
             officialUrl: "https://pictory.ai",
           },
           {
@@ -183,7 +183,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Plans limit video minutes, and prices were raised earlier this year, so check the current plans.",
-            startingPrice: "Free plan available; paid from about $18–29/month",
+            startingPrice: 'See website',
             officialUrl: "https://www.synthesia.io",
           },
           {
@@ -199,7 +199,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The free plan has limits, so most regular users upgrade for more minutes and voices.",
-            startingPrice: "Free plan available; paid from about $21/month",
+            startingPrice: 'See website',
             officialUrl: "https://fliki.ai",
           },
           {
@@ -215,7 +215,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Usage is measured in credits, so heavy use needs a higher plan. Only clone voices you have permission to use.",
-            startingPrice: "Free plan available; paid from about $5/month",
+            startingPrice: 'See website',
             officialUrl: "https://elevenlabs.io",
           },
         ],
@@ -239,7 +239,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Generations use credits, and higher volumes need a paid plan.",
-            startingPrice: "Free plan available; paid from about $10/month",
+            startingPrice: 'See website',
             officialUrl: "https://firefly.adobe.com",
           },
           {
@@ -255,7 +255,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The free plan has limits, so regular use needs a paid plan.",
-            startingPrice: "Free plan available; paid from about $8/month",
+            startingPrice: 'See website',
             officialUrl: "https://ideogram.ai",
           },
           {
@@ -271,7 +271,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Commercial use and the full model library are on paid plans.",
-            startingPrice: "Free plan available; paid from about $9/month",
+            startingPrice: 'See website',
             officialUrl: "https://www.krea.ai",
           },
           {
@@ -287,7 +287,7 @@ export const categories: Category[] = [
               "Great for experimenting",
             ],
             goodToKnow: "It runs on credits, so heavy use needs a paid plan.",
-            startingPrice: "Free plan available; see website for paid plans",
+            startingPrice: 'See website',
             officialUrl: "https://openart.ai",
           },
                     {
@@ -303,7 +303,7 @@ export const categories: Category[] = [
               "A free plan with daily AI image generations",
             ],
             goodToKnow: "AI features run on credits, and the commercial AI license is part of the paid plans. Free use is limited.",
-            startingPrice: "Free plan available; paid from about $6/month (billed annually)",
+            startingPrice: 'See website',
             officialUrl: "https://www.freepik.com/",
           },
             
@@ -328,7 +328,7 @@ export const categories: Category[] = [
               "Team features on paid plans",
             ],
             goodToKnow: "AI features use credits, so heavy use of summaries may need a higher plan.",
-            startingPrice: "Free plan available; paid from about $10/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://fireflies.ai",
           },
           {
@@ -344,7 +344,7 @@ export const categories: Category[] = [
               "Team and CRM features on paid plans",
             ],
             goodToKnow: "The free plan caps the number of advanced AI summaries each month.",
-            startingPrice: "Free plan available; paid from about $15/user/month",
+            startingPrice: 'See website',
             officialUrl: "https://fathom.ai",
           },
           {
@@ -360,7 +360,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The free plan limits monthly minutes and meeting length.",
-            startingPrice: "Free plan available; Pro from about $8/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://otter.ai",
           },
           {
@@ -376,7 +376,7 @@ export const categories: Category[] = [
               "CRM and sales tools on paid plans",
             ],
             goodToKnow: "The free plan limits monthly AI summaries.",
-            startingPrice: "Free plan available; Pro from about $18/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://tldv.io",
           },
           {
@@ -392,7 +392,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "The free plan has tight monthly and per-session limits, and there is no built-in CRM sync.",
-            startingPrice: "Free plan available; paid from about $8/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://www.notta.ai",
           },
         ],
@@ -416,7 +416,7 @@ export const categories: Category[] = [
               "Free trial and a limited free account",
             ],
             goodToKnow: "It has a lot of features, so it takes time to learn, and costs add up on higher plans.",
-            startingPrice: "Paid plans from about $140/month; free trial available",
+            startingPrice: 'See website',
             officialUrl: "https://www.semrush.com",
           },
           {
@@ -432,7 +432,7 @@ export const categories: Category[] = [
               "Good for ongoing content work",
             ],
             goodToKnow: "Plans limit how many documents you can create, and there is no free plan.",
-            startingPrice: "From about $49/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://surferseo.com",
           },
           {
@@ -448,7 +448,7 @@ export const categories: Category[] = [
               "Free trial available",
             ],
             goodToKnow: "Plans include a set number of content analyses each month, and it is less polished than pricier tools.",
-            startingPrice: "Free trial available; paid from about $23/month",
+            startingPrice: 'See website',
             officialUrl: "https://neuronwriter.com",
           },
           {
@@ -464,7 +464,7 @@ export const categories: Category[] = [
               "Lower entry price than some rivals",
             ],
             goodToKnow: "Plans and limits vary, so check the billing terms carefully after any free trial.",
-            startingPrice: "From about $39/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://www.frase.io",
           },
           {
@@ -480,7 +480,7 @@ export const categories: Category[] = [
               "Free trial to test it",
             ],
             goodToKnow: "Plans change often and some features sit on higher plans, so check what is included.",
-            startingPrice: "Free trial available; see website for current plans",
+            startingPrice: 'See website',
             officialUrl: "https://writesonic.com",
           },
         ],
@@ -504,7 +504,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The AI assistant is billed per conversation on top of your plan.",
-            startingPrice: "Free plan available; paid from about $24/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://www.tidio.com",
           },
           {
@@ -520,7 +520,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Usage is measured in message credits, and heavier AI models use more of them.",
-            startingPrice: "Free plan available; paid from about $40/month",
+            startingPrice: 'See website',
             officialUrl: "https://www.chatbase.co",
           },
           {
@@ -536,7 +536,7 @@ export const categories: Category[] = [
               "A free plan for testing",
             ],
             goodToKnow: "The free plan is for prototyping only, since live use needs a paid plan.",
-            startingPrice: "Free plan available; paid from about $45/month",
+            startingPrice: 'See website',
             officialUrl: "https://landbot.io",
           },
           {
@@ -552,7 +552,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "It has a steeper learning curve than simpler tools, and AI usage is billed on top.",
-            startingPrice: "Free plan available; paid from about $89/month",
+            startingPrice: 'See website',
             officialUrl: "https://botpress.com",
           },
           {
@@ -568,7 +568,7 @@ export const categories: Category[] = [
               "Built with company data security in mind",
             ],
             goodToKnow: "It is priced for businesses and has no free plan.",
-            startingPrice: "Paid plans from about $99/month",
+            startingPrice: 'See website',
             officialUrl: "https://customgpt.ai",
           },
         ],
@@ -596,7 +596,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The lowest advertised prices need a long commitment, and plans renew at a higher price. Check the renewal price before you buy.',
-        startingPrice: 'From about $3/month (long-term intro price)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.hostinger.com/',
       },
       {
@@ -613,8 +613,8 @@ export const categories: Category[] = [
           '24/7 support',
         ],
         goodToKnow:
-          'Intro prices apply to the first term only. At the time of writing, the Starter plan renews at around $10/month on a 36-month term.',
-        startingPrice: 'From about $4/month (36-month intro price)',
+          'Compare the total first-term cost and renewal terms on the official website. Current renewal price: see website.',
+        startingPrice: 'See website',
         officialUrl: 'https://www.bluehost.com/',
       },
       {
@@ -632,7 +632,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is a little more technical than shared hosting. Email is not included and is an add-on. A free 3-day trial is available.',
-        startingPrice: 'From about $11–14/month, pay as you go',
+        startingPrice: 'See website',
         officialUrl: 'https://www.awin1.com/cread.php?awinmid=89935&awinaffid=3134673&campaign=fivepicked&ued=https%3A%2F%2Fwww.cloudways.com%2F&platform=pl',
       },
       {
@@ -650,7 +650,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is the most expensive option in this list and works with WordPress only. Plans are limited by monthly visits.',
-        startingPrice: 'From about $35/month',
+        startingPrice: 'See website',
         officialUrl: 'https://kinsta.com/',
       },
       {
@@ -668,7 +668,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Promotional domain prices often rise at renewal, so check the renewal price before you buy.',
-        startingPrice: 'Domains from a few dollars in year one; hosting from about $2–3/month',
+        startingPrice: 'See website',
         officialUrl: 'https://www.namecheap.com/',
       },
     ],
@@ -694,7 +694,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Long plans are much cheaper than monthly billing, and renewal prices are higher than the first-term price.',
-        startingPrice: 'From about $3.50/month (2-year plan)',
+        startingPrice: 'See website',
         officialUrl: 'https://nordvpn.com',
       },
       {
@@ -712,7 +712,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The low price is for long plans paid upfront, and renewals cost more than the first term.',
-        startingPrice: 'From about $2.50/month (2-year plan)',
+        startingPrice: 'See website',
         officialUrl: 'https://surfshark.com',
       },
       {
@@ -730,7 +730,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Plans and prices have changed often this year, so check the current price before you buy.',
-        startingPrice: 'From about $2.50/month (2-year plan)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.expressvpn.com',
       },
       {
@@ -748,7 +748,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free plan has fewer servers and lower speeds than paid plans, and long-term pricing is slightly higher than the cheapest rivals.',
-        startingPrice: 'Free plan available; paid from about $3/month (2-year plan)',
+        startingPrice: 'See website',
         officialUrl: 'https://protonvpn.com',
       },
       {
@@ -766,7 +766,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is a US-based company and has no free plan; the lowest price needs a 3-year commitment paid upfront.',
-        startingPrice: 'From about $2/month (3-year plan)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.privateinternetaccess.com',
       },
     ],
@@ -792,7 +792,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Certificates and graded work need a paid plan, and individual courses are priced separately from Coursera Plus.',
-        startingPrice: 'Free to start; Coursera Plus from about $59/month',
+        startingPrice: 'See website',
         officialUrl: 'https://www.coursera.org',
       },
       {
@@ -810,7 +810,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Annual plans are billed upfront and usually can’t be refunded, and prices have changed a few times this year, so check before you buy.',
-        startingPrice: 'Free plan available; Premium from about $28/month (billed yearly)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.datacamp.com',
       },
       {
@@ -828,7 +828,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It mainly sells yearly memberships, and it does not give completion certificates.',
-        startingPrice: 'From about $14/month (billed yearly)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.skillshare.com',
       },
       {
@@ -846,7 +846,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It focuses on coding only, so it is not the right choice if you want other subjects.',
-        startingPrice: 'Free tier available; Pro from about $24.50/month (billed yearly)',
+        startingPrice: 'See website',
         officialUrl: 'https://scrimba.com',
       },
       {
@@ -864,7 +864,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is billed yearly only and renews automatically, and it does not give completion certificates.',
-        startingPrice: 'From about $10/month (billed yearly)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.masterclass.com',
       },
     ],
@@ -890,7 +890,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free plan has limits, and extras like more users and advanced tools need a paid plan. Prices rise as your list grows.',
-        startingPrice: 'Free plan available; paid from about $10/month',
+        startingPrice: 'See website',
         officialUrl: 'https://www.mailerlite.com',
       },
       {
@@ -908,7 +908,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Paid plans get pricey as your list grows, and prices have gone up recently, so compare before you commit.',
-        startingPrice: 'Free plan available; paid from about $33/month (billed yearly)',
+        startingPrice: 'See website',
         officialUrl: 'https://kit.com',
       },
       {
@@ -926,7 +926,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Some features, such as webinars, sit on higher plans, and costs climb as your list grows.',
-        startingPrice: '14-day free trial; paid from about $19/month',
+        startingPrice: 'See website',
         officialUrl: 'https://www.getresponse.com',
       },
       {
@@ -943,8 +943,8 @@ export const categories: Category[] = [
           'A free plan to get started',
         ],
         goodToKnow:
-          'beehiiv changed its plans and prices in October 2026, and most monetization tools need a paid plan, so check the latest details.',
-        startingPrice: 'Free plan for up to 2,500 subscribers; paid from about $45/month',
+          'Check the current plan terms for monetization features and any additional charges before choosing.',
+        startingPrice: 'See website',
         officialUrl: 'https://www.beehiiv.com',
       },
       {
@@ -962,7 +962,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Design options are more limited than dedicated website builders, and the interface can take a little getting used to.',
-        startingPrice: 'Free plan available; paid from about $17/month',
+        startingPrice: 'See website',
         officialUrl: 'https://systeme.io',
       },
     ],
@@ -988,7 +988,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is subscription-only with no one-time purchase, and it takes some time to learn.',
-        startingPrice: 'From about $23/month (annual plan); Creative Cloud bundles cost more',
+        startingPrice: 'See website',
         officialUrl: 'https://www.adobe.com/products/premiere.html',
       },
       {
@@ -1006,7 +1006,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free version adds a watermark to exports, and some AI features use credits.',
-        startingPrice: 'From about $50/year; free version with watermark',
+        startingPrice: 'See website',
         officialUrl: 'https://filmora.wondershare.com',
       },
       {
@@ -1024,7 +1024,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Plans changed in 2026 and AI generation allowances differ by plan, so check what is included. Annual billing is much cheaper than monthly.',
-        startingPrice: 'From about $16.50/month (billed yearly)',
+        startingPrice: 'See website',
         officialUrl: 'https://elements.envato.com',
       },
       {
@@ -1042,7 +1042,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free plan adds a watermark and limits quality, and paid plans cap monthly recording hours.',
-        startingPrice: 'Free plan available; paid from about $24/month (billed yearly)',
+        startingPrice: 'See website',
         officialUrl: 'https://riverside.com',
       },
       {
@@ -1060,7 +1060,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It costs more than most beginner editors, and exports from the free trial carry a watermark.',
-        startingPrice: 'From about $180/year',
+        startingPrice: 'See website',
         officialUrl: 'https://www.techsmith.com/video-editor.html',
       },
     ],
@@ -1090,7 +1090,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "It feels most at home on Apple devices.",
-            startingPrice: "Free plan available; see website for paid plans",
+            startingPrice: 'See website',
             officialUrl: "https://www.craft.do",
           },
           {
@@ -1106,7 +1106,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "It works differently from folder-based apps, so expect a short learning curve.",
-            startingPrice: "Free plan available; paid from about $10/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://capacities.io",
           },
           {
@@ -1122,7 +1122,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "The free plan has limits, and newer apps offer more modern features.",
-            startingPrice: "Free plan available; see website for paid plans",
+            startingPrice: 'See website',
             officialUrl: "https://evernote.com",
           },
           {
@@ -1138,7 +1138,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It is more powerful than a simple notes app, so it takes more time to set up.",
-            startingPrice: "Free plan available; see website for paid plans",
+            startingPrice: 'See website',
             officialUrl: "https://coda.io",
           },
           {
@@ -1154,7 +1154,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "AI features are best on paid plans, and it is a newer app.",
-            startingPrice: "Free plan available; paid from about $12/month",
+            startingPrice: 'See website',
             officialUrl: "https://mem.ai",
           },
         ],
@@ -1178,7 +1178,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It has a lot of options, so setup takes time, and very large workspaces can feel slow.",
-            startingPrice: "Free plan available; paid from about $7/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://clickup.com",
           },
           {
@@ -1194,7 +1194,7 @@ export const categories: Category[] = [
               "A free plan for very small teams",
             ],
             goodToKnow: "Paid plans have a minimum number of seats, and costs rise on higher tiers.",
-            startingPrice: "Free plan available; paid from about $9/seat/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://monday.com",
           },
           {
@@ -1210,7 +1210,7 @@ export const categories: Category[] = [
               "A free plan for small teams",
             ],
             goodToKnow: "Paid plans have a minimum number of seats, and advanced features sit on higher tiers.",
-            startingPrice: "Free plan available; paid from about $11/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://asana.com",
           },
           {
@@ -1226,7 +1226,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "Mid-tier plans cost more than some rivals, and the free plan is basic.",
-            startingPrice: "Free plan available; paid from about $10/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://www.wrike.com",
           },
           {
@@ -1242,7 +1242,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It is more specialized than general task tools, so it suits client-based teams best.",
-            startingPrice: "Free plan available; paid from about $11/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://www.teamwork.com",
           },
         ],
@@ -1266,7 +1266,7 @@ export const categories: Category[] = [
               "Optional encryption add-on",
             ],
             goodToKnow: "Encryption is a paid add-on, and lifetime plans cost more upfront.",
-            startingPrice: "Free plan available; paid from about $5/month",
+            startingPrice: 'See website',
             officialUrl: "https://www.pcloud.com",
           },
           {
@@ -1282,7 +1282,7 @@ export const categories: Category[] = [
               "Easy file sharing",
             ],
             goodToKnow: "Plans limit how many devices you can connect, so check the details before you choose.",
-            startingPrice: "Free plan available; paid from about $5/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://www.sync.com",
           },
           {
@@ -1298,7 +1298,7 @@ export const categories: Category[] = [
               "Works with other Proton apps",
             ],
             goodToKnow: "It costs more per gigabyte than some rivals, and because files are encrypted, losing your password can make recovery difficult.",
-            startingPrice: "Free plan available; paid from about $4/month",
+            startingPrice: 'See website',
             officialUrl: "https://proton.me/drive",
           },
           {
@@ -1314,7 +1314,7 @@ export const categories: Category[] = [
               "Affordable plans",
             ],
             goodToKnow: "Plans offer less storage than some rivals, and it is a newer service.",
-            startingPrice: "Free plan available; paid from about $5/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://icedrive.net",
           },
           {
@@ -1330,7 +1330,7 @@ export const categories: Category[] = [
               "A free plan with 2 GB",
             ],
             goodToKnow: "Free storage is small, and Dropbox does not use zero-knowledge encryption.",
-            startingPrice: "Free plan available; paid from about $10/month",
+            startingPrice: 'See website',
             officialUrl: "https://www.dropbox.com",
           },
         ],
@@ -1354,7 +1354,7 @@ export const categories: Category[] = [
               "Free plan with AI credits",
             ],
             goodToKnow: "Free decks carry Gamma branding, and AI credits are limited by plan.",
-            startingPrice: "Free plan available; paid from about $10/user/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://gamma.app",
           },
           {
@@ -1370,7 +1370,7 @@ export const categories: Category[] = [
               "Team features on higher plans",
             ],
             goodToKnow: "There is no free plan, only a free trial.",
-            startingPrice: "Free trial available; paid from about $12/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://www.beautiful.ai",
           },
           {
@@ -1386,7 +1386,7 @@ export const categories: Category[] = [
               "A free plan for small teams",
             ],
             goodToKnow: "Some team features need paid plans.",
-            startingPrice: "Free plan available; paid from about $15/month",
+            startingPrice: 'See website',
             officialUrl: "https://pitch.com",
           },
           {
@@ -1402,7 +1402,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "The free plan keeps presentations public, and the format feels different from classic slides.",
-            startingPrice: "Free plan available; paid from about $7/month (billed yearly)",
+            startingPrice: 'See website',
             officialUrl: "https://prezi.com",
           },
           {
@@ -1418,7 +1418,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "Many premium features need a paid plan.",
-            startingPrice: "Free plan available; see website for paid plans",
+            startingPrice: 'See website',
             officialUrl: "https://www.visme.co",
           },
         ],
@@ -1442,7 +1442,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "Complex scenarios take practice, and usage is measured in credits.",
-            startingPrice: "Free plan available; paid from about $9/month",
+            startingPrice: 'See website',
             officialUrl: "https://www.make.com",
           },
           {
@@ -1458,7 +1458,7 @@ export const categories: Category[] = [
               "Cloud option if you don’t want a server",
             ],
             goodToKnow: "It is more technical than other tools, and self-hosting means you manage the server.",
-            startingPrice: "Free to self-host; cloud from about €20/month",
+            startingPrice: 'See website',
             officialUrl: "https://n8n.io",
           },
           {
@@ -1474,7 +1474,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Its app library is smaller than the biggest tools’, and the interface is simpler.",
-            startingPrice: "Free plan available; paid from about $19/month",
+            startingPrice: 'See website',
             officialUrl: "https://www.pabbly.com/connect/",
           },
           {
@@ -1490,7 +1490,7 @@ export const categories: Category[] = [
               "Simple per-flow pricing",
             ],
             goodToKnow: "It has fewer integrations than the biggest tools, and it is a newer platform.",
-            startingPrice: "Free plan available; extra flows from about $5/month each",
+            startingPrice: 'See website',
             officialUrl: "https://www.activepieces.com",
           },
           {
@@ -1506,7 +1506,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It is a newer platform with a smaller community than the leaders.",
-            startingPrice: "Free plan available; see website for paid plans",
+            startingPrice: 'See website',
             officialUrl: "https://latenode.com",
           },
         ],
@@ -1534,7 +1534,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Service fees apply to both buyers and sellers, and quality varies, so check reviews and portfolios before you order.',
-        startingPrice: 'Free to join; you pay per service (sellers set their own prices)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.fiverr.com',
       },
       {
@@ -1552,7 +1552,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Freelancers pay service fees and clients may pay a marketplace fee, so check the current fee rules before you start.',
-        startingPrice: 'Free to join; fees apply on contracts',
+        startingPrice: 'See website',
         officialUrl: 'https://www.upwork.com',
       },
       {
@@ -1570,7 +1570,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It costs more than casual marketplaces, and refund options narrow as a contest moves forward.',
-        startingPrice: 'Logo contests from about $250',
+        startingPrice: 'See website',
         officialUrl: 'https://99designs.com',
       },
       {
@@ -1588,7 +1588,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'With so many bidders, take time to review profiles and past work before you choose.',
-        startingPrice: 'Free to join; fees apply on projects',
+        startingPrice: 'See website',
         officialUrl: 'https://www.freelancer.com',
       },
       {
@@ -1606,7 +1606,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is aimed at businesses, and rates are higher than on open marketplaces, so it is not for tiny budgets.',
-        startingPrice: 'No fixed price; you pay your matched freelancer’s rate',
+        startingPrice: 'See website',
         officialUrl: 'https://www.toptal.com',
       },
     ],
@@ -1632,7 +1632,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is a paid subscription after the first lesson, and longer plans cost far less per month than short ones.',
-        startingPrice: 'From about $9/month (12-month plan)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.awin1.com/cread.php?awinmid=9659&awinaffid=3134673&campaign=fivepicked&platform=pl',
       },
       {
@@ -1650,7 +1650,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It costs more than apps because you are paying for live teaching, and prices vary by language and number of classes.',
-        startingPrice: 'Group classes from about $40 per 4 weeks',
+        startingPrice: 'See website',
         officialUrl: 'https://www.lingoda.com',
       },
       {
@@ -1668,7 +1668,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Quality depends on the tutor you pick, so read reviews and try a trial lesson first.',
-        startingPrice: 'Free to join; lessons from about $5/hour (tutors set their own prices)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.italki.com',
       },
       {
@@ -1686,7 +1686,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Lesson prices vary a lot between tutors, so compare a few before settling on one.',
-        startingPrice: 'Free to join; lessons from about $5/hour (tutors set their own prices)',
+        startingPrice: 'See website',
         officialUrl: 'https://preply.com',
       },
       {
@@ -1704,7 +1704,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It covers fewer languages than Babbel, and the one-time price is higher upfront than a monthly app.',
-        startingPrice: 'From about $150 one-time (lifetime access)',
+        startingPrice: 'See website',
         officialUrl: 'https://www.rocketlanguages.com',
       },
     ],

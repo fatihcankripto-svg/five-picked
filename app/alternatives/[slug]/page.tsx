@@ -72,14 +72,6 @@ export default async function AlternativesPage({ params }: Props) {
         mainEntityOfPage: url,
       },
       {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
-          { '@type': 'ListItem', position: 2, name: 'Alternatives', item: absoluteUrl('/alternatives') },
-          { '@type': 'ListItem', position: 3, name: `${tool.name} alternatives`, item: url },
-        ],
-      },
-      {
         '@type': 'ItemList',
         name: `${tool.name} alternatives`,
         itemListElement: alternatives.map((alt, i) => ({

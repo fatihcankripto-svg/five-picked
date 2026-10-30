@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Avoid reproducible persistent-cache panics in Next 16.4 build workers.
+  experimental: { turbopackFileSystemCacheForBuild: false },
   async redirects() {
     return [{ source: '/marketing-and-seo', destination: '/ai-tools/marketing-and-seo', permanent: true }]
   },

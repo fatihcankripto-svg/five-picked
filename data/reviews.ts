@@ -1,3 +1,4 @@
+import { editorialDates } from '@/lib/editorial-dates'
 export type ReviewSection = { heading: string; paragraphs: string[] }
 export type ReviewLink = { label: string; href: string; note: string }
 export type ReviewFaq = { question: string; answer: string }
@@ -63,7 +64,7 @@ export const reviews: Review[] = [
       {
         heading: 'Cloudways pricing',
         paragraphs: [
-          'Cloudways uses pay-as-you-go pricing. Plans start at roughly $11 to $14 per month on the smaller DigitalOcean servers, depending on the source and current offers. Larger servers and other cloud providers cost more, so the final price depends on the provider and size you choose.',
+          'Cloudways uses pay-as-you-go pricing. See the official website for current server prices and any introductory terms. Larger servers and other cloud providers cost more, so the final price depends on the provider and size you choose.',
           'A short free trial is available for new users, currently listed as three days. Cloudways does not include a free domain, and email is a paid add-on, so budget for those separately. Check the refund and cancellation terms before you commit.',
         ],
       },
@@ -137,7 +138,7 @@ export const reviews: Review[] = [
       },
     ],
     published: '2026-10-27',
-    updated: '2026-10-27',
+    updated: editorialDates.reviews,
   },
   {
     toolSlug: 'babbel',
@@ -258,7 +259,7 @@ export const reviews: Review[] = [
       },
     ],
     published: '2026-10-27',
-    updated: '2026-10-27',
+    updated: editorialDates.reviews,
   },
 ]
 

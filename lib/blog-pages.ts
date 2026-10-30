@@ -1,3 +1,4 @@
+import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — Blog / long-form articles.
  * One file, one source of truth. Add new posts as objects in `blogPosts`.
@@ -37,7 +38,7 @@ const bestAiContentMarketingContent = `
 <h3>Who it is for</h3>
 <p>Semrush fits teams who need one platform for research, planning, and tracking — content strategists, SEO leads, agencies, and anyone running more than one site. It is not the right first purchase for a solo blogger testing the waters, but it pays for itself quickly once content is a real revenue channel.</p>
 <h3>What to know before you buy</h3>
-<p>Semrush is expensive at roughly $140/month for the entry plan, and the interface is deep enough that setup takes a few hours. The free account and trial let you confirm the tool fits your workflow before committing. For more on Semrush and its competitors, see our <a href="/ai-tools/marketing-and-seo">marketing & SEO top 5</a>.</p>
+<p>The free account and trial let you confirm the tool fits your workflow before committing. For more on Semrush and its competitors, see our <a href="/ai-tools/marketing-and-seo">marketing & SEO top 5</a>.</p>
 
 <h2>2. Surfer SEO — best content optimization editor</h2>
 <h3>What it does best</h3>
@@ -45,7 +46,7 @@ const bestAiContentMarketingContent = `
 <h3>Who it is for</h3>
 <p>Surfer fits writers, editors, and SEO teams who publish regularly and want every article optimized before it goes live. It is especially useful for teams producing 4 or more articles a month, where a small scoring gain adds up fast.</p>
 <h3>What to know before you buy</h3>
-<p>Surfer has no free plan — only a paid subscription starting around $49/month billed yearly — and each plan caps how many documents you can create. If you only publish occasionally, a cheaper alternative like NeuronWriter (below) will do most of the same job for less.</p>
+<p>If you only publish occasionally, a cheaper alternative like NeuronWriter (below) will do most of the same job for less.</p>
 
 <h2>3. Writesonic — best for AI writing plus AI search visibility</h2>
 <h3>What it does best</h3>
@@ -57,11 +58,11 @@ const bestAiContentMarketingContent = `
 
 <h2>4. NeuronWriter — best budget content optimization</h2>
 <h3>What it does best</h3>
-<p>NeuronWriter does the core job of Surfer — scoring your draft against top-ranking content — at roughly half the price. The editor is less polished, but the recommendations are clear, and the AI writing credits are enough to draft short articles without a separate tool. For solo writers and small teams, it is the most affordable way to optimize every article before publishing.</p>
+<p>NeuronWriter does the core job of Surfer — scoring your draft against top-ranking content — with a focused optimization workflow. The editor is less polished, but the recommendations are clear, and the AI writing credits are enough to draft short articles without a separate tool. For solo writers and small teams, it is one way to optimize every article before publishing.</p>
 <h3>Who it is for</h3>
-<p>NeuronWriter fits solo content marketers, freelancers, and small teams publishing 2–6 articles a month who want real optimization without a $50+ monthly commitment. It is also a good stepping stone before upgrading to Surfer or Semrush as you grow.</p>
+<p>It is also a good stepping stone before upgrading to Surfer or Semrush as you grow.</p>
 <h3>What to know before you buy</h3>
-<p>NeuronWriter is less refined than Surfer, and some workflows (like team collaboration) are limited. But at roughly $23/month, the value-to-price ratio is hard to beat for anyone on a tight budget. Start with the free trial to see if the interface suits you.</p>
+<p>NeuronWriter is less refined than Surfer, and some workflows (like team collaboration) are limited. Start with the free trial to see if the interface suits you.</p>
 
 <h2>5. Frase — best for research-driven content briefs</h2>
 <h3>What it does best</h3>
@@ -69,7 +70,7 @@ const bestAiContentMarketingContent = `
 <h3>Who it is for</h3>
 <p>Frase fits content teams that brief outside writers, agencies producing many articles per month, and anyone who wants every piece to start from a clear, data-backed outline. It is especially strong for teams handing work to freelancers who need structure.</p>
 <h3>What to know before you buy</h3>
-<p>Frase is priced around $39/month billed yearly, and some features (like team seats) sit on higher plans. Its brief-building is the strongest part — if you mainly need an editor, Surfer or NeuronWriter are more focused. If you brief writers regularly, Frase is the clear pick.</p>
+<p>Its brief-building is the strongest part — if you mainly need an editor, Surfer or NeuronWriter are more focused. If you brief writers regularly, Frase is the clear pick.</p>
 
 <h2>Which AI content marketing tool should you pick?</h2>
 <p>If you want a single platform for research, planning, and tracking, start with <strong>Semrush</strong>. If your priority is optimizing articles you already write, <strong>Surfer SEO</strong> is the strongest editor and <strong>NeuronWriter</strong> is the affordable version. If you care about AI search visibility, <strong>Writesonic</strong> is the only tool on this list that tracks it. If you brief writers, <strong>Frase</strong> will save the most time before writing begins.</p>
@@ -86,9 +87,9 @@ const bestAiContentMarketingContent = `
 <p>Yes — for specific jobs. Free email marketing tools (MailerLite, Kit, beehiiv) and free chatbot tools (Tidio, Chatbase) are genuinely usable for starting lists and answering site questions. For keyword research and content optimization, free tiers are usually too limited for real production — see our <a href="/free/best-free-email-marketing-tools">free email marketing tools guide</a> and our <a href="/free/best-free-ai-chatbots">free AI chatbots guide</a> for what actually works.</p>
 
 <h3>What is the cheapest AI content marketing stack?</h3>
-<p>The lowest useful stack is <strong>NeuronWriter alone</strong> for about $23/month, which covers both AI drafting and content optimization. If you also need keyword research, add a free Semrush account for basic lookups and upgrade to a paid plan once content becomes a real revenue channel.</p>
+<p>If you also need keyword research, add a free Semrush account for basic lookups and upgrade to a paid plan once content becomes a real revenue channel.</p>
 
-<h3>Is Semrush worth $140/month for a small team?</h3>
+<h3>Is a paid Semrush subscription worth it for a small team?</h3>
 <p>Only if you are publishing regularly and using at least 2–3 of its core features (research, competitor analysis, content planning). For a solo writer or a brand new site, Semrush is overkill — start with a cheaper tool like NeuronWriter or a free tier, and upgrade once you are producing content consistently and tracking rankings matters more.</p>
 
 <h2>Final word</h2>
@@ -110,7 +111,7 @@ const semrushVsSurferContent = `
 <li><strong>All-in-one workflow:</strong> Research, plan, track, and audit without leaving the platform.</li>
 </ul>
 <h3>Where Semrush falls short</h3>
-<p>Semrush does not optimize a draft as precisely as a dedicated content editor. Its writing tools are helpful, but the scoring is less granular than Surfer's. It is also expensive: paid plans start around $140/month, and the interface is deep enough that setup takes a few hours. For a solo writer or a brand-new site, it is overkill.</p>
+<p>Semrush does not optimize a draft as precisely as a dedicated content editor. Its writing tools are helpful, but the scoring is less granular than Surfer's. For a solo writer or a brand-new site, it is overkill.</p>
 
 <h2>What Surfer SEO does best</h2>
 <p>Surfer is a content optimization editor. You paste your draft, choose a target keyword, and Surfer scores it against the top-ranking pages for that term. It shows which subtopics to cover, which terms to include, and how long the article should be — turning "write well" into a checklist you can actually hit.</p>
@@ -119,15 +120,13 @@ const semrushVsSurferContent = `
 <li><strong>Real-time content scoring:</strong> See exactly what to change before you publish.</li>
 <li><strong>Outline builder:</strong> Get a data-backed structure from top-ranking pages.</li>
 <li><strong>Focused workflow:</strong> No distractions — just the draft and the score.</li>
-<li><strong>Lower entry price:</strong> From around $49/month billed yearly, roughly a third of Semrush.</li>
+
 </ul>
 <h3>Where Surfer falls short</h3>
 <p>Surfer is not a research platform. It will not tell you which keywords are worth targeting, what competitors are doing, or how your site performs over time. It also has no free plan, and each plan caps how many documents you can create. If you need keyword discovery or competitive analysis, Surfer alone is not enough.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<p>Semrush paid plans start around <strong>$140/month</strong> for the entry tier, with higher tiers for agencies and larger teams. A free account exists but is limited, and a trial lets you test the platform before committing.</p>
-<p>Surfer starts around <strong>$49/month</strong> billed yearly, with tiers based on how many documents you can optimize per month. There is no free plan, but the entry price is low enough that most writers can justify it after a few articles.</p>
-<p>The gap is real: Semrush costs roughly <strong>3× Surfer</strong>. That does not mean Surfer is better value — it means they solve different problems. Paying for Semrush when you only need optimization is waste. Paying for Surfer when you need research is frustration.</p>
+<h2>How to compare the real cost</h2>
+<p>Compare the <a href="https://www.semrush.com/pricing/">Semrush plans</a> with <a href="https://surferseo.com/pricing/">Surfer pricing</a> using your actual workflow. For research, count the projects and reports you need; for optimization, count the articles your team will edit. Check billing commitment, seats and included allowances. Current prices: see website. A lower headline subscription is not automatically better value when you need a separate tool to finish the job.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you know which keywords and topics to target, or do you need help finding them?</strong></p>
@@ -152,7 +151,7 @@ const semrushVsSurferContent = `
 <p>Semrush offers a limited free account and a trial. Surfer has no free plan, only paid subscriptions. If you want to test optimization without paying, NeuronWriter offers a free trial and is the closest budget alternative to Surfer.</p>
 
 <h3>What is the cheapest useful stack?</h3>
-<p><strong>NeuronWriter</strong> (around $23/month) covers optimization at a low price. Add a free Semrush account for basic keyword lookups, and upgrade to a paid plan only when you need deeper research or tracking.</p>
+<p>Add a free Semrush account for basic keyword lookups, and upgrade to a paid plan only when you need deeper research or tracking.</p>
 
 <h2>Final verdict</h2>
 <p>Pick <strong>Surfer SEO</strong> if your bottleneck is making articles rank — you know what to write, you just need to write it better. Pick <strong>Semrush</strong> if your bottleneck is knowing what to write about in the first place. Pick <strong>both</strong> if content is a real revenue channel and you are publishing consistently. And if budget is tight, start with <a href="/ai-tools/marketing-and-seo">NeuronWriter from our marketing & SEO top 5</a> and upgrade when the limits start to hurt.</p>
@@ -173,7 +172,7 @@ const videoEditingContent = `
 <h3>Who it is for</h3>
 <p>Editors who want full control and expect to grow into the tool — YouTubers with a serious production schedule, freelancers editing for clients, and anyone planning to work with other Adobe apps. It is not the right first editor for someone who just wants to cut a vlog together this weekend.</p>
 <h3>What to know before you buy</h3>
-<p>Premiere Pro is subscription-only, with no one-time purchase. The single-app plan is <strong>$22.99/month on an annual, billed-monthly commitment</strong>, while month-to-month billing is <strong>$34.49/month</strong> — a meaningful gap if you are unsure you will stick with it. Students pay around <strong>$19.99/month</strong>. Budget a few weeks to learn the interface before you judge it. See the full ranked list in our <a href="/video-and-design-software">video and design software top 5</a>.</p>
+<p>Premiere Pro is subscription-only, with no one-time purchase. Budget a few weeks to learn the interface before you judge it. See the full ranked list in our <a href="/video-and-design-software">video and design software top 5</a>.</p>
 
 <h2>2. Filmora — best for beginners and fast turnarounds</h2>
 <h3>What it does best</h3>
@@ -181,7 +180,7 @@ const videoEditingContent = `
 <h3>Who it is for</h3>
 <p>Beginners, small business owners making product videos, and YouTubers who would rather spend time on the idea than on the timeline. It is also a sensible second editor for people who already use Premiere for big projects but want something quick for social clips.</p>
 <h3>What to know before you buy</h3>
-<p>The free version adds a watermark to exports, so it is a trial rather than a free editor. Paid plans start around <strong>$49.99/year</strong>, with a perpetual licence available at roughly <strong>$79.99</strong> if you would rather pay once. Some AI features use credits, so check what is included before you rely on them.</p>
+<p>The free version adds a watermark to exports, so it is a trial rather than a free editor. Some AI features use credits, so check what is included before you rely on them.</p>
 
 <h2>3. Camtasia — best for tutorials and screen recording</h2>
 <h3>What it does best</h3>
@@ -189,7 +188,7 @@ const videoEditingContent = `
 <h3>Who it is for</h3>
 <p>Teachers, trainers, course creators, and anyone making how-to or software-demo content. If your videos are mostly your screen with your voice over it, Camtasia will save you more time than a more powerful editor would.</p>
 <h3>What to know before you buy</h3>
-<p>Camtasia costs more than most beginner editors: the Essentials plan is around <strong>$179.88/year</strong>, with a Create tier at roughly <strong>$249/year</strong> and a lighter Starter tier at <strong>$39/year</strong>. Exports from the free trial carry a watermark. If you only occasionally record your screen, a cheaper editor plus a free recorder may be enough — but if tutorials are your main format, the all-in-one workflow is worth the price.</p>
+<p>Exports from the free trial carry a watermark. If you only occasionally record your screen, a cheaper editor plus a free recorder may be enough — but if tutorials are your main format, the all-in-one workflow is worth the price.</p>
 
 <h2>4. Riverside — best for recording remote interviews and podcasts</h2>
 <h3>What it does best</h3>
@@ -197,7 +196,7 @@ const videoEditingContent = `
 <h3>Who it is for</h3>
 <p>Podcasters, interviewers, and creators whose videos depend on guests who are not in the room. It is also useful for teams recording webinars or internal interviews where quality matters.</p>
 <h3>What to know before you buy</h3>
-<p>There is a real free tier, but it adds a watermark and limits quality — treat it as a test drive. Paid plans start around <strong>$24/month billed annually</strong> (roughly <strong>$29/month</strong> if you pay monthly), and higher tiers add webinar features and more recording hours. Riverside is not a replacement for a full editor: it is where the footage comes from.</p>
+<p>There is a real free tier, but it adds a watermark and limits quality — treat it as a test drive. Riverside is not a replacement for a full editor: it is where the footage comes from.</p>
 
 <h2>5. Envato Elements — best for templates, footage and music</h2>
 <h3>What it does best</h3>
@@ -205,7 +204,7 @@ const videoEditingContent = `
 <h3>Who it is for</h3>
 <p>Anyone publishing video regularly who needs fresh assets: YouTubers, editors working on client projects, and small teams without a designer. It is especially valuable if you edit in Premiere or After Effects, because the templates open directly in those apps.</p>
 <h3>What to know before you buy</h3>
-<p>Plans start at <strong>$16.50/month billed annually</strong> (around <strong>$33/month</strong> if billed monthly), and AI generation allowances differ by tier, so check what is included. The licence covers commercial use, which matters if your channel is monetised. Do not subscribe before you have a project that needs it — unlimited downloads are only a bargain if you actually download.</p>
+<p>The licence covers commercial use, which matters if your channel is monetised. Do not subscribe before you have a project that needs it — unlimited downloads are only a bargain if you actually download.</p>
 
 <h2>Which one should you start with?</h2>
 <p>Match the tool to your bottleneck, not to a feature list:</p>
@@ -242,7 +241,7 @@ const videoEditingContent = `
 <p>You can start for free with tools like CapCut or DaVinci Resolve, but the free tiers of the tools on this page are limited: Filmora and Camtasia add watermarks, and Riverside's free tier caps quality. For a channel you intend to grow, budget for one paid tool rather than fighting watermarks.</p>
 
 <h3>What is the cheapest useful setup?</h3>
-<p><strong>Filmora's annual plan at around $49.99</strong> is the lowest-cost way to get a real editor without a watermark. Add Envato Elements only when you need assets. That combination costs less per year than two months of Premiere Pro.</p>
+<p>Add Envato Elements only when you need assets. That combination costs less per year than two months of Premiere Pro.</p>
 
 <h2>Final word</h2>
 <p>The best video editing software for YouTube is the one that removes your specific bottleneck. If you are slow because the tool is complicated, pick Filmora. If you are slow because you record badly, pick Riverside. If you are slow because your timeline is empty of assets, pick Envato. If you are slow because you have hit a creative ceiling, pick Premiere Pro. And if your videos are all screen recordings, pick Camtasia.</p>
@@ -265,40 +264,23 @@ const kinstaVsCloudwaysContent = `
 <li><strong>Unlimited free migrations:</strong> Kinsta moves your site for you at no cost.</li>
 </ul>
 <h3>Where Kinsta falls short</h3>
-<p>Kinsta is expensive and inflexible. It only hosts WordPress — no Magento, Laravel, or custom PHP apps. Plans start at <strong>$35/month</strong> for a single site with 35,000 visits and 10 GB storage, and scale to <strong>$225/month</strong> for 10 sites. There is no pay-as-you-go billing; you commit to a plan, and overage fees apply if you exceed visit or storage limits.</p>
+<p>Kinsta is expensive and inflexible. It only hosts WordPress — no Magento, Laravel, or custom PHP apps. There is no pay-as-you-go billing; you commit to a plan, and overage fees apply if you exceed visit or storage limits.</p>
 
 <h2>What Cloudways does best</h2>
 <p>Cloudways is a managed cloud hosting platform, not a WordPress host. You choose your infrastructure provider — DigitalOcean, Vultr, Linode, AWS, or Google Cloud — and Cloudways handles the server setup, caching, security patches and monitoring. You get cloud-level performance without server admin, but you still make more decisions than you would on Kinsta.</p>
 <h3>Where Cloudways wins</h3>
 <ul>
-<li><strong>Pay-as-you-go pricing:</strong> Start at <strong>$11/month</strong> on DigitalOcean and scale the server up or down as your traffic changes.</li>
+
 <li><strong>Multiple cloud providers:</strong> Pick the infrastructure that fits your budget and region, and switch later if you outgrow it.</li>
 <li><strong>Unlimited sites and visits:</strong> One server can host as many sites and handle as many visitors as the hardware allows — no per-site or per-visit caps.</li>
 <li><strong>Flexibility:</strong> Host WordPress, Magento, Laravel, or custom PHP apps on the same platform.</li>
-<li><strong>Lower entry cost:</strong> A 3-day free trial (no credit card) and a $11/month starting point make it accessible for smaller budgets.</li>
+
 </ul>
 <h3>Where Cloudways falls short</h3>
 <p>Cloudways is more technical than Kinsta. You choose the server size, manage some settings yourself, and support is more DevOps-flavoured than white-glove WordPress help. There is no email hosting included (it is an add-on), and the interface assumes you are comfortable with basic server concepts. If you want everything done for you, Cloudways will feel like work.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<p>The price gap is large, but it reflects what you are buying.</p>
-<h3>Kinsta</h3>
-<ul>
-<li><strong>Single 20GB:</strong> $35/month — 1 site, 35,000 visits, 10 GB storage.</li>
-<li><strong>WP 2:</strong> $70/month — 2 sites.</li>
-<li><strong>WP 5:</strong> $115/month — 5 sites.</li>
-<li><strong>WP 10:</strong> $225/month — 10 sites.</li>
-</ul>
-<p>Annual billing brings the entry price down to around <strong>$30/month</strong>. There is a 30-day money-back guarantee, and unlimited free migrations are included.</p>
-<h3>Cloudways</h3>
-<ul>
-<li><strong>DigitalOcean Micro:</strong> $11/month — 1 GB RAM, 1 vCPU, 25 GB SSD, 1 TB bandwidth.</li>
-<li><strong>DigitalOcean Small:</strong> $14/month.</li>
-<li><strong>Medium:</strong> $28/month.</li>
-<li><strong>Scale:</strong> $199/month and up.</li>
-</ul>
-<p>Cloudways bills hourly, so you pay only for what you use. A 3-day free trial is available without a credit card.</p>
-<p>The gap is real: Kinsta starts at roughly <strong>3× Cloudways</strong>. That does not mean Cloudways is better value — it means Kinsta charges for convenience and WordPress-specific support that Cloudways does not provide.</p>
+<h2>How to compare the real cost</h2>
+<p>Compare the cost for the same site workload, not two introductory headlines. Check the <a href="https://kinsta.com/pricing/">Kinsta plans</a> and <a href="https://www.cloudways.com/en/pricing.php">Cloudways pricing</a> for what is included in the selected configuration. List storage, traffic, backups, support and extra services separately; then compare the recurring total. Current prices: see website. Recheck those assumptions before migrating a live site.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you want to manage your hosting, or do you want it managed for you?</strong></p>
@@ -322,7 +304,7 @@ const kinstaVsCloudwaysContent = `
 <p>No. Kinsta is WordPress-only. If you need to host Magento, Laravel, custom PHP, or other applications, Cloudways supports those, and Kinsta is not an option.</p>
 
 <h3>Is Cloudways really cheaper than Kinsta?</h3>
-<p>Yes, significantly. Cloudways starts at $11/month on DigitalOcean versus $35/month for Kinsta's entry plan. But the comparison is not apples-to-apples: Cloudways gives you more control and less hand-holding, while Kinsta includes WordPress-specific support, CDN, and security features in the price.</p>
+<p>Yes, significantly. But the comparison is not apples-to-apples: Cloudways gives you more control and less hand-holding, while Kinsta includes WordPress-specific support, CDN, and security features in the price.</p>
 
 <h3>Which host is faster?</h3>
 <p>Both are fast. Kinsta runs on Google Cloud with Cloudflare edge caching, and Cloudways offers its Lightning Stack with NGINX and PHP-FPM. In practice, the difference depends more on your site's setup than on the host. Cloudways lets you choose a larger server if you need more raw resources; Kinsta scales by plan.</p>
@@ -348,7 +330,7 @@ const skillshareVsMasterclassContent = `
 <li><strong>Short, finishable classes:</strong> Most classes run under two hours, so you can finish one in a weekend.</li>
 <li><strong>Breadth of creative skills:</strong> Design, illustration, writing, photography, video, and more in one place.</li>
 <li><strong>Offline viewing:</strong> The mobile app lets you download classes and watch without a connection.</li>
-<li><strong>Lower entry price:</strong> Around $14/month billed yearly, with a 7-day free trial.</li>
+
 </ul>
 <h3>Where Skillshare falls short</h3>
 <p>Skillshare does not give completion certificates, so it is not the right pick if you need credentials for a CV. It is also weak on structured, career-track programs — you pick classes one at a time, not a full curriculum. And while the library is huge, quality varies widely between teachers.</p>
@@ -364,23 +346,10 @@ const skillshareVsMasterclassContent = `
 <li><strong>30-day money-back guarantee:</strong> A real refund window if it is not for you.</li>
 </ul>
 <h3>Where MasterClass falls short</h3>
-<p>MasterClass is not project-based, and it does not give completion certificates. Many classes are more inspirational than practical — you finish inspired but not necessarily skilled. It is also billed yearly only, so you cannot try a month. Around $10/month billed yearly (roughly $120 upfront).</p>
+<p>MasterClass is not project-based, and it does not give completion certificates. Many classes are more inspirational than practical — you finish inspired but not necessarily skilled. It is also billed yearly only, so you cannot try a month.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<h3>Skillshare</h3>
-<ul>
-<li><strong>Free trial:</strong> 7 days, full access.</li>
-<li><strong>Yearly plan:</strong> Around $14/month billed annually (roughly $168 upfront).</li>
-<li><strong>Monthly plan:</strong> Around $32/month if you pay month to month.</li>
-</ul>
-<h3>MasterClass</h3>
-<ul>
-<li><strong>Individual plan:</strong> Around $10/month billed annually (roughly $120 upfront).</li>
-<li><strong>Duo and Family plans:</strong> Higher tiers that cover 2 or 6 devices.</li>
-<li><strong>No monthly option:</strong> Yearly billing only.</li>
-<li><strong>30-day money-back guarantee:</strong> Available on all plans.</li>
-</ul>
-<p>The prices are close on paper — Skillshare is slightly more expensive per year, and MasterClass locks you into annual billing. Neither is the "cheap" option; both are real subscriptions.</p>
+<h2>How to compare the real cost</h2>
+<p>Check <a href="https://www.skillshare.com/">Skillshare</a> and <a href="https://www.masterclass.com/">MasterClass</a> for the price available in your location. Compare the full billing period and cancellation terms rather than a monthly equivalent in an annual offer. Pick the course first: a subscription only represents value if you will actually finish the classes you chose. Current prices: see website.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you want to build a skill, or do you want to be inspired by the best?</strong></p>
@@ -433,7 +402,7 @@ const preplyVsLingodaContent = `
 <li><strong>Flexible scheduling:</strong> Book around your own calendar, not a fixed timetable.</li>
 </ul>
 <h3>Where Preply falls short</h3>
-<p>Quality depends entirely on the tutor you pick, so it takes time to find the right match. There is no fixed curriculum — you and your tutor design the lessons together, which is great if you know what you want and frustrating if you do not. Lessons start around <strong>$5/hour</strong>, but professional teachers charge much more.</p>
+<p>Quality depends entirely on the tutor you pick, so it takes time to find the right match. There is no fixed curriculum — you and your tutor design the lessons together, which is great if you know what you want and frustrating if you do not.</p>
 
 <h2>What Lingoda does best</h2>
 <p>Lingoda is an online language school. You join live classes in small groups (or one-to-one), taught by certified teachers, following a structured curriculum from beginner to advanced. You pick a level, book classes that fit your schedule, and progress through a fixed system.</p>
@@ -446,22 +415,10 @@ const preplyVsLingodaContent = `
 <li><strong>Sprint and Marathon programs:</strong> Structured challenges with refunds if you complete them — a strong motivator.</li>
 </ul>
 <h3>Where Lingoda falls short</h3>
-<p>Group classes mean less individual attention than a private tutor. The curriculum is fixed, so you cannot skip ahead or focus on one specific weakness. Group classes start around <strong>$40 per 4 weeks</strong>, which is cheaper per hour than a private tutor but more expensive than an app subscription.</p>
+<p>Group classes mean less individual attention than a private tutor. The curriculum is fixed, so you cannot skip ahead or focus on one specific weakness.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<h3>Preply</h3>
-<ul>
-<li><strong>Trial lesson:</strong> Varies by tutor, often around $5–15.</li>
-<li><strong>Regular lessons:</strong> From around <strong>$5/hour</strong> for conversation partners to <strong>$30+/hour</strong> for professional teachers.</li>
-<li><strong>No subscription:</strong> You pay per lesson, so cost scales with how often you study.</li>
-</ul>
-<h3>Lingoda</h3>
-<ul>
-<li><strong>Group classes:</strong> From around <strong>$40 per 4 weeks</strong> for a small number of classes per week.</li>
-<li><strong>One-to-one classes:</strong> Higher tiers for private instruction.</li>
-<li><strong>Sprint and Marathon:</strong> Pay upfront, get a refund if you attend a high percentage of classes.</li>
-</ul>
-<p>The comparison is not straightforward: Preply is pay-per-lesson, Lingoda is a monthly subscription. If you study twice a week, Lingoda is usually cheaper. If you study once a week or less, Preply can be cheaper. If you want a professional teacher, Preply is usually more expensive per hour.</p>
+<h2>How to compare the real cost</h2>
+<p>Compare the cost of a realistic lesson schedule on <a href="https://preply.com/">Preply</a> and <a href="https://www.lingoda.com/">Lingoda</a>. Keep lesson duration, frequency and format consistent. Review cancellation and rescheduling rules before reserving a recurring slot. Current prices: see website. A lower lesson price can be poor value if the available times do not fit your routine.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you want a personal tutor, or do you want a structured course?</strong></p>
@@ -513,7 +470,7 @@ const firefliesVsFathomContent = `
 <li><strong>Team features on paid plans:</strong> Shared folders, conversation intelligence, and analytics for teams.</li>
 </ul>
 <h3>Where Fireflies falls short</h3>
-<p>Fireflies uses AI credits for advanced features, so heavy use of summaries and analytics needs a paid plan. The free plan stores 400–800 minutes per seat and includes 20 AI credits per month — enough for light use, not for a full meeting calendar. Paid plans start around $10/user/month billed annually.</p>
+<p>Fireflies uses AI credits for advanced features, so heavy use of summaries and analytics needs a paid plan. The free plan stores 400–800 minutes per seat and includes 20 AI credits per month — enough for light use, not for a full meeting calendar.</p>
 
 <h2>What Fathom does best</h2>
 <p>Fathom records your video calls, transcribes them, and writes clear summaries so you can focus on the conversation. Its selling point is the free tier: unlimited recordings, unlimited transcriptions, and no storage time limit — which is rare in this category.</p>
@@ -525,22 +482,10 @@ const firefliesVsFathomContent = `
 <li><strong>Strong reviews and adoption:</strong> One of the highest-rated notetakers on G2, with thousands of reviews.</li>
 </ul>
 <h3>Where Fathom falls short</h3>
-<p>The free plan caps advanced AI summaries at around 5 calls per month, so heavy users will need a paid plan. Paid plans start around $15/user/month billed annually. Fathom is also less focused on CRM and sales workflows than Fireflies, so teams that need deep integration may find it limiting.</p>
+<p>The free plan caps advanced AI summaries at around 5 calls per month, so heavy users will need a paid plan. Fathom is also less focused on CRM and sales workflows than Fireflies, so teams that need deep integration may find it limiting.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<h3>Fireflies.ai</h3>
-<ul>
-<li><strong>Free:</strong> $0 — unlimited transcription, 400–800 minutes storage per seat, 20 AI credits per month.</li>
-<li><strong>Pro:</strong> Around $10/user/month billed annually — fuller AI summaries, more storage, search.</li>
-<li><strong>Business:</strong> Higher tiers with conversation intelligence and analytics.</li>
-</ul>
-<h3>Fathom</h3>
-<ul>
-<li><strong>Free:</strong> $0 — unlimited recordings and transcripts, advanced AI summaries limited to about 5 calls per month.</li>
-<li><strong>Team:</strong> Around $15/user/month billed annually — unlimited AI summaries, team features.</li>
-<li><strong>Business:</strong> Higher tiers for larger teams and CRM integrations.</li>
-</ul>
-<p>The free plans are both genuinely usable, but for different reasons: Fireflies gives you unlimited transcription with tight storage and AI limits; Fathom gives you unlimited recordings and transcripts with tight AI-summary limits.</p>
+<h2>How to compare the real cost</h2>
+<p>Check <a href="https://fireflies.ai/pricing">Fireflies pricing</a> and <a href="https://fathom.video/">Fathom</a> using the number of people who need access. Separate recording and transcription allowances from storage, AI summaries and collaboration. Test with a representative meeting before committing a whole team. Current prices and limits: see website.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Are you recording meetings for yourself, or for a team that needs the notes in a CRM or project tool?</strong></p>
@@ -593,7 +538,7 @@ const envatoVsFreepikContent = `
 <li><strong>Broad asset types:</strong> Graphics, fonts, presentation templates, and more in the same subscription.</li>
 </ul>
 <h3>Where Envato Elements falls short</h3>
-<p>Envato is weaker on AI image generation than Freepik, and its AI tools are newer. It is also a subscription you need to use regularly to justify — if you only download a few assets a month, the flat fee is not a bargain. Plans start at <strong>$16.50/month billed annually</strong> (around <strong>$33/month</strong> if billed monthly).</p>
+<p>Envato is weaker on AI image generation than Freepik, and its AI tools are newer. It is also a subscription you need to use regularly to justify — if you only download a few assets a month, the flat fee is not a bargain.</p>
 
 <h2>What Freepik does best</h2>
 <p>Freepik is a hybrid platform: it combines AI image generation with a huge stock library of photos, vectors and templates. If your work is mostly static visuals — social graphics, blog images, marketing assets — Freepik covers both the AI generation and the ready-made assets in one place.</p>
@@ -603,26 +548,13 @@ const envatoVsFreepikContent = `
 <li><strong>Massive stock library:</strong> Photos, vectors, illustrations and templates for everyday design work.</li>
 <li><strong>Editing tools:</strong> Upscaling, background removal and other utilities built in.</li>
 <li><strong>Free plan with daily AI generations:</strong> A real starting point for testing.</li>
-<li><strong>Lower entry price:</strong> Premium starts around <strong>$14.50/month billed annually</strong>.</li>
+
 </ul>
 <h3>Where Freepik falls short</h3>
 <p>Freepik is weaker on video templates and music than Envato. Its AI features run on credits on lower tiers, and the commercial AI licence is part of paid plans. If your work is video-first, Envato is the better fit. If your work is image-first, Freepik is the better fit.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<h3>Envato Elements</h3>
-<ul>
-<li><strong>Core:</strong> $16.50/month billed annually ($198/year) — unlimited downloads, AI credits.</li>
-<li><strong>Plus:</strong> Around $39/month — more AI credits and team features.</li>
-<li><strong>Ultimate:</strong> Around $109/month — highest AI allowances and team access.</li>
-<li><strong>Monthly billing:</strong> Around $33/month for Core.</li>
-</ul>
-<h3>Freepik</h3>
-<ul>
-<li><strong>Free:</strong> $0 — limited daily AI generations and stock downloads.</li>
-<li><strong>Premium:</strong> Around $14.50/month billed annually ($20/month monthly) — more credits, full stock library.</li>
-<li><strong>Premium+:</strong> Around $45/month — unlimited AI generations and higher limits.</li>
-</ul>
-<p>The entry prices are close, but the value depends on what you download. Envato is better value for video and audio assets; Freepik is better value for AI images and everyday design assets.</p>
+<h2>How to compare the real cost</h2>
+<p>Start with the asset you need and check the applicable licence on <a href="https://elements.envato.com/">Envato Elements</a> and <a href="https://www.freepik.com/">Freepik</a>. Compare subscription cost with the number of usable assets in your actual projects. Confirm the rules for client delivery and continued use after cancellation. Current prices: see website. A large library is not a saving if the right asset is unavailable.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Is your work video-first, or image-first?</strong></p>
@@ -672,7 +604,7 @@ const capcutVsPremiereContent = `
 <li><strong>AI features:</strong> Auto captions, vocal isolation, speaker-ID captions, avatars and voice cloning on Pro.</li>
 <li><strong>Social-first design:</strong> Vertical video, trending effects, and export presets for TikTok, Reels and Shorts.</li>
 <li><strong>Free tier:</strong> A genuinely usable free editor with a full basic timeline and 1080p export.</li>
-<li><strong>Low price:</strong> Pro at around <strong>$19.99/month</strong> or <strong>$179.99/year</strong>, with a Standard tier around $9.99/month.</li>
+
 </ul>
 <h3>Where CapCut falls short</h3>
 <p>CapCut is not built for professional colour grading, complex audio mixing, or long-form storytelling. The free tier is limited, and some Pro-tagged templates carry a watermark below the Standard plan. It is also a consumer tool — not the editor you grow into if you plan to work in film or high-end client production.</p>
@@ -685,26 +617,13 @@ const capcutVsPremiereContent = `
 <li><strong>Adobe ecosystem:</strong> Works with After Effects, Photoshop, and other Adobe apps for motion graphics and retouching.</li>
 <li><strong>Long-form capability:</strong> Handles complex, multi-track projects without the limits of a consumer editor.</li>
 <li><strong>Industry standard:</strong> The editor most studios and agencies use, which matters for client work and collaboration.</li>
-<li><strong>Students pay less:</strong> Around <strong>$19.99/month</strong> for the single-app plan.</li>
+
 </ul>
 <h3>Where Premiere Pro falls short</h3>
-<p>Premiere Pro is subscription-only and more expensive: <strong>$22.99/month</strong> on an annual, billed-monthly commitment, or <strong>$34.49/month</strong> month-to-month. It also takes weeks to learn, and it is overkill for someone who just wants to cut social clips.</p>
+<p>It also takes weeks to learn, and it is overkill for someone who just wants to cut social clips.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<h3>CapCut</h3>
-<ul>
-<li><strong>Free:</strong> $0 — basic timeline, multi-track, 1080p export, limited AI features.</li>
-<li><strong>Standard:</strong> Around $9.99/month — more AI features and assets.</li>
-<li><strong>Pro:</strong> Around $19.99/month or $179.99/year — 4K and HDR export, full AI toolkit, 1 TB cloud storage.</li>
-</ul>
-<h3>Premiere Pro</h3>
-<ul>
-<li><strong>Single App (annual, billed monthly):</strong> $22.99/month.</li>
-<li><strong>Single App (month-to-month):</strong> $34.49/month.</li>
-<li><strong>Student:</strong> Around $19.99/month.</li>
-<li><strong>Creative Cloud bundles:</strong> Higher tiers with more Adobe apps.</li>
-</ul>
-<p>The gap is smaller than it looks: CapCut Pro at $19.99/month is close to Premiere's $22.99/month annual plan. The real difference is what you get for the money — CapCut gives you speed and templates; Premiere gives you control and depth.</p>
+<h2>How to compare the real cost</h2>
+<p>Check <a href="https://www.capcut.com/">CapCut</a> and <a href="https://www.adobe.com/products/premiere.html">Premiere Pro</a> for the plans offered in your region. Compare the full commitment, cancellation terms and the exact export workflow you need. Do not treat an annual plan’s monthly equivalent as a cancel-anytime quote. Current prices: see website. Use the same short project to compare editing time before purchasing.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you need to publish social clips fast, or do you need full control over a professional project?</strong></p>
@@ -757,7 +676,7 @@ const riversideVsDescriptContent = `
 <li><strong>Studio-level audio:</strong> 48kHz audio and separate tracks for each participant.</li>
 </ul>
 <h3>Where Riverside falls short</h3>
-<p>Riverside is not a full editor. You can trim and assemble, but for complex edits you still need Premiere, Filmora, or Descript. The free plan adds a watermark and limits quality, and paid plans cap monthly recording hours. Pro starts around <strong>$24/month billed annually</strong> (around <strong>$29/month</strong> monthly).</p>
+<p>Riverside is not a full editor. You can trim and assemble, but for complex edits you still need Premiere, Filmora, or Descript. The free plan adds a watermark and limits quality, and paid plans cap monthly recording hours.</p>
 
 <h2>What Descript does best</h2>
 <p>Descript lets you edit video and audio by editing the transcript. Delete a sentence from the text, and the corresponding audio disappears. That single idea makes podcast and interview editing dramatically faster than timeline-based editing, especially for talking-head content.</p>
@@ -770,24 +689,10 @@ const riversideVsDescriptContent = `
 <li><strong>A free tier:</strong> 1 media hour per month, enough to test the workflow.</li>
 </ul>
 <h3>Where Descript falls short</h3>
-<p>Descript is not a recording studio — it does not capture remote guests locally like Riverside does. It is also weaker on complex video effects and colour work. The free plan is limited to 1 media hour per month, and paid plans start around <strong>$24/month</strong> for Hobbyist.</p>
+<p>Descript is not a recording studio — it does not capture remote guests locally like Riverside does. It is also weaker on complex video effects and colour work.</p>
 
-<h2>Pricing in 2026: what you actually pay</h2>
-<h3>Riverside</h3>
-<ul>
-<li><strong>Free:</strong> $0 — watermarked, limited quality, basic recording.</li>
-<li><strong>Pro:</strong> Around $24/month billed annually ($288/year), or $29/month monthly — 4K video, no watermark, more recording hours.</li>
-<li><strong>Grow:</strong> Around $39/month — more hours and team features.</li>
-<li><strong>Webinar:</strong> Higher tier for live streaming and webinars.</li>
-</ul>
-<h3>Descript</h3>
-<ul>
-<li><strong>Free:</strong> $0 — 1 media hour per month, 100 one-time AI credits, 720p watermarked export.</li>
-<li><strong>Hobbyist:</strong> Around $24/month — 10 media hours per month, more AI credits.</li>
-<li><strong>Creator:</strong> Around $35/month — higher limits and 4K export.</li>
-<li><strong>Business:</strong> Around $65/month — team features and highest limits.</li>
-</ul>
-<p>The entry prices are close, but the value depends on your bottleneck. Riverside is better value for recording; Descript is better value for editing.</p>
+<h2>How to compare the real cost</h2>
+<p>Compare <a href="https://riverside.fm/pricing">Riverside pricing</a> with <a href="https://www.descript.com/pricing">Descript pricing</a> for the same production schedule. Separate recording needs from editing needs; then check media allowances, exports, collaboration and any AI credits. Current prices and limits: see website. Include the cost of another editor if your chosen workflow still needs one.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Is your bottleneck recording quality, or editing speed?</strong></p>
@@ -828,11 +733,11 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'best-ai-tools-for-content-marketing',
     title: 'Best AI Tools for Content Marketing in 2026',
-    metaTitle: 'Best AI Content Marketing Tools (2026) — 5 Tested Picks',
+    metaTitle: 'Best AI Content Marketing Tools (2026) — 5 Tools Compared',
     metaDescription:
-      'The best AI tools for content marketing in 2026, tested and ranked. Semrush, Surfer SEO, Writesonic, NeuronWriter and Frase compared on price, ease and real-world results.',
+      'The best AI tools for content marketing in 2026, researched and compared. Semrush, Surfer SEO, Writesonic, NeuronWriter and Frase compared on price, ease and real-world results.',
     publishedAt: '2026-10-30T09:00:00+03:00',
-    updatedAt: '2026-10-30T09:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Content Marketing',
     keywords: [
@@ -843,7 +748,7 @@ export const blogPosts: BlogPost[] = [
       'ai writing and seo tools',
     ],
     excerpt:
-      'The five AI tools that genuinely earn their place in a modern content marketing stack — tested, ranked and matched to the marketer each one actually fits.',
+      'The five AI tools that genuinely earn their place in a modern content marketing stack — researched, ranked and matched to the marketer each one actually fits.',
     content: bestAiContentMarketingContent,
     faqs: [
       {
@@ -864,10 +769,10 @@ export const blogPosts: BlogPost[] = [
       {
         question: 'What is the cheapest AI content marketing stack?',
         answer:
-          'NeuronWriter alone at around $23/month covers both AI drafting and content optimization. If you also need keyword research, add a free Semrush account for basic lookups and upgrade once content becomes a real revenue channel.',
+          'Compare current plans on the official websites, including billing period, renewal terms and the allowances your workflow requires. Exact prices are not quoted here.',
       },
       {
-        question: 'Is Semrush worth $140/month for a small team?',
+        question: 'Is a paid Semrush subscription worth it for a small team?',
         answer:
           'Only if you publish regularly and use at least 2–3 core features. For a solo writer or new site, start with NeuronWriter or a free tier, and upgrade once tracking rankings matters more.',
       },
@@ -889,7 +794,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'Semrush vs Surfer SEO compared for 2026: what each does best, pricing, who should pick which, and whether you need both. No fluff, just the decision.',
     publishedAt: '2026-10-30T10:00:00+03:00',
-    updatedAt: '2026-10-30T10:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Content Marketing',
     keywords: [
@@ -926,7 +831,7 @@ export const blogPosts: BlogPost[] = [
       {
         question: 'What is the cheapest useful stack?',
         answer:
-          'NeuronWriter (around $23/month) covers optimization at a low price. Add a free Semrush account for basic keyword lookups, and upgrade to a paid plan only when you need deeper research or tracking.',
+          'Compare current plans on the official websites, including billing period, renewal terms and the allowances your workflow requires. Exact prices are not quoted here.',
       },
     ],
     relatedListPath: '/ai-tools/marketing-and-seo',
@@ -945,7 +850,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'The best video editing software for YouTube in 2026, ranked by the job each tool does: pro editing, fast turnarounds, screen recording, remote interviews and assets. Prices verified.',
     publishedAt: '2026-10-30T11:00:00+03:00',
-    updatedAt: '2026-10-30T11:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Video & Design',
     keywords: [
@@ -982,7 +887,7 @@ export const blogPosts: BlogPost[] = [
       {
         question: 'What is the cheapest useful setup?',
         answer:
-          'Filmora annual plan at around $49.99 is the lowest-cost way to get a real editor without a watermark. Add Envato Elements only when you need assets. That combination costs less per year than two months of Premiere Pro.',
+          'Compare current plans on the official websites, including billing period, renewal terms and the allowances your workflow requires. Exact prices are not quoted here.',
       },
     ],
     relatedListPath: '/video-and-design-software',
@@ -1002,7 +907,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'Kinsta vs Cloudways compared for 2026: pricing, performance, support and who each one is actually for. Real prices, verified features, no fluff.',
     publishedAt: '2026-10-30T12:00:00+03:00',
-    updatedAt: '2026-10-30T12:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Web Hosting',
     keywords: [
@@ -1029,7 +934,7 @@ export const blogPosts: BlogPost[] = [
       {
         question: 'Is Cloudways really cheaper than Kinsta?',
         answer:
-          'Yes, significantly. Cloudways starts at $11/month on DigitalOcean versus $35/month for Kinsta entry plan. But the comparison is not apples-to-apples: Cloudways gives you more control and less hand-holding, while Kinsta includes WordPress-specific support, CDN, and security features in the price.',
+          'Compare current plans on the official websites, including billing period, renewal terms and the allowances your workflow requires. Exact prices are not quoted here.',
       },
       {
         question: 'Which host is faster?',
@@ -1058,7 +963,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'Skillshare vs MasterClass compared for 2026: pricing, teaching style, certificates and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T13:00:00+03:00',
-    updatedAt: '2026-10-30T13:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Online Courses',
     keywords: [
@@ -1114,7 +1019,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'Preply vs Lingoda compared for 2026: pricing, teaching style, flexibility and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T14:00:00+03:00',
-    updatedAt: '2026-10-30T14:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Language Learning',
     keywords: [
@@ -1170,7 +1075,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'Fireflies vs Fathom compared for 2026: free plan limits, pricing, integrations and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T15:00:00+03:00',
-    updatedAt: '2026-10-30T15:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'AI Tools',
     keywords: [
@@ -1225,7 +1130,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'Envato Elements vs Freepik compared for 2026: pricing, asset libraries, AI features and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T16:00:00+03:00',
-    updatedAt: '2026-10-30T16:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Video & Design',
     keywords: [
@@ -1280,7 +1185,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'CapCut vs Premiere Pro compared for 2026: pricing, learning curve, features and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T17:00:00+03:00',
-    updatedAt: '2026-10-30T17:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Video & Design',
     keywords: [
@@ -1335,7 +1240,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       'Riverside vs Descript compared for 2026: pricing, recording quality, editing workflow and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T18:00:00+03:00',
-    updatedAt: '2026-10-30T18:00:00+03:00',
+    updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
     category: 'Video & Design',
     keywords: [

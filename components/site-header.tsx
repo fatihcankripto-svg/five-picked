@@ -32,6 +32,8 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
+  const headerRef = useRef<HTMLElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     if (!openDesktop && !mobileOpen) return
@@ -40,6 +42,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
       if (event.key === 'Escape') {
         setOpenDesktop(null)
         setMobileOpen(false)
+        if (mobileOpen) menuButtonRef.current?.focus()
       }
     }
     function onPointerDown(event: PointerEvent) {
@@ -73,6 +76,19 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
     }
   }, [mobileOpen])
 
+  useEffect(() => {
+    if (!mobileOpen) return
+    function trapFocus(event: KeyboardEvent) {
+      if (event.key !== 'Tab') return
+      const nodes = Array.from(headerRef.current?.querySelectorAll<HTMLElement>('a[href], button, input, select') ?? []).filter((node) => node.offsetParent !== null && !node.closest('[inert]'))
+      const first = nodes[0], last = nodes[nodes.length - 1]
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus() }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus() }
+    }
+    document.addEventListener('keydown', trapFocus)
+    return () => document.removeEventListener('keydown', trapFocus)
+  }, [mobileOpen])
+
   const closeAll = () => {
     setOpenDesktop(null)
     setMobileOpen(false)
@@ -83,7 +99,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
     href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/')
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-border bg-background">
       <div
         aria-hidden="true"
         className="fp-progress pointer-events-none absolute inset-x-0 -bottom-px h-0.5 bg-primary"
@@ -167,6 +183,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
         <button
           type="button"
           className="relative z-50 flex size-10 items-center justify-center rounded-md text-foreground lg:hidden"
+          ref={menuButtonRef}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           aria-controls="mobile-navigation"

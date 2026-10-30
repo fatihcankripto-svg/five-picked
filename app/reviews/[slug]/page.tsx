@@ -85,17 +85,6 @@ export default async function ReviewPage({ params }: PageProps) {
         acceptedAnswer: { '@type': 'Answer', text: faq.answer },
       })),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
-        ...(found
-          ? [{ '@type': 'ListItem', position: 2, name: found.listName, item: absoluteUrl(found.listHref) }]
-          : []),
-        { '@type': 'ListItem', position: found ? 3 : 2, name: `${review.name} review`, item: url },
-      ],
-    },
   ]
 
   const visit = found ? (

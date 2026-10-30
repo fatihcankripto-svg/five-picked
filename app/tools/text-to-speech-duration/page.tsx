@@ -1,3 +1,4 @@
+import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumbs } from '@/components/breadcrumbs'
@@ -22,7 +23,7 @@ const faqs = [
   {
     question: 'How many words per minute is a normal voiceover?',
     answer:
-      'Most professional voiceovers run at about 150 words per minute. Slow narration (documentaries, tutorials) sits closer to 120 wpm, and fast reads (ads, shorts) reach around 180 wpm.',
+      'This calculator uses 120, 150 and 180 words per minute as planning scenarios. Actual timing depends on the voice, pauses, pronunciation and speaking style.',
   },
   {
     question: 'How long does a 1,000-word script take to read aloud?',
@@ -150,6 +151,7 @@ export default function Page() {
         </Link>
         .
       </aside>
-    </div>
+    <RelatedContent path={path} />
+</div>
   )
 }

@@ -66,14 +66,6 @@ export default async function FreePage({ params }: Props) {
     })),
   }
 
-  const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Best free tools', item: absoluteUrl('/free') },
-      { '@type': 'ListItem', position: 2, name: page.title, item: absoluteUrl(path) },
-    ],
-  }
 
   return (
     <div className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
@@ -84,10 +76,6 @@ export default async function FreePage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/</g, '\\u003c') }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd).replace(/</g, '\\u003c') }}
       />
 
       <Breadcrumbs items={[{ label: 'Best free tools', href: '/free' }, { label: page.title }]} />
@@ -136,7 +124,7 @@ export default async function FreePage({ params }: Props) {
 
       <section aria-labelledby="the-picks" className="mt-16">
         <h2 id="the-picks" className="text-xl font-semibold text-foreground">
-          The free picks, ranked
+          {page.slug === 'vpns-with-a-free-plan' ? 'Five VPN options: one ongoing free plan and four paid services' : 'Free plans and trial options, compared'}
         </h2>
         <ol className="mt-6 flex flex-col gap-6">
           {page.tools.map((tool, index) => (
@@ -147,6 +135,7 @@ export default async function FreePage({ params }: Props) {
         </ol>
       </section>
 
+      {page.slug === 'vpns-with-a-free-plan' && <aside className="mt-10 rounded-xl border border-border p-5 text-sm leading-relaxed"><h2 className="font-semibold">Official offer terms</h2><p className="mt-3 text-muted-foreground">Checked October 31, 2026. Trial availability, payment details and refund eligibility differ by purchase channel; confirm the offer before subscribing.</p><ul className="mt-4 space-y-3 text-primary"><li><a href="https://protonvpn.com/pricing" className="underline">Proton VPN: ongoing free plan</a></li><li><a href="https://support.nordvpn.com/hc/en-us/articles/19744837091217-Does-NordVPN-have-a-free-trial" className="underline">NordVPN: trial eligibility and separate refund terms</a></li><li><a href="https://support.surfshark.com/hc/en-us/articles/360026123554-Does-Surfshark-offer-a-free-trial" className="underline">Surfshark: trial conditions</a></li><li><a href="https://www.expressvpn.com/features/money-back-guarantee" className="underline">ExpressVPN: trial and refund differences</a></li><li><a href="https://www.privateinternetaccess.com/vpn-features/free-trial-vpn" className="underline">PIA: app trial and website refund terms</a></li></ul></aside>}
       <section aria-labelledby="faq" className="mt-16">
         <h2 id="faq" className="text-xl font-semibold text-foreground">
           Frequently asked questions

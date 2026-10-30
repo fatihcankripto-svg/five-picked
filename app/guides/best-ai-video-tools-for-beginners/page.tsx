@@ -13,7 +13,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Best AI Video Tools for Beginners: Which One Fits You?',
-  datePublished: editorialDates.guides,
+  datePublished: editorialDates.guidesPublished,
   dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },

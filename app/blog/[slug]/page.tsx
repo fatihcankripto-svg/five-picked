@@ -1,3 +1,4 @@
+import { formatDate } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -38,7 +39,7 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://fivepicked.com/blog/${post.slug}` },
     keywords: post.keywords.join(', '), articleSection: post.category, inLanguage: 'en',
   }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
 }
 
 function FaqJsonLd({ post }: { post: BlogPost }) {
@@ -50,7 +51,7 @@ function FaqJsonLd({ post }: { post: BlogPost }) {
       acceptedAnswer: { '@type': 'Answer', text: faq.answer },
     })),
   }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
 }
 
 function BreadcrumbJsonLd({ post }: { post: BlogPost }) {
@@ -62,7 +63,7 @@ function BreadcrumbJsonLd({ post }: { post: BlogPost }) {
       { '@type': 'ListItem', position: 3, name: post.title, item: `https://fivepicked.com/blog/${post.slug}` },
     ],
   }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -100,8 +101,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           <p className="text-sm font-medium uppercase tracking-widest text-primary">{post.category}</p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">{post.title}</h1>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-            <time dateTime={post.publishedAt}>
-              {new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            <time dateTime={post.updatedAt}>
+              Updated {formatDate(post.updatedAt)}
             </time>
             <span aria-hidden="true">·</span><span>{minutes} min read</span>
             <span aria-hidden="true">·</span><span>{post.author}</span>

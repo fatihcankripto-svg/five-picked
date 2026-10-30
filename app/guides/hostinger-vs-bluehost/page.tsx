@@ -13,7 +13,7 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Hostinger vs Bluehost: Which Is Better for Beginners?',
-  datePublished: editorialDates.guides,
+  datePublished: editorialDates.guidesPublished,
   dateModified: editorialDates.guides,
   author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
   publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
@@ -65,8 +65,8 @@ export default function HostingerVsBluehostPage() {
             </tr>
             <tr className="border-b border-border">
               <td className="px-4 py-3 font-medium">Starting price</td>
-              <td className="px-4 py-3">From about $3/month (long-term intro price)</td>
-              <td className="px-4 py-3">From about $4/month (36-month intro price)</td>
+              <td className="px-4 py-3">See website</td>
+              <td className="px-4 py-3">See website</td>
             </tr>
             <tr className="border-b border-border">
               <td className="px-4 py-3 font-medium">Free domain</td>
@@ -86,7 +86,7 @@ export default function HostingerVsBluehostPage() {
             <tr>
               <td className="px-4 py-3 font-medium">Renewal</td>
               <td className="px-4 py-3">Renews above the intro price</td>
-              <td className="px-4 py-3">Around $10/month on Starter at the time of writing</td>
+              <td className="px-4 py-3">See website</td>
             </tr>
           </tbody>
         </table>

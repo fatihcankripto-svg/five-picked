@@ -4,8 +4,8 @@ import { blogPosts } from '@/lib/blog-pages'
 import { getAllBlogCategories, readingTimeMinutes } from '@/lib/blog-utils'
 
 export const metadata: Metadata = {
-  title: 'Blog — FIVE PICKED',
-  description: 'Plain-English buying guides and tool comparisons. Tested picks, honest verdicts, no fluff.',
+  title: 'Tool comparisons and buying guides',
+  description: 'Plain-English buying guides and tool comparisons. Independent research, practical trade-offs and clear buying criteria.',
   alternates: { canonical: 'https://fivepicked.com/blog' },
 }
 
@@ -28,7 +28,7 @@ export default async function BlogIndexPage({ searchParams }: BlogPageProps) {
   )
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
       <header className="mb-10">
         <p className="text-sm font-medium uppercase tracking-widest text-primary">
           Blog
@@ -37,7 +37,7 @@ export default async function BlogIndexPage({ searchParams }: BlogPageProps) {
           Guides that actually help you choose
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          Tested picks, side-by-side comparisons, and plain-English buying
+          Independent research, side-by-side comparisons, and plain-English buying
           guides. Every article links back to the tools and lists it mentions.
         </p>
         <p className="mt-3 text-sm text-muted-foreground">
@@ -119,6 +119,6 @@ export default async function BlogIndexPage({ searchParams }: BlogPageProps) {
       {sorted.length === 0 && (
         <p className="mt-12 text-center text-muted-foreground">No guides in this category yet.</p>
       )}
-    </main>
+    </div>
   )
 }

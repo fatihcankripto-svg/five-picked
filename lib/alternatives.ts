@@ -246,7 +246,7 @@ function buildPages(): AlternativesPageData[] {
         answer:
           free.length > 0
             ? `${joinNames(free)} ${free.length === 1 ? 'lists' : 'list'} a free plan, free tier or free trial. Free access is usually limited, and some free plans add watermarks, so check the current terms on each official website.`
-            : `None of the alternatives on this page advertise a free option right now. Check each official website for current offers.`,
+            : `Free access and trial availability are not confirmed here. See each official website for current plans, limits and commercial-use terms.`,
       }
 
       pages.push({
