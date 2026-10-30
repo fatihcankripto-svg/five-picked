@@ -28,6 +28,7 @@ const topLevel: TopLevel[] = [
   { kind: 'link', id: 'quiz', label: 'Find your tool', href: '/quiz' },
   { kind: 'link', id: 'free', label: 'Free picks', href: '/free' },
   { kind: 'link', id: 'guides', label: 'Guides', href: '/guides' },
+  { kind: 'link', id: 'blog', label: 'Blog', href: '/blog' },
   { kind: 'link', id: 'how', label: 'How we choose', href: '/how-we-choose' },
 ]
 
@@ -67,7 +68,6 @@ export function SiteHeader() {
     setMobileCategoriesOpen(false)
   }, [pathname])
 
-  // Scroll kilidi: menü açıldığında arka plan kaymasın
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden'
@@ -95,7 +95,6 @@ export function SiteHeader() {
         className="fp-progress pointer-events-none absolute inset-x-0 -bottom-px h-0.5 bg-primary"
       />
 
-      {/* DESKTOP ARKA PLAN KARARTMASI */}
       {openDesktop && (
         <div
           aria-hidden="true"
@@ -107,7 +106,6 @@ export function SiteHeader() {
       <div className="relative z-50 mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 bg-background">
         <Logo onClick={closeAll} />
 
-        {/* MASAÜSTÜ MENÜ */}
         <nav ref={navRef} aria-label="Main" className="hidden items-center gap-1 md:flex">
           {topLevel.map((section) => {
             if (section.kind === 'link') {
@@ -172,7 +170,6 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* MOBİL MENÜ BUTONU */}
         <button
           type="button"
           className="relative z-50 flex size-10 items-center justify-center rounded-md text-foreground md:hidden"
@@ -182,7 +179,6 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {/* MOBİL TAM EKRAN MENÜ (Animasyonlu ve Opak) */}
       <div 
         className={cn(
           "fixed inset-0 top-16 z-50 bg-background transition-all duration-300 ease-in-out md:hidden flex flex-col",
@@ -230,7 +226,6 @@ export function SiteHeader() {
                     />
                   </button>
                   
-                  {/* Kategori Alt Listesi - Animasyonlu */}
                   <div 
                     className={cn(
                       "grid transition-all duration-300 ease-in-out",
