@@ -1,3 +1,4 @@
+import { blogPosts } from '@/lib/blog-pages'
 import type { MetadataRoute } from 'next'
 import { lastUpdated, type Tool } from '@/data/categories'
 import { allCategories } from '@/data/all-categories'
@@ -82,6 +83,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 
+  const blogModified = new Date('2026-10-30T00:00:00Z')
+  const blogRoutes = [
+    { url: absoluteUrl('/blog'), lastModified: blogModified, priority: 0.8 },
+    ...blogPosts.map((post) => ({
+      url: absoluteUrl(`/blog/${post.slug}`),
+      lastModified: new Date(post.updatedAt),
+      priority: 0.7,
+    })),
+  ]
+
   return [
     { url: absoluteUrl('/'), lastModified, priority: 1 },
     { url: absoluteUrl('/categories'), lastModified, priority: 0.9 },
@@ -90,6 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...guidePages,
     ...alternativePages,
     ...freeRoutes,
+    ...blogRoutes,
     { url: absoluteUrl('/compare'), lastModified: new Date(`${comparePagesUpdated}T00:00:00Z`), priority: 0.7 },
 ...comparePages.map((page) => ({
   url: absoluteUrl(`/compare/${page.slug}`),
@@ -106,4 +118,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl('/tools/freelance-fee-calculator'), lastModified: toolsLastModified, priority: 0.8 },
     ...staticPages.map((page) => ({ url: absoluteUrl(page.href), lastModified, priority: 0.5 })),
   ]
-}
+      }
