@@ -1,3 +1,4 @@
+import { flightFreeOptions } from '@/lib/flight-free-options'
 import { emailFreeOptions } from '@/lib/email-free-options'
 import { freelanceFreeOptions } from '@/lib/freelance-free-options'
 import { languageFreeOptions } from '@/lib/language-free-options'
@@ -36,6 +37,26 @@ type FreeCopy = {
 }
 
 const copies: FreeCopy[] = [
+  {
+    slug: 'best-free-flight-booking-sites',
+    title: 'Free Flight Booking Sites in 2026: What’s Actually Free (And Where the Fees Are)',
+    h1: 'Free flight booking sites in 2026: what’s actually free (and where the fees are)',
+    metaTitle: 'Free Flight Booking Sites: Search, Alerts & Fees (2026)',
+    metaDescription: 'Check Kiwi.com, eDreams, CheapOair, Alternative Airlines and Trip.com: free search, price alerts, booking charges, baggage and cancellation conditions.',
+    intro: 'Free flight search is not a free flight or a promise of fee-free booking. This guide checks the five sites in our flights shortlist against official sources, separating browsing and alerts from ticket costs, agency fees, baggage and voluntary changes. Where a free feature or allowance is not verified, we say so.',
+    verdict: 'Use free browsing to compare routes, then compare the payable total and fare conditions. CheapOair and Trip.com explicitly document free price alerts. Kiwi.com documents generally free website functions and account-based alerts. Free alert entitlement is not established here for eDreams or Alternative Airlines. None of these five is presented as universally free to change or cancel.',
+    toolSlugs: ['kiwi-com', 'edreams', 'cheapoair', 'alternative-airlines', 'trip-com'],
+    faqs: [
+      { question: 'What does free flight booking mean here?', answer: 'It means searching before purchase, not receiving a free ticket or a universally fee-free reservation. Agency service fees, airline baggage, payment costs and optional products must be assessed separately.' },
+      { question: 'Which price alerts are verified free?', answer: 'CheapOair and Trip.com explicitly describe free route alerts. Kiwi.com states that website functions are generally free unless indicated otherwise and documents account-based alerts. Free price-alert entitlement is not established here for eDreams or Alternative Airlines; no unverified numeric allowances are promised.' },
+      { question: 'Can I cancel any booking free within 24 hours?', answer: 'No universal entitlement is established for these agencies. CheapOair lists agent-assisted cancellation fees even within 24 hours on US websites. Alternative Airlines applies airline eligibility and a specific fee rule for non-US itineraries. Always read the actual booking conditions.' },
+      { question: 'Does a free change include every related cost?', answer: 'Do not assume so. Check agency handling, airline penalties and any fare difference separately. The applicable fare and service package determine what is waived.' },
+      { question: 'Are the listed costs proven hidden fees?', answer: 'No. These are documented charges and exclusions that can be overlooked when comparing headline fares. This guide does not claim evidence of undisclosed fees or a live checkout test.' },
+    ],
+    relatedListPath: '/travel/flights',
+    relatedListLabel: 'Flight booking sites: the complete five-site shortlist',
+  },
+
   {
     slug: 'best-free-freelance-platforms',
     title: 'Free Freelance Platforms in 2026: Accounts, Fees and Payout Limits',
@@ -536,6 +557,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-flight-booking-sites') {
+      const option = flightFreeOptions.find((entry) => entry.slug === slug)!
+      return { ...tool, startingPrice: option.price, bestFor: option.audience, tagline: option.standout, whatItDoes: option.access, strengths: [option.standout, 'Search before purchase; booking costs are separate'], goodToKnow: `${option.fees} ${option.changes}`, decisionOverride: { audience: option.audience, standout: option.standout } }
     }
     if (copy.slug === 'best-free-email-marketing-tools') {
       const option = emailFreeOptions.find((entry) => entry.slug === slug)!

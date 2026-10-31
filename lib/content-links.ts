@@ -109,9 +109,23 @@ for (const source of Object.keys(emailBlogReferrers)) {
   graph.get(source)?.add(emailBlogPath)
   graph.get(emailBlogPath)?.add(source)
 }
+const flightFreePath = '/free/best-free-flight-booking-sites'
+const flightFreeReferrers: Record<string, string> = {
+  '/travel': 'Check what flight search and booking really cost',
+  '/travel/flights': 'Compare free search, price alerts and booking fees',
+  '/quiz/travel-flights': 'Review cancellation and fee conditions before booking your match',
+}
+for (const source of Object.keys(flightFreeReferrers)) {
+  graph.get(source)?.add(flightFreePath)
+  graph.get(flightFreePath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === flightFreePath && flightFreeReferrers[path]) return { ...page, title: flightFreeReferrers[path] }
+    if (path === flightFreePath && page.path === '/travel') return { ...page, title: 'Explore the wider travel planning category' }
+    if (path === flightFreePath && page.path === '/travel/flights') return { ...page, title: 'See our five flight booking sites in context' }
+    if (path === flightFreePath && page.path === '/quiz/travel-flights') return { ...page, title: 'Find a booking site for your travel priorities' }
     if (page.path === emailBlogPath && emailBlogReferrers[path]) return { ...page, title: emailBlogReferrers[path] }
     if (page.path === freelanceBlogPath && freelanceBlogReferrers[path]) return { ...page, title: freelanceBlogReferrers[path] }
     if (page.path === freelanceFreePath && freelanceFreeReferrers[path]) return { ...page, title: freelanceFreeReferrers[path] }
