@@ -995,6 +995,7 @@ export const blogPosts: BlogPost[] = [
     relatedListPath: '/video-and-design-software',
     relatedListLabel: 'Video & design software top 5',
     relatedLinks: [
+      { path: '/quiz/video-and-design-software', label: 'Find a video tool for your YouTube production needs' },
       { path: '/blog/best-ai-tools-for-content-marketing', label: 'Best AI tools for content marketing' },
       { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },
       { path: '/blog/semrush-vs-surfer-seo', label: 'Semrush vs Surfer SEO' },
@@ -1285,6 +1286,7 @@ export const blogPosts: BlogPost[] = [
     relatedListPath: '/ai-tools/image-and-design',
     relatedListLabel: 'AI image & design top 5',
     relatedLinks: [
+      { path: '/quiz/video-and-design-software', label: 'Find your fit across editing, recording and stock assets' },
       { path: '/blog/best-video-editing-software-for-youtube', label: 'Best video editing software for YouTube' },
       { path: '/compare/adobe-firefly-vs-ideogram', label: 'Adobe Firefly vs Ideogram' },
       { path: '/categories', label: 'All categories' },
@@ -1342,6 +1344,7 @@ export const blogPosts: BlogPost[] = [
     relatedListPath: '/video-and-design-software',
     relatedListLabel: 'Video & design software top 5',
     relatedLinks: [
+      { path: '/quiz/video-and-design-software', label: 'Take the video workflow matching quiz' },
       { path: '/blog/best-video-editing-software-for-youtube', label: 'Best video editing software for YouTube' },
       { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },
       { path: '/categories', label: 'All categories' },

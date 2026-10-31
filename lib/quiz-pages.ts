@@ -49,6 +49,92 @@ type QuizDef = {
 
 const defs: QuizDef[] = [
   {
+    categorySlug: 'video-and-design-software',
+    metaTitle: 'Which video and design tool is right for me? (2026 Quiz)',
+    metaDescription: 'Answer seven questions to match your editing, recording or stock-asset workflow with Premiere Pro, Filmora, Envato Elements, Riverside or Camtasia.',
+    intro: 'Seven questions, a primary match and a runner-up from our five existing picks. These tools serve different jobs: editing, remote recording, screen tutorials or stock assets. Budget and platform answers guide a shortlist, not a guarantee of compatibility, free exports or commercial permission.',
+    tieBreak: 'adobe-premiere-pro',
+    questions: [
+      {
+        id: 'content-type', question: 'What kind of content do you mainly create?',
+        options: [
+          { label: 'Long-form YouTube videos or films needing detailed editing', favours: { 'adobe-premiere-pro': 3, filmora: 1 } },
+          { label: 'Short social videos or simple business edits', favours: { filmora: 3, 'adobe-premiere-pro': 1 } },
+          { label: 'Graphics, motion templates or stock-based designs', favours: { 'envato-elements': 3 } },
+          { label: 'Remote interviews or video podcasts', favours: { riverside: 3 } },
+          { label: 'Screen tutorials, presentations or corporate training', favours: { camtasia: 3, 'adobe-premiere-pro': 1 } },
+        ],
+      },
+      {
+        id: 'team', question: 'Who is producing the content?',
+        options: [
+          { label: 'A solo beginner or busy small-business creator', favours: { filmora: 3, camtasia: 1 } },
+          { label: 'An experienced editor or an Adobe-based production team', favours: { 'adobe-premiere-pro': 3, 'envato-elements': 1 } },
+          { label: 'A designer or team repeatedly sourcing creative assets', favours: { 'envato-elements': 3 } },
+          { label: 'A host working with remote guests', favours: { riverside: 3 } },
+          { label: 'A teacher, trainer or internal training team', favours: { camtasia: 3 } },
+        ],
+      },
+      {
+        id: 'experience', question: 'How much editing experience do you have?',
+        options: [
+          { label: 'Beginner: I want a friendly editing workflow', favours: { filmora: 3, camtasia: 1, riverside: 1 } },
+          { label: 'Intermediate: I want to speed up a specific production task', favours: { filmora: 1, camtasia: 2, riverside: 2, 'envato-elements': 2 } },
+          { label: 'Professional: I want detailed editing control', favours: { 'adobe-premiere-pro': 3, 'envato-elements': 1 } },
+        ],
+      },
+      {
+        id: 'budget', question: 'What monthly-equivalent budget are you considering?',
+        options: [
+          { label: 'No payment for now; I can evaluate limited free access', favours: { riverside: 3, camtasia: 3, filmora: 2 } },
+          { label: 'Up to $10 per month equivalent; annual payment may apply', favours: { filmora: 3 } },
+          { label: 'Above $10 and up to $25 per month equivalent', favours: { 'adobe-premiere-pro': 3, 'envato-elements': 3, filmora: 1 } },
+          { label: 'Above $25 per month; workflow matters more than the entry price', favours: { 'adobe-premiere-pro': 2, 'envato-elements': 2, riverside: 1, camtasia: 1, filmora: 1 } },
+        ],
+      },
+      {
+        id: 'platform', question: 'Which platform or setup do you need?',
+        options: [
+          { label: 'Windows desktop; detailed editing or screen recording', favours: { 'adobe-premiere-pro': 3, camtasia: 3 } },
+          { label: 'Mac desktop; detailed editing or screen recording', favours: { 'adobe-premiere-pro': 3, camtasia: 3 } },
+          { label: 'An online workflow centered on remote guests', favours: { riverside: 3 } },
+          { label: 'Mobile-only or another setup: I will verify app compatibility first', favours: { 'adobe-premiere-pro': 1, filmora: 1, 'envato-elements': 1, riverside: 1, camtasia: 1 } },
+        ],
+      },
+      {
+        id: 'speed-up', question: 'Which part of production do you most want to speed up?',
+        options: [
+          { label: 'Detailed cuts, color, audio and effects', favours: { 'adobe-premiere-pro': 3 } },
+          { label: 'Quick edits using titles, templates and AI helpers', favours: { filmora: 3 } },
+          { label: 'Finding stock footage, music, graphics and motion templates', favours: { 'envato-elements': 3 } },
+          { label: 'Recording guests and producing transcripts or short clips', favours: { riverside: 3 } },
+          { label: 'Screen capture, callouts, zooms and tutorial captions', favours: { camtasia: 3 } },
+        ],
+      },
+      {
+        id: 'delivery-rights', question: 'What are your commercial-use and watermark requirements?',
+        options: [
+          { label: 'Learning or evaluation: I can accept a watermark', favours: { filmora: 2, riverside: 2, camtasia: 2 } },
+          { label: 'Clean delivery: I can consider the appropriate paid plan', favours: { 'adobe-premiere-pro': 2, filmora: 2, riverside: 1, camtasia: 1 } },
+          { label: 'Paid client or monetized work: I must verify the plan and asset licenses', favours: { 'adobe-premiere-pro': 1, filmora: 1, 'envato-elements': 1, riverside: 1, camtasia: 1 } },
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Are all five results video editors?', answer: 'No. Envato Elements supplies creative assets, Riverside focuses on remote recording, Camtasia on screen tutorials, and Premiere Pro and Filmora on video editing. The result identifies a workflow fit rather than five interchangeable products.' },
+      { question: 'Does the quiz guarantee mobile or desktop compatibility?', answer: 'No. The existing category explicitly lists Windows and Mac for Premiere Pro and Camtasia. A mobile-only or other setup must be checked against the provider’s current application and system requirements before purchase.' },
+      { question: 'Are budget bands monthly payment quotes?', answer: 'No. They are monthly-equivalent preferences based on existing price labels, some of which require annual billing or an annual commitment. Free access can have watermark and export restrictions. Check the result card and its official pricing source.' },
+      { question: 'Does the result grant commercial-use rights or remove watermarks?', answer: 'No. Editorial matching points do not establish licensing permission or export entitlement. Our free-access guide separates trial, watermark and commercial-use conditions; check the selected plan and every asset license before monetized or client work.' },
+      { question: 'How are the recommendation and runner-up chosen?', answer: 'The existing quiz engine adds preference points from your answers to the five tools and shows a primary recommendation plus a runner-up. These points are editorial matching rules, not product ratings, measured performance or a guarantee that a plan meets every requirement.' },
+    ],
+    relatedLinks: [
+      { path: '/free/best-free-video-and-design-software', label: 'Review free access, export limits and licensing conditions' },
+      { path: '/blog/best-video-editing-software-for-youtube', label: 'Explore video editing choices for a YouTube workflow' },
+      { path: '/blog/capcut-vs-premiere-pro', label: 'Compare quick social edits with Premiere control' },
+      { path: '/blog/envato-elements-vs-freepik', label: 'Compare Envato and Freepik for creative assets' },
+    ],
+  },
+  {
     categorySlug: 'ai-tools', subSlug: 'marketing-and-seo',
     metaTitle: 'Which marketing and SEO tool is right for me? (2026 Quiz)',
     metaDescription: 'Answer six questions to match your marketing workflow with Semrush, Surfer SEO, NeuronWriter, Frase or Writesonic. Compare research, briefs, optimization and drafting.',

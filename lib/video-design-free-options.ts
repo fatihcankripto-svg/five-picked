@@ -63,6 +63,7 @@ export const videoDesignFreeOptions = [
 ] as const
 
 export const videoDesignFreeLinks = [
+  { path: '/quiz/video-and-design-software', label: 'Match a video or design tool to your production needs' },
   { path: '/video-and-design-software', label: 'Compare the full video and design software shortlist' },
   { path: '/blog/best-video-editing-software-for-youtube', label: 'Choose a YouTube editing workflow before upgrading' },
   { path: '/blog/capcut-vs-premiere-pro', label: 'Compare CapCut with the Premiere workflow' },
