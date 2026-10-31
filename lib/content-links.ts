@@ -119,9 +119,25 @@ for (const source of Object.keys(flightFreeReferrers)) {
   graph.get(source)?.add(flightFreePath)
   graph.get(flightFreePath)?.add(source)
 }
+const flightComparePath = '/compare/kiwi-com-vs-trip-com'
+const flightCompareReferrers: Record<string, string> = {
+  '/travel': 'Choose between Kiwi.com and Trip.com for your journey',
+  '/travel/flights': 'Weigh separate-airline routes against fare conditions',
+  '/free/best-free-flight-booking-sites': 'Apply these flight fees to a Kiwi.com or Trip.com decision',
+  '/quiz/travel-flights': 'Check whether Kiwi.com or Trip.com fits your result',
+}
+for (const source of Object.keys(flightCompareReferrers)) {
+  graph.get(source)?.add(flightComparePath)
+  graph.get(flightComparePath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === flightComparePath && flightCompareReferrers[path]) return { ...page, title: flightCompareReferrers[path] }
+    if (path === flightComparePath && page.path === '/travel') return { ...page, title: 'Browse the broader travel planning category' }
+    if (path === flightComparePath && page.path === '/travel/flights') return { ...page, title: 'Compare all five shortlisted flight booking sites' }
+    if (path === flightComparePath && page.path === flightFreePath) return { ...page, title: 'Read the verified free search and booking fee breakdown' }
+    if (path === flightComparePath && page.path === '/quiz/travel-flights') return { ...page, title: 'Match a flight booking site to your priorities' }
     if (page.path === flightFreePath && flightFreeReferrers[path]) return { ...page, title: flightFreeReferrers[path] }
     if (path === flightFreePath && page.path === '/travel') return { ...page, title: 'Explore the wider travel planning category' }
     if (path === flightFreePath && page.path === '/travel/flights') return { ...page, title: 'See our five flight booking sites in context' }

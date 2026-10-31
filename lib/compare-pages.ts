@@ -1,3 +1,4 @@
+import { flightFreeEditorial, flightFreeOptions } from '@/lib/flight-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "X vs Y" comparison pages.
@@ -26,6 +27,8 @@ export type ComparePair = {
   /** The list page these tools came from. */
   listPath: string
   listLabel: string
+  authorBio?: string
+  lastReviewedAt?: string
   scopeNote?: string
   decisionRows?: { label: string; a: string; b: string }[]
   migration?: { title: string; text: string }[]
@@ -33,7 +36,51 @@ export type ComparePair = {
   relatedLinks?: { path: string; label: string }[]
 }
 
+const kiwiFlight = flightFreeOptions.find((option) => option.slug === 'kiwi-com')!
+const tripFlight = flightFreeOptions.find((option) => option.slug === 'trip-com')!
+
 const pairs: ComparePair[] = [
+  {
+    slug: 'kiwi-com-vs-trip-com', aSlug: 'kiwi-com', bSlug: 'trip-com',
+    authorBio: flightFreeEditorial.authorBio,
+    lastReviewedAt: flightFreeEditorial.lastReviewedAt,
+    framing: 'Choose by the itinerary you can manage and the booking conditions you can accept. Kiwi.com combines separate-airline routes; Trip.com documents free route tracking across desktop and mobile. Neither makes every booking free to change or cancel.',
+    verdict: 'Consider Kiwi.com when its separate-ticket combination fits your route and you understand self-transfer responsibilities. Consider Trip.com when its route alerts and the selected fare’s conditions fit your trip. Compare the final payable total, baggage and refund rules before choosing; this is an editorial decision framework, not a price or usability test.',
+    aWinsWhen: [
+      'A separate-airline combination suits your journey and you can manage collecting and rechecking bags where required.',
+      'You have checked the service-fee breakdown, selected protection and the cancellation conditions attached to that booking.',
+      'You want account-based price alerts and accept the documented website and service conditions.',
+    ],
+    bWinsWhen: [
+      'You want explicitly documented free route alerts on desktop or mobile without a membership upgrade.',
+      'The actual fare you find has baggage and change conditions that meet your needs after you check the payable total.',
+      'You prefer to evaluate flight options alongside the platform’s other travel products; this does not guarantee a single protected ticket.',
+    ],
+    scopeNote: 'Official sources reviewed October 31, 2026. Access, fees and cancellation text below reuse the travel free guide’s data. Unspecified amounts and limits remain unspecified. Suitability is editorial guidance; no booking, refund or mobile usability test was performed.',
+    decisionRows: [
+      { label: 'Free search', a: kiwiFlight.price, b: tripFlight.price },
+      { label: 'Price alerts and access limits', a: kiwiFlight.access, b: tripFlight.access },
+      { label: 'Service and transaction fees', a: kiwiFlight.fees, b: tripFlight.fees },
+      { label: 'Cancellation and changes', a: kiwiFlight.changes, b: tripFlight.changes },
+      { label: 'Baggage cost transparency', a: 'Carrier ancillaries are separated from the base fare in the booking breakdown. Self-transfer can require bag collection and recheck. Inspect every segment; baggage is not automatically free.', b: 'Check the baggage rules attached to the selected fare. This guide makes no claim that every displayed fare includes a checked bag or that the interface is more transparent.' },
+      { label: 'Currency and payment-provider costs', a: 'No universal separate payment-fee amount is verified in the free guide. Do not infer that every payment method or currency is cost-free.', b: 'The payment account provider may use a different exchange rate or charge for international payments. No fixed universal amount is verified.' },
+      { label: 'Mobile experience: documented functions', a: 'Account-based alerts can send push notifications; alerts can be managed in the website or app. No measured ease-of-use or speed advantage is claimed.', b: 'The official guide documents free alerts on desktop and in the app. No measured mobile usability advantage is claimed.' },
+    ],
+    migration: [
+      { title: 'When to compare Trip.com after searching Kiwi.com', text: 'Before buying, check Trip.com if the Kiwi.com option needs a self-transfer you cannot manage, or its baggage, agency charges or refund conditions do not fit your trip. Choose only if the actual alternative itinerary and final terms resolve that problem. Trip.com is not automatically cheaper, refundable or protected against missed connections.' },
+      { title: 'When to compare Kiwi.com after searching Trip.com', text: 'Before buying, check Kiwi.com when you want to explore separate-airline combinations beyond the itinerary you found. Inspect all segments, baggage handling and selected protection before accepting the route. A search result is not proof of a lower total cost.' },
+      { title: 'Who should not choose Kiwi.com or Trip.com yet?', text: 'Kiwi.com is unsuitable for a traveler who cannot manage the responsibilities of a proposed self-transfer itinerary. Trip.com is unsuitable if the selected fare fails a required baggage or refund condition. Neither should be selected on an assumption of universally free cancellation. After purchase, manage the existing booking under its original conditions; switching search sites does not transfer a ticket or erase charges.' },
+      { title: 'Service fees are not evidence of hidden fees', text: 'A documented agency service fee is separate from the airfare, baggage and payment-provider costs. The free guide and this comparison do not establish undisclosed charges or certify a fee-free checkout. Check the breakdown before payment; an unspecified Trip.com fee is not evidence that its fee is zero.' },
+    ],
+    sources: [...kiwiFlight.sources, ...tripFlight.sources],
+    faqs: [
+      { question: 'Is Trip.com always cheaper than Kiwi.com?', answer: 'No matched fare test is presented. Compare the same journey, included baggage, agency charges, payment currency and cancellation conditions before deciding.' },
+      { question: 'Does the Kiwi.com assisted refund deduction apply to every refund?', answer: 'No. The basic voluntary assisted-refund condition described in the table can deduct from recovered carrier funds and may be waived. Other selected services and disruption circumstances have their own conditions; do not treat one rule as universal.' },
+      { question: 'Does Trip.com include free cancellation for every flight?', answer: 'No universal free entitlement is established. Rights and associated fees are shown during booking; some fares cannot be changed or refunded.' },
+      { question: 'Can I move a booked ticket between these sites?', answer: 'No ticket-transfer entitlement is established here. The switching scenarios concern comparison before purchase. Manage an existing booking with the original provider and under its conditions.' },
+    ],
+    listPath: '/travel/flights', listLabel: 'Our full shortlist of five flight booking sites',
+  },
   {
     slug: 'capcut-vs-premiere-pro', aSlug: 'capcut', bSlug: 'adobe-premiere-pro',
     framing: 'Choose by the job you need to deliver: a template-oriented social edit or a desktop editing workflow with detailed control. Free access and commercial rights are separate decisions.',
@@ -583,11 +630,22 @@ export type ComparePage = {
   faqs: { question: string; answer: string }[]
   listPath: string
   listLabel: string
+  authorBio?: string
+  lastReviewedAt?: string
   scopeNote?: string
   decisionRows?: { label: string; a: string; b: string }[]
   migration?: { title: string; text: string }[]
   sources?: { url: string; label: string }[]
   relatedLinks?: { path: string; label: string }[]
+}
+
+function flightCompareTool(tool: Tool, option: typeof kiwiFlight): Tool {
+  return { ...tool, startingPrice: option.price, bestFor: option.audience, tagline: option.standout,
+    whatItDoes: option.slug === 'kiwi-com' ? 'Searches itineraries including combinations of separate flights. Check the self-transfer responsibilities of the route before buying.' : 'Provides flight search and booking alongside other travel products, with free route tracking on desktop and mobile.',
+    strengths: [option.standout, 'Search before purchasing a ticket'],
+    goodToKnow: 'Read the sourced comparison table above and the conditions for your actual booking. Free search is separate from paid tickets and optional services.',
+    decisionOverride: { audience: option.audience, standout: option.standout },
+  }
 }
 
 export const comparePages: ComparePage[] = pairs.map((pair) => {
@@ -597,8 +655,8 @@ export const comparePages: ComparePage[] = pairs.map((pair) => {
   if (!b) throw new Error(`[FIVE PICKED] Compare "${pair.slug}" references missing tool "${pair.bSlug}".`)
   return {
     slug: pair.slug,
-    a,
-    b,
+    a: pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(a, kiwiFlight) : a,
+    b: pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(b, tripFlight) : b,
     framing: pair.framing,
     verdict: pair.verdict,
     aWinsWhen: pair.aWinsWhen,
@@ -606,6 +664,8 @@ export const comparePages: ComparePage[] = pairs.map((pair) => {
     faqs: pair.faqs,
     listPath: pair.listPath,
     listLabel: pair.listLabel,
+    authorBio: pair.authorBio,
+    lastReviewedAt: pair.lastReviewedAt,
     scopeNote: pair.scopeNote,
     decisionRows: pair.decisionRows,
     migration: pair.migration,

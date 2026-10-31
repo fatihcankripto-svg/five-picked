@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('/'), route('/categories'),
     ...categoryPages,
     route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.lastReviewedAt)),
-    route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, comparePagesUpdated)),
+    route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, page.lastReviewedAt ?? comparePagesUpdated)),
     route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : freePagesUpdated)),
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
     route('/guides'), ...guides.map((guide) => route(guide.path, guide.path === '/guides/ai-voice-commercial-use' ? editorialDates.commercialVoiceGuide : editorialDates.guides)),

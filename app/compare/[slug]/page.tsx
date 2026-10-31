@@ -8,7 +8,7 @@ import { ComparisonTable } from '@/components/comparison-table'
 import { SectionMarker } from '@/components/section-marker'
 import { ToolCard } from '@/components/tool-card'
 import { comparePages, getComparePage } from '@/lib/compare-pages'
-import { absoluteUrl, getOutboundLink } from '@/lib/site'
+import { absoluteUrl, formatDate, getOutboundLink } from '@/lib/site'
 
 export const dynamicParams = false
 
@@ -95,6 +95,8 @@ export default async function ComparePage({ params }: Props) {
         </p>
       </header>
 
+      {page.lastReviewedAt && <p className="mt-6 text-sm text-muted-foreground">Last reviewed <time dateTime={page.lastReviewedAt}>{formatDate(page.lastReviewedAt)}</time>. {page.authorBio}</p>}
+
       <section className="mt-10 rounded-2xl border border-primary/30 bg-primary/[0.06] p-6">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-primary">Verdict</h2>
         <p className="mt-3 leading-relaxed text-foreground text-pretty">{page.verdict}</p>
@@ -102,7 +104,7 @@ export default async function ComparePage({ params }: Props) {
 
       <section className="mt-12 grid gap-6 lg:grid-cols-2">
         <div>
-          <h2 className="text-xl font-semibold text-foreground">{page.slug === 'capcut-vs-premiere-pro' ? `Choose ${page.a.name} if…` : `When ${page.a.name} wins`}</h2>
+          <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com'].includes(page.slug) ? `Choose ${page.a.name} if…` : `When ${page.a.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.aWinsWhen.map((item) => (
               <li key={item} className="flex gap-2.5">
@@ -113,7 +115,7 @@ export default async function ComparePage({ params }: Props) {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-foreground">{page.slug === 'capcut-vs-premiere-pro' ? `Choose ${page.b.name} if…` : `When ${page.b.name} wins`}</h2>
+          <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com'].includes(page.slug) ? `Choose ${page.b.name} if…` : `When ${page.b.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.bWinsWhen.map((item) => (
               <li key={item} className="flex gap-2.5">
@@ -136,10 +138,10 @@ export default async function ComparePage({ params }: Props) {
       </section>
 
       {page.decisionRows && <section className="mt-12">
-        <h2 className="text-xl font-semibold text-foreground">Which situation fits your work?</h2>
+        <h2 className="text-xl font-semibold text-foreground">{page.slug === 'kiwi-com-vs-trip-com' ? 'Which situation fits your trip?' : 'Which situation fits your work?'}</h2>
         {page.scopeNote && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{page.scopeNote}</p>}
         <div className="mt-5 overflow-x-auto rounded-2xl border border-border bg-card"><table className="w-full min-w-[34rem] text-left text-sm">
-          <caption className="sr-only">Decision criteria for CapCut and Premiere Pro</caption>
+          <caption className="sr-only">Decision criteria for {page.a.name} and {page.b.name}</caption>
           <thead><tr className="border-b border-border"><th scope="col" className="px-5 py-3.5">Decision criterion</th><th scope="col" className="px-5 py-3.5">{page.a.name}</th><th scope="col" className="px-5 py-3.5">{page.b.name}</th></tr></thead>
           <tbody>{page.decisionRows.map((row) => <tr key={row.label} className="border-b border-border last:border-0"><th scope="row" className="px-5 py-4 font-medium">{row.label}</th><td className="px-5 py-4 align-top text-muted-foreground">{row.a}</td><td className="px-5 py-4 align-top text-muted-foreground">{row.b}</td></tr>)}</tbody>
         </table></div>
