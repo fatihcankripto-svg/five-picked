@@ -30,12 +30,14 @@ export function ContentPage({
   title,
   intro,
   children,
+  showRelatedContent = true,
 }: {
   path?: string
   eyebrow: string
   title: string
   intro: string
   children: React.ReactNode
+  showRelatedContent?: boolean
 }) {
   const sections: { id: string; label: string }[] = []
   const content = Children.map(children, (child) => {
@@ -60,7 +62,7 @@ export function ContentPage({
       <div className="mt-10 flex flex-col gap-5 leading-relaxed text-muted-foreground [&_a]:text-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-primary [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-foreground [&_li]:pl-1 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:flex [&_ul]:list-disc [&_ul]:flex-col [&_ul]:gap-2 [&_ul]:pl-5 [&_ul]:marker:text-primary">
         {content}
       </div>
-      {path && <RelatedContent path={path} />}
+      {path && showRelatedContent && <RelatedContent path={path} />}
     </div>
   )
 }

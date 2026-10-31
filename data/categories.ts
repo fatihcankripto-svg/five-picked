@@ -615,7 +615,7 @@ export const categories: Category[] = [
           '24/7 support',
         ],
         goodToKnow:
-          'Compare the total first-term cost and renewal terms on the official website. Current renewal price: see website.',
+          `Verified on ${verifiedPricing['bluehost'].checkedAt}: Starter pricing and the displayed renewal rate were checked against Bluehost’s official pricing page. The renewal rate shown applies to a 36-month renewal term. Compare the full-term cost before buying.`,
         startingPrice: verifiedPricing["bluehost"].label,
         officialUrl: 'https://www.bluehost.com/',
       },

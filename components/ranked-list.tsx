@@ -113,7 +113,7 @@ export function RankedList({
         </ol>
       </section>
 
-      {alternativePages.length > 0 && (
+      {alternativePages.length > 0 && (path !== '/web-hosting-and-domains' || alternativePages.length === tools.length) && (
         <section aria-labelledby="alternatives" className="mt-14">
           <h2 id="alternatives" className="text-xl font-semibold text-foreground">
             Not sure about a pick? See the alternatives

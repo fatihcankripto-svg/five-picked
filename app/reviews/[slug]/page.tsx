@@ -1,3 +1,4 @@
+import { contentLinks, getContentLinks } from '@/lib/content-links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -62,6 +63,20 @@ export default async function ReviewPage({ params }: PageProps) {
   if (!review) notFound()
 
   const found = findTool(slug)
+  const readingLinks = new Map<string, { href: string; label: string; note?: string }>()
+  if (found) {
+    const pillarPath = `/${found.listHref.split('/')[1]}`
+    const pillar = categories.find((category) => `/${category.slug}` === pillarPath)
+    if (pillar) readingLinks.set(pillarPath, { href: pillarPath, label: `Browse ${pillar.name} recommendations` })
+  }
+  for (const item of review.related) readingLinks.set(item.href, item)
+  const relatedPages = [
+    ...getContentLinks(`/reviews/${review.toolSlug}`),
+    ...contentLinks.filter((item) => found && item.listPath === found.listHref && /^\/(free|quiz|compare|alternatives)\//.test(item.path)),
+  ]
+  for (const item of relatedPages) {
+    if (!readingLinks.has(item.path)) readingLinks.set(item.path, { href: item.path, label: item.title })
+  }
   const url = absoluteUrl(`/reviews/${review.toolSlug}`)
   const organization = { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' }
 
@@ -102,7 +117,7 @@ export default async function ReviewPage({ params }: PageProps) {
   )
 
   return (
-    <ContentPage path={`/reviews/${review.toolSlug}`}
+    <ContentPage path={`/reviews/${review.toolSlug}`} showRelatedContent={false}
       eyebrow="Review"
       title={review.headline}
       intro={`${review.intro} Last updated ${formatDate(review.updated)}.`}
@@ -188,12 +203,12 @@ export default async function ReviewPage({ params }: PageProps) {
 
       <h2>Keep reading</h2>
       <ul>
-        {review.related.map((item) => (
+        {[...readingLinks.values()].map((item) => (
           <li key={item.href}>
             <Link href={item.href}>
               <strong>{item.label}</strong>
             </Link>
-            : {item.note}
+            {item.note && <>: {item.note}</>}
           </li>
         ))}
       </ul>
