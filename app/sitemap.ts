@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [
     route('/'), route('/categories'),
     ...categoryPages,
+    // The blog registry includes the dated hosting price index and its reviewed date.
     route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.lastReviewedAt)),
     // Includes all three comparison packages through the shared comparison registry.
     route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, page.lastReviewedAt ?? comparePagesUpdated)),

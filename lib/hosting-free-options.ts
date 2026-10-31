@@ -63,6 +63,7 @@ export const hostingOffers = [
 ] as const
 
 export const hostingGuideLinks = [
+  { path: '/blog/2026-web-hosting-price-index', label: 'Check the ten-provider entry and renewal price dataset' },
   { path: '/reviews/hostinger', label: 'Read the Hostinger review before accepting the hosting term' },
   { path: '/alternatives/hostinger', label: 'Compare the other four hosting choices beyond Hostinger' },
   { path: '/quiz/web-hosting-and-domains', label: 'Find a hosting match for your site and experience' },

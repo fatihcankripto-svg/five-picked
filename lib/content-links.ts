@@ -180,7 +180,17 @@ const thirdCompareLinks: Record<string, Record<string, string>> = {
     "/video-and-design-software": "Compare Filmora and Camtasia before committing"
   }
 }
+const hostingIndexPath = '/blog/2026-web-hosting-price-index'
+const hostingIndexReferrers: Record<string, string> = {
+  "/web-hosting-and-domains": "Inspect the ten-provider hosting price index",
+  "/free/best-free-web-hosting": "Compare entry rates with renewal and included-service costs",
+  "/blog/kinsta-vs-cloudways": "Check the wider hosting price dataset and renewal method",
+  "/compare/hostinger-vs-cloudways": "Review the official ten-provider price snapshot",
+  "/reviews/cloudways": "Place Cloudways billing in the hosting price index",
+  "/reviews/hostinger": "See Hostinger\u2019s term and renewal alongside other providers"
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  if (a.path === hostingIndexPath || b.path === hostingIndexPath) return Boolean(hostingIndexReferrers[a.path === hostingIndexPath ? b.path : a.path])
   for (const [target, sources] of Object.entries(thirdCompareLinks)) {
     if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
   }
@@ -338,9 +348,18 @@ for (const [target, sources] of Object.entries(thirdCompareLinks)) {
     graph.get(target)?.add(source)
   }
 }
+for (const source of Object.keys(hostingIndexReferrers)) {
+  graph.get(source)?.add(hostingIndexPath)
+  graph.get(hostingIndexPath)?.add(source)
+}
+function hostingPriceIndexLabel(path: string) {
+  return blogPosts.find((post) => `/blog/${post.slug}` === hostingIndexPath)?.relatedLinks.find((link) => link.path === path)?.label
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === hostingIndexPath && hostingIndexReferrers[path]) return { ...page, title: hostingIndexReferrers[path] }
+    if (path === hostingIndexPath) return { ...page, title: hostingPriceIndexLabel(page.path) ?? page.title }
     if (thirdCompareLinks[page.path]?.[path]) return { ...page, title: thirdCompareLinks[page.path][path] }
     if (thirdCompareLinks[path]?.[page.path]) {
       const compare = comparePages.find((entry) => `/compare/${entry.slug}` === path)

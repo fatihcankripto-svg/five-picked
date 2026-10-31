@@ -1,3 +1,4 @@
+import { hostingPriceIndexPost } from '@/lib/hosting-price-index'
 import { emailFreeOptions } from '@/lib/email-free-options'
 import { freelanceFreeOptions } from '@/lib/freelance-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
@@ -9,6 +10,7 @@ import { editorialDates } from '@/lib/editorial-dates'
 export type BlogFaq = { question: string; answer: string }
 
 export type BlogPost = {
+  dataset?: Record<string, unknown>
   slug: string
   title: string
   metaTitle: string
@@ -901,6 +903,7 @@ ${emailCostFaqs.map((faq) => `<h3>${faq.question}</h3><p>${faq.answer}</p>`).joi
 `
 
 export const blogPosts: BlogPost[] = [
+  hostingPriceIndexPost,
   {
     slug: 'real-cost-of-email-marketing-2026',
     title: 'The Real Cost of Email Marketing in 2026: Pricing, Deliverability and Hidden Limits Compared',

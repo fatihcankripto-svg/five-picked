@@ -42,6 +42,7 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
       lastReviewed: post.lastReviewedAt,
       reviewedBy: { '@type': 'Organization', name: post.author, description: post.authorBio, url: 'https://fivepicked.com/how-we-choose' },
     },
+    ...(post.dataset ? { hasPart: { '@type': 'Dataset', '@id': post.dataset['@id'] } } : {}),
     keywords: post.keywords.join(', '), articleSection: post.category, inLanguage: 'en',
   }
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
@@ -92,11 +93,12 @@ export default async function BlogPostPage({ params }: PageProps) {
     return `<h2 id="${id}">${label}</h2>`
   })
   const minutes = readingTimeMinutes(post.content)
-  const related = getRelatedPosts(post, blogPosts, 3)
+  const related = getRelatedPosts(post, post.slug === '2026-web-hosting-price-index' ? blogPosts.filter((entry) => entry.relatedListPath === '/web-hosting-and-domains') : blogPosts, 3)
 
   return (
     <>
       <ArticleJsonLd post={post} />
+      {post.dataset && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(post.dataset).replace(/</g, '\\u003c') }} />}
       <FaqJsonLd post={post} />
 
       <BreadcrumbJsonLd post={post} />

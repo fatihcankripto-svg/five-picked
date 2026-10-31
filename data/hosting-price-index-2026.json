@@ -1,0 +1,278 @@
+[
+  {
+    "provider": "Hostinger",
+    "plan": "Premium",
+    "hostingType": "Shared / managed web hosting",
+    "currency": "USD",
+    "introMonthly": 2.49,
+    "initialTermMonths": 48,
+    "renewalMonthly": 10.99,
+    "renewalBasis": "Same 48-month renewal term.",
+    "freeDomain": "First year included on the observed offer.",
+    "freeSsl": "Included.",
+    "freeMigration": "Free automatic migration advertised; eligibility applies.",
+    "refund": "30 days on eligible new hosting purchases; exclusions apply.",
+    "setupFee": "Not explicitly established in reviewed offer; not assumed zero.",
+    "sources": [
+      {
+        "url": "https://www.hostinger.com/pricing",
+        "label": "Premium price, term, domain, SSL and migration"
+      },
+      {
+        "url": "https://www.hostinger.com/support/1583320-are-free-hosting-plans-available-at-hostinger/",
+        "label": "Hosting access and eligible refund conditions"
+      }
+    ],
+    "notes": "Lowest displayed web-hosting offer on the reviewed page; Single pricing was not exposed. Not a claim about every Hostinger offer.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "Bluehost",
+    "plan": "Starter",
+    "hostingType": "Shared web hosting",
+    "currency": "USD",
+    "introMonthly": 3.99,
+    "initialTermMonths": 36,
+    "renewalMonthly": 9.99,
+    "renewalBasis": "Published monthly equivalent at renewal; confirm renewal invoice term.",
+    "freeDomain": "First year included; subsequent registration renews separately.",
+    "freeSsl": "Let’s Encrypt included.",
+    "freeMigration": "Free WordPress migration tool; not a blanket managed-transfer promise.",
+    "refund": "30 days on eligible new hosting; monthly terms, domains, Cloud and most add-ons excluded.",
+    "setupFee": "Not explicitly established in reviewed offer; not assumed zero.",
+    "sources": [
+      {
+        "url": "https://www.bluehost.com/web-hosting",
+        "label": "Starter introductory and renewal rates and included features"
+      },
+      {
+        "url": "https://www.bluehost.com/help/article/refundpolicy",
+        "label": "Hosting refund eligibility and domain deductions"
+      }
+    ],
+    "notes": "VAT/GST not included in displayed price.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "Cloudways",
+    "plan": "Flexible Micro, displayed base configuration",
+    "hostingType": "Managed cloud hosting",
+    "currency": "USD",
+    "introMonthly": 11,
+    "initialTermMonths": null,
+    "renewalMonthly": 11,
+    "renewalBasis": "Current recurring base rate, not a guaranteed future renewal quote.",
+    "freeDomain": "No free registration benefit verified.",
+    "freeSsl": "Free Let’s Encrypt available.",
+    "freeMigration": "One free managed migration, then paid; WordPress Migrator plugin free.",
+    "refund": "No general hosting money-back period verified; unused prepaid funds have separate conditions.",
+    "setupFee": "No separate setup amount established; backup storage and optional add-ons can cost extra.",
+    "sources": [
+      {
+        "url": "https://www.cloudways.com/en/pricing.php",
+        "label": "Displayed Micro monthly and hourly base rates"
+      },
+      {
+        "url": "https://support.cloudways.com/en/articles/5245051-getting-started-faqs",
+        "label": "Pay-as-you-go, migration, SSL and additional charges"
+      },
+      {
+        "url": "https://support.cloudways.com/en/articles/9652801-how-to-manage-your-cloudways-payments",
+        "label": "Payments and unused prepaid funds"
+      }
+    ],
+    "notes": "Pay-as-you-go after upgrade; temporary trial excluded from paid entry rate. No fixed multi-month commitment inferred.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  },
+  {
+    "provider": "Kinsta",
+    "plan": "Single 20GB bandwidth, monthly offer",
+    "hostingType": "Managed WordPress hosting",
+    "currency": "USD",
+    "introMonthly": 0,
+    "initialTermMonths": 1,
+    "renewalMonthly": 35,
+    "renewalBasis": "Monthly continuation after the qualifying first-month promotion.",
+    "freeDomain": "No free registration benefit verified.",
+    "freeSsl": "SSL certificates included.",
+    "freeMigration": "Unlimited free migrations advertised, subject to migration conditions.",
+    "refund": "30 days for eligible first-time customers; after qualifying free period starts at renewal; overages and one-time fees excluded.",
+    "setupFee": "No universal setup fee established; one-time service fees are separate and excluded from guarantee.",
+    "sources": [
+      {
+        "url": "https://kinsta.com/pricing/",
+        "label": "Single 20GB monthly promotion, continuation, SSL and migrations"
+      },
+      {
+        "url": "https://kinsta.com/docs/service-information/money-back-guarantee/",
+        "label": "Guarantee timing and excluded charges"
+      }
+    ],
+    "notes": "Qualifying first month $0, then $35/month. Annual billing is a separate offer; no percentage from a zero denominator.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  },
+  {
+    "provider": "Namecheap",
+    "plan": "Stellar, displayed monthly trial route",
+    "hostingType": "Shared hosting",
+    "currency": "USD",
+    "introMonthly": 0,
+    "initialTermMonths": 1,
+    "renewalMonthly": 2.28,
+    "renewalBasis": "Advertised post-trial continuation, not a verified permanent renewal rate.",
+    "freeDomain": "Eligible non-premium first-year domain offer; extension/term conditions must be checked.",
+    "freeSsl": "Standard SSL included for first year; not a lifetime free paid-certificate promise.",
+    "freeMigration": "Transfer assistance from another cPanel host advertised.",
+    "refund": "30 days only for eligible first-time customers starting without the trial; do not stack offers.",
+    "setupFee": "No separate setup amount established in reviewed source.",
+    "sources": [
+      {
+        "url": "https://www.namecheap.com/hosting/shared/",
+        "label": "Stellar trial, continuation, domain, SSL, transfer and refund conditions"
+      }
+    ],
+    "notes": "30-day trial is limited. Same page also lists $5.88 for one-month standard pricing; neither figure is silently substituted for the other. Long-run trial-route renewal not resolved.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  },
+  {
+    "provider": "SiteGround",
+    "plan": "StartUp",
+    "hostingType": "Shared web hosting",
+    "currency": "USD",
+    "introMonthly": 2.99,
+    "initialTermMonths": 12,
+    "renewalMonthly": 17.99,
+    "renewalBasis": "Published renewal monthly equivalent after initial 12-month prepayment.",
+    "freeDomain": "First year included for listed eligible extensions.",
+    "freeSsl": "Included.",
+    "freeMigration": "Free website transfer and WordPress migrations advertised.",
+    "refund": "30-day advertised guarantee; eligibility and exclusions must be checked.",
+    "setupFee": "No separate setup amount established in reviewed offer.",
+    "sources": [
+      {
+        "url": "https://www.siteground.com/web-hosting.htm",
+        "label": "StartUp introductory/renewal rates, term and included services"
+      }
+    ],
+    "notes": "",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "GreenGeeks",
+    "plan": "Lite",
+    "hostingType": "Shared hosting",
+    "currency": "USD",
+    "introMonthly": 2.95,
+    "initialTermMonths": 12,
+    "renewalMonthly": 13.95,
+    "renewalBasis": "Published renewal monthly rate after initial 12-month prepayment.",
+    "freeDomain": "Registration or transfer included for first year on eligible term.",
+    "freeSsl": "Free Let’s Encrypt included.",
+    "freeMigration": "Free migration advertised; timing/scope governed by policy.",
+    "refund": "30 days for eligible hosting charges; setup, domains and add-ons excluded.",
+    "setupFee": "Annual setup fee waived; monthly billing has a $15 setup fee.",
+    "sources": [
+      {
+        "url": "https://www.greengeeks.com/shared-hosting/",
+        "label": "Lite offer, renewal, domain, SSL and migration"
+      },
+      {
+        "url": "https://www.greengeeks.com/legal/tos",
+        "label": "Refund exclusions and migration conditions"
+      },
+      {
+        "url": "https://www.greengeeks.com/compare/liquidweb",
+        "label": "Own-plan setup-fee FAQ only; competitor claims not used"
+      }
+    ],
+    "notes": "Current sales-page renewal used; older comparison-page renewal figures are not substituted.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "DreamHost",
+    "plan": "Web Hosting Launch, four-year offer",
+    "hostingType": "Shared web hosting",
+    "currency": "EUR",
+    "introMonthly": 1.99,
+    "initialTermMonths": 48,
+    "renewalMonthly": 7.99,
+    "renewalBasis": "Published monthly equivalent after first four years.",
+    "freeDomain": "First year on eligible annual or multi-year plan.",
+    "freeSsl": "Included.",
+    "freeMigration": "Free migrations advertised; confirm supported site type and transfer scope.",
+    "refund": "30 days on eligible hosting payments; payment and product exclusions apply.",
+    "setupFee": "No separate setup amount established in reviewed offer.",
+    "sources": [
+      {
+        "url": "https://www.dreamhost.com/hosting/web-hosting/",
+        "label": "Four-year Launch offer, renewal, domain and SSL"
+      },
+      {
+        "url": "https://www.dreamhost.com/legal/terms-of-service/unstyled/",
+        "label": "Refund eligibility and exclusions"
+      }
+    ],
+    "notes": "Observed EUR rendering retained despite a USD navigation label; no exchange-rate conversion. Full selected term plus taxes charged at checkout.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "IONOS",
+    "plan": "Plus",
+    "hostingType": "Shared web hosting",
+    "currency": "USD",
+    "introMonthly": 1,
+    "initialTermMonths": 12,
+    "renewalMonthly": 14,
+    "renewalBasis": "Then $14/month after advertised one-year term.",
+    "freeDomain": "First year for eligible listed extensions.",
+    "freeSsl": "Wildcard SSL included.",
+    "freeMigration": "Managed website migration is separately quoted; free consultation does not mean free transfer.",
+    "refund": "30-day advertised money-back guarantee; applicable terms govern eligibility.",
+    "setupFee": "Current Plus setup charge not established; no historic setup fee imported.",
+    "sources": [
+      {
+        "url": "https://www.ionos.com/hosting/web-hosting",
+        "label": "Plus first-year price, continuation, domain, SSL and guarantee"
+      },
+      {
+        "url": "https://www.ionos.com/websites/website-migration-service",
+        "label": "Personalized migration quote and free consultation"
+      }
+    ],
+    "notes": "Plus has the lowest displayed introductory rate on this page even though it is not the lowest-capacity plan. State/local taxes may apply.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "FastComet",
+    "plan": "Starter",
+    "hostingType": "Shared hosting",
+    "currency": "USD",
+    "introMonthly": 1.99,
+    "initialTermMonths": null,
+    "renewalMonthly": 9.95,
+    "renewalBasis": "Regular monthly rate; first-term promotion renews at regular rate.",
+    "freeDomain": "Free domain transfer with one-year renewal advertised; new registration inclusion not verified.",
+    "freeSsl": "Free Let’s Encrypt included.",
+    "freeMigration": "Free website/server migration advertised.",
+    "refund": "30-day advertised guarantee; eligibility and exclusions must be checked.",
+    "setupFee": "Free website setup advertised; no separate mandatory account setup amount verified.",
+    "sources": [
+      {
+        "url": "https://www.fastcomet.com/website-hosting",
+        "label": "Starter introductory/regular rates, SSL, migration, setup and guarantee"
+      }
+    ],
+    "notes": "Required promotional term could not be verified: public page omits it and checkout was inaccessible. Excluded from term-complete renewal ranking.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  }
+]
