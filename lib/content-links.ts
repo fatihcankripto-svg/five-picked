@@ -380,9 +380,13 @@ for (const source of Object.keys(courseIndexReferrers)) {
   graph.get(source)?.add(courseIndexPath)
   graph.get(courseIndexPath)?.add(source)
 }
+// The content marketing article also belongs to the AI pillar's buying journey.
+graph.get('/ai-tools')?.add('/blog/best-ai-tools-for-content-marketing')
+
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (path === '/ai-tools' && page.path === '/blog/best-ai-tools-for-content-marketing') return { ...page, title: 'Choose AI tools for your content marketing workflow' }
     if (page.path === courseIndexPath && courseIndexReferrers[path]) return { ...page, title: courseIndexReferrers[path] }
     if (path === courseIndexPath) return { ...page, title: blogPosts.find((post) => `/blog/${post.slug}` === path)?.relatedLinks.find((link) => link.path === page.path)?.label ?? page.title }
     if (page.path === vpnIndexPath && vpnIndexReferrers[path]) return { ...page, title: vpnIndexReferrers[path] }

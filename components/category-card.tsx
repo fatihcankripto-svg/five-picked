@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import type { MouseEvent } from 'react'
+import { useEffect, useRef, type MouseEvent } from 'react'
 import {
   ArrowUpRight, Bot, BriefcaseBusiness, Clapperboard, Cloud, FolderKanban,
   GraduationCap, ImageIcon, Languages, Layers, Mail, Megaphone, MessageSquare,
@@ -18,17 +18,32 @@ const icons: Record<string, LucideIcon> = {
   presentations: Presentation, automation: Workflow,
 }
 
-function followMouse(event: MouseEvent<HTMLAnchorElement>) {
-  const rect = event.currentTarget.getBoundingClientRect()
-  event.currentTarget.style.setProperty('--mx', `${event.clientX - rect.left}px`)
-  event.currentTarget.style.setProperty('--my', `${event.clientY - rect.top}px`)
-}
 
 export function CategoryCard({
   href, slug, name, description, meta, number, headingLevel = 'h3',
 }: {
   href: string; slug: string; name: string; description: string; meta: string; number?: string; headingLevel?: 'h2' | 'h3'
 }) {
+  const frame = useRef<number | null>(null)
+  const cursor = useRef<{ node: HTMLAnchorElement; x: number; y: number } | null>(null)
+
+  useEffect(() => () => {
+    if (frame.current !== null) cancelAnimationFrame(frame.current)
+  }, [])
+
+  function followMouse(event: MouseEvent<HTMLAnchorElement>) {
+    cursor.current = { node: event.currentTarget, x: event.clientX, y: event.clientY }
+    if (frame.current !== null) return
+    frame.current = requestAnimationFrame(() => {
+      frame.current = null
+      const latest = cursor.current
+      if (!latest?.node.isConnected) return
+      const rect = latest.node.getBoundingClientRect()
+      latest.node.style.setProperty('--mx', `${latest.x - rect.left}px`)
+      latest.node.style.setProperty('--my', `${latest.y - rect.top}px`)
+    })
+  }
+
   const Icon = icons[slug] ?? Layers
   const Heading = headingLevel
 

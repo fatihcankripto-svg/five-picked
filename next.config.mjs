@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compress: true,
+  images: { formats: ['image/avif', 'image/webp'] },
   // Avoid reproducible persistent-cache panics in Next 16.4 build workers.
   experimental: {
     turbopackFileSystemCacheForBuild: false,
