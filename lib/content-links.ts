@@ -75,9 +75,21 @@ for (const source of Object.keys(languageFreeReferrers)) {
   graph.get(source)?.add(languageFreePath)
   graph.get(languageFreePath)?.add(source)
 }
+const freelanceFreePath = '/free/best-free-freelance-platforms'
+const freelanceFreeReferrers: Record<string, string> = {
+  '/freelance-platforms': 'Check free account limits and the real cost of freelancing',
+  '/quiz/freelance-platforms': 'Review marketplace fees before following your match',
+  '/compare/fiverr-vs-upwork': 'Compare free access and payout conditions across five platforms',
+  '/tools/freelance-fee-calculator': 'Check the official fee conditions behind your estimate',
+}
+for (const source of Object.keys(freelanceFreeReferrers)) {
+  graph.get(source)?.add(freelanceFreePath)
+  graph.get(freelanceFreePath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === freelanceFreePath && freelanceFreeReferrers[path]) return { ...page, title: freelanceFreeReferrers[path] }
     if (page.path === languageFreePath && languageFreeReferrers[path]) return { ...page, title: languageFreeReferrers[path] }
     if (path === '/travel/flights' && page.path === '/travel') return { ...page, title: 'Explore our travel planning shortlist' }
     if (path === '/travel/flights' && page.path === '/quiz/travel-flights') return { ...page, title: 'Find a flight booking site for your trip' }

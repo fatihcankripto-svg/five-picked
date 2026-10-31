@@ -1,3 +1,4 @@
+import { freelanceFreeOptions } from '@/lib/freelance-free-options'
 import { languageFreeOptions } from '@/lib/language-free-options'
 import { courseFreeOptions } from '@/lib/course-free-options'
 import { videoDesignFreeOptions } from '@/lib/video-design-free-options'
@@ -34,6 +35,25 @@ type FreeCopy = {
 }
 
 const copies: FreeCopy[] = [
+  {
+    slug: 'best-free-freelance-platforms',
+    title: 'Free Freelance Platforms in 2026: Accounts, Fees and Payout Limits',
+    h1: 'Free freelance platforms in 2026: what does working actually cost?',
+    metaTitle: 'Free Freelance Platforms: Fees & Payout Limits (2026)',
+    metaDescription: 'Compare Fiverr, Upwork, 99designs, Freelancer.com and Toptal on free access, commissions, proposal costs and payout limits, using official freelancer-side sources.',
+    intro: 'Free registration does not mean commission-free earnings or unlimited applications. This guide checks the five platforms in our existing freelance shortlist and separates account access, proposal costs, service fees and withdrawals. Toptal is assessed as a screened talent network, not an open free account.',
+    verdict: 'Compare the cost of getting work with the cost of getting paid. Fiverr offers free listings with earnings deductions; Upwork separates Basic access from Connects and contract fees; 99designs applies designer fees to direct projects; Freelancer.com adds bid and balance constraints. Toptal says it takes no cut from talent-set rates, but admission is screened and its public FAQ does not establish every payment detail.',
+    toolSlugs: ['fiverr', 'upwork', '99designs', 'freelancer-com', 'toptal'],
+    faqs: [
+      { question: 'Does a free freelance account mean commission-free work?', answer: 'No. Free registration and deductions from earnings are separate. Check each platform’s service fees, proposal costs and withdrawal terms before accepting work. Toptal’s no-cut statement applies to talent-set rates in its screened network, not free hiring for clients.' },
+      { question: 'Does every Upwork Basic account receive free monthly Connects?', answer: 'No universal allowance is promised. Upwork says some freelancers may receive monthly free Connects and offers vary by eligibility. Check your account’s Connects history rather than assuming free registration covers unlimited proposals.' },
+      { question: 'Can I bid on Freelancer.com without any available balance?', answer: 'The official fee policy requires a standard unreserved account balance before bidding, with higher requirements possible for designated work or risk profiles. Free membership does not remove that requirement.' },
+      { question: 'Is a payout minimum the same as a withdrawal fee?', answer: 'No. The minimum is the balance required to release a payout; the fee is a separate cost. Methods, countries and currencies can change both, and external payment providers may add charges.' },
+      { question: 'Are all five platforms verified free trials?', answer: 'No. The documented free accounts are ongoing access routes, not countdown trials. No universal freelancer-side fixed-day premium trial is verified here. Toptal’s talent FAQ documents screening and no deduction from talent rates, rather than an open free-account promise.' },
+    ],
+    relatedListPath: '/freelance-platforms',
+    relatedListLabel: 'Freelance marketplaces: all five options in context',
+  },
   {
     slug: 'best-free-language-learning-apps',
     title: 'Free Language Learning in 2026: Previews, Resources and Trials',
@@ -528,6 +548,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-freelance-platforms') {
+      const option = freelanceFreeOptions.find((entry) => entry.slug === slug)!
+      return { ...tool, startingPrice: option.price, goodToKnow: `${option.commission} ${option.payout}` }
     }
     if (copy.slug === 'best-free-language-learning-apps') {
       const option = languageFreeOptions.find((entry) => entry.slug === slug)!
