@@ -64,6 +64,7 @@ export const extraCategories: Category[] = [
                 'When a trip mixes separate tickets, a delay on one flight may not be covered by the next airline. Read the booking terms first.',
               startingPrice: verifiedPricing["kiwi-com"].label,
               officialUrl: 'https://www.kiwi.com/',
+              affiliateUrl: 'https://www.awin1.com/cread.php?awinmid=20562&awinaffid=3134673&campaign=fivepicked&platform=pl',
             },
             {
               slug: 'edreams',

@@ -698,6 +698,7 @@ export const categories: Category[] = [
           'Long plans are much cheaper than monthly billing, and renewal prices are higher than the first-term price.',
         startingPrice: verifiedPricing["nordvpn"].label,
         officialUrl: 'https://nordvpn.com',
+              affiliateUrl: 'https://www.awin1.com/cread.php?awinmid=15132&awinaffid=3134673&campaign=fivepicked&platform=pl',
       },
       {
         slug: 'surfshark',
