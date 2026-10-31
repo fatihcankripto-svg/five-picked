@@ -1,3 +1,4 @@
+import { marketingSeoFreeEditorial } from '@/lib/marketing-seo-free-options'
 import { flightFreeEditorial } from '@/lib/flight-free-options'
 import type { MetadataRoute } from 'next'
 import { publishedCategories as allCategories, isCompleteList } from '@/data/all-categories'
@@ -29,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryPages,
     route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.lastReviewedAt)),
     route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, page.lastReviewedAt ?? comparePagesUpdated)),
-    route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : freePagesUpdated)),
+    route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-ai-marketing-and-seo-tools' ? marketingSeoFreeEditorial.lastReviewedAt : page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : freePagesUpdated)),
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
     route('/guides'), ...guides.map((guide) => route(guide.path, guide.path === '/guides/ai-voice-commercial-use' ? editorialDates.commercialVoiceGuide : editorialDates.guides)),
     route('/reviews'), ...reviews.map((review) => route(`/reviews/${review.toolSlug}`, review.updated)),

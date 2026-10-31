@@ -36,7 +36,16 @@ function relevance(a: ContentLink, b: ContentLink) {
   const words = b.title.toLowerCase().split(/\W+/).filter((w) => tokens.has(w)).length
   return (a.listPath === b.listPath ? 100 : 0) + (a.listPath.split('/')[1] === b.listPath.split('/')[1] ? 10 : 0) + words
 }
+const marketingFreePath = '/free/best-free-ai-marketing-and-seo-tools'
+const marketingFreeReferrers: Record<string, string> = {
+  '/ai-tools': 'Check free AI marketing access and trial restrictions',
+  '/ai-tools/marketing-and-seo': 'Inspect free SEO accounts, credits and export limits',
+  '/quiz/ai-tools-marketing-and-seo': 'Review the free access conditions behind your marketing match',
+  '/blog/best-ai-tools-for-content-marketing': 'Check which content marketing features remain free',
+  '/blog/semrush-vs-surfer-seo': 'Separate Semrush free research from Surfer trial access',
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  if (a.path === marketingFreePath || b.path === marketingFreePath) return Boolean(marketingFreeReferrers[a.path === marketingFreePath ? b.path : a.path])
   // The calculator directory may link its calculators across their topics.
   if ((a.path === '/tools' && b.path.startsWith('/tools/')) || (b.path === '/tools' && a.path.startsWith('/tools/'))) return true
   return Boolean(a.listPath && b.listPath) && a.listPath.split('/')[1] === b.listPath.split('/')[1]
@@ -130,9 +139,19 @@ for (const source of Object.keys(flightCompareReferrers)) {
   graph.get(source)?.add(flightComparePath)
   graph.get(flightComparePath)?.add(source)
 }
+for (const source of Object.keys(marketingFreeReferrers)) {
+  graph.get(source)?.add(marketingFreePath)
+  graph.get(marketingFreePath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === marketingFreePath && marketingFreeReferrers[path]) return { ...page, title: marketingFreeReferrers[path] }
+    if (path === marketingFreePath && page.path === '/ai-tools') return { ...page, title: 'Explore the wider AI tools category' }
+    if (path === marketingFreePath && page.path === '/ai-tools/marketing-and-seo') return { ...page, title: 'See all five marketing and SEO tools in context' }
+    if (path === marketingFreePath && page.path === '/quiz/ai-tools-marketing-and-seo') return { ...page, title: 'Match an AI marketing tool to your workflow' }
+    if (path === marketingFreePath && page.path === '/blog/best-ai-tools-for-content-marketing') return { ...page, title: 'Read the content marketing workflow guide' }
+    if (path === marketingFreePath && page.path === '/blog/semrush-vs-surfer-seo') return { ...page, title: 'Understand Semrush and Surfer’s different roles' }
     if (page.path === flightComparePath && flightCompareReferrers[path]) return { ...page, title: flightCompareReferrers[path] }
     if (path === flightComparePath && page.path === '/travel') return { ...page, title: 'Browse the broader travel planning category' }
     if (path === flightComparePath && page.path === '/travel/flights') return { ...page, title: 'Compare all five shortlisted flight booking sites' }

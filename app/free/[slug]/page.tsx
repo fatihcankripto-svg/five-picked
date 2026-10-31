@@ -1,3 +1,4 @@
+import { MarketingSeoFreeOptions } from '@/components/marketing-seo-free-options'
 import { FlightFreeOptions } from '@/components/flight-free-options'
 import { EmailFreeOptions } from '@/components/email-free-options'
 import { FreelanceFreeOptions, FreelanceFreeLinks } from '@/components/freelance-free-options'
@@ -89,7 +90,7 @@ export default async function FreePage({ params }: Props) {
       <Breadcrumbs items={[{ label: 'Best free tools', href: '/free' }, { label: page.title }]} />
 
       <header className="mt-10">
-        <SectionMarker label={page.slug === 'best-free-flight-booking-sites' ? 'Free search & booking costs' : page.slug === 'best-free-online-course-platforms' ? 'Free learning & certificate limits' : page.slug === 'best-free-video-and-design-software' ? 'Free access & export limits' : page.slug === 'best-free-web-hosting' ? 'Hosting trials & refunds' : 'Free plans'} />
+        <SectionMarker label={page.slug === 'best-free-ai-marketing-and-seo-tools' ? 'Free access, trials & credits' : page.slug === 'best-free-flight-booking-sites' ? 'Free search & booking costs' : page.slug === 'best-free-online-course-platforms' ? 'Free learning & certificate limits' : page.slug === 'best-free-video-and-design-software' ? 'Free access & export limits' : page.slug === 'best-free-web-hosting' ? 'Hosting trials & refunds' : 'Free plans'} />
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
           {page.h1}
         </h1>
@@ -114,6 +115,7 @@ export default async function FreePage({ params }: Props) {
         </div>
       </header>
 
+      {page.slug === 'best-free-ai-marketing-and-seo-tools' && <MarketingSeoFreeOptions />}
       {page.slug === 'best-free-flight-booking-sites' && <FlightFreeOptions />}
       {page.slug === 'best-free-email-marketing-tools' && <EmailFreeOptions />}
       {page.slug === 'best-free-freelance-platforms' && <FreelanceFreeOptions />}
@@ -140,7 +142,7 @@ export default async function FreePage({ params }: Props) {
 
       <section aria-labelledby="the-picks" className="mt-16">
         <h2 id="the-picks" className="text-xl font-semibold text-foreground">
-          {page.slug === 'best-free-flight-booking-sites' ? 'Five sites: free search, paid tickets and fare conditions' : page.slug === 'best-free-online-course-platforms' ? 'Five platforms: previews, free tiers and trials differ' : page.slug === 'best-free-video-and-design-software' ? 'Five tools: free access and paid upgrades differ' : page.slug === 'best-free-web-hosting' ? 'Five paid hosts: trial and refund conditions differ' : page.slug === 'vpns-with-a-free-plan' ? 'Five VPN options: one ongoing free plan and four paid services' : 'Free plans and trial options, compared'}
+          {page.slug === 'best-free-ai-marketing-and-seo-tools' ? 'Five tools: free access and trial conditions differ' : page.slug === 'best-free-flight-booking-sites' ? 'Five sites: free search, paid tickets and fare conditions' : page.slug === 'best-free-online-course-platforms' ? 'Five platforms: previews, free tiers and trials differ' : page.slug === 'best-free-video-and-design-software' ? 'Five tools: free access and paid upgrades differ' : page.slug === 'best-free-web-hosting' ? 'Five paid hosts: trial and refund conditions differ' : page.slug === 'vpns-with-a-free-plan' ? 'Five VPN options: one ongoing free plan and four paid services' : 'Free plans and trial options, compared'}
         </h2>
         <ol className="mt-6 flex flex-col gap-6">
           {page.tools.map((tool, index) => (

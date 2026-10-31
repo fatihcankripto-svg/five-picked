@@ -1,3 +1,4 @@
+import { marketingSeoFreeOptions } from '@/lib/marketing-seo-free-options'
 import { flightFreeOptions } from '@/lib/flight-free-options'
 import { emailFreeOptions } from '@/lib/email-free-options'
 import { freelanceFreeOptions } from '@/lib/freelance-free-options'
@@ -37,6 +38,25 @@ type FreeCopy = {
 }
 
 const copies: FreeCopy[] = [
+  {
+    slug: 'best-free-ai-marketing-and-seo-tools',
+    title: 'Free AI Marketing and SEO Tools in 2026: Free Accounts, Trials and Credit Limits',
+    h1: 'Free AI marketing and SEO tools in 2026: what is actually included?',
+    metaTitle: 'Free AI Marketing & SEO Tools: Trials and Limits (2026)',
+    metaDescription: 'Check Semrush, Surfer SEO, NeuronWriter, Frase and Writesonic for ongoing free access, trial caps, exports, billing and commercial-use conditions.',
+    intro: 'A free account, a public checker and a trial are different offers. This guide checks the five tools in our marketing and SEO shortlist, separates ongoing access from temporary features, and leaves unpublished credit, user and export allowances unspecified.',
+    verdict: 'For ongoing limited research, consider Semrush’s Free account. For a specific no-login check, Writesonic’s public tools are separate from its paid platform. Evaluate Surfer, NeuronWriter and Frase through their documented trials. Choose by the task, quota, export need and billing conditions; none is presented as unlimited free content production.',
+    toolSlugs: ['semrush', 'surfer-seo', 'neuronwriter', 'frase', 'writesonic'],
+    faqs: [
+      { question: 'Are these five permanently free AI SEO platforms?', answer: 'No. Semrush documents an ongoing limited account, and Writesonic has separate public free tools. The full-suite trials are temporary; no ongoing free main-suite plan is established here for Surfer, NeuronWriter or Frase.' },
+      { question: 'Do paid monthly credits apply to the free trial?', answer: 'Do not assume so. A trial feature list and a paid monthly allowance are different evidence. Use only an explicitly documented trial quota; otherwise the allocation remains unspecified, not unlimited.' },
+      { question: 'Can I export all research during a free trial?', answer: 'No blanket entitlement is established. Semrush explicitly disables data exports during toolkit trials. Trial-specific report export allowances are not verified here for the other four tools.' },
+      { question: 'Does a free trial automatically stop without billing?', answer: 'Not always. Surfer requires billing details and starts the selected paid subscription unless cancelled before the trial ends. Semrush toolkit trials also convert unless cancelled. NeuronWriter, Frase and Writesonic document no-card trial routes; follow the actual signup conditions.' },
+      { question: 'Can I use every trial output commercially?', answer: 'No blanket license is claimed. Semrush permits internal business use subject to plan restrictions. Writesonic assigns output ownership subject to third-party and model-provider rights. Explicit trial-output commercial permissions are not established here for Surfer, NeuronWriter or Frase; absence of verification is not a finding that use is prohibited.' },
+    ],
+    relatedListPath: '/ai-tools/marketing-and-seo',
+    relatedListLabel: 'Marketing and SEO: the complete five-tool shortlist',
+  },
   {
     slug: 'best-free-flight-booking-sites',
     title: 'Free Flight Booking Sites in 2026: What’s Actually Free (And Where the Fees Are)',
@@ -557,6 +577,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-ai-marketing-and-seo-tools') {
+      const option = marketingSeoFreeOptions.find((entry) => entry.slug === slug)!
+      return { ...tool, startingPrice: option.price, bestFor: option.audience, tagline: option.standout, whatItDoes: option.access, strengths: [option.standout, 'Official access conditions documented below'], goodToKnow: 'Check the detailed trial, export and commercial-use conditions above. Unspecified allowances are not unlimited.', decisionOverride: { audience: option.audience, standout: option.standout } }
     }
     if (copy.slug === 'best-free-flight-booking-sites') {
       const option = flightFreeOptions.find((entry) => entry.slug === slug)!
