@@ -1,3 +1,4 @@
+import { socialImages } from '@/lib/site'
 import { allCategories } from '@/data/all-categories'
 import type { Metadata, Viewport } from 'next'
 import { Geist } from 'next/font/google'
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   alternates: { canonical: '/' },
-  openGraph: {
+  openGraph: { images: socialImages,
     type: 'website',
     siteName: siteConfig.name,
     url: siteConfig.url,
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     locale: 'en_US',
   },
-  twitter: {
+  twitter: { images: socialImages,
     card: 'summary_large_image',
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,

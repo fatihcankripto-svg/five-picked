@@ -1,3 +1,4 @@
+import { socialImages } from '@/lib/site'
 import { editorialDates } from '@/lib/editorial-dates'
 import { formatDate } from '@/lib/site'
 import { Children, cloneElement, isValidElement, type ReactElement, type ReactNode } from 'react'
@@ -19,8 +20,8 @@ export function contentMetadata({
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { title, description, url: path, type: 'article' },
-    twitter: { title, description },
+    openGraph: { images: socialImages, title, description, url: path, type: 'article' },
+    twitter: { images: socialImages, title, description },
   }
 }
 

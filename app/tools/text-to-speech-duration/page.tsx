@@ -1,3 +1,4 @@
+import { socialImages } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -15,8 +16,8 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, url: path, type: 'website' },
-  twitter: { title, description },
+  openGraph: { images: socialImages, title, description, url: path, type: 'website' },
+  twitter: { images: socialImages, title, description },
 }
 
 const faqs = [

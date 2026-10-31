@@ -36,15 +36,20 @@ function relevance(a: ContentLink, b: ContentLink) {
   const words = b.title.toLowerCase().split(/\W+/).filter((w) => tokens.has(w)).length
   return (a.listPath === b.listPath ? 100 : 0) + (a.listPath.split('/')[1] === b.listPath.split('/')[1] ? 10 : 0) + words
 }
+function sameTopic(a: ContentLink, b: ContentLink) {
+  // The calculator directory may link its calculators across their topics.
+  if ((a.path === '/tools' && b.path.startsWith('/tools/')) || (b.path === '/tools' && a.path.startsWith('/tools/'))) return true
+  return Boolean(a.listPath && b.listPath) && a.listPath.split('/')[1] === b.listPath.split('/')[1]
+}
 const graph = new Map<string, Set<string>>(contentLinks.map((p) => [p.path, new Set<string>()]))
 for (const page of contentLinks) {
-  const related = contentLinks.filter((p) => p.path !== page.path).sort((a, b) => relevance(page, b) - relevance(page, a) || a.path.localeCompare(b.path))
+  const related = contentLinks.filter((p) => p.path !== page.path && sameTopic(page, p)).sort((a, b) => relevance(page, b) - relevance(page, a) || a.path.localeCompare(b.path))
   for (const link of related.slice(0, 4)) graph.get(page.path)!.add(link.path)
 }
-// Require three distinct referring pages; use the closest editorial topics first.
+// Seek three distinct referring pages within the topic; never pad a small cluster with unrelated links.
 for (const target of contentLinks) {
   let incoming = [...graph.values()].filter((links) => links.has(target.path)).length
-  const sources = contentLinks.filter((p) => p.path !== target.path).sort((a, b) => relevance(target, b) - relevance(target, a) || graph.get(a.path)!.size - graph.get(b.path)!.size || a.path.localeCompare(b.path))
+  const sources = contentLinks.filter((p) => p.path !== target.path && sameTopic(target, p)).sort((a, b) => relevance(target, b) - relevance(target, a) || graph.get(a.path)!.size - graph.get(b.path)!.size || a.path.localeCompare(b.path))
   for (const source of sources) {
     if (incoming >= 3) break
     const links = graph.get(source.path)!
@@ -60,5 +65,9 @@ for (const source of vpnPages) {
 }
 export function getContentLinks(path: string) {
   const links = graph.get(path)
-  return contentLinks.filter((p) => links?.has(p.path))
+  return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (path === '/travel/flights' && page.path === '/travel') return { ...page, title: 'Explore our travel planning shortlist' }
+    if (path === '/travel/flights' && page.path === '/quiz/travel-flights') return { ...page, title: 'Find a flight booking site for your trip' }
+    return page
+  })
 }

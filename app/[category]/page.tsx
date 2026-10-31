@@ -1,3 +1,4 @@
+import { socialImages } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -38,8 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { title, description, url: path, type: 'website' },
-    twitter: { title, description },
+    openGraph: { images: socialImages, title, description, url: path, type: 'website' },
+    twitter: { images: socialImages, title, description },
   }
 }
 

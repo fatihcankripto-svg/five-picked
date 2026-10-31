@@ -1,3 +1,4 @@
+import { socialImages } from '@/lib/site'
 import { CourseFreeOptions, CourseFreeLinks } from '@/components/course-free-options'
 import { VideoDesignFreeOptions, VideoDesignFreeLinks } from '@/components/video-design-free-options'
 import { HostingFreeOptions, HostingGuideLinks } from '@/components/hosting-free-options'
@@ -30,8 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: page.metaTitle,
     description: page.metaDescription,
     alternates: { canonical: path },
-    openGraph: { title: page.metaTitle, description: page.metaDescription, url: path, type: 'article' },
-    twitter: { title: page.metaTitle, description: page.metaDescription },
+    openGraph: { images: socialImages, title: page.metaTitle, description: page.metaDescription, url: path, type: 'article' },
+    twitter: { images: socialImages, title: page.metaTitle, description: page.metaDescription },
   }
 }
 

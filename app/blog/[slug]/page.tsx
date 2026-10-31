@@ -1,3 +1,4 @@
+import { socialImages } from '@/lib/site'
 import { formatDate } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
@@ -21,12 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: post.metaDescription,
     keywords: post.keywords,
     alternates: { canonical: `https://fivepicked.com/blog/${post.slug}` },
-    openGraph: {
+    openGraph: { images: socialImages,
       title: post.metaTitle, description: post.metaDescription,
       url: `https://fivepicked.com/blog/${post.slug}`, siteName: 'FIVE PICKED',
       type: 'article', publishedTime: post.publishedAt, modifiedTime: post.lastReviewedAt, authors: [post.author],
     },
-    twitter: { card: 'summary_large_image', title: post.metaTitle, description: post.metaDescription },
+    twitter: { images: socialImages, card: 'summary_large_image', title: post.metaTitle, description: post.metaDescription },
   }
 }
 

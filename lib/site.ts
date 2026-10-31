@@ -13,6 +13,14 @@ export const siteConfig = {
     'Some links may earn us a commission at no extra cost to you. This never affects our rankings.',
 }
 
+/** Shared existing social image; no additional image asset is generated. */
+export const socialImages = [{
+  url: `${siteConfig.url}/opengraph-image`,
+  width: 1200,
+  height: 630,
+  alt: 'FIVE PICKED — The 5 best tools, hand-picked for you.',
+}]
+
 export const staticPages = [
   { href: '/how-we-choose', label: 'How we choose' },
   { href: '/about', label: 'About' },
