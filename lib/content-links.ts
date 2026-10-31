@@ -189,7 +189,17 @@ const hostingIndexReferrers: Record<string, string> = {
   "/reviews/cloudways": "Place Cloudways billing in the hosting price index",
   "/reviews/hostinger": "See Hostinger\u2019s term and renewal alongside other providers"
 }
+const vpnIndexPath = '/blog/2026-vpn-price-index'
+const vpnIndexReferrers: Record<string, string> = {
+  "/vpn-and-security": "Inspect the ten-provider VPN price and renewal dataset",
+  "/free/vpns-with-a-free-plan": "Compare free access with paid VPN billing commitments",
+  "/compare/expressvpn-vs-nordvpn": "Check the wider VPN renewal-price snapshot",
+  "/reviews/nordvpn": "Place NordVPN\u2019s offer in the ten-provider cost index",
+  "/reviews/expressvpn": "Review ExpressVPN\u2019s billing interval alongside other VPNs",
+  "/alternatives/nordvpn": "Examine the official-source VPN price dataset"
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  if (a.path === vpnIndexPath || b.path === vpnIndexPath) return Boolean(vpnIndexReferrers[a.path === vpnIndexPath ? b.path : a.path])
   if (a.path === hostingIndexPath || b.path === hostingIndexPath) return Boolean(hostingIndexReferrers[a.path === hostingIndexPath ? b.path : a.path])
   for (const [target, sources] of Object.entries(thirdCompareLinks)) {
     if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
@@ -231,7 +241,7 @@ for (const target of contentLinks) {
   }
 }
 // Keep the VPN topic cluster connected across its existing editorial formats.
-const vpnPages = contentLinks.filter((page) => page.listPath === '/vpn-and-security')
+const vpnPages = contentLinks.filter((page) => page.listPath === '/vpn-and-security' && page.path !== vpnIndexPath)
 for (const source of vpnPages) {
   for (const target of vpnPages) {
     if (source.path !== target.path) graph.get(source.path)!.add(target.path)
@@ -355,9 +365,15 @@ for (const source of Object.keys(hostingIndexReferrers)) {
 function hostingPriceIndexLabel(path: string) {
   return blogPosts.find((post) => `/blog/${post.slug}` === hostingIndexPath)?.relatedLinks.find((link) => link.path === path)?.label
 }
+for (const source of Object.keys(vpnIndexReferrers)) {
+  graph.get(source)?.add(vpnIndexPath)
+  graph.get(vpnIndexPath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === vpnIndexPath && vpnIndexReferrers[path]) return { ...page, title: vpnIndexReferrers[path] }
+    if (path === vpnIndexPath) return { ...page, title: blogPosts.find((post) => `/blog/${post.slug}` === path)?.relatedLinks.find((link) => link.path === page.path)?.label ?? page.title }
     if (page.path === hostingIndexPath && hostingIndexReferrers[path]) return { ...page, title: hostingIndexReferrers[path] }
     if (path === hostingIndexPath) return { ...page, title: hostingPriceIndexLabel(page.path) ?? page.title }
     if (thirdCompareLinks[page.path]?.[path]) return { ...page, title: thirdCompareLinks[page.path][path] }

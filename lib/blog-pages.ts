@@ -1,3 +1,4 @@
+import { vpnPriceIndexPost } from '@/lib/vpn-price-index'
 import { hostingPriceIndexPost } from '@/lib/hosting-price-index'
 import { emailFreeOptions } from '@/lib/email-free-options'
 import { freelanceFreeOptions } from '@/lib/freelance-free-options'
@@ -903,6 +904,7 @@ ${emailCostFaqs.map((faq) => `<h3>${faq.question}</h3><p>${faq.answer}</p>`).joi
 `
 
 export const blogPosts: BlogPost[] = [
+  vpnPriceIndexPost,
   hostingPriceIndexPost,
   {
     slug: 'real-cost-of-email-marketing-2026',

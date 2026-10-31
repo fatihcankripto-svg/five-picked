@@ -1,0 +1,294 @@
+[
+  {
+    "provider": "NordVPN",
+    "plan": "Basic, observed JPY offer",
+    "currency": "JPY",
+    "introMonthly": 580,
+    "initialTermMonths": 27,
+    "initialInvoice": 15660,
+    "renewalInvoice": 21960,
+    "renewalTermMonths": 12,
+    "renewalBasis": "Published annual renewal after the introductory term.",
+    "freePlan": "No ongoing free plan in the existing five-provider free guide; trials/refunds are separate.",
+    "simultaneousDevices": "10",
+    "refund": "30-day advertised guarantee; eligibility and purchase-channel conditions apply.",
+    "setupTransactionFees": "No mandatory setup/processing amount verified; consumption tax/VAT may apply.",
+    "sources": [
+      {
+        "url": "https://nordvpn.com/pricing/",
+        "label": "Basic JPY offer, renewal, device allowance and guarantee"
+      }
+    ],
+    "notes": "JPY rendering observed: ¥15,660 covers 27 months; renewal is ¥21,960/year. Localized observations are not converted to USD.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "ExpressVPN",
+    "plan": "Basic, two-year plus four-month offer",
+    "currency": "USD",
+    "introMonthly": 2.99,
+    "initialTermMonths": 28,
+    "initialInvoice": 83.72,
+    "renewalInvoice": 99.95,
+    "renewalTermMonths": 12,
+    "renewalBasis": "Automatically renews annually after initial 28 months.",
+    "freePlan": "Paid service in the existing free guide; mobile trials are separate from ongoing free access.",
+    "simultaneousDevices": "10",
+    "refund": "30 days for qualifying first-time website subscribers; Apple/Google store purchases follow store refund routes.",
+    "setupTransactionFees": "No mandatory setup/processing amount verified; applicable sales tax at checkout; dedicated IP is an optional add-on.",
+    "sources": [
+      {
+        "url": "https://www.expressvpn.com/pricing",
+        "label": "Basic price, initial invoice, annual renewal and device allowance"
+      },
+      {
+        "url": "https://www.expressvpn.com/features/money-back-guarantee",
+        "label": "Refund eligibility and store exclusions"
+      }
+    ],
+    "notes": "",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "Surfshark",
+    "plan": "Starter, observed CHF public offer",
+    "currency": "CHF",
+    "introMonthly": 2.49,
+    "initialTermMonths": 27,
+    "initialInvoice": 67.23,
+    "renewalInvoice": null,
+    "renewalTermMonths": 12,
+    "renewalBasis": "Annual renewal policy verified; numeric renewal amount not exposed in readable official table.",
+    "freePlan": "Paid VPN in the existing free guide; a trial is not a permanent free tier.",
+    "simultaneousDevices": "Unlimited simultaneous connections on paid subscription; trial conditions differ.",
+    "refund": "30-day guarantee on eligible initial purchase; recurring payments excluded under terms.",
+    "setupTransactionFees": "VAT/sales tax and bank conversion costs may apply; a reversible card pre-authorization is not a permanent fee. No setup-fee amount verified.",
+    "sources": [
+      {
+        "url": "https://surfshark.com/pricing",
+        "label": "Observed CHF Starter offer and paid device policy"
+      },
+      {
+        "url": "https://surfshark.com/terms-of-service/pricing",
+        "label": "Currency, tax, renewal policy; numeric table unavailable"
+      },
+      {
+        "url": "https://surfshark.com/terms-of-service",
+        "label": "Initial-purchase refund and reversible pre-authorization conditions"
+      }
+    ],
+    "notes": "Public price was CHF; order-page rendering could use another currency. No third-party renewal amount or mismatched currency is imported.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  },
+  {
+    "provider": "Proton VPN",
+    "plan": "VPN Plus, two-year public-page offer",
+    "currency": "USD",
+    "introMonthly": 3.49,
+    "initialTermMonths": 24,
+    "initialInvoice": 83.76,
+    "renewalInvoice": 83.88,
+    "renewalTermMonths": 12,
+    "renewalBasis": "Public pricing-page offer renews every 12 months.",
+    "freePlan": "Proton Free: no data or time limit; 1 simultaneous device; pricing page lists randomly selected locations in 10 countries.",
+    "simultaneousDevices": "10 on VPN Plus; 1 on Free",
+    "refund": "30-day advertised guarantee; applicable service/payment conditions govern refunds.",
+    "setupTransactionFees": "No mandatory setup/processing amount verified; final payment terms and taxes must be checked.",
+    "sources": [
+      {
+        "url": "https://protonvpn.com/pricing",
+        "label": "Public VPN Plus initial/renewal amounts, Free limitations and devices"
+      },
+      {
+        "url": "https://protonvpn.com/free-vpn",
+        "label": "Free plan has no data or time limit"
+      }
+    ],
+    "notes": "The public-page offer is kept intact. A different signup-page campaign is not combined with this price.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "Private Internet Access",
+    "plan": "VPN, three-year plus three-month offer",
+    "currency": "USD",
+    "introMonthly": 2.03,
+    "initialTermMonths": 39,
+    "initialInvoice": null,
+    "renewalInvoice": 79,
+    "renewalTermMonths": 36,
+    "renewalBasis": "Renews at US$79 every three years.",
+    "freePlan": "Paid service in the existing free guide; trial/refund offers are separate.",
+    "simultaneousDevices": "Unlimited simultaneous devices",
+    "refund": "30 days for new subscribers; third-party app-store refund terms apply.",
+    "setupTransactionFees": "No mandatory setup/processing amount verified; antivirus and dedicated IP are optional add-ons.",
+    "sources": [
+      {
+        "url": "https://www.privateinternetaccess.com/buy-vpn-online",
+        "label": "Advertised rate, renewal term, unlimited devices and guarantee"
+      }
+    ],
+    "notes": "Initial invoice is not explicit in the readable offer and is left blank; US$79 renewal is not assumed to be the first invoice. Calculation uses the published rounded US$2.03/month rate.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "Mullvad",
+    "plan": "Standard account-time rate",
+    "currency": "EUR",
+    "introMonthly": 5,
+    "initialTermMonths": 1,
+    "initialInvoice": 5,
+    "renewalInvoice": 5,
+    "renewalTermMonths": 1,
+    "renewalBasis": "Current flat top-up rate, not a separate promotional renewal quote.",
+    "freePlan": "No ongoing free VPN plan verified in reviewed pricing/FAQ.",
+    "simultaneousDevices": "5",
+    "refund": "14 days for covered methods; cash, cryptocurrency and vouchers excluded; Apple refunds handled by Apple.",
+    "setupTransactionFees": "VAT included in advertised rate; no separate mandatory setup/processing amount verified. Accepted cryptocurrency has a separate 10% discount.",
+    "sources": [
+      {
+        "url": "https://mullvad.net/en/pricing",
+        "label": "Flat EUR rate, VAT and payment-specific discount"
+      },
+      {
+        "url": "https://mullvad.net/en/help/faq",
+        "label": "Device limit"
+      },
+      {
+        "url": "https://mullvad.net/en/help/refunds",
+        "label": "Covered payment methods and exclusions"
+      }
+    ],
+    "notes": "Baseline excludes payment-specific discounts and reseller offers. Current flat pricing is not ranked as a promotional renewal increase.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  },
+  {
+    "provider": "Windscribe",
+    "plan": "Build A Plan minimum configuration",
+    "currency": "USD",
+    "introMonthly": 3,
+    "initialTermMonths": 1,
+    "initialInvoice": null,
+    "renewalInvoice": null,
+    "renewalTermMonths": null,
+    "renewalBasis": "Recurring custom configuration; no exact selected renewal invoice established. Pro separately lists US$69 every 12 months.",
+    "freePlan": "Free: 2 GB/month without confirmed email; 10 GB/month with confirmed email, downgraded if promotional emails are unsubscribed; fewer locations.",
+    "simultaneousDevices": "Unlimited personal-use connections, including Free; account sharing prohibited.",
+    "refund": "Help says within 7 days; terms say 7 business days and also reference a 7-day window. Initial purchase only, under 10 GB paid usage, with troubleshooting conditions.",
+    "setupTransactionFees": "No mandatory setup/processing amount verified; static IP is separate from Pro. US$1/location is not the full minimum purchase.",
+    "sources": [
+      {
+        "url": "https://windscribe.com/knowledge-base/articles/how-much-does-it-cost-to-use-windscribe",
+        "label": "US$3 Build A Plan minimum and Free allowances"
+      },
+      {
+        "url": "https://windscribe.com/upgrade",
+        "label": "Recurring plan billing; Pro annual price"
+      },
+      {
+        "url": "https://windscribe.com/features/unlimited-devices",
+        "label": "Personal-use simultaneous-device policy"
+      },
+      {
+        "url": "https://windscribe.com/terms",
+        "label": "Refund, usage and account-sharing conditions"
+      },
+      {
+        "url": "https://windscribe.com/knowledge-base/articles/what-is-the-refund-policy-for-windscribe-plans",
+        "label": "Help-page refund window"
+      }
+    ],
+    "notes": "Build A Plan is configurable and narrower than full Pro. No unrestricted worldwide Pro entitlement is attached to its minimum price. Refund wording discrepancy remains explicit.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  },
+  {
+    "provider": "CyberGhost",
+    "plan": "VPN, selected 26-month offer",
+    "currency": "EUR",
+    "introMonthly": 2.19,
+    "initialTermMonths": 26,
+    "initialInvoice": 56.94,
+    "renewalInvoice": 56.94,
+    "renewalTermMonths": 12,
+    "renewalBasis": "Selected order summary says 26 months; annual renewal follows. Explanatory billing line calls the initial period first two years.",
+    "freePlan": "No ongoing free VPN plan verified in the reviewed paid offer; trials are separate.",
+    "simultaneousDevices": "7",
+    "refund": "45 days for selected long-term offer; not asserted for monthly purchases.",
+    "setupTransactionFees": "Taxes may apply; dedicated IP and other bundled products are optional. No mandatory setup/processing amount verified.",
+    "sources": [
+      {
+        "url": "https://www.cyberghostvpn.com/buy/cyberghost-vpn-4",
+        "label": "Selected 26-month order summary, EUR invoice, annual renewal, devices and guarantee"
+      }
+    ],
+    "notes": "Use the explicit 26-month selected order summary and its matching €56.94 total, not an assumed 24-month divisor. Optional add-on totals are excluded.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": true
+  },
+  {
+    "provider": "IVPN",
+    "plan": "Standard annual account tier",
+    "currency": "USD",
+    "introMonthly": 5,
+    "initialTermMonths": 12,
+    "initialInvoice": 60,
+    "renewalInvoice": null,
+    "renewalTermMonths": null,
+    "renewalBasis": "Official current tier announcement lists US$60/year; a distinct future renewal invoice was not established.",
+    "freePlan": "No ongoing free plan verified; official help explicitly says no free trial.",
+    "simultaneousDevices": "5",
+    "refund": "30 days, once per account/customer; cash/vouchers and IVPN Light excluded; Apple handles iOS refunds.",
+    "setupTransactionFees": "No mandatory setup/processing amount verified in reviewed Standard sources.",
+    "sources": [
+      {
+        "url": "https://www.ivpn.net/blog/ivpn-plan-changes-new-plus-tier-increased-device-limits-additional-privacy-services/",
+        "label": "2026 official Standard annual/monthly prices and device changes"
+      },
+      {
+        "url": "https://www.ivpn.net/knowledgebase/billing/does-ivpn-offer-a-free-trial/",
+        "label": "No free trial"
+      },
+      {
+        "url": "https://www.ivpn.net/en/refunds/",
+        "label": "Refund window and payment/product exclusions"
+      }
+    ],
+    "notes": "Standard account tier only; specialized IVPN Light and payment-specific alternatives are outside this row. US$5/month is derived from US$60/12. Do not use the older two-device Standard limit.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  },
+  {
+    "provider": "Mozilla VPN",
+    "plan": "Annual subscription",
+    "currency": "USD",
+    "introMonthly": 4.99,
+    "initialTermMonths": 12,
+    "initialInvoice": 59.88,
+    "renewalInvoice": null,
+    "renewalTermMonths": null,
+    "renewalBasis": "Current annual total US$59.88; a separate numeric future renewal quote was not verified.",
+    "freePlan": "No ongoing free plan verified for the paid Mozilla VPN product.",
+    "simultaneousDevices": "5",
+    "refund": "30-day guarantee for first-time customers, subject to applicable purchase conditions.",
+    "setupTransactionFees": "No mandatory setup/processing amount verified; local taxes and actual payment terms should be checked.",
+    "sources": [
+      {
+        "url": "https://www.mozilla.org/en-US/products/vpn/",
+        "label": "Annual/monthly prices, devices and first-time guarantee"
+      },
+      {
+        "url": "https://www.mozilla.org/en-US/about/legal/terms/subscription-services/",
+        "label": "Subscription and payment terms"
+      }
+    ],
+    "notes": "Annual plan compared with the same annual product, not the separate monthly offer. No permanent-price or zero-renewal-increase promise is inferred.",
+    "checkedAt": "2026-10-31",
+    "renewalComparisonEligible": false
+  }
+]
