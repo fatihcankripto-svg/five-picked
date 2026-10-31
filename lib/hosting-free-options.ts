@@ -69,8 +69,7 @@ export const hostingGuideLinks = [
   { path: '/quiz/web-hosting-and-domains', label: 'Find a hosting match for your site and experience' },
   { path: '/web-hosting-and-domains', label: 'Compare our five web hosting picks' },
   { path: '/blog/kinsta-vs-cloudways', label: 'Kinsta or Cloudways: find the managed-hosting fit' },
-  { path: '/guides/shared-vs-cloud-vs-managed-wordpress-hosting', label: 'Understand shared, cloud and managed WordPress hosting' },
-  { path: '/guides/hostinger-vs-bluehost', label: 'Choose between Hostinger and Bluehost for a first site' },
+  { path: '/web-hosting-and-domains', label: 'Explore the five-provider hosting shortlist' },
   { path: '/compare/hostinger-vs-cloudways', label: 'Compare Hostinger with a move to Cloudways' },
   { path: '/reviews/cloudways', label: 'Read the detailed Cloudways review' },
 ] as const

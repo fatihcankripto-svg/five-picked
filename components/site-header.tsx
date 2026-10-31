@@ -21,7 +21,6 @@ const makeTopLevel = (categoriesItems: { href: string; label: string }[]): TopLe
   { kind: 'link', id: 'compare', label: 'Compare', href: '/compare' },
   { kind: 'link', id: 'quiz', label: 'Find your tool', href: '/quiz' },
   { kind: 'link', id: 'free', label: 'Free picks', href: '/free' },
-  { kind: 'link', id: 'guides', label: 'Guides', href: '/guides' },
   { kind: 'link', id: 'blog', label: 'Blog', href: '/blog' },
 ]
 

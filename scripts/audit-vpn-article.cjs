@@ -10,7 +10,7 @@ assert(words >= 1450 && words <= 1550)
 assert.equal(post.category, 'VPN & Security')
 assert.equal(post.faqs.length, 4)
 assert.deepEqual(post.keywords, ['vpn speed test 2026', 'fastest vpn 2026', 'nordvpn vs expressvpn speed', 'vpn ping test', 'best vpn for streaming speed'])
-const expectedLinks = ['/vpn-and-security', '/free/vpns-with-a-free-plan', '/guides/how-to-choose-a-vpn', '/quiz/vpn-and-security']
+const expectedLinks = ['/vpn-and-security', '/free/vpns-with-a-free-plan', '/quiz/vpn-and-security']
 assert.deepEqual(post.relatedLinks.map((link) => link.path), expectedLinks)
 assert(!/[$€£]\s*\d/.test(post.content), 'The article must not contain price quotations')
 assert.equal(post.title, 'How to Test Your VPN Speed in 2026 (And What the Numbers Actually Mean)')

@@ -5,7 +5,6 @@ import { comparePages } from '@/lib/compare-pages'
 import { freePages } from '@/lib/free-pages'
 import { quizPages } from '@/lib/quiz-pages'
 import { getAllAlternativePages } from '@/lib/alternatives'
-import { guides } from '@/lib/guides'
 
 export type ContentLink = { path: string; title: string; listPath: string }
 const lists: ContentLink[] = allCategories.flatMap((c) => [
@@ -20,7 +19,7 @@ function toolList(slug: string) {
   return ''
 }
 export const contentLinks: ContentLink[] = [
-  ...lists, ...guides,
+  ...lists,
   ...blogPosts.map((p) => ({ path: `/blog/${p.slug}`, title: p.title, listPath: p.relatedListPath })),
   ...reviews.map((p) => ({ path: `/reviews/${p.toolSlug}`, title: p.headline, listPath: toolList(p.toolSlug) })),
   ...comparePages.map((p) => ({ path: `/compare/${p.slug}`, title: `${p.a.name} vs ${p.b.name}`, listPath: p.listPath })),

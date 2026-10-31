@@ -285,7 +285,7 @@ const defs: QuizDef[] = [
     relatedLinks: [
       { path: '/free/best-free-web-hosting', label: 'Check hosting trial access and refund exclusions' },
       { path: '/blog/kinsta-vs-cloudways', label: 'Explore the Kinsta and Cloudways management trade-offs' },
-      { path: '/guides/hostinger-vs-bluehost', label: 'Read the beginner’s Hostinger versus Bluehost guide' },
+      { path: '/web-hosting-and-domains', label: 'Explore the five hosting provider options' },
       { path: '/compare/hostinger-vs-cloudways', label: 'Compare a starter host with flexible cloud hosting' },
     ],
   },

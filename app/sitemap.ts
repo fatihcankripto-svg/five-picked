@@ -8,7 +8,6 @@ import { comparePages, comparePagesUpdated } from '@/lib/compare-pages'
 import { freePages, freePagesUpdated } from '@/lib/free-pages'
 import { quizPages, quizPagesUpdated } from '@/lib/quiz-pages'
 import { alternativesUpdated, getAllAlternativePages } from '@/lib/alternatives'
-import { guides } from '@/lib/guides'
 import { editorialDates } from '@/lib/editorial-dates'
 import { absoluteUrl, staticPages } from '@/lib/site'
 
@@ -35,7 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, page.lastReviewedAt ?? comparePagesUpdated)),
     route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-ai-marketing-and-seo-tools' ? marketingSeoFreeEditorial.lastReviewedAt : page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : freePagesUpdated)),
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
-    route('/guides'), ...guides.map((guide) => route(guide.path, guide.path === '/guides/ai-voice-commercial-use' ? editorialDates.commercialVoiceGuide : editorialDates.guides)),
     // Review registry includes all published reviews, including Kiwi.com, Surfer SEO and ExpressVPN.
     route('/reviews'), ...reviews.map((review) => route(`/reviews/${review.toolSlug}`, review.updated)),
     // The alternatives registry includes Hostinger, NordVPN and Premiere alongside existing pages.

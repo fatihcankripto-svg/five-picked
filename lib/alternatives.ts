@@ -49,12 +49,8 @@ export type AlternativesPageData = {
 }
 
 const videoGuide: GuideLink = {
-  href: '/guides/best-ai-video-tools-for-beginners',
-  label: 'Best AI video tools for beginners',
-}
-const flikiPictoryGuide: GuideLink = {
-  href: '/guides/fliki-vs-pictory',
-  label: 'Fliki vs Pictory: which AI video tool is better?',
+  href: '/ai-tools/video-and-voice',
+  label: 'Explore the AI video and voice shortlist',
 }
 
 const altCopy: Record<string, Copy> = {
@@ -80,7 +76,7 @@ const altCopy: Record<string, Copy> = {
           'Pictory. It is built to repurpose articles, scripts and long recordings into short clips with captions, stock footage and voiceover.',
       },
     ],
-    guides: [flikiPictoryGuide, videoGuide],
+    guides: [videoGuide],
   },
   pictory: {
     summary:
@@ -103,7 +99,7 @@ const altCopy: Record<string, Copy> = {
           'ElevenLabs is the most voice-focused tool in this list, and Fliki is also known for natural voices in many languages. Try the same short script in both before you pay.',
       },
     ],
-    guides: [flikiPictoryGuide, videoGuide],
+    guides: [videoGuide],
   },
   synthesia: {
     summary:

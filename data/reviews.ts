@@ -108,14 +108,9 @@ export const reviews: Review[] = [
     ],
     related: [
       {
-        label: 'Shared vs cloud vs managed WordPress hosting',
-        href: '/guides/shared-vs-cloud-vs-managed-wordpress-hosting',
-        note: 'The main hosting types explained.',
-      },
-      {
-        label: 'Hostinger vs Bluehost',
-        href: '/guides/hostinger-vs-bluehost',
-        note: 'Two beginner-friendly hosts compared.',
+        label: 'Compare hosting providers',
+        href: '/web-hosting-and-domains',
+        note: 'Explore the five-provider hosting shortlist.',
       },
     ],
     faqs: [

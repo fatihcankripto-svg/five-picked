@@ -85,19 +85,13 @@ for file in Path('.next/server/app').rglob('*.html'):
     assert [e['position'] for e in entries]==list(range(1,len(entries)+1)), f'Invalid breadcrumb order in {file}'
 print(f'PASS: JSON-LD parses, breadcrumb order is valid, {faq_count} FAQ answers match visible text')
 
-# Protect the audited commercial-use guide from losing its category or primary links.
-guide_path = '/guides/ai-voice-commercial-use'
-guide = pages[guide_path]
-required_links = {'/ai-tools/video-and-voice', '/compare/elevenlabs-vs-fliki', '/guides/best-ai-video-tools-for-beginners', '/tools/text-to-speech-duration'}
-assert required_links <= guide.links, 'Commercial-use guide lost its category or contextual links'
-assert len(incoming[guide_path]) >= 3, 'Commercial-use guide has insufficient referring pages'
-guide_html = Path('.next/server/app/guides/ai-voice-commercial-use.html').read_text()
-for raw in re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>',guide_html,re.S):
- assert all(node.get('@type') != 'FAQPage' for node in schema_nodes(json.loads(raw))), 'No visible FAQ section exists on the commercial-use guide'
-for prefix in ('blog', 'compare', 'free', 'quiz', 'guides', 'reviews', 'alternatives'):
+# Retired guide URLs must not remain in navigation or the sitemap.
+assert not any(path == '/guides' or path.startswith('/guides/') for path in sitemap_paths), 'Retired guide URL in sitemap'
+assert not any(href == '/guides' or href.startswith('/guides/') for page in pages.values() for href in page.links), 'Retired guide link in generated HTML'
+for prefix in ('blog', 'compare', 'free', 'quiz', 'reviews', 'alternatives'):
  assert '/' + prefix in sitemap_paths, f'Sitemap index missing: {prefix}'
  assert any(path.startswith('/' + prefix + '/') for path in sitemap_paths), f'Sitemap detail family missing: {prefix}'
-print('PASS: all seven sitemap families and commercial-use guide link/schema requirements')
+print('PASS: six active sitemap families; retired guide URLs absent from sitemap and internal links')
 
 # Authorship descriptions and review dates must match visible article content.
 reviewed_posts = 0

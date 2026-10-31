@@ -7,7 +7,7 @@ import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "X vs Y" comparison pages.
  * Only pairs where both tools exist in the data files. Guides that already
- * cover a pair (/guides/...) are skipped to avoid duplicate content.
+ * cover a pair are skipped to avoid duplicate content.
  */
 
 import { publishedCategories as allCategories } from '@/data/all-categories'

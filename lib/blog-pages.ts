@@ -104,7 +104,7 @@ const bestAiContentMarketingContent = `
 <p>Only if you are publishing regularly and using at least 2–3 of its core features (research, competitor analysis, content planning). For a solo writer or a brand new site, Semrush is overkill — start with a cheaper tool like NeuronWriter or a free tier, and upgrade once you are producing content consistently and tracking rankings matters more.</p>
 
 <h2>Final word</h2>
-<p>The five tools here are all strong — but they are not interchangeable. Choose one that matches the specific job you do most, use it well, and only add a second tool when the first one's limits start to slow you down. If you want to compare the tools side by side, our <a href="/ai-tools/marketing-and-seo">marketing & SEO category page</a> ranks all five in one place. For more content marketing essentials, explore <a href="/guides/best-ai-video-tools-for-beginners">AI video tools for beginners</a>, <a href="/compare/adobe-firefly-vs-ideogram">Adobe Firefly vs Ideogram</a> for visuals, or browse <a href="/categories">all categories</a> to see every top 5 on the site.</p>
+<p>The five tools here are all strong — but they are not interchangeable. Choose one that matches the specific job you do most, use it well, and only add a second tool when the first one's limits start to slow you down. If you want to compare the tools side by side, our <a href="/ai-tools/marketing-and-seo">marketing & SEO category page</a> ranks all five in one place. For more content marketing essentials, explore <a href="/ai-tools/video-and-voice">AI video and voice tools</a>, <a href="/compare/adobe-firefly-vs-ideogram">Adobe Firefly vs Ideogram</a> for visuals, or browse <a href="/categories">all categories</a> to see every top 5 on the site.</p>
 `
 
 const semrushVsSurferContent = `
@@ -256,7 +256,7 @@ const videoEditingContent = `
 
 <h2>Final word</h2>
 <p>The best video editing software for YouTube is the one that removes your specific bottleneck. If you are slow because the tool is complicated, pick Filmora. If you are slow because you record badly, pick Riverside. If you are slow because your timeline is empty of assets, pick Envato. If you are slow because you have hit a creative ceiling, pick Premiere Pro. And if your videos are all screen recordings, pick Camtasia.</p>
-<p>For the full ranked list with every price and verdict, see our <a href="/video-and-design-software">video and design software top 5</a>. If you are still assembling your wider content stack, our <a href="/blog/best-ai-tools-for-content-marketing">best AI tools for content marketing guide</a> covers the research and writing side, and our <a href="/guides/best-ai-video-tools-for-beginners">AI video tools for beginners guide</a> covers the AI-generated video route. To find the right fit in three questions, try the <a href="/quiz">tool quiz</a>.</p>
+<p>For the full ranked list with every price and verdict, see our <a href="/video-and-design-software">video and design software top 5</a>. If you are still assembling your wider content stack, our <a href="/blog/best-ai-tools-for-content-marketing">best AI tools for content marketing guide</a> covers the research and writing side, and our <a href="/ai-tools/video-and-voice">AI video and voice shortlist</a> covers the AI-generated video route. To find the right fit in three questions, try the <a href="/quiz">tool quiz</a>.</p>
 `
 
 const kinstaVsCloudwaysContent = `
@@ -325,7 +325,7 @@ const kinstaVsCloudwaysContent = `
 
 <h2>Final verdict</h2>
 <p>Pick <strong>Cloudways</strong> if you want cloud hosting at a low starting price, need flexibility across multiple apps or providers, and are comfortable doing a bit more of the setup yourself. Pick <strong>Kinsta</strong> if you want a WordPress-only host that handles everything, and you value premium support and zero server management more than the lower price tag.</p>
-<p>For the full ranked list of hosting options, see our <a href="/web-hosting-and-domains">web hosting & domains top 5</a>. If you are still deciding between hosting types, our <a href="/guides/shared-vs-cloud-vs-managed-wordpress-hosting">shared vs cloud vs managed WordPress hosting guide</a> explains the differences in plain English. And if you are building a content site, our <a href="/blog/best-ai-tools-for-content-marketing">best AI tools for content marketing guide</a> covers the research and writing side.</p>
+<p>For the full ranked list of hosting options, see our <a href="/web-hosting-and-domains">web hosting & domains top 5</a>. If you are still deciding between hosting types, our <a href="/web-hosting-and-domains">hosting provider comparison</a> explains the differences in plain English. And if you are building a content site, our <a href="/blog/best-ai-tools-for-content-marketing">best AI tools for content marketing guide</a> covers the research and writing side.</p>
 `
 
 const skillshareVsMasterclassContent = `
@@ -668,7 +668,7 @@ const capcutVsPremiereContent = `
 
 <h2>Final verdict</h2>
 <p>Pick <strong>CapCut</strong> if your output is social video and you want speed, templates, and a low starting price — with a free tier that actually works. Pick <strong>Premiere Pro</strong> if you need professional control, plan to edit long-form or client work, and are willing to invest time in learning the tool.</p>
-<p>For the full ranked list of video editors and creative tools, see our <a href="/video-and-design-software">video and design software top 5</a>. If you are building a YouTube workflow, see our <a href="/blog/best-video-editing-software-for-youtube">best video editing software for YouTube guide</a>. And if you want to compare AI video tools, see <a href="/guides/best-ai-video-tools-for-beginners">AI video tools for beginners</a>.</p>
+<p>For the full ranked list of video editors and creative tools, see our <a href="/video-and-design-software">video and design software top 5</a>. If you are building a YouTube workflow, see our <a href="/blog/best-video-editing-software-for-youtube">best video editing software for YouTube guide</a>. And if you want to compare AI video tools, see <a href="/ai-tools/video-and-voice">AI video and voice tools</a>.</p>
 `
 
 const riversideVsDescriptContent = `
@@ -737,7 +737,7 @@ const riversideVsDescriptContent = `
 
 <h2>Final verdict</h2>
 <p>Pick <strong>Riverside</strong> if your bottleneck is recording quality — remote interviews, podcasts, panel videos — and you need studio-grade audio and video from guests anywhere. Pick <strong>Descript</strong> if your bottleneck is editing speed — talking-head content, interviews, podcasts — and you want to edit by editing text, not dragging clips on a timeline.</p>
-<p>For the full ranked list of video and audio tools, see our <a href="/video-and-design-software">video and design software top 5</a>. If you are building a YouTube workflow, see our <a href="/blog/best-video-editing-software-for-youtube">best video editing software for YouTube guide</a>. And if you want to compare AI video tools, see <a href="/guides/best-ai-video-tools-for-beginners">AI video tools for beginners</a>.</p>
+<p>For the full ranked list of video and audio tools, see our <a href="/video-and-design-software">video and design software top 5</a>. If you are building a YouTube workflow, see our <a href="/blog/best-video-editing-software-for-youtube">best video editing software for YouTube guide</a>. And if you want to compare AI video tools, see <a href="/ai-tools/video-and-voice">AI video and voice tools</a>.</p>
 `
 
 const vpnSpeedTestContent = `
@@ -777,7 +777,7 @@ const vpnSpeedTestContent = `
 <p>One row per run is enough: timestamp and time zone, network type, VPN location, protocol, test endpoint, download, upload, ping, and a short observation. Save result links or screenshots when available. Group runs by session so later comparisons do not accidentally mix a quiet morning with a congested evening.</p>
 <p>Retest after changing your router, device, VPN application, or regular location. Keep the previous log rather than overwriting it; a before-and-after comparison helps distinguish a persistent limitation from a temporary bad route. Stop testing once repeated measurements answer your actual decision. More screenshots do not automatically produce a more useful conclusion.</p>
 <h2>Choose your next step</h2>
-<p>Start with our <a href="/vpn-and-security">VPN and security shortlist</a>, then use the <a href="/guides/how-to-choose-a-vpn">VPN selection guide</a> to define your requirements. The <a href="/quiz/vpn-and-security">VPN matching quiz</a> organizes priorities, while our <a href="/free/vpns-with-a-free-plan">free-plan and trial comparison</a> explains access options. Use published benchmarks to shortlist candidates and your own repeatable measurements to make the final choice.</p>
+<p>Start with our <a href="/vpn-and-security">VPN and security shortlist</a>, then use the <a href="/vpn-and-security">VPN selection shortlist</a> to define your requirements. The <a href="/quiz/vpn-and-security">VPN matching quiz</a> organizes priorities, while our <a href="/free/vpns-with-a-free-plan">free-plan and trial comparison</a> explains access options. Use published benchmarks to shortlist candidates and your own repeatable measurements to make the final choice.</p>
 <h2>Frequently asked questions</h2>
 <h3>How do I test my VPN speed fairly?</h3>
 <p>Measure a disconnected baseline, then repeat connected tests on the same device and endpoint. Record the protocol and server location, compare repeated runs, and recheck the baseline during the session.</p>
@@ -987,7 +987,6 @@ export const blogPosts: BlogPost[] = [
     relatedLinks: [
       { path: '/vpn-and-security', label: 'VPN & security shortlist' },
       { path: '/free/vpns-with-a-free-plan', label: 'VPN free plans and trials' },
-      { path: '/guides/how-to-choose-a-vpn', label: 'How to choose a VPN' },
       { path: '/quiz/vpn-and-security', label: 'Find your VPN match' },
     ],
   },
@@ -1045,7 +1044,7 @@ export const blogPosts: BlogPost[] = [
     relatedLinks: [
       { path: '/quiz/ai-tools-marketing-and-seo', label: 'Match a marketing tool to your content workflow' },
       { path: '/free/best-free-email-marketing-tools', label: 'Best free email marketing tools' },
-      { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },
+      { path: '/ai-tools/video-and-voice', label: 'Explore AI video and voice tools' },
       { path: '/free/best-free-ai-chatbots', label: 'Best free AI chatbots' },
       { path: '/compare/adobe-firefly-vs-ideogram', label: 'Adobe Firefly vs Ideogram' },
       { path: '/categories', label: 'All categories' },
@@ -1164,7 +1163,7 @@ export const blogPosts: BlogPost[] = [
     relatedLinks: [
       { path: '/quiz/video-and-design-software', label: 'Find a video tool for your YouTube production needs' },
       { path: '/blog/best-ai-tools-for-content-marketing', label: 'Best AI tools for content marketing' },
-      { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },
+      { path: '/ai-tools/video-and-voice', label: 'Explore AI video and voice tools' },
       { path: '/blog/semrush-vs-surfer-seo', label: 'Semrush vs Surfer SEO' },
       { path: '/quiz', label: 'Which tool is right for me? Quiz' },
       { path: '/categories', label: 'All categories' },
@@ -1223,7 +1222,7 @@ export const blogPosts: BlogPost[] = [
     relatedListLabel: 'Web hosting & domains top 5',
     relatedLinks: [
       { path: '/compare/hostinger-vs-cloudways', label: 'Hostinger vs Cloudways' },
-      { path: '/guides/shared-vs-cloud-vs-managed-wordpress-hosting', label: 'Shared vs cloud vs managed WordPress hosting' },
+      { path: '/web-hosting-and-domains', label: 'Explore five hosting providers' },
       { path: '/blog/best-ai-tools-for-content-marketing', label: 'Best AI tools for content marketing' },
       { path: '/categories', label: 'All categories' },
     ],
@@ -1515,7 +1514,7 @@ export const blogPosts: BlogPost[] = [
       { path: '/compare/capcut-vs-premiere-pro', label: 'Use the CapCut and Premiere decision table' },
       { path: '/quiz/video-and-design-software', label: 'Take the video workflow matching quiz' },
       { path: '/blog/best-video-editing-software-for-youtube', label: 'Best video editing software for YouTube' },
-      { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },
+      { path: '/ai-tools/video-and-voice', label: 'Explore AI video and voice tools' },
       { path: '/categories', label: 'All categories' },
     ],
   },
@@ -1572,7 +1571,7 @@ export const blogPosts: BlogPost[] = [
     relatedListLabel: 'Video & design software top 5',
     relatedLinks: [
       { path: '/blog/best-video-editing-software-for-youtube', label: 'Best video editing software for YouTube' },
-      { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },
+      { path: '/ai-tools/video-and-voice', label: 'Explore AI video and voice tools' },
       { path: '/categories', label: 'All categories' },
     ],
   },
