@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
 import observations from '@/data/hosting-price-index-2026.json'
 
@@ -47,8 +48,8 @@ export const hostingPriceIndexPost: BlogPost = {
   metaTitle: '2026 Web Hosting Price Index: 10 Providers and Renewal Costs',
   metaDescription: 'A dated official-source dataset of ten hosting offers: entry prices, renewal rates, terms, domains, SSL, migrations and refund limits, with a downloadable CSV.',
   publishedAt: '2026-10-31T00:00:00Z', updatedAt: '2026-10-31', lastReviewedAt: '2026-10-31',
-  author: 'Five Picked Editors',
-  authorBio: 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.',
+  author: editorialIdentity.name,
+  authorBio: editorialIdentity.bio,
   category: 'Web Hosting', keywords: ['web hosting price index 2026', 'hosting renewal prices', 'hosting price dataset', 'hosting introductory prices'],
   excerpt: 'Compare ten official hosting offers with renewal calculations, included-service conditions and clearly marked missing evidence. Download the dated source-linked dataset.',
   content: prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')),

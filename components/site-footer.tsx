@@ -25,6 +25,7 @@ export function SiteFooter() {
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               {siteConfig.tagline} An independent recommendation site.
             </p>
+            <p className="text-sm text-muted-foreground"><a href={`mailto:${siteConfig.email}`} className="text-foreground underline underline-offset-4 hover:text-primary">{siteConfig.email}</a></p>
           </div>
 
           <nav aria-label="Categories">

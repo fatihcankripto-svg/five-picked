@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { Review } from '@/data/reviews'
 import { hostingOffers } from '@/lib/hosting-free-options'
 import { marketingSeoFreeOptions } from '@/lib/marketing-seo-free-options'
@@ -5,7 +6,7 @@ const hostinger = hostingOffers.find((offer) => offer.slug === 'hostinger')!
 const semrush = marketingSeoFreeOptions.find((option) => option.slug === 'semrush')!
 const editorial = {
   published: '2026-10-31', updated: '2026-10-31',
-  authorBio: 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.',
+  authorBio: editorialIdentity.bio,
 }
 export const packageReviews: Review[] = [
   {

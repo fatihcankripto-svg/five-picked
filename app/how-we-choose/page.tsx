@@ -15,6 +15,9 @@ export default function HowWeChoosePage() {
       title="How we choose"
       intro="Every list on FIVE PICKED has exactly five tools, ranked 1 to 5. Here is how we get from a crowded market to a short list we are comfortable putting our name on."
     >
+      <h2>Methodology</h2>
+      <p>Our comparisons use official sources, published data and credited third-party research. We do not run our own hands-on product tests. A buying recommendation is an editorial judgment about documented fit, not a measured performance result.</p>
+
       <h2>1. We start with what people actually need</h2>
       <p>
         Before we compare anything, we define the job a tool is supposed to do and who is likely to be doing it. A
@@ -22,11 +25,11 @@ export default function HowWeChoosePage() {
         our picks grounded in real use rather than feature checklists.
       </p>
 
-      <h2>2. We research widely</h2>
+      <h2>Source use</h2>
       <p>
         We look at the tools people commonly consider in each category, plus credible alternatives that deserve more
         attention. We read official documentation, pricing pages and plan limits, cross-check them against
-        independent reviews and user feedback, and use products ourselves where we can. We pay attention to what is
+        published third-party research where it is relevant. We identify the source of third-party measurements rather than presenting them as our own tests. We pay attention to what is
         included, what costs extra, and what is easy to miss.
       </p>
 
@@ -78,12 +81,13 @@ export default function HowWeChoosePage() {
         <li>We do not pad lists to look comprehensive.</li>
       </ul>
 
-      <h2>Keeping lists up to date</h2>
+      <h2>Update process</h2>
       <p>
         Software changes quickly. Each list shows a &ldquo;Last updated&rdquo; date, and we revisit our picks when
         products, pricing or the market change meaningfully. Prices and features can change at any time, so always
         confirm the details on the official website before you buy.
       </p>
+      <p>Blog articles and reviews show their review date and a “What changed” note. The note describes the recorded change; it does not imply a new product test or price check unless that work is documented. We update when official details change and use correction reports to identify information that needs another look.</p>
       <p>
         Spotted something out of date? <Link href="/contact">Let us know</Link>.
       </p>

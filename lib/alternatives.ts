@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import { packageAlternativeCopies, packageAlternativeTool } from '@/lib/alternatives-package'
 import { verifiedPricing } from '@/data/tool-pricing'
 import { editorialDates } from '@/lib/editorial-dates'
@@ -261,7 +262,7 @@ function buildPages(): AlternativesPageData[] {
       const isPackage = Object.prototype.hasOwnProperty.call(packageAlternativeCopies, tool.slug)
       pages.push({
         sources: copy.sources,
-        authorBio: copy.authorBio,
+        authorBio: editorialIdentity.bio,
         lastReviewedAt: copy.lastReviewedAt,
         slug: tool.slug,
         tool: isPackage ? packageAlternativeTool(tool) : tool,

@@ -1,10 +1,11 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { ComparePair } from '@/lib/compare-pages'
 import { courseFreeOptions } from '@/lib/course-free-options'
 import type { Tool } from '@/data/categories'
 
 const skillshare = courseFreeOptions.find((entry) => entry.slug === 'skillshare')!
 const masterclass = courseFreeOptions.find((entry) => entry.slug === 'masterclass')!
-const authorBio = 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.'
+const authorBio = editorialIdentity.bio
 const scopeNote = 'Official sources reviewed October 31, 2026. Recommendations and learning-curve comments are editorial fit judgments, not hands-on tests or measured time savings. Unknown quotas and checkout prices remain unknown. The linked free guide is the baseline for free-access claims.'
 
 export const packageComparePairs: ComparePair[] = [

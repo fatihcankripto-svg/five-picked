@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -67,7 +68,7 @@ export default async function AlternativesPage({ params }: Props) {
         headline: title,
         datePublished: alternativesUpdated,
         dateModified: alternativesUpdated,
-        author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com', ...(page.authorBio ? { description: page.authorBio } : {}) },
+        author: { '@type': 'Organization', name: editorialIdentity.name, url: editorialIdentity.url, description: editorialIdentity.bio },
         publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
         mainEntityOfPage: url,
       },
@@ -103,7 +104,7 @@ export default async function AlternativesPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
 
-      {page.authorBio && <p>{page.authorBio} Last reviewed <time dateTime={page.lastReviewedAt}>{formatLongDate(page.lastReviewedAt!)}</time>. Official-source research; no hands-on performance test is claimed.</p>}
+      {page.authorBio && <p>{editorialIdentity.name}. {page.authorBio} {page.lastReviewedAt ? 'Last reviewed' : 'Last updated'} <time dateTime={page.lastReviewedAt ?? alternativesUpdated}>{formatLongDate(page.lastReviewedAt ?? alternativesUpdated)}</time>. Official-source research; no hands-on performance test is claimed.</p>}
       <h2>Why look for a {tool.name} alternative?</h2>
       <p>{summary}</p>
       <p>

@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
 import observations from '@/data/vpn-price-index-2026.json'
 
@@ -47,8 +48,8 @@ export const vpnPriceIndexPost: BlogPost = {
   metaTitle: '2026 VPN Price Index: 10 Providers and Renewal Costs',
   metaDescription: 'Official-source VPN entry and renewal prices, terms, free limits, device allowances and refund conditions for ten providers, with a dated downloadable dataset.',
   publishedAt: '2026-10-31T00:00:00Z', updatedAt: '2026-10-31', lastReviewedAt: '2026-10-31',
-  author: 'Five Picked Editors',
-  authorBio: 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.',
+  author: editorialIdentity.name,
+  authorBio: editorialIdentity.bio,
   category: 'VPN & Security', keywords: ['VPN price index 2026', 'VPN renewal prices', 'VPN pricing dataset', 'VPN subscription cost'],
   excerpt: 'Inspect ten official-source VPN offers, with billing intervals, free-plan limits, device policies and reproducible renewal calculations. Missing evidence stays explicit.',
   content: prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')),

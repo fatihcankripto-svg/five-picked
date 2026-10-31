@@ -1,3 +1,4 @@
+import { editorialIdentity, editorialUpdateNote } from '@/lib/editorial-identity'
 import { reviewBodyCopy } from '@/lib/page-body-copy'
 import { contentLinks, getContentLinks } from '@/lib/content-links'
 import type { Metadata } from 'next'
@@ -90,7 +91,7 @@ export default async function ReviewPage({ params }: PageProps) {
       description: review.description,
       datePublished: review.published,
       dateModified: review.updated,
-      author: { ...organization, ...(review.authorBio ? { description: review.authorBio } : {}) },
+      author: { '@type': 'Organization', name: editorialIdentity.name, description: editorialIdentity.bio, url: editorialIdentity.url },
       publisher: organization,
       mainEntityOfPage: url,
     },
@@ -129,7 +130,7 @@ export default async function ReviewPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {review.authorBio && <p>{review.authorBio} Last reviewed <time dateTime={review.updated}>{formatDate(review.updated)}</time>.</p>}
+      <p>{editorialIdentity.name}. {review.authorBio} Last reviewed <time dateTime={review.updated}>{formatDate(review.updated)}</time>.</p>
       <h2>Quick verdict</h2>
       <p>{copy.verdict}</p>
       <div className="not-prose mt-4">{visit}</div>
@@ -202,6 +203,9 @@ export default async function ReviewPage({ params }: PageProps) {
           <p>{faq.answer}</p>
         </div>
       ))}
+
+      <h2>What changed</h2>
+      <p>Last updated: <time dateTime={review.updated}>{review.updated}</time>. {editorialUpdateNote}</p>
 
       <h2>Keep reading</h2>
       <ul>

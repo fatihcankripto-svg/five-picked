@@ -1,6 +1,7 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 /** Official-source access observations, not a hands-on test. */
 export const marketingSeoFreeEditorial = {
-  authorBio: 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.',
+  authorBio: editorialIdentity.bio,
   lastReviewedAt: '2026-10-31',
 }
 export const marketingSeoFreeOptions = [

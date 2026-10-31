@@ -1,3 +1,4 @@
+import { editorialIdentity, editorialUpdateNote } from '@/lib/editorial-identity'
 import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { formatDate } from '@/lib/site'
@@ -36,12 +37,12 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
   const data = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title,
     description: post.metaDescription, datePublished: post.publishedAt, dateModified: post.lastReviewedAt,
-    author: { '@type': 'Organization', name: post.author, description: post.authorBio, url: 'https://fivepicked.com/how-we-choose' },
+    author: { '@type': 'Organization', name: post.author, description: post.authorBio, url: editorialIdentity.url },
     publisher: { '@type': 'Organization', name: 'FIVE PICKED', logo: { '@type': 'ImageObject', url: 'https://fivepicked.com/icon.svg' } },
     mainEntityOfPage: {
       '@type': 'WebPage', '@id': `https://fivepicked.com/blog/${post.slug}`,
       lastReviewed: post.lastReviewedAt,
-      reviewedBy: { '@type': 'Organization', name: post.author, description: post.authorBio, url: 'https://fivepicked.com/how-we-choose' },
+      reviewedBy: { '@type': 'Organization', name: post.author, description: post.authorBio, url: editorialIdentity.url },
     },
     ...(post.dataset ? { hasPart: { '@type': 'Dataset', '@id': post.dataset['@id'] } } : {}),
     keywords: post.keywords.join(', '), articleSection: post.category, inLanguage: 'en',
@@ -139,9 +140,12 @@ export default async function BlogPostPage({ params }: PageProps) {
           <p className="mt-3 text-sm text-muted-foreground">Last reviewed: <time dateTime={post.lastReviewedAt}>{new Date(`${post.lastReviewedAt}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
           <p className="mt-2 text-sm text-muted-foreground">Reviewed by: {post.author}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            FIVE PICKED is an independent recommendation site. Our recommendations explain product fit and trade-offs using editorial research. They are not hands-on test reports unless a page includes a documented test. Check the official product website for current prices and limits. We never rank a tool higher because of a partnership —{' '}
+            FIVE PICKED is an independent recommendation site. Our recommendations explain product fit and trade-offs using editorial research. We use official sources, published data and credited third-party research rather than our own hands-on tests. Check the official product website for current prices and limits. We never rank a tool higher because of a partnership —{' '}
             <Link href="/how-we-choose" className="font-medium text-primary hover:opacity-80">How this article was researched</Link>
           </p>
+          <p className="mt-3 text-sm text-muted-foreground">Last updated: <time dateTime={post.lastReviewedAt}>{post.lastReviewedAt}</time></p>
+          <h2 id="what-changed" className="text-sm font-semibold text-foreground">What changed</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{editorialUpdateNote}</p>
         </aside>
 
         {related.length > 0 && (

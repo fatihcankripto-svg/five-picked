@@ -1,7 +1,8 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 /** Official-source desk research; no booking, cancellation or fare test was performed. */
 export const flightFreeEditorial = {
-  author: 'Five Picked Editors',
-  authorBio: 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.',
+  author: editorialIdentity.name,
+  authorBio: editorialIdentity.bio,
   lastReviewedAt: '2026-10-31',
 }
 

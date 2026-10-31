@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
 import observations from '@/data/online-course-price-index-2026.json'
 
@@ -51,8 +52,8 @@ export const onlineCoursePriceIndexPost: BlogPost = {
   metaTitle: '2026 Online Course Price Index: 10 Platforms Compared',
   metaDescription: 'Compare ten course platforms’ official subscription prices, free-access limits, certificate conditions and team billing, with a dated downloadable dataset and explicit evidence gaps.',
   publishedAt: '2026-10-31T00:00:00Z', updatedAt: '2026-10-31', lastReviewedAt: '2026-10-31',
-  author: 'Five Picked Editors',
-  authorBio: 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.',
+  author: editorialIdentity.name,
+  authorBio: editorialIdentity.bio,
   category: 'Online Courses', keywords: ['online course price index 2026', 'course certificate costs', 'online learning subscription prices', 'course pricing dataset'],
   excerpt: 'A ten-platform official-source snapshot separating subscription payments, free access, completion certificates and organizational seats, with reproducible billing comparisons.',
   content: prose.replace('{{TABLE}}', table).replace('{{BILLING}}', billingTable).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')),

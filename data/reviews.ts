@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import { secondPackageReviews } from '@/data/reviews-package-two'
 import { packageReviews } from '@/data/reviews-package'
 import { editorialDates } from '@/lib/editorial-dates'
@@ -32,6 +33,7 @@ export const reviews: Review[] = [
   ...packageReviews,
   ...secondPackageReviews,
   {
+    authorBio: editorialIdentity.bio,
     toolSlug: 'cloudways',
     name: 'Cloudways',
     officialUrl: 'https://www.cloudways.com/',
@@ -144,6 +146,7 @@ export const reviews: Review[] = [
     updated: editorialDates.reviews,
   },
   {
+    authorBio: editorialIdentity.bio,
     toolSlug: 'babbel',
     name: 'Babbel',
     officialUrl: 'https://www.babbel.com/',

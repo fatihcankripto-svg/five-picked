@@ -1,8 +1,9 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import { hostingOffers } from '@/lib/hosting-free-options'
 import { videoDesignFreeOptions } from '@/lib/video-design-free-options'
 import type { Tool } from '@/data/categories'
 
-const authorBio = 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.'
+const authorBio = editorialIdentity.bio
 export const packageAlternativeCopies = {
   hostinger: {
     authorBio, lastReviewedAt: '2026-10-31',

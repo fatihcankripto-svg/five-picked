@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { ComparePair } from '@/lib/compare-pages'
 import type { Tool } from '@/data/categories'
 import { marketingSeoFreeOptions } from '@/lib/marketing-seo-free-options'
@@ -7,7 +8,7 @@ const neuron = marketingSeoFreeOptions.find((entry) => entry.slug === 'neuronwri
 const frase = marketingSeoFreeOptions.find((entry) => entry.slug === 'frase')!
 const upwork = freelanceFreeOptions.find((entry) => entry.slug === 'upwork')!
 const freelancer = freelanceFreeOptions.find((entry) => entry.slug === 'freelancer-com')!
-const authorBio = 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.'
+const authorBio = editorialIdentity.bio
 const reviewed = { authorBio, lastReviewedAt: '2026-10-31' }
 const scopeNote = 'Official-source review on October 31, 2026. Fit and learning-curve comments are editorial guidance, not measured performance or guaranteed results. Prices retain their stated currency and billing basis. Free-plan quantities are not inferred from paid plans.'
 

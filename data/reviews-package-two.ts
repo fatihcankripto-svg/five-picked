@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { Review } from '@/data/reviews'
 import { flightFreeOptions } from '@/lib/flight-free-options'
 import { marketingSeoFreeOptions } from '@/lib/marketing-seo-free-options'
@@ -7,7 +8,7 @@ export const secondPackageReviews: Review[] = [
   {
     "published": "2026-10-31",
     "updated": "2026-10-31",
-    "authorBio": "Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.",
+    "authorBio": editorialIdentity.bio,
     "toolSlug": "kiwi-com",
     "name": "Kiwi.com",
     "officialUrl": "https://www.kiwi.com/",
@@ -129,7 +130,7 @@ export const secondPackageReviews: Review[] = [
   {
     "published": "2026-10-31",
     "updated": "2026-10-31",
-    "authorBio": "Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.",
+    "authorBio": editorialIdentity.bio,
     "toolSlug": "surfer-seo",
     "name": "Surfer SEO",
     "officialUrl": "https://surferseo.com/",
@@ -261,7 +262,7 @@ export const secondPackageReviews: Review[] = [
   {
     "published": "2026-10-31",
     "updated": "2026-10-31",
-    "authorBio": "Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.",
+    "authorBio": editorialIdentity.bio,
     "toolSlug": "expressvpn",
     "name": "ExpressVPN",
     "officialUrl": "https://www.expressvpn.com/",

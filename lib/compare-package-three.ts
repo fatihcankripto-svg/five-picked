@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import type { ComparePair } from '@/lib/compare-pages'
 import type { Tool } from '@/data/categories'
 import { videoDesignFreeOptions } from '@/lib/video-design-free-options'
@@ -5,7 +6,7 @@ const filmora = videoDesignFreeOptions.find((option) => option.slug === 'filmora
 const camtasia = videoDesignFreeOptions.find((option) => option.slug === 'camtasia')!
 export const thirdComparePairs: ComparePair[] = [
   {
-    "authorBio": "Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.",
+    "authorBio": editorialIdentity.bio,
     "lastReviewedAt": "2026-10-31",
     "scopeNote": "Official sources reviewed October 31, 2026. Recommendations and learning-curve comments are editorial guidance, not hands-on tests or measured outcomes. Prices keep their original currency and billing basis. Check the complete checkout quote before buying.",
     "slug": "clickup-vs-monday-com",
@@ -130,7 +131,7 @@ export const thirdComparePairs: ComparePair[] = [
     ]
   },
   {
-    "authorBio": "Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.",
+    "authorBio": editorialIdentity.bio,
     "lastReviewedAt": "2026-10-31",
     "scopeNote": "Official sources reviewed October 31, 2026. Recommendations and learning-curve comments are editorial guidance, not hands-on tests or measured outcomes. Prices keep their original currency and billing basis. Check the complete checkout quote before buying.",
     "slug": "fireflies-vs-otter",
@@ -259,7 +260,7 @@ export const thirdComparePairs: ComparePair[] = [
     ]
   },
   {
-    "authorBio": "Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.",
+    "authorBio": editorialIdentity.bio,
     "lastReviewedAt": "2026-10-31",
     "scopeNote": "Official sources reviewed October 31, 2026. Recommendations and learning-curve comments are editorial guidance, not hands-on tests or measured outcomes. Prices keep their original currency and billing basis. Check the complete checkout quote before buying.",
     "slug": "filmora-vs-camtasia",

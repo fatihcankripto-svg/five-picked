@@ -1,3 +1,4 @@
+import { editorialIdentity } from '@/lib/editorial-identity'
 import { onlineCoursePriceIndexPost } from '@/lib/online-course-price-index'
 import { vpnPriceIndexPost } from '@/lib/vpn-price-index'
 import { hostingPriceIndexPost } from '@/lib/hosting-price-index'
@@ -33,7 +34,7 @@ export type BlogPost = {
 }
 
 /** Describes the existing byline without inventing a person, credentials or test history. */
-const editorialAuthorBio = 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.'
+const editorialAuthorBio = editorialIdentity.bio
 
 const bestAiContentMarketingContent = `
 <p><strong>Content marketing in 2026 is a different game.</strong> Search engines now answer questions directly in results, AI writing tools produce decent first drafts in seconds, and the bar for ranking has never been higher. But the tools to hit that bar have also never been better. This guide ranks the five AI tools that genuinely earn their place in a modern content marketing stack — not by brand name, but by what they actually do best, what they cost, and which marketer each one is really for.</p>
@@ -914,7 +915,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Real Cost of Email Marketing: Pricing & Limits (2026)',
     metaDescription: 'Compare verified email plan limits, paid starting tiers and automation gates, with newsletter and ecommerce scenarios plus Gmail sender guidance. No invented delivery rates.',
     publishedAt: '2026-10-31', updatedAt: '2026-10-31',
-    author: 'Five Picked Editors', authorBio: editorialAuthorBio, lastReviewedAt: '2026-10-31',
+    author: editorialIdentity.name, authorBio: editorialAuthorBio, lastReviewedAt: '2026-10-31',
     category: 'Email Marketing',
     keywords: ['email marketing costs 2026', 'free email marketing limits', 'email deliverability', 'newsletter pricing comparison', 'email automation plan costs'],
     excerpt: 'Free subscriber capacity, paid automation and successful delivery are different questions. Compare the verified limits and two explicitly hypothetical workloads.',
@@ -933,7 +934,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Compare verified freelancer fees, proposal costs and payout limits across Fiverr, Upwork, 99designs, Freelancer.com and Toptal, with clear hypothetical calculations.',
     publishedAt: '2026-10-31',
     updatedAt: '2026-10-31',
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: '2026-10-31',
     category: 'Freelance Platforms',
@@ -957,7 +958,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Test your VPN speed fairly, understand download, upload and ping, and compare five VPNs using sourced third-party results with clear test conditions.',
     publishedAt: '2026-10-31',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'VPN & Security',
@@ -998,7 +999,7 @@ export const blogPosts: BlogPost[] = [
       'The best AI tools for content marketing in 2026, researched and compared. Semrush, Surfer SEO, Writesonic, NeuronWriter and Frase compared on price, ease and real-world results.',
     publishedAt: '2026-10-30T09:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Content Marketing',
@@ -1058,7 +1059,7 @@ export const blogPosts: BlogPost[] = [
       'Semrush vs Surfer SEO compared for 2026: what each does best, pricing, who should pick which, and whether you need both. No fluff, just the decision.',
     publishedAt: '2026-10-30T10:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Content Marketing',
@@ -1117,7 +1118,7 @@ export const blogPosts: BlogPost[] = [
       'The best video editing software for YouTube in 2026, ranked by the job each tool does: pro editing, fast turnarounds, screen recording, remote interviews and assets. Prices verified.',
     publishedAt: '2026-10-30T11:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
@@ -1177,7 +1178,7 @@ export const blogPosts: BlogPost[] = [
       'Kinsta vs Cloudways compared for 2026: pricing, performance, support and who each one is actually for. Real prices, verified features, no fluff.',
     publishedAt: '2026-10-30T12:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Web Hosting',
@@ -1235,7 +1236,7 @@ export const blogPosts: BlogPost[] = [
       'Skillshare vs MasterClass compared for 2026: pricing, teaching style, certificates and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T13:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Online Courses',
@@ -1294,7 +1295,7 @@ export const blogPosts: BlogPost[] = [
       'Preply vs Lingoda compared for 2026: pricing, teaching style, flexibility and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T14:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Language Learning',
@@ -1352,7 +1353,7 @@ export const blogPosts: BlogPost[] = [
       'Fireflies vs Fathom compared for 2026: free plan limits, pricing, integrations and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T15:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'AI Tools',
@@ -1409,7 +1410,7 @@ export const blogPosts: BlogPost[] = [
       'Envato Elements vs Freepik compared for 2026: pricing, asset libraries, AI features and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T16:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
@@ -1467,7 +1468,7 @@ export const blogPosts: BlogPost[] = [
       'CapCut vs Premiere Pro compared for 2026: pricing, learning curve, features and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T17:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
@@ -1526,7 +1527,7 @@ export const blogPosts: BlogPost[] = [
       'Riverside vs Descript compared for 2026: pricing, recording quality, editing workflow and who each one is actually for. Real verdict, no fluff.',
     publishedAt: '2026-10-30T18:00:00+03:00',
     updatedAt: editorialDates.blog,
-    author: 'Five Picked Editors',
+    author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
     lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
