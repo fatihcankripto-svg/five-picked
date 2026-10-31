@@ -1,3 +1,4 @@
+import { courseFreeOptions } from '@/lib/course-free-options'
 import { videoDesignFreeOptions } from '@/lib/video-design-free-options'
 import { hostingOffers } from '@/lib/hosting-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
@@ -32,6 +33,25 @@ type FreeCopy = {
 }
 
 const copies: FreeCopy[] = [
+  {
+    slug: 'best-free-online-course-platforms',
+    title: 'Free Online Course Platforms in 2026: Access and Certificate Limits',
+    h1: 'Free online course platforms in 2026: what is actually included?',
+    metaTitle: 'Free Online Courses: Previews, Trials & Certificates (2026)',
+    metaDescription: 'Compare Coursera, DataCamp, Skillshare, Scrimba and MasterClass: free courses, preview limits, trial billing and certificate conditions, with official sources.',
+    intro: 'A free account, a course preview and a trial are not the same as a complete course with a free certificate. This guide compares the five platforms in our existing online-courses shortlist and separates ongoing access, restricted previews, subscription trials and invitation-only offers.',
+    verdict: 'Start with the documented free course selection or previews when you only want to explore a subject. Check the certificate route before planning a credential, and the billing date before starting a trial. DataCamp and Scrimba provide limited free tiers; Coursera previews most courses by module; Skillshare and the MasterClass Guest Pass offer time-limited access under different conditions.',
+    toolSlugs: ['coursera', 'datacamp', 'skillshare', 'scrimba', 'masterclass'],
+    faqs: [
+      { question: 'Can I still audit a full Coursera course for free?', answer: 'Do not assume the old audit model is available. Coursera says its new preview replaces audit for most courses and opens the first module, including assessments when available there. Selected free courses and financial aid are separate access routes.' },
+      { question: 'Does a free trial include a free certificate?', answer: 'Not automatically. Coursera’s subscription terms require payment before a trial learner can earn a certificate. DataCamp excludes certificates from Basic, and Scrimba links certificate access to Pro. Skillshare has completion requirements; regular MasterClass classes do not provide an official completion certificate.' },
+      { question: 'Which options offer ongoing free access?', answer: 'DataCamp Basic provides first-chapter access, and Scrimba offers selected introductory courses with limited challenges. Coursera provides first-module previews for most courses and selected free Community Impact courses. None of these means unlimited access to every course and certificate.' },
+      { question: 'How do Skillshare and MasterClass free access differ?', answer: 'Skillshare documents a standard 7-day subscription trial, with some longer promotions. MasterClass offers eligible Guest Pass recipients 14 days after redeeming an invitation. Both require attention to payment details, cancellation and the displayed billing date.' },
+      { question: 'Can a free account be used as a shared corporate course library?', answer: 'No shared corporate-use permission is established by this guide. Individual access and organizational licensing are different. Check the applicable terms and team offering; learning skills for work is not the same as copying or redistributing course materials.' },
+    ],
+    relatedListPath: '/online-courses',
+    relatedListLabel: 'Online learning platforms: the complete shortlist',
+  },
   {
     slug: 'best-free-video-and-design-software',
     title: 'Free Video and Design Software in 2026: Limits and Trials',
@@ -488,6 +508,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-online-course-platforms') {
+      const option = courseFreeOptions.find((entry) => entry.slug === slug)!
+      return { ...tool, goodToKnow: `${option.access} ${option.certificate}` }
     }
     if (copy.slug === 'best-free-video-and-design-software') {
       const option = videoDesignFreeOptions.find((entry) => entry.slug === slug)!

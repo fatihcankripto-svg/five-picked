@@ -1113,6 +1113,7 @@ export const blogPosts: BlogPost[] = [
     relatedListPath: '/online-courses',
     relatedListLabel: 'Online courses top 5',
     relatedLinks: [
+      { path: '/free/best-free-online-course-platforms', label: 'Separate free course previews from subscription trials' },
       { path: '/compare/coursera-vs-datacamp', label: 'Coursera vs DataCamp' },
       { path: '/compare/babbel-vs-italki', label: 'Babbel vs italki' },
       { path: '/quiz', label: 'Which learning platform is right for me? Quiz' },

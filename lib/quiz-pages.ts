@@ -945,6 +945,7 @@ const defs: QuizDef[] = [
       'Answer 3 quick questions and get an online course platform recommendation from our top 5.',
     intro:
       'Three questions, one learning platform recommendation, matched to what you want to learn.',
+    relatedLinks: [{ path: '/free/best-free-online-course-platforms', label: 'Review free learning options before starting a subscription' }],
     tieBreak: 'coursera',
     questions: [
       {

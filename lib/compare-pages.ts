@@ -390,6 +390,7 @@ const pairs: ComparePair[] = [
           'DataCamp covers practical AI and data skills with exercises. Coursera has deeper theory from university courses. Use both if you can afford it.',
       },
     ],
+    relatedLinks: [{ path: '/free/best-free-online-course-platforms', label: 'Check preview limits and certificate access across five platforms' }],
     listPath: '/online-courses',
     listLabel: 'Online courses top 5',
   },
