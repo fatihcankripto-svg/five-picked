@@ -98,9 +98,21 @@ for (const source of Object.keys(freelanceBlogReferrers)) {
   graph.get(source)?.add(freelanceBlogPath)
   graph.get(freelanceBlogPath)?.add(source)
 }
+const emailBlogPath = '/blog/real-cost-of-email-marketing-2026'
+const emailBlogReferrers: Record<string, string> = {
+  '/email-marketing': 'Understand email pricing, delivery and feature limits',
+  '/free/best-free-email-marketing-tools': 'See how these limits affect newsletters and online shops',
+  '/compare/mailerlite-vs-kit': 'Explore the wider cost of email marketing platforms',
+  '/quiz/email-marketing': 'Check the cost and delivery assumptions behind your choice',
+}
+for (const source of Object.keys(emailBlogReferrers)) {
+  graph.get(source)?.add(emailBlogPath)
+  graph.get(emailBlogPath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === emailBlogPath && emailBlogReferrers[path]) return { ...page, title: emailBlogReferrers[path] }
     if (page.path === freelanceBlogPath && freelanceBlogReferrers[path]) return { ...page, title: freelanceBlogReferrers[path] }
     if (page.path === freelanceFreePath && freelanceFreeReferrers[path]) return { ...page, title: freelanceFreeReferrers[path] }
     if (page.path === languageFreePath && languageFreeReferrers[path]) return { ...page, title: languageFreeReferrers[path] }

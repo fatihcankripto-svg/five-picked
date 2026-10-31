@@ -1,3 +1,4 @@
+import { emailFreeOptions } from '@/lib/email-free-options'
 import { freelanceFreeOptions } from '@/lib/freelance-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
@@ -837,7 +838,87 @@ ${realCostFreelancingFaqs.map((faq) => `<h3>${faq.question}</h3><p>${faq.answer}
 <p>The useful question is not simply whether a marketplace lets you register for free. Ask what you must spend to pursue suitable work, what is deducted when you earn and when the remaining money can reach you. Read the account, project and payout conditions as a connected chain. A low headline fee cannot compensate for a working model that does not fit the service you sell.</p>
 `
 
+
+const emailCostFaqs: BlogFaq[] = [
+  { question: 'Which verified free plans can hold a 1,000-subscriber newsletter?', answer: 'Kit, beehiiv and Systeme.io meet that audience-size test. MailerLite Free stops at 250 subscribers and GetResponse Free at 500 contacts. Feature requirements still matter: a broadcast allowance does not imply free automated sequences.' },
+  { question: 'Can I use the listed starting prices for 10,000 subscribers?', answer: 'No. The verified starting paid capacities are 500 subscribers for MailerLite, 1,000 for Kit, beehiiv and GetResponse, and 5,000 contacts for Systeme.io. Those prices cannot be scaled into a verified quote for 10,000 subscribers.' },
+  { question: 'Does Kit Free include visual automations?', answer: 'No. The current verified Free comparison includes tagging, segmentation, unlimited broadcasts, forms and landing pages, but excludes visual automations and automated email sequences. Its subscriber allowance is not an automation entitlement.' },
+  { question: 'Is GetResponse only a temporary free trial?', answer: 'No. Its ongoing Free account allows 500 contacts and 2,500 monthly newsletters. Premium features can be tried for 14 days, but that does not establish permanent free workflow execution. Starter begins at 1,000 subscribers for $19 monthly or $15.58 per month paid annually.' },
+  { question: 'Does unlimited sending guarantee inbox placement?', answer: 'No. A sending allowance is a product limit, not an inbox-placement guarantee. Authentication, sender reputation, recipient consent, delivery failures and complaints must be considered separately. No comparative delivery-rate statistic is claimed here.' },
+]
+const emailCostUnitCosts: Record<string, string> = {
+  mailerlite: 'Monthly capacity normalization: $12 ÷ 500 subscriber slots; $12 ÷ 5,000 allowed monthly sends. Annual equivalent: $10.80 divided by those same capacities.',
+  kit: 'Monthly capacity normalization: $39 ÷ 1,000 subscriber slots. Annual equivalent: $390 ÷ 12 ÷ 1,000. Unlimited broadcasts have no fixed finite send allowance to divide by.',
+  beehiiv: 'Monthly capacity normalization: $59 ÷ 1,000 subscriber slots, or $49 ÷ 1,000 on annual billing. Unlimited sends are not a guaranteed number of delivered messages.',
+  'systeme-io': 'Monthly capacity normalization: $17 ÷ 5,000 contact slots. Annual equivalent: $170 ÷ 12 ÷ 5,000. Unlimited sends do not establish a per-delivered-message price.',
+  getresponse: 'Monthly capacity normalization: $19 ÷ 1,000 subscriber slots, or $15.58 ÷ 1,000 on annual billing. Actual per-send cost depends on how many messages you send.',
+}
+const emailCostContent = `
+<p>A free email plan is not a complete operating budget. It can limit the size of your list, how often you contact it, what appears in the footer and whether a welcome sequence can run automatically. The important question is whether the plan supports your actual publishing or selling workflow, rather than whether an account can be created without payment.</p>
+<p>This is a public-data aggregation using the same October 31, 2026 snapshot as our <a href="/free/best-free-email-marketing-tools">verified free email plan limits and billing guide</a>. The table reads from that shared source rather than maintaining another set of prices. Amounts are USD before applicable tax. No inbox-placement test, revenue uplift or undisclosed provider charge is invented.</p>
+<h2>Compare the limits before comparing the price</h2>
+<p>Subscriber capacity and sending capacity are different units. A full-list newsletter consumes a message for each intended recipient, while an automation can add messages between broadcasts. Branding removal, testing and workflow access are separate permissions. A large free audience allowance is therefore not automatically a good match for an automated shop.</p>
+<table><caption>Verified email-plan snapshot: free access, paid starting tiers and transparent cost formulas</caption><thead><tr><th scope="col">Platform and free capacity</th><th scope="col">Automation, segmentation and other gates</th><th scope="col">First paid tier and billing</th><th scope="col">Cost normalization and sources</th></tr></thead><tbody>
+${emailFreeOptions.map((option) => `<tr><th scope="row">${option.name}<p>${option.limits}</p></th><td>${option.features}${option.slug === 'systeme-io' ? `<p>${option.commercial}</p>` : ''}</td><td>${option.paid}</td><td>${emailCostUnitCosts[option.slug]}<ul>${option.sources.map((source) => `<li><a href="${source.url}">${source.label}</a></li>`).join('')}</ul></td></tr>`).join('')}
+</tbody></table>
+<p>The division formulas are our arithmetic, not additional provider prices or a pay-as-you-go tariff. A subscriber slot is capacity you could use, not evidence that every contact is active. For an unlimited-send plan, divide the bill by your actual send count if you need a workload-based comparison; there is no finite advertised allowance to use as the denominator.</p>
+<h2>Deliverability: paying for capacity does not buy the inbox</h2>
+<p>Deliverability means whether messages reach recipients successfully, including how receiving systems treat them. It is distinct from a platform allowing you to press send. The <a href="https://support.google.com/a/answer/81126?hl=en">official Gmail sender guidelines</a> explain authentication, infrastructure and subscription practices. Their bulk-sender requirements should be checked against actual sending activity, not inferred from a stored contact count.</p>
+<p><strong>SPF</strong> identifies authorized sending servers. <strong>DKIM</strong> provides a domain-associated message signature. <strong>DMARC</strong> connects authentication with the visible sender domain and publishes a handling policy. Gmail documents SPF or DKIM for all senders and SPF, DKIM and DMARC for bulk senders. Configure the service you actually use; owning a domain alone does not authenticate its marketing mail.</p>
+<p>Google also explains that shared-IP reputation can be affected by other senders and recommends monitoring domain and IP reputation with Postmaster Tools. Its guidance covers wanted subscriptions and easy unsubscribe, including one-click unsubscribe requirements for bulk marketing messages. Authentication is necessary infrastructure, not a promise of a particular inbox-placement result.</p>
+<p>A bounce is a delivery failure. Review failure reasons and distinguish an invalid destination from a temporary rejection before deciding how to handle the address. Bounce rates and complaint rates describe different events; do not substitute one for the other. This guide assigns no invented target percentage and does not rank these providers by an unmeasured delivery statistic.</p>
+<h2>Choose by the business you are running</h2>
+<h3>A newsletter or creator publication</h3>
+<p>For a broadcast-led publication, examine list capacity, sending allowance and how much branding matters. Kit’s tagging and segmentation can organize a creator audience, but its current Free plan does not run visual automations or sequences. beehiiv provides free newsletter sending within its subscriber allowance; automation, testing and branding removal sit behind different paid gates. Neither distinction is captured by saying both have a free plan.</p>
+<h3>A small shop or product launch</h3>
+<p>A shop may need follow-ups as well as announcements. List the required events and messages before choosing a plan. Systeme.io combines limited funnels and automation, with a separate Free total-sales restriction documented in the underlying guide. GetResponse distinguishes ongoing broadcasts from temporary premium access. Do not treat a trial workflow that worked during setup as a permanent feature entitlement.</p>
+<h3>An automation-heavy operation</h3>
+<p>Check the number of active workflows and the depth of each workflow, rather than the presence of an automation feature in a marketing headline. MailerLite’s Free automation count is useful only if its audience and step limits also fit. Entry-level paid access on another service may still restrict workflow count. Map the actual process before considering optional features or a higher plan.</p>
+<p>Our <a href="/compare/mailerlite-vs-kit">MailerLite versus Kit workflow comparison</a> explores those different approaches. Use the <a href="/quiz/email-marketing">email platform matching quiz</a> to clarify your priorities, then inspect the <a href="/email-marketing">email marketing platform shortlist</a>. A recommendation does not override the feature and capacity conditions in the table.</p>
+<h2>Scenario A: a hypothetical 1,000-subscriber newsletter</h2>
+<p>Assume a permission-based list of 1,000 subscribers and one full-list broadcast during the monthly period, with no automated follow-ups. The workload is 1,000 × 1 = 1,000 intended emails. These are planning inputs, not a claimed customer average. Free means no platform subscription charge in this exercise, not free commerce transactions or guaranteed delivery.</p>
+<ul>
+<li><strong>MailerLite:</strong> the list exceeds Free’s 250 subscribers. It also exceeds the verified 500-subscriber Comfort starting tier. The $12 or $10.80 headline is therefore not a verified quote for this scenario; obtain the matching tier price. The audience cap fails even though the assumed send count is below the free monthly allowance.</li>
+<li><strong>Kit:</strong> the audience is within the 10,000-subscriber Free cap, so the assumed broadcasts have no subscription cost. This conclusion excludes automated sequences and branding removal. Creator’s $39 monthly or $390 annual entry is a separate, capacity-matched upgrade if its features are needed.</li>
+<li><strong>beehiiv:</strong> the list fits Free’s 2,500 subscribers and unlimited sending. Basic newsletter sending has no subscription charge under these assumptions. Lite at this list size is $59 monthly or $49 monthly equivalent billed annually if its paid features are required.</li>
+<li><strong>Systeme.io:</strong> the list fits Free’s 2,000-contact allowance and unlimited email sending. No subscription charge is needed for the assumed broadcast. Other feature counts and the Free sales cap remain separate constraints.</li>
+<li><strong>GetResponse:</strong> Free’s 500-contact cap fails. Starter at 1,000 subscribers matches the assumed list: $19 monthly or $15.58 monthly equivalent paid annually. For the assumed workload, monthly billing divided by actual intended sends is $19 ÷ 1,000 = $0.019 per intended email; this is derived arithmetic, not a delivery tariff.</li>
+</ul>
+<h2>Scenario B: a hypothetical 10,000-subscriber ecommerce list</h2>
+<p>Assume 10,000 permission-based contacts, one full-list promotional broadcast and a requirement for automated follow-ups. The broadcast alone represents 10,000 × 1 = 10,000 intended emails. No additional automation volume is assumed. This deliberately separates audience fit from workflow fit; it does not assume that subscribers have purchased anything or set an invented sales total.</p>
+<ul>
+<li><strong>MailerLite:</strong> both the 250-subscriber Free cap and the 500-subscriber starting paid capacity fail. The broadcast also exceeds the verified 5,000-send allowance of that starting tier. A suitable larger tier must be priced; multiplying the entry price is not a valid quote.</li>
+<li><strong>Kit:</strong> 10,000 subscribers reach, but do not exceed, the Free audience ceiling. Broadcasts alone can remain free. Automated sequences and visual automation are excluded, so the combined ecommerce requirement needs paid access. The verified Creator price covers 1,000 subscribers, not this list; the total subscription cannot be determined from the snapshot.</li>
+<li><strong>beehiiv:</strong> Free’s 2,500-subscriber cap fails and automations require Lite. Its verified entry price is for 1,000 subscribers. A larger supported plan ceiling is not proof that the entry price buys this audience size; request the correct subscriber-tier price.</li>
+<li><strong>Systeme.io:</strong> Free’s 2,000 contacts and Startup’s 5,000 contacts both fall short. Unlimited sends do not enlarge contact capacity. The verified $17 monthly or $170 annual Startup price cannot price this list. Confirm a suitable higher tier and the automation design together.</li>
+<li><strong>GetResponse:</strong> the list exceeds both Free’s 500 contacts and Starter’s verified 1,000-subscriber entry. Free’s 2,500-send allowance also cannot cover the assumed broadcast. Starter’s included workflow does not establish that every ecommerce process fits it; obtain the appropriate audience and feature quote.</li>
+</ul>
+<p>There is no verified paid total for this combined ecommerce scenario in the approved snapshot. That missing figure is a limit of the available evidence, not a reason to extrapolate. Kit’s free broadcast-only case is the narrow exception, not a free solution to the stated automation requirement.</p>
+<h2>Frequently asked questions</h2>
+${emailCostFaqs.map((faq) => `<h3>${faq.question}</h3><p>${faq.answer}</p>`).join('')}
+<h2>When free is enough, and when the label becomes a trap</h2>
+<p>Free can be enough when the audience, sending pattern and required features all fit the documented plan. It becomes misleading when a preview is treated as permanent automation, an entry price is attached to a larger list, or a platform allowance is presented as an inbox guarantee. Compare the complete workflow and billing commitment, keep unknown prices unknown, and confirm the official terms before upgrading.</p>
+`
+
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'real-cost-of-email-marketing-2026',
+    title: 'The Real Cost of Email Marketing in 2026: Pricing, Deliverability and Hidden Limits Compared',
+    metaTitle: 'Real Cost of Email Marketing: Pricing & Limits (2026)',
+    metaDescription: 'Compare verified email plan limits, paid starting tiers and automation gates, with newsletter and ecommerce scenarios plus Gmail sender guidance. No invented delivery rates.',
+    publishedAt: '2026-10-31', updatedAt: '2026-10-31',
+    author: 'Five Picked Editors', authorBio: editorialAuthorBio, lastReviewedAt: '2026-10-31',
+    category: 'Email Marketing',
+    keywords: ['email marketing costs 2026', 'free email marketing limits', 'email deliverability', 'newsletter pricing comparison', 'email automation plan costs'],
+    excerpt: 'Free subscriber capacity, paid automation and successful delivery are different questions. Compare the verified limits and two explicitly hypothetical workloads.',
+    content: emailCostContent, faqs: emailCostFaqs,
+    relatedListPath: '/email-marketing', relatedListLabel: 'Email marketing: the complete five-platform shortlist',
+    relatedLinks: [
+      { path: '/free/best-free-email-marketing-tools', label: 'Inspect the verified free-plan and billing snapshot' },
+      { path: '/compare/mailerlite-vs-kit', label: 'Compare MailerLite and Kit by working model' },
+      { path: '/quiz/email-marketing', label: 'Match your email workflow to a platform' },
+    ],
+  },
   {
     slug: 'real-cost-of-freelancing-2026',
     title: 'The Real Cost of Freelancing in 2026: Platform Fees, Payout Limits and Hidden Charges Compared',
