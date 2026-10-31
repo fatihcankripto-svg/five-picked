@@ -49,6 +49,86 @@ type QuizDef = {
 
 const defs: QuizDef[] = [
   {
+    categorySlug: 'ai-tools', subSlug: 'marketing-and-seo',
+    metaTitle: 'Which marketing and SEO tool is right for me? (2026 Quiz)',
+    metaDescription: 'Answer six questions to match your marketing workflow with Semrush, Surfer SEO, NeuronWriter, Frase or Writesonic. Compare research, briefs, optimization and drafting.',
+    intro: 'Six questions to identify a primary tool and a runner-up from our five Marketing & SEO picks. The match uses the published audience, strengths and price labels; it does not test products or promise integrations, rankings or campaign results.',
+    tieBreak: 'semrush',
+    questions: [
+      {
+        id: 'marketing-work', question: 'What kind of marketing work takes most of your time?',
+        options: [
+          { label: 'SEO research, competitor analysis and ad research', favours: { semrush: 3 } },
+          { label: 'Optimizing articles for search', favours: { 'surfer-seo': 3, neuronwriter: 2 } },
+          { label: 'Drafting ad, social or email copy rather than running campaigns', favours: { writesonic: 3 } },
+          { label: 'Planning search-led articles and content briefs', favours: { frase: 3, semrush: 1 } },
+        ],
+      },
+      {
+        id: 'team', question: 'Who will use the tool in your workflow?',
+        options: [
+          { label: 'A solo writer or a small team keeping costs down', favours: { neuronwriter: 3, frase: 1 } },
+          { label: 'Writers and editors optimizing articles regularly', favours: { 'surfer-seo': 3, frase: 1 } },
+          { label: 'A content team planning articles and handing off briefs', favours: { frase: 3 } },
+          { label: 'An agency or marketing team doing broad SEO research', favours: { semrush: 3 } },
+          { label: 'Marketers producing AI-assisted drafts', favours: { writesonic: 3 } },
+        ],
+      },
+      {
+        id: 'budget', question: 'What monthly-equivalent budget fits your main tool?',
+        options: [
+          { label: 'Up to $30 per month', favours: { neuronwriter: 3 } },
+          { label: 'Above $30 and up to $60 per month', favours: { frase: 3, neuronwriter: 1 } },
+          { label: 'Above $60 and up to $110 per month', favours: { writesonic: 3, 'surfer-seo': 3, frase: 1 } },
+          { label: 'Above $110 per month for broader research', favours: { semrush: 3 } },
+        ],
+      },
+      {
+        id: 'technical-comfort', question: 'What level of SEO guidance do you want?',
+        options: [
+          { label: 'Clear recommendations in a budget-friendly content editor', favours: { neuronwriter: 3, 'surfer-seo': 1 } },
+          { label: 'A scoring editor for a regular article-optimization process', favours: { 'surfer-seo': 3, neuronwriter: 1 } },
+          { label: 'Search-result research organized into article briefs', favours: { frase: 3 } },
+          { label: 'A broad platform for audits, research and rank tracking', favours: { semrush: 3 } },
+          { label: 'AI writing help alongside SEO and visibility tools', favours: { writesonic: 3 } },
+        ],
+      },
+      {
+        id: 'speed-up', question: 'Which task do you most want to speed up?',
+        options: [
+          { label: 'Keyword research, competitor analysis and tracking', favours: { semrush: 3 } },
+          { label: 'Improving an article with an optimization score', favours: { 'surfer-seo': 3, neuronwriter: 2 } },
+          { label: 'Content analysis and optimization on a smaller budget', favours: { neuronwriter: 3 } },
+          { label: 'Building a brief from top-ranking pages', favours: { frase: 3 } },
+          { label: 'Drafting articles or ad copy and exploring AI-search visibility', favours: { writesonic: 3 } },
+        ],
+      },
+      {
+        id: 'existing-workflow', question: 'How should this tool fit your existing tool stack?',
+        options: [
+          { label: 'I already research topics; I need a focused article editor', favours: { 'surfer-seo': 3, neuronwriter: 2 } },
+          { label: 'I already have an editor; I need broad research and tracking', favours: { semrush: 3 } },
+          { label: 'I need research and briefs before handing work to writers', favours: { frase: 3 } },
+          { label: 'I need AI-assisted drafting alongside my current workflow', favours: { writesonic: 3 } },
+          { label: 'I need one low-cost content optimization tool', favours: { neuronwriter: 3 } },
+          { label: 'A specific native integration is essential; I will verify it before buying', favours: { semrush: 1, 'surfer-seo': 1, neuronwriter: 1, frase: 1, writesonic: 1 } },
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'How is the recommendation calculated?', answer: 'Answers add editorial preference points to the five existing Marketing & SEO tools. The existing quiz engine shows a primary recommendation and a runner-up. These points describe workflow fit, not a product rating or a performance test.' },
+      { question: 'Are the budget choices monthly payment quotes?', answer: 'No. They are monthly-equivalent budget bands based on the existing price labels. Some listed plans are billed annually, so an annual upfront payment may be required. Check the result card and its official pricing source before purchasing; budget alone does not determine the result.' },
+      { question: 'Does this quiz verify native integrations?', answer: 'No. It asks how the tool should complement your existing workflow without claiming compatibility with a particular app. If a native integration is essential, check the provider’s current documentation before choosing.' },
+      { question: 'Will these tools run my social or email campaigns?', answer: 'This quiz compares the five existing SEO and content tools. Drafting copy is different from scheduling posts, sending email or managing campaigns; the quiz does not establish those capabilities.' },
+      { question: 'Is AI-search visibility included in every plan?', answer: 'Do not assume so. The existing Writesonic entry places AI-search visibility tracking on higher plans. Check the selected plan and official source rather than assuming the starting price includes every feature.' },
+    ],
+    relatedLinks: [
+      { path: '/ai-tools', label: 'Explore the wider AI tools directory' },
+      { path: '/blog/best-ai-tools-for-content-marketing', label: 'Build a content-marketing toolkit around your workflow' },
+      { path: '/blog/semrush-vs-surfer-seo', label: 'Compare Semrush research with Surfer article optimization' },
+    ],
+  },
+  {
     categorySlug: 'web-hosting-and-domains',
     metaTitle: 'Which web host is right for me? (2026 Quiz)',
     metaDescription: 'Answer six questions about your site, budget, technical comfort and growth plans. Compare your hosting fit across Hostinger, Bluehost, Cloudways, Kinsta and Namecheap.',

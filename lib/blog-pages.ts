@@ -876,6 +876,7 @@ export const blogPosts: BlogPost[] = [
     relatedListPath: '/ai-tools/marketing-and-seo',
     relatedListLabel: 'Marketing & SEO top 5',
     relatedLinks: [
+      { path: '/quiz/ai-tools-marketing-and-seo', label: 'Match a marketing tool to your content workflow' },
       { path: '/free/best-free-email-marketing-tools', label: 'Best free email marketing tools' },
       { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },
       { path: '/free/best-free-ai-chatbots', label: 'Best free AI chatbots' },
@@ -935,6 +936,7 @@ export const blogPosts: BlogPost[] = [
     relatedListPath: '/ai-tools/marketing-and-seo',
     relatedListLabel: 'Marketing & SEO top 5',
     relatedLinks: [
+      { path: '/quiz/ai-tools-marketing-and-seo', label: 'Take the research-versus-optimization tool quiz' },
       { path: '/blog/best-ai-tools-for-content-marketing', label: 'Best AI tools for content marketing' },
       { path: '/free/best-free-email-marketing-tools', label: 'Best free email marketing tools' },
       { path: '/compare/adobe-firefly-vs-ideogram', label: 'Adobe Firefly vs Ideogram' },

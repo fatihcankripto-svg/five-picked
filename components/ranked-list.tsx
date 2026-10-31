@@ -86,6 +86,7 @@ export function RankedList({
 
       <nav aria-label="On this page" className="mt-8 rounded-xl border border-border p-5"><p className="text-sm font-semibold">On this page</p><ul className="mt-3 flex flex-wrap gap-x-5 gap-y-3 text-sm"><li><a href="#at-a-glance" className="text-primary underline underline-offset-4">Comparison</a></li>{tools.map((tool) => <li key={tool.slug}><a href={`#${tool.slug}`} className="text-primary underline underline-offset-4">{tool.name}</a></li>)}</ul></nav>
       {path === '/web-hosting-and-domains' && <p className="mt-6 text-sm text-muted-foreground">Want to evaluate a host before committing? <Link href="/free/best-free-web-hosting" className="text-primary underline underline-offset-4">Check hosting free trials and refund conditions</Link>. For a shortlist based on your needs, <Link href="/quiz/web-hosting-and-domains" className="text-primary underline underline-offset-4">take the six-question hosting finder</Link>.</p>}
+      {path === '/ai-tools/marketing-and-seo' && <p className="mt-6 text-sm text-muted-foreground">Not sure which workflow to prioritize? <Link href="/quiz/ai-tools-marketing-and-seo" className="text-primary underline underline-offset-4">Find your marketing and SEO tool match</Link>.</p>}
       <section aria-labelledby="at-a-glance" className="mt-14">
         <h2 id="at-a-glance" className="text-xl font-semibold text-foreground">
           The 5 at a glance
