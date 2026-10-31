@@ -1,3 +1,4 @@
+import { onlineCoursePriceIndexPost } from '@/lib/online-course-price-index'
 import { vpnPriceIndexPost } from '@/lib/vpn-price-index'
 import { hostingPriceIndexPost } from '@/lib/hosting-price-index'
 import { emailFreeOptions } from '@/lib/email-free-options'
@@ -904,6 +905,7 @@ ${emailCostFaqs.map((faq) => `<h3>${faq.question}</h3><p>${faq.answer}</p>`).joi
 `
 
 export const blogPosts: BlogPost[] = [
+  onlineCoursePriceIndexPost,
   vpnPriceIndexPost,
   hostingPriceIndexPost,
   {

@@ -198,7 +198,15 @@ const vpnIndexReferrers: Record<string, string> = {
   "/reviews/expressvpn": "Review ExpressVPN\u2019s billing interval alongside other VPNs",
   "/alternatives/nordvpn": "Examine the official-source VPN price dataset"
 }
+const courseIndexPath = '/blog/2026-online-course-price-index'
+const courseIndexReferrers: Record<string, string> = {
+  "/online-courses": "Inspect the ten-platform course price and certificate index",
+  "/free/best-free-online-course-platforms": "Compare free learning with subscription and certificate costs",
+  "/compare/coursera-vs-datacamp": "Place these course subscriptions in the wider price dataset",
+  "/blog/skillshare-vs-masterclass": "Check annual payments and credential boundaries across ten platforms"
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  if (a.path === courseIndexPath || b.path === courseIndexPath) return Boolean(courseIndexReferrers[a.path === courseIndexPath ? b.path : a.path])
   if (a.path === vpnIndexPath || b.path === vpnIndexPath) return Boolean(vpnIndexReferrers[a.path === vpnIndexPath ? b.path : a.path])
   if (a.path === hostingIndexPath || b.path === hostingIndexPath) return Boolean(hostingIndexReferrers[a.path === hostingIndexPath ? b.path : a.path])
   for (const [target, sources] of Object.entries(thirdCompareLinks)) {
@@ -369,9 +377,15 @@ for (const source of Object.keys(vpnIndexReferrers)) {
   graph.get(source)?.add(vpnIndexPath)
   graph.get(vpnIndexPath)?.add(source)
 }
+for (const source of Object.keys(courseIndexReferrers)) {
+  graph.get(source)?.add(courseIndexPath)
+  graph.get(courseIndexPath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === courseIndexPath && courseIndexReferrers[path]) return { ...page, title: courseIndexReferrers[path] }
+    if (path === courseIndexPath) return { ...page, title: blogPosts.find((post) => `/blog/${post.slug}` === path)?.relatedLinks.find((link) => link.path === page.path)?.label ?? page.title }
     if (page.path === vpnIndexPath && vpnIndexReferrers[path]) return { ...page, title: vpnIndexReferrers[path] }
     if (path === vpnIndexPath) return { ...page, title: blogPosts.find((post) => `/blog/${post.slug}` === path)?.relatedLinks.find((link) => link.path === page.path)?.label ?? page.title }
     if (page.path === hostingIndexPath && hostingIndexReferrers[path]) return { ...page, title: hostingIndexReferrers[path] }

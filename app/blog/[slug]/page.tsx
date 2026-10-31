@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     return `<h2 id="${id}">${label}</h2>`
   })
   const minutes = readingTimeMinutes(post.content)
-  const related = getRelatedPosts(post, ['2026-web-hosting-price-index', '2026-vpn-price-index'].includes(post.slug) ? blogPosts.filter((entry) => entry.relatedListPath === post.relatedListPath) : blogPosts, 3)
+  const related = getRelatedPosts(post, ['2026-web-hosting-price-index', '2026-vpn-price-index', '2026-online-course-price-index'].includes(post.slug) ? blogPosts.filter((entry) => entry.relatedListPath === post.relatedListPath) : blogPosts, 3)
 
   return (
     <>
