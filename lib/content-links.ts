@@ -93,7 +93,31 @@ const alternativePackageLinks: Record<string, Record<string, string>> = {
     '/compare/capcut-vs-premiere-pro': 'Explore the wider Premiere alternatives by production task',
   },
 }
+const secondCompareLinks: Record<string, Record<string, string>> = {
+  '/compare/monday-com-vs-asana': {
+    '/software-and-productivity': 'Choose a board-centered or task-centered project workflow',
+    '/software-and-productivity/project-management': 'Compare monday.com and Asana by plan and process',
+    '/free/best-free-project-management-tools': 'Evaluate monday.com and Asana before buying team seats',
+    '/quiz/software-and-productivity-project-management': 'Check the project workflow and billing behind your match',
+  },
+  '/compare/neuronwriter-vs-frase': {
+    '/ai-tools': 'Choose between content optimization and a publishing workflow',
+    '/ai-tools/marketing-and-seo': 'Weigh NeuronWriter against Frase for your content process',
+    '/free/best-free-ai-marketing-and-seo-tools': 'Apply the verified trial conditions to NeuronWriter and Frase',
+    '/quiz/ai-tools-marketing-and-seo': 'Review entry-plan fit before choosing a content platform',
+    '/blog/best-ai-tools-for-content-marketing': 'Compare the NeuronWriter and Frase buying decision',
+  },
+  '/compare/upwork-vs-freelancer-com': {
+    '/freelance-platforms': 'Choose a marketplace by proposal, fee and payout conditions',
+    '/free/best-free-freelance-platforms': 'Apply these freelancer costs to Upwork or Freelancer.com',
+    '/quiz/freelance-platforms': 'Check the marketplace economics behind your recommendation',
+    '/blog/real-cost-of-freelancing-2026': 'Use the Upwork and Freelancer.com decision framework',
+  },
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  for (const [target, sources] of Object.entries(secondCompareLinks)) {
+    if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
+  }
   for (const [target, sources] of Object.entries(alternativePackageLinks)) {
     if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
   }
@@ -215,9 +239,34 @@ for (const [target, sources] of Object.entries(alternativePackageLinks)) {
     graph.get(target)?.add(source)
   }
 }
+for (const [target, sources] of Object.entries(secondCompareLinks)) {
+  for (const source of Object.keys(sources)) {
+    graph.get(source)?.add(target)
+    graph.get(target)?.add(source)
+  }
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (secondCompareLinks[page.path]?.[path]) return { ...page, title: secondCompareLinks[page.path][path] }
+    if (secondCompareLinks[path]?.[page.path]) {
+      const labels: Record<string, string> = {
+        '/software-and-productivity': 'Browse the wider productivity categories',
+        '/software-and-productivity/project-management': 'See the full project management shortlist',
+        '/free/best-free-project-management-tools': 'Inspect the existing free project management guide',
+        '/quiz/software-and-productivity-project-management': 'Match a project tool to your team’s work',
+        '/ai-tools': 'Explore the broader AI tool categories',
+        '/ai-tools/marketing-and-seo': 'Review all five marketing and SEO platforms',
+        '/free/best-free-ai-marketing-and-seo-tools': 'Check the underlying AI access and trial observations',
+        '/quiz/ai-tools-marketing-and-seo': 'Find a content tool for your working needs',
+        '/blog/best-ai-tools-for-content-marketing': 'Read the broader content marketing workflow analysis',
+        '/freelance-platforms': 'Compare all five freelance marketplaces',
+        '/free/best-free-freelance-platforms': 'Inspect the verified account, proposal and payout conditions',
+        '/quiz/freelance-platforms': 'Match a marketplace to how you work',
+        '/blog/real-cost-of-freelancing-2026': 'Explore the full cost of finding freelance work',
+      }
+      return { ...page, title: labels[page.path] }
+    }
     if (alternativePackageLinks[page.path]?.[path]) return { ...page, title: alternativePackageLinks[page.path][path] }
     if (alternativePackageLinks[path]?.[page.path]) return { ...page, title: `Continue with ${page.title}` }
     if (packageCompareLinks[page.path]?.[path]) return { ...page, title: packageCompareLinks[page.path][path] }

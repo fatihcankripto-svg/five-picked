@@ -67,6 +67,7 @@ export const freelanceFreeOptions = [
 ]
 
 export const freelanceFreeLinks = [
+  { path: '/compare/upwork-vs-freelancer-com', label: 'Weigh Upwork proposal spending against Freelancer.com bid requirements' },
   { path: '/blog/real-cost-of-freelancing-2026', label: 'See how the verified fees affect example invoices' },
   { path: '/freelance-platforms', label: 'Compare the full freelance-platform shortlist' },
   { path: '/quiz/freelance-platforms', label: 'Match a freelance marketplace to your working style' },

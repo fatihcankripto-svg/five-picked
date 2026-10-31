@@ -104,7 +104,7 @@ export default async function ComparePage({ params }: Props) {
 
       <section className="mt-12 grid gap-6 lg:grid-cols-2">
         <div>
-          <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com', 'semrush-vs-surfer-seo', 'make-vs-n8n', 'pcloud-vs-dropbox', 'skillshare-vs-masterclass'].includes(page.slug) ? `Choose ${page.a.name} if…` : `When ${page.a.name} wins`}</h2>
+          <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com', 'semrush-vs-surfer-seo', 'make-vs-n8n', 'pcloud-vs-dropbox', 'skillshare-vs-masterclass', 'monday-com-vs-asana', 'neuronwriter-vs-frase', 'upwork-vs-freelancer-com'].includes(page.slug) ? `Choose ${page.a.name} if…` : `When ${page.a.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.aWinsWhen.map((item) => (
               <li key={item} className="flex gap-2.5">
@@ -115,7 +115,7 @@ export default async function ComparePage({ params }: Props) {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com', 'semrush-vs-surfer-seo', 'make-vs-n8n', 'pcloud-vs-dropbox', 'skillshare-vs-masterclass'].includes(page.slug) ? `Choose ${page.b.name} if…` : `When ${page.b.name} wins`}</h2>
+          <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com', 'semrush-vs-surfer-seo', 'make-vs-n8n', 'pcloud-vs-dropbox', 'skillshare-vs-masterclass', 'monday-com-vs-asana', 'neuronwriter-vs-frase', 'upwork-vs-freelancer-com'].includes(page.slug) ? `Choose ${page.b.name} if…` : `When ${page.b.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.bWinsWhen.map((item) => (
               <li key={item} className="flex gap-2.5">
