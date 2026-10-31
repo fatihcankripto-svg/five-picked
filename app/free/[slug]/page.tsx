@@ -1,3 +1,4 @@
+import { EmailFreeOptions } from '@/components/email-free-options'
 import { FreelanceFreeOptions, FreelanceFreeLinks } from '@/components/freelance-free-options'
 import { LanguageFreeOptions, LanguageFreeLinks } from '@/components/language-free-options'
 import { socialImages } from '@/lib/site'
@@ -112,6 +113,7 @@ export default async function FreePage({ params }: Props) {
         </div>
       </header>
 
+      {page.slug === 'best-free-email-marketing-tools' && <EmailFreeOptions />}
       {page.slug === 'best-free-freelance-platforms' && <FreelanceFreeOptions />}
       {page.slug === 'best-free-language-learning-apps' && <LanguageFreeOptions />}
       {page.slug === 'best-free-online-course-platforms' && <CourseFreeOptions />}

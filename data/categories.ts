@@ -22,6 +22,7 @@ export type Tool = {
   whatItDoes: string
   strengths: string[]
   goodToKnow: string
+  decisionOverride?: { audience: string; standout: string }
   startingPrice: string
   officialUrl: string
   affiliateUrl?: string

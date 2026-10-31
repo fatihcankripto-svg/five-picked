@@ -1,3 +1,4 @@
+import { emailFreeOptions } from '@/lib/email-free-options'
 import { freelanceFreeOptions } from '@/lib/freelance-free-options'
 import { languageFreeOptions } from '@/lib/language-free-options'
 import { courseFreeOptions } from '@/lib/course-free-options'
@@ -295,28 +296,15 @@ const copies: FreeCopy[] = [
     title: 'Best Free Email Marketing Tools',
     h1: 'The best free email marketing tools',
     metaTitle: 'Free Email Marketing Plans and Trials Compared',
-    metaDescription:
-      'The best email marketing software with a free plan, ranked. See how many subscribers each free plan supports before you pay.',
-    intro:
-      'Email marketing is one of the few categories where you can run a real list for months without paying. Several tools in our email marketing top 5 offer a free plan with real subscriber limits — enough to start a newsletter or a small business list. This page lists those tools and explains what each free tier actually gives you.',
-    verdict:
-      'For a first list, MailerLite is the friendliest free plan: it is easy to use and the free tier covers a real starting list. Kit is the better free pick if you are a creator planning to sell digital products later. beehiiv is worth a look if you are building a newsletter business specifically.',
+    metaDescription: 'Compare verified free subscriber and sending limits, automation gates, branding and paid starting tiers for MailerLite, Kit, beehiiv, Systeme.io and GetResponse.',
+    intro: 'Free email plans differ in audience size, sending allowance and workflow access. This guide separates ongoing free plans from premium-feature trials and ties each paid starting price to its subscriber capacity and billing period.',
+    verdict: 'Choose by the limit that affects your work: MailerLite suits a small list needing limited automation; Kit suits broadcasts without automated sequences; beehiiv focuses on newsletter publishing; Systeme.io bundles limited funnels and automation; GetResponse combines a small ongoing Free account with temporary premium-feature access. None is presented as unlimited white-label marketing.',
     faqs: [
-      {
-        question: 'Which free email marketing tool is best for beginners?',
-        answer:
-          'MailerLite is the easiest free plan to start with. It has a clean editor, basic automations and a free tier that works for a small list. Kit is a close second for creators.',
-      },
-      {
-        question: 'How many subscribers can I have on a free email plan?',
-        answer:
-          'It varies by tool. Some free tiers cover around 500–1,000 subscribers, while others cap the number of monthly emails rather than subscribers. Check the current limits on each official website.',
-      },
-      {
-        question: 'Do free email marketing tools include automation?',
-        answer:
-          'Some do. MailerLite and Kit both include basic automations on their free plans. More advanced workflows usually need a paid plan.',
-      },
+      { question: 'How many subscribers and emails does each free plan include?', answer: 'MailerLite: 250 active subscribers and 2,500 monthly emails. Kit: 10,000 subscribers and unlimited broadcasts. beehiiv: 2,500 subscribers and unlimited sends. Systeme.io: 2,000 contacts and unlimited emails. GetResponse: 500 contacts and 2,500 monthly newsletters. A separate daily numeric cap is not specified in the reviewed plan sources.' },
+      { question: 'Which free plans include automation?', answer: 'MailerLite allows 3 active automations with up to 5 steps. Systeme.io includes 1 automation rule and 1 workflow. Kit’s current Free comparison excludes visual automations and automated sequences. beehiiv lists automations as a Lite upgrade. GetResponse premium automation access is time-limited; saving drafts on Free is not the same as running workflows after the trial.' },
+      { question: 'What do the first paid tiers cost, and for how many subscribers?', answer: 'MailerLite Comfort: $12 monthly or $129.60 yearly for 500 subscribers. Kit Creator: $39 monthly or $390 yearly for 1,000 subscribers. beehiiv Lite: $59 monthly or $49 per month billed yearly at 1,000 subscribers. Systeme.io Startup: $17 monthly or $170 yearly for 5,000 contacts. GetResponse Starter: $19 monthly or $15.58 per month paid annually for 1,000 subscribers. These entry prices are not quotes for larger lists.' },
+      { question: 'Are these free plans white-label?', answer: 'No blanket white-label claim is made. MailerLite and Kit list branding removal as paid access; beehiiv requires Pro for branding removal. Systeme.io Free cannot remove page badges or its email footer. GetResponse Free messages include its badge.' },
+      { question: 'Can I use these free plans for a business?', answer: 'The providers document business-oriented features: MailerLite includes a limited digital-product or booking offer, Kit supports product and subscription sales, beehiiv includes digital products, Systeme.io permits sales subject to its Free sales cap, and GetResponse describes business lead generation and broadcasts. Payment-processing charges, consent and provider terms still apply; a free account is not permission to send unsolicited messages.' },
     ],
     toolSlugs: ['mailerlite', 'kit', 'beehiiv', 'systeme-io', 'getresponse'],
     relatedListPath: '/email-marketing',
@@ -548,6 +536,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-email-marketing-tools') {
+      const option = emailFreeOptions.find((entry) => entry.slug === slug)!
+      return { ...tool, startingPrice: option.price, bestFor: option.audience, strengths: option.strengths, tagline: option.standout, goodToKnow: option.features, decisionOverride: { audience: option.audience, standout: option.standout } }
     }
     if (copy.slug === 'best-free-freelance-platforms') {
       const option = freelanceFreeOptions.find((entry) => entry.slug === slug)!

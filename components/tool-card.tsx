@@ -14,7 +14,7 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
   const isTop = rank === 1
   const review = getReview(tool.slug)
   const pricing = verifiedPricing[tool.slug]
-  const decision = toolDecisions[tool.slug]
+  const decision = tool.decisionOverride ?? toolDecisions[tool.slug]
 
   return (
     <div className="fp-scroll">
