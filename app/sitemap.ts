@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [
     route('/'), route('/categories'),
     ...categoryPages,
-    route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.updatedAt)),
+    route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.lastReviewedAt)),
     route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, comparePagesUpdated)),
     route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, freePagesUpdated)),
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),

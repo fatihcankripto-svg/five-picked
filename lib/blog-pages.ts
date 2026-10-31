@@ -14,6 +14,8 @@ export type BlogPost = {
   publishedAt: string
   updatedAt: string
   author: string
+  authorBio: string
+  lastReviewedAt: string
   category: string
   keywords: string[]
   excerpt: string
@@ -23,6 +25,9 @@ export type BlogPost = {
   relatedListLabel: string
   relatedLinks: { path: string; label: string }[]
 }
+
+/** Describes the existing byline without inventing a person, credentials or test history. */
+const editorialAuthorBio = 'Five Picked Editors is FIVE PICKED’s collective byline for research-based tool comparisons and buying guides.'
 
 const bestAiContentMarketingContent = `
 <p><strong>Content marketing in 2026 is a different game.</strong> Search engines now answer questions directly in results, AI writing tools produce decent first drafts in seconds, and the bar for ranking has never been higher. But the tools to hit that bar have also never been better. This guide ranks the five AI tools that genuinely earn their place in a modern content marketing stack — not by brand name, but by what they actually do best, what they cost, and which marketer each one is really for.</p>
@@ -739,6 +744,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T09:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Content Marketing',
     keywords: [
       'best ai tools for content marketing',
@@ -796,6 +803,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T10:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Content Marketing',
     keywords: [
       'semrush vs surfer seo',
@@ -852,6 +861,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T11:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
     keywords: [
       'best video editing software for youtube',
@@ -909,6 +920,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T12:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Web Hosting',
     keywords: [
       'kinsta vs cloudways',
@@ -965,6 +978,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T13:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Online Courses',
     keywords: [
       'skillshare vs masterclass',
@@ -1021,6 +1036,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T14:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Language Learning',
     keywords: [
       'preply vs lingoda',
@@ -1077,6 +1094,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T15:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'AI Tools',
     keywords: [
       'fireflies vs fathom',
@@ -1132,6 +1151,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T16:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
     keywords: [
       'envato elements vs freepik',
@@ -1187,6 +1208,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T17:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
     keywords: [
       'capcut vs premiere pro',
@@ -1242,6 +1265,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: '2026-10-30T18:00:00+03:00',
     updatedAt: editorialDates.blog,
     author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: editorialDates.blogReviewed,
     category: 'Video & Design',
     keywords: [
       'riverside vs descript',

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: post.metaTitle, description: post.metaDescription,
       url: `https://fivepicked.com/blog/${post.slug}`, siteName: 'FIVE PICKED',
-      type: 'article', publishedTime: post.publishedAt, modifiedTime: post.updatedAt, authors: [post.author],
+      type: 'article', publishedTime: post.publishedAt, modifiedTime: post.lastReviewedAt, authors: [post.author],
     },
     twitter: { card: 'summary_large_image', title: post.metaTitle, description: post.metaDescription },
   }
@@ -33,10 +33,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function ArticleJsonLd({ post }: { post: BlogPost }) {
   const data = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title,
-    description: post.metaDescription, datePublished: post.publishedAt, dateModified: post.updatedAt,
-    author: { '@type': 'Organization', name: post.author },
+    description: post.metaDescription, datePublished: post.publishedAt, dateModified: post.lastReviewedAt,
+    author: { '@type': 'Organization', name: post.author, description: post.authorBio, url: 'https://fivepicked.com/how-we-choose' },
     publisher: { '@type': 'Organization', name: 'FIVE PICKED', logo: { '@type': 'ImageObject', url: 'https://fivepicked.com/icon.svg' } },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://fivepicked.com/blog/${post.slug}` },
+    mainEntityOfPage: {
+      '@type': 'WebPage', '@id': `https://fivepicked.com/blog/${post.slug}`,
+      lastReviewed: post.lastReviewedAt,
+      reviewedBy: { '@type': 'Organization', name: post.author, description: post.authorBio, url: 'https://fivepicked.com/how-we-choose' },
+    },
     keywords: post.keywords.join(', '), articleSection: post.category, inLanguage: 'en',
   }
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
@@ -115,13 +119,16 @@ export default async function BlogPostPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: articleHtml }}
         />
 
-        <div className="mt-12 rounded-xl border border-border bg-muted/30 p-5">
-          <p className="text-sm font-semibold text-foreground">About {post.author}</p>
+        <aside aria-labelledby="about-author" className="mt-12 rounded-xl border border-border bg-muted/30 p-5">
+          <h2 id="about-author" className="text-sm font-semibold text-foreground">About {post.author}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{post.authorBio}</p>
+          <p lang="tr" className="mt-3 text-sm text-muted-foreground">Son inceleme: <time dateTime={post.lastReviewedAt}>{new Date(`${post.lastReviewedAt}T00:00:00Z`).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
+          <p lang="tr" className="mt-2 text-sm text-muted-foreground">İnceleyen: {post.author}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             FIVE PICKED is an independent recommendation site. Our recommendations explain product fit and trade-offs using editorial research. They are not hands-on test reports unless a page includes a documented test. Check the official product website for current prices and limits. We never rank a tool higher because of a partnership —{' '}
-            <Link href="/how-we-choose" className="font-medium text-primary hover:opacity-80">read how we choose</Link>.
+            <Link lang="tr" href="/how-we-choose" className="font-medium text-primary hover:opacity-80">Bu yazı nasıl araştırıldı?</Link>
           </p>
-        </div>
+        </aside>
 
         {related.length > 0 && (
           <section className="mt-12">

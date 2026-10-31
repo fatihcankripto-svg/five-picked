@@ -98,3 +98,25 @@ for prefix in ('blog', 'compare', 'free', 'quiz', 'guides', 'reviews', 'alternat
  assert '/' + prefix in sitemap_paths, f'Sitemap index missing: {prefix}'
  assert any(path.startswith('/' + prefix + '/') for path in sitemap_paths), f'Sitemap detail family missing: {prefix}'
 print('PASS: all seven sitemap families and commercial-use guide link/schema requirements')
+
+# Authorship descriptions and review dates must match visible article content.
+reviewed_posts = 0
+for file in Path('.next/server/app/blog').glob('*.html'):
+ raw = file.read_text()
+ visible = VisibleText(); visible.feed(raw)
+ text = normalized(' '.join(visible.parts))
+ for data in re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>', raw, re.S):
+  for node in schema_nodes(json.loads(data)):
+   if node.get('@type') != 'BlogPosting': continue
+   author = node['author']
+   page = node['mainEntityOfPage']
+   assert author['name'] in text and normalized(author['description']) in text, f'Hidden or inconsistent author biography: {file}'
+   assert author['@type'] == 'Organization', f'The collective byline must not be represented as a fictional person: {file}'
+   assert page['@type'] == 'WebPage' and 'reviewedBy' not in node, f'Review properties must be attached to WebPage: {file}'
+   assert page['reviewedBy']['name'] in text, f'Reviewer not visible: {file}'
+   assert node['dateModified'] == page['lastReviewed'] == '2026-10-31', f'Inconsistent review dates: {file}'
+   assert 'Son inceleme: 31 Ekim 2026' in text and 'Bu yazı nasıl araştırıldı?' in text, f'Missing visible review disclosure: {file}'
+   assert '/how-we-choose' in raw, f'Missing research-method link: {file}'
+   reviewed_posts += 1
+assert reviewed_posts == 10, f'Expected 10 reviewed blog posts, got {reviewed_posts}'
+print('PASS: all 10 article biographies, visible review dates and WebPage reviewer metadata agree')
