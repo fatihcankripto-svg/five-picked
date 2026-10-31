@@ -1,3 +1,4 @@
+import { verifiedPricing } from './tool-pricing'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — single source of truth for all categories, subcategories and tools.
@@ -118,7 +119,7 @@ function placeholderTools(topic: string): Tool[] {
   return profiles.map((profile, index) => ({
     slug: `tool-${index + 1}`,
     name: `Tool ${index + 1}`,
-    startingPrice: 'See website',
+    startingPrice: 'Selection in progress',
     officialUrl: 'https://example.com/',
     ...profile,
   }))
@@ -150,7 +151,7 @@ export const categories: Category[] = [
               "A free tier to try it",
             ],
             goodToKnow: "Videos use credits, and free access is limited and may add a watermark. Paid plans add faster queues and commercial-use rights.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["kling-ai"].label,
             officialUrl: "https://klingai.com/",
           },
             
@@ -167,7 +168,7 @@ export const categories: Category[] = [
               "Free trial to test it first",
             ],
             goodToKnow: "Each plan limits how many videos you can make per month, so check the plan limits before you buy.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["pictory"].label,
             officialUrl: "https://pictory.ai",
           },
           {
@@ -183,7 +184,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Plans limit video minutes, and prices were raised earlier this year, so check the current plans.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["synthesia"].label,
             officialUrl: "https://www.synthesia.io",
           },
           {
@@ -199,7 +200,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The free plan has limits, so most regular users upgrade for more minutes and voices.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["fliki"].label,
             officialUrl: "https://fliki.ai",
           },
           {
@@ -215,7 +216,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Usage is measured in credits, so heavy use needs a higher plan. Only clone voices you have permission to use.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["elevenlabs"].label,
             officialUrl: "https://elevenlabs.io",
           },
         ],
@@ -239,7 +240,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Generations use credits, and higher volumes need a paid plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["adobe-firefly"].label,
             officialUrl: "https://firefly.adobe.com",
           },
           {
@@ -255,7 +256,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The free plan has limits, so regular use needs a paid plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["ideogram"].label,
             officialUrl: "https://ideogram.ai",
           },
           {
@@ -271,7 +272,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Commercial use and the full model library are on paid plans.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["krea"].label,
             officialUrl: "https://www.krea.ai",
           },
           {
@@ -287,7 +288,7 @@ export const categories: Category[] = [
               "Great for experimenting",
             ],
             goodToKnow: "It runs on credits, so heavy use needs a paid plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["openart"].label,
             officialUrl: "https://openart.ai",
           },
                     {
@@ -303,7 +304,7 @@ export const categories: Category[] = [
               "A free plan with daily AI image generations",
             ],
             goodToKnow: "AI features run on credits, and the commercial AI license is part of the paid plans. Free use is limited.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["freepik"].label,
             officialUrl: "https://www.freepik.com/",
           },
             
@@ -328,7 +329,7 @@ export const categories: Category[] = [
               "Team features on paid plans",
             ],
             goodToKnow: "AI features use credits, so heavy use of summaries may need a higher plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["fireflies"].label,
             officialUrl: "https://fireflies.ai",
           },
           {
@@ -344,7 +345,7 @@ export const categories: Category[] = [
               "Team and CRM features on paid plans",
             ],
             goodToKnow: "The free plan caps the number of advanced AI summaries each month.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["fathom"].label,
             officialUrl: "https://fathom.ai",
           },
           {
@@ -360,7 +361,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The free plan limits monthly minutes and meeting length.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["otter"].label,
             officialUrl: "https://otter.ai",
           },
           {
@@ -376,7 +377,7 @@ export const categories: Category[] = [
               "CRM and sales tools on paid plans",
             ],
             goodToKnow: "The free plan limits monthly AI summaries.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["tldv"].label,
             officialUrl: "https://tldv.io",
           },
           {
@@ -392,7 +393,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "The free plan has tight monthly and per-session limits, and there is no built-in CRM sync.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["notta"].label,
             officialUrl: "https://www.notta.ai",
           },
         ],
@@ -416,7 +417,7 @@ export const categories: Category[] = [
               "Free trial and a limited free account",
             ],
             goodToKnow: "It has a lot of features, so it takes time to learn, and costs add up on higher plans.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["semrush"].label,
             officialUrl: "https://www.semrush.com",
           },
           {
@@ -432,7 +433,7 @@ export const categories: Category[] = [
               "Good for ongoing content work",
             ],
             goodToKnow: "Plans limit how many documents you can create, and there is no free plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["surfer-seo"].label,
             officialUrl: "https://surferseo.com",
           },
           {
@@ -448,7 +449,7 @@ export const categories: Category[] = [
               "Free trial available",
             ],
             goodToKnow: "Plans include a set number of content analyses each month, and it is less polished than pricier tools.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["neuronwriter"].label,
             officialUrl: "https://neuronwriter.com",
           },
           {
@@ -464,7 +465,7 @@ export const categories: Category[] = [
               "Lower entry price than some rivals",
             ],
             goodToKnow: "Plans and limits vary, so check the billing terms carefully after any free trial.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["frase"].label,
             officialUrl: "https://www.frase.io",
           },
           {
@@ -480,7 +481,7 @@ export const categories: Category[] = [
               "Free trial to test it",
             ],
             goodToKnow: "Plans change often and some features sit on higher plans, so check what is included.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["writesonic"].label,
             officialUrl: "https://writesonic.com",
           },
         ],
@@ -504,7 +505,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "The AI assistant is billed per conversation on top of your plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["tidio"].label,
             officialUrl: "https://www.tidio.com",
           },
           {
@@ -520,7 +521,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Usage is measured in message credits, and heavier AI models use more of them.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["chatbase"].label,
             officialUrl: "https://www.chatbase.co",
           },
           {
@@ -536,7 +537,7 @@ export const categories: Category[] = [
               "A free plan for testing",
             ],
             goodToKnow: "The free plan is for prototyping only, since live use needs a paid plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["landbot"].label,
             officialUrl: "https://landbot.io",
           },
           {
@@ -552,7 +553,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "It has a steeper learning curve than simpler tools, and AI usage is billed on top.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["botpress"].label,
             officialUrl: "https://botpress.com",
           },
           {
@@ -568,7 +569,7 @@ export const categories: Category[] = [
               "Built with company data security in mind",
             ],
             goodToKnow: "It is priced for businesses and has no free plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["customgpt"].label,
             officialUrl: "https://customgpt.ai",
           },
         ],
@@ -596,7 +597,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The lowest advertised prices need a long commitment, and plans renew at a higher price. Check the renewal price before you buy.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["hostinger"].label,
         officialUrl: 'https://www.hostinger.com/',
       },
       {
@@ -614,7 +615,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Compare the total first-term cost and renewal terms on the official website. Current renewal price: see website.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["bluehost"].label,
         officialUrl: 'https://www.bluehost.com/',
       },
       {
@@ -632,7 +633,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is a little more technical than shared hosting. Email is not included and is an add-on. A free 3-day trial is available.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["cloudways"].label,
         officialUrl: 'https://www.awin1.com/cread.php?awinmid=89935&awinaffid=3134673&campaign=fivepicked&ued=https%3A%2F%2Fwww.cloudways.com%2F&platform=pl',
       },
       {
@@ -650,7 +651,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is the most expensive option in this list and works with WordPress only. Plans are limited by monthly visits.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["kinsta"].label,
         officialUrl: 'https://kinsta.com/',
       },
       {
@@ -668,7 +669,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Promotional domain prices often rise at renewal, so check the renewal price before you buy.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["namecheap"].label,
         officialUrl: 'https://www.namecheap.com/',
       },
     ],
@@ -694,7 +695,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Long plans are much cheaper than monthly billing, and renewal prices are higher than the first-term price.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["nordvpn"].label,
         officialUrl: 'https://nordvpn.com',
       },
       {
@@ -712,7 +713,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The low price is for long plans paid upfront, and renewals cost more than the first term.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["surfshark"].label,
         officialUrl: 'https://surfshark.com',
       },
       {
@@ -730,7 +731,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Plans and prices have changed often this year, so check the current price before you buy.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["expressvpn"].label,
         officialUrl: 'https://www.expressvpn.com',
       },
       {
@@ -748,7 +749,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free plan has fewer servers and lower speeds than paid plans, and long-term pricing is slightly higher than the cheapest rivals.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["proton-vpn"].label,
         officialUrl: 'https://protonvpn.com',
       },
       {
@@ -766,7 +767,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is a US-based company and has no free plan; the lowest price needs a 3-year commitment paid upfront.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["private-internet-access"].label,
         officialUrl: 'https://www.privateinternetaccess.com',
       },
     ],
@@ -792,7 +793,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Certificates and graded work need a paid plan, and individual courses are priced separately from Coursera Plus.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["coursera"].label,
         officialUrl: 'https://www.coursera.org',
       },
       {
@@ -810,7 +811,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Annual plans are billed upfront and usually can’t be refunded, and prices have changed a few times this year, so check before you buy.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["datacamp"].label,
         officialUrl: 'https://www.datacamp.com',
       },
       {
@@ -828,7 +829,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It mainly sells yearly memberships, and it does not give completion certificates.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["skillshare"].label,
         officialUrl: 'https://www.skillshare.com',
       },
       {
@@ -846,7 +847,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It focuses on coding only, so it is not the right choice if you want other subjects.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["scrimba"].label,
         officialUrl: 'https://scrimba.com',
       },
       {
@@ -864,7 +865,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is billed yearly only and renews automatically, and it does not give completion certificates.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["masterclass"].label,
         officialUrl: 'https://www.masterclass.com',
       },
     ],
@@ -890,7 +891,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free plan has limits, and extras like more users and advanced tools need a paid plan. Prices rise as your list grows.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["mailerlite"].label,
         officialUrl: 'https://www.mailerlite.com',
       },
       {
@@ -908,7 +909,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Paid plans get pricey as your list grows, and prices have gone up recently, so compare before you commit.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["kit"].label,
         officialUrl: 'https://kit.com',
       },
       {
@@ -926,7 +927,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Some features, such as webinars, sit on higher plans, and costs climb as your list grows.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["getresponse"].label,
         officialUrl: 'https://www.getresponse.com',
       },
       {
@@ -944,7 +945,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Check the current plan terms for monetization features and any additional charges before choosing.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["beehiiv"].label,
         officialUrl: 'https://www.beehiiv.com',
       },
       {
@@ -962,7 +963,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Design options are more limited than dedicated website builders, and the interface can take a little getting used to.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["systeme-io"].label,
         officialUrl: 'https://systeme.io',
       },
     ],
@@ -988,7 +989,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is subscription-only with no one-time purchase, and it takes some time to learn.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["adobe-premiere-pro"].label,
         officialUrl: 'https://www.adobe.com/products/premiere.html',
       },
       {
@@ -1006,7 +1007,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free version adds a watermark to exports, and some AI features use credits.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["filmora"].label,
         officialUrl: 'https://filmora.wondershare.com',
       },
       {
@@ -1024,7 +1025,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Plans changed in 2026 and AI generation allowances differ by plan, so check what is included. Annual billing is much cheaper than monthly.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["envato-elements"].label,
         officialUrl: 'https://elements.envato.com',
       },
       {
@@ -1042,7 +1043,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'The free plan adds a watermark and limits quality, and paid plans cap monthly recording hours.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["riverside"].label,
         officialUrl: 'https://riverside.com',
       },
       {
@@ -1060,7 +1061,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It costs more than most beginner editors, and exports from the free trial carry a watermark.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["camtasia"].label,
         officialUrl: 'https://www.techsmith.com/video-editor.html',
       },
     ],
@@ -1090,7 +1091,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "It feels most at home on Apple devices.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["craft"].label,
             officialUrl: "https://www.craft.do",
           },
           {
@@ -1106,7 +1107,7 @@ export const categories: Category[] = [
               "A free plan to start",
             ],
             goodToKnow: "It works differently from folder-based apps, so expect a short learning curve.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["capacities"].label,
             officialUrl: "https://capacities.io",
           },
           {
@@ -1122,7 +1123,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "The free plan has limits, and newer apps offer more modern features.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["evernote"].label,
             officialUrl: "https://evernote.com",
           },
           {
@@ -1138,7 +1139,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It is more powerful than a simple notes app, so it takes more time to set up.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["coda"].label,
             officialUrl: "https://coda.io",
           },
           {
@@ -1154,7 +1155,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "AI features are best on paid plans, and it is a newer app.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["mem"].label,
             officialUrl: "https://mem.ai",
           },
         ],
@@ -1178,7 +1179,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It has a lot of options, so setup takes time, and very large workspaces can feel slow.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["clickup"].label,
             officialUrl: "https://clickup.com",
           },
           {
@@ -1194,7 +1195,7 @@ export const categories: Category[] = [
               "A free plan for very small teams",
             ],
             goodToKnow: "Paid plans have a minimum number of seats, and costs rise on higher tiers.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["monday-com"].label,
             officialUrl: "https://monday.com",
           },
           {
@@ -1210,7 +1211,7 @@ export const categories: Category[] = [
               "A free plan for small teams",
             ],
             goodToKnow: "Paid plans have a minimum number of seats, and advanced features sit on higher tiers.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["asana"].label,
             officialUrl: "https://asana.com",
           },
           {
@@ -1226,7 +1227,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "Mid-tier plans cost more than some rivals, and the free plan is basic.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["wrike"].label,
             officialUrl: "https://www.wrike.com",
           },
           {
@@ -1242,7 +1243,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It is more specialized than general task tools, so it suits client-based teams best.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["teamwork"].label,
             officialUrl: "https://www.teamwork.com",
           },
         ],
@@ -1266,7 +1267,7 @@ export const categories: Category[] = [
               "Optional encryption add-on",
             ],
             goodToKnow: "Encryption is a paid add-on, and lifetime plans cost more upfront.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["pcloud"].label,
             officialUrl: "https://www.pcloud.com",
           },
           {
@@ -1282,7 +1283,7 @@ export const categories: Category[] = [
               "Easy file sharing",
             ],
             goodToKnow: "Plans limit how many devices you can connect, so check the details before you choose.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["sync-com"].label,
             officialUrl: "https://www.sync.com",
           },
           {
@@ -1298,7 +1299,7 @@ export const categories: Category[] = [
               "Works with other Proton apps",
             ],
             goodToKnow: "It costs more per gigabyte than some rivals, and because files are encrypted, losing your password can make recovery difficult.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["proton-drive"].label,
             officialUrl: "https://proton.me/drive",
           },
           {
@@ -1314,7 +1315,7 @@ export const categories: Category[] = [
               "Affordable plans",
             ],
             goodToKnow: "Plans offer less storage than some rivals, and it is a newer service.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["icedrive"].label,
             officialUrl: "https://icedrive.net",
           },
           {
@@ -1330,7 +1331,7 @@ export const categories: Category[] = [
               "A free plan with 2 GB",
             ],
             goodToKnow: "Free storage is small, and Dropbox does not use zero-knowledge encryption.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["dropbox"].label,
             officialUrl: "https://www.dropbox.com",
           },
         ],
@@ -1354,7 +1355,7 @@ export const categories: Category[] = [
               "Free plan with AI credits",
             ],
             goodToKnow: "Free decks carry Gamma branding, and AI credits are limited by plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["gamma"].label,
             officialUrl: "https://gamma.app",
           },
           {
@@ -1370,7 +1371,7 @@ export const categories: Category[] = [
               "Team features on higher plans",
             ],
             goodToKnow: "There is no free plan, only a free trial.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["beautiful-ai"].label,
             officialUrl: "https://www.beautiful.ai",
           },
           {
@@ -1386,7 +1387,7 @@ export const categories: Category[] = [
               "A free plan for small teams",
             ],
             goodToKnow: "Some team features need paid plans.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["pitch"].label,
             officialUrl: "https://pitch.com",
           },
           {
@@ -1402,7 +1403,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "The free plan keeps presentations public, and the format feels different from classic slides.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["prezi"].label,
             officialUrl: "https://prezi.com",
           },
           {
@@ -1418,7 +1419,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "Many premium features need a paid plan.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["visme"].label,
             officialUrl: "https://www.visme.co",
           },
         ],
@@ -1442,7 +1443,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "Complex scenarios take practice, and usage is measured in credits.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["make"].label,
             officialUrl: "https://www.make.com",
           },
           {
@@ -1458,7 +1459,7 @@ export const categories: Category[] = [
               "Cloud option if you don’t want a server",
             ],
             goodToKnow: "It is more technical than other tools, and self-hosting means you manage the server.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["n8n"].label,
             officialUrl: "https://n8n.io",
           },
           {
@@ -1474,7 +1475,7 @@ export const categories: Category[] = [
               "A free plan to try it",
             ],
             goodToKnow: "Its app library is smaller than the biggest tools’, and the interface is simpler.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["pabbly-connect"].label,
             officialUrl: "https://www.pabbly.com/connect/",
           },
           {
@@ -1490,7 +1491,7 @@ export const categories: Category[] = [
               "Simple per-flow pricing",
             ],
             goodToKnow: "It has fewer integrations than the biggest tools, and it is a newer platform.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["activepieces"].label,
             officialUrl: "https://www.activepieces.com",
           },
           {
@@ -1506,7 +1507,7 @@ export const categories: Category[] = [
               "A free plan available",
             ],
             goodToKnow: "It is a newer platform with a smaller community than the leaders.",
-            startingPrice: 'See website',
+            startingPrice: verifiedPricing["latenode"].label,
             officialUrl: "https://latenode.com",
           },
         ],
@@ -1534,7 +1535,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Service fees apply to both buyers and sellers, and quality varies, so check reviews and portfolios before you order.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["fiverr"].label,
         officialUrl: 'https://www.fiverr.com',
       },
       {
@@ -1552,7 +1553,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Freelancers pay service fees and clients may pay a marketplace fee, so check the current fee rules before you start.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["upwork"].label,
         officialUrl: 'https://www.upwork.com',
       },
       {
@@ -1570,7 +1571,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It costs more than casual marketplaces, and refund options narrow as a contest moves forward.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["99designs"].label,
         officialUrl: 'https://99designs.com',
       },
       {
@@ -1588,7 +1589,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'With so many bidders, take time to review profiles and past work before you choose.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["freelancer-com"].label,
         officialUrl: 'https://www.freelancer.com',
       },
       {
@@ -1606,7 +1607,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is aimed at businesses, and rates are higher than on open marketplaces, so it is not for tiny budgets.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["toptal"].label,
         officialUrl: 'https://www.toptal.com',
       },
     ],
@@ -1632,7 +1633,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It is a paid subscription after the first lesson, and longer plans cost far less per month than short ones.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["babbel"].label,
         officialUrl: 'https://www.awin1.com/cread.php?awinmid=9659&awinaffid=3134673&campaign=fivepicked&platform=pl',
       },
       {
@@ -1650,7 +1651,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It costs more than apps because you are paying for live teaching, and prices vary by language and number of classes.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["lingoda"].label,
         officialUrl: 'https://www.lingoda.com',
       },
       {
@@ -1668,7 +1669,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Quality depends on the tutor you pick, so read reviews and try a trial lesson first.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["italki"].label,
         officialUrl: 'https://www.italki.com',
       },
       {
@@ -1686,7 +1687,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'Lesson prices vary a lot between tutors, so compare a few before settling on one.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["preply"].label,
         officialUrl: 'https://preply.com',
       },
       {
@@ -1704,7 +1705,7 @@ export const categories: Category[] = [
         ],
         goodToKnow:
           'It covers fewer languages than Babbel, and the one-time price is higher upfront than a monthly app.',
-        startingPrice: 'See website',
+        startingPrice: verifiedPricing["rocket-languages"].label,
         officialUrl: 'https://www.rocketlanguages.com',
       },
     ],

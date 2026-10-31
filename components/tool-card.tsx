@@ -4,12 +4,17 @@ import type { Tool } from '@/data/categories'
 import { getReview } from '@/data/reviews'
 import { RankBadge } from '@/components/rank-badge'
 import { VisitButton } from '@/components/visit-button'
+import { verifiedPricing } from '@/data/tool-pricing'
+import { toolDecisions } from '@/data/tool-decisions'
+import { formatDate } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
 export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
   const headingId = `${tool.slug}-heading`
   const isTop = rank === 1
   const review = getReview(tool.slug)
+  const pricing = verifiedPricing[tool.slug]
+  const decision = toolDecisions[tool.slug]
 
   return (
     <div className="fp-scroll">
@@ -17,7 +22,7 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
         id={tool.slug}
         aria-labelledby={headingId}
         className={cn(
-          'relative isolate overflow-hidden rounded-3xl p-6 sm:p-10 transition-all duration-500',
+          'relative isolate overflow-hidden rounded-2xl p-5 sm:p-7 transition-colors duration-200',
           isTop ? 'fp-card-top-pick' : 'fp-card-glass'
         )}
       >
@@ -44,10 +49,12 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
           </div>
         </header>
 
-        <div className="mt-8 inline-flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl bg-background/40 border border-white/5 px-4 py-2.5 text-sm backdrop-blur-sm">
-          <span className="font-bold uppercase tracking-widest text-primary text-xs">Best for</span>
-          <span className="text-foreground font-medium">{tool.bestFor}</span>
-        </div>
+        <dl className="mt-6 grid gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:grid-cols-3 sm:p-5">
+          <div><dt className="text-xs font-semibold uppercase tracking-wider text-primary">Who it suits</dt><dd className="mt-2 text-sm font-semibold leading-relaxed text-foreground">{decision?.audience ?? tool.bestFor}</dd></div>
+          <div><dt className="text-xs font-semibold uppercase tracking-wider text-primary">Standout strength</dt><dd className="mt-2 text-sm font-semibold leading-relaxed text-foreground">{decision?.standout ?? tool.tagline}</dd></div>
+          <div><dt className="text-xs font-semibold uppercase tracking-wider text-primary">{pricing?.kind === 'variable' ? 'How pricing works' : 'Price & access'}</dt><dd className="mt-2 text-sm font-semibold leading-relaxed text-foreground">{tool.startingPrice}</dd></div>
+        </dl>
+        {pricing && <p className="mt-3 text-xs leading-relaxed text-muted-foreground"><a href={pricing.sourceUrl} className="text-primary underline underline-offset-4">Official source</a> · Checked <time dateTime={pricing.checkedAt}>{formatDate(pricing.checkedAt)}</time>. Currency, eligibility and billing terms apply; offers can change.</p>}
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div>
@@ -78,9 +85,7 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
         </div>
 
         <footer className="mt-8 flex flex-col gap-5 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">
-            Starting price: <span className="font-bold text-foreground text-base">{tool.startingPrice}</span>
-          </p>
+          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground"><span className="font-semibold text-foreground">Best fit:</span> {tool.bestFor}</p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             {review && (
               <Link

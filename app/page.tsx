@@ -1,3 +1,4 @@
+import { WhyFivePicked } from '@/components/home/why-five-picked'
 import { Hero } from '@/components/home/hero'
 import { EditorialSections } from '@/components/home/editorial-sections'
 import { CategoryGrid } from '@/components/home/category-grid'
@@ -21,6 +22,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       <Hero />
+      <WhyFivePicked />
       <CategoryGrid />
       <EditorialSections />
       <HowWeChooseStrip />

@@ -7,7 +7,7 @@ const delay = (i: number) => ({ '--fp-i': i }) as CSSProperties
 
 const stats = [
   { value: catalogStats.categories, label: 'Categories' },
-  { value: catalogStats.tools, label: 'Hand-picked tools' },
+  { value: catalogStats.tools >= 60 ? '60+' : catalogStats.tools, label: 'Hand-picked tools' },
   { value: 5, label: 'Picks in every list' },
 ]
 

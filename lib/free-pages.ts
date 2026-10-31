@@ -2,7 +2,7 @@ import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "Free plan" pages.
  *
- * Every page here lists only tools whose `startingPrice` mentions free.
+ * Pages compare documented access options; the VPN page explicitly distinguishes paid services.
  * Copy is hand-written per page so Google never sees thin, template-only pages.
  */
 

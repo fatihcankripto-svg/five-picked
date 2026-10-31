@@ -1,13 +1,12 @@
 import { allCategories } from '@/data/all-categories'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { siteConfig } from '@/lib/site'
 import './globals.css'
 
-const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans', display: 'swap', preload: true })
 
 // Impact site verification (value attribute, as Impact requires)
 const impactVerification = {
@@ -53,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
+    <html lang="en" className={`${geistSans.variable} bg-background`}>
       <head>
         <meta name="impact-site-verification" {...impactVerification} />
       </head>

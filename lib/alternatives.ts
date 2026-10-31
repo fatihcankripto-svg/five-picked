@@ -1,3 +1,4 @@
+import { verifiedPricing } from '@/data/tool-pricing'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "X alternatives" pages.
@@ -240,12 +241,15 @@ function buildPages(): AlternativesPageData[] {
       const alternatives = list.tools.filter((t) => t.slug !== tool.slug)
 
       // One FAQ is generated from live data so it never goes out of date.
-      const free = alternatives.filter((t) => /free/i.test(t.startingPrice)).map((t) => t.name)
+      const free = alternatives.filter((t) => {
+        const fact = verifiedPricing[t.slug]
+        return fact && (fact.kind === 'free' || fact.kind === 'trial' || /free (plan|tier|trial)/i.test(fact.label))
+      }).map((t) => t.name)
       const freeFaq: Faq = {
         question: `Are there free alternatives to ${tool.name}?`,
         answer:
           free.length > 0
-            ? `${joinNames(free)} ${free.length === 1 ? 'lists' : 'list'} a free plan, free tier or free trial. Free access is usually limited, and some free plans add watermarks, so check the current terms on each official website.`
+            ? `${joinNames(free)} ${free.length === 1 ? 'offers' : 'offer'} limited free access or a trial. Free access is usually limited, and some free plans add watermarks, so check the current terms on each official website.`
             : `Free access and trial availability are not confirmed here. See each official website for current plans, limits and commercial-use terms.`,
       }
 

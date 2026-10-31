@@ -1,0 +1,36 @@
+require('./audit-catalog.cjs')
+const assert = require('node:assert/strict')
+const { categoryRegistry, publishedCategories } = require('../data/all-categories.ts')
+const { verifiedPricing } = require('../data/tool-pricing.ts')
+const { toolDecisions } = require('../data/tool-decisions.ts')
+const flatten = (categories) => categories.flatMap((category) => (category.subcategories ?? [category]).flatMap((list) => list.tools.filter((tool) => !tool.comingSoon)))
+const tools = flatten(categoryRegistry)
+assert.equal(tools.length, 113)
+for (const tool of tools) {
+  const fact = verifiedPricing[tool.slug]
+  assert(fact, `Missing verified price/access observation: ${tool.slug}`)
+  assert.equal(tool.startingPrice, fact.label)
+  assert(!/see website|unverified|pending/i.test(fact.label), tool.slug)
+  assert.match(fact.sourceUrl, /^https:\/\//)
+  assert.equal(new Date(fact.checkedAt).toISOString().slice(0, 10), fact.checkedAt)
+  assert(toolDecisions[tool.slug]?.audience && toolDecisions[tool.slug]?.standout, tool.slug)
+  assert(toolDecisions[tool.slug].standout.length <= 50, tool.slug)
+  if (fact.kind === 'amount') assert(/\d/.test(fact.label), tool.slug)
+  if (fact.kind === 'free') assert(/free/i.test(fact.label), tool.slug)
+  if (fact.kind === 'trial') assert(/trial|free to try/i.test(fact.label), tool.slug)
+}
+assert.equal(Object.keys(verifiedPricing).length, tools.length)
+const counts = Object.fromEntries(['amount', 'free', 'trial', 'variable'].map((kind) => [kind, tools.filter((tool) => verifiedPricing[tool.slug].kind === kind).length]))
+console.log('PASS: 113 sourced observations and decision cues; published tools:', flatten(publishedCategories).length, counts)
+
+const fs = require('node:fs')
+const home = fs.readFileSync('.next/server/app/index.html', 'utf8')
+assert(home.includes('60+') && home.includes('Why FIVE PICKED?'), 'Homepage count or differentiator section missing')
+assert.equal((home.match(/<link[^>]+as="font"/g) ?? []).length, 1, 'Expected one preloaded webfont')
+for (const [route, slug] of [['ai-tools/video-and-voice', 'fliki'], ['web-hosting-and-domains', 'hostinger'], ['ai-tools/marketing-and-seo', 'semrush']]) {
+  const html = fs.readFileSync(`.next/server/app/${route}.html`, 'utf8')
+  assert(html.includes('Who it suits') && html.includes('Standout strength'), route)
+  assert(html.includes(toolDecisions[slug].audience) && html.includes(verifiedPricing[slug].sourceUrl), slug)
+  assert(!html.includes('See website'), `Old price placeholder present in ${route}`)
+}
+console.log('PASS: emitted decision cards, official-source links, 60+ homepage and single-font preload')
