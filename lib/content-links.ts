@@ -51,6 +51,13 @@ for (const target of contentLinks) {
     if (!links.has(target.path)) { links.add(target.path); incoming++ }
   }
 }
+// Keep the VPN topic cluster connected across its existing editorial formats.
+const vpnPages = contentLinks.filter((page) => page.listPath === '/vpn-and-security')
+for (const source of vpnPages) {
+  for (const target of vpnPages) {
+    if (source.path !== target.path) graph.get(source.path)!.add(target.path)
+  }
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path))
