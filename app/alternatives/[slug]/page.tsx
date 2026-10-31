@@ -57,7 +57,7 @@ export default async function AlternativesPage({ params }: Props) {
   const title = titleFor(tool.name)
   const url = absoluteUrl(`/alternatives/${page.slug}`)
   const withPages = new Set(getAllAlternativePages().map((p) => p.slug))
-  const otherPages = getAllAlternativePages().filter((p) => p.slug !== page.slug)
+  const otherPages = getAllAlternativePages().filter((p) => p.slug !== page.slug && p.listPath === page.listPath)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -67,7 +67,7 @@ export default async function AlternativesPage({ params }: Props) {
         headline: title,
         datePublished: alternativesUpdated,
         dateModified: alternativesUpdated,
-        author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
+        author: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com', ...(page.authorBio ? { description: page.authorBio } : {}) },
         publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
         mainEntityOfPage: url,
       },
@@ -103,6 +103,7 @@ export default async function AlternativesPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
 
+      {page.authorBio && <p>{page.authorBio} Last reviewed <time dateTime={page.lastReviewedAt}>{formatLongDate(page.lastReviewedAt!)}</time>. Official-source research; no hands-on performance test is claimed.</p>}
       <h2>Why look for a {tool.name} alternative?</h2>
       <p>{summary}</p>
       <p>
@@ -140,7 +141,8 @@ export default async function AlternativesPage({ params }: Props) {
           </tbody>
         </table>
       </div>
-      <p>Prices are approximate and change often, so confirm current details on each official website before you buy.</p>
+      <p>{page.sources ? 'Amounts retain the stated currency, billing term and offer conditions. Unverified amounts are not estimated. Confirm the live offer and renewal before purchase.' : 'Prices are approximate and change often, so confirm current details on each official website before you buy.'}</p>
+      {page.sources && <p><a {...outbound(tool)}>Visit {tool.name} and check the current offer &#8599;</a></p>}
 
       <h2>
         The {alternatives.length} best {tool.name} alternatives
@@ -182,6 +184,7 @@ export default async function AlternativesPage({ params }: Props) {
         })}
       </div>
 
+      {page.sources && <><h2>Official access and pricing sources</h2><ul>{page.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>)}</ul></>}
       <h2>Frequently asked questions</h2>
       {faqs.map((faq) => (
         <div key={faq.question}>

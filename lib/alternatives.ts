@@ -1,3 +1,4 @@
+import { packageAlternativeCopies, packageAlternativeTool } from '@/lib/alternatives-package'
 import { verifiedPricing } from '@/data/tool-pricing'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
@@ -21,6 +22,10 @@ export type Faq = { question: string; answer: string }
 export type GuideLink = { href: string; label: string }
 
 type Copy = {
+  sources?: { url: string; label: string }[]
+  authorBio?: string
+  lastReviewedAt?: string
+  freeAnswer?: string
   summary: string
   reasons: string[]
   faqs: Faq[]
@@ -28,6 +33,9 @@ type Copy = {
 }
 
 export type AlternativesPageData = {
+  sources?: { url: string; label: string }[]
+  authorBio?: string
+  lastReviewedAt?: string
   slug: string
   tool: Tool
   rank: number
@@ -50,6 +58,7 @@ const flikiPictoryGuide: GuideLink = {
 }
 
 const altCopy: Record<string, Copy> = {
+  ...packageAlternativeCopies,
   fliki: {
     summary:
       'Fliki turns scripts and blog posts into narrated videos, and it is known for natural-sounding voices in many languages. That makes it a good fit for narration-led content. It is not the right tool for every video job, and the free plan has limits.',
@@ -253,16 +262,20 @@ function buildPages(): AlternativesPageData[] {
             : `Free access and trial availability are not confirmed here. See each official website for current plans, limits and commercial-use terms.`,
       }
 
+      const isPackage = Object.prototype.hasOwnProperty.call(packageAlternativeCopies, tool.slug)
       pages.push({
+        sources: copy.sources,
+        authorBio: copy.authorBio,
+        lastReviewedAt: copy.lastReviewedAt,
         slug: tool.slug,
-        tool,
+        tool: isPackage ? packageAlternativeTool(tool) : tool,
         rank: index + 1,
         listName: list.listName,
         listPath: list.listPath,
-        alternatives,
+        alternatives: isPackage ? alternatives.map(packageAlternativeTool) : alternatives,
         summary: copy.summary,
         reasons: copy.reasons,
-        faqs: [...copy.faqs, freeFaq],
+        faqs: [...copy.faqs, copy.freeAnswer ? { question: freeFaq.question, answer: copy.freeAnswer } : freeFaq],
         guides: copy.guides,
       })
     })

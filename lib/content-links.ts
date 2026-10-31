@@ -73,7 +73,30 @@ const packageCompareLinks: Record<string, Record<string, string>> = {
     '/blog/skillshare-vs-masterclass': 'Use the concise Skillshare and MasterClass enrollment framework',
   },
 }
+const alternativePackageLinks: Record<string, Record<string, string>> = {
+  '/alternatives/hostinger': {
+    '/web-hosting-and-domains': 'Explore four hosting routes beyond Hostinger',
+    '/free/best-free-web-hosting': 'Choose a Hostinger alternative by trial and renewal conditions',
+    '/quiz/web-hosting-and-domains': 'Review the other hosting options before committing',
+    '/compare/hostinger-vs-cloudways': 'See the broader Hostinger alternatives shortlist',
+  },
+  '/alternatives/nordvpn': {
+    '/vpn-and-security': 'Consider other VPN plans before choosing NordVPN',
+    '/free/vpns-with-a-free-plan': 'Find a NordVPN alternative by free access or billing needs',
+    '/quiz/vpn-and-security': 'Inspect alternative VPN access and device choices',
+    '/compare/expressvpn-vs-nordvpn': 'Compare the wider set of NordVPN alternatives',
+  },
+  '/alternatives/adobe-premiere-pro': {
+    '/video-and-design-software': 'Choose another tool for the part of production you need',
+    '/free/best-free-video-and-design-software': 'Evaluate alternatives to Premiere by export and licensing limits',
+    '/quiz/video-and-design-software': 'Review other editing, recording and media options',
+    '/compare/capcut-vs-premiere-pro': 'Explore the wider Premiere alternatives by production task',
+  },
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  for (const [target, sources] of Object.entries(alternativePackageLinks)) {
+    if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
+  }
   for (const [target, sources] of Object.entries(packageCompareLinks)) {
     if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
   }
@@ -186,9 +209,17 @@ for (const [target, sources] of Object.entries(packageCompareLinks)) {
     graph.get(target)?.add(source)
   }
 }
+for (const [target, sources] of Object.entries(alternativePackageLinks)) {
+  for (const source of Object.keys(sources)) {
+    graph.get(source)?.add(target)
+    graph.get(target)?.add(source)
+  }
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (alternativePackageLinks[page.path]?.[path]) return { ...page, title: alternativePackageLinks[page.path][path] }
+    if (alternativePackageLinks[path]?.[page.path]) return { ...page, title: `Continue with ${page.title}` }
     if (packageCompareLinks[page.path]?.[path]) return { ...page, title: packageCompareLinks[page.path][path] }
     if (packageCompareLinks[path]?.[page.path]) {
       const labels: Record<string, string> = {

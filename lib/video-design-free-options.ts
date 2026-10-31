@@ -63,6 +63,7 @@ export const videoDesignFreeOptions = [
 ] as const
 
 export const videoDesignFreeLinks = [
+  { path: '/alternatives/adobe-premiere-pro', label: 'Find a Premiere alternative for editing, recording or assets' },
   { path: '/compare/capcut-vs-premiere-pro', label: 'Compare CapCut and Premiere before choosing an export workflow' },
   { path: '/quiz/video-and-design-software', label: 'Match a video or design tool to your production needs' },
   { path: '/video-and-design-software', label: 'Compare the full video and design software shortlist' },

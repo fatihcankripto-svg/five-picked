@@ -35,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
     route('/guides'), ...guides.map((guide) => route(guide.path, guide.path === '/guides/ai-voice-commercial-use' ? editorialDates.commercialVoiceGuide : editorialDates.guides)),
     route('/reviews'), ...reviews.map((review) => route(`/reviews/${review.toolSlug}`, review.updated)),
+    // The alternatives registry includes Hostinger, NordVPN and Premiere alongside existing pages.
     route('/alternatives'), ...getAllAlternativePages().map((page) => route(`/alternatives/${page.slug}`, alternativesUpdated)),
     route('/tools'),
     route('/tools/text-to-speech-duration', editorialDates.calculators),
