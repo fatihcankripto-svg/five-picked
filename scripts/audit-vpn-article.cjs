@@ -1,0 +1,28 @@
+require('./audit-catalog.cjs')
+const assert = require('node:assert/strict')
+const fs = require('node:fs')
+const { blogPosts } = require('../lib/blog-pages.ts')
+const posts = blogPosts.filter((post) => post.slug === 'vpn-speed-test-2026')
+assert.equal(posts.length, 1)
+const post = posts[0]
+const words = post.content.replace(/<[^>]*>/g, ' ').trim().split(/\s+/).length
+assert(words >= 1200)
+assert.equal(post.category, 'VPN & Security')
+assert.equal(post.faqs.length, 4)
+assert.deepEqual(post.keywords, ['vpn speed test 2026', 'fastest vpn 2026', 'nordvpn vs expressvpn speed', 'vpn ping test', 'best vpn for streaming speed'])
+const expectedLinks = ['/vpn-and-security', '/free/vpns-with-a-free-plan', '/guides/how-to-choose-a-vpn', '/quiz/vpn-and-security']
+assert.deepEqual(post.relatedLinks.map((link) => link.path), expectedLinks)
+assert(!/[$€£]\s*\d/.test(post.content), 'The article must not contain price quotations')
+assert(post.title.includes('How to Compare'), 'An unperformed benchmark must not be titled as completed research')
+for (const url of ['https://nordvpn.com/', 'https://www.expressvpn.com/', 'https://surfshark.com/', 'https://protonvpn.com/', 'https://www.privateinternetaccess.com/']) assert(post.content.includes(`href="${url}"`), `Missing direct official link: ${url}`)
+for (const faq of post.faqs) assert(post.content.includes(`<h3>${faq.question}</h3>`) && post.content.includes(faq.answer), 'FAQ data must agree with visible content')
+const tables = [...post.content.matchAll(/<table>([\s\S]*?)<\/table>/g)]
+assert.equal(tables.length, 2)
+assert.equal((tables[0][1].match(/<td>Not measured<\/td>/g) ?? []).length, 15)
+assert.equal((tables[0][1].match(/<td>Not tested<\/td>/g) ?? []).length, 5)
+assert(tables[1][1].includes('Hypothetical calculation only'))
+const html = fs.readFileSync('.next/server/app/blog/vpn-speed-test-2026.html', 'utf8')
+assert(html.includes('not a completed product benchmark'))
+assert(!html.includes('"@type":"Dataset"'), 'A hypothetical worksheet must not be presented as original measurement data')
+assert(fs.readFileSync('.next/server/app/sitemap.xml.body', 'utf8').includes('/blog/vpn-speed-test-2026'))
+console.log(`PASS: one ${words}-word article, five direct provider links, four FAQs, disclosure and sitemap coverage`)
