@@ -1,9 +1,14 @@
+import { packageReviews } from '@/data/reviews-package'
 import { editorialDates } from '@/lib/editorial-dates'
 export type ReviewSection = { heading: string; paragraphs: string[] }
 export type ReviewLink = { label: string; href: string; note: string }
 export type ReviewFaq = { question: string; answer: string }
 
 export type Review = {
+  startingPrice?: string
+  audience?: string
+  authorBio?: string
+  sources?: { url: string; label: string }[]
   toolSlug: string
   name: string
   officialUrl: string
@@ -23,6 +28,7 @@ export type Review = {
 }
 
 export const reviews: Review[] = [
+  ...packageReviews,
   {
     toolSlug: 'cloudways',
     name: 'Cloudways',

@@ -63,6 +63,7 @@ export const hostingOffers = [
 ] as const
 
 export const hostingGuideLinks = [
+  { path: '/reviews/hostinger', label: 'Read the Hostinger review before accepting the hosting term' },
   { path: '/alternatives/hostinger', label: 'Compare the other four hosting choices beyond Hostinger' },
   { path: '/quiz/web-hosting-and-domains', label: 'Find a hosting match for your site and experience' },
   { path: '/web-hosting-and-domains', label: 'Compare our five web hosting picks' },

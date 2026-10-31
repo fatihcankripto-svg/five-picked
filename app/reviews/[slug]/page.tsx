@@ -72,7 +72,7 @@ export default async function ReviewPage({ params }: PageProps) {
       description: review.description,
       datePublished: review.published,
       dateModified: review.updated,
-      author: organization,
+      author: { ...organization, ...(review.authorBio ? { description: review.authorBio } : {}) },
       publisher: organization,
       mainEntityOfPage: url,
     },
@@ -111,6 +111,7 @@ export default async function ReviewPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      {review.authorBio && <p>{review.authorBio} Last reviewed <time dateTime={review.updated}>{formatDate(review.updated)}</time>.</p>}
       <h2>Quick verdict</h2>
       <p>{review.verdict}</p>
       <div className="not-prose mt-4">{visit}</div>
@@ -121,11 +122,11 @@ export default async function ReviewPage({ params }: PageProps) {
           <tbody>
             <tr className="border-b border-border">
               <td className="px-4 py-3 font-medium">Best for</td>
-              <td className="px-4 py-3">{found?.tool.bestFor ?? review.bestFor[0]}</td>
+              <td className="px-4 py-3">{review.audience ?? found?.tool.bestFor ?? review.bestFor[0]}</td>
             </tr>
             <tr className="border-b border-border">
               <td className="px-4 py-3 font-medium">Starting price</td>
-              <td className="px-4 py-3">{found?.tool.startingPrice ?? 'See the official website'}</td>
+              <td className="px-4 py-3">{review.startingPrice ?? found?.tool.startingPrice ?? 'See the official website'}</td>
             </tr>
             {found && (
               <tr>
@@ -175,6 +176,7 @@ export default async function ReviewPage({ params }: PageProps) {
         ))}
       </ul>
 
+      {review.sources && <><h2>Official sources and offer conditions</h2><ul>{review.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>)}</ul></>}
       <h2>Frequently asked questions</h2>
       {review.faqs.map((faq) => (
         <div key={faq.question}>

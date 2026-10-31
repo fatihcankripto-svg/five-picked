@@ -114,7 +114,33 @@ const secondCompareLinks: Record<string, Record<string, string>> = {
     '/blog/real-cost-of-freelancing-2026': 'Use the Upwork and Freelancer.com decision framework',
   },
 }
+const packageReviewLinks: Record<string, Record<string, string>> = {
+  '/reviews/nordvpn': {
+    '/vpn-and-security': 'Read the NordVPN offer and fit assessment',
+    '/free/vpns-with-a-free-plan': 'Check NordVPN’s paid-access decision in detail',
+    '/quiz/vpn-and-security': 'Review NordVPN billing and plan boundaries before subscribing',
+    '/compare/expressvpn-vs-nordvpn': 'Inspect the full NordVPN source-based review',
+    '/alternatives/nordvpn': 'Revisit NordVPN’s documented strengths and limitations',
+  },
+  '/reviews/hostinger': {
+    '/web-hosting-and-domains': 'Read the Hostinger pricing and suitability review',
+    '/free/best-free-web-hosting': 'Assess the Hostinger introductory term and refund conditions',
+    '/quiz/web-hosting-and-domains': 'Review Hostinger’s purchase commitment before choosing',
+    '/compare/hostinger-vs-cloudways': 'Inspect Hostinger’s documented offer in more detail',
+    '/alternatives/hostinger': 'Check whether Hostinger itself fits your site requirements',
+  },
+  '/reviews/semrush': {
+    '/ai-tools': 'Read the Semrush research-toolkit review',
+    '/ai-tools/marketing-and-seo': 'Assess Semrush pricing, access and reporting constraints',
+    '/free/best-free-ai-marketing-and-seo-tools': 'Review Semrush’s ongoing account and toolkit boundaries',
+    '/quiz/ai-tools-marketing-and-seo': 'Check Semrush plan fit before purchasing a toolkit',
+    '/compare/semrush-vs-surfer-seo': 'Inspect the full Semrush source-based assessment',
+  },
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  for (const [target, sources] of Object.entries(packageReviewLinks)) {
+    if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
+  }
   for (const [target, sources] of Object.entries(secondCompareLinks)) {
     if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
   }
@@ -245,9 +271,17 @@ for (const [target, sources] of Object.entries(secondCompareLinks)) {
     graph.get(target)?.add(source)
   }
 }
+for (const [target, sources] of Object.entries(packageReviewLinks)) {
+  for (const source of Object.keys(sources)) {
+    graph.get(source)?.add(target)
+    graph.get(target)?.add(source)
+  }
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (packageReviewLinks[page.path]?.[path]) return { ...page, title: packageReviewLinks[page.path][path] }
+    if (packageReviewLinks[path]?.[page.path]) return { ...page, title: `Continue your research: ${page.title}` }
     if (secondCompareLinks[page.path]?.[path]) return { ...page, title: secondCompareLinks[page.path][path] }
     if (secondCompareLinks[path]?.[page.path]) {
       const labels: Record<string, string> = {
