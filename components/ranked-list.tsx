@@ -1,3 +1,4 @@
+import { hasDesignFoundation } from '@/lib/design-system'
 import { categoryBodyCopy, toolBodyCopy, categoryClosingCopy } from '@/lib/page-body-copy'
 import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
@@ -27,6 +28,7 @@ export function RankedList({
   path: string
   breadcrumbs: Crumb[]
 }) {
+  const designSystem = hasDesignFoundation(path)
   const copy = categoryBodyCopy(path)
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -51,7 +53,7 @@ export function RankedList({
   )
 
   return (
-    <div className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
+    <div data-design-system={designSystem ? 'foundation' : undefined} className={`mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14${designSystem ? ' fp-design-system' : ''}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
@@ -109,7 +111,7 @@ export function RankedList({
         <ol className="mt-6 flex flex-col gap-6">
           {tools.map((tool, index) => (
             <li key={tool.slug}>
-              <ToolCard tool={toolBodyCopy(path, tool)} rank={index + 1} showPricingTerms={!copy} />
+              <ToolCard tool={toolBodyCopy(path, tool)} rank={index + 1} showPricingTerms={!copy} designSystem={designSystem} />
             </li>
           ))}
         </ol>

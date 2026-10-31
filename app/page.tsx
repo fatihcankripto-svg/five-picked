@@ -24,7 +24,7 @@ export default function HomePage() {
   }
 
   return (
-    <>
+    <div className="fp-design-system" data-design-system="foundation">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
@@ -36,6 +36,6 @@ export default function HomePage() {
       <EditorialSections />
       <HowWeChooseStrip />
       <AboutTeaser />
-    </>
+    </div>
   )
 }

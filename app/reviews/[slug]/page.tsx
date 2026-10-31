@@ -107,7 +107,7 @@ export default async function ReviewPage({ params }: PageProps) {
   ]
 
   const visit = found ? (
-    <VisitButton tool={found.tool} />
+    <VisitButton tool={found.tool} designSystem={review.toolSlug === 'hostinger'} />
   ) : (
     <a
       href={review.officialUrl}
@@ -120,7 +120,7 @@ export default async function ReviewPage({ params }: PageProps) {
   )
 
   return (
-    <ContentPage path={`/reviews/${review.toolSlug}`} showRelatedContent={false}
+    <ContentPage path={`/reviews/${review.toolSlug}`} showRelatedContent={false} designSystem={review.toolSlug === 'hostinger'}
       eyebrow="Review"
       title={review.headline}
       intro={`${copy.intro} Last updated ${formatDate(review.updated)}.`}
@@ -136,7 +136,7 @@ export default async function ReviewPage({ params }: PageProps) {
       <div className="not-prose mt-4">{visit}</div>
 
       <h2>{review.name} at a glance</h2>
-      <div className="overflow-x-auto rounded-xl border border-border">
+      <div className={`overflow-x-auto rounded-xl border border-border${review.toolSlug === 'hostinger' ? ' fp-glass fp-ds-card' : ''}`}>
         <table className="w-full min-w-[28rem] text-left text-sm">
           <tbody>
             <tr className="border-b border-border">

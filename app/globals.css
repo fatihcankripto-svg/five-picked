@@ -374,3 +374,166 @@
 :where(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
 :where(h2, h3, section, article)[id] { scroll-margin-top: 6rem; }
 .fp-reveal, .fp-scroll-reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
+
+/* Phase 5 / Package 1: central tokens. Only the three opt-in routes consume them. */
+:root {
+  --ds-bg-base: #050505;
+  --ds-bg-surface: #0a0a0a;
+  --ds-bg-raised: #111111;
+  --ds-text: #fafafa;
+  --ds-text-muted: #a1a1aa;
+  --ds-gold: #fbbf24;
+  --ds-gold-deep: #f59e0b;
+  --ds-on-gold: #050505;
+  --ds-border: rgb(255 255 255 / 8%);
+  --ds-border-hover: rgb(251 191 36 / 35%);
+  --ds-glass-fill: rgb(255 255 255 / 3%);
+  --ds-glass-blur: 12px;
+  --ds-radius-md: 12px;
+  --ds-radius-lg: 16px;
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 20px;
+  --ds-space-6: 24px;
+  --ds-space-8: 32px;
+  --ds-control-height: 44px;
+  --ds-heading-tracking: -0.035em;
+  --ds-heading-leading: 1.12;
+  --ds-body-leading: 1.7;
+  --ds-shadow-card: inset 0 1px 0 rgb(255 255 255 / 4%), 0 8px 28px rgb(0 0 0 / 24%);
+  --ds-shadow-hover: inset 0 1px 0 rgb(255 255 255 / 5%), 0 12px 36px rgb(0 0 0 / 32%), 0 0 24px rgb(251 191 36 / 7%);
+  --ds-shadow-button: inset 0 1px 0 rgb(255 255 255 / 20%), 0 4px 16px rgb(245 158 11 / 10%);
+  --ds-shadow-button-hover: inset 0 1px 0 rgb(255 255 255 / 25%), 0 6px 22px rgb(245 158 11 / 18%);
+}
+
+html:has([data-design-system="foundation"]) { background: var(--ds-bg-base); }
+body:has([data-design-system="foundation"]) {
+  --background: var(--ds-bg-base);
+  --foreground: var(--ds-text);
+  --card: var(--ds-bg-raised);
+  --card-foreground: var(--ds-text);
+  --popover: var(--ds-bg-raised);
+  --popover-foreground: var(--ds-text);
+  --primary: var(--ds-gold);
+  --primary-foreground: var(--ds-on-gold);
+  --secondary: var(--ds-bg-surface);
+  --secondary-foreground: var(--ds-text);
+  --muted: var(--ds-bg-raised);
+  --muted-foreground: var(--ds-text-muted);
+  --accent: var(--ds-bg-raised);
+  --accent-foreground: var(--ds-text);
+  --border: var(--ds-border);
+  --input: rgb(255 255 255 / 14%);
+  --ring: var(--ds-gold);
+  --radius: var(--ds-radius-lg);
+}
+
+/* Opaque fallback first; blur is a progressive enhancement, not a readability dependency. */
+body:has([data-design-system="foundation"]) .fp-glass {
+  background: var(--ds-bg-raised);
+  border: 1px solid var(--ds-border);
+  box-shadow: var(--ds-shadow-card);
+}
+@supports (backdrop-filter: blur(12px)) {
+  body:has([data-design-system="foundation"]) .fp-glass {
+    background: var(--ds-glass-fill);
+    -webkit-backdrop-filter: blur(var(--ds-glass-blur));
+    backdrop-filter: blur(var(--ds-glass-blur));
+  }
+}
+body:has([data-design-system="foundation"]) .fp-ds-header {
+  border-width: 0 0 1px;
+  box-shadow: none;
+}
+body:has([data-design-system="foundation"]) .fp-ds-header-inner { background: transparent; }
+.fp-design-system :is(h1, h2, h3) { letter-spacing: var(--ds-heading-tracking); }
+.fp-design-system h1 { line-height: var(--ds-heading-leading); }
+.fp-design-system p { line-height: var(--ds-body-leading); }
+.fp-design-system .fp-aurora {
+  background: radial-gradient(55% 55% at 50% -5%, rgb(245 158 11 / 13%), transparent 70%);
+}
+.fp-design-system .fp-gradient-text {
+  background-image: linear-gradient(110deg, var(--ds-text), var(--ds-gold), var(--ds-text));
+}
+
+body:has([data-design-system="foundation"]) .fp-ds-button {
+  min-height: var(--ds-control-height);
+  padding-inline: var(--ds-space-5);
+  border-radius: var(--ds-radius-md);
+  border: 1px solid transparent;
+  font-weight: 600;
+  translate: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+body:has([data-design-system="foundation"]) .fp-ds-button-primary {
+  background: var(--ds-gold);
+  color: var(--ds-on-gold);
+  box-shadow: var(--ds-shadow-button);
+}
+body:has([data-design-system="foundation"]) .fp-ds-button-secondary {
+  background: var(--ds-glass-fill);
+  color: var(--ds-text);
+  border-color: var(--ds-border);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%);
+}
+body:has([data-design-system="foundation"]) .fp-ds-button-ghost {
+  background: transparent;
+  color: var(--ds-text);
+  box-shadow: none;
+}
+body:has([data-design-system="foundation"]) .fp-ds-button:focus-visible {
+  outline: 2px solid var(--ds-gold);
+  outline-offset: 3px;
+}
+body:has([data-design-system="foundation"]) .fp-ds-card {
+  border-radius: var(--ds-radius-lg);
+  box-shadow: var(--ds-shadow-card);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+body:has([data-design-system="foundation"]) .fp-ds-card.fp-card-top-pick {
+  border-color: var(--ds-border-hover);
+}
+body:has([data-design-system="foundation"]) .fp-ds-card.fp-spot::before { display: none; }
+body:has([data-design-system="foundation"]) .fp-ds-tool-card { padding: var(--ds-space-5); }
+
+@media (hover: hover) and (pointer: fine) {
+  body:has([data-design-system="foundation"]) .fp-ds-button:not(:disabled):hover {
+    box-shadow: var(--ds-shadow-button-hover);
+    border-color: var(--ds-border-hover);
+  }
+  body:has([data-design-system="foundation"]) .fp-ds-button-ghost:not(:disabled):hover {
+    box-shadow: none;
+    border-color: transparent;
+    color: var(--ds-gold);
+  }
+  body:has([data-design-system="foundation"]) .fp-ds-card:hover {
+    border-color: var(--ds-border-hover);
+    box-shadow: var(--ds-shadow-hover);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  body:has([data-design-system="foundation"]) .fp-ds-button {
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  }
+  body:has([data-design-system="foundation"]) .fp-ds-button:not(:disabled):hover { transform: translateY(-2px); }
+  body:has([data-design-system="foundation"]) .fp-ds-card {
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+  body:has([data-design-system="foundation"]) .fp-ds-card:hover { transform: scale(1.02); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body:has([data-design-system="foundation"]) .fp-ds-button,
+  body:has([data-design-system="foundation"]) .fp-ds-card { transform: none; translate: none; }
+}
+@media (min-width: 768px) {
+  body:has([data-design-system="foundation"]) .fp-ds-tool-card { padding: var(--ds-space-8); }
+}
+@media (max-width: 767px) {
+  body:has([data-design-system="foundation"]) .fp-ds-card {
+    background: var(--ds-bg-raised);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

@@ -1,3 +1,4 @@
+import { foundationButtonClasses } from '@/lib/design-system'
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import { ArrowRight } from 'lucide-react'
@@ -48,14 +49,14 @@ export function Hero() {
           <div className="fp-reveal mt-9 flex flex-col gap-3 sm:flex-row" style={delay(3)}>
             <a
               href="#categories"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_10px_30px_-10px] shadow-primary/60 transition-all hover:-translate-y-0.5 hover:opacity-95"
+              className={`${foundationButtonClasses('primary')} inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_10px_30px_-10px] shadow-primary/60 transition-all hover:-translate-y-0.5 hover:opacity-95`}
             >
               Browse categories
               <ArrowRight aria-hidden="true" className="size-4" />
             </a>
             <Link
               href="/how-we-choose"
-              className="inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-accent"
+              className={`${foundationButtonClasses('secondary')} inline-flex h-12 items-center justify-center rounded-lg border border-border px-6 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-accent`}
             >
               How we choose
             </Link>
