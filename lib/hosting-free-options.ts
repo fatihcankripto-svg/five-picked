@@ -63,6 +63,7 @@ export const hostingOffers = [
 ] as const
 
 export const hostingGuideLinks = [
+  { path: '/quiz/web-hosting-and-domains', label: 'Find a hosting match for your site and experience' },
   { path: '/web-hosting-and-domains', label: 'Compare our five web hosting picks' },
   { path: '/blog/kinsta-vs-cloudways', label: 'Kinsta or Cloudways: find the managed-hosting fit' },
   { path: '/guides/shared-vs-cloud-vs-managed-wordpress-hosting', label: 'Understand shared, cloud and managed WordPress hosting' },

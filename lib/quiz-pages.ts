@@ -37,6 +37,7 @@ type QuizDef = {
   metaDescription: string
   intro: string
   questions: QuizQuestion[]
+  relatedLinks?: { path: string; label: string }[]
   /** If two tools tie on score, this slug wins. */
   tieBreak: string
   faqs: { question: string; answer: string }[]
@@ -47,6 +48,80 @@ type QuizDef = {
 // ---------------------------------------------------------------------------
 
 const defs: QuizDef[] = [
+  {
+    categorySlug: 'web-hosting-and-domains',
+    metaTitle: 'Which web host is right for me? (2026 Quiz)',
+    metaDescription: 'Answer six questions about your site, budget, technical comfort and growth plans. Compare your hosting fit across Hostinger, Bluehost, Cloudways, Kinsta and Namecheap.',
+    intro: 'Six questions, a hosting recommendation and a runner-up from our existing five picks. The match uses your priorities and our published audience and strength descriptions; it is an editorial shortlist, not a capacity or performance test.',
+    tieBreak: 'hostinger',
+    questions: [
+      {
+        id: 'site-type', question: 'What kind of site are you building?',
+        options: [
+          { label: 'A budget blog or small business website', favours: { hostinger: 3, namecheap: 1 } },
+          { label: 'My first WordPress website', favours: { bluehost: 3, hostinger: 1 } },
+          { label: 'A growing business or store where server control matters', favours: { cloudways: 3, kinsta: 1 } },
+          { label: 'A busy WordPress business site', favours: { kinsta: 3, cloudways: 1 } },
+          { label: 'A domain registration and a simple starter site', favours: { namecheap: 3, hostinger: 1 } },
+        ],
+      },
+      {
+        id: 'budget', question: 'How do you want to balance cost and hosting support?',
+        options: [
+          { label: 'Keep the starting cost low', favours: { hostinger: 3, namecheap: 3, bluehost: 1 } },
+          { label: 'Prioritize straightforward WordPress setup', favours: { bluehost: 3, hostinger: 1 } },
+          { label: 'Prefer usage-based billing and room to adjust resources', favours: { cloudways: 3 } },
+          { label: 'Pay more for managed WordPress and specialist support', favours: { kinsta: 3 } },
+        ],
+      },
+      {
+        id: 'technical-comfort', question: 'How comfortable are you with hosting settings?',
+        options: [
+          { label: 'I am a beginner and want a simple dashboard', favours: { hostinger: 3, bluehost: 3, namecheap: 2 } },
+          { label: 'I use WordPress but prefer specialist hosting help', favours: { kinsta: 3, bluehost: 1 } },
+          { label: 'I am comfortable selecting infrastructure and server sizes', favours: { cloudways: 3 } },
+        ],
+      },
+      {
+        id: 'traffic', question: 'What is your traffic situation?',
+        options: [
+          { label: 'A new or small site with modest needs', favours: { hostinger: 3, namecheap: 3, bluehost: 2 } },
+          { label: 'A growing site whose resource needs may change', favours: { cloudways: 3, kinsta: 1 } },
+          { label: 'An already busy WordPress site needing managed support', favours: { kinsta: 3, cloudways: 1 } },
+        ],
+      },
+      {
+        id: 'management', question: 'What would you most like help managing?',
+        options: [
+          { label: 'Everyday hosting through an easy control panel', favours: { hostinger: 3, bluehost: 1 } },
+          { label: 'Getting WordPress set up for the first time', favours: { bluehost: 3, hostinger: 1 } },
+          { label: 'A managed cloud platform while I choose the infrastructure', favours: { cloudways: 3 } },
+          { label: 'Managed WordPress with backups, staging and expert support', favours: { kinsta: 3 } },
+          { label: 'My domain names and a small budget hosting account', favours: { namecheap: 3 } },
+        ],
+      },
+      {
+        id: 'growth', question: 'How do you expect your hosting needs to grow?',
+        options: [
+          { label: 'Stay focused on one simple site for now', favours: { hostinger: 3, namecheap: 3, bluehost: 2 } },
+          { label: 'Increase server resources or manage growing client sites', favours: { cloudways: 3 } },
+          { label: 'Keep a growing WordPress business on managed hosting', favours: { kinsta: 3, cloudways: 1 } },
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'How does this hosting quiz choose a recommendation?', answer: 'Each answer adds editorial preference points to suitable tools in our existing five-host list. The existing quiz engine shows the highest-scoring tool and names a runner-up. These points are matching rules, not product ratings or measured performance.' },
+      { question: 'Does the result guarantee that a host can handle my traffic?', answer: 'No. Traffic answers describe your needs without asserting visitor limits or measured capacity. Check the selected plan’s official resource limits and discuss your workload with the provider before buying.' },
+      { question: 'Does the quiz change the prices or affiliate links?', answer: 'No. The result card uses the existing hosting tool data, price label and outbound-link handling. Introductory terms and renewal conditions still apply; check the linked official pricing source.' },
+      { question: 'Should I compare a trial with a money-back guarantee?', answer: 'Yes. Our hosting trial and refund guide separates introductory access from paid purchases with conditional refunds. Read those conditions before committing to a hosting plan.' },
+    ],
+    relatedLinks: [
+      { path: '/free/best-free-web-hosting', label: 'Check hosting trial access and refund exclusions' },
+      { path: '/blog/kinsta-vs-cloudways', label: 'Explore the Kinsta and Cloudways management trade-offs' },
+      { path: '/guides/hostinger-vs-bluehost', label: 'Read the beginner’s Hostinger versus Bluehost guide' },
+      { path: '/compare/hostinger-vs-cloudways', label: 'Compare a starter host with flexible cloud hosting' },
+    ],
+  },
   {
     categorySlug: 'vpn-and-security',
     metaTitle: 'Which VPN is right for me? (2026 Quiz)',
@@ -815,6 +890,7 @@ export type QuizPage = {
   metaDescription: string
   intro: string
   questions: QuizQuestion[]
+  relatedLinks?: { path: string; label: string }[]
   tools: Tool[]
   tieBreak: string
   listPath: string
@@ -848,6 +924,7 @@ function buildPages(): QuizPage[] {
       metaDescription: def.metaDescription,
       intro: def.intro,
       questions: def.questions,
+      relatedLinks: def.relatedLinks,
       tools,
       tieBreak,
       listPath,

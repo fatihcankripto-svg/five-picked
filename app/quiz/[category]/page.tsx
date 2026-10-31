@@ -124,6 +124,10 @@ export default async function QuizPage({ params }: Props) {
         </Link>
         .
       </aside>
+    {page.relatedLinks && <nav aria-label="Hosting research" className="mt-14 rounded-2xl border border-border p-6 text-sm leading-relaxed">
+      <h2 className="text-xl font-semibold text-foreground">Continue your hosting research</h2>
+      <ul className="mt-4 space-y-3">{page.relatedLinks.map((link) => <li key={link.path}><Link href={link.path} className="text-foreground underline underline-offset-4 hover:text-primary">{link.label}</Link></li>)}</ul>
+    </nav>}
     <RelatedContent path={path} />
     </div>
   )
