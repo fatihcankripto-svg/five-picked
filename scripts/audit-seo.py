@@ -115,7 +115,7 @@ for file in Path('.next/server/app/blog').glob('*.html'):
    assert page['@type'] == 'WebPage' and 'reviewedBy' not in node, f'Review properties must be attached to WebPage: {file}'
    assert page['reviewedBy']['name'] in text, f'Reviewer not visible: {file}'
    assert node['dateModified'] == page['lastReviewed'] == '2026-10-31', f'Inconsistent review dates: {file}'
-   assert 'Son inceleme: 31 Ekim 2026' in text and 'Bu yazı nasıl araştırıldı?' in text, f'Missing visible review disclosure: {file}'
+   assert 'Last reviewed: October 31, 2026' in text and 'Reviewed by: Five Picked Editors' in text and 'How this article was researched' in text, f'Missing visible review disclosure: {file}'
    assert '/how-we-choose' in raw, f'Missing research-method link: {file}'
    reviewed_posts += 1
 assert reviewed_posts == 11, f'Expected 11 reviewed blog posts, got {reviewed_posts}'

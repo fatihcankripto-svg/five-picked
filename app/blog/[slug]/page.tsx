@@ -132,11 +132,11 @@ export default async function BlogPostPage({ params }: PageProps) {
         <aside aria-labelledby="about-author" className="mt-12 rounded-xl border border-border bg-muted/30 p-5">
           <h2 id="about-author" className="text-sm font-semibold text-foreground">About {post.author}</h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{post.authorBio}</p>
-          <p lang="tr" className="mt-3 text-sm text-muted-foreground">Son inceleme: <time dateTime={post.lastReviewedAt}>{new Date(`${post.lastReviewedAt}T00:00:00Z`).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
-          <p lang="tr" className="mt-2 text-sm text-muted-foreground">İnceleyen: {post.author}</p>
+          <p className="mt-3 text-sm text-muted-foreground">Last reviewed: <time dateTime={post.lastReviewedAt}>{new Date(`${post.lastReviewedAt}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
+          <p className="mt-2 text-sm text-muted-foreground">Reviewed by: {post.author}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             FIVE PICKED is an independent recommendation site. Our recommendations explain product fit and trade-offs using editorial research. They are not hands-on test reports unless a page includes a documented test. Check the official product website for current prices and limits. We never rank a tool higher because of a partnership —{' '}
-            <Link lang="tr" href="/how-we-choose" className="font-medium text-primary hover:opacity-80">Bu yazı nasıl araştırıldı?</Link>
+            <Link href="/how-we-choose" className="font-medium text-primary hover:opacity-80">How this article was researched</Link>
           </p>
         </aside>
 
