@@ -44,7 +44,17 @@ const marketingFreeReferrers: Record<string, string> = {
   '/blog/best-ai-tools-for-content-marketing': 'Check which content marketing features remain free',
   '/blog/semrush-vs-surfer-seo': 'Separate Semrush free research from Surfer trial access',
 }
+const seoComparePath = '/compare/semrush-vs-surfer-seo'
+const seoCompareReferrers: Record<string, string> = {
+  '/ai-tools': 'Choose a research or content optimization workflow',
+  '/ai-tools/marketing-and-seo': 'Decide when Semrush or Surfer fits your work',
+  '/free/best-free-ai-marketing-and-seo-tools': 'Apply these free limits to a Semrush or Surfer decision',
+  '/quiz/ai-tools-marketing-and-seo': 'Check Semrush and Surfer plan fit before subscribing',
+  '/blog/semrush-vs-surfer-seo': 'Use the concise Semrush–Surfer buying framework',
+  '/blog/best-ai-tools-for-content-marketing': 'Compare research and article editing subscriptions',
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  if (a.path === seoComparePath || b.path === seoComparePath) return Boolean(seoCompareReferrers[a.path === seoComparePath ? b.path : a.path])
   if (a.path === marketingFreePath || b.path === marketingFreePath) return Boolean(marketingFreeReferrers[a.path === marketingFreePath ? b.path : a.path])
   // The calculator directory may link its calculators across their topics.
   if ((a.path === '/tools' && b.path.startsWith('/tools/')) || (b.path === '/tools' && a.path.startsWith('/tools/'))) return true
@@ -143,9 +153,20 @@ for (const source of Object.keys(marketingFreeReferrers)) {
   graph.get(source)?.add(marketingFreePath)
   graph.get(marketingFreePath)?.add(source)
 }
+for (const source of Object.keys(seoCompareReferrers)) {
+  graph.get(source)?.add(seoComparePath)
+  graph.get(seoComparePath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === seoComparePath && seoCompareReferrers[path]) return { ...page, title: seoCompareReferrers[path] }
+    if (path === seoComparePath && page.path === '/ai-tools') return { ...page, title: 'Browse the broader AI tools category' }
+    if (path === seoComparePath && page.path === '/ai-tools/marketing-and-seo') return { ...page, title: 'Explore all five marketing and SEO options' }
+    if (path === seoComparePath && page.path === marketingFreePath) return { ...page, title: 'Check the underlying free accounts, trials and credit limits' }
+    if (path === seoComparePath && page.path === '/quiz/ai-tools-marketing-and-seo') return { ...page, title: 'Find an AI marketing tool for your working needs' }
+    if (path === seoComparePath && page.path === '/blog/semrush-vs-surfer-seo') return { ...page, title: 'Read the deeper Semrush and Surfer workflow analysis' }
+    if (path === seoComparePath && page.path === '/blog/best-ai-tools-for-content-marketing') return { ...page, title: 'See how research and writing fit a content marketing stack' }
     if (page.path === marketingFreePath && marketingFreeReferrers[path]) return { ...page, title: marketingFreeReferrers[path] }
     if (path === marketingFreePath && page.path === '/ai-tools') return { ...page, title: 'Explore the wider AI tools category' }
     if (path === marketingFreePath && page.path === '/ai-tools/marketing-and-seo') return { ...page, title: 'See all five marketing and SEO tools in context' }

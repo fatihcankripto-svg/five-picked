@@ -1,3 +1,4 @@
+import { marketingSeoFreeEditorial, marketingSeoFreeOptions } from '@/lib/marketing-seo-free-options'
 import { flightFreeEditorial, flightFreeOptions } from '@/lib/flight-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
@@ -39,7 +40,63 @@ export type ComparePair = {
 const kiwiFlight = flightFreeOptions.find((option) => option.slug === 'kiwi-com')!
 const tripFlight = flightFreeOptions.find((option) => option.slug === 'trip-com')!
 
+const semrushFree = marketingSeoFreeOptions.find((option) => option.slug === 'semrush')!
+const surferFree = marketingSeoFreeOptions.find((option) => option.slug === 'surfer-seo')!
+const seoComparePrices = {
+  semrush: 'SEO plan: US$139/month, or US$117.33/month billed annually; limited Free account available',
+  surfer: 'Discovery: US$49/month billed yearly; separate 7-day Pro trial',
+}
+
 const pairs: ComparePair[] = [
+  {
+    slug: 'semrush-vs-surfer-seo', aSlug: 'semrush', bSlug: 'surfer-seo',
+    authorBio: marketingSeoFreeEditorial.authorBio, lastReviewedAt: marketingSeoFreeEditorial.lastReviewedAt,
+    framing: 'Choose by the decision you need to make: which search opportunities to pursue, or how to improve an article already in production. This page is a short buying framework; the linked blog provides the deeper workflow analysis.',
+    verdict: 'Consider Semrush when keyword and competitor research, site auditing and tracking drive your work. Consider Surfer when your immediate job is improving a draft with content-editor guidelines. Both have overlapping functions: check the exact plan, exports and team entitlements before paying for both. Neither a free account nor a Pro trial guarantees a complete ongoing production workflow.',
+    aWinsWhen: [
+      'You need to investigate keywords and competing domains before deciding what to publish.',
+      'Site auditing and position tracking belong in the same research process as your keyword work.',
+      'An ongoing limited account is enough for occasional checks, or you can justify the selected paid toolkit.',
+    ],
+    bWinsWhen: [
+      'You already have a topic or draft and need a content-editor workflow with SEO guidance.',
+      'You want to evaluate keyword research, audit and AI writing together during the documented Pro trial.',
+      'You have checked the continuing paid plan; trial Pro features are not automatically included in entry-level Discovery.',
+    ],
+    scopeNote: 'Official pages reviewed October 31, 2026. Free access text is reused from our verified free guide. Prices below name the current advertised plans and billing basis, rather than reusing older repository price labels. Suitability is editorial guidance, not a performance, ranking or hands-on test.',
+    decisionRows: [
+      { label: 'Keyword research', a: 'Basic keyword research is listed in the SEO plan. Editorial fit: investigating demand before commissioning an article. Free usage remains limited.', b: 'Keyword research is documented in the Pro trial. Confirm the continuing paid plan rather than assuming Discovery includes every Pro feature.' },
+      { label: 'SERP and competitor analysis', a: 'The SEO plan lists competitor analysis. Editorial fit: comparing domains and opportunities before selecting work; deeper data depends on the toolkit and plan.', b: 'The Content Editor supports competitor research and outlines. Advanced SERP Analysis is listed in a higher plan; it is not presented as an entry-plan entitlement.' },
+      { label: 'Content optimization and editor', a: 'Content optimization and AI writing are available through the separately described Content Toolkit. Do not assume every SEO entry subscription includes the same content workflow.', b: 'Discovery lists AI SEO optimization guidelines and Surfy. The Content Editor organizes research, writing, optimization and publishing steps.' },
+      { label: 'AI writing', a: 'The Content Toolkit documents AI Chat, rewriting and article creation. A recurring free AI-writing quota is not established in the free guide.', b: 'AI writing is included in the Pro trial. No numeric trial generation allowance is verified, and full feature access is not unlimited usage.' },
+      { label: 'Reporting and export', a: 'Toolkit trial data exports are disabled. Paid exports depend on the chosen plan; do not buy a trial for an urgent export deliverable.', b: 'The Content Editor documents HTML and Markdown article export. Article export is different from client reporting; a trial-specific report export entitlement is not verified.' },
+      { label: 'Team and user limits', a: 'No extra-user entitlement is verified for the Free account. The pricing page sells additional users separately; confirm seats for the selected toolkit.', b: 'The reviewed trial article does not specify a numeric user allowance. Discovery’s summary is not evidence of a particular team size; confirm users separately from document and brand limits.' },
+      { label: 'Free access and quotas', a: semrushFree.access, b: surferFree.access },
+      { label: 'Trial billing conditions', a: semrushFree.trial, b: surferFree.trial },
+      { label: 'First advertised paid tier and billing', a: seoComparePrices.semrush, b: seoComparePrices.surfer },
+    ],
+    migration: [
+      { title: 'Move from Semrush-led research to Surfer-led editing when the task changes', text: 'Consider Surfer when you already have a researched brief and your bottleneck is improving the article in an editor. Evaluate one representative draft and verify the intended paid plan. This is a suggested workflow decision, not evidence of better rankings or a guaranteed one-click project transfer.' },
+      { title: 'Move from Surfer-led editing to Semrush-led research when priorities are unclear', text: 'Consider Semrush when the next decision is which topics, competitors or site issues deserve attention rather than how to revise a known draft. Keep the existing brief and source text, and compare the actual research and export entitlements before changing subscriptions.' },
+      { title: 'Who should not choose either subscription yet?', text: 'Semrush is a poor fit if you only need occasional draft-level guidance and will not use its research workflow. Surfer is a poor fit if you expect its entry plan to replace every competitor-research or reporting requirement. Neither should be purchased before a mandatory export or team entitlement is confirmed. These are editorial fit judgments, not product capability exclusions.' },
+      { title: 'Avoid paying twice for an untested overlap', text: 'List the research, drafting, optimization and reporting tasks you actually need. Buy both only when each fills a documented gap in the selected plans. A lower entry headline is not a like-for-like comparison: Semrush’s Content Toolkit is separately described, and Surfer’s temporary Pro access differs from Discovery. A yearly-billed monthly equivalent is not a cancel-anytime monthly bill.' },
+    ],
+    sources: [
+      { label: 'Semrush current SEO plan prices, Free limits and included research functions', url: 'https://www.semrush.com/pricing/seo-ai-search/' },
+      { label: 'Semrush toolkit trial billing and export restrictions', url: 'https://www.semrush.com/kb/1011-subscriptions' },
+      { label: 'Semrush Content Toolkit writing and optimization features', url: 'https://www.semrush.com/kb/1536-content-toolkit-pricing-and-plans' },
+      { label: 'Surfer Discovery pricing and plan-specific features', url: 'https://surfer.ai/pricing/' },
+      { label: 'Surfer Pro trial access and automatic conversion', url: 'https://docs.surferseo.com/en/articles/12944181-how-does-the-surfer-trial-work' },
+      { label: 'Surfer Content Editor workflow and article export', url: 'https://docs.surferseo.com/en/articles/5700347-content-editor-overview' },
+    ],
+    faqs: [
+      { question: 'Is Semrush Free equivalent to Surfer’s Pro trial?', answer: 'No. Semrush provides an ongoing limited account; Surfer documents temporary Pro access. The shared free-guide limits and conditions are shown in the comparison table, not treated as equivalent production allowances.' },
+      { question: 'Does Surfer Discovery include every Pro trial feature?', answer: 'Do not assume so. The trial and the continuing paid plan are different offers. Check required keyword, audit, AI writing, user and reporting entitlements before the trial converts.' },
+      { question: 'Can I export Semrush data during a toolkit trial?', answer: 'Semrush disables data export during toolkit trials. Paid-plan export allowances do not establish a trial entitlement. Check the chosen subscription if an export is part of your deliverable.' },
+      { question: 'Should I subscribe to both?', answer: 'Only when the selected plans fill distinct needs in your actual workflow. Research and editing can overlap. This page does not claim a measured productivity gain or ranking improvement from combining them.' },
+    ],
+    listPath: '/ai-tools/marketing-and-seo', listLabel: 'The complete marketing and SEO shortlist',
+  },
   {
     slug: 'kiwi-com-vs-trip-com', aSlug: 'kiwi-com', bSlug: 'trip-com',
     authorBio: flightFreeEditorial.authorBio,
@@ -648,6 +705,19 @@ function flightCompareTool(tool: Tool, option: typeof kiwiFlight): Tool {
   }
 }
 
+function seoCompareTool(tool: Tool, isSemrush: boolean): Tool {
+  const option = isSemrush ? semrushFree : surferFree
+  const audience = isSemrush ? 'Marketers prioritizing keyword, competitor and site research' : 'Writers prioritizing a guided content-editor workflow'
+  const standout = isSemrush ? 'Research and monitoring across search opportunities' : 'Article-level SEO guidelines in the Content Editor'
+  return { ...tool, bestFor: audience, tagline: standout,
+    startingPrice: isSemrush ? seoComparePrices.semrush : seoComparePrices.surfer,
+    whatItDoes: isSemrush ? 'The advertised SEO plan combines keyword research, competitor analysis, Site Audit and Position Tracking. Check the separate Content Toolkit for the writing workflow.' : 'The editor supports researching an outline, writing, optimizing and preparing an article for publishing. Plan-specific features differ from the temporary Pro trial.',
+    strengths: [standout, option.standout],
+    goodToKnow: 'Use the sourced conditions above: ongoing access, trial features, exports and team entitlements are separate decisions.',
+    decisionOverride: { audience, standout },
+  }
+}
+
 export const comparePages: ComparePage[] = pairs.map((pair) => {
   const a = toolIndex.get(pair.aSlug)
   const b = toolIndex.get(pair.bSlug)
@@ -655,8 +725,8 @@ export const comparePages: ComparePage[] = pairs.map((pair) => {
   if (!b) throw new Error(`[FIVE PICKED] Compare "${pair.slug}" references missing tool "${pair.bSlug}".`)
   return {
     slug: pair.slug,
-    a: pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(a, kiwiFlight) : a,
-    b: pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(b, tripFlight) : b,
+    a: pair.slug === 'semrush-vs-surfer-seo' ? seoCompareTool(a, true) : pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(a, kiwiFlight) : a,
+    b: pair.slug === 'semrush-vs-surfer-seo' ? seoCompareTool(b, false) : pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(b, tripFlight) : b,
     framing: pair.framing,
     verdict: pair.verdict,
     aWinsWhen: pair.aWinsWhen,
