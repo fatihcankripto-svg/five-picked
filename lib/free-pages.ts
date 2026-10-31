@@ -1,3 +1,4 @@
+import { languageFreeOptions } from '@/lib/language-free-options'
 import { courseFreeOptions } from '@/lib/course-free-options'
 import { videoDesignFreeOptions } from '@/lib/video-design-free-options'
 import { hostingOffers } from '@/lib/hosting-free-options'
@@ -33,6 +34,25 @@ type FreeCopy = {
 }
 
 const copies: FreeCopy[] = [
+  {
+    slug: 'best-free-language-learning-apps',
+    title: 'Free Language Learning in 2026: Previews, Resources and Trials',
+    h1: 'Free language learning in 2026: what is actually included?',
+    metaTitle: 'Free Language Learning: Lesson Limits & Trials (2026)',
+    metaDescription: 'Compare free access from Babbel, Lingoda, italki, Preply and Rocket Languages: lesson previews, community practice, live-class trials and certificate limits.',
+    intro: 'These five language-learning services are not five unlimited free apps. This guide separates public practice resources, first-lesson previews, free community exchanges and time-limited live teaching, using official sources. Free tutor search does not mean free tutoring.',
+    verdict: 'For no-cost practice, start with Preply’s public English exercises or italki’s community. Try Babbel’s first lessons or Rocket’s sample content to assess a self-study course. Lingoda is the documented live-class trial, with an automatic payment afterward unless cancelled. Check certificate requirements separately from access to a lesson.',
+    toolSlugs: ['babbel', 'lingoda', 'italki', 'preply', 'rocket-languages'],
+    faqs: [
+      { question: 'Are all five language-learning services completely free?', answer: 'No. Preply offers public English exercises and italki offers free community practice. Babbel provides first-lesson previews, Rocket provides limited sample content, and Lingoda offers a time-limited live-class trial. Full courses and private tutoring have separate payment conditions.' },
+      { question: 'What does the Lingoda free trial include?', answer: 'The official FAQ describes 7 days with either 3 group classes or 1 private class, depending on the plan. Payment follows automatically unless you cancel before the trial ends.' },
+      { question: 'Does a free account include free private tutoring?', answer: 'No. italki’s free community is separate from teacher-priced private lessons. Preply’s public exercises are separate from paid tutoring and its standard paid trial lesson. A conditional replacement or checkout promotion is not a universal free lesson.' },
+      { question: 'Can I get a certificate just by trying a free lesson?', answer: 'Do not assume so. Babbel requires course completion; Lingoda requires completing a CEFR level; Preply documents at least 10 hours of platform lessons before requesting a certificate. No free learner-certificate entitlement is established here for italki community practice or Rocket trial samples.' },
+      { question: 'How long is the Rocket Languages free trial?', answer: 'The reviewed official FAQ describes the sample lessons but does not specify a fixed duration. This guide does not invent an expiry date or claim unlimited lifetime free access.' },
+    ],
+    relatedListPath: '/language-learning',
+    relatedListLabel: 'Language-learning apps and tutors: the complete shortlist',
+  },
   {
     slug: 'best-free-online-course-platforms',
     title: 'Free Online Course Platforms in 2026: Access and Certificate Limits',
@@ -508,6 +528,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-language-learning-apps') {
+      const option = languageFreeOptions.find((entry) => entry.slug === slug)!
+      return { ...tool, startingPrice: option.price, goodToKnow: `${option.access} ${option.trial}` }
     }
     if (copy.slug === 'best-free-online-course-platforms') {
       const option = courseFreeOptions.find((entry) => entry.slug === slug)!

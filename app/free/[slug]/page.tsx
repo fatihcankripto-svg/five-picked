@@ -1,3 +1,4 @@
+import { LanguageFreeOptions, LanguageFreeLinks } from '@/components/language-free-options'
 import { socialImages } from '@/lib/site'
 import { CourseFreeOptions, CourseFreeLinks } from '@/components/course-free-options'
 import { VideoDesignFreeOptions, VideoDesignFreeLinks } from '@/components/video-design-free-options'
@@ -110,6 +111,7 @@ export default async function FreePage({ params }: Props) {
         </div>
       </header>
 
+      {page.slug === 'best-free-language-learning-apps' && <LanguageFreeOptions />}
       {page.slug === 'best-free-online-course-platforms' && <CourseFreeOptions />}
       {page.slug === 'best-free-web-hosting' && <HostingFreeOptions />}
       {page.slug === 'best-free-video-and-design-software' && <VideoDesignFreeOptions />}
@@ -169,7 +171,7 @@ export default async function FreePage({ params }: Props) {
         </Link>
         .
       </aside>
-    {page.slug === 'best-free-online-course-platforms' ? <CourseFreeLinks /> : page.slug === 'best-free-video-and-design-software' ? <VideoDesignFreeLinks /> : page.slug === 'best-free-web-hosting' ? <HostingGuideLinks /> : <RelatedContent path={path} />}
+    {page.slug === 'best-free-language-learning-apps' ? <LanguageFreeLinks /> : page.slug === 'best-free-online-course-platforms' ? <CourseFreeLinks /> : page.slug === 'best-free-video-and-design-software' ? <VideoDesignFreeLinks /> : page.slug === 'best-free-web-hosting' ? <HostingGuideLinks /> : <RelatedContent path={path} />}
     </div>
   )
 }

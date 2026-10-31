@@ -63,9 +63,22 @@ for (const source of vpnPages) {
     if (source.path !== target.path) graph.get(source.path)!.add(target.path)
   }
 }
+const languageFreePath = '/free/best-free-language-learning-apps'
+const languageFreeReferrers: Record<string, string> = {
+  '/language-learning': 'Check free language practice and trial limits',
+  '/blog/preply-vs-lingoda': 'Explore no-cost language resources before booking lessons',
+  '/quiz/language-learning': 'Review free previews before choosing a paid service',
+  '/compare/babbel-vs-italki': 'See what language-learning access is genuinely free',
+  '/reviews/babbel': 'Compare Babbel’s free lessons with other starter options',
+}
+for (const source of Object.keys(languageFreeReferrers)) {
+  graph.get(source)?.add(languageFreePath)
+  graph.get(languageFreePath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === languageFreePath && languageFreeReferrers[path]) return { ...page, title: languageFreeReferrers[path] }
     if (path === '/travel/flights' && page.path === '/travel') return { ...page, title: 'Explore our travel planning shortlist' }
     if (path === '/travel/flights' && page.path === '/quiz/travel-flights') return { ...page, title: 'Find a flight booking site for your trip' }
     return page
