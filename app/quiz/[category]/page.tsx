@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
@@ -22,13 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = getQuizPage(category)
   if (!page) return {}
   const path = `/quiz/${page.slug}`
-  return {
+  return pageMetadata({
     title: page.metaTitle,
     description: page.metaDescription,
     alternates: { canonical: path },
     openGraph: { images: socialImages, title: page.metaTitle, description: page.metaDescription, url: path, type: 'website' },
     twitter: { images: socialImages, title: page.metaTitle, description: page.metaDescription },
-  }
+  })
 }
 
 export default async function QuizPage({ params }: Props) {

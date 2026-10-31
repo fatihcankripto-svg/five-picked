@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -11,13 +12,13 @@ const title = 'Which Tool Is Right for Me? — 3-Question Quizzes (2026)'
 const description =
   'Answer three quick questions and get a tool recommendation from our top 5. Free, no signup, no email.'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title,
   description,
   alternates: { canonical: path },
   openGraph: { images: socialImages, title, description, url: path, type: 'website' },
   twitter: { images: socialImages, title, description },
-}
+})
 
 export default function QuizIndexPage() {
   const jsonLd = {

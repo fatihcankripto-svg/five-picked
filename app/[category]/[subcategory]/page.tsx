@@ -1,3 +1,5 @@
+import { pageMetadata } from '@/lib/metadata'
+import { categorySeo } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -29,17 +31,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, subcategory } = await resolve(params)
   if (!category || !subcategory) return {}
 
-  const title = `${subcategory.name} (${category.name}): The 5 Best Picks`
-  const description = `${subcategory.description} See our 5 hand-picked tools, ranked 1 to 5.`
+  const { title, description } = categorySeo(subcategory.slug)
   const path = `/${category.slug}/${subcategory.slug}`
 
-  return {
+  return pageMetadata({
     title,
     description,
     alternates: { canonical: path },
     openGraph: { images: socialImages, title, description, url: path, type: 'website' },
     twitter: { images: socialImages, title, description },
-  }
+  })
 }
 
 export default async function SubcategoryPage({ params }: Props) {
@@ -50,6 +51,7 @@ export default async function SubcategoryPage({ params }: Props) {
     <RankedList
       eyebrow={`${category.name} · The 5 best`}
       title={subcategory.name}
+      heading={categorySeo(subcategory.slug).title}
       intro={`${subcategory.description} We compared the options and narrowed them down to five. Each one is ranked, with a clear note on who it suits best.`}
       tools={subcategory.tools}
       path={`/${category.slug}/${subcategory.slug}`}

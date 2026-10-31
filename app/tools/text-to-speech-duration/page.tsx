@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
@@ -12,13 +13,13 @@ const title = 'Text-to-Speech Duration Calculator (2026)'
 const description =
   'Free text-to-speech duration calculator. Paste a script and see how long the AI voiceover will run at slow, normal or fast speed.'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title,
   description,
   alternates: { canonical: path },
   openGraph: { images: socialImages, title, description, url: path, type: 'website' },
   twitter: { images: socialImages, title, description },
-}
+})
 
 const faqs = [
   {

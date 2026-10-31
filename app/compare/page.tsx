@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -11,13 +12,13 @@ const title = 'Head-to-Head Comparisons (2026)'
 const description =
   'Side-by-side comparisons of the tools we recommend. See which one wins for your use case, in one page.'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title,
   description,
   alternates: { canonical: path },
   openGraph: { images: socialImages, title, description, url: path, type: 'website' },
   twitter: { images: socialImages, title, description },
-}
+})
 
 export default function CompareIndexPage() {
   const jsonLd = {

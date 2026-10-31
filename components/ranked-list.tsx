@@ -12,6 +12,7 @@ import { absoluteUrl, formatDate, getOutboundLink } from '@/lib/site'
 export function RankedList({
   eyebrow,
   title,
+  heading,
   intro,
   tools,
   path,
@@ -19,6 +20,7 @@ export function RankedList({
 }: {
   eyebrow: string
   title: string
+  heading?: string
   intro: string
   tools: Tool[]
   path: string
@@ -58,7 +60,7 @@ export function RankedList({
       <header className="mt-10">
         <SectionMarker label={eyebrow} />
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
-          {title}
+          {heading ?? title}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
           {intro}

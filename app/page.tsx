@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { WhyFivePicked } from '@/components/home/why-five-picked'
 import { Hero } from '@/components/home/hero'
 import { EditorialSections } from '@/components/home/editorial-sections'
@@ -5,6 +6,12 @@ import { CategoryGrid } from '@/components/home/category-grid'
 import { HowWeChooseStrip } from '@/components/home/how-we-choose-strip'
 import { AboutTeaser } from '@/components/home/about-teaser'
 import { siteConfig } from '@/lib/site'
+
+export const metadata = pageMetadata({
+  title: 'Choose Your Next Tool with Confidence',
+  description: 'Find five carefully selected tools for each published list. Explore comparisons, buying guides and free-plan limits to choose what fits your needs.',
+  alternates: { canonical: '/' },
+})
 
 export default function HomePage() {
   const jsonLd = {

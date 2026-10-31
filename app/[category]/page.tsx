@@ -1,3 +1,5 @@
+import { pageMetadata } from '@/lib/metadata'
+import { categorySeo } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
@@ -23,26 +25,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategory(slug)
   if (!category) {
     const hidden = categoryRegistry.find((entry) => entry.slug === slug)
-    return hidden ? { title: `${hidden.name}: Selection in progress`, description: `Our ${hidden.name} selection is being researched. Browse our complete recommendations instead.`, robots: { index: false, follow: true }, alternates: { canonical: `/${slug}` } } : {}
+    return hidden ? pageMetadata({ title: `${hidden.name}: Selection in progress`, description: `Our ${hidden.name} selection is being researched. Browse our complete recommendations instead.`, robots: { index: false, follow: true }, alternates: { canonical: `/${slug}` } }) : {}
   }
 
-  const subCount = category.subcategories?.length ?? 0
-  const isHub = subCount > 0
-  const title = isHub
-    ? `${category.name}: ${subCount} Categories, 5 Picks Each`
-    : `${category.name}: The 5 Best Picks`
-  const description = isHub
-    ? `${category.description} Explore ${subCount} focused categories, each with exactly 5 hand-picked tools.`
-    : `${category.description} See our 5 hand-picked tools, ranked 1 to 5.`
+  const { title, description } = categorySeo(category.slug)
   const path = `/${category.slug}`
 
-  return {
+  return pageMetadata({
     title,
     description,
     alternates: { canonical: path },
     openGraph: { images: socialImages, title, description, url: path, type: 'website' },
     twitter: { images: socialImages, title, description },
-  }
+  })
 }
 
 export default async function CategoryPage({ params }: Props) {
@@ -59,6 +54,7 @@ export default async function CategoryPage({ params }: Props) {
       <RankedList
         eyebrow="The 5 best"
         title={category.name}
+        heading={categorySeo(category.slug).title}
         intro={`${category.description} We compared the options and narrowed them down to five. Each one is ranked, with a clear note on who it suits best.`}
         tools={category.tools}
         path={`/${category.slug}`}
@@ -75,7 +71,7 @@ export default async function CategoryPage({ params }: Props) {
       <header className="mt-10 max-w-3xl">
         <SectionMarker label={categoryCountLabel(subCount)} />
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
-          {category.name}
+          {categorySeo(category.slug).title}
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground text-pretty">
           {category.description} Pick the area you care about. Each one has exactly five ranked tools.

@@ -1,13 +1,14 @@
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { blogPosts } from '@/lib/blog-pages'
 import { getAllBlogCategories, readingTimeMinutes } from '@/lib/blog-utils'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Tool comparisons and buying guides',
   description: 'Plain-English buying guides and tool comparisons. Independent research, practical trade-offs and clear buying criteria.',
   alternates: { canonical: 'https://fivepicked.com/blog' },
-}
+})
 
 type BlogPageProps = {
   searchParams: Promise<{ category?: string }>

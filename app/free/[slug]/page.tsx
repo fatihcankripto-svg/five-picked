@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { MarketingSeoFreeOptions } from '@/components/marketing-seo-free-options'
 import { FlightFreeOptions } from '@/components/flight-free-options'
 import { EmailFreeOptions } from '@/components/email-free-options'
@@ -32,13 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = getFreePage(slug)
   if (!page) return {}
   const path = `/free/${page.slug}`
-  return {
+  return pageMetadata({
     title: page.metaTitle,
     description: page.metaDescription,
     alternates: { canonical: path },
     openGraph: { images: socialImages, title: page.metaTitle, description: page.metaDescription, url: path, type: 'article' },
     twitter: { images: socialImages, title: page.metaTitle, description: page.metaDescription },
-  }
+  })
 }
 
 export default async function FreePage({ params }: Props) {

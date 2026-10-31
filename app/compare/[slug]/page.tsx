@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
@@ -25,13 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const path = `/compare/${page.slug}`
   const title = `${page.a.name} vs ${page.b.name} (2026)`
   const description = `${page.framing} Which one should you pick? Compare features, price and who each is best for.`
-  return {
+  return pageMetadata({
     title,
     description,
     alternates: { canonical: path },
     openGraph: { images: socialImages, title, description, url: path, type: 'article' },
     twitter: { images: socialImages, title, description },
-  }
+  })
 }
 
 export default async function ComparePage({ params }: Props) {

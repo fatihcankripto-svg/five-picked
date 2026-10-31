@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -11,13 +12,13 @@ const title = 'Best Free Tools — Free Plans Worth Using (2026)'
 const description =
   'Compare free plans, trials and clearly labeled paid options with refund guarantees. Check what is free, what requires payment and which conditions apply.'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title,
   description,
   alternates: { canonical: path },
   openGraph: { images: socialImages, title, description, url: path, type: 'website' },
   twitter: { images: socialImages, title, description },
-}
+})
 
 export default function FreeIndexPage() {
   const jsonLd = {

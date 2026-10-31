@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { formatDate } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const post = getBlogPost(slug)
   if (!post) return {}
-  return {
+  return pageMetadata({
     title: post.metaTitle,
     description: post.metaDescription,
     keywords: post.keywords,
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'article', publishedTime: post.publishedAt, modifiedTime: post.lastReviewedAt, authors: [post.author],
     },
     twitter: { images: socialImages, card: 'summary_large_image', title: post.metaTitle, description: post.metaDescription },
-  }
+  })
 }
 
 function ArticleJsonLd({ post }: { post: BlogPost }) {

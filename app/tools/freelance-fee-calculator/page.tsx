@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
@@ -12,13 +13,13 @@ const title = 'Fiverr & Upwork Fee Calculator (2026)'
 const description =
   'Free Fiverr and Upwork fee calculator. Enter your order amount to estimate what you keep after platform fees — in USD, EUR or GBP.'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title,
   description,
   alternates: { canonical: path },
   openGraph: { images: socialImages, title, description, url: path, type: 'website' },
   twitter: { images: socialImages, title, description },
-}
+})
 
 const faqs = [
   {

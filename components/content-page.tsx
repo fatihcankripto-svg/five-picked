@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { editorialDates } from '@/lib/editorial-dates'
 import { formatDate } from '@/lib/site'
@@ -16,13 +17,13 @@ export function contentMetadata({
   description: string
   path: string
 }): Metadata {
-  return {
+  return pageMetadata({
     title,
     description,
     alternates: { canonical: path },
     openGraph: { images: socialImages, title, description, url: path, type: 'article' },
     twitter: { images: socialImages, title, description },
-  }
+  })
 }
 
 export function ContentPage({

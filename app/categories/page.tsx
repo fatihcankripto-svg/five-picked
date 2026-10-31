@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -12,13 +13,13 @@ const title = 'All categories — FIVE PICKED'
 const description =
   'Explore our recommendation categories, including those in research. Every published list contains five tools; larger categories have several focused lists.'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title,
   description,
   alternates: { canonical: path },
   openGraph: { images: socialImages, title, description, url: path, type: 'website' },
   twitter: { images: socialImages, title, description },
-}
+})
 
 export default function CategoriesHubPage() {
   const jsonLd = {
