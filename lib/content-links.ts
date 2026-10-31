@@ -53,7 +53,30 @@ const seoCompareReferrers: Record<string, string> = {
   '/blog/semrush-vs-surfer-seo': 'Use the concise Semrush–Surfer buying framework',
   '/blog/best-ai-tools-for-content-marketing': 'Compare research and article editing subscriptions',
 }
+const packageCompareLinks: Record<string, Record<string, string>> = {
+  '/compare/make-vs-n8n': {
+    '/software-and-productivity': 'Choose hosted automation or self-hosted workflow control',
+    '/software-and-productivity/automation': 'Weigh Make scenarios against n8n deployment options',
+    '/free/best-free-automation-tools': 'Apply free automation conditions to a Make or n8n choice',
+    '/quiz/software-and-productivity-automation': 'Check the operating responsibilities behind your automation match',
+  },
+  '/compare/pcloud-vs-dropbox': {
+    '/software-and-productivity': 'Compare personal storage commitments and file sharing',
+    '/software-and-productivity/cloud-storage': 'Decide between pCloud and Dropbox for your files',
+    '/free/best-free-cloud-storage': 'Compare pCloud’s unlocked allowance with Dropbox Basic',
+    '/quiz/software-and-productivity-cloud-storage': 'Review storage and collaboration tradeoffs before choosing',
+  },
+  '/compare/skillshare-vs-masterclass': {
+    '/online-courses': 'Choose project-led classes or instructor-led learning',
+    '/free/best-free-online-course-platforms': 'Compare Skillshare trial access with a MasterClass Guest Pass',
+    '/quiz/online-courses': 'Check the class format and certificate conditions behind your match',
+    '/blog/skillshare-vs-masterclass': 'Use the concise Skillshare and MasterClass enrollment framework',
+  },
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  for (const [target, sources] of Object.entries(packageCompareLinks)) {
+    if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
+  }
   if (a.path === seoComparePath || b.path === seoComparePath) return Boolean(seoCompareReferrers[a.path === seoComparePath ? b.path : a.path])
   if (a.path === marketingFreePath || b.path === marketingFreePath) return Boolean(marketingFreeReferrers[a.path === marketingFreePath ? b.path : a.path])
   // The calculator directory may link its calculators across their topics.
@@ -157,9 +180,32 @@ for (const source of Object.keys(seoCompareReferrers)) {
   graph.get(source)?.add(seoComparePath)
   graph.get(seoComparePath)?.add(source)
 }
+for (const [target, sources] of Object.entries(packageCompareLinks)) {
+  for (const source of Object.keys(sources)) {
+    graph.get(source)?.add(target)
+    graph.get(target)?.add(source)
+  }
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (packageCompareLinks[page.path]?.[path]) return { ...page, title: packageCompareLinks[page.path][path] }
+    if (packageCompareLinks[path]?.[page.path]) {
+      const labels: Record<string, string> = {
+        '/software-and-productivity': 'Explore the productivity tool categories',
+        '/software-and-productivity/automation': 'See all five automation options',
+        '/free/best-free-automation-tools': 'Inspect the existing free automation access guide',
+        '/quiz/software-and-productivity-automation': 'Match an automation platform to your responsibilities',
+        '/software-and-productivity/cloud-storage': 'Browse the complete cloud storage shortlist',
+        '/free/best-free-cloud-storage': 'Check the underlying free storage allowances',
+        '/quiz/software-and-productivity-cloud-storage': 'Find a storage service for your sharing needs',
+        '/online-courses': 'Explore the full online learning shortlist',
+        '/free/best-free-online-course-platforms': 'Read the verified course trial and certificate conditions',
+        '/quiz/online-courses': 'Match a learning platform to your goals',
+        '/blog/skillshare-vs-masterclass': 'Read the deeper Skillshare and MasterClass learning analysis',
+      }
+      return { ...page, title: labels[page.path] }
+    }
     if (page.path === seoComparePath && seoCompareReferrers[path]) return { ...page, title: seoCompareReferrers[path] }
     if (path === seoComparePath && page.path === '/ai-tools') return { ...page, title: 'Browse the broader AI tools category' }
     if (path === seoComparePath && page.path === '/ai-tools/marketing-and-seo') return { ...page, title: 'Explore all five marketing and SEO options' }

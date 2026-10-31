@@ -70,6 +70,7 @@ export const courseFreeOptions = [
 ] as const
 
 export const courseFreeLinks = [
+  { path: '/compare/skillshare-vs-masterclass', label: 'Weigh class projects against practitioner-led learning before enrolling' },
   { path: '/online-courses', label: 'Compare our five online learning platforms' },
   { path: '/blog/skillshare-vs-masterclass', label: 'Explore Skillshare projects versus MasterClass lessons' },
   { path: '/quiz/online-courses', label: 'Find a course platform for your learning goals' },

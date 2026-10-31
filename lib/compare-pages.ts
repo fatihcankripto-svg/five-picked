@@ -1,3 +1,4 @@
+import { packageComparePairs, packageCompareTool } from '@/lib/compare-package'
 import { marketingSeoFreeEditorial, marketingSeoFreeOptions } from '@/lib/marketing-seo-free-options'
 import { flightFreeEditorial, flightFreeOptions } from '@/lib/flight-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
@@ -48,6 +49,7 @@ const seoComparePrices = {
 }
 
 const pairs: ComparePair[] = [
+  ...packageComparePairs,
   {
     slug: 'semrush-vs-surfer-seo', aSlug: 'semrush', bSlug: 'surfer-seo',
     authorBio: marketingSeoFreeEditorial.authorBio, lastReviewedAt: marketingSeoFreeEditorial.lastReviewedAt,
@@ -725,8 +727,8 @@ export const comparePages: ComparePage[] = pairs.map((pair) => {
   if (!b) throw new Error(`[FIVE PICKED] Compare "${pair.slug}" references missing tool "${pair.bSlug}".`)
   return {
     slug: pair.slug,
-    a: pair.slug === 'semrush-vs-surfer-seo' ? seoCompareTool(a, true) : pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(a, kiwiFlight) : a,
-    b: pair.slug === 'semrush-vs-surfer-seo' ? seoCompareTool(b, false) : pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(b, tripFlight) : b,
+    a: packageComparePairs.some((entry) => entry.slug === pair.slug) ? packageCompareTool(a) : pair.slug === 'semrush-vs-surfer-seo' ? seoCompareTool(a, true) : pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(a, kiwiFlight) : a,
+    b: packageComparePairs.some((entry) => entry.slug === pair.slug) ? packageCompareTool(b) : pair.slug === 'semrush-vs-surfer-seo' ? seoCompareTool(b, false) : pair.slug === 'kiwi-com-vs-trip-com' ? flightCompareTool(b, tripFlight) : b,
     framing: pair.framing,
     verdict: pair.verdict,
     aWinsWhen: pair.aWinsWhen,
