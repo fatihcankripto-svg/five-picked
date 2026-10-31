@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategory(slug)
   if (!category) {
     const hidden = categoryRegistry.find((entry) => entry.slug === slug)
-    return hidden ? pageMetadata({ title: `${hidden.name}: Selection in progress`, description: `Our ${hidden.name} selection is being researched. Browse our complete recommendations instead.`, robots: { index: false, follow: true }, alternates: { canonical: `/${slug}` } }) : {}
+    return hidden ? pageMetadata({ title: `${hidden.name}: Selection in progress`, description: `Our ${hidden.name} selection is being researched. Browse our complete recommendations instead.`, robots: { index: false, follow: false }, alternates: { canonical: `/${slug}` } }) : {}
   }
 
   const { title, description } = categorySeo(category.slug)
