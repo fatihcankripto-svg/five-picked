@@ -1,3 +1,4 @@
+import { freelanceFreeOptions } from '@/lib/freelance-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — Blog / long-form articles.
@@ -783,7 +784,84 @@ const vpnSpeedTestContent = `
 <p>No. Test playback on the actual service and device, observing startup, quality, interruptions, and errors. Repeat during your normal viewing hours to assess consistency.</p>
 `
 
+
+const realCostFreelancingFaqs: BlogFaq[] = [
+  { question: 'Is a free freelance account enough to work without paying platform fees?', answer: 'No. Free registration is an access condition, not a promise that earnings, applications or withdrawals are free. Check the account, proposal, commission and payout rules separately.' },
+  { question: 'Does Upwork charge the same freelancer fee on every contract?', answer: 'No. The verified range is 0%–15% per contract. Use the percentage shown with your proposal or offer. Purchased Connects cost $0.15 each, and free monthly Connects depend on eligibility.' },
+  { question: 'Why can a small Freelancer.com job cost more than the headline percentage?', answer: 'For standard fixed-price projects, the fee is 10% or $5, whichever is greater. The minimum fee can therefore dominate a small job. The withdrawal threshold and any transfer charge are separate conditions.' },
+  { question: 'Does 99designs always charge the new-client introduction fee?', answer: 'No. The documented introduction fee is separate from the designer platform fee and has waivers for qualifying contest relationships and eligible invited new clients. Check the official conditions before including or excluding it in a quote.' },
+  { question: 'Can Toptal be described as completely free?', answer: 'Not on the basis of the reviewed public talent FAQ. It says Toptal takes no cut from talent-set rates, but it does not establish an open free-account entitlement, a universal withdrawal minimum or a transfer fee.' },
+  { question: 'Are the scenario earnings real freelancer results?', answer: 'No. They are explicitly hypothetical invoice amounts used to demonstrate arithmetic with the verified fee rules. They are not earnings statistics, platform quotes or guarantees of work.' },
+]
+
+const realCostFreelancingContent = `
+<p>A free freelance account answers a narrow question: can you enter the platform without paying a membership charge? It does not tell you what it costs to find a client, complete an order or move the proceeds into your bank account. Those are separate decisions, and treating them as the same price can make a seemingly attractive project disappointing.</p>
+<p>This guide aggregates the public freelancer-side conditions documented in our <a href="/free/best-free-freelance-platforms">verified free-account and payout guide</a>, checked on October 31, 2026. It covers Fiverr, Upwork, 99designs, Freelancer.com and Toptal. It is a dated policy comparison, not a hands-on earnings test or a prediction of what a freelancer will earn. Official sources are linked below each platform’s row.</p>
+<h2>The platform cost table: what is free and what is deducted?</h2>
+<p>Read each row across rather than picking the smallest commission. An account can be free while applications consume credits. A balance requirement can make bidding impossible without available cash. An amount can be earned but remain below a payout threshold. None of those conditions is captured by an account signup price alone.</p>
+<table><caption>Freelancer-side public conditions checked October 31, 2026; the same verified data as our free-platform guide</caption><thead><tr><th scope="col">Platform and account</th><th scope="col">Commission</th><th scope="col">Proposals and applications</th><th scope="col">Payout minimum and fee</th><th scope="col">Extra conditions and sources</th></tr></thead><tbody>
+${freelanceFreeOptions.map((option) => `<tr><th scope="row">${option.name}<p>${option.account}</p></th><td>${option.commission}</td><td>${option.proposals}</td><td>${option.payout}</td><td>${option.trial}<ul>${option.sources.map((source) => `<li><a href="${source.url}">${source.label}</a></li>`).join('')}</ul></td></tr>`).join('')}
+</tbody></table>
+<h2>Read the costs in the order they happen</h2>
+<p>Start with access. Fiverr’s free service listings and Upwork’s Basic account are different routes into a marketplace. Designer curation at 99designs and screening at Toptal create a different entry decision again. A free account is not acceptance, a client lead or a ranking guarantee. Avoid assigning a monetary value to access that has not yet produced a suitable opportunity.</p>
+<p>Next consider acquiring the work. A proposal credit is spent while competing for a job; a commission is taken when the relevant earnings event happens. Neither should disappear from your planning because the other looks modest. On Freelancer.com, distinguish the required unreserved balance from a fee: cash must be available, but holding that balance is not the same transaction as paying a project charge.</p>
+<p>Then check the payment stage. A minimum withdrawal is a release condition, whereas a transfer fee is a deduction. A platform balance below the minimum is not necessarily lost, but it is not immediately spendable in your bank either. Separate that cash-flow constraint from profitability. Currency conversion, receiving-bank charges and provider availability must be checked for the actual route you intend to use.</p>
+<h2>Which platform fits which working model?</h2>
+<h3>Fiverr: a service you can define before the client arrives</h3>
+<p>Fiverr fits a package-led decision: can you describe a repeatable deliverable, explain its boundaries and price the work before a buyer orders? Its free listing route can suit that approach, but retained earnings matter when setting scope. Do not use the displayed order amount as your spending budget. Allow for revisions and delivery work in your own estimate without inventing a platform charge for that time.</p>
+<h3>Upwork: projects where a proposal is part of the sales process</h3>
+<p>Upwork is a different model when you need to discuss a project and submit a tailored proposal. Evaluate the fit of the opportunity before spending Connects, then check the contract-specific service percentage. Optional paid features are a separate decision. Our <a href="/compare/fiverr-vs-upwork">Fiverr versus Upwork decision comparison</a> helps distinguish selling a defined package from pursuing a scoped project; a percentage alone cannot make that choice.</p>
+<h3>99designs: specialist design work with relationship-dependent costs</h3>
+<p>For a designer, separate contests from direct work. The verified designer-level fee schedule concerns 1-to-1 Projects, and a new-client introduction fee can apply on top. An existing qualifying relationship or an eligible invitation can change that part of the cost. Check the relationship before quoting, rather than assuming either that every project pays the introduction fee or that every new client qualifies for a waiver.</p>
+<h3>Freelancer.com: bidding capacity and small-job economics matter</h3>
+<p>Freelancer.com requires attention before the project starts: the free bid allowance and available-balance requirement both affect access to opportunities. For a small fixed-price job, the minimum project fee matters more than the percentage headline. A paid membership should be assessed against a real need for its documented benefits, rather than treated as an automatic requirement to begin or a guarantee that a bid will win.</p>
+<h3>Toptal: a screened network, not an interchangeable free account</h3>
+<p>Toptal’s public talent FAQ says members set their rates and the platform takes no cut from those rates. That is useful, but narrower than saying everything is free. Admission is screened and opportunities are matched. The reviewed source does not establish universal withdrawal terms. Use its published talent policy for what it actually says; do not infer undisclosed client pricing, an application fee or a transfer cost.</p>
+<p>If the working models still feel similar, use the <a href="/quiz/freelance-platforms">freelance platform matching quiz</a> to organize your preferences, then inspect the <a href="/freelance-platforms">five-platform freelance shortlist</a>. A tool match is a starting point for checking fit, not proof that its fee structure will be cheapest for your particular work.</p>
+<h2>Three hypothetical scenarios: calculate deductions without inventing fees</h2>
+<p>The following invoice amounts are illustrative inputs, not observed beginner, mid-level or high-earner averages. Profile labels describe the exercise only. Each calculation uses the verified rules above; it excludes taxes, currency conversion, unpriced upgrades and unknown provider fees. No assumed proposal spend is silently added. Use the <a href="/tools/freelance-fee-calculator">freelance fee calculator to check your own invoice assumptions</a>, entering the applicable rate rather than treating an example as a platform quote.</p>
+<h3>Scenario A: a beginner assessing a small $20 job</h3>
+<p>Assume a standard Fiverr order of $20. Retained earnings are $20 × 80% = $16, so the platform deduction is $4. If eligible earnings are withdrawn through the documented PayPal route, its $0 Fiverr withdrawal fee leaves $16 before any external costs. This exceeds that method’s $1 minimum. The arithmetic does not remove clearance, account or provider eligibility requirements.</p>
+<p>For comparison, assume a standard fixed-price Freelancer.com project worth the same $20. The percentage calculation is $20 × 10% = $2, but the rule is the greater of that result and $5. The project fee is therefore $5 and the remaining balance is $15 before any other charges. That amount alone does not meet the $50 withdrawal minimum after fees. It also does not remove the separate balance requirement for bidding.</p>
+<h3>Scenario B: a mid-level designer quoting $500 of direct work</h3>
+<p>Assume a 99designs 1-to-1 Project for an Entry Level designer, a $500 invoice and a new-client introduction fee that applies without a waiver. The platform fee is $500 × 15% = $75. The introduction charge is $500 × 20% = $100, reaching its stated cap. Combined deductions are $175, leaving $325 before Hyperwallet transfer charges, conversion or taxes.</p>
+<p>If the same relationship qualifies for a documented introduction-fee waiver, remove that $100 charge rather than the platform fee: $500 − $75 = $425 before payout-related costs. This is a conditional comparison, not a claim that a designer can select their level or obtain a waiver on demand. The result exceeds the stated payout threshold, but the separate business-entity tracking and transfer conditions still apply.</p>
+<h3>Scenario C: a high-invoice freelancer assessing a $5,000 Upwork contract</h3>
+<p>Assume $5,000 in contract earnings. At the upper endpoint of the verified service-fee range, $5,000 × 15% = $750, leaving $4,250. A single eligible Direct to Local Bank withdrawal costs $0.99, producing $4,249.01 before receiving-bank charges, conversion, proposal acquisition costs and taxes. The withdrawal must also fit the destination’s maximum; splitting transfers would change the fee calculation.</p>
+<p>At the range’s lower endpoint, the service-fee deduction is $0 and the same assumed single transfer would leave $4,999.01. These endpoints demonstrate the published range, not rates available by choice. Your actual proposal or offer determines the percentage. Purchased Connects remain $0.15 each: multiply that price by the number actually purchased for acquisition costs, without assuming a universal credit allowance or a fixed proposal count.</p>
+<h2>Keep a quote worksheet, not just a commission comparison</h2>
+<p>Mark unknown costs as unknown. A variable transfer fee is not zero, and an unpublished fee is not permission to estimate a convenient number. Likewise, no earnings cut from a talent rate does not disclose the price a client pays. Where the account or payment screen supplies a specific condition, compare it with the linked policy before accepting a project or choosing a transfer method.</p>
+<h2>Frequently asked questions</h2>
+${realCostFreelancingFaqs.map((faq) => `<h3>${faq.question}</h3><p>${faq.answer}</p>`).join('')}
+<h2>Conclusion: free describes access, not your final take-home pay</h2>
+<p>The useful question is not simply whether a marketplace lets you register for free. Ask what you must spend to pursue suitable work, what is deducted when you earn and when the remaining money can reach you. Read the account, project and payout conditions as a connected chain. A low headline fee cannot compensate for a working model that does not fit the service you sell.</p>
+`
+
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'real-cost-of-freelancing-2026',
+    title: 'The Real Cost of Freelancing in 2026: Platform Fees, Payout Limits and Hidden Charges Compared',
+    metaTitle: 'Real Cost of Freelancing: Fees & Payout Limits (2026)',
+    metaDescription: 'Compare verified freelancer fees, proposal costs and payout limits across Fiverr, Upwork, 99designs, Freelancer.com and Toptal, with clear hypothetical calculations.',
+    publishedAt: '2026-10-31',
+    updatedAt: '2026-10-31',
+    author: 'Five Picked Editors',
+    authorBio: editorialAuthorBio,
+    lastReviewedAt: '2026-10-31',
+    category: 'Freelance Platforms',
+    keywords: ['freelance platform fees 2026', 'real cost of freelancing', 'freelance payout minimums', 'Fiverr vs Upwork fees', 'free freelance platform costs'],
+    excerpt: 'Free accounts, paid applications and earnings deductions are different costs. Compare the official rules and inspect three explicitly hypothetical invoice calculations.',
+    content: realCostFreelancingContent,
+    faqs: realCostFreelancingFaqs,
+    relatedListPath: '/freelance-platforms',
+    relatedListLabel: 'Freelance platforms: the full five-tool shortlist',
+    relatedLinks: [
+      { path: '/free/best-free-freelance-platforms', label: 'Review the underlying free-access and payout observations' },
+      { path: '/compare/fiverr-vs-upwork', label: 'Compare package selling with proposal-led projects' },
+      { path: '/quiz/freelance-platforms', label: 'Find a marketplace suited to your workflow' },
+      { path: '/tools/freelance-fee-calculator', label: 'Calculate a quote with your actual platform fee' },
+    ],
+  },
   {
     slug: 'vpn-speed-test-2026',
     title: 'How to Test Your VPN Speed in 2026 (And What the Numbers Actually Mean)',

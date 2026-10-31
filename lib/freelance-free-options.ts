@@ -67,6 +67,7 @@ export const freelanceFreeOptions = [
 ]
 
 export const freelanceFreeLinks = [
+  { path: '/blog/real-cost-of-freelancing-2026', label: 'See how the verified fees affect example invoices' },
   { path: '/freelance-platforms', label: 'Compare the full freelance-platform shortlist' },
   { path: '/quiz/freelance-platforms', label: 'Match a freelance marketplace to your working style' },
   { path: '/compare/fiverr-vs-upwork', label: 'Choose between Fiverr Gigs and Upwork projects' },

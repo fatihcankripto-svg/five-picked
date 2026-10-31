@@ -86,9 +86,22 @@ for (const source of Object.keys(freelanceFreeReferrers)) {
   graph.get(source)?.add(freelanceFreePath)
   graph.get(freelanceFreePath)?.add(source)
 }
+const freelanceBlogPath = '/blog/real-cost-of-freelancing-2026'
+const freelanceBlogReferrers: Record<string, string> = {
+  '/freelance-platforms': 'Understand the full cost of finding work and getting paid',
+  '/free/best-free-freelance-platforms': 'See how the verified fees affect example invoices',
+  '/compare/fiverr-vs-upwork': 'Read the broader analysis of freelance platform costs',
+  '/quiz/freelance-platforms': 'Check commission and payout tradeoffs before signing up',
+  '/tools/freelance-fee-calculator': 'Understand the assumptions behind take-home calculations',
+}
+for (const source of Object.keys(freelanceBlogReferrers)) {
+  graph.get(source)?.add(freelanceBlogPath)
+  graph.get(freelanceBlogPath)?.add(source)
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (page.path === freelanceBlogPath && freelanceBlogReferrers[path]) return { ...page, title: freelanceBlogReferrers[path] }
     if (page.path === freelanceFreePath && freelanceFreeReferrers[path]) return { ...page, title: freelanceFreeReferrers[path] }
     if (page.path === languageFreePath && languageFreeReferrers[path]) return { ...page, title: languageFreeReferrers[path] }
     if (path === '/travel/flights' && page.path === '/travel') return { ...page, title: 'Explore our travel planning shortlist' }
