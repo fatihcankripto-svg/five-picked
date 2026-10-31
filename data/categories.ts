@@ -634,7 +634,8 @@ export const categories: Category[] = [
         goodToKnow:
           'It is a little more technical than shared hosting. Email is not included and is an add-on. A free 3-day trial is available.',
         startingPrice: verifiedPricing["cloudways"].label,
-        officialUrl: 'https://www.awin1.com/cread.php?awinmid=89935&awinaffid=3134673&campaign=fivepicked&ued=https%3A%2F%2Fwww.cloudways.com%2F&platform=pl',
+        officialUrl: 'https://www.cloudways.com/',
+        affiliateUrl: 'https://www.awin1.com/cread.php?awinmid=89935&awinaffid=3134673&campaign=fivepicked&ued=https%3A%2F%2Fwww.cloudways.com%2F&platform=pl',
       },
       {
         slug: 'kinsta',
@@ -1634,7 +1635,8 @@ export const categories: Category[] = [
         goodToKnow:
           'It is a paid subscription after the first lesson, and longer plans cost far less per month than short ones.',
         startingPrice: verifiedPricing["babbel"].label,
-        officialUrl: 'https://www.awin1.com/cread.php?awinmid=9659&awinaffid=3134673&campaign=fivepicked&platform=pl',
+        officialUrl: 'https://www.babbel.com/',
+        affiliateUrl: 'https://www.awin1.com/cread.php?awinmid=9659&awinaffid=3134673&campaign=fivepicked&platform=pl',
       },
       {
         slug: 'lingoda',
