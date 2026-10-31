@@ -48,11 +48,20 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
 
 function FaqJsonLd({ post }: { post: BlogPost }) {
   if (!post.faqs.length) return null
+  // Existing FAQ records can differ from the published copy. Describe the
+  // visible FAQ section without rewriting either source of editorial content.
+  const section = post.content.split('<h2>Frequently asked questions</h2>')[1]?.split('<h2>')[0] ?? ''
+  const plainText = (html: string) => html.replace(/<[^>]*>/g, '').replace(/&(#x[0-9a-f]+|#\d+|amp|quot|apos|lt|gt|nbsp);/gi, (entity, code: string) => {
+    if (code.startsWith('#')) return String.fromCodePoint(code[1].toLowerCase() === 'x' ? parseInt(code.slice(2), 16) : parseInt(code.slice(1), 10))
+    return ({ amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' ' } as Record<string, string>)[code.toLowerCase()] ?? entity
+  }).trim()
+  const questions = [...section.matchAll(/<h3>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/g)]
+  if (!questions.length) return null
   const data = {
     '@context': 'https://schema.org', '@type': 'FAQPage',
-    mainEntity: post.faqs.map((faq) => ({
-      '@type': 'Question', name: faq.question,
-      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    mainEntity: questions.map(([, question, answer]) => ({
+      '@type': 'Question', name: plainText(question),
+      acceptedAnswer: { '@type': 'Answer', text: plainText(answer) },
     })),
   }
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
@@ -87,6 +96,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <>
       <ArticleJsonLd post={post} />
+      <FaqJsonLd post={post} />
 
       <BreadcrumbJsonLd post={post} />
 
