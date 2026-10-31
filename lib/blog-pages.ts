@@ -1344,6 +1344,7 @@ export const blogPosts: BlogPost[] = [
     relatedListPath: '/video-and-design-software',
     relatedListLabel: 'Video & design software top 5',
     relatedLinks: [
+      { path: '/compare/capcut-vs-premiere-pro', label: 'Use the CapCut and Premiere decision table' },
       { path: '/quiz/video-and-design-software', label: 'Take the video workflow matching quiz' },
       { path: '/blog/best-video-editing-software-for-youtube', label: 'Best video editing software for YouTube' },
       { path: '/guides/best-ai-video-tools-for-beginners', label: 'Best AI video tools for beginners' },

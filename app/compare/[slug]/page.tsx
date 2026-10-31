@@ -101,7 +101,7 @@ export default async function ComparePage({ params }: Props) {
 
       <section className="mt-12 grid gap-6 lg:grid-cols-2">
         <div>
-          <h2 className="text-xl font-semibold text-foreground">When {page.a.name} wins</h2>
+          <h2 className="text-xl font-semibold text-foreground">{page.slug === 'capcut-vs-premiere-pro' ? `Choose ${page.a.name} if…` : `When ${page.a.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.aWinsWhen.map((item) => (
               <li key={item} className="flex gap-2.5">
@@ -112,7 +112,7 @@ export default async function ComparePage({ params }: Props) {
           </ul>
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-foreground">When {page.b.name} wins</h2>
+          <h2 className="text-xl font-semibold text-foreground">{page.slug === 'capcut-vs-premiere-pro' ? `Choose ${page.b.name} if…` : `When ${page.b.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.bWinsWhen.map((item) => (
               <li key={item} className="flex gap-2.5">
@@ -133,6 +133,18 @@ export default async function ComparePage({ params }: Props) {
           />
         </div>
       </section>
+
+      {page.decisionRows && <section className="mt-12">
+        <h2 className="text-xl font-semibold text-foreground">Which situation fits your work?</h2>
+        {page.scopeNote && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{page.scopeNote}</p>}
+        <div className="mt-5 overflow-x-auto rounded-2xl border border-border bg-card"><table className="w-full min-w-[34rem] text-left text-sm">
+          <caption className="sr-only">Decision criteria for CapCut and Premiere Pro</caption>
+          <thead><tr className="border-b border-border"><th scope="col" className="px-5 py-3.5">Decision criterion</th><th scope="col" className="px-5 py-3.5">{page.a.name}</th><th scope="col" className="px-5 py-3.5">{page.b.name}</th></tr></thead>
+          <tbody>{page.decisionRows.map((row) => <tr key={row.label} className="border-b border-border last:border-0"><th scope="row" className="px-5 py-4 font-medium">{row.label}</th><td className="px-5 py-4 align-top text-muted-foreground">{row.a}</td><td className="px-5 py-4 align-top text-muted-foreground">{row.b}</td></tr>)}</tbody>
+        </table></div>
+      </section>}
+      {page.migration?.map((scenario) => <section key={scenario.title} className="mt-12"><h2 className="text-xl font-semibold text-foreground">{scenario.title}</h2><p className="mt-3 leading-relaxed text-muted-foreground">{scenario.text}</p></section>)}
+      {page.sources && <aside className="mt-12 rounded-2xl border border-border p-6 text-sm leading-relaxed"><h2 className="text-xl font-semibold text-foreground">Official sources and conditions</h2><ul className="mt-4 space-y-3">{page.sources.map((source) => <li key={source.url}><a href={source.url} className="text-primary underline underline-offset-4">{source.label}</a></li>)}</ul></aside>}
 
       <section className="mt-14">
         <h2 className="text-xl font-semibold text-foreground">The two tools, in full</h2>
@@ -160,7 +172,7 @@ export default async function ComparePage({ params }: Props) {
       </section>
 
       <aside className="mt-14 rounded-2xl border border-border p-6 text-sm leading-relaxed text-muted-foreground">
-        Both tools appear in{' '}
+        {page.slug === 'capcut-vs-premiere-pro' ? 'For our ranked alternatives, see ' : 'Both tools appear in '}
         <Link
           href={page.listPath}
           className="text-foreground underline underline-offset-4 hover:text-primary"
@@ -176,6 +188,7 @@ export default async function ComparePage({ params }: Props) {
         </Link>
         .
       </aside>
+    {page.relatedLinks && <nav aria-label="Related video decisions" className="mt-14 rounded-2xl border border-border p-6 text-sm leading-relaxed"><h2 className="text-xl font-semibold text-foreground">Continue your decision</h2><ul className="mt-4 space-y-3">{page.relatedLinks.map((link) => <li key={link.path}><Link href={link.path} className="text-primary underline underline-offset-4">{link.label}</Link></li>)}</ul></nav>}
     <RelatedContent path={path} />
     </div>
   )

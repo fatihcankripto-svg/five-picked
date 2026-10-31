@@ -26,9 +26,69 @@ export type ComparePair = {
   /** The list page these tools came from. */
   listPath: string
   listLabel: string
+  scopeNote?: string
+  decisionRows?: { label: string; a: string; b: string }[]
+  migration?: { title: string; text: string }[]
+  sources?: { url: string; label: string }[]
+  relatedLinks?: { path: string; label: string }[]
 }
 
 const pairs: ComparePair[] = [
+  {
+    slug: 'capcut-vs-premiere-pro', aSlug: 'capcut', bSlug: 'adobe-premiere-pro',
+    framing: 'Choose by the job you need to deliver: a template-oriented social edit or a desktop editing workflow with detailed control. Free access and commercial rights are separate decisions.',
+    verdict: 'Choose CapCut when its standard editing workflow and the permitted assets cover your deliverable. Choose Premiere Pro when the desktop controls, Adobe workflow and review process justify a subscription. Neither is a sensible choice if the required export, device support or media rights have not been checked.',
+    aWinsWhen: [
+      'Your immediate task is a social edit using your own media and standard editing tools.',
+      'You want to evaluate free access and can check the entire project for Pro-only elements before export.',
+      'You need a mobile, web or desktop starting point and will verify feature availability on that specific version.',
+    ],
+    bWinsWhen: [
+      'Your work needs detailed desktop color, audio and effects control rather than a template-led starting point.',
+      'You already work in an Adobe workflow and need the included Frame.io review route.',
+      'You can accommodate the subscription commitment and verify the desktop system requirements before starting.',
+    ],
+    scopeNote: 'CapCut is included as a comparison-only reference tool, not an extra ranked category pick. Suitability and learning-curve comments are editorial guidance, not measured speed or learning-time results. Official conditions checked October 31, 2026.',
+    decisionRows: [
+      { label: 'Price and commitment', a: 'A Free option is listed. Pro and other paid offers must be checked for the account and purchase channel; no fixed Pro price is quoted here.', b: 'Individual single-app plan: US$22.99/month on an annual commitment billed monthly. A 7-day trial converts to paid unless cancelled.' },
+      { label: 'Platform', a: 'CapCut documents Online, desktop Windows/macOS, and mobile iOS/Android workflows. Feature and team controls differ between them.', b: 'This comparison focuses on Premiere desktop for Windows and macOS. Check Adobe’s current system requirements; the separate mobile offer is not a substitute for desktop compatibility.' },
+      { label: 'Editing depth and fit', a: 'Standard editing can assemble your own clips, music, text and effects. Editorial fit: a focused social deliverable that does not require a broader desktop workflow.', b: 'Adobe documents color grading, audio tools, effects and timeline editing. Editorial fit: projects needing those controls and an Adobe-centered production process.' },
+      { label: 'Learning curve', a: 'Editorial decision: start with a small standard edit and confirm the final export before building a template-heavy workflow. No learning-time claim is made.', b: 'Editorial decision: choose it when you will use the desktop controls, and allow time to learn that workflow. No measured training-time comparison is available here.' },
+      { label: 'Collaboration', a: 'CapCut documents team workspaces and plan-dependent member limits; full team management is handled online. Do not assume a free workspace fits every team.', b: 'Adobe lists Frame.io review and approval with the subscription. Review collaboration is not a promise that every team can edit one timeline simultaneously.' },
+      { label: 'Export and watermark', a: 'Watermark-free export depends on the version, template and assets. A Pro element can trigger a paid export requirement, even when a lower resolution is selected. No universal free 4K, duration or project allowance is asserted.', b: 'The desktop trial is described as the full version for 7 days, followed by paid access. This is not an ongoing free desktop export plan; check the selected plan and actual deliverable during evaluation.' },
+      { label: 'Performance', a: 'No matched export-speed or playback benchmark is claimed. Evaluate the intended version with your footage and device rather than assuming a mobile or web workflow is faster.', b: 'No faster-render claim is made. Adobe publishes CPU, memory, GPU and storage requirements; check those and evaluate your own footage before changing workflows.' },
+      { label: 'Commercial use and licensing', a: 'CapCut’s legal page permits commercial use of templates and materials expressly labeled Commercial Use. Free access or Pro payment does not by itself clear every included asset.', b: 'Adobe’s software terms and each asset license apply separately. Its general terms restrict commercial output from versions designated NFR, including trial/evaluation designations. No blanket commercial clearance for the trial is claimed.' },
+    ],
+    migration: [
+      { title: 'Move from CapCut to Premiere Pro when the workflow requires it', text: 'Consider the move when a deliverable needs the desktop controls or Adobe review workflow described above and you can justify the subscription. First recreate one representative edit with your original media, check the system requirements and required licenses, and compare the delivered output. This is a decision process, not a claim of lossless project interchange.' },
+      { title: 'Use CapCut again when the task is narrower', text: 'Consider CapCut for a focused social edit when its standard tools meet the brief without unnecessary production overhead. Verify export availability and asset permissions before committing. Keep the original media and finished master; this page does not promise automatic project transfer between the applications.' },
+      { title: 'Who should not choose either tool yet?', text: 'If a mandatory codec, device, collaboration arrangement or commercial license has not been verified, resolve that requirement first. A clean-looking export and a paid subscription are not evidence that all third-party footage, music or templates are licensed for the intended use.' },
+    ],
+    sources: [
+      { url: 'https://www.capcut.com/pricing', label: 'CapCut current free and paid access options' },
+      { url: 'https://www.capcut.com/help/video-without-watermark', label: 'CapCut conditional watermark-free export' },
+      { url: 'https://www.capcut.com/help/join-capcut-pro-for-exporting', label: 'CapCut Pro elements and export requirements' },
+      { url: 'https://www.capcut.com/help/team-collaboration-feature', label: 'CapCut platform and team-workspace conditions' },
+      { url: 'https://www.capcut.com/trust/legal', label: 'CapCut ownership and Commercial Use material labels' },
+      { url: 'https://www.adobe.com/products/premiere/plans.html', label: 'Adobe Premiere subscription price and Frame.io review' },
+      { url: 'https://www.adobe.com/products/premiere/free-trial-download.html', label: 'Adobe Premiere full-version trial and billing transition' },
+      { url: 'https://helpx.adobe.com/premiere/desktop/get-started/technical-requirements/adobe-premiere-pro-technical-requirements.html', label: 'Adobe Premiere desktop system requirements' },
+      { url: 'https://www.adobe.com/legal/terms.html', label: 'Adobe content, trial and NFR licensing terms' },
+    ],
+    faqs: [
+      { question: 'Can I use CapCut free without a watermark?', answer: 'CapCut says this depends on the app version and the features, templates and assets in the project. Standard editing with suitable free assets can allow clean export, while Pro content can introduce a paid requirement. Check a representative export before building the whole project.' },
+      { question: 'Is Premiere Pro permanently free after the trial?', answer: 'No. Adobe describes a 7-day full-version trial that converts to a paid subscription unless cancelled. The listed US$22.99 monthly individual price is an annual commitment billed monthly, not a cancel-anytime monthly commitment.' },
+      { question: 'Does buying Pro or a subscription clear every asset commercially?', answer: 'No. CapCut identifies materials expressly labeled Commercial Use, and Adobe applies its software terms alongside asset-specific rights. Check music, footage and templates separately; no blanket commercial permission for trial output is asserted here.' },
+      { question: 'Which editor performs faster?', answer: 'This page does not provide a matched performance benchmark. Test representative footage on your own device and check system requirements; an editorial workflow recommendation is not a measured render-speed ranking.' },
+      { question: 'Can I transfer projects automatically between the two?', answer: 'No automatic or lossless project-transfer claim is made here. Retain the original media and finished master and verify the intended workflow before moving an active project.' },
+    ],
+    listPath: '/video-and-design-software', listLabel: 'Video and design software shortlist',
+    relatedLinks: [
+      { path: '/blog/capcut-vs-premiere-pro', label: 'Read the deeper CapCut and Premiere workflow analysis' },
+      { path: '/free/best-free-video-and-design-software', label: 'Check free video tools, watermarks and license conditions' },
+      { path: '/quiz/video-and-design-software', label: 'Match an editor or recording tool to your production needs' },
+    ],
+  },
   {
     slug: 'fiverr-vs-upwork',
     aSlug: 'fiverr',
@@ -499,6 +559,17 @@ function buildToolIndex(): Map<string, Tool> {
 }
 
 const toolIndex = buildToolIndex()
+// Comparison-only reference: preserve the category’s existing five ranked tools.
+toolIndex.set('capcut', {
+  slug: 'capcut', name: 'CapCut',
+  tagline: 'Standard editing across mobile, web and desktop, with paid feature restrictions.',
+  bestFor: 'Creators evaluating a focused social edit with suitable free assets',
+  whatItDoes: 'CapCut provides editing tools for combining clips, text, music and effects. Available features and export conditions depend on the selected version, plan and project assets.',
+  strengths: ['Standard editing with your own media', 'Online, desktop and mobile workflows', 'Free access available for evaluation'],
+  goodToKnow: 'Check a representative export: Pro assets can require payment. Only materials expressly labeled Commercial Use carry the stated commercial permission; a free or paid account does not clear every asset.',
+  startingPrice: 'Free option available; paid features and export conditions vary',
+  officialUrl: 'https://www.capcut.com/',
+})
 
 export type ComparePage = {
   slug: string
@@ -511,6 +582,11 @@ export type ComparePage = {
   faqs: { question: string; answer: string }[]
   listPath: string
   listLabel: string
+  scopeNote?: string
+  decisionRows?: { label: string; a: string; b: string }[]
+  migration?: { title: string; text: string }[]
+  sources?: { url: string; label: string }[]
+  relatedLinks?: { path: string; label: string }[]
 }
 
 export const comparePages: ComparePage[] = pairs.map((pair) => {
@@ -529,6 +605,11 @@ export const comparePages: ComparePage[] = pairs.map((pair) => {
     faqs: pair.faqs,
     listPath: pair.listPath,
     listLabel: pair.listLabel,
+    scopeNote: pair.scopeNote,
+    decisionRows: pair.decisionRows,
+    migration: pair.migration,
+    sources: pair.sources,
+    relatedLinks: pair.relatedLinks,
   }
 })
 

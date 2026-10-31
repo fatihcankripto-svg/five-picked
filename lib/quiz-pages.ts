@@ -128,6 +128,7 @@ const defs: QuizDef[] = [
       { question: 'How are the recommendation and runner-up chosen?', answer: 'The existing quiz engine adds preference points from your answers to the five tools and shows a primary recommendation plus a runner-up. These points are editorial matching rules, not product ratings, measured performance or a guarantee that a plan meets every requirement.' },
     ],
     relatedLinks: [
+      { path: '/compare/capcut-vs-premiere-pro', label: 'Review the CapCut versus Premiere decision criteria' },
       { path: '/free/best-free-video-and-design-software', label: 'Review free access, export limits and licensing conditions' },
       { path: '/blog/best-video-editing-software-for-youtube', label: 'Explore video editing choices for a YouTube workflow' },
       { path: '/blog/capcut-vs-premiere-pro', label: 'Compare quick social edits with Premiere control' },
