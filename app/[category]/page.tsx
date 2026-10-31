@@ -21,6 +21,12 @@ export function generateStaticParams() {
 
 type Props = { params: Promise<{ category: string }> }
 
+const ymylWarnings: Record<string, string> = {
+  'personal-finance': 'This page is under construction. Nothing on this page constitutes financial advice. Always consult a qualified financial professional.',
+  'fitness-and-nutrition': 'This page is under construction. Nothing on this page constitutes medical or health advice. Always consult a qualified healthcare professional.',
+  'diy-legal': 'This page is under construction. Nothing on this page constitutes legal advice. Always consult a qualified legal professional.',
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: slug } = await params
   const category = getCategory(slug)
@@ -47,7 +53,7 @@ export default async function CategoryPage({ params }: Props) {
   if (!category) {
     const hidden = categoryRegistry.find((entry) => entry.slug === slug)
     if (!hidden) notFound()
-    return <div className="mx-auto max-w-3xl px-5 py-16"><h1 className="text-3xl font-semibold">{hidden.name}: selection in progress</h1><p className="mt-5 text-muted-foreground">We publish a list only when all five recommendations are ready.</p><a href="/categories" className="mt-6 inline-block text-primary underline">Browse complete categories</a></div>
+    return <div className="mx-auto max-w-3xl px-5 py-16"><h1 className="text-3xl font-semibold">{hidden.name}: selection in progress</h1><p className="mt-5 text-muted-foreground">We publish a list only when all five recommendations are ready.</p>{ymylWarnings[slug] && <p className="mt-5 text-muted-foreground">{ymylWarnings[slug]}</p>}<a href="/categories" className="mt-6 inline-block text-primary underline">Browse complete categories</a></div>
   }
 
   if (category.tools) {
