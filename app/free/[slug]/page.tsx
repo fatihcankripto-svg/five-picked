@@ -1,3 +1,4 @@
+import { HostingFreeOptions, HostingGuideLinks } from '@/components/hosting-free-options'
 import { RelatedContent } from '@/components/related-content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -81,7 +82,7 @@ export default async function FreePage({ params }: Props) {
       <Breadcrumbs items={[{ label: 'Best free tools', href: '/free' }, { label: page.title }]} />
 
       <header className="mt-10">
-        <SectionMarker label="Free plans" />
+        <SectionMarker label={page.slug === 'best-free-web-hosting' ? 'Hosting trials & refunds' : 'Free plans'} />
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
           {page.h1}
         </h1>
@@ -106,6 +107,8 @@ export default async function FreePage({ params }: Props) {
         </div>
       </header>
 
+      {page.slug === 'best-free-web-hosting' && <HostingFreeOptions />}
+
       <section aria-labelledby="verdict" className="mt-12 rounded-2xl border border-primary/30 bg-primary/[0.06] p-6">
         <h2 id="verdict" className="text-sm font-semibold uppercase tracking-widest text-primary">
           Our verdict
@@ -118,13 +121,13 @@ export default async function FreePage({ params }: Props) {
           At a glance
         </h2>
         <div className="mt-5">
-          <ComparisonTable tools={page.tools} caption={`Free tools compared: ${page.title}`} />
+          <ComparisonTable tools={page.tools} caption={`${page.slug === 'best-free-web-hosting' ? 'Paid hosting plans and access options' : 'Free tools compared'}: ${page.title}`} />
         </div>
       </section>
 
       <section aria-labelledby="the-picks" className="mt-16">
         <h2 id="the-picks" className="text-xl font-semibold text-foreground">
-          {page.slug === 'vpns-with-a-free-plan' ? 'Five VPN options: one ongoing free plan and four paid services' : 'Free plans and trial options, compared'}
+          {page.slug === 'best-free-web-hosting' ? 'Five paid hosts: trial and refund conditions differ' : page.slug === 'vpns-with-a-free-plan' ? 'Five VPN options: one ongoing free plan and four paid services' : 'Free plans and trial options, compared'}
         </h2>
         <ol className="mt-6 flex flex-col gap-6">
           {page.tools.map((tool, index) => (
@@ -161,7 +164,7 @@ export default async function FreePage({ params }: Props) {
         </Link>
         .
       </aside>
-    <RelatedContent path={path} />
+    {page.slug === 'best-free-web-hosting' ? <HostingGuideLinks /> : <RelatedContent path={path} />}
     </div>
   )
 }

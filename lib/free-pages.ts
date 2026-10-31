@@ -1,3 +1,4 @@
+import { hostingOffers } from '@/lib/hosting-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
  * FIVE PICKED — "Free plan" pages.
@@ -30,6 +31,25 @@ type FreeCopy = {
 }
 
 const copies: FreeCopy[] = [
+  {
+    slug: 'best-free-web-hosting',
+    title: 'Web Hosting Free Trials and Money-Back Options (2026)',
+    h1: 'Web hosting free trials and money-back options in 2026',
+    metaTitle: 'Web Hosting Free Trials & Refund Options (2026)',
+    metaDescription: 'Compare Hostinger, Bluehost, Cloudways, Kinsta and Namecheap: verified hosting trials, refund windows and temporary domains. No permanent free hosting promised.',
+    intro: 'Looking for free web hosting? Our five hosting picks offer paid plans with different ways to evaluate them. This guide separates genuine trials, introductory free periods and conditional money-back guarantees; none is presented as permanently free hosting.',
+    verdict: 'For a trial without paying for standard hosting upfront, compare Cloudways Flexible, Namecheap Shared Hosting and the selected Kinsta first-month offer. Hostinger and Bluehost instead provide eligible paid hosting purchases with refund windows. Check the exclusions, continuation price and cancellation process before starting.',
+    toolSlugs: ['hostinger', 'bluehost', 'cloudways', 'kinsta', 'namecheap'],
+    faqs: [
+      { question: 'Are these five hosting providers permanently free?', answer: 'No ongoing general-purpose free hosting plan is verified for these five standard hosting offers. Trials and introductory free periods expire; a money-back guarantee requires an eligible purchase and refund request.' },
+      { question: 'Which providers have a verified hosting trial or free introductory period?', answer: 'Cloudways Flexible offers 5 days without a credit card, and Autonomous offers 3 days. Namecheap Shared Hosting advertises a 30-day trial. Kinsta offers a first month free on selected plans for new customers. Confirm eligibility and continuation terms before signing up.' },
+      { question: 'Is a 30-day money-back guarantee the same as a free trial?', answer: 'No. Hostinger and Bluehost require payment for the eligible hosting plan first. Refund exclusions apply, including domain-related charges; Bluehost also excludes monthly terms and Cloud Hosting. Namecheap’s Shared Hosting guarantee applies to eligible first-time customers who start without a trial.' },
+      { question: 'Can I keep hosting free by using a temporary subdomain?', answer: 'No. A temporary address lets you build or preview a site without connecting your own domain; the underlying hosting account still has trial or paid conditions. It is not a standalone permanent free hosting plan.' },
+      { question: 'How do Kinsta and Cloudways refunds differ?', answer: 'Kinsta has a conditional 30-day guarantee for first-time Managed WordPress customers, starting at renewal after a qualifying free period. Cloudways documents refunds of eligible unused prepaid funds requested within 3 months, rather than a general money-back period for consumed hosting.' },
+    ],
+    relatedListPath: '/web-hosting-and-domains',
+    relatedListLabel: 'Web hosting shortlist and paid-plan comparison',
+  },
   {
     slug: 'best-free-ai-video-tools',
     title: 'Best Free AI Video Tools',
@@ -448,6 +468,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-web-hosting') {
+      const offer = hostingOffers.find((entry) => entry.slug === slug)!
+      return { ...tool, goodToKnow: `${offer.trial} ${offer.refund}` }
     }
     return tool
   })

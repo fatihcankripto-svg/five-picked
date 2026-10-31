@@ -8,7 +8,7 @@ import { absoluteUrl, formatDate } from '@/lib/site'
 const path = '/free'
 const title = 'Best Free Tools — Free Plans Worth Using (2026)'
 const description =
-  'Every tool on this page has a real free plan, free tier or free trial. Ranked and explained so you do not waste a trial on the wrong tool.'
+  'Compare free plans, trials and clearly labeled paid options with refund guarantees. Check what is free, what requires payment and which conditions apply.'
 
 export const metadata: Metadata = {
   title,
@@ -47,8 +47,8 @@ export default function FreeIndexPage() {
           Best free tools
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
-          Every page here lists only tools with a real free plan, free tier or free trial — and
-          explains exactly what you get for free, so you do not waste a trial on the wrong tool.
+          Compare free plans, free trials and clearly labeled paid options with refund guarantees.
+          Each guide explains what is free, what requires payment and which conditions apply.
         </p>
         <p className="mt-3 text-sm text-muted-foreground">
           Last updated <time dateTime={freePagesUpdated}>{formatDate(freePagesUpdated)}</time>
@@ -68,7 +68,7 @@ export default function FreeIndexPage() {
                   {page.intro}
                 </p>
                 <p className="mt-3 text-xs uppercase tracking-widest text-primary">
-                  {page.tools.length} free picks →
+                  {page.tools.length} {page.slug === 'best-free-web-hosting' ? 'hosting options: trials & refunds' : 'free picks'} →
                 </p>
               </Link>
             </li>
