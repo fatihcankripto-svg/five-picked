@@ -9,7 +9,7 @@ import { toolDecisions } from '@/data/tool-decisions'
 import { formatDate } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
-export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
+export function ToolCard({ tool, rank, showPricingTerms = true }: { tool: Tool; rank: number; showPricingTerms?: boolean }) {
   const headingId = `${tool.slug}-heading`
   const isTop = rank === 1
   const review = getReview(tool.slug)
@@ -54,7 +54,7 @@ export function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
           <div><dt className="text-xs font-semibold uppercase tracking-wider text-primary">Standout strength</dt><dd className="mt-2 text-sm font-semibold leading-relaxed text-foreground">{decision?.standout ?? tool.tagline}</dd></div>
           <div><dt className="text-xs font-semibold uppercase tracking-wider text-primary">{pricing?.kind === 'variable' ? 'How pricing works' : 'Price & access'}</dt><dd className="mt-2 text-sm font-semibold leading-relaxed text-foreground">{tool.startingPrice}</dd></div>
         </dl>
-        {pricing && <p className="mt-3 text-xs leading-relaxed text-muted-foreground"><a href={pricing.sourceUrl} className="text-primary underline underline-offset-4">Official source</a> · Checked <time dateTime={pricing.checkedAt}>{formatDate(pricing.checkedAt)}</time>. Currency, eligibility and billing terms apply; offers can change.</p>}
+        {pricing && <p className="mt-3 text-xs leading-relaxed text-muted-foreground"><a href={pricing.sourceUrl} className="text-primary underline underline-offset-4">Official source</a> · Checked <time dateTime={pricing.checkedAt}>{formatDate(pricing.checkedAt)}</time>{showPricingTerms ? '. Currency, eligibility and billing terms apply; offers can change.' : '.'}</p>}
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div>

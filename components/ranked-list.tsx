@@ -1,3 +1,4 @@
+import { categoryBodyCopy, toolBodyCopy, categoryClosingCopy } from '@/lib/page-body-copy'
 import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
 import { CalendarDays } from 'lucide-react'
@@ -26,6 +27,7 @@ export function RankedList({
   path: string
   breadcrumbs: Crumb[]
 }) {
+  const copy = categoryBodyCopy(path)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -63,7 +65,7 @@ export function RankedList({
           {heading ?? title}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
-          {intro}
+          {copy?.intro ?? intro}
         </p>
 
         <div className="mt-8 flex flex-col gap-3 rounded-xl border border-border px-4 py-3.5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
@@ -107,7 +109,7 @@ export function RankedList({
         <ol className="mt-6 flex flex-col gap-6">
           {tools.map((tool, index) => (
             <li key={tool.slug}>
-              <ToolCard tool={tool} rank={index + 1} />
+              <ToolCard tool={toolBodyCopy(path, tool)} rank={index + 1} showPricingTerms={!copy} />
             </li>
           ))}
         </ol>
@@ -137,8 +139,7 @@ export function RankedList({
       )}
 
       <aside className="mt-14 rounded-2xl border border-border p-6 text-sm leading-relaxed text-muted-foreground">
-        Rankings reflect our independent judgment of fit, quality and value for most people. Commissions never
-        decide the order. Prices and features change, so always check the official website before you buy.{' '}
+        {copy ? categoryClosingCopy : 'Rankings reflect our independent judgment of fit, quality and value for most people. Commissions never decide the order. Prices and features change, so always check the official website before you buy.'}{' '}
         <Link href="/how-we-choose" className="text-foreground underline underline-offset-4 hover:text-primary">
           See how we choose
         </Link>

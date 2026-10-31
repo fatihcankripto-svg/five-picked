@@ -1,3 +1,4 @@
+import { categoryBodyCopy } from '@/lib/page-body-copy'
 import { pageMetadata } from '@/lib/metadata'
 import { categorySeo } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
@@ -64,6 +65,7 @@ export default async function CategoryPage({ params }: Props) {
   }
 
   const subCount = category.subcategories?.length ?? 0
+  const copy = categoryBodyCopy(`/${category.slug}`)
 
   return (
     <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
@@ -74,7 +76,7 @@ export default async function CategoryPage({ params }: Props) {
           {categorySeo(category.slug).title}
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground text-pretty">
-          {category.description} Pick the area you care about. Each one has exactly five ranked tools.
+          {copy?.intro ?? `${category.description} Pick the area you care about. Each one has exactly five ranked tools.`}
         </p>
       </header>
 
@@ -86,7 +88,7 @@ export default async function CategoryPage({ params }: Props) {
                 href={`/${category.slug}/${sub.slug}`}
                 slug={sub.slug}
                 name={sub.name}
-                description={sub.description}
+                description={copy?.cards?.[sub.slug] ?? sub.description}
                 meta="5 picks"
                 headingLevel="h2"
               />

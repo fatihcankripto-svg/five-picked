@@ -1,3 +1,4 @@
+import { reviewBodyCopy } from '@/lib/page-body-copy'
 import { contentLinks, getContentLinks } from '@/lib/content-links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -62,6 +63,7 @@ export default async function ReviewPage({ params }: PageProps) {
   const review = getReview(slug)
   if (!review) notFound()
 
+  const copy = reviewBodyCopy(review)
   const found = findTool(slug)
   const readingLinks = new Map<string, { href: string; label: string; note?: string }>()
   if (found) {
@@ -120,7 +122,7 @@ export default async function ReviewPage({ params }: PageProps) {
     <ContentPage path={`/reviews/${review.toolSlug}`} showRelatedContent={false}
       eyebrow="Review"
       title={review.headline}
-      intro={`${review.intro} Last updated ${formatDate(review.updated)}.`}
+      intro={`${copy.intro} Last updated ${formatDate(review.updated)}.`}
     >
       <script
         type="application/ld+json"
@@ -129,7 +131,7 @@ export default async function ReviewPage({ params }: PageProps) {
 
       {review.authorBio && <p>{review.authorBio} Last reviewed <time dateTime={review.updated}>{formatDate(review.updated)}</time>.</p>}
       <h2>Quick verdict</h2>
-      <p>{review.verdict}</p>
+      <p>{copy.verdict}</p>
       <div className="not-prose mt-4">{visit}</div>
 
       <h2>{review.name} at a glance</h2>
@@ -138,7 +140,7 @@ export default async function ReviewPage({ params }: PageProps) {
           <tbody>
             <tr className="border-b border-border">
               <td className="px-4 py-3 font-medium">Best for</td>
-              <td className="px-4 py-3">{review.audience ?? found?.tool.bestFor ?? review.bestFor[0]}</td>
+              <td className="px-4 py-3">{copy.audience ?? found?.tool.bestFor ?? copy.bestFor[0]}</td>
             </tr>
             <tr className="border-b border-border">
               <td className="px-4 py-3 font-medium">Starting price</td>
@@ -155,23 +157,23 @@ export default async function ReviewPage({ params }: PageProps) {
           </tbody>
         </table>
       </div>
-      <p>Prices and features change often, so confirm current details on the official website before you buy.</p>
+      {review.toolSlug !== 'hostinger' && <p>Prices and features change often, so confirm current details on the official website before you buy.</p>}
 
       <h2>Who {review.name} is best for</h2>
       <ul>
-        {review.bestFor.map((item) => (
+        {copy.bestFor.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
 
       <h2>Who might look elsewhere</h2>
       <ul>
-        {review.lessIdealFor.map((item) => (
+        {copy.lessIdealFor.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
 
-      {review.sections.map((section) => (
+      {copy.sections.map((section) => (
         <section key={section.heading}>
           <h2>{section.heading}</h2>
           {section.paragraphs.map((paragraph) => (
