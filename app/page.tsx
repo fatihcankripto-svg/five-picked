@@ -1,3 +1,4 @@
+import { CategoryMarquee } from '@/components/home/category-marquee'
 import { pageMetadata } from '@/lib/metadata'
 import { WhyFivePicked } from '@/components/home/why-five-picked'
 import { Hero } from '@/components/home/hero'
@@ -29,6 +30,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       <Hero />
+      <CategoryMarquee />
       <WhyFivePicked />
       <CategoryGrid />
       <EditorialSections />

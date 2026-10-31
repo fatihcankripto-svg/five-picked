@@ -87,7 +87,7 @@ export function Hero() {
           <div className="relative flex aspect-square w-[12.5rem] items-center justify-center sm:w-[20rem] md:w-[24rem] lg:w-[28rem]">
             <span className="absolute inset-[12%] rounded-full bg-primary/30 blur-3xl" />
 
-            <div className="absolute inset-0 rounded-full border border-dashed border-primary/30">
+            <div className="fp-spin absolute inset-0 rounded-full border border-dashed border-primary/30">
               {[0, 1, 2, 3, 4].map((i) => (
                 <span
                   key={i}
