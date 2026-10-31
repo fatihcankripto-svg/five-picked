@@ -159,7 +159,31 @@ const secondReviewLinks: Record<string, Record<string, string>> = {
     "/compare/expressvpn-vs-nordvpn": "Review whether ExpressVPN fits your requirements"
   }
 }
+const thirdCompareLinks: Record<string, Record<string, string>> = {
+  "/compare/clickup-vs-monday-com": {
+    "/software-and-productivity": "Choose between ClickUp and monday.com by your workflow",
+    "/free/best-free-project-management-tools": "Apply these access conditions to the ClickUp and monday.com decision",
+    "/quiz/software-and-productivity-project-management": "Check the ClickUp and monday.com buying framework",
+    "/software-and-productivity/project-management": "Compare ClickUp and monday.com before committing"
+  },
+  "/compare/fireflies-vs-otter": {
+    "/ai-tools": "Choose between Fireflies and Otter by your workflow",
+    "/free/best-free-ai-meeting-note-takers": "Apply these access conditions to the Fireflies and Otter decision",
+    "/quiz/ai-tools-meeting-notes": "Check the Fireflies and Otter buying framework",
+    "/blog/fireflies-vs-fathom": "Compare Fireflies and Otter before committing",
+    "/ai-tools/meeting-notes": "Explore the full Fireflies and Otter decision criteria"
+  },
+  "/compare/filmora-vs-camtasia": {
+    "/free/best-free-video-and-design-software": "Choose between Filmora and Camtasia by your workflow",
+    "/quiz/video-and-design-software": "Apply these access conditions to the Filmora and Camtasia decision",
+    "/blog/best-video-editing-software-for-youtube": "Check the Filmora and Camtasia buying framework",
+    "/video-and-design-software": "Compare Filmora and Camtasia before committing"
+  }
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  for (const [target, sources] of Object.entries(thirdCompareLinks)) {
+    if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
+  }
   for (const [target, sources] of Object.entries(secondReviewLinks)) {
     if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
   }
@@ -308,9 +332,20 @@ for (const [target, sources] of Object.entries(secondReviewLinks)) {
     graph.get(target)?.add(source)
   }
 }
+for (const [target, sources] of Object.entries(thirdCompareLinks)) {
+  for (const source of Object.keys(sources)) {
+    graph.get(source)?.add(target)
+    graph.get(target)?.add(source)
+  }
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (thirdCompareLinks[page.path]?.[path]) return { ...page, title: thirdCompareLinks[page.path][path] }
+    if (thirdCompareLinks[path]?.[page.path]) {
+      const compare = comparePages.find((entry) => `/compare/${entry.slug}` === path)
+      return { ...page, title: compare?.relatedLinks?.find((link) => link.path === page.path)?.label ?? compare?.listLabel ?? page.title }
+    }
     if (secondReviewLinks[page.path]?.[path]) return { ...page, title: secondReviewLinks[page.path][path] }
     if (secondReviewLinks[path]?.[page.path]) {
       const review = reviews.find((review) => `/reviews/${review.toolSlug}` === path)

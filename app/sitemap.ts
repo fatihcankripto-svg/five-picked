@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('/'), route('/categories'),
     ...categoryPages,
     route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.lastReviewedAt)),
-    // Includes both three-page comparison packages through the shared comparison registry.
+    // Includes all three comparison packages through the shared comparison registry.
     route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, page.lastReviewedAt ?? comparePagesUpdated)),
     route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-ai-marketing-and-seo-tools' ? marketingSeoFreeEditorial.lastReviewedAt : page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : freePagesUpdated)),
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
