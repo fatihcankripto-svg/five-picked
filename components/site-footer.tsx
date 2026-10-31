@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories } from '@/data/all-categories'
 import { Logo } from '@/components/logo'
 import { FiveDots } from '@/components/five-dots'
 import { siteConfig, staticPages } from '@/lib/site'
@@ -32,7 +32,7 @@ export function SiteFooter() {
               Categories
             </h2>
             <ul className="mt-4 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
-              {allCategories.map((category) => (
+              {publishedCategories.map((category) => (
                 <li key={category.slug}>
                   <Link
                     href={`/${category.slug}`}

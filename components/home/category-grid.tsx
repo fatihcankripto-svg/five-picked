@@ -1,5 +1,5 @@
-import { allCategories } from '@/data/all-categories'
-import { categoryMeta } from '@/lib/category-stats'
+import { publishedCategories } from '@/data/all-categories'
+import { categoryMeta, categoryCountLabel } from '@/lib/category-stats'
 import { CategoryCard } from '@/components/category-card'
 import { SectionMarker } from '@/components/section-marker'
 import { FiveDots } from '@/components/five-dots'
@@ -16,13 +16,13 @@ export function CategoryGrid() {
           Start with what you need
         </h2>
         <p className="mt-4 leading-relaxed text-muted-foreground">
-          {allCategories.length} categories to explore. Published lists contain five picks; categories still in research are clearly marked.
+          {categoryCountLabel(publishedCategories.length)} to explore. Every published list contains five picks.
         </p>
         <FiveDots className="mt-6" />
       </div>
 
       <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {allCategories.slice(0, 6).map((category, index) => (
+        {publishedCategories.slice(0, 6).map((category, index) => (
           <li key={category.slug}>
             <CategoryCard
               href={`/${category.slug}`}
@@ -35,7 +35,7 @@ export function CategoryGrid() {
           </li>
         ))}
       </ul>
-    <p className="mt-8"><a href="/categories" className="text-primary underline underline-offset-4">Explore all {allCategories.length} categories →</a></p>
+    <p className="mt-8"><a href="/categories" className="text-primary underline underline-offset-4">Explore all {categoryCountLabel(publishedCategories.length)} →</a></p>
     </section>
   )
 }

@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { SectionMarker } from '@/components/section-marker'
-import { allCategories } from '@/data/all-categories'
-import { categoryMeta } from '@/lib/category-stats'
+import { publishedCategories } from '@/data/all-categories'
+import { categoryMeta, categoryCountLabel } from '@/lib/category-stats'
 import { absoluteUrl } from '@/lib/site'
 
 const path = '/categories'
@@ -27,7 +27,7 @@ export default function CategoriesHubPage() {
     name: title,
     description,
     url: absoluteUrl(path),
-    hasPart: allCategories.map((category) => ({
+    hasPart: publishedCategories.map((category) => ({
       '@type': 'WebPage',
       name: category.name,
       description: category.description,
@@ -50,14 +50,13 @@ export default function CategoriesHubPage() {
           Every category, in one place
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground text-pretty">
-          Every published list contains five hand-picked tools. Larger categories contain several
-          focused lists; categories still being researched are marked as selection in progress.
+          Explore {categoryCountLabel(publishedCategories.length)} with complete lists of five hand-picked tools. Larger categories contain several focused lists.
         </p>
       </header>
 
       <section aria-label="All categories" className="mt-12">
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {allCategories.map((category) => (
+          {publishedCategories.map((category) => (
             <li key={category.slug}>
               <Link
                 href={`/${category.slug}`}

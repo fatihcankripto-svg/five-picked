@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/breadcrumbs'
 import { CategoryCard } from '@/components/category-card'
 import { RankedList } from '@/components/ranked-list'
 import { SectionMarker } from '@/components/section-marker'
+import { categoryCountLabel } from '@/lib/category-stats'
 import { getCategory } from '@/lib/site'
 
 export const dynamicParams = false
@@ -72,7 +73,7 @@ export default async function CategoryPage({ params }: Props) {
     <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
       <Breadcrumbs items={[{ label: category.name }]} />
       <header className="mt-10 max-w-3xl">
-        <SectionMarker label={`${subCount} categories`} />
+        <SectionMarker label={categoryCountLabel(subCount)} />
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
           {category.name}
         </h1>
@@ -81,7 +82,7 @@ export default async function CategoryPage({ params }: Props) {
         </p>
       </header>
 
-      <section aria-label={`${category.name} categories`} className="mt-12">
+      <section aria-label={`${category.name} ${subCount === 1 ? 'category' : 'categories'}`} className="mt-12">
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {category.subcategories?.map((sub) => (
             <li key={sub.slug}>

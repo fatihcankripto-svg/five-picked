@@ -1,5 +1,5 @@
 import { socialImages } from '@/lib/site'
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories } from '@/data/all-categories'
 import type { Metadata, Viewport } from 'next'
 import { Geist } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
@@ -64,7 +64,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <SiteHeader categoriesItems={allCategories.map((c) => ({ href: `/${c.slug}`, label: c.name }))} />
+        <SiteHeader categoriesItems={publishedCategories.map((c) => ({ href: `/${c.slug}`, label: c.name }))} />
         <main id="main" className="flex-1">
           {children}
         </main>

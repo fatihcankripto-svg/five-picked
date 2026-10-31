@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { catalogStats } from '@/lib/category-stats'
+import { catalogStats, categoryCountLabel } from '@/lib/category-stats'
 
 const delay = (i: number) => ({ '--fp-i': i }) as CSSProperties
 
 const stats = [
-  { value: catalogStats.categories, label: 'Categories' },
-  { value: catalogStats.tools >= 60 ? '60+' : catalogStats.tools, label: 'Hand-picked tools' },
+  { value: catalogStats.categories, label: catalogStats.categories === 1 ? 'Category' : 'Categories' },
+  { value: catalogStats.tools, label: 'Hand-picked tools' },
   { value: 5, label: 'Picks in every list' },
 ]
 
@@ -76,7 +76,7 @@ export function Hero() {
               </div>
             ))}
           </dl>
-          <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{catalogStats.lists} complete lists across {catalogStats.readyCategories} ready categories; {catalogStats.categories - catalogStats.readyCategories} more categories in research. Categories can contain several lists.</p>
+          <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{catalogStats.lists} complete lists across {categoryCountLabel(catalogStats.categories)}. Categories can contain several lists.</p>
         </div>
 
         <div

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { allCategories } from '@/data/all-categories'
+import { publishedCategories } from '@/data/all-categories'
 
 export function CategoryMarquee() {
   return (
@@ -12,7 +12,7 @@ export function CategoryMarquee() {
               aria-hidden={copy === 1 ? true : undefined}
               className={`flex shrink-0 items-center gap-3 pr-3 ${copy === 1 ? 'fp-marquee-dup' : ''}`}
             >
-              {allCategories.map((category) => (
+              {publishedCategories.map((category) => (
                 <li key={category.slug}>
                   <Link
                     href={`/${category.slug}`}
