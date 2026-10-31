@@ -68,7 +68,7 @@ export default function FreeIndexPage() {
                   {page.intro}
                 </p>
                 <p className="mt-3 text-xs uppercase tracking-widest text-primary">
-                  {page.tools.length} {page.slug === 'best-free-web-hosting' ? 'hosting options: trials & refunds' : 'free picks'} →
+                  {page.tools.length} {page.slug === 'best-free-video-and-design-software' ? 'options: free access & trials' : page.slug === 'best-free-web-hosting' ? 'hosting options: trials & refunds' : 'free picks'} →
                 </p>
               </Link>
             </li>

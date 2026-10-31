@@ -1,3 +1,4 @@
+import { videoDesignFreeOptions } from '@/lib/video-design-free-options'
 import { hostingOffers } from '@/lib/hosting-free-options'
 import { editorialDates } from '@/lib/editorial-dates'
 /**
@@ -31,6 +32,25 @@ type FreeCopy = {
 }
 
 const copies: FreeCopy[] = [
+  {
+    slug: 'best-free-video-and-design-software',
+    title: 'Free Video and Design Software in 2026: Limits and Trials',
+    h1: 'Free video and design software in 2026: what is actually free?',
+    metaTitle: 'Free Video & Design Software: Limits and Trials (2026)',
+    metaDescription: 'Compare Premiere Pro, Filmora, Envato, Riverside and Camtasia: free access, trial duration, watermarks, export limits and documented commercial-use conditions.',
+    intro: 'Free to download is not always free to deliver. Our five existing video and design picks include a desktop trial, watermarked editors, a limited recording plan and selected free stock assets. This guide separates those options and explains the official conditions before you spend time on a project.',
+    verdict: 'Use the ongoing limited options to learn a workflow, but check the export and commercial-use conditions before client delivery. Premiere desktop has a short trial; Filmora and Camtasia add watermarks; Riverside limits free video quality and separate-track access; Envato’s free files have a specific single-end-product license. None is presented as unlimited, unrestricted free production.',
+    toolSlugs: ['adobe-premiere-pro', 'filmora', 'envato-elements', 'riverside', 'camtasia'],
+    faqs: [
+      { question: 'Are all five tools permanently free?', answer: 'No. Premiere desktop has a 7-day trial. Filmora provides limited editing access without a stated trial expiry, Camtasia offers a watermarked free editor, Riverside has a limited ongoing Free account, and Envato offers selected free assets rather than a subscription trial.' },
+      { question: 'Which free options add a watermark?', answer: 'Filmora and Camtasia document watermarks on free exported videos. Riverside’s Free pricing comparison also lists a watermark. Editing access is not the same as watermark-free delivery.' },
+      { question: 'Is Riverside’s 2-hour separate-track allowance renewed every month?', answer: 'The free-account help describes the first 2 hours of recorded content as an opportunity to try separate high-quality tracks. This guide does not treat that allowance as a monthly reset or confuse it with ongoing recording and editing access.' },
+      { question: 'Can I use Envato’s free files for a paying client?', answer: 'The Free Files Use Policy permits one customized commercial end product per file, including client work, subject to restrictions. It does not permit standalone redistribution, and music has additional limits.' },
+      { question: 'Does a free editor automatically allow monetized work?', answer: 'No. Wondershare requires a commercial license for monetization, and asset permissions are separate. Adobe’s NFR terms restrict commercial output from designated versions. This guide does not certify blanket commercial permission for free Camtasia or Riverside access.' },
+    ],
+    relatedListPath: '/video-and-design-software',
+    relatedListLabel: 'Video and design tools: the complete ranked comparison',
+  },
   {
     slug: 'best-free-web-hosting',
     title: 'Web Hosting Free Trials and Money-Back Options (2026)',
@@ -468,6 +488,10 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     const tool = toolIndex.get(slug)
     if (!tool) {
       throw new Error(`[FIVE PICKED] Free page "${copy.slug}" references missing tool "${slug}".`)
+    }
+    if (copy.slug === 'best-free-video-and-design-software') {
+      const option = videoDesignFreeOptions.find((entry) => entry.slug === slug)!
+      return { ...tool, goodToKnow: `${option.limits} ${option.commercial}` }
     }
     if (copy.slug === 'best-free-web-hosting') {
       const offer = hostingOffers.find((entry) => entry.slug === slug)!
