@@ -137,7 +137,32 @@ const packageReviewLinks: Record<string, Record<string, string>> = {
     '/compare/semrush-vs-surfer-seo': 'Inspect the full Semrush source-based assessment',
   },
 }
+const secondReviewLinks: Record<string, Record<string, string>> = {
+  "/reviews/kiwi-com": {
+    "/travel": "Read the full Kiwi.com purchase assessment",
+    "/travel/flights": "Check Kiwi.com access and billing in detail",
+    "/free/best-free-flight-booking-sites": "Inspect Kiwi.com conditions before committing",
+    "/quiz/travel-flights": "Review whether Kiwi.com fits your requirements",
+    "/compare/kiwi-com-vs-trip-com": "Explore the source-based Kiwi.com review"
+  },
+  "/reviews/surfer-seo": {
+    "/ai-tools": "Read the full Surfer SEO purchase assessment",
+    "/ai-tools/marketing-and-seo": "Check Surfer SEO access and billing in detail",
+    "/free/best-free-ai-marketing-and-seo-tools": "Inspect Surfer SEO conditions before committing",
+    "/quiz/ai-tools-marketing-and-seo": "Review whether Surfer SEO fits your requirements",
+    "/compare/semrush-vs-surfer-seo": "Explore the source-based Surfer SEO review"
+  },
+  "/reviews/expressvpn": {
+    "/vpn-and-security": "Read the full ExpressVPN purchase assessment",
+    "/free/vpns-with-a-free-plan": "Check ExpressVPN access and billing in detail",
+    "/quiz/vpn-and-security": "Inspect ExpressVPN conditions before committing",
+    "/compare/expressvpn-vs-nordvpn": "Review whether ExpressVPN fits your requirements"
+  }
+}
 function sameTopic(a: ContentLink, b: ContentLink) {
+  for (const [target, sources] of Object.entries(secondReviewLinks)) {
+    if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
+  }
   for (const [target, sources] of Object.entries(packageReviewLinks)) {
     if (a.path === target || b.path === target) return Boolean(sources[a.path === target ? b.path : a.path])
   }
@@ -277,9 +302,20 @@ for (const [target, sources] of Object.entries(packageReviewLinks)) {
     graph.get(target)?.add(source)
   }
 }
+for (const [target, sources] of Object.entries(secondReviewLinks)) {
+  for (const source of Object.keys(sources)) {
+    graph.get(source)?.add(target)
+    graph.get(target)?.add(source)
+  }
+}
 export function getContentLinks(path: string) {
   const links = graph.get(path)
   return contentLinks.filter((p) => links?.has(p.path)).map((page) => {
+    if (secondReviewLinks[page.path]?.[path]) return { ...page, title: secondReviewLinks[page.path][path] }
+    if (secondReviewLinks[path]?.[page.path]) {
+      const review = reviews.find((review) => `/reviews/${review.toolSlug}` === path)
+      return { ...page, title: review?.related.find((link) => link.href === page.path)?.label ?? page.title }
+    }
     if (packageReviewLinks[page.path]?.[path]) return { ...page, title: packageReviewLinks[page.path][path] }
     if (packageReviewLinks[path]?.[page.path]) return { ...page, title: `Continue your research: ${page.title}` }
     if (secondCompareLinks[page.path]?.[path]) return { ...page, title: secondCompareLinks[page.path][path] }

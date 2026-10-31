@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-ai-marketing-and-seo-tools' ? marketingSeoFreeEditorial.lastReviewedAt : page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : freePagesUpdated)),
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
     route('/guides'), ...guides.map((guide) => route(guide.path, guide.path === '/guides/ai-voice-commercial-use' ? editorialDates.commercialVoiceGuide : editorialDates.guides)),
-    // Review registry includes NordVPN, Hostinger and Semrush.
+    // Review registry includes all published reviews, including Kiwi.com, Surfer SEO and ExpressVPN.
     route('/reviews'), ...reviews.map((review) => route(`/reviews/${review.toolSlug}`, review.updated)),
     // The alternatives registry includes Hostinger, NordVPN and Premiere alongside existing pages.
     route('/alternatives'), ...getAllAlternativePages().map((page) => route(`/alternatives/${page.slug}`, alternativesUpdated)),
