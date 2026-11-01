@@ -1,4 +1,3 @@
-import { foundationCardClasses, foundationButtonClasses } from '@/lib/design-system'
 import Link from 'next/link'
 import { Check, Info, Star } from 'lucide-react'
 import type { Tool } from '@/data/categories'
@@ -10,7 +9,7 @@ import { toolDecisions } from '@/data/tool-decisions'
 import { formatDate } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
-export function ToolCard({ tool, rank, showPricingTerms = true, designSystem = false }: { tool: Tool; rank: number; showPricingTerms?: boolean; designSystem?: boolean }) {
+export function ToolCard({ tool, rank, showPricingTerms = true }: { tool: Tool; rank: number; showPricingTerms?: boolean }) {
   const headingId = `${tool.slug}-heading`
   const isTop = rank === 1
   const review = getReview(tool.slug)
@@ -24,8 +23,7 @@ export function ToolCard({ tool, rank, showPricingTerms = true, designSystem = f
         aria-labelledby={headingId}
         className={cn(
           'relative isolate overflow-hidden rounded-2xl p-5 sm:p-7 transition-colors duration-200',
-          isTop ? 'fp-card-top-pick' : 'fp-card-glass',
-          designSystem && `${foundationCardClasses} fp-ds-tool-card`
+          isTop ? 'fp-card-top-pick' : 'fp-card-glass'
         )}
       >
         <span
@@ -92,12 +90,12 @@ export function ToolCard({ tool, rank, showPricingTerms = true, designSystem = f
             {review && (
               <Link
                 href={`/reviews/${review.toolSlug}`}
-                className={cn("inline-flex h-11 items-center justify-center rounded-xl bg-background/50 border border-white/10 px-5 text-sm font-semibold text-foreground transition-all hover:bg-accent hover:border-primary/30", designSystem && foundationButtonClasses('secondary'))}
+                className="inline-flex h-11 items-center justify-center rounded-xl bg-background/50 border border-white/10 px-5 text-sm font-semibold text-foreground transition-all hover:bg-accent hover:border-primary/30"
               >
                 Read our review
               </Link>
             )}
-            <VisitButton tool={tool} designSystem={designSystem} />
+            <VisitButton tool={tool} />
           </div>
         </footer>
       </article>

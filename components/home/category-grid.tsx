@@ -25,7 +25,6 @@ export function CategoryGrid() {
         {publishedCategories.slice(0, 6).map((category, index) => (
           <li key={category.slug}>
             <CategoryCard
-              designSystem
               href={`/${category.slug}`}
               slug={category.slug}
               name={category.name}

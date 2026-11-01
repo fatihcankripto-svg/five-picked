@@ -1,7 +1,5 @@
 'use client'
 
-import { hasDesignFoundation } from '@/lib/design-system'
-
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
@@ -29,7 +27,6 @@ const makeTopLevel = (categoriesItems: { href: string; label: string }[]): TopLe
 export function SiteHeader({ categoriesItems }: { categoriesItems: { href: string; label: string }[] }) {
   const topLevel = makeTopLevel(categoriesItems)
   const pathname = usePathname()
-  const designSystem = hasDesignFoundation(pathname)
   const [openDesktop, setOpenDesktop] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(false)
@@ -101,7 +98,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
     href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/')
 
   return (
-    <header ref={headerRef} className={cn("sticky top-0 z-50 border-b border-border bg-background", designSystem && 'fp-glass fp-ds-header')}>
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-border bg-background">
       <div
         aria-hidden="true"
         className="fp-progress pointer-events-none absolute inset-x-0 -bottom-px h-0.5 bg-primary"
@@ -115,7 +112,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
         />
       )}
 
-      <div className={cn("relative z-50 mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 bg-background", designSystem && 'fp-ds-header-inner')}>
+      <div className="relative z-50 mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 bg-background">
         <Logo onClick={closeAll} />
 
         <nav ref={navRef} aria-label="Main" className="hidden items-center gap-1 lg:flex">
@@ -160,7 +157,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
                 </button>
                 {isOpen && (
                   <div
-                    className={cn("absolute right-0 top-full mt-2 w-[34rem] rounded-xl border border-border bg-card p-4 shadow-2xl animate-in slide-in-from-top-2 fade-in-0 duration-200", designSystem && 'fp-glass')}
+                    className="absolute right-0 top-full mt-2 w-[34rem] rounded-xl border border-border bg-card p-4 shadow-2xl animate-in slide-in-from-top-2 fade-in-0 duration-200"
                   >
                     <ul className="grid grid-cols-2 gap-2">
                       {section.items.map((item) => (
@@ -249,7 +246,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
                       mobileCategoriesOpen ? "grid-rows-[1fr] opacity-100 mt-2 mb-4" : "grid-rows-[0fr] opacity-0"
                     )}
                   >
-                    <div className={cn("overflow-hidden rounded-xl bg-card border border-border", designSystem && 'fp-glass')}>
+                    <div className="overflow-hidden rounded-xl bg-card border border-border">
                       <ul className="flex flex-col p-2">
                         {section.items.map((item) => (
                           <li key={item.href}>

@@ -31,7 +31,6 @@ export function ContentPage({
   intro,
   children,
   showRelatedContent = true,
-  designSystem = false,
 }: {
   path?: string
   eyebrow: string
@@ -39,7 +38,6 @@ export function ContentPage({
   intro: string
   children: React.ReactNode
   showRelatedContent?: boolean
-  designSystem?: boolean
 }) {
   const sections: { id: string; label: string }[] = []
   const content = Children.map(children, (child) => {
@@ -51,7 +49,7 @@ export function ContentPage({
     return cloneElement(element, { id })
   })
   return (
-    <div data-design-system={designSystem ? 'foundation' : undefined} className={`mx-auto max-w-3xl px-5 pt-10 sm:px-8 sm:pt-14${designSystem ? ' fp-design-system' : ''}`}>
+    <div className="mx-auto max-w-3xl px-5 pt-10 sm:px-8 sm:pt-14">
       <Breadcrumbs items={[...(path?.startsWith("/reviews/") ? [{ label: "Reviews", href: "/reviews" }] : path?.startsWith("/alternatives/") ? [{ label: "Alternatives", href: "/alternatives" }] : []), { label: title }]} />
       <header className="mt-10 border-b border-border pb-10">
         <SectionMarker label={eyebrow} />

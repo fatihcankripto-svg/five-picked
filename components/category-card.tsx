@@ -1,7 +1,5 @@
 'use client'
 
-import { foundationCardClasses } from '@/lib/design-system'
-
 import Link from 'next/link'
 import { useEffect, useRef, type MouseEvent } from 'react'
 import {
@@ -22,9 +20,9 @@ const icons: Record<string, LucideIcon> = {
 
 
 export function CategoryCard({
-  href, slug, name, description, meta, number, headingLevel = 'h3', designSystem = false,
+  href, slug, name, description, meta, number, headingLevel = 'h3',
 }: {
-  href: string; slug: string; name: string; description: string; meta: string; number?: string; headingLevel?: 'h2' | 'h3'; designSystem?: boolean
+  href: string; slug: string; name: string; description: string; meta: string; number?: string; headingLevel?: 'h2' | 'h3'
 }) {
   const frame = useRef<number | null>(null)
   const cursor = useRef<{ node: HTMLAnchorElement; x: number; y: number } | null>(null)
@@ -52,8 +50,8 @@ export function CategoryCard({
   return (
     <Link
       href={href}
-      onMouseMove={designSystem ? undefined : followMouse}
-      className={cn("fp-card-glass fp-spot group flex h-full flex-col rounded-2xl p-6 focus-visible:outline-2 focus-visible:outline-offset-2", designSystem && foundationCardClasses)}
+      onMouseMove={followMouse}
+      className="fp-card-glass fp-spot group flex h-full flex-col rounded-2xl p-6 focus-visible:outline-2 focus-visible:outline-offset-2"
     >
       <div className="flex items-start justify-between">
         <span className="flex size-12 items-center justify-center rounded-xl bg-background/50 border border-white/5 text-primary shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/10">
