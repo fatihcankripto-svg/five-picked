@@ -24,8 +24,9 @@ export function SiteSearch({ open, onOpenChange }: { open: boolean; onOpenChange
   const [entries, setEntries] = useState<PreparedSearchEntry[]>([])
   const [status, setStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle')
   const [retry, setRetry] = useState(0)
+  const [resultLimit, setResultLimit] = useState(12)
   const results = useMemo(() => searchSite(entries, query, kind), [entries, query, kind])
-  const visible = results.slice(0, 12)
+  const visible = results.slice(0, resultLimit)
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -69,12 +70,13 @@ export function SiteSearch({ open, onOpenChange }: { open: boolean; onOpenChange
         </div>
         <p id="site-search-help" className="mt-2 text-sm text-muted-foreground">Find companies, categories, guides and tools. Search stays in your browser.</p>
         <label htmlFor="site-search-query" className="sr-only">Search companies and pages</label>
-        <input ref={inputRef} id="site-search-query" type="search" autoComplete="off" spellCheck={false} maxLength={100} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Company, topic or question" aria-controls="site-search-results" onKeyDown={(event) => {
+        <input ref={inputRef} id="site-search-query" type="search" autoComplete="off" spellCheck={false} maxLength={100} value={query} onChange={(event) => { setQuery(event.target.value); setResultLimit(12) }} placeholder="Company, topic or question" aria-controls="site-search-results" onKeyDown={(event) => {
+          if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); onOpenChange(false); return }
           if (visible.length && event.key === 'ArrowDown') { event.preventDefault(); firstResultRef.current?.focus() }
           if (visible.length && event.key === 'Enter') { event.preventDefault(); firstResultRef.current?.click() }
         }} className="mt-4 w-full rounded-lg border border-border bg-background p-3 text-base text-foreground" />
         <label htmlFor="site-search-kind" className="mt-3 block text-sm text-muted-foreground">Content type</label>
-        <select id="site-search-kind" value={kind} onChange={(event) => setKind(event.target.value as SearchKind | 'all')} className="mt-1 w-full rounded-lg border border-border bg-background p-2 text-sm text-foreground">
+        <select id="site-search-kind" value={kind} onChange={(event) => { setKind(event.target.value as SearchKind | 'all'); setResultLimit(12) }} className="mt-1 w-full rounded-lg border border-border bg-background p-2 text-sm text-foreground">
           <option value="all">Everything</option>{Object.entries(searchKinds).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
         </select>
       </div>
@@ -89,6 +91,7 @@ export function SiteSearch({ open, onOpenChange }: { open: boolean; onOpenChange
             <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">{result.description}</span>
           </a>
         </li>)}</ul>
+        {status === 'ready' && results.length > visible.length && <button type="button" onClick={() => setResultLimit((limit) => limit + 12)} className="mt-4 w-full rounded-lg border border-border px-4 py-3 text-sm font-semibold hover:bg-accent">Show more results</button>}
       </div>
     </dialog>
   </>
