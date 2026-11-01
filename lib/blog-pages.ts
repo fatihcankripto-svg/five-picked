@@ -1,3 +1,5 @@
+import { blogPriceSnapshot } from '@/lib/blog-price-snapshots'
+import { courseFreeOptions } from '@/lib/course-free-options'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import { onlineCoursePriceIndexPost } from '@/lib/online-course-price-index'
 import { vpnPriceIndexPost } from '@/lib/vpn-price-index'
@@ -138,7 +140,8 @@ const semrushVsSurferContent = `
 <p>Surfer is not a research platform. It will not tell you which keywords are worth targeting, what competitors are doing, or how your site performs over time. It also has no free plan, and each plan caps how many documents you can create. If you need keyword discovery or competitive analysis, Surfer alone is not enough.</p>
 
 <h2>How to compare the real cost</h2>
-<p>Compare the <a href="https://www.semrush.com/pricing/">Semrush plans</a> with <a href="https://surferseo.com/pricing/">Surfer pricing</a> using your actual workflow. For research, count the projects and reports you need; for optimization, count the articles your team will edit. Check billing commitment, seats and included allowances. Current prices: see website. A lower headline subscription is not automatically better value when you need a separate tool to finish the job.</p>
+<p>Compare the <a href="https://www.semrush.com/pricing/">Semrush plans</a> with <a href="https://surferseo.com/pricing/">Surfer pricing</a> using your actual workflow. For research, count the projects and reports you need; for optimization, count the articles your team will edit. Check billing commitment, seats and included allowances. A lower headline subscription is not automatically better value when you need a separate tool to finish the job.</p>
+${blogPriceSnapshot(['semrush', 'surfer-seo'])}
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you know which keywords and topics to target, or do you need help finding them?</strong></p>
@@ -292,7 +295,8 @@ const kinstaVsCloudwaysContent = `
 <p>Cloudways is more technical than Kinsta. You choose the server size, manage some settings yourself, and support is more DevOps-flavoured than white-glove WordPress help. There is no email hosting included (it is an add-on), and the interface assumes you are comfortable with basic server concepts. If you want everything done for you, Cloudways will feel like work.</p>
 
 <h2>How to compare the real cost</h2>
-<p>Compare the cost for the same site workload, not two introductory headlines. Check the <a href="https://kinsta.com/pricing/">Kinsta plans</a> and <a href="https://www.cloudways.com/en/pricing.php">Cloudways pricing</a> for what is included in the selected configuration. List storage, traffic, backups, support and extra services separately; then compare the recurring total. Current prices: see website. Recheck those assumptions before migrating a live site.</p>
+<p>Compare the cost for the same site workload, not two introductory headlines. Check the <a href="https://kinsta.com/pricing/">Kinsta plans</a> and <a href="https://www.cloudways.com/en/pricing.php">Cloudways pricing</a> for what is included in the selected configuration. List storage, traffic, backups, support and extra services separately; then compare the recurring total. Recheck those assumptions before migrating a live site.</p>
+${blogPriceSnapshot(['kinsta', 'cloudways'])}
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you want to manage your hosting, or do you want it managed for you?</strong></p>
@@ -329,6 +333,10 @@ const kinstaVsCloudwaysContent = `
 <p>For the full ranked list of hosting options, see our <a href="/web-hosting-and-domains">web hosting & domains top 5</a>. If you are still deciding between hosting types, our <a href="/web-hosting-and-domains">hosting provider comparison</a> explains the differences in plain English. And if you are building a content site, our <a href="/blog/best-ai-tools-for-content-marketing">best AI tools for content marketing guide</a> covers the research and writing side.</p>
 `
 
+const skillshareAccess = courseFreeOptions.find((entry) => entry.slug === 'skillshare')!
+const masterclassAccess = courseFreeOptions.find((entry) => entry.slug === 'masterclass')!
+const courseCertificateAnswer = `${masterclassAccess.certificate} ${skillshareAccess.certificate}`
+
 const skillshareVsMasterclassContent = `
 <p><strong>Skillshare and MasterClass both sell "learn from experts" — but they sell completely different things.</strong> Skillshare is a subscription library of short, project-based classes taught by working creatives. MasterClass is a collection of cinematic courses taught by famous names. Comparing them head-to-head is not about which is "better" — it is about what you actually want from the money you spend.</p>
 
@@ -345,35 +353,38 @@ const skillshareVsMasterclassContent = `
 
 </ul>
 <h3>Where Skillshare falls short</h3>
-<p>Skillshare does not give completion certificates, so it is not the right pick if you need credentials for a CV. It is also weak on structured, career-track programs — you pick classes one at a time, not a full curriculum. And while the library is huge, quality varies widely between teachers.</p>
+<p>${skillshareAccess.certificate} A class certificate does not by itself establish academic credit or professional accreditation. Check the class, teacher and learning path against your goal before committing to the membership.</p>
 
 <h2>What MasterClass does best</h2>
-<p>MasterClass is built around inspiration and craft. Every course is filmed like a documentary, taught by a recognised expert — a chef, a writer, a director, a musician. The production quality is higher than almost anything else in online learning.</p>
+<p>MasterClass is built around inspiration and craft. Every course is filmed like a documentary, taught by a recognised expert — a chef, a writer, a director, a musician. The focus is on polished video lessons about the instructor’s approach.</p>
 <h3>Where MasterClass wins</h3>
 <ul>
-<li><strong>Cinematic production:</strong> Courses are filmed and edited to a standard no other platform matches.</li>
+<li><strong>Cinematic production:</strong> Video lessons emphasize polished production and the instructor’s craft.</li>
 <li><strong>Famous, world-class teachers:</strong> Gordon Ramsay, Margaret Atwood, Hans Zimmer, Serena Williams — the roster is the product.</li>
 <li><strong>Inspiration and craft, not just technique:</strong> MasterClass teaches how experts think, not just what they do.</li>
 <li><strong>Wide range of topics:</strong> Cooking, writing, business, music, sports, film and more.</li>
-<li><strong>30-day money-back guarantee:</strong> A real refund window if it is not for you.</li>
+<li><strong>30-day money-back guarantee:</strong> Eligibility and purchase-route conditions apply; this is a refund policy for an eligible purchase.</li>
 </ul>
 <h3>Where MasterClass falls short</h3>
-<p>MasterClass is not project-based, and it does not give completion certificates. Many classes are more inspirational than practical — you finish inspired but not necessarily skilled. It is also billed yearly only, so you cannot try a month.</p>
+<p>${masterclassAccess.certificate} Many classes are more inspirational than practical — you finish inspired but not necessarily skilled. The regular membership is billed annually; a monthly equivalent does not establish a monthly payment option.</p>
 
 <h2>How to compare the real cost</h2>
-<p>Check <a href="https://www.skillshare.com/">Skillshare</a> and <a href="https://www.masterclass.com/">MasterClass</a> for the price available in your location. Compare the full billing period and cancellation terms rather than a monthly equivalent in an annual offer. Pick the course first: a subscription only represents value if you will actually finish the classes you chose. Current prices: see website.</p>
+<p>Check <a href="https://www.skillshare.com/">Skillshare</a> and <a href="https://www.masterclass.com/">MasterClass</a> for the price available in your location. Compare the full billing period and cancellation terms rather than a monthly equivalent in an annual offer. Pick the course first: a subscription only represents value if you will actually finish the classes you chose.</p>
+${blogPriceSnapshot(['skillshare', 'masterclass'])}
+
+<p>Official certificate and billing sources: ${[...skillshareAccess.sources, ...masterclassAccess.sources].map((source) => `<a href="${source.url}" rel="noopener noreferrer">${source.label}</a>`).join(' · ')}.</p>
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you want to build a skill, or do you want to be inspired by the best?</strong></p>
 <p>If you want to sit down, follow a project, and come out with something you made — a logo, an illustration, a short story, a photo series — <strong>Skillshare is the better fit</strong>. It is a doing platform.</p>
 <p>If you want to understand how world-class people approach their craft, and you are willing to be inspired rather than instructed — <strong>MasterClass is the better fit</strong>. It is a watching platform.</p>
-<p>Most people who buy both end up using one and not the other. Pick the one that matches how you actually learn, not the one that sounds more impressive.</p>
+<p>Choose the format you will use rather than purchasing both memberships by default.</p>
 
 <h2>When you need both (or neither)</h2>
 <ul>
-<li><strong>You want a specific creative skill:</strong> Skillshare, then cancel when you have what you need.</li>
+<li><strong>You want a specific creative skill:</strong> Skillshare, with the annual commitment checked before subscribing; cancellation stops renewal rather than turning an annual payment into monthly billing.</li>
 <li><strong>You want inspiration and a new perspective on your field:</strong> MasterClass.</li>
-<li><strong>You want a certificate for your CV:</strong> Neither. Look at our <a href="/online-courses">online courses top 5</a> — Coursera and DataCamp both give recognised certificates.</li>
+<li><strong>You want a certificate for your CV:</strong> Check the exact certificate and issuer rather than the platform name: Skillshare offers class certificates, regular MasterClass classes differ from its separate Certificates product, and our <a href="/online-courses">online courses top 5</a> explains other learning routes.</li>
 <li><strong>You want to learn to code:</strong> Neither. See <a href="/compare/coursera-vs-datacamp">Coursera vs DataCamp</a> for the coding and data route.</li>
 </ul>
 
@@ -382,7 +393,7 @@ const skillshareVsMasterclassContent = `
 <p>Skillshare is the better starting point for most beginners, because the classes are short, project-based, and you finish with something you made. MasterClass is better once you already have some foundation and want to deepen your understanding of craft.</p>
 
 <h3>Does MasterClass give certificates?</h3>
-<p>No. MasterClass does not give completion certificates. Skillshare also does not. If you need a certificate for a CV or LinkedIn, look at Coursera or DataCamp instead.</p>
+<p>${courseCertificateAnswer}</p>
 
 <h3>Can I cancel MasterClass after one year?</h3>
 <p>Yes. MasterClass is billed annually, but you can cancel before renewal. There is also a 30-day money-back guarantee if you change your mind early.</p>
@@ -394,7 +405,7 @@ const skillshareVsMasterclassContent = `
 <p>Skillshare for practical, project-based skills you can apply immediately. MasterClass for inspiration and a deeper understanding of how experts think. Many creative professionals use both, but if you have to pick one, pick the one that matches what you need this month.</p>
 
 <h2>Final verdict</h2>
-<p>Pick <strong>Skillshare</strong> if you want to build a practical creative skill through short, project-based classes — and you want the option to cancel after a few months. Pick <strong>MasterClass</strong> if you want to learn from famous experts and you are looking for inspiration and craft rather than step-by-step instruction.</p>
+<p>Pick <strong>Skillshare</strong> if you want to build a practical creative skill through short, project-based classes — after checking the full annual payment and cancellation conditions. Pick <strong>MasterClass</strong> if you want to learn from famous experts and you are looking for inspiration and craft rather than step-by-step instruction.</p>
 <p>For the full ranked list of learning platforms, see our <a href="/online-courses">online courses top 5</a>. If you want certificates, see <a href="/compare/coursera-vs-datacamp">Coursera vs DataCamp</a>. If you want a structured language course, see our <a href="/compare/babbel-vs-italki">Babbel vs italki</a> breakdown. And if you are still deciding what to learn next, try the <a href="/quiz">learning platform quiz</a>.</p>
 `
 
@@ -430,7 +441,8 @@ const preplyVsLingodaContent = `
 <p>Group classes mean less individual attention than a private tutor. The curriculum is fixed, so you cannot skip ahead or focus on one specific weakness.</p>
 
 <h2>How to compare the real cost</h2>
-<p>Compare the cost of a realistic lesson schedule on <a href="https://preply.com/">Preply</a> and <a href="https://www.lingoda.com/">Lingoda</a>. Keep lesson duration, frequency and format consistent. Review cancellation and rescheduling rules before reserving a recurring slot. Current prices: see website. A lower lesson price can be poor value if the available times do not fit your routine.</p>
+<p>Compare the cost of a realistic lesson schedule on <a href="https://preply.com/">Preply</a> and <a href="https://www.lingoda.com/">Lingoda</a>. Keep lesson duration, frequency and format consistent. Review cancellation and rescheduling rules before reserving a recurring slot. A lower lesson price can be poor value if the available times do not fit your routine.</p>
+${blogPriceSnapshot(['preply', 'lingoda'])}
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you want a personal tutor, or do you want a structured course?</strong></p>
@@ -566,7 +578,8 @@ const envatoVsFreepikContent = `
 <p>Freepik is weaker on video templates and music than Envato. Its AI features run on credits on lower tiers, and the commercial AI licence is part of paid plans. If your work is video-first, Envato is the better fit. If your work is image-first, Freepik is the better fit.</p>
 
 <h2>How to compare the real cost</h2>
-<p>Start with the asset you need and check the applicable licence on <a href="https://elements.envato.com/">Envato Elements</a> and <a href="https://www.freepik.com/">Freepik</a>. Compare subscription cost with the number of usable assets in your actual projects. Confirm the rules for client delivery and continued use after cancellation. Current prices: see website. A large library is not a saving if the right asset is unavailable.</p>
+<p>Start with the asset you need and check the applicable licence on <a href="https://elements.envato.com/">Envato Elements</a> and <a href="https://www.freepik.com/">Freepik</a>. Compare subscription cost with the number of usable assets in your actual projects. Confirm the rules for client delivery and continued use after cancellation. A large library is not a saving if the right asset is unavailable.</p>
+${blogPriceSnapshot(['envato-elements', 'freepik'])}
 
 <h2>The one question that decides it</h2>
 <p><strong>Is your work video-first, or image-first?</strong></p>
@@ -635,7 +648,8 @@ const capcutVsPremiereContent = `
 <p>It also takes weeks to learn, and it is overkill for someone who just wants to cut social clips.</p>
 
 <h2>How to compare the real cost</h2>
-<p>Check <a href="https://www.capcut.com/">CapCut</a> and <a href="https://www.adobe.com/products/premiere.html">Premiere Pro</a> for the plans offered in your region. Compare the full commitment, cancellation terms and the exact export workflow you need. Do not treat an annual plan’s monthly equivalent as a cancel-anytime quote. Current prices: see website. Use the same short project to compare editing time before purchasing.</p>
+<p>Check <a href="https://www.capcut.com/">CapCut</a> and <a href="https://www.adobe.com/products/premiere.html">Premiere Pro</a> for the plans offered in your region. Compare the full commitment, cancellation terms and the exact export workflow you need. Do not treat an annual plan’s monthly equivalent as a cancel-anytime quote. Use the same short project to compare editing time before purchasing.</p>
+${blogPriceSnapshot(['adobe-premiere-pro'])}
 
 <h2>The one question that decides it</h2>
 <p><strong>Do you need to publish social clips fast, or do you need full control over a professional project?</strong></p>
@@ -1259,7 +1273,7 @@ export const blogPosts: BlogPost[] = [
       {
         question: 'Does MasterClass give certificates?',
         answer:
-          'No. MasterClass does not give completion certificates. Skillshare also does not. If you need a certificate for a CV or LinkedIn, look at Coursera or DataCamp instead.',
+          courseCertificateAnswer,
       },
       {
         question: 'Can I cancel MasterClass after one year?',

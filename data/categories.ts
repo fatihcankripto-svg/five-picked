@@ -831,7 +831,7 @@ export const categories: Category[] = [
           'Offline viewing in the mobile app',
         ],
         goodToKnow:
-          'It mainly sells yearly memberships, and it does not give completion certificates.',
+          'Annual memberships are paid upfront; class certificates require completing the lessons and submitting the class project.',
         startingPrice: verifiedPricing["skillshare"].label,
         officialUrl: 'https://www.skillshare.com',
       },
@@ -857,7 +857,7 @@ export const categories: Category[] = [
         slug: 'masterclass',
         name: 'MasterClass',
         tagline: 'Learn from famous experts in beautifully produced classes.',
-        bestFor: "Viewers seeking inspiration from expert-led classes rather than completion certificates",
+        bestFor: "Viewers seeking inspiration through regular expert-led classes",
         whatItDoes:
           'MasterClass offers over 200 video classes taught by well-known experts in areas such as cooking, writing, business, music and more.',
         strengths: [
@@ -867,7 +867,7 @@ export const categories: Category[] = [
           '30-day money-back guarantee',
         ],
         goodToKnow:
-          'It is billed yearly only and renews automatically, and it does not give completion certificates.',
+          'Regular membership is billed annually and renews automatically; its classes differ from the separate MasterClass Certificates product.',
         startingPrice: verifiedPricing["masterclass"].label,
         officialUrl: 'https://www.masterclass.com',
       },

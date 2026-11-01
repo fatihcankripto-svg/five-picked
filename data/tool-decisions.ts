@@ -157,7 +157,7 @@ export const toolDecisions: Record<string, { audience: string; standout: string 
     "standout": "Interactive coding lessons"
   },
   "masterclass": {
-    "audience": "Viewers seeking inspiration from expert-led classes rather than completion certificates",
+    "audience": "Viewers seeking inspiration through regular expert-led classes",
     "standout": "Expert-led video classes"
   },
   "mailerlite": {
