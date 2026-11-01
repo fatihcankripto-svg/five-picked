@@ -1,343 +1,343 @@
 /** Concise editorial decision cues; no ratings or performance scores. */
 export const toolDecisions: Record<string, { audience: string; standout: string }> = {
   "kling-ai": {
-    "audience": "AI video creators",
+    "audience": "Creators turning text or images into video clips with camera and motion controls",
     "standout": "Prompt-to-video clips"
   },
   "pictory": {
-    "audience": "Content marketers",
+    "audience": "Marketers turning articles and long videos into captioned clips",
     "standout": "Repurpose written content"
   },
   "synthesia": {
-    "audience": "Training teams",
+    "audience": "Training teams making presenter-led explainers without filming a person",
     "standout": "Presenter-led explainers"
   },
   "fliki": {
-    "audience": "Content creators",
+    "audience": "Creators turning blog posts and scripts into narrated videos",
     "standout": "Narrated videos from scripts"
   },
   "elevenlabs": {
-    "audience": "Audio creators",
+    "audience": "Creators producing voiceovers, audiobooks or dubbed audio",
     "standout": "Voice generation and dubbing"
   },
   "adobe-firefly": {
-    "audience": "Adobe creatives",
+    "audience": "Designers generating and editing images alongside Adobe apps",
     "standout": "Generative image editing"
   },
   "ideogram": {
-    "audience": "Brand designers",
+    "audience": "Designers making posters, logos or social graphics that include readable text",
     "standout": "Typography-led images"
   },
   "krea": {
-    "audience": "Visual creators",
+    "audience": "Creators iterating on images in real time and comparing different models",
     "standout": "Iterative image creation"
   },
   "openart": {
-    "audience": "Image creators",
+    "audience": "Creators exploring models and styles with editing tools in the same workspace",
     "standout": "Explore multiple AI models"
   },
   "freepik": {
-    "audience": "Design teams",
+    "audience": "Marketers combining AI images with stock photos, vectors and templates",
     "standout": "Stock assets and AI creation"
   },
   "fireflies": {
-    "audience": "Meeting-heavy teams",
+    "audience": "Teams needing searchable meeting transcripts across their meeting and work apps",
     "standout": "Searchable meeting notes"
   },
   "fathom": {
-    "audience": "Individual professionals",
+    "audience": "Individuals who want free meeting recordings and transcripts with limited advanced summaries",
     "standout": "Capture meeting highlights"
   },
   "otter": {
-    "audience": "Students and teams",
+    "audience": "Students and professionals following meetings through live transcripts",
     "standout": "Live meeting transcription"
   },
   "tldv": {
-    "audience": "Remote teams",
+    "audience": "Teams sharing recorded call highlights with colleagues",
     "standout": "Share meeting insights"
   },
   "notta": {
-    "audience": "Multilingual teams",
+    "audience": "Users transcribing meetings in different languages without a built-in CRM sync",
     "standout": "Transcription and translation"
   },
   "semrush": {
-    "audience": "SEO teams",
+    "audience": "Marketers researching keywords and competitors while auditing sites and tracking rankings",
     "standout": "Keyword and competitor research"
   },
   "surfer-seo": {
-    "audience": "Content teams",
+    "audience": "Writers improving article drafts with SEO recommendations and search-results analysis",
     "standout": "Optimize article drafts"
   },
   "neuronwriter": {
-    "audience": "Independent writers",
+    "audience": "Solo writers planning content and revising drafts with SEO recommendations",
     "standout": "Plan and refine content"
   },
   "frase": {
-    "audience": "Content strategists",
+    "audience": "Content teams building article briefs from top-ranking pages and optimizing drafts",
     "standout": "Research-led content briefs"
   },
   "writesonic": {
-    "audience": "Marketing teams",
+    "audience": "Marketers drafting articles and ads who also need plan-dependent AI-search visibility tools",
     "standout": "AI search visibility workflows"
   },
   "tidio": {
-    "audience": "Small support teams",
+    "audience": "Small shops combining live chat with a no-code chatbot for common questions",
     "standout": "Live chat with AI assistance"
   },
   "chatbase": {
-    "audience": "Website owners",
+    "audience": "Website owners answering FAQs from their own pages and documents",
     "standout": "Document-trained AI answers"
   },
   "landbot": {
-    "audience": "No-code teams",
+    "audience": "Teams building no-code chat flows for lead forms, bookings and guided conversations",
     "standout": "Visual chatbot workflows"
   },
   "botpress": {
-    "audience": "Technical teams",
+    "audience": "Developers building custom agents with visual flows and code-level control",
     "standout": "Build custom AI agents"
   },
   "customgpt": {
-    "audience": "Knowledge teams",
+    "audience": "Companies turning documents and website content into a business knowledge chatbot",
     "standout": "Answers from company content"
   },
   "hostinger": {
-    "audience": "First-time site owners",
+    "audience": "Beginners launching a small site with a simple control panel and a longer hosting commitment",
     "standout": "Beginner-friendly web hosting"
   },
   "bluehost": {
-    "audience": "WordPress beginners",
+    "audience": "First-time WordPress owners who want guided setup, SSL and support",
     "standout": "Guided WordPress setup"
   },
   "cloudways": {
-    "audience": "Growing websites",
+    "audience": "Growing sites choosing cloud providers and upgrading server size without managing servers themselves",
     "standout": "Managed cloud hosting"
   },
   "kinsta": {
-    "audience": "WordPress businesses",
+    "audience": "WordPress businesses needing daily backups, staging and WordPress-focused support",
     "standout": "Managed WordPress operations"
   },
   "namecheap": {
-    "audience": "Small site owners",
+    "audience": "People registering a domain and launching a simple, low-cost website",
     "standout": "Domains and shared hosting"
   },
   "nordvpn": {
-    "audience": "Everyday VPN users",
+    "audience": "People using a VPN on public Wi-Fi who also want malicious-site and tracker blocking",
     "standout": "Broad device coverage"
   },
   "surfshark": {
-    "audience": "Multi-device households",
+    "audience": "Households protecting many devices on one subscription with unlimited simultaneous connections",
     "standout": "Connect household devices"
   },
   "expressvpn": {
-    "audience": "VPN beginners",
+    "audience": "People who prioritize a simple VPN app across their devices over the lowest price",
     "standout": "Straightforward VPN apps"
   },
   "proton-vpn": {
-    "audience": "Privacy-minded users",
+    "audience": "People wanting a free VPN without a data cap who can accept fewer servers",
     "standout": "An ongoing free VPN option"
   },
   "private-internet-access": {
-    "audience": "Hands-on VPN users",
+    "audience": "Users configuring VPN settings while covering many devices on one subscription",
     "standout": "Configurable VPN settings"
   },
   "coursera": {
-    "audience": "Career learners",
+    "audience": "Learners taking university or industry courses who want a paid certificate for their CV",
     "standout": "Structured online courses"
   },
   "datacamp": {
-    "audience": "Data learners",
+    "audience": "Learners practicing Python, SQL and data skills through coding exercises",
     "standout": "Interactive coding practice"
   },
   "skillshare": {
-    "audience": "Creative learners",
+    "audience": "Creative learners building design, writing or photography skills through short projects",
     "standout": "Project-led creative classes"
   },
   "scrimba": {
-    "audience": "New developers",
+    "audience": "Beginners learning JavaScript and React by editing code inside the lesson",
     "standout": "Interactive coding lessons"
   },
   "masterclass": {
-    "audience": "Curious learners",
+    "audience": "Viewers seeking inspiration from expert-led classes rather than completion certificates",
     "standout": "Expert-led video classes"
   },
   "mailerlite": {
-    "audience": "Newsletter beginners",
+    "audience": "Beginners building newsletters with an editor, sign-up forms and landing pages",
     "standout": "Email campaigns without complexity"
   },
   "kit": {
-    "audience": "Independent creators",
+    "audience": "Creators building an email audience around digital products or paid newsletters",
     "standout": "Creator newsletter workflows"
   },
   "getresponse": {
-    "audience": "Growing marketers",
+    "audience": "Online sellers combining email follow-ups, landing pages and plan-dependent webinars",
     "standout": "Email automation workflows"
   },
   "beehiiv": {
-    "audience": "Newsletter publishers",
+    "audience": "Writers building a newsletter with audience-growth and monetization tools",
     "standout": "Newsletter growth tools"
   },
   "systeme-io": {
-    "audience": "Solo businesses",
+    "audience": "Beginners combining email, sales funnels and online courses in the same account",
     "standout": "Funnels and email together"
   },
   "adobe-premiere-pro": {
-    "audience": "Professional editors",
+    "audience": "Editors needing detailed color, audio and effects control alongside other Adobe apps",
     "standout": "Detailed timeline editing"
   },
   "filmora": {
-    "audience": "Video beginners",
+    "audience": "Beginners assembling videos with effects, titles and templates who can budget for clean exports",
     "standout": "Accessible video editing"
   },
   "envato-elements": {
-    "audience": "Busy creatives",
+    "audience": "Editors sourcing video templates, footage, music and graphics for ongoing projects",
     "standout": "A broad creative asset library"
   },
   "riverside": {
-    "audience": "Interview creators",
+    "audience": "Podcasters recording remote guests who also need editing and transcription",
     "standout": "Remote recording workflows"
   },
   "camtasia": {
-    "audience": "Tutorial creators",
+    "audience": "Teachers and trainers combining screen recordings with callouts, zooms and captions",
     "standout": "Screen recordings into lessons"
   },
   "craft": {
-    "audience": "Document-focused users",
+    "audience": "Apple users writing and sharing polished notes and documents",
     "standout": "Polished connected documents"
   },
   "capacities": {
-    "audience": "Knowledge workers",
+    "audience": "Researchers connecting notes to people, projects and topics rather than folders",
     "standout": "Object-based note organization"
   },
   "evernote": {
-    "audience": "Frequent note takers",
+    "audience": "People collecting notes, web clippings and scanned documents in a searchable workspace",
     "standout": "Capture and organize notes"
   },
   "coda": {
-    "audience": "Document-driven teams",
+    "audience": "Teams building wikis and trackers from documents, tables and workflows",
     "standout": "Docs connected to workflows"
   },
   "mem": {
-    "audience": "Busy professionals",
+    "audience": "Busy professionals capturing notes and using AI to find and connect them",
     "standout": "AI-supported note retrieval"
   },
   "clickup": {
-    "audience": "Growing teams",
+    "audience": "Teams combining task views with documents, goals and whiteboards",
     "standout": "Projects and docs together"
   },
   "monday-com": {
-    "audience": "Operations teams",
+    "audience": "Teams organizing work on visual boards with templates, automations and integrations",
     "standout": "Visual work tracking"
   },
   "asana": {
-    "audience": "Cross-functional teams",
+    "audience": "Teams managing tasks through lists, boards, timelines and calendars",
     "standout": "Coordinate tasks and projects"
   },
   "wrike": {
-    "audience": "Delivery teams",
+    "audience": "Teams needing structured project views, reporting and integrations",
     "standout": "Structured project workflows"
   },
   "teamwork": {
-    "audience": "Client-service teams",
+    "audience": "Agencies managing client projects with time tracking, budgets and client seats",
     "standout": "Client project management"
   },
   "pcloud": {
-    "audience": "Personal file users",
+    "audience": "People choosing lifetime storage with file syncing and optional paid encryption",
     "standout": "Cloud storage and sharing"
   },
   "sync-com": {
-    "audience": "Privacy-minded teams",
+    "audience": "Small businesses sharing files with zero-knowledge encryption",
     "standout": "Private cloud collaboration"
   },
   "proton-drive": {
-    "audience": "Privacy-first users",
+    "audience": "Proton users who want encrypted storage alongside their other Proton apps",
     "standout": "Private file storage"
   },
   "icedrive": {
-    "audience": "Personal storage users",
+    "audience": "People wanting a cloud drive that appears like a folder on their computer",
     "standout": "Simple cloud file access"
   },
   "dropbox": {
-    "audience": "Collaborating teams",
+    "audience": "Teams sharing and syncing files across other work apps",
     "standout": "File sharing across workflows"
   },
   "gamma": {
-    "audience": "Fast-moving presenters",
+    "audience": "People turning a prompt into a draft deck, document or simple web page",
     "standout": "AI-assisted presentation drafts"
   },
   "beautiful-ai": {
-    "audience": "Business presenters",
+    "audience": "Teams keeping slides consistent with layouts that adjust as content is added",
     "standout": "Structured slide layouts"
   },
   "pitch": {
-    "audience": "Presentation teams",
+    "audience": "Startups and marketing teams co-editing presentations with templates and brand controls",
     "standout": "Collaborative slide creation"
   },
   "prezi": {
-    "audience": "Visual storytellers",
+    "audience": "Speakers presenting a non-linear story through a zooming format",
     "standout": "Non-linear presentations"
   },
   "visme": {
-    "audience": "Business communicators",
+    "audience": "Presenters building charts, infographics and other data visuals",
     "standout": "Presentations and visual assets"
   },
   "make": {
-    "audience": "No-code builders",
+    "audience": "No-code builders connecting apps on a visual canvas and tracking credit usage",
     "standout": "Visual multi-step automation"
   },
   "n8n": {
-    "audience": "Technical builders",
+    "audience": "Technical teams building code-friendly workflows who can manage self-hosting or choose Cloud",
     "standout": "Configurable automation workflows"
   },
   "pabbly-connect": {
-    "audience": "Small businesses",
+    "audience": "Teams seeking generous task volumes on a fixed automation budget",
     "standout": "Connect business applications"
   },
   "activepieces": {
-    "audience": "Automation teams",
+    "audience": "Small teams starting with free cloud flows or evaluating open-source self-hosting",
     "standout": "Open automation workflows"
   },
   "latenode": {
-    "audience": "Technical automators",
+    "audience": "Builders combining visual workflows, AI agents and custom code steps",
     "standout": "Low-code automation logic"
   },
   "fiverr": {
-    "audience": "Package-service buyers",
+    "audience": "Buyers ordering defined service packages and freelancers selling fixed-scope work",
     "standout": "Buy clearly scoped services"
   },
   "upwork": {
-    "audience": "Project-based teams",
+    "audience": "Businesses hiring freelancers for ongoing work through hourly or fixed-price contracts",
     "standout": "Hire for ongoing work"
   },
   "99designs": {
-    "audience": "Branding projects",
+    "audience": "Businesses choosing branding or logo concepts through a design contest",
     "standout": "Designer-led logo projects"
   },
   "freelancer-com": {
-    "audience": "Project buyers",
+    "audience": "Clients comparing project bids or running contests with milestone payments",
     "standout": "Compare freelancer bids"
   },
   "toptal": {
-    "audience": "Specialist hiring teams",
+    "audience": "Businesses seeking screened developers, designers or finance specialists through a matching service",
     "standout": "Match with specialist talent"
   },
   "babbel": {
-    "audience": "Structured language learners",
+    "audience": "Beginners fitting short, conversation-focused language lessons into a busy day",
     "standout": "Short guided language lessons"
   },
   "lingoda": {
-    "audience": "Live-class learners",
+    "audience": "Learners following a structured language course through live small-group classes",
     "standout": "Scheduled online language classes"
   },
   "italki": {
-    "audience": "Conversation learners",
+    "audience": "Learners booking private conversation practice without a subscription",
     "standout": "Choose a language tutor"
   },
   "preply": {
-    "audience": "Goal-focused learners",
+    "audience": "Learners comparing private tutors by schedule, price and reviews",
     "standout": "Find a matching tutor"
   },
   "rocket-languages": {
-    "audience": "Independent language learners",
+    "audience": "Self-study learners practicing listening, speaking and pronunciation with audio-first lessons",
     "standout": "Guided self-study lessons"
   },
   "kiwi-com": {

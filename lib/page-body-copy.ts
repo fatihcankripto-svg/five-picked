@@ -90,18 +90,18 @@ export function reviewBodyCopy(review: Review): Review {
   return {
     ...review,
     intro: 'This review looks at Hostinger’s Premium web-hosting offer. Use it to understand the upfront payment, renewal costs and whether the plan suits your website.',
-    audience: 'Small-site owners who want hosting features in one paid plan',
+    audience: "Beginners launching a small site with a simple control panel and a longer hosting commitment",
     verdict: 'Hostinger can suit you if the selected plan covers what your site needs and you are comfortable with the full upfront payment and renewal cost. Look elsewhere if you need permanent free hosting or a server feature you have not confirmed. Compare the total you will pay, not just the small monthly equivalent.',
     bestFor: [
-      'People starting a small site that fits the advertised hosting plan.',
-      'Owners who want to check the full first-term payment and renewal before buying.',
-      'Buyers who know they need web hosting rather than a separate builder, AI or VPS product.',
-    ],
+  "Beginners launching a blog or small business site through a simple hosting control panel.",
+  "Owners comfortable paying upfront for a longer hosting term and checking renewal.",
+  "Buyers who want standard web hosting rather than a separate builder, AI or VPS product."
+],
     lessIdealFor: [
-      'Anyone who needs permanent free hosting.',
-      'People who want monthly flexibility instead of a multi-year offer.',
-      'Owners who have not checked their site’s software, workload or maintenance needs.',
-    ],
+  "Buyers who need monthly flexibility instead of a longer prepaid term.",
+  "People budgeting on the assumption that renewal stays at the introductory rate.",
+  "Owners who have not checked that their site’s requirements fit the hosting plan."
+],
     sections: review.sections.map((section) => ({
       ...section,
       heading: headings[section.heading] ?? section.heading,
