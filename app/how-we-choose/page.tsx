@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { siteConfig } from '@/lib/site'
 import { ContentPage, contentMetadata } from '@/components/content-page'
 
 export const metadata = contentMetadata({
@@ -32,6 +33,9 @@ export default function HowWeChoosePage() {
         published third-party research where it is relevant. We identify the source of third-party measurements rather than presenting them as our own tests. We pay attention to what is
         included, what costs extra, and what is easy to miss.
       </p>
+
+      <h2>What counts as a source</h2>
+      <p>Official pricing and feature pages establish the advertised offer. Official documentation and support pages explain eligibility, limits and exceptions. Published datasets and credited third-party research can provide context; we identify their source and limitations rather than treating them as our own measurements.</p>
 
       <h2>3. We compare on a consistent set of questions</h2>
       <ul>
@@ -74,12 +78,20 @@ export default function HowWeChoosePage() {
         <Link href="/affiliate-disclosure">affiliate disclosure</Link>.
       </p>
 
+      <h2>How affiliate links work</h2>
+      <p>Commissions do not determine our rankings or verdicts. We do not offer paid placement. Affiliate links are identified in our disclosures so you can distinguish our funding from the evidence behind a recommendation.</p>
+
       <h2>What we do not do</h2>
       <ul>
+        <li>We do not conduct hands-on product tests or publish speed or privacy tests of our own. Any third-party measurements are credited to their original research.</li>
         <li>We do not invent star ratings, scores, review counts or user numbers.</li>
         <li>We do not publish fake testimonials or awards.</li>
         <li>We do not pad lists to look comprehensive.</li>
       </ul>
+
+      <h2>How we handle price changes and corrections</h2>
+      <p>Prices can change between checks. Each sourced tool-card price shows its check date beside the official source. Article and review dates describe the recorded editorial work; they do not promise that every quoted offer was checked again on that date. Confirm the selected plan, billing period, currency and checkout conditions before buying.</p>
+      <p>Report an incorrect or outdated detail to <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> or use <Link href="/contact">our contact page</Link>. Include the page address and a source so we can check the specific claim and correct it when the evidence supports a change.</p>
 
       <h2>Update process</h2>
       <p>
