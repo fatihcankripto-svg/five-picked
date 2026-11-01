@@ -1,3 +1,4 @@
+import { VpnRenewalCalculator } from '@/components/vpn-renewal-calculator'
 import { blogTakeaways } from '@/lib/blog-takeaways'
 import { serializeJsonLd } from '@/lib/json-ld'
 import { editorialIdentity } from '@/lib/editorial-identity'
@@ -102,6 +103,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     const summary = `<aside aria-label="Key takeaways" class="rounded-xl border border-border bg-muted/30 p-5"><h2 class="text-sm font-semibold text-foreground">Key takeaways</h2><ul>${takeaways.map((text) => `<li>${escapeText(text)}</li>`).join('')}</ul></aside>`
     articleHtml = articleHtml.replace('</p>', `</p>${summary}`)
   }
+  if (post.slug === '2026-vpn-price-index') headings.push({ id: 'vpn-renewal-calculator', label: 'Calculate the next billing commitment' })
   const minutes = readingTimeMinutes(post.content)
   const related = getRelatedPosts(post, ['2026-web-hosting-price-index', '2026-vpn-price-index', '2026-online-course-price-index'].includes(post.slug) ? blogPosts.filter((entry) => entry.relatedListPath === post.relatedListPath) : blogPosts, 3)
 
@@ -141,6 +143,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           className="prose prose-invert mt-10 max-w-none prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: articleHtml }}
         />
+        {post.slug === '2026-vpn-price-index' && <VpnRenewalCalculator />}
 
         <aside aria-labelledby="about-author" className="mt-12 rounded-xl border border-border bg-muted/30 p-5">
           <h2 id="about-author" className="text-sm font-semibold text-foreground">About <Link href="/editorial-team">{post.author}</Link></h2>

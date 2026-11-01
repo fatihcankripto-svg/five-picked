@@ -1,3 +1,4 @@
+import { withIndexDecisionNotes } from '@/lib/price-index-decisions'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
 import observations from '@/data/online-course-price-index-2026.json'
@@ -56,7 +57,7 @@ export const onlineCoursePriceIndexPost: BlogPost = {
   authorBio: editorialIdentity.bio,
   category: 'Online Courses', keywords: ['online course price index 2026', 'course certificate costs', 'online learning subscription prices', 'course pricing dataset'],
   excerpt: 'A ten-platform official-source snapshot separating subscription payments, free access, completion certificates and organizational seats, with reproducible billing comparisons.',
-  content: prose.replace('{{TABLE}}', table).replace('{{BILLING}}', billingTable).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')),
+  content: withIndexDecisionNotes(prose.replace('{{TABLE}}', table).replace('{{BILLING}}', billingTable).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')), 'courses'),
   faqs, relatedListPath: '/online-courses', relatedListLabel: 'Online courses: our five-platform shortlist',
   relatedLinks: [
     { path: '/online-courses', label: 'Explore our five-platform course shortlist' },

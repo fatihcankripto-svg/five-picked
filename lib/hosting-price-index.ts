@@ -1,3 +1,4 @@
+import { withIndexDecisionNotes } from '@/lib/price-index-decisions'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
 import observations from '@/data/hosting-price-index-2026.json'
@@ -52,7 +53,7 @@ export const hostingPriceIndexPost: BlogPost = {
   authorBio: editorialIdentity.bio,
   category: 'Web Hosting', keywords: ['web hosting price index 2026', 'hosting renewal prices', 'hosting price dataset', 'hosting introductory prices'],
   excerpt: 'Compare ten official hosting offers with renewal calculations, included-service conditions and clearly marked missing evidence. Download the dated source-linked dataset.',
-  content: prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')),
+  content: withIndexDecisionNotes(prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')), 'hosting'),
   faqs, relatedListPath: '/web-hosting-and-domains', relatedListLabel: 'Web hosting and domain options',
   relatedLinks: [
     { path: '/web-hosting-and-domains', label: 'Explore our five-provider hosting shortlist' },

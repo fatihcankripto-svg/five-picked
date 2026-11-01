@@ -1,3 +1,4 @@
+import { withIndexDecisionNotes } from '@/lib/price-index-decisions'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
 import observations from '@/data/vpn-price-index-2026.json'
@@ -52,7 +53,7 @@ export const vpnPriceIndexPost: BlogPost = {
   authorBio: editorialIdentity.bio,
   category: 'VPN & Security', keywords: ['VPN price index 2026', 'VPN renewal prices', 'VPN pricing dataset', 'VPN subscription cost'],
   excerpt: 'Inspect ten official-source VPN offers, with billing intervals, free-plan limits, device policies and reproducible renewal calculations. Missing evidence stays explicit.',
-  content: prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')),
+  content: withIndexDecisionNotes(prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')), 'vpn'),
   faqs, relatedListPath: '/vpn-and-security', relatedListLabel: 'VPN and security: our five-provider shortlist',
   relatedLinks: [
     { path: '/vpn-and-security', label: 'Inspect the our VPN top 5' },
