@@ -1,3 +1,4 @@
+import { serializeJsonLd } from '@/lib/json-ld'
 import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import type { Metadata } from 'next'
@@ -40,7 +41,7 @@ export default function CategoriesHubPage() {
     <div className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <Breadcrumbs items={[{ label: 'Categories' }]} />

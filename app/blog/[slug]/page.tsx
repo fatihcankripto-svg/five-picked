@@ -1,6 +1,7 @@
+import { serializeJsonLd } from '@/lib/json-ld'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import { pageMetadata } from '@/lib/metadata'
-import { socialImages } from '@/lib/site'
+import { socialImages, siteOrganization } from '@/lib/site'
 import { formatDate } from '@/lib/site'
 import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
@@ -37,8 +38,8 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
   const data = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title,
     description: post.metaDescription, datePublished: post.publishedAt, dateModified: post.lastReviewedAt,
-    author: { '@type': 'Organization', name: post.author, description: post.authorBio, url: editorialIdentity.url },
-    publisher: { '@type': 'Organization', name: 'FIVE PICKED', logo: { '@type': 'ImageObject', url: 'https://fivepicked.com/icon.svg' } },
+    author: { '@type': 'Organization', name: editorialIdentity.name, description: post.authorBio, url: editorialIdentity.url },
+    publisher: siteOrganization,
     mainEntityOfPage: {
       '@type': 'WebPage', '@id': `https://fivepicked.com/blog/${post.slug}`,
       lastReviewed: post.lastReviewedAt,
@@ -47,7 +48,7 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
     ...(post.dataset ? { hasPart: { '@type': 'Dataset', '@id': post.dataset['@id'] } } : {}),
     keywords: post.keywords.join(', '), articleSection: post.category, inLanguage: 'en',
   }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }} />
 }
 
 function FaqJsonLd({ post }: { post: BlogPost }) {
@@ -68,7 +69,7 @@ function FaqJsonLd({ post }: { post: BlogPost }) {
       acceptedAnswer: { '@type': 'Answer', text: plainText(answer) },
     })),
   }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }} />
 }
 
 function BreadcrumbJsonLd({ post }: { post: BlogPost }) {
@@ -80,7 +81,7 @@ function BreadcrumbJsonLd({ post }: { post: BlogPost }) {
       { '@type': 'ListItem', position: 3, name: post.title, item: `https://fivepicked.com/blog/${post.slug}` },
     ],
   }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }} />
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -100,7 +101,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <>
       <ArticleJsonLd post={post} />
-      {post.dataset && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(post.dataset).replace(/</g, '\\u003c') }} />}
+      {post.dataset && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(post.dataset) }} />}
       <FaqJsonLd post={post} />
 
       <BreadcrumbJsonLd post={post} />

@@ -13,6 +13,16 @@ export const siteConfig = {
     'Some links may earn us a commission at no extra cost to you. This never affects our rankings.',
 }
 
+/** The same publisher identity is used on the homepage and in article metadata. */
+export const siteOrganization = {
+  '@type': 'Organization',
+  '@id': `${siteConfig.url}/#organization`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: { '@type': 'ImageObject', url: `${siteConfig.url}/icon.svg` },
+  email: siteConfig.email,
+} as const
+
 /** Shared existing social image; no additional image asset is generated. */
 export const socialImages = [{
   url: `${siteConfig.url}/opengraph-image`,

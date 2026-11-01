@@ -1,3 +1,4 @@
+import { serializeJsonLd } from '@/lib/json-ld'
 import { pageMetadata } from '@/lib/metadata'
 import { MarketingSeoFreeOptions } from '@/components/marketing-seo-free-options'
 import { FlightFreeOptions } from '@/components/flight-free-options'
@@ -81,11 +82,11 @@ export default async function FreePage({ params }: Props) {
     <div className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqLd) }}
       />
 
       <Breadcrumbs items={[{ label: 'Best free tools', href: '/free' }, { label: page.title }]} />

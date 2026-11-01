@@ -1,3 +1,4 @@
+import { serializeJsonLd } from '@/lib/json-ld'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import { reviewBodyCopy } from '@/lib/page-body-copy'
 import { contentLinks, getContentLinks } from '@/lib/content-links'
@@ -9,7 +10,7 @@ import { VisitButton } from '@/components/visit-button'
 import type { Tool } from '@/data/categories'
 import { publishedCategories as categories } from '@/data/all-categories'
 import { getReview, reviews } from '@/data/reviews'
-import { absoluteUrl } from '@/lib/site'
+import { absoluteUrl, siteOrganization } from '@/lib/site'
 
 export const dynamicParams = false
 
@@ -81,7 +82,6 @@ export default async function ReviewPage({ params }: PageProps) {
     if (!readingLinks.has(item.path)) readingLinks.set(item.path, { href: item.path, label: item.title })
   }
   const url = absoluteUrl(`/reviews/${review.toolSlug}`)
-  const organization = { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' }
 
   const jsonLd = [
     {
@@ -92,7 +92,7 @@ export default async function ReviewPage({ params }: PageProps) {
       datePublished: review.published,
       dateModified: review.updated,
       author: { '@type': 'Organization', name: editorialIdentity.name, description: editorialIdentity.bio, url: editorialIdentity.url },
-      publisher: organization,
+      publisher: siteOrganization,
       mainEntityOfPage: url,
     },
     {
@@ -127,7 +127,7 @@ export default async function ReviewPage({ params }: PageProps) {
     >
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <p><Link href="/editorial-team">{editorialIdentity.name}</Link>. {review.authorBio} Last reviewed <time dateTime={review.updated}>{formatDate(review.updated)}</time>.</p>

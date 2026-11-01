@@ -1,3 +1,5 @@
+import { serializeJsonLd } from '@/lib/json-ld'
+import { siteOrganization } from '@/lib/site'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -69,7 +71,7 @@ export default async function AlternativesPage({ params }: Props) {
         datePublished: alternativesUpdated,
         dateModified: alternativesUpdated,
         author: { '@type': 'Organization', name: editorialIdentity.name, url: editorialIdentity.url, description: editorialIdentity.bio },
-        publisher: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
+        publisher: siteOrganization,
         mainEntityOfPage: url,
       },
       {
@@ -101,7 +103,7 @@ export default async function AlternativesPage({ params }: Props) {
     >
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       {page.authorBio && <p>{editorialIdentity.name}. {page.authorBio} {page.lastReviewedAt ? 'Last reviewed' : 'Last updated'} <time dateTime={page.lastReviewedAt ?? alternativesUpdated}>{formatLongDate(page.lastReviewedAt ?? alternativesUpdated)}</time>. Official-source research; no hands-on performance test is claimed.</p>}

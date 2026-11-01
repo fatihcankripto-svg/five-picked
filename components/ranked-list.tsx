@@ -1,3 +1,4 @@
+import { serializeJsonLd } from '@/lib/json-ld'
 import { categoryBodyCopy, toolBodyCopy, categoryClosingCopy } from '@/lib/page-body-copy'
 import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
@@ -54,7 +55,7 @@ export function RankedList({
     <div className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <Breadcrumbs items={breadcrumbs} />
