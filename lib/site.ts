@@ -24,6 +24,7 @@ export const socialImages = [{
 export const staticPages = [
   { href: '/how-we-choose', label: 'How we choose' },
   { href: '/about', label: 'About' },
+  { href: '/editorial-team', label: 'Our editorial team' },
   { href: '/affiliate-disclosure', label: 'Affiliate disclosure' },
   { href: '/privacy', label: 'Privacy' },
   { href: '/contact', label: 'Contact' },

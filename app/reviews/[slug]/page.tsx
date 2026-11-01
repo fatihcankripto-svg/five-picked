@@ -130,7 +130,7 @@ export default async function ReviewPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <p>{editorialIdentity.name}. {review.authorBio} Last reviewed <time dateTime={review.updated}>{formatDate(review.updated)}</time>.</p>
+      <p><Link href="/editorial-team">{editorialIdentity.name}</Link>. {review.authorBio} Last reviewed <time dateTime={review.updated}>{formatDate(review.updated)}</time>.</p>
       <h2>Quick verdict</h2>
       <p>{copy.verdict}</p>
       <div className="not-prose mt-4">{visit}</div>

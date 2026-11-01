@@ -21,7 +21,7 @@ export default function AboutPage() {
       <h2>Corrections and updates</h2>
       <p>We update when official details change. If you spot an error or an outdated detail, email <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. Include the page address and the source you would like us to check.</p>
       <h2 id="editorial-team">Editorial team</h2>
-      <p><strong>{editorialIdentity.name}</strong></p>
+      <p><strong><Link href="/editorial-team">{editorialIdentity.name}</Link></strong></p>
       <p>{editorialIdentity.bio}</p>
       <p>This is our shared editorial byline. It does not represent a named individual or imply professional credentials.</p>
     </ContentPage>

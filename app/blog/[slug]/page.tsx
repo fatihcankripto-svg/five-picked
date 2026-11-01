@@ -135,7 +135,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
 
         <aside aria-labelledby="about-author" className="mt-12 rounded-xl border border-border bg-muted/30 p-5">
-          <h2 id="about-author" className="text-sm font-semibold text-foreground">About {post.author}</h2>
+          <h2 id="about-author" className="text-sm font-semibold text-foreground">About <Link href="/editorial-team">{post.author}</Link></h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{post.authorBio}</p>
           <p className="mt-3 text-sm text-muted-foreground">Last reviewed: <time dateTime={post.lastReviewedAt}>{new Date(`${post.lastReviewedAt}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></p>
           <p className="mt-2 text-sm text-muted-foreground">Reviewed by: {post.author}</p>
