@@ -1,0 +1,54 @@
+const assert = require('node:assert/strict')
+const fs = require('node:fs')
+const path = require('node:path')
+const Module = require('node:module')
+const ts = require('typescript')
+const root = path.resolve(__dirname, '..')
+const resolve = Module._resolveFilename
+Module._resolveFilename = function (name, ...args) { return resolve.call(this, name.startsWith('@/') ? path.join(root, name.slice(2)) : name, ...args) }
+require.extensions['.ts'] = (module, filename) => module._compile(ts.transpile(fs.readFileSync(filename, 'utf8'), { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true }), filename)
+const { prepareSearch, searchSite, searchKinds } = require('../lib/site-search.ts')
+const { publishedCategories, categoryRegistry } = require('../data/all-categories.ts')
+const { quizPages } = require('../lib/quiz-pages.ts')
+const { searchSnippets } = require('../lib/search-snippets.ts')
+const index = JSON.parse(fs.readFileSync(path.join(root, 'public/site-search.json'), 'utf8'))
+assert.equal(index.version, 1)
+const pages = index.entries.filter((entry) => entry.kind !== 'company')
+const companies = index.entries.filter((entry) => entry.kind === 'company')
+assert.deepEqual(new Set(pages.map((entry) => entry.href)), new Set(Object.keys(searchSnippets)), 'Every published page is searchable')
+const published = new Set(publishedCategories.flatMap((category) => (category.tools ? [category] : category.subcategories ?? []).flatMap((list) => list.tools.map((tool) => tool.slug))))
+assert.deepEqual(new Set(companies.map((entry) => entry.id.replace('company:', ''))), published)
+for (const category of categoryRegistry.filter((category) => category.hidden)) {
+  assert(!pages.some((entry) => entry.href === `/${category.slug}` || entry.href.startsWith(`/${category.slug}/`)), 'No hidden category destinations')
+}
+for (const entry of index.entries) {
+  assert(entry.title && entry.description && entry.body, entry.id)
+  assert(entry.kind in searchKinds)
+  assert(!entry.body.includes('self.__next_f.push'), 'Do not index framework scripts')
+  if (entry.kind === 'company') {
+    const [route, fragment] = entry.href.split('#')
+    const html = fs.readFileSync(path.join(root, '.next/server/app', `${route.slice(1)}.html`), 'utf8')
+    assert(html.includes(`id="${fragment}"`), `Company anchor exists: ${entry.href}`)
+  }
+}
+for (const quiz of quizPages) {
+  const entry = pages.find((page) => page.href === `/quiz/${quiz.slug}`)
+  assert(entry.body.includes(quiz.questions.at(-1).question), 'Include later interactive quiz questions')
+}
+const prepared = prepareSearch(index.entries)
+for (const company of companies) assert.equal(searchSite(prepared, company.title)[0].id, company.id, `Exact company match first: ${company.title}`)
+assert.equal(searchSite(prepared, 'TLDV')[0].title, 'tl;dv')
+assert.equal(searchSite(prepared, 'monday.com')[0].title, 'monday.com')
+assert.equal(searchSite(prepared, '99designs')[0].title, '99designs')
+assert(searchSite(prepared, 'cryptocurrency').some((entry) => entry.href === '/before-you-pay'), 'Search full article text beyond metadata')
+assert(searchSite(prepared, 'vpn', 'company').every((entry) => entry.kind === 'company'))
+assert(searchSite(prepared, 'hosting', 'free').every((entry) => entry.kind === 'free'))
+assert.deepEqual(searchSite(prepared, ''), [])
+assert.deepEqual(searchSite(prepared, 'a'), [])
+assert.deepEqual(searchSite(prepared, ' 🚀 '), [])
+assert.deepEqual(searchSite(prepared, 'zz-nonexistent-company-zz'), [])
+for (const href of ['https://example.com', '//example.com', '/\\example.com', 'javascript:alert(1)']) assert.throws(() => prepareSearch([{ ...companies[0], href }]))
+const start = performance.now()
+for (let i = 0; i < 30; i++) searchSite(prepared, ['free hosting', 'nordvpn', 'video editing', 'annual renewal'][i % 4])
+console.log(`PASS: ${pages.length} pages + ${companies.length} companies; full text, hidden-content exclusions, every company anchor, exact-name ranking, punctuation, type filters and safe internal URLs`)
+console.log(`Search benchmark: ${((performance.now() - start) / 30).toFixed(1)} ms/query; index ${(fs.statSync(path.join(root, 'public/site-search.json')).size / 1024).toFixed(0)} KiB before HTTP compression`)

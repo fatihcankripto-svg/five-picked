@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { SiteSearch } from '@/components/site-search'
 import { cn } from '@/lib/utils'
 
 type TopLevel =
@@ -31,6 +32,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
   const [openDesktop, setOpenDesktop] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
@@ -63,10 +65,11 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
     setOpenDesktop(null)
     setMobileOpen(false)
     setMobileCategoriesOpen(false)
+    setSearchOpen(false)
   }, [pathname])
 
   useEffect(() => {
-    if (mobileOpen) {
+    if (mobileOpen || searchOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
@@ -74,7 +77,7 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
     return () => {
       document.body.style.overflow = ''
     }
-  }, [mobileOpen])
+  }, [mobileOpen, searchOpen])
 
   useEffect(() => {
     if (!mobileOpen) return
@@ -180,17 +183,20 @@ export function SiteHeader({ categoriesItems }: { categoriesItems: { href: strin
           })}
         </nav>
 
-        <button
-          type="button"
-          className="relative z-50 flex size-10 items-center justify-center rounded-md text-foreground lg:hidden"
-          ref={menuButtonRef}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-navigation"
-          onClick={() => setMobileOpen((open) => !open)}
-        >
-          {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <SiteSearch open={searchOpen} onOpenChange={(open) => { if (open) closeAll(); setSearchOpen(open) }} />
+          <button
+            type="button"
+            className="relative z-50 flex size-10 items-center justify-center rounded-md text-foreground lg:hidden"
+            ref={menuButtonRef}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMobileOpen((open) => !open)}
+          >
+            {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </div>
 
       <div id="mobile-navigation" inert={!mobileOpen}

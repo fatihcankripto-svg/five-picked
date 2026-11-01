@@ -16,3 +16,6 @@ node_modules
 .DS_Store
 # Generated Next.js type references
 next-env.d.ts
+# Generated from production HTML after next build
+/public/site-search.json
+/public/site-search.json.tmp

@@ -23,6 +23,7 @@ const nextConfig = {
   },
   async headers() {
     return [
+      { source: '/site-search.json', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
       {
         source: '/(.*)',
         headers: [
