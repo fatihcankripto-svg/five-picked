@@ -1,3 +1,5 @@
+import { HeroCount } from './home-motion'
+import styles from './home-motion.module.css'
 import { foundationButtonClasses } from '@/lib/design-system'
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
@@ -15,7 +17,7 @@ const stats = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border">
-      <div aria-hidden="true" className="fp-aurora pointer-events-none absolute inset-0" />
+      <div aria-hidden="true" className={styles.spotlight} />
       <div aria-hidden="true" className="fp-grid-bg pointer-events-none absolute inset-0" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-4 px-5 pb-14 pt-8 sm:px-8 md:grid-cols-[1.2fr_1fr] md:gap-10 md:pb-20 md:pt-20">
@@ -102,9 +104,7 @@ export function Hero() {
 
             <div className="absolute inset-[10%] rounded-full border border-border" />
 
-            <span className="fp-gradient-text relative select-none text-[7.5rem] font-bold leading-none tracking-tighter sm:text-[12.5rem] md:text-[15rem] lg:text-[18rem]">
-              5
-            </span>
+            <HeroCount target={5} className="fp-gradient-text relative select-none text-[7.5rem] font-bold leading-none tracking-tighter sm:text-[12.5rem] md:text-[15rem] lg:text-[18rem]" />
           </div>
         </div>
       </div>

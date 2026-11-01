@@ -1,3 +1,4 @@
+import { CategoryReveal } from './home-motion'
 import { publishedCategories } from '@/data/all-categories'
 import { categoryMeta, categoryCountLabel } from '@/lib/category-stats'
 import { CategoryCard } from '@/components/category-card'
@@ -21,7 +22,7 @@ export function CategoryGrid() {
         <FiveDots className="mt-6" />
       </div>
 
-      <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <CategoryReveal className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {publishedCategories.slice(0, 6).map((category, index) => (
           <li key={category.slug}>
             <CategoryCard
@@ -35,7 +36,7 @@ export function CategoryGrid() {
             />
           </li>
         ))}
-      </ul>
+      </CategoryReveal>
     <p className="mt-8"><a href="/categories" className="text-primary underline underline-offset-4">Explore all {categoryCountLabel(publishedCategories.length)} →</a></p>
     </section>
   )
