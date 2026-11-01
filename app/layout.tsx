@@ -2,6 +2,7 @@ import { socialImages } from '@/lib/site'
 import { publishedCategories } from '@/data/all-categories'
 import type { Metadata, Viewport } from 'next'
 import { Geist } from 'next/font/google'
+import Script from 'next/script'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { siteConfig } from '@/lib/site'
@@ -70,6 +71,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" defer />
       </body>
     </html>
   )
