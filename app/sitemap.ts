@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('/alternatives'), ...getAllAlternativePages().map((page) => route(`/alternatives/${page.slug}`, alternativesUpdated)),
     ...restoredGuides.map((guide) => route(guide.path, editorialDates.guides)),
     route('/tools'),
+    route('/before-you-pay'),
     route('/tools/text-to-speech-duration', editorialDates.calculators),
     route('/tools/freelance-fee-calculator', editorialDates.calculators),
     ...staticPages.map((page) => route(page.href)),

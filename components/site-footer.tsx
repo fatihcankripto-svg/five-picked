@@ -51,7 +51,7 @@ export function SiteFooter() {
               FIVE PICKED
             </h2>
             <ul className="mt-4 flex flex-col gap-2.5">
-              {[{ href: '/reviews', label: 'Reviews' }, { href: '/alternatives', label: 'Alternatives' }, { href: '/tools', label: 'Free calculators' }, ...staticPages].map((page) => (
+              {[{ href: '/reviews', label: 'Reviews' }, { href: '/alternatives', label: 'Alternatives' }, { href: '/before-you-pay', label: 'Before you pay' }, { href: '/tools', label: 'Free calculators' }, ...staticPages].map((page) => (
                 <li key={page.href}>
                   <Link
                     href={page.href}

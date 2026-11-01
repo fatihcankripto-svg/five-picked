@@ -29,6 +29,7 @@ export const contentLinks: ContentLink[] = [
   ...quizPages.map((p) => ({ path: `/quiz/${p.slug}`, title: p.metaTitle, listPath: p.listPath })),
   ...getAllAlternativePages().map((p) => ({ path: `/alternatives/${p.slug}`, title: `${p.tool.name} alternatives`, listPath: p.listPath })),
   { path: '/tools', title: 'Free planning calculators', listPath: '/tools' },
+  { path: '/before-you-pay', title: 'Before you pay: check costs and conditions', listPath: '/tools' },
   { path: '/tools/text-to-speech-duration', title: 'Text-to-speech duration calculator', listPath: '/ai-tools/video-and-voice' },
   { path: '/tools/freelance-fee-calculator', title: 'Freelance fee calculator', listPath: '/freelance-platforms' },
 ]

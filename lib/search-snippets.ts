@@ -5,6 +5,10 @@
  * Page bodies, headings and structured data retain their editorial source values.
  */
 export const searchSnippets: Record<string, { title: string; description: string }> = {
+  "/before-you-pay": {
+    "title": "Before You Pay: Check Tool Costs & Terms",
+    "description": "Choose a company and check recorded prices, free-access limits and payment conditions. Use a five-point checklist with dated sources before you pay."
+  },
   "/": {
     "title": "The 5 Best Tools in Every Category (2026)",
     "description": "Too many tools, too little clarity? Start with five picks per list, then compare costs, free-plan limits and who each option suits before you subscribe."
