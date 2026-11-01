@@ -19,7 +19,7 @@ export const packageAlternativeCopies = {
       { question: 'Which alternative should I evaluate for managed cloud control?', answer: 'Cloudways is the managed-cloud option in this shortlist. Check the selected product, server and support requirements; this is not evidence that it will be faster or cheaper for every site.' },
       { question: 'Can I compare every introductory monthly headline directly?', answer: 'No. Compare the upfront term, continuation or renewal, included services and workload. An introductory rate paid for a long term is different from a monthly plan or a temporary trial.' },
     ],
-    freeAnswer: 'None is presented as permanent free hosting. Exact trial and refund conditions are reused from the existing hosting access guide in the cards; read the selected offer before entering payment details.',
+    freeAnswer: 'None is presented as permanent free hosting. The cards explain the trial and refund conditions covered in our hosting access guide; read the selected offer before entering payment details.',
     guides: [
       { href: '/free/best-free-web-hosting', label: 'Inspect the verified hosting trial and refund conditions' },
       { href: '/quiz/web-hosting-and-domains', label: 'Match a host to your site and operating experience' },
@@ -43,7 +43,7 @@ export const packageAlternativeCopies = {
       'Choose Private Internet Access when its apps and the documented monthly purchase option fit your evaluation without a long introductory commitment.',
     ],
     faqs: [
-      { question: 'Which alternative has an ongoing free plan?', answer: 'Proton VPN is the ongoing free option in the existing guide, without a data cap. Surfshark, ExpressVPN and Private Internet Access are paid services; trial and refund availability depend on the purchase channel.' },
+      { question: 'Which alternative has an ongoing free plan?', answer: 'Proton VPN is the ongoing free option in our guide, without a data cap. Surfshark, ExpressVPN and Private Internet Access are paid services; trial and refund availability depend on the purchase channel.' },
       { question: 'Does a money-back guarantee mean free VPN access?', answer: 'No. It can require payment first and an eligible cancellation or refund request. Check website and app-store conditions separately rather than assuming one refund policy applies everywhere.' },
       { question: 'Is any alternative proven faster than NordVPN here?', answer: 'No matched speed test is presented on this page. Evaluate the required app, location and connection on your own setup; the decision framework is based on documented access and plan conditions.' },
     ],
@@ -63,7 +63,7 @@ export const packageAlternativeCopies = {
   },
   'adobe-premiere-pro': {
     authorBio, lastReviewedAt: '2026-10-31',
-    summary: 'Premiere’s desktop workflow suits editors who need its editing controls and can justify a subscription after evaluation. It is not an ongoing free desktop editor. The four alternatives are the other existing category picks, not four interchangeable timeline editors: Filmora is an editor, Camtasia emphasizes screen recording and editing, Riverside emphasizes recording, and Envato is an asset library. Choose by the production task rather than treating every tool as a full Premiere replacement.',
+    summary: 'Premiere’s desktop workflow suits editors who need its editing controls and can justify a subscription after evaluation. It is not an ongoing free desktop editor. The four alternatives are the other category picks, not four interchangeable timeline editors: Filmora is an editor, Camtasia emphasizes screen recording and editing, Riverside emphasizes recording, and Envato is an asset library. Choose by the production task rather than treating every tool as a full Premiere replacement.',
     reasons: [
       'Choose Filmora when its editing workflow meets the deliverable and you have checked watermark removal and commercial licensing.',
       'Choose Camtasia when screen recording and editing are central; free exports retain a watermark.',

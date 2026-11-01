@@ -83,7 +83,7 @@ const copies: FreeCopy[] = [
     h1: 'Free freelance platforms in 2026: what does working actually cost?',
     metaTitle: 'Free Freelance Platforms: Fees & Payout Limits (2026)',
     metaDescription: 'Compare Fiverr, Upwork, 99designs, Freelancer.com and Toptal on free access, commissions, proposal costs and payout limits, using official freelancer-side sources.',
-    intro: 'Free registration does not mean commission-free earnings or unlimited applications. This guide checks the five platforms in our existing freelance shortlist and separates account access, proposal costs, service fees and withdrawals. Toptal is assessed as a screened talent network, not an open free account.',
+    intro: 'Free registration does not mean commission-free earnings or unlimited applications. This guide checks the five platforms in our freelance shortlist and separates account access, proposal costs, service fees and withdrawals. Toptal is assessed as a screened talent network, not an open free account.',
     verdict: 'Compare the cost of getting work with the cost of getting paid. Fiverr offers free listings with earnings deductions; Upwork separates Basic access from Connects and contract fees; 99designs applies designer fees to direct projects; Freelancer.com adds bid and balance constraints. Toptal says it takes no cut from talent-set rates, but admission is screened and its public FAQ does not establish every payment detail.',
     toolSlugs: ['fiverr', 'upwork', '99designs', 'freelancer-com', 'toptal'],
     faqs: [
@@ -121,7 +121,7 @@ const copies: FreeCopy[] = [
     h1: 'Free online course platforms in 2026: what is actually included?',
     metaTitle: 'Free Online Courses: Previews, Trials & Certificates (2026)',
     metaDescription: 'Compare Coursera, DataCamp, Skillshare, Scrimba and MasterClass: free courses, preview limits, trial billing and certificate conditions, with official sources.',
-    intro: 'A free account, a course preview and a trial are not the same as a complete course with a free certificate. This guide compares the five platforms in our existing online-courses shortlist and separates ongoing access, restricted previews, subscription trials and invitation-only offers.',
+    intro: 'A free account, a course preview and a trial are not the same as a complete course with a free certificate. This guide compares the five platforms in our online-courses shortlist and separates ongoing access, restricted previews, subscription trials and invitation-only offers.',
     verdict: 'Start with the documented free course selection or previews when you only want to explore a subject. Check the certificate route before planning a credential, and the billing date before starting a trial. DataCamp and Scrimba provide limited free tiers; Coursera previews most courses by module; Skillshare and the MasterClass Guest Pass offer time-limited access under different conditions.',
     toolSlugs: ['coursera', 'datacamp', 'skillshare', 'scrimba', 'masterclass'],
     faqs: [
@@ -140,7 +140,7 @@ const copies: FreeCopy[] = [
     h1: 'Free video and design software in 2026: what is actually free?',
     metaTitle: 'Free Video & Design Software: Limits and Trials (2026)',
     metaDescription: 'Compare Premiere Pro, Filmora, Envato, Riverside and Camtasia: free access, trial duration, watermarks, export limits and documented commercial-use conditions.',
-    intro: 'Free to download is not always free to deliver. Our five existing video and design picks include a desktop trial, watermarked editors, a limited recording plan and selected free stock assets. This guide separates those options and explains the official conditions before you spend time on a project.',
+    intro: 'Free to download is not always free to deliver. Our five video and design picks include a desktop trial, watermarked editors, a limited recording plan and selected free stock assets. This guide separates those options and explains the official conditions before you spend time on a project.',
     verdict: 'Use the ongoing limited options to learn a workflow, but check the export and commercial-use conditions before client delivery. Premiere desktop has a short trial; Filmora and Camtasia add watermarks; Riverside limits free video quality and separate-track access; Envato’s free files have a specific single-end-product license. None is presented as unlimited, unrestricted free production.',
     toolSlugs: ['adobe-premiere-pro', 'filmora', 'envato-elements', 'riverside', 'camtasia'],
     faqs: [

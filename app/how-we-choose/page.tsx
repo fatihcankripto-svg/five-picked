@@ -87,7 +87,7 @@ export default function HowWeChoosePage() {
         products, pricing or the market change meaningfully. Prices and features can change at any time, so always
         confirm the details on the official website before you buy.
       </p>
-      <p>Blog articles and reviews show their review date and a “What changed” note. The note describes the recorded change; it does not imply a new product test or price check unless that work is documented. We update when official details change and use correction reports to identify information that needs another look.</p>
+      <p>Blog articles and reviews show their review date. A review date does not imply a new product test or price check unless that work is documented. We update when official details change and use correction reports to identify information that needs another look.</p>
       <p>
         Spotted something out of date? <Link href="/contact">Let us know</Link>.
       </p>

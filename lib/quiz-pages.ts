@@ -52,7 +52,7 @@ const defs: QuizDef[] = [
     categorySlug: 'video-and-design-software',
     metaTitle: 'Which video and design tool is right for me? (2026 Quiz)',
     metaDescription: 'Answer seven questions to match your editing, recording or stock-asset workflow with Premiere Pro, Filmora, Envato Elements, Riverside or Camtasia.',
-    intro: 'Seven questions, a primary match and a runner-up from our five existing picks. These tools serve different jobs: editing, remote recording, screen tutorials or stock assets. Budget and platform answers guide a shortlist, not a guarantee of compatibility, free exports or commercial permission.',
+    intro: 'Seven questions, a primary match and a runner-up from our five picks. These tools serve different jobs: editing, remote recording, screen tutorials or stock assets. Budget and platform answers guide a shortlist, not a guarantee of compatibility, free exports or commercial permission.',
     tieBreak: 'adobe-premiere-pro',
     questions: [
       {
@@ -122,10 +122,10 @@ const defs: QuizDef[] = [
     ],
     faqs: [
       { question: 'Are all five results video editors?', answer: 'No. Envato Elements supplies creative assets, Riverside focuses on remote recording, Camtasia on screen tutorials, and Premiere Pro and Filmora on video editing. The result identifies a workflow fit rather than five interchangeable products.' },
-      { question: 'Does the quiz guarantee mobile or desktop compatibility?', answer: 'No. The existing category explicitly lists Windows and Mac for Premiere Pro and Camtasia. A mobile-only or other setup must be checked against the provider’s current application and system requirements before purchase.' },
-      { question: 'Are budget bands monthly payment quotes?', answer: 'No. They are monthly-equivalent preferences based on existing price labels, some of which require annual billing or an annual commitment. Free access can have watermark and export restrictions. Check the result card and its official pricing source.' },
+      { question: 'Does the quiz guarantee mobile or desktop compatibility?', answer: 'No. Our category guide lists Windows and Mac for Premiere Pro and Camtasia. A mobile-only or other setup must be checked against the provider’s current application and system requirements before purchase.' },
+      { question: 'Are budget bands monthly payment quotes?', answer: 'No. They are monthly-equivalent preferences based on published price labels, some of which require annual billing or an annual commitment. Free access can have watermark and export restrictions. Check the result card and its official pricing source.' },
       { question: 'Does the result grant commercial-use rights or remove watermarks?', answer: 'No. Editorial matching points do not establish licensing permission or export entitlement. Our free-access guide separates trial, watermark and commercial-use conditions; check the selected plan and every asset license before monetized or client work.' },
-      { question: 'How are the recommendation and runner-up chosen?', answer: 'The existing quiz engine adds preference points from your answers to the five tools and shows a primary recommendation plus a runner-up. These points are editorial matching rules, not product ratings, measured performance or a guarantee that a plan meets every requirement.' },
+      { question: 'How are the recommendation and runner-up chosen?', answer: 'The quiz adds preference points from your answers to the five tools and shows a primary recommendation plus a runner-up. These points are editorial matching rules, not product ratings, measured performance or a guarantee that a plan meets every requirement.' },
     ],
     relatedLinks: [
       { path: '/compare/capcut-vs-premiere-pro', label: 'Review the CapCut versus Premiere decision criteria' },
@@ -203,11 +203,11 @@ const defs: QuizDef[] = [
       },
     ],
     faqs: [
-      { question: 'How is the recommendation calculated?', answer: 'Answers add editorial preference points to the five existing Marketing & SEO tools. The existing quiz engine shows a primary recommendation and a runner-up. These points describe workflow fit, not a product rating or a performance test.' },
-      { question: 'Are the budget choices monthly payment quotes?', answer: 'No. They are monthly-equivalent budget bands based on the existing price labels. Some listed plans are billed annually, so an annual upfront payment may be required. Check the result card and its official pricing source before purchasing; budget alone does not determine the result.' },
+      { question: 'How is the recommendation calculated?', answer: 'Answers add editorial preference points to the five Marketing & SEO tools. The quiz shows a primary recommendation and a runner-up. These points describe workflow fit, not a product rating or a performance test.' },
+      { question: 'Are the budget choices monthly payment quotes?', answer: 'No. They are monthly-equivalent budget bands based on the published price labels. Some listed plans are billed annually, so an annual upfront payment may be required. Check the result card and its official pricing source before purchasing; budget alone does not determine the result.' },
       { question: 'Does this quiz verify native integrations?', answer: 'No. It asks how the tool should complement your existing workflow without claiming compatibility with a particular app. If a native integration is essential, check the provider’s current documentation before choosing.' },
-      { question: 'Will these tools run my social or email campaigns?', answer: 'This quiz compares the five existing SEO and content tools. Drafting copy is different from scheduling posts, sending email or managing campaigns; the quiz does not establish those capabilities.' },
-      { question: 'Is AI-search visibility included in every plan?', answer: 'Do not assume so. The existing Writesonic entry places AI-search visibility tracking on higher plans. Check the selected plan and official source rather than assuming the starting price includes every feature.' },
+      { question: 'Will these tools run my social or email campaigns?', answer: 'This quiz compares the five SEO and content tools. Drafting copy is different from scheduling posts, sending email or managing campaigns; the quiz does not establish those capabilities.' },
+      { question: 'Is AI-search visibility included in every plan?', answer: 'Do not assume so. Our Writesonic entry places AI-search visibility tracking on higher plans. Check the selected plan and official source rather than assuming the starting price includes every feature.' },
     ],
     relatedLinks: [
       { path: '/ai-tools', label: 'Explore the wider AI tools directory' },
@@ -219,7 +219,7 @@ const defs: QuizDef[] = [
     categorySlug: 'web-hosting-and-domains',
     metaTitle: 'Which web host is right for me? (2026 Quiz)',
     metaDescription: 'Answer six questions about your site, budget, technical comfort and growth plans. Compare your hosting fit across Hostinger, Bluehost, Cloudways, Kinsta and Namecheap.',
-    intro: 'Six questions, a hosting recommendation and a runner-up from our existing five picks. The match uses your priorities and our published audience and strength descriptions; it is an editorial shortlist, not a capacity or performance test.',
+    intro: 'Six questions, a hosting recommendation and a runner-up from our five picks. The match uses your priorities and our published audience and strength descriptions; it is an editorial shortlist, not a capacity or performance test.',
     tieBreak: 'hostinger',
     questions: [
       {
@@ -277,9 +277,9 @@ const defs: QuizDef[] = [
       },
     ],
     faqs: [
-      { question: 'How does this hosting quiz choose a recommendation?', answer: 'Each answer adds editorial preference points to suitable tools in our existing five-host list. The existing quiz engine shows the highest-scoring tool and names a runner-up. These points are matching rules, not product ratings or measured performance.' },
+      { question: 'How does this hosting quiz choose a recommendation?', answer: 'Each answer adds editorial preference points to suitable tools in our five-host list. The quiz shows the highest-scoring tool and names a runner-up. These points are matching rules, not product ratings or measured performance.' },
       { question: 'Does the result guarantee that a host can handle my traffic?', answer: 'No. Traffic answers describe your needs without asserting visitor limits or measured capacity. Check the selected plan’s official resource limits and discuss your workload with the provider before buying.' },
-      { question: 'Does the quiz change the prices or affiliate links?', answer: 'No. The result card uses the existing hosting tool data, price label and outbound-link handling. Introductory terms and renewal conditions still apply; check the linked official pricing source.' },
+      { question: 'Does the quiz change the prices or affiliate links?', answer: 'No. The result card uses the published hosting tool data, price label and outbound-link handling. Introductory terms and renewal conditions still apply; check the linked official pricing source.' },
       { question: 'Should I compare a trial with a money-back guarantee?', answer: 'Yes. Our hosting trial and refund guide separates introductory access from paid purchases with conditional refunds. Read those conditions before committing to a hosting plan.' },
     ],
     relatedLinks: [

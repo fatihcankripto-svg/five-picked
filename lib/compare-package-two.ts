@@ -19,7 +19,7 @@ export const secondComparePairs: ComparePair[] = [
     verdict: 'Consider monday.com when a board-centered workspace fits your team’s work and someone will maintain its structure. Consider Asana when organizing task ownership, projects and schedules matches the process you need. Neither should be bought on a per-user headline without checking the plan, minimum purchase and required features.',
     aWinsWhen: ['Your work can be represented clearly in boards, columns and documents.', 'A named owner will maintain the board structure rather than adding fields without a process.', 'The required plan and seat purchase fit your actual team and budget.'],
     bWinsWhen: ['Your immediate need is task ownership and project organization in list, board or calendar views.', 'You require the Timeline, Gantt, forms or dashboard features listed in Starter and can justify that tier.', 'You can map the project workflow before choosing the paid seats.'],
-    scopeNote: scopeNote + ' The existing project-management free guide does not provide verified platform-specific numeric quotas. This comparison does not repeat its general seat-range estimate or invent a matching per-tool allowance; consult the linked official plan pages before adding members.',
+    scopeNote: scopeNote + ' Our project-management free guide does not provide verified platform-specific numeric quotas. This comparison does not repeat its general seat-range estimate or invent a matching per-tool allowance; consult the linked official plan pages before adding members.',
     decisionRows: [
       { label: 'Work structure', a: 'Boards organize work and data using columns; Docs provide a separate writing and collaboration surface.', b: 'Tasks and projects can be organized in list, board and calendar views.' },
       { label: 'Free access baseline', a: 'An ongoing Free plan is documented. Numeric quotas are not reproduced from the general free guide because it does not verify tool-specific counts.', b: 'An ongoing Personal plan is documented. No generic seat-range estimate is presented as a guaranteed Asana allowance.' },
@@ -42,7 +42,7 @@ export const secondComparePairs: ComparePair[] = [
       { url: 'https://asana.com/pricing', label: 'Asana Personal and Starter features and billing' },
     ],
     faqs: [
-      { question: 'Can I use the free guide’s generic seat range as a platform quota?', answer: 'No. The existing guide does not verify platform-specific numeric quotas. This comparison leaves them unstated and links the official plan pages rather than converting a general estimate into a promise.' },
+      { question: 'Can I use the free guide’s generic seat range as a platform quota?', answer: 'No. Our guide does not verify platform-specific numeric quotas. This comparison leaves them unstated and links the official plan pages rather than converting a general estimate into a promise.' },
       { question: 'Is the annual per-user price my monthly invoice?', answer: 'Not necessarily. Check the billing cycle, seat purchase and any separately selected products. A monthly equivalent billed annually is different from a monthly subscription.' },
       { question: 'Which workspace is faster to learn?', answer: 'No measured learning-time comparison is provided. Evaluate one representative board or project with the people who will maintain it.' },
       { question: 'Will every automation and permission transfer?', answer: 'No lossless migration is established. Check tasks, fields, users, sharing and automations before retiring the original workspace.' },

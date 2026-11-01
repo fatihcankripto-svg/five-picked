@@ -1,4 +1,4 @@
-import { editorialIdentity, editorialUpdateNote } from '@/lib/editorial-identity'
+import { editorialIdentity } from '@/lib/editorial-identity'
 import { pageMetadata } from '@/lib/metadata'
 import { socialImages } from '@/lib/site'
 import { formatDate } from '@/lib/site'
@@ -144,8 +144,6 @@ export default async function BlogPostPage({ params }: PageProps) {
             <Link href="/how-we-choose" className="font-medium text-primary hover:opacity-80">How this article was researched</Link>
           </p>
           <p className="mt-3 text-sm text-muted-foreground">Last updated: <time dateTime={post.lastReviewedAt}>{post.lastReviewedAt}</time></p>
-          <h2 id="what-changed" className="text-sm font-semibold text-foreground">What changed</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{editorialUpdateNote}</p>
         </aside>
 
         {related.length > 0 && (

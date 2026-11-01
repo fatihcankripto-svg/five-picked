@@ -122,7 +122,7 @@ export const thirdComparePairs: ComparePair[] = [
       },
       {
         "path": "/free/best-free-project-management-tools",
-        "label": "Check the existing free project management baseline"
+        "label": "Check our free project management baseline"
       },
       {
         "path": "/quiz/software-and-productivity-project-management",
@@ -225,7 +225,7 @@ export const thirdComparePairs: ComparePair[] = [
     "faqs": [
       {
         "question": "Does unlimited Fireflies transcription mean unlimited storage and AI?",
-        "answer": "No. The existing free guide distinguishes transcription from limited AI summaries. Storage, credits, downloads and recording conditions must be checked separately."
+        "answer": "No. Our free guide distinguishes transcription from limited AI summaries. Storage, credits, downloads and recording conditions must be checked separately."
       },
       {
         "question": "Why are exact free minute quotas not printed here?",

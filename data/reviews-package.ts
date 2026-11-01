@@ -17,7 +17,7 @@ export const packageReviews: Review[] = [
     intro: 'NordVPN sells VPN access across supported desktop, mobile and browser platforms. This review assesses the documented offer and purchase decision. It is desk research, not a hands-on speed, streaming or privacy audit.',
     startingPrice: 'Basic US$14.99/month, billed monthly; applicable VAT may apply',
     audience: 'People selecting paid VPN access for their supported devices',
-    verdict: 'Consider NordVPN when the required apps and selected paid plan fit your connection needs and the full billing commitment is acceptable. Look elsewhere if ongoing free access is essential or a required device or feature has not been confirmed. The existing Awin relationship does not establish a performance advantage; no fastest-VPN, guaranteed-streaming or complete-anonymity claim is made.',
+    verdict: 'Consider NordVPN when the required apps and selected paid plan fit your connection needs and the full billing commitment is acceptable. Look elsewhere if ongoing free access is essential or a required device or feature has not been confirmed. Our affiliate relationship with this provider does not influence our ranking or verdict; no fastest-VPN, guaranteed-streaming or complete-anonymity claim is made.',
     bestFor: [
       'People who want to evaluate paid VPN apps on their actual devices and connection.',
       'Buyers who prefer to compare a monthly purchase against longer commitments before subscribing.',
@@ -46,11 +46,11 @@ export const packageReviews: Review[] = [
         'For a practical evaluation, list the device operating systems, networks and tasks you need, then check each against the official product documentation. This is a suggested evaluation process; no installation or test has been performed for this review.',
       ] },
       { heading: 'How to decide before committing', paragraphs: [
-        'Choose by requirements that would change your decision: the actual app, the connection behavior you need and the billing commitment. If free ongoing access is non-negotiable, inspect Proton VPN in the linked free guide. If choosing between paid providers, use the existing comparison and alternatives pages rather than assuming a famous brand is automatically the right fit.',
+        'Choose by requirements that would change your decision: the actual app, the connection behavior you need and the billing commitment. If free ongoing access is non-negotiable, inspect Proton VPN in the linked free guide. If choosing between paid providers, use our comparison and alternatives pages rather than assuming a famous brand is automatically the right fit.',
       ] },
     ],
     alternatives: [
-      { label: 'NordVPN alternatives', href: '/alternatives/nordvpn', note: 'Four other existing VPN picks, selected by access and purchase needs.' },
+      { label: 'NordVPN alternatives', href: '/alternatives/nordvpn', note: 'Four other VPN picks, selected by access and purchase needs.' },
     ],
     related: [
       { label: 'VPN category', href: '/vpn-and-security', note: 'Review all five VPN choices in context.' },
@@ -104,7 +104,7 @@ export const packageReviews: Review[] = [
       ] },
       { heading: 'Free access, trial and refund conditions', paragraphs: [
         hostinger.plan, hostinger.trial, hostinger.refund,
-        'These conditions reuse the existing hosting free guide. A qualifying refund window starts from a purchase; it is not a no-payment evaluation. Keep domain and payment-method exclusions separate from the hosting decision.',
+        'These conditions are also explained in our hosting free guide. A qualifying refund window starts from a purchase; it is not a no-payment evaluation. Keep domain and payment-method exclusions separate from the hosting decision.',
       ] },
       { heading: 'Who should compare another hosting model?', paragraphs: [
         'If the main requirement is a different cloud configuration or a WordPress-specific managed service, inspect the alternatives and the Hostinger–Cloudways comparison before deciding. This is a workflow recommendation, not evidence that another host is universally faster or cheaper.',
@@ -174,7 +174,7 @@ export const packageReviews: Review[] = [
     alternatives: [{ label: 'Semrush versus Surfer', href: '/compare/semrush-vs-surfer-seo', note: 'Choose research or an article-editing workflow by the actual task.' }],
     related: [
       { label: 'AI tools pillar', href: '/ai-tools', note: 'Explore the broader AI categories.' },
-      { label: 'Marketing and SEO shortlist', href: '/ai-tools/marketing-and-seo', note: 'See all five existing category tools.' },
+      { label: 'Marketing and SEO shortlist', href: '/ai-tools/marketing-and-seo', note: 'See all five category tools.' },
       { label: 'Verified AI free access', href: '/free/best-free-ai-marketing-and-seo-tools', note: 'Review account, trial and export restrictions.' },
       { label: 'Marketing tool matching quiz', href: '/quiz/ai-tools-marketing-and-seo', note: 'Match research and content needs to a tool.' },
     ],

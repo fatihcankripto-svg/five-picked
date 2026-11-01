@@ -1,4 +1,4 @@
-import { editorialIdentity, editorialUpdateNote } from '@/lib/editorial-identity'
+import { editorialIdentity } from '@/lib/editorial-identity'
 import { reviewBodyCopy } from '@/lib/page-body-copy'
 import { contentLinks, getContentLinks } from '@/lib/content-links'
 import type { Metadata } from 'next'
@@ -204,8 +204,7 @@ export default async function ReviewPage({ params }: PageProps) {
         </div>
       ))}
 
-      <h2>What changed</h2>
-      <p>Last updated: <time dateTime={review.updated}>{review.updated}</time>. {editorialUpdateNote}</p>
+      <p>Last updated: <time dateTime={review.updated}>{review.updated}</time>.</p>
 
       <h2>Keep reading</h2>
       <ul>

@@ -410,7 +410,7 @@ export function getContentLinks(path: string) {
       const labels: Record<string, string> = {
         '/software-and-productivity': 'Browse the wider productivity categories',
         '/software-and-productivity/project-management': 'See the full project management shortlist',
-        '/free/best-free-project-management-tools': 'Inspect the existing free project management guide',
+        '/free/best-free-project-management-tools': 'Inspect our free project management guide',
         '/quiz/software-and-productivity-project-management': 'Match a project tool to your team’s work',
         '/ai-tools': 'Explore the broader AI tool categories',
         '/ai-tools/marketing-and-seo': 'Review all five marketing and SEO platforms',
@@ -431,7 +431,7 @@ export function getContentLinks(path: string) {
       const labels: Record<string, string> = {
         '/software-and-productivity': 'Explore the productivity tool categories',
         '/software-and-productivity/automation': 'See all five automation options',
-        '/free/best-free-automation-tools': 'Inspect the existing free automation access guide',
+        '/free/best-free-automation-tools': 'Inspect our free automation access guide',
         '/quiz/software-and-productivity-automation': 'Match an automation platform to your responsibilities',
         '/software-and-productivity/cloud-storage': 'Browse the complete cloud storage shortlist',
         '/free/best-free-cloud-storage': 'Check the underlying free storage allowances',

@@ -18,7 +18,7 @@ export const secondPackageReviews: Review[] = [
     "intro": "Kiwi.com is a flight search and booking intermediary. This review examines the documented purchase conditions rather than testing a booking or cancellation. It does not claim the lowest fare, a successful refund or protected connections on every itinerary.",
     "startingPrice": "Free search; tickets, service fees and selected extras cost extra",
     "audience": "Travelers comparing separate-airline itineraries",
-    "verdict": "Consider Kiwi.com when its itinerary fits your journey and you accept the complete booking price, connection responsibilities and selected cancellation conditions. Look elsewhere if you require blanket free changes, a guaranteed full cash refund or a single airline-managed connection. Our existing Awin relationship is not evidence of a cheaper or better booking.",
+    "verdict": "Consider Kiwi.com when its itinerary fits your journey and you accept the complete booking price, connection responsibilities and selected cancellation conditions. Look elsewhere if you require blanket free changes, a guaranteed full cash refund or a single airline-managed connection. Our affiliate relationship with this provider does not influence our ranking or verdict.",
     "bestFor": [
       "Travelers willing to assess separate-airline itineraries and their connection requirements.",
       "People comparing the final booking total, including baggage and selected services.",
@@ -85,7 +85,7 @@ export const secondPackageReviews: Review[] = [
       {
         "href": "/travel/flights",
         "label": "Inspect the five flight booking picks",
-        "note": "Compare the existing flight shortlist."
+        "note": "Compare our flight shortlist."
       },
       {
         "href": "/free/best-free-flight-booking-sites",
@@ -100,7 +100,7 @@ export const secondPackageReviews: Review[] = [
       {
         "href": "/compare/kiwi-com-vs-trip-com",
         "label": "Compare Kiwi.com and Trip.com by booking needs",
-        "note": "Use the existing decision framework."
+        "note": "Use our decision framework."
       }
     ],
     "faqs": [
@@ -204,7 +204,7 @@ export const secondPackageReviews: Review[] = [
       {
         "href": "/ai-tools/marketing-and-seo",
         "label": "Browse the marketing and SEO shortlist",
-        "note": "Inspect the existing five platforms."
+        "note": "Inspect our five platforms."
       },
       {
         "href": "/free/best-free-ai-marketing-and-seo-tools",
@@ -219,7 +219,7 @@ export const secondPackageReviews: Review[] = [
       {
         "href": "/compare/semrush-vs-surfer-seo",
         "label": "Choose research or content optimization",
-        "note": "Use the existing Semrush and Surfer framework."
+        "note": "Use our Semrush and Surfer framework."
       }
     ],
     "faqs": [
@@ -294,7 +294,7 @@ export const secondPackageReviews: Review[] = [
       {
         "heading": "Limitations: paid access and purchase-channel rules",
         "paragraphs": [
-          "ExpressVPN is a paid provider in our existing free VPN guide, not an ongoing free-plan choice. Trials and refund guarantees have eligibility and purchase-channel conditions. A refund route can require an upfront payment and a qualifying request.",
+          "ExpressVPN is a paid provider in our free VPN guide, not an ongoing free-plan choice. Trials and refund guarantees have eligibility and purchase-channel conditions. A refund route can require an upfront payment and a qualifying request.",
           "The official guarantee excludes subscriptions billed through Apple App Store or Google Play from the website guarantee. Store refund decisions belong to the respective store. Do not assume cancelling a renewal automatically requests a refund."
         ]
       },
@@ -315,14 +315,14 @@ export const secondPackageReviews: Review[] = [
       {
         "heading": "Free access conditions",
         "paragraphs": [
-          "Consistent with the existing free guide, ExpressVPN is a paid service. Mobile trial availability and refund eligibility depend on the purchase route and account. No permanent free traffic, device or location allowance is claimed here.",
+          "Consistent with our free guide, ExpressVPN is a paid service. Mobile trial availability and refund eligibility depend on the purchase route and account. No permanent free traffic, device or location allowance is claimed here.",
           "Before starting an offer, check whether billing details are required, how it renews and where cancellation and refund requests must be made. A refund guarantee should not be treated as an ongoing free subscription."
         ]
       },
       {
         "heading": "How to decide before paying",
         "paragraphs": [
-          "Check the app, feature tier, upfront payment, renewal and refund route against your requirements. If permanent free access is essential, inspect the ongoing free-plan option in the linked guide. If comparing paid providers, use the existing ExpressVPN and NordVPN decision framework."
+          "Check the app, feature tier, upfront payment, renewal and refund route against your requirements. If permanent free access is essential, inspect the ongoing free-plan option in the linked guide. If comparing paid providers, use our ExpressVPN and NordVPN decision framework."
         ]
       }
     ],
@@ -331,7 +331,7 @@ export const secondPackageReviews: Review[] = [
       {
         "href": "/vpn-and-security",
         "label": "Explore the VPN shortlist",
-        "note": "Compare the existing category picks."
+        "note": "Compare our category picks."
       },
       {
         "href": "/free/vpns-with-a-free-plan",
