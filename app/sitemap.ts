@@ -1,3 +1,4 @@
+import { restoredGuides } from '@/lib/restored-guides'
 import { marketingSeoFreeEditorial } from '@/lib/marketing-seo-free-options'
 import { flightFreeEditorial } from '@/lib/flight-free-options'
 import type { MetadataRoute } from 'next'
@@ -38,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route('/reviews'), ...reviews.map((review) => route(`/reviews/${review.toolSlug}`, review.updated)),
     // The alternatives registry includes Hostinger, NordVPN and Premiere alongside existing pages.
     route('/alternatives'), ...getAllAlternativePages().map((page) => route(`/alternatives/${page.slug}`, alternativesUpdated)),
+    ...restoredGuides.map((guide) => route(guide.path, editorialDates.guides)),
     route('/tools'),
     route('/tools/text-to-speech-duration', editorialDates.calculators),
     route('/tools/freelance-fee-calculator', editorialDates.calculators),

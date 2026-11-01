@@ -1,3 +1,4 @@
+import { restoredGuides } from '@/lib/restored-guides'
 import { publishedCategories as allCategories } from '@/data/all-categories'
 import { blogPosts } from '@/lib/blog-pages'
 import { reviews } from '@/data/reviews'
@@ -20,6 +21,7 @@ function toolList(slug: string) {
 }
 export const contentLinks: ContentLink[] = [
   ...lists,
+  ...restoredGuides,
   ...blogPosts.map((p) => ({ path: `/blog/${p.slug}`, title: p.title, listPath: p.relatedListPath })),
   ...reviews.map((p) => ({ path: `/reviews/${p.toolSlug}`, title: p.headline, listPath: toolList(p.toolSlug) })),
   ...comparePages.map((p) => ({ path: `/compare/${p.slug}`, title: `${p.a.name} vs ${p.b.name}`, listPath: p.listPath })),
