@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  other: { 'msvalidate.01': 'B061CCEFF9EE16EF52992E776C9DFE76' },
   alternates: { canonical: '/' },
   openGraph: { images: socialImages,
     type: 'website',
