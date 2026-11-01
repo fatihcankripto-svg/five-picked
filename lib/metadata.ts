@@ -1,55 +1,7 @@
 import type { Metadata } from 'next'
 import { absoluteUrl, siteConfig, socialImages } from '@/lib/site'
 
-/** Snippet copy only: these overrides never replace editorial body or schema data. */
-const snippets: Record<string, { title?: string; description?: string }> = {
-  "/free/best-free-cloud-storage": {"description": "Explore free cloud storage services and compare storage allowances and sharing conditions. Check the limits and paid upgrades before choosing where to start."},
-  "/free/best-free-note-taking-apps": {"description": "Explore free note-taking apps and compare writing, organization and plan conditions. Check the limits and paid upgrades before choosing where to start."},
-  "/free/best-free-presentation-tools": {"description": "Explore free presentation tools and compare slide creation and sharing conditions. Check the limits and paid upgrades before choosing where to start."},
-  "/free/best-free-ai-image-tools": {"description": "Explore free AI image tools and compare generation access and plan conditions. Check the limits and paid upgrades before choosing where to start."},
-  "/free/best-free-ai-video-tools": {"description": "Explore free AI video tools and compare credits, export conditions and trials. Check the limits and paid upgrades before choosing where to start."},
-  "/free/best-free-ai-chatbots": {"description": "Explore free AI chatbot tools and compare website access and plan conditions. Check the limits and paid upgrades before choosing where to start."},
-  "/free/best-free-automation-tools": {"description": "Explore free automation tools and compare workflow access and usage limits. Check the limits and paid upgrades before choosing where to start."},
-  "/free/best-free-project-management-tools": {"description": "Explore free project management tools and compare team workflows and collaboration. Check the limits and paid upgrades before choosing where to start."},
-  "/reviews/babbel": {"description": "Explore Babbel lessons, language options and subscription costs. Learn who its study format suits and what to consider before choosing your next language app."},
-  "/tools/text-to-speech-duration": {"description": "Plan a voiceover before recording. Paste your script into the free text-to-speech duration calculator and compare estimated timing at different speaking speeds."},
-  "/about": {"description": "Meet FIVE PICKED, an independent tool recommendation site. Learn how focused five-pick lists and practical comparisons help you choose tools for your needs."},
-  "/contact": {"description": "Share a suggestion, correction or question with FIVE PICKED. Find our contact email and help us keep tool information clear, useful and relevant to your needs."},
-  "/how-we-choose": {"description": "Explore how FIVE PICKED researches, compares and ranks tools. Learn what goes into each five-pick list and how we explain sources, trade-offs and suitability."},
-  "/privacy": {"description": "Learn how FIVE PICKED handles privacy while you browse. Read about accounts, forms, newsletters and data practices so you know what to expect from the site."},
-  "/affiliate-disclosure": {"description": "Learn how affiliate links support FIVE PICKED and what happens when you use them. Read our commission disclosure and approach to independent recommendations."},
-  "/tools": {"description": "Plan your next project with free narration and freelance fee calculators. Explore timing and take-home estimates before choosing a workflow or quoting a job."},
-  "/blog/semrush-vs-surfer-seo": {"title": "Semrush vs Surfer SEO: Detailed Guide (2026)"},
-  "/blog/skillshare-vs-masterclass": {"title": "Skillshare vs MasterClass: Learning Guide"},
-  '/': { title: 'The 5 Best Tools in Every Category (2026)', description: 'Find five carefully selected tools for each published list. Explore comparisons, buying guides and free-plan limits to choose what fits your needs.' },
-  '/categories': { title: 'Explore All Tool Categories', description: 'Find the right starting point for your next tool. Browse complete five-pick lists across AI, hosting, VPNs, productivity, learning and more.' },
-  '/blog': { title: 'Tool Comparisons and Buying Guides', description: 'Explore practical tool comparisons, buying guides and price indices. Understand costs, free-plan limits and trade-offs before choosing your next tool.' },
-  '/reviews': { title: 'Product Reviews and Buying Notes', description: 'Explore product reviews with clear pricing, useful features and practical trade-offs. Find who each tool suits and what to check before subscribing.' },
-  '/compare': { title: 'Tool Comparisons (2026)', description: 'Compare tools side by side by cost, features and the work you need to do. Explore clear decision guides to find the option that fits your situation.' },
-  '/free': { title: 'Free Tool Plans, Trials and Limits (2026)', description: 'Explore free plans and trials across our tool categories. Check access limits, paid upgrades and refund conditions before choosing where to start.' },
-  '/quiz': { title: 'Find Your Tool: Recommendation Quizzes', description: 'Answer questions about your goals and preferences to narrow down your tool options. Explore category quizzes and find a starting point for your shortlist.' },
-  '/alternatives': { title: 'Tool Alternatives by Use Case', description: 'Explore alternatives to familiar tools and compare where each option fits. Check pricing, access conditions and trade-offs before making a switch.' },
-  '/reviews/nordvpn': { title: 'NordVPN Review (2026): Pricing and Fit', description: 'Explore NordVPN plans, pricing and device support. Compare free-access conditions and refund rules to decide whether it fits your VPN needs.' },
-  '/reviews/hostinger': { title: 'Hostinger Review (2026): Pricing and Fit', description: 'Explore Hostinger hosting features, introductory prices and renewal costs. Check refund conditions and find out whether it fits your next website.' },
-  '/reviews/expressvpn': { title: 'ExpressVPN Review (2026): Plans and Costs', description: 'Explore ExpressVPN plans, introductory billing and renewal costs. Check device support and purchase-channel refund rules before choosing a subscription.' },
-  '/reviews/cloudways': { title: "Cloudways Review (2026): Pricing and Fit", description: "Explore how Cloudways managed cloud hosting works, what its plans include and who it suits. Compare pricing and practical trade-offs before choosing a host.",},
-  '/reviews/semrush': { title: 'Semrush Review (2026): Plans and Fit' },
-  '/reviews/surfer-seo': { title: 'Surfer SEO Review (2026): Plans and Fit' },
-  '/reviews/kiwi-com': { title: 'Kiwi.com Review (2026): Booking Costs and Fit' },
-  '/blog/real-cost-of-email-marketing-2026': { title: 'Email Marketing Costs and Limits (2026)', description: 'Compare email plan limits, paid starting tiers and automation features. Explore newsletter and ecommerce scenarios to plan a stack that fits your needs.' },
-  '/blog/real-cost-of-freelancing-2026': { title: 'Freelancing Costs: Fees and Payouts (2026)' },
-  '/blog/2026-web-hosting-price-index': { title: 'Web Hosting Price Index (2026): 10 Providers', description: 'Compare hosting entry prices, renewals and included services across ten providers. Use the dated price table and downloadable data to plan your budget.' },
-  '/blog/2026-vpn-price-index': { title: 'VPN Price Index (2026): 10 Providers', description: 'Compare VPN entry prices, renewals, device allowances and refund conditions across ten providers. Explore the dated table and downloadable price data.' },
-  '/blog/2026-online-course-price-index': { title: 'Online Course Price Index (2026): 10 Platforms', description: 'Compare course subscriptions, free access and certificate conditions across ten platforms. Explore individual and team costs with a downloadable dataset.' },
-  '/free/best-free-online-course-platforms': { title: 'Free Online Courses: Access and Certificates' },
-  '/free/best-free-flight-booking-sites': { title: 'Free Flight Search: Alerts and Booking Fees' },
-  '/free/best-free-language-learning-apps': { title: 'Free Language Apps: Lesson Limits and Trials' },
-  '/free/best-free-ai-marketing-and-seo-tools': { title: 'Free AI Marketing and SEO: Trials and Limits' },
-  '/free/best-free-freelance-platforms': { title: 'Free Freelance Platforms: Fees and Limits' },
-  '/free/best-free-video-and-design-software': { title: 'Free Video and Design: Limits and Trials' },
-  '/free/vpns-with-a-free-plan': { title: 'VPN Free Plans and Trials Compared' },
-  '/alternatives/adobe-premiere-pro': { title: 'Premiere Pro Alternatives (2026): 4 Picks' },
-}
+import { searchSnippets as snippets } from '@/lib/search-snippets'
 
 const categorySnippets: Record<string, { title: string; description: string }> = {
   'web-hosting-and-domains': { title: 'Best Web Hosting (2026): 5 Top Picks Compared', description: 'Compare five web hosting providers by pricing, features and the sites they suit. Explore the trade-offs to find a practical home for your next website.' },
@@ -82,7 +34,9 @@ export function categorySeo(slug: string) {
 }
 
 function conciseTitle(title: string, path: string) {
-  let value = snippets[path]?.title ?? title.replace(/FIVE PICKED/gi, '').replace(/\s*[|—–-]\s*$/, '').trim()
+  // Hand-edited search titles are already complete and length-checked; preserve brand casing.
+  if (snippets[path]) return snippets[path].title
+  let value = title.replace(/FIVE PICKED/gi, '').replace(/\s*[|—–-]\s*$/, '').trim()
   value = value.replace(/^Which (.+?) is right for me\? \(2026 Quiz\)$/i, '$1 Quiz (2026)')
     .replace(/Alternatives: 4 Hand-Picked Options \(2026\)/, 'Alternatives (2026): 4 Picks')
     .split(/\s+—\s+/)[0]
@@ -101,9 +55,9 @@ export function pageMetadata(input: Metadata): Metadata {
   const rawTitle = typeof input.title === 'string' ? input.title : input.title && 'absolute' in input.title ? input.title.absolute : input.title?.default
   const title = conciseTitle(rawTitle ?? '', path)
   const quizTopic = rawTitle?.match(/^Which (.+?) is right for me\?/i)?.[1]
-  let description = path.startsWith('/quiz/') && quizTopic
+  let description = snippets[path]?.description ?? (path.startsWith('/quiz/') && quizTopic
     ? `Find your ${quizTopic} match. Answer questions about your needs and preferences, then explore the shortlist and compare the options before choosing.`
-    : snippets[path]?.description ?? input.description ?? ''
+    : input.description ?? '')
   description = description.replace(/\s*No (?:fabricated|invented|independent|hands-on)[^.]*\./gi, '').trim()
   if (description.length > 165) description = description.slice(0, 160).replace(/\s+\S*$/, '').replace(/[,:;]+$/, '') + '…'
   return {
@@ -111,7 +65,7 @@ export function pageMetadata(input: Metadata): Metadata {
     title: { absolute: `${title} | ${siteConfig.name}` },
     description,
     alternates: { ...input.alternates, canonical: url },
-    openGraph: { type: 'website', ...input.openGraph, images: input.openGraph?.images ?? socialImages, title: path === '/' ? `${title} | ${siteConfig.name}` : title, description, url },
-    ...(path === '/' ? { twitter: { ...input.twitter, images: socialImages, card: 'summary_large_image' as const, title: `${title} | ${siteConfig.name}`, description } } : {}),
+    openGraph: { type: 'website', ...input.openGraph, images: input.openGraph?.images ?? socialImages, title: `${title} | ${siteConfig.name}`, description, url },
+    twitter: { ...input.twitter, images: input.twitter?.images ?? socialImages, card: 'summary_large_image', title: `${title} | ${siteConfig.name}`, description },
   }
 }
