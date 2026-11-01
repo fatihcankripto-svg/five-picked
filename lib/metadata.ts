@@ -21,7 +21,7 @@ const snippets: Record<string, { title?: string; description?: string }> = {
   "/tools": {"description": "Plan your next project with free narration and freelance fee calculators. Explore timing and take-home estimates before choosing a workflow or quoting a job."},
   "/blog/semrush-vs-surfer-seo": {"title": "Semrush vs Surfer SEO: Detailed Guide (2026)"},
   "/blog/skillshare-vs-masterclass": {"title": "Skillshare vs MasterClass: Learning Guide"},
-  '/': { title: 'Choose Your Next Tool with Confidence', description: 'Find five carefully selected tools for each published list. Explore comparisons, buying guides and free-plan limits to choose what fits your needs.' },
+  '/': { title: 'The 5 Best Tools in Every Category (2026)', description: 'Find five carefully selected tools for each published list. Explore comparisons, buying guides and free-plan limits to choose what fits your needs.' },
   '/categories': { title: 'Explore All Tool Categories', description: 'Find the right starting point for your next tool. Browse complete five-pick lists across AI, hosting, VPNs, productivity, learning and more.' },
   '/blog': { title: 'Tool Comparisons and Buying Guides', description: 'Explore practical tool comparisons, buying guides and price indices. Understand costs, free-plan limits and trade-offs before choosing your next tool.' },
   '/reviews': { title: 'Product Reviews and Buying Notes', description: 'Explore product reviews with clear pricing, useful features and practical trade-offs. Find who each tool suits and what to check before subscribing.' },
@@ -111,6 +111,7 @@ export function pageMetadata(input: Metadata): Metadata {
     title: { absolute: `${title} | ${siteConfig.name}` },
     description,
     alternates: { ...input.alternates, canonical: url },
-    openGraph: { type: 'website', ...input.openGraph, images: input.openGraph?.images ?? socialImages, title, description, url },
+    openGraph: { type: 'website', ...input.openGraph, images: input.openGraph?.images ?? socialImages, title: path === '/' ? `${title} | ${siteConfig.name}` : title, description, url },
+    ...(path === '/' ? { twitter: { ...input.twitter, images: socialImages, card: 'summary_large_image' as const, title: `${title} | ${siteConfig.name}`, description } } : {}),
   }
 }

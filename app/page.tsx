@@ -9,7 +9,7 @@ import { AboutTeaser } from '@/components/home/about-teaser'
 import { siteConfig } from '@/lib/site'
 
 export const metadata = pageMetadata({
-  title: 'Choose Your Next Tool with Confidence',
+  title: 'The 5 Best Tools in Every Category (2026)',
   description: 'Find five carefully selected tools for each published list. Explore comparisons, buying guides and free-plan limits to choose what fits your needs.',
   alternates: { canonical: '/' },
 })
