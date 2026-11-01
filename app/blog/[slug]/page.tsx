@@ -1,3 +1,4 @@
+import { blogTakeaways } from '@/lib/blog-takeaways'
 import { serializeJsonLd } from '@/lib/json-ld'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import { pageMetadata } from '@/lib/metadata'
@@ -90,11 +91,17 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post) notFound()
 
   const headings: { id: string; label: string }[] = []
-  const articleHtml = post.content.replace(/<h2>(.*?)<\/h2>/g, (_, label: string) => {
+  let articleHtml = post.content.replace(/<h2>(.*?)<\/h2>/g, (_, label: string) => {
     const id = `section-${headings.length + 1}`
     headings.push({ id, label: label.replace(/<[^>]*>/g, '') })
     return `<h2 id="${id}">${label}</h2>`
   })
+  const takeaways = blogTakeaways[post.slug]
+  if (takeaways?.length) {
+    const escapeText = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    const summary = `<aside aria-label="Key takeaways" class="rounded-xl border border-border bg-muted/30 p-5"><h2 class="text-sm font-semibold text-foreground">Key takeaways</h2><ul>${takeaways.map((text) => `<li>${escapeText(text)}</li>`).join('')}</ul></aside>`
+    articleHtml = articleHtml.replace('</p>', `</p>${summary}`)
+  }
   const minutes = readingTimeMinutes(post.content)
   const related = getRelatedPosts(post, ['2026-web-hosting-price-index', '2026-vpn-price-index', '2026-online-course-price-index'].includes(post.slug) ? blogPosts.filter((entry) => entry.relatedListPath === post.relatedListPath) : blogPosts, 3)
 
