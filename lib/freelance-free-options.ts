@@ -5,7 +5,7 @@ export const freelanceFreeOptions = [
     account: 'Joining and listing services require no subscription. Seller accounts and Gigs are reviewed for approval; free registration is not guaranteed visibility or orders.',
     commission: 'For standard completed orders, sellers retain 80% of the purchase amount, including Gig Extras and tips. This is not commission-free earning.',
     proposals: 'The verified free route is publishing Gigs. No recurring proposal-credit allowance is promised by this guide.',
-    payout: 'PayPal: $1 minimum and $0 Fiverr withdrawal fee. Bank transfer via Payoneer: $20 minimum and $1 withdrawal fee. Payoneer account: $10 minimum and $3 fee. Location and provider restrictions apply; additional provider or currency-conversion costs may apply.',
+    payout: 'PayPal: US$1 minimum and US$0 Fiverr withdrawal fee. Bank transfer via Payoneer: US$20 minimum and US$1 withdrawal fee. Payoneer account: US$10 minimum and US$3 fee. Location and provider restrictions apply; additional provider or currency-conversion costs may apply.',
     trial: 'Free registration is ongoing access, not a fixed-day paid-plan trial. No universal optional-upgrade trial is verified here.',
     sources: [
       { url: 'https://www.fiverr.com/start_selling', label: 'Fiverr free service listings and seller earnings' },
@@ -18,8 +18,8 @@ export const freelanceFreeOptions = [
     slug: 'upwork', name: 'Upwork', price: 'Free Basic account; 0%–15% freelancer service fee per contract',
     account: 'Freelancer Basic is free. Freelancer Plus is an optional paid upgrade with additional tools; a free account does not mean unlimited free proposals or guaranteed work.',
     commission: 'The freelancer service fee ranges from 0% to 15% per contract. Check the actual percentage shown with the proposal or offer; do not assume one rate applies to every contract.',
-    proposals: 'Purchased Connects cost $0.15 each. Proposals and advertising products use Connects. Some freelancers may receive 10 free Connects per month; eligibility and offers vary, so this is not a universal allowance.',
-    payout: 'Direct to Local Bank costs $0.99 per withdrawal, plus possible receiving-bank fees. Its minimum is $5 or higher depending on location, and country-specific maximums apply. Other payout methods have separate fees and limits.',
+    proposals: 'Purchased Connects cost US$0.15 each. Proposals and advertising products use Connects. Some freelancers may receive 10 free Connects per month; eligibility and offers vary, so this is not a universal allowance.',
+    payout: 'Direct to Local Bank costs US$0.99 per withdrawal, plus possible receiving-bank fees. Its minimum is US$5 or higher depending on location, and country-specific maximums apply. Other payout methods have separate fees and limits.',
     trial: 'Basic is a free plan rather than a countdown trial. No universal fixed-day Freelancer Plus trial is verified in the sources reviewed here.',
     sources: [
       { url: 'https://support.upwork.com/hc/en-us/articles/40444316172051-What-s-the-difference-between-Freelancer-Basic-and-Freelancer-Plus', label: 'Upwork free Basic plan and optional Plus features' },
@@ -31,9 +31,9 @@ export const freelanceFreeOptions = [
   {
     slug: '99designs', name: '99designs', price: 'Free designer signup; 5%–15% platform fee on 1-to-1 Projects',
     account: 'Designer signup is free, with designer curation and level review. This is not a promise of automatic acceptance, unrestricted visibility or paid contest wins.',
-    commission: 'On 1-to-1 Projects, designer platform fees are 5% for Top Level, 10% for Mid Level and 15% for Entry Level. A separate new-client introduction fee takes 20% of the first $500 of invoices, capped at $100. It is waived for qualifying contest relationships and eligible invited new clients; consult the linked conditions.',
+    commission: 'On 1-to-1 Projects, designer platform fees are 5% for Top Level, 10% for Mid Level and 15% for Entry Level. A separate new-client introduction fee takes 20% of the first US$500 of invoices, capped at US$100. It is waived for qualifying contest relationships and eligible invited new clients; consult the linked conditions.',
     proposals: 'The reviewed designer sources describe contests and direct projects, not a universal monthly proposal-credit allowance. Do not apply the 1-to-1 fee schedule to every contest payout.',
-    payout: 'Automatic payouts require $25, tracked separately for the US and EU business entities. Hyperwallet is required. Transfer fees vary by method, region and currency; no single global withdrawal fee is claimed.',
+    payout: 'Automatic payouts require US$25, tracked separately for the US and EU business entities. Hyperwallet is required. Transfer fees vary by method, region and currency; no single global withdrawal fee is claimed.',
     trial: 'Free signup is not a fixed-day premium trial. No universal designer subscription trial is verified here.',
     sources: [
       { url: 'https://99designs.com/designers', label: '99designs free designer signup and curation' },
@@ -44,10 +44,10 @@ export const freelanceFreeOptions = [
   },
   {
     slug: 'freelancer-com', name: 'Freelancer.com', price: 'Free membership; project fees and bid-balance requirements apply',
-    account: 'Free signup and profile; initially 6 bids per month. A standard $20 unreserved balance is required before bidding, potentially higher for designated risk or high-value work. Paid memberships and bid upgrades are separate.',
-    commission: 'Standard fixed-price projects and contest awards: 10% or $5, whichever is greater. Standard hourly projects: 10%. Preferred Freelancer Recruiter projects have a separate 15% fee.',
+    account: 'Free signup and profile; initially 6 bids per month. A standard US$20 unreserved balance is required before bidding, potentially higher for designated risk or high-value work. Paid memberships and bid upgrades are separate.',
+    commission: 'Standard fixed-price projects and contest awards: 10% or US$5, whichever is greater. Standard hourly projects: 10%. Preferred Freelancer Recruiter projects have a separate 15% fee.',
     proposals: 'Free membership is restricted bidding, not unlimited applications. A required balance is not the same as a proposal fee, but still means cash must be available.',
-    payout: 'Minimum withdrawal: $50 after fees. PayPal and Express Withdrawal cost $1; international wire costs $25. Availability and provider charges vary. Inactive accounts can incur maintenance fees under the linked policy.',
+    payout: 'Minimum withdrawal: US$50 after fees. PayPal and Express Withdrawal cost US$1; international wire costs US$25. Availability and provider charges vary. Inactive accounts can incur maintenance fees under the linked policy.',
     trial: 'Free membership is an ongoing tier. No universal fixed-day paid-membership trial is established here; any checkout promotion must be checked separately.',
     sources: [
       { url: 'https://www.freelancer.com/feesandcharges', label: 'Freelancer membership, bids, balance requirements, project and withdrawal fees' },

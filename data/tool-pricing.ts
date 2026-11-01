@@ -1,4 +1,4 @@
-/** Official pricing observations checked on 2026-10-31. Amounts retain their source currency and billing basis. */
+/** Prices use USD where verified; otherwise the verified source currency is preserved. Each record retains its billing basis and checkedAt date. */
 export type PricingFact = {
   label: string
   sourceUrl: string
@@ -7,7 +7,7 @@ export type PricingFact = {
 }
 export const verifiedPricing: Record<string, PricingFact> = {
   "pictory": {
-    "label": "Free trial; from $25/mo, billed annually",
+    "label": "Free trial; from US$25/mo, billed annually",
     "sourceUrl": "https://pictory.ai/pricing/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -25,7 +25,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "elevenlabs": {
-    "label": "Free plan; paid from $6/mo",
+    "label": "Free plan; paid from US$6/mo",
     "sourceUrl": "https://elevenlabs.io/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -49,43 +49,43 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "fireflies": {
-    "label": "Free plan; Pro from $10/seat/mo, billed annually",
+    "label": "Free plan; Pro from US$10/seat/mo, billed annually",
     "sourceUrl": "https://fireflies.ai/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "fathom": {
-    "label": "Free plan; Premium $20/user/mo, billed monthly",
+    "label": "Free plan; Premium US$20/user/mo, billed monthly",
     "sourceUrl": "https://www.fathom.ai/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "otter": {
-    "label": "Free plan; Pro $16.99/user/mo, billed monthly",
+    "label": "Free plan; Pro US$16.99/user/mo, billed monthly",
     "sourceUrl": "https://otter.ai/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "notta": {
-    "label": "Free plan; Pro $8.17/mo, billed annually",
+    "label": "Free plan; Pro US$8.17/mo, billed annually",
     "sourceUrl": "https://www.notta.ai/en/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "neuronwriter": {
-    "label": "Free trial; Bronze $23/mo, billed monthly",
+    "label": "Free trial; Bronze US$23/mo, billed monthly",
     "sourceUrl": "https://neuronwriter.com/pricing-neuron/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "frase": {
-    "label": "Free trial; Starter $39/mo, billed yearly",
+    "label": "Free trial; Starter US$39/mo, billed yearly",
     "sourceUrl": "https://www.frase.io/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "writesonic": {
-    "label": "Starter from $79/mo, billed annually",
+    "label": "Starter from US$79/mo, billed annually",
     "sourceUrl": "https://writesonic.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -97,7 +97,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "chatbase": {
-    "label": "Hobby $40/mo, billed monthly ($32/mo annually)",
+    "label": "Hobby US$40/mo, billed monthly (US$32/mo annually)",
     "sourceUrl": "https://www.chatbase.co/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -115,22 +115,22 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "nordvpn": {
-    "label": "Basic €14.99/mo, billed monthly; longer-term offers available",
+    "label": "Basic US$14.99/mo, billed monthly; longer-term offers available",
     "sourceUrl": "https://nordvpn.com/pricing/",
     "kind": "amount",
-    "checkedAt": "2026-10-31"
+    "checkedAt": "2026-11-01"
   },
   "surfshark": {
-    "label": "From €2.49/mo; €67.23 upfront for 27-month intro",
+    "label": "From US$2.49/mo; US$67.23 upfront for 27-month intro",
     "sourceUrl": "https://surfshark.com/pricing",
     "kind": "amount",
-    "checkedAt": "2026-10-31"
+    "checkedAt": "2026-11-01"
   },
   "expressvpn": {
-    "label": "Basic from €2.49/mo; €69.72 upfront for 28-month intro",
+    "label": "Basic from US$2.99/mo; US$83.72 upfront for 28-month intro",
     "sourceUrl": "https://www.expressvpn.com/pricing",
     "kind": "amount",
-    "checkedAt": "2026-10-31"
+    "checkedAt": "2026-11-01"
   },
   "proton-vpn": {
     "label": "Free plan available",
@@ -139,25 +139,25 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "private-internet-access": {
-    "label": "$11.95/mo, billed monthly; longer-term offers available",
+    "label": "US$11.95/mo, billed monthly; longer-term offers available",
     "sourceUrl": "https://www.privateinternetaccess.com/buy-vpn-online",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "coursera": {
-    "label": "Coursera Plus $59/mo; 7-day trial; courses priced separately",
+    "label": "Coursera Plus US$59/mo; 7-day trial; courses priced separately",
     "sourceUrl": "https://www.coursera.org/courseraplus",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "datacamp": {
-    "label": "Free Basic; Premium $14/mo annual-billing offer",
+    "label": "Free Basic; Premium US$14/mo annual-billing offer",
     "sourceUrl": "https://www.datacamp.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "skillshare": {
-    "label": "$13.99/mo equivalent; $167.88 billed annually",
+    "label": "US$13.99/mo equivalent; US$167.88 billed annually",
     "sourceUrl": "https://www.skillshare.com/en/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -175,7 +175,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "getresponse": {
-    "label": "Free trial; from $15.58/mo, paid annually",
+    "label": "Free trial; from US$15.58/mo, paid annually",
     "sourceUrl": "https://www.getresponse.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -223,7 +223,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "clickup": {
-    "label": "Free plan; Unlimited $9/user/mo annual-billing offer",
+    "label": "Free plan; Unlimited US$9/user/mo annual-billing offer",
     "sourceUrl": "https://clickup.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -235,13 +235,13 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "asana": {
-    "label": "Free Personal; Starter $10.99/user/mo, billed annually",
+    "label": "Free Personal; Starter US$10.99/user/mo, billed annually",
     "sourceUrl": "https://asana.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "wrike": {
-    "label": "Free plan; Team $10/user/mo (2–15 users)",
+    "label": "Free plan; Team US$10/user/mo (2–15 users)",
     "sourceUrl": "https://www.wrike.com/price/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -259,7 +259,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "proton-drive": {
-    "label": "Free plan; Drive Plus $4.99/mo, billed monthly",
+    "label": "Free plan; Drive Plus US$4.99/mo, billed monthly",
     "sourceUrl": "https://proton.me/drive/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -277,7 +277,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "beautiful-ai": {
-    "label": "Free trial; Pro $14.50/mo, billed annually",
+    "label": "Free trial; Pro US$14.50/mo, billed annually",
     "sourceUrl": "https://www.beautiful.ai/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -289,19 +289,19 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "visme": {
-    "label": "Free plan; Starter $12.25/person/mo, billed annually",
+    "label": "Free plan; Starter US$12.25/person/mo, billed annually",
     "sourceUrl": "https://www.visme.co/pricing/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "n8n": {
-    "label": "Cloud free trial; Starter €20/mo, billed annually",
-    "sourceUrl": "https://n8n.io/pricing/",
+    "label": "Cloud free trial; Starter US$20/mo, billed annually",
+    "sourceUrl": "https://n8n.io/vs/copilot-studio/",
     "kind": "amount",
-    "checkedAt": "2026-10-31"
+    "checkedAt": "2026-11-01"
   },
   "activepieces": {
-    "label": "Free plan; paid from $20/mo, billed monthly",
+    "label": "Free plan; paid from US$20/mo, billed monthly",
     "sourceUrl": "https://www.activepieces.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -313,7 +313,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "preply": {
-    "label": "Tutor-set lesson prices; English listings from $3",
+    "label": "Tutor-set lesson prices; English listings from US$3",
     "sourceUrl": "https://preply.com/en/online/english-tutors",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -325,7 +325,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "fiit": {
-    "label": "Free trial; $9.99/mo equivalent, $119.99 billed yearly",
+    "label": "Free trial; US$9.99/mo equivalent, US$119.99 billed yearly",
     "sourceUrl": "https://fiit.tv/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -415,7 +415,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "freepik": {
-    "label": "Free tier; Premium $14.50/mo annual-billing offer (now Magnific)",
+    "label": "Free tier; Premium US$14.50/mo annual-billing offer (now Magnific)",
     "sourceUrl": "https://www.magnific.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -427,19 +427,19 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "tldv": {
-    "label": "Free plan; Pro $18/user/mo, billed annually",
+    "label": "Free plan; Pro US$18/user/mo, billed annually",
     "sourceUrl": "https://tldv.io/blog/free-ai-note-taking/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "semrush": {
-    "label": "SEO Classic $139.95/mo; Semrush One $199.95/mo",
+    "label": "SEO Classic US$139.95/mo; Semrush One US$199.95/mo",
     "sourceUrl": "https://www.semrush.com/semrush-questions/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "surfer-seo": {
-    "label": "Standard $99/mo, billed yearly",
+    "label": "Standard US$99/mo, billed yearly",
     "sourceUrl": "https://surfer.ai/pricing/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -451,31 +451,31 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "customgpt": {
-    "label": "7-day free trial; Standard $99/mo, billed monthly",
+    "label": "7-day free trial; Standard US$99/mo, billed monthly",
     "sourceUrl": "https://customgpt.ai/pricing/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "hostinger": {
-    "label": "Premium $2.49/mo; $119.52 upfront for 48-month intro",
+    "label": "Premium US$2.49/mo; US$119.52 upfront for 48-month intro",
     "sourceUrl": "https://www.hostinger.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "bluehost": {
-    "label": "Starter $3.99/mo for 36-month intro; renews $9.99/mo",
+    "label": "Starter US$3.99/mo for 36-month intro; renews US$9.99/mo",
     "sourceUrl": "https://www.bluehost.com/pricing/web-hosting",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "kinsta": {
-    "label": "WordPress hosting $35/mo, billed monthly",
+    "label": "WordPress hosting US$35/mo, billed monthly",
     "sourceUrl": "https://kinsta.com/pricing/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "namecheap": {
-    "label": "Stellar from $1.88/mo; $44.88 upfront for 2-year intro",
+    "label": "Stellar from US$1.88/mo; US$44.88 upfront for 2-year intro",
     "sourceUrl": "https://www.namecheap.com/hosting/top10/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -487,7 +487,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "masterclass": {
-    "label": "Standard $10/mo equivalent, billed annually",
+    "label": "Standard US$10/mo equivalent, billed annually",
     "sourceUrl": "https://www.masterclass.com/checkout",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -499,7 +499,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "envato-elements": {
-    "label": "Core $16.50/mo, billed annually; $39 monthly",
+    "label": "Core US$16.50/mo, billed annually; US$39 monthly",
     "sourceUrl": "https://elements.envato.com/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -553,13 +553,13 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "tiller": {
-    "label": "30-day free trial; $99/year after trial",
+    "label": "30-day free trial; US$99/year after trial",
     "sourceUrl": "https://tiller.com/pricing/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "mem": {
-    "label": "Free plan; Pro $29/mo",
+    "label": "Free plan; Pro US$29/mo",
     "sourceUrl": "https://get.mem.ai/pricing",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -595,7 +595,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "99designs": {
-    "label": "Logo design from $249; scope affects project price",
+    "label": "Logo design from US$249; scope affects project price",
     "sourceUrl": "https://99designs.com/logo-design",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -607,7 +607,7 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "toptal": {
-    "label": "$79/mo matching-platform fee; talent charges extra",
+    "label": "US$79/mo matching-platform fee; talent charges extra",
     "sourceUrl": "https://www.toptal.com/faq",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -619,13 +619,13 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "saily": {
-    "label": "USA example: €3.49 for 1 GB / 7 days; destinations vary",
+    "label": "USA example: US$3.99 for 1 GB / 7 days; destinations vary",
     "sourceUrl": "https://saily.com/esim-united-states/",
     "kind": "amount",
-    "checkedAt": "2026-10-31"
+    "checkedAt": "2026-11-01"
   },
   "medjet": {
-    "label": "Short-term regular rate from $99, under age 75",
+    "label": "Short-term regular rate from US$99, under age 75",
     "sourceUrl": "https://medjetassist.com/aarp-discount",
     "kind": "amount",
     "checkedAt": "2026-10-31"
@@ -649,25 +649,25 @@ export const verifiedPricing: Record<string, PricingFact> = {
     "checkedAt": "2026-10-31"
   },
   "changed": {
-    "label": "From $6/mo",
+    "label": "From US$6/mo",
     "sourceUrl": "https://www.gochanged.com/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "finaciti": {
-    "label": "iOS subscription: $19.99/mo (US listing)",
+    "label": "iOS subscription: US$19.99/mo (US listing)",
     "sourceUrl": "https://apps.apple.com/us/app/finaciti/id1605756584",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "identityiq": {
-    "label": "Secure Basic $8.49/mo, billed monthly",
+    "label": "Secure Basic US$8.49/mo, billed monthly",
     "sourceUrl": "https://www.identityiq.com/",
     "kind": "amount",
     "checkedAt": "2026-10-31"
   },
   "helcim": {
-    "label": "$0 monthly fee; interchange and processing fees apply",
+    "label": "US$0 monthly fee; interchange and processing fees apply",
     "sourceUrl": "https://www.helcim.com/pricing/",
     "kind": "amount",
     "checkedAt": "2026-10-31"

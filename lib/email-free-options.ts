@@ -2,11 +2,11 @@
 export const emailFreeOptions = [
   {
     slug: 'mailerlite', name: 'MailerLite',
-    price: 'Free: 250 subscribers / 2,500 emails per month; Comfort: $12/mo for 500 subscribers, or $10.80/mo billed $129.60 annually',
+    price: 'Free: 250 subscribers / 2,500 emails per month; Comfort: US$12/mo for 500 subscribers, or US$10.80/mo billed US$129.60 annually',
     audience: 'Small lists within 250 subscribers and 2,500 monthly emails', standout: '3 active automations on Free',
     limits: 'Free: 250 active subscribers and 2,500 emails per month. No separate daily allowance is specified in the reviewed plan sources. Sending pauses when the applicable limit is exceeded.',
     features: '3 active automations, up to 5 steps; 3 active forms, 1 landing page and 1 website. Branding removal is a paid-plan feature. A free A/B-test entitlement could not be reliably read from the pricing comparison, so it is not promised.',
-    paid: 'Comfort starts at 500 subscribers: $12 monthly or $129.60 yearly ($10.80 monthly equivalent). That subscriber tier allows 5,000 monthly emails; sending volume and subscriber count are separate limits.',
+    paid: 'Comfort starts at 500 subscribers: US$12 monthly or US$129.60 yearly (US$10.80 monthly equivalent). That subscriber tier allows 5,000 monthly emails; sending volume and subscriber count are separate limits.',
     commercial: 'The pricing comparison includes 1 active digital product or booking on Free. This is business-oriented access, subject to the provider’s terms and acceptable-use rules; it is not a license to send unsolicited mail.',
     strengths: ['250 active subscribers and 2,500 monthly emails', '3 active automations with limited steps', '1 landing page and 3 active signup forms'],
     sources: [
@@ -17,11 +17,11 @@ export const emailFreeOptions = [
   },
   {
     slug: 'kit', name: 'Kit',
-    price: 'Free: 10,000 subscribers / unlimited broadcasts; Creator: $39/mo for 1,000 subscribers, or $390 billed annually',
+    price: 'Free: 10,000 subscribers / unlimited broadcasts; Creator: US$39/mo for 1,000 subscribers, or US$390 billed annually',
     audience: 'Creators sending broadcasts without automated sequences', standout: '10,000 free subscribers and broadcasts',
     limits: 'Free supports up to 10,000 subscribers and unlimited email broadcasts. No separate daily numeric allowance is stated in the reviewed pricing page; unlimited broadcasts are not a promise that anti-abuse controls never apply.',
     features: 'Unlimited landing pages and forms; tagging and segmentation included. The current Free comparison excludes visual automations and automated email sequences. Subject-line A/B testing allows 2 subject lines. Kit branding cannot be removed on Free.',
-    paid: 'Creator for 1,000 subscribers: $39 month to month or $390 billed yearly. The pricing page rounds the annual monthly display to $33; the billed annual total is the amount to compare. Paid prices scale with subscribers. A 14-day paid-feature trial is separate from ongoing Free access.',
+    paid: 'Creator for 1,000 subscribers: US$39 month to month or US$390 billed yearly. The pricing page rounds the annual monthly display to US$33; the billed annual total is the amount to compare. Paid prices scale with subscribers. A 14-day paid-feature trial is separate from ongoing Free access.',
     commercial: 'Free includes selling digital products and subscriptions. Payment-processing and commerce fees apply; free email access does not mean every sale is fee-free.',
     strengths: ['Up to 10,000 subscribers with unlimited broadcasts', 'Unlimited forms and landing pages', 'Tagging, segmentation and digital-product selling'],
     sources: [
@@ -31,11 +31,11 @@ export const emailFreeOptions = [
   },
   {
     slug: 'beehiiv', name: 'beehiiv',
-    price: 'Free: 2,500 subscribers / unlimited sends; Lite: $59/mo at 1,000 subscribers, or $49/mo billed annually',
+    price: 'Free: 2,500 subscribers / unlimited sends; Lite: US$59/mo at 1,000 subscribers, or US$49/mo billed annually',
     audience: 'Newsletter publishers within the free subscriber limit', standout: '2,500 subscribers with unlimited sends',
     limits: 'Free includes up to 2,500 subscribers and unlimited email sends. The reviewed sources state no separate numeric daily cap. Paid plan subscriber ceilings are not the audience size included in the entry price.',
     features: 'Free includes landing pages; the reviewed comparison does not specify a separate form or landing-page count. Automations and A/B testing start with Lite. Branding removal starts with Pro, so Free is not white-label.',
-    paid: 'Lite entry pricing at 1,000 subscribers is $59 month to month or $49 per month with yearly billing. Prices rise by subscriber tier; the plan’s maximum supported audience is not included at that entry price.',
+    paid: 'Lite entry pricing at 1,000 subscribers is US$59 month to month or US$49 per month with yearly billing. Prices rise by subscriber tier; the plan’s maximum supported audience is not included at that entry price.',
     commercial: 'Free includes digital products, while paid subscriptions and ad monetization are listed as Lite upgrades. Selling products can involve payment-processing costs even when platform email access is free.',
     strengths: ['Up to 2,500 subscribers on Free', 'Unlimited email sends', 'Newsletter publishing with landing pages'],
     sources: [
@@ -45,12 +45,12 @@ export const emailFreeOptions = [
   },
   {
     slug: 'systeme-io', name: 'Systeme.io',
-    price: 'Free: 2,000 contacts / unlimited emails; Startup: $17/mo for 5,000 contacts, or $170 billed annually',
+    price: 'Free: 2,000 contacts / unlimited emails; Startup: US$17/mo for 5,000 contacts, or US$170 billed annually',
     audience: 'Small product businesses using limited funnels and automation', standout: '2,000 contacts and unlimited email sends',
     limits: 'Free supports 2,000 contacts and unlimited email sends. No separate daily numeric sending cap is specified in the reviewed pricing sources. Free is ongoing access, not a fixed-day trial.',
     features: 'Free includes 1 automation rule, 1 workflow, 1 email campaign, 3 funnels with 15 steps in total, and 1 funnel A/B test. A standalone form allowance is not specified; do not interpret funnel steps as an independent landing-page allowance. Free cannot remove page badges or the Sent with systeme.io email footer.',
-    paid: 'Startup supports 5,000 contacts: $17 monthly or $170 billed annually. It increases the automation-rule allowance to 10 and workflows to 5. The annual amount is not a monthly charge.',
-    commercial: 'The official pricing FAQ permits sales on Free but caps total processed sales at $10,000; it is not an unrestricted lifetime sales plan. Payment-provider charges and acceptable-use conditions still matter.',
+    paid: 'Startup supports 5,000 contacts: US$17 monthly or US$170 billed annually. It increases the automation-rule allowance to 10 and workflows to 5. The annual amount is not a monthly charge.',
+    commercial: 'The official pricing FAQ permits sales on Free but caps total processed sales at US$10,000; it is not an unrestricted lifetime sales plan. Payment-provider charges and acceptable-use conditions still matter.',
     strengths: ['2,000 contacts and unlimited email sends', '1 automation rule and 1 workflow', '3 sales funnels with a limited A/B test'],
     sources: [
       { url: 'https://systeme.io/pricing', label: 'Systeme.io free contacts, email access and sales conditions' },
@@ -61,11 +61,11 @@ export const emailFreeOptions = [
   },
   {
     slug: 'getresponse', name: 'GetResponse',
-    price: 'Free: 500 contacts / 2,500 emails per month; Starter: $19/mo for 1,000 subscribers, or $15.58/mo paid annually',
+    price: 'Free: 500 contacts / 2,500 emails per month; Starter: US$19/mo for 1,000 subscribers, or US$15.58/mo paid annually',
     audience: 'Small business lists needing basic broadcasts before upgrading', standout: 'Free broadcasts with a 14-day feature trial',
     limits: 'Free is ongoing access with up to 500 contacts and 2,500 newsletters per month; unconfirmed and removed contacts count toward the list limit. No separate numeric daily cap is specified in the reviewed sources.',
     features: 'Free includes 1 published landing page and signup/contact forms, without a verified separate form count. Messages carry the GetResponse badge and A/B tests are excluded. Premium features can be tried for 14 days; after that, automation drafts do not establish permission to run automation workflows.',
-    paid: 'Starter begins at 1,000 subscribers: $19 monthly or $15.58 per month paid annually. It includes unlimited monthly sends and 1 custom automation workflow. The entry price is not a quote for a larger list.',
+    paid: 'Starter begins at 1,000 subscribers: US$19 monthly or US$15.58 per month paid annually. It includes unlimited monthly sends and 1 custom automation workflow. The entry price is not a quote for a larger list.',
     commercial: 'GetResponse describes Free as tools for launching a business, collecting leads and sending offers. That is not a promise of unrestricted automation or permission to send without consent.',
     strengths: ['500 contacts and 2,500 monthly newsletters', '1 published landing page with signup forms', '14-day access to selected premium features'],
     sources: [

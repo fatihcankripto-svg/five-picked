@@ -40,7 +40,7 @@ export const hostingOffers = [
   {
     slug: 'kinsta', name: 'Kinsta',
     plan: 'No ongoing general-purpose free WordPress hosting tier verified; the first-month offer is temporary.',
-    trial: 'First month free on selected plans for new customers; the guarantee documentation describes a 30-day free period. The selected monthly offer continues at $35/month afterward.',
+    trial: 'First month free on selected plans for new customers; the guarantee documentation describes a 30-day free period. The selected monthly offer continues at US$35/month afterward.',
     refund: '30-day guarantee for first-time customers on eligible Managed WordPress hosting; after a qualifying free period it starts at renewal. Overages, dedicated servers and one-time fees are excluded.',
     subdomain: 'A temporary kinsta.cloud URL is included for the site; temporary URLs are not indexed by search engines.',
     sources: [
@@ -52,7 +52,7 @@ export const hostingOffers = [
   {
     slug: 'namecheap', name: 'Namecheap',
     plan: 'No ongoing free Shared Hosting tier advertised; the zero-cost period is a limited-time trial.',
-    trial: 'Shared Hosting: 30 days, limited to one trial subscription per account across shared plans. The displayed Stellar monthly trial continues at $2.28/month; check checkout eligibility.',
+    trial: 'Shared Hosting: 30 days, limited to one trial subscription per account across shared plans. The displayed Stellar monthly trial continues at US$2.28/month; check checkout eligibility.',
     refund: '30 days for eligible first-time Shared Hosting customers who start without a trial. Do not combine the trial with this separate guarantee.',
     subdomain: 'A short-term cpanel.site domain is documented; it has no email, editable DNS or search indexing. It is a hosting-account feature, not a free permanent plan.',
     sources: [

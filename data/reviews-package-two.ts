@@ -138,7 +138,7 @@ export const secondPackageReviews: Review[] = [
     "headline": "Surfer SEO review 2026: content optimization with a trial, not a permanent free suite",
     "description": "A source-based Surfer review of content optimization, annual pricing, trial conversion and who should consider a different SEO workflow.",
     "intro": "Surfer offers content optimization and AI search visibility tools. This review evaluates the documented offer and purchase decision. It does not report a hands-on writing test, ranking uplift or measured content performance.",
-    "startingPrice": "Discovery €49/month equivalent, billed yearly; confirm checkout currency",
+    "startingPrice": "Discovery US$49/month equivalent, billed yearly; confirm checkout currency",
     "audience": "SEO writers evaluating a content optimization workflow",
     "verdict": "Consider Surfer when your immediate task is optimizing content and the selected plan covers your publishing work. Look elsewhere when you need an ongoing free main suite or have not established a content workflow worth paying for. Treat the Pro trial as an evaluation of features, not a promise that the entry paid tier includes every trial feature.",
     "bestFor": [
@@ -169,7 +169,7 @@ export const secondPackageReviews: Review[] = [
       {
         "heading": "Official pricing and annual commitment",
         "paragraphs": [
-          "The reviewed EUR pricing page lists Discovery at €49 per month equivalent, billed yearly. This is not a cancel-anytime monthly payment quote. Confirm the currency, upfront amount, applicable taxes and renewal conditions at checkout.",
+          "The reviewed USD pricing page lists Discovery at US$49 per month equivalent, billed yearly. This is not a cancel-anytime monthly payment quote. Confirm the currency, upfront amount, applicable taxes and renewal conditions at checkout.",
           "A localized page may display another currency. This review retains the currency observed in the official source instead of converting it or treating a monthly equivalent as the full invoice."
         ]
       },
@@ -233,7 +233,7 @@ export const secondPackageReviews: Review[] = [
       },
       {
         "question": "What does Discovery cost?",
-        "answer": "The reviewed EUR pricing page lists €49 per month equivalent, billed yearly. Confirm the actual checkout currency, upfront amount, tax and renewal."
+        "answer": "The reviewed USD pricing page lists US$49 per month equivalent, billed yearly. Confirm the actual checkout currency, upfront amount, tax and renewal."
       },
       {
         "question": "Are trial document and user allowances unlimited?",
@@ -247,7 +247,7 @@ export const secondPackageReviews: Review[] = [
     "sources": [
       {
         "url": "https://surfer.ai/pricing/",
-        "label": "Surfer official EUR pricing and feature comparison"
+        "label": "Surfer official USD pricing and feature comparison"
       },
       {
         "url": "https://docs.surferseo.com/en/articles/12944181-how-does-the-surfer-trial-work",

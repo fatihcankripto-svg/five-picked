@@ -299,7 +299,7 @@ export const thirdComparePairs: ComparePair[] = [
       {
         "label": "Verified paid offer",
         "a": "Advanced: US$59.99/year, auto-renewing. Basic pricing is not quoted because the reviewed rendering does not establish an unambiguous payable amount; this is not claimed as the cheapest tier.",
-        "b": "Reviewed localized Essentials: €182.49/year, billed yearly. Starter is a separate paid package that still has watermarked Editor output; compare the needed export entitlement, not just the cheapest bundle."
+        "b": "The official support guide lists Essentials from US$179/user/year; confirm the current checkout offer. Starter is a separate paid package that still has watermarked Editor output; compare the needed export entitlement, not just the cheapest bundle."
       },
       {
         "label": "Editing and recording",
@@ -348,7 +348,11 @@ export const thirdComparePairs: ComparePair[] = [
       },
       {
         "url": "https://www.techsmith.com/store/camtasia",
-        "label": "Camtasia localized annual packages and watermark-free export comparison"
+        "label": "Camtasia annual packages and watermark-free export comparison"
+      },
+      {
+        "url": "https://support.techsmith.com/hc/en-us/articles/41690476457485-Camtasia-Pro-vs-Adobe-Premiere-Pro",
+        "label": "Camtasia official USD Essentials starting price"
       },
       {
         "url": "https://www.techsmith.com/camtasia/",
@@ -424,7 +428,7 @@ const cards = {
   "camtasia": {
     "audience": "Creators explaining screen-based processes",
     "standout": "Screen recording and editable cursor workflow",
-    "price": "Watermarked free Editor; localized Essentials €182.49/year billed yearly",
+    "price": "Watermarked free Editor; Essentials from US$179/user/year in the official support guide",
     "description": "Combines screen recording and video editing. Select the package covering the required Editor output and additional tools."
   }
 }

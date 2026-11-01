@@ -87,9 +87,9 @@ const defs: QuizDef[] = [
         id: 'budget', question: 'What monthly-equivalent budget are you considering?',
         options: [
           { label: 'No payment for now; I can evaluate limited free access', favours: { riverside: 3, camtasia: 3, filmora: 2 } },
-          { label: 'Up to $10 per month equivalent; annual payment may apply', favours: { filmora: 3 } },
-          { label: 'Above $10 and up to $25 per month equivalent', favours: { 'adobe-premiere-pro': 3, 'envato-elements': 3, filmora: 1 } },
-          { label: 'Above $25 per month; workflow matters more than the entry price', favours: { 'adobe-premiere-pro': 2, 'envato-elements': 2, riverside: 1, camtasia: 1, filmora: 1 } },
+          { label: 'Up to US$10 per month equivalent; annual payment may apply', favours: { filmora: 3 } },
+          { label: 'Above US$10 and up to US$25 per month equivalent', favours: { 'adobe-premiere-pro': 3, 'envato-elements': 3, filmora: 1 } },
+          { label: 'Above US$25 per month; workflow matters more than the entry price', favours: { 'adobe-premiere-pro': 2, 'envato-elements': 2, riverside: 1, camtasia: 1, filmora: 1 } },
         ],
       },
       {
@@ -164,10 +164,10 @@ const defs: QuizDef[] = [
       {
         id: 'budget', question: 'What monthly-equivalent budget fits your main tool?',
         options: [
-          { label: 'Up to $30 per month', favours: { neuronwriter: 3 } },
-          { label: 'Above $30 and up to $60 per month', favours: { frase: 3, neuronwriter: 1 } },
-          { label: 'Above $60 and up to $110 per month', favours: { writesonic: 3, 'surfer-seo': 3, frase: 1 } },
-          { label: 'Above $110 per month for broader research', favours: { semrush: 3 } },
+          { label: 'Up to US$30 per month', favours: { neuronwriter: 3 } },
+          { label: 'Above US$30 and up to US$60 per month', favours: { frase: 3, neuronwriter: 1 } },
+          { label: 'Above US$60 and up to US$110 per month', favours: { writesonic: 3, 'surfer-seo': 3, frase: 1 } },
+          { label: 'Above US$110 per month for broader research', favours: { semrush: 3 } },
         ],
       },
       {

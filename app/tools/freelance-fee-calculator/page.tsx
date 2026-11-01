@@ -25,12 +25,12 @@ const faqs = [
   {
     question: 'How much does Fiverr take from sellers?',
     answer:
-      'Fiverr charges a flat 20% seller fee on each completed order. If a buyer pays $100, you keep $80 before any other costs like withdrawal or currency conversion fees.',
+      'Fiverr charges a flat 20% seller fee on each completed order. If a buyer pays US$100, you keep US$80 before any other costs like withdrawal or currency conversion fees.',
   },
   {
     question: 'How much does Upwork take from freelancers?',
     answer:
-      'Upwork lists a contract-specific freelancer fee from 0% to 15%. Use the rate shown in your proposal or offer. A 10% example on $100 leaves $90 before other costs.',
+      'Upwork lists a contract-specific freelancer fee from 0% to 15%. Use the rate shown in your proposal or offer. A 10% example on US$100 leaves US$90 before other costs.',
   },
   {
     question: 'Does the client also pay a fee on Upwork?',
