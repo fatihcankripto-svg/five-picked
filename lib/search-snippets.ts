@@ -166,8 +166,8 @@ export const searchSnippets: Record<string, { title: string; description: string
     "description": "Quick social edits or detailed desktop control? Compare CapCut and Premiere Pro on workflow, learning curve and costs to see when a switch makes sense."
   },
   "/blog/riverside-vs-descript": {
-    "title": "Riverside vs Descript: Record or Edit First?",
-    "description": "Is your bottleneck recording guests or editing the result? Compare Riverside and Descript by capture, text-based editing and pricing before you choose."
+    "title": "Riverside vs Descript: Recording & Editing",
+    "description": "Both record guests and edit through a transcript. Compare Riverside and Descript on podcast workflows, free-plan limits and what to check before paying."
   },
   "/compare": {
     "title": "Compare Tools: Which One Fits Your Work?",

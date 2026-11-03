@@ -76,8 +76,8 @@ export const blogTakeaways: Record<string, readonly string[]> = {
     'Choose by the output you make and the time you can invest in learning the editor.',
   ],
   'riverside-vs-descript': [
-    'Riverside focuses on recording remote guests for interviews, podcasts and panel videos.',
-    'Descript focuses on editing audio and video through the transcript.',
-    'Choose by whether recording quality or the editing workflow is your main production bottleneck.',
+    'Riverside and Descript both record remote guests locally and support transcript-based editing.',
+    'Choose by the recording-to-edit workflow and the files you need to publish, rather than treating either tool as recording-only or editing-only.',
+    'Compare recording allowances, media hours, AI credits and export limits before paying for overlapping subscriptions.',
   ],
 }
