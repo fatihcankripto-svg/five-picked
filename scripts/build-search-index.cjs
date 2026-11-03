@@ -78,12 +78,20 @@ async function main() {
     }
     // These utility views are intentionally noindex for web search, but their
     // dated payment notes must remain discoverable in our own site search.
+    // Use the same source records as the utility pages. Deployment adapters
+    // may relocate prerendered HTML before this post-build step runs.
     const paymentRecords = getPaymentCompanies().map((company) => {
-      const href = `/before-you-pay/${company.slug}`
-      const html = fs.readFileSync(path.join(root, `.next/server/app${href}.html`), 'utf8')
-      const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]
-      if (!main) throw new Error(`Missing company utility content: ${href}`)
-      return { id: `payment:${company.slug}`, kind: 'tool', href, title: `${company.name}: costs and terms`, description: company.description, body: text(main) }
+      const facts = [company.price, company.access, company.renewal, company.limits]
+      const body = [
+        company.name, company.description, ...company.topics,
+        ...company.categories.map((category) => category.name),
+        company.audience, company.caution, company.roleNote ?? '', company.shortlistUpdatedAt,
+        ...facts.flatMap((fact) => [fact.label, ...fact.paragraphs, fact.checkedAt ?? '']),
+        ...company.extra.flatMap((fact) => [fact.label, ...fact.paragraphs]),
+        ...company.sources.map((source) => source.label),
+        ...company.guides.map((guide) => guide.label),
+      ].join(' ')
+      return { id: `payment:${company.slug}`, kind: 'tool', href: `/before-you-pay/${company.slug}`, title: `${company.name}: costs and terms`, description: company.description, body }
     })
     const entries = [...companies.values(), ...pages, ...paymentRecords]
     if (new Set(entries.map((entry) => entry.id)).size !== entries.length) throw new Error('Duplicate search entries')
