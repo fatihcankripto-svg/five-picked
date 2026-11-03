@@ -111,7 +111,7 @@ export default async function FreePage({ params }: Props) {
           <p>
             Some links may earn us a commission.{' '}
             <Link href="/affiliate-disclosure" className="text-foreground underline underline-offset-4 hover:text-primary">
-              Learn more
+              Affiliate disclosure
             </Link>
           </p>
         </div>
