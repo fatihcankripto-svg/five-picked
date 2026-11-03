@@ -57,7 +57,7 @@ const pairs: ComparePair[] = [
   {
     slug: 'semrush-vs-surfer-seo', aSlug: 'semrush', bSlug: 'surfer-seo',
     authorBio: marketingSeoFreeEditorial.authorBio, lastReviewedAt: marketingSeoFreeEditorial.lastReviewedAt,
-    framing: 'Choose by the decision you need to make: which search opportunities to pursue, or how to improve an article already in production. This page is a short buying framework; the linked blog provides the deeper workflow analysis.',
+    framing: 'Choose by the decision you need to make: which search opportunities to pursue, or how to improve an article already in production. Compare the research and editing tasks you need, then check the exact plans.',
     verdict: 'Consider Semrush when keyword and competitor research, site auditing and tracking drive your work. Consider Surfer when your immediate job is improving a draft with content-editor guidelines. Both have overlapping functions: check the exact plan, exports and team entitlements before paying for both. Neither a free account nor a Pro trial guarantees a complete ongoing production workflow.',
     aWinsWhen: [
       'You need to investigate keywords and competing domains before deciding what to publish.',
@@ -82,6 +82,7 @@ const pairs: ComparePair[] = [
       { label: 'First advertised paid tier and billing', a: seoComparePrices.semrush, b: seoComparePrices.surfer },
     ],
     migration: [
+      { title: 'Start with one real content task', text: 'Is your next decision what to publish or how to improve an existing draft? Write down one task you need to finish: investigate a topic, prepare a brief, revise a draft or report on results. Use that task to read the plan comparison above rather than buying two overlapping subscriptions by default.' },
       { title: 'Move from Semrush-led research to Surfer-led editing when the task changes', text: 'Consider Surfer when you already have a researched brief and your bottleneck is improving the article in an editor. Evaluate one representative draft and verify the intended paid plan. This is a suggested workflow decision, not evidence of better rankings or a guaranteed one-click project transfer.' },
       { title: 'Move from Surfer-led editing to Semrush-led research when priorities are unclear', text: 'Consider Semrush when the next decision is which topics, competitors or site issues deserve attention rather than how to revise a known draft. Keep the existing brief and source text, and compare the actual research and export entitlements before changing subscriptions.' },
       { title: 'Who should not choose either subscription yet?', text: 'Semrush is a poor fit if you only need occasional draft-level guidance and will not use its research workflow. Surfer is a poor fit if you expect its entry plan to replace every competitor-research or reporting requirement. Neither should be purchased before a mandatory export or team entitlement is confirmed. These are editorial fit judgments, not product capability exclusions.' },

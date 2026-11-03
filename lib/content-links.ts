@@ -44,7 +44,7 @@ const marketingFreeReferrers: Record<string, string> = {
   '/ai-tools/marketing-and-seo': 'Inspect free SEO accounts, credits and export limits',
   '/quiz/ai-tools-marketing-and-seo': 'Review the free access conditions behind your marketing match',
   '/blog/best-ai-tools-for-content-marketing': 'Check which content marketing features remain free',
-  '/blog/semrush-vs-surfer-seo': 'Separate Semrush free research from Surfer trial access',
+  '/compare/semrush-vs-surfer-seo': 'Separate Semrush free research from Surfer trial access',
 }
 const seoComparePath = '/compare/semrush-vs-surfer-seo'
 const seoCompareReferrers: Record<string, string> = {
@@ -52,7 +52,6 @@ const seoCompareReferrers: Record<string, string> = {
   '/ai-tools/marketing-and-seo': 'Decide when Semrush or Surfer fits your work',
   '/free/best-free-ai-marketing-and-seo-tools': 'Apply these free limits to a Semrush or Surfer decision',
   '/quiz/ai-tools-marketing-and-seo': 'Check Semrush and Surfer plan fit before subscribing',
-  '/blog/semrush-vs-surfer-seo': 'Use the concise Semrush–Surfer buying framework',
   '/blog/best-ai-tools-for-content-marketing': 'Compare research and article editing subscriptions',
 }
 const packageCompareLinks: Record<string, Record<string, string>> = {
@@ -72,7 +71,6 @@ const packageCompareLinks: Record<string, Record<string, string>> = {
     '/online-courses': 'Choose project-led classes or instructor-led learning',
     '/free/best-free-online-course-platforms': 'Compare Skillshare trial access with a MasterClass Guest Pass',
     '/quiz/online-courses': 'Check the class format and certificate conditions behind your match',
-    '/blog/skillshare-vs-masterclass': 'Use the concise Skillshare and MasterClass enrollment framework',
   },
 }
 const alternativePackageLinks: Record<string, Record<string, string>> = {
@@ -205,7 +203,7 @@ const courseIndexReferrers: Record<string, string> = {
   "/online-courses": "Inspect the ten-platform course price and certificate index",
   "/free/best-free-online-course-platforms": "Compare free learning with subscription and certificate costs",
   "/compare/coursera-vs-datacamp": "Place these course subscriptions in the wider price dataset",
-  "/blog/skillshare-vs-masterclass": "Check annual payments and credential boundaries across ten platforms"
+  "/compare/skillshare-vs-masterclass": "Check annual payments and credential boundaries across ten platforms"
 }
 function sameTopic(a: ContentLink, b: ContentLink) {
   if (a.path === courseIndexPath || b.path === courseIndexPath) return Boolean(courseIndexReferrers[a.path === courseIndexPath ? b.path : a.path])
@@ -442,7 +440,6 @@ export function getContentLinks(path: string) {
         '/online-courses': 'Explore the full online learning shortlist',
         '/free/best-free-online-course-platforms': 'Read the verified course trial and certificate conditions',
         '/quiz/online-courses': 'Match a learning platform to your goals',
-        '/blog/skillshare-vs-masterclass': 'Read the deeper Skillshare and MasterClass learning analysis',
       }
       return { ...page, title: labels[page.path] }
     }
@@ -451,14 +448,13 @@ export function getContentLinks(path: string) {
     if (path === seoComparePath && page.path === '/ai-tools/marketing-and-seo') return { ...page, title: 'Explore all five marketing and SEO options' }
     if (path === seoComparePath && page.path === marketingFreePath) return { ...page, title: 'Check the underlying free accounts, trials and credit limits' }
     if (path === seoComparePath && page.path === '/quiz/ai-tools-marketing-and-seo') return { ...page, title: 'Find an AI marketing tool for your working needs' }
-    if (path === seoComparePath && page.path === '/blog/semrush-vs-surfer-seo') return { ...page, title: 'Read the deeper Semrush and Surfer workflow analysis' }
     if (path === seoComparePath && page.path === '/blog/best-ai-tools-for-content-marketing') return { ...page, title: 'See how research and writing fit a content marketing stack' }
     if (page.path === marketingFreePath && marketingFreeReferrers[path]) return { ...page, title: marketingFreeReferrers[path] }
     if (path === marketingFreePath && page.path === '/ai-tools') return { ...page, title: 'Explore the wider AI tools category' }
     if (path === marketingFreePath && page.path === '/ai-tools/marketing-and-seo') return { ...page, title: 'See all five marketing and SEO tools in context' }
     if (path === marketingFreePath && page.path === '/quiz/ai-tools-marketing-and-seo') return { ...page, title: 'Match an AI marketing tool to your workflow' }
     if (path === marketingFreePath && page.path === '/blog/best-ai-tools-for-content-marketing') return { ...page, title: 'Read the content marketing workflow guide' }
-    if (path === marketingFreePath && page.path === '/blog/semrush-vs-surfer-seo') return { ...page, title: 'Understand Semrush and Surfer’s different roles' }
+    if (path === marketingFreePath && page.path === '/compare/semrush-vs-surfer-seo') return { ...page, title: 'Understand Semrush and Surfer’s different roles' }
     if (page.path === flightComparePath && flightCompareReferrers[path]) return { ...page, title: flightCompareReferrers[path] }
     if (path === flightComparePath && page.path === '/travel') return { ...page, title: 'Browse the broader travel planning category' }
     if (path === flightComparePath && page.path === '/travel/flights') return { ...page, title: 'Compare all five shortlisted flight booking sites' }

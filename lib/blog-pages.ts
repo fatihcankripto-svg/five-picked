@@ -913,7 +913,7 @@ ${emailCostFaqs.map((faq) => `<h3>${faq.question}</h3><p>${faq.answer}</p>`).joi
 <p>Free can be enough when the audience, sending pattern and required features all fit the documented plan. It becomes misleading when a preview is treated as permanent automation, an entry price is attached to a larger list, or a platform allowance is presented as an inbox guarantee. Compare the complete workflow and billing commitment, keep unknown prices unknown, and confirm the official terms before upgrading.</p>
 `
 
-export const blogPosts: BlogPost[] = [
+const editorialBlogPosts: BlogPost[] = [
   onlineCoursePriceIndexPost,
   vpnPriceIndexPost,
   hostingPriceIndexPost,
@@ -1173,7 +1173,7 @@ export const blogPosts: BlogPost[] = [
       { path: '/quiz/video-and-design-software', label: 'Find a video tool for your YouTube production needs' },
       { path: '/blog/best-ai-tools-for-content-marketing', label: 'Best AI tools for content marketing' },
       { path: '/ai-tools/video-and-voice', label: 'Explore AI video and voice tools' },
-      { path: '/blog/semrush-vs-surfer-seo', label: 'Semrush vs Surfer SEO' },
+      { path: '/compare/semrush-vs-surfer-seo', label: 'Semrush vs Surfer SEO' },
       { path: '/quiz', label: 'Which tool is right for me? Quiz' },
       { path: '/categories', label: 'All categories' },
     ],
@@ -1349,7 +1349,7 @@ export const blogPosts: BlogPost[] = [
     relatedLinks: [
       { path: '/compare/babbel-vs-italki', label: 'Babbel vs italki' },
       { path: '/quiz', label: 'Language learning quiz' },
-      { path: '/blog/skillshare-vs-masterclass', label: 'Skillshare vs MasterClass' },
+      { path: '/compare/skillshare-vs-masterclass', label: 'Skillshare vs MasterClass' },
       { path: '/categories', label: 'All categories' },
     ],
   },
@@ -1580,6 +1580,12 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ]
+
+/** Retain the original records for source history; these URLs now redirect. */
+export const retiredComparisonPosts = editorialBlogPosts.filter((post) =>
+  ['semrush-vs-surfer-seo', 'skillshare-vs-masterclass'].includes(post.slug),
+)
+export const blogPosts = editorialBlogPosts.filter((post) => !retiredComparisonPosts.includes(post))
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug)

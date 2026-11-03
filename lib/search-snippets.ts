@@ -133,10 +133,6 @@ export const searchSnippets: Record<string, { title: string; description: string
     "title": "AI Content Marketing Tools (2026): 5 Picks",
     "description": "Which part of content work needs help: research, briefs, writing or optimization? Compare five AI tools by their strengths, costs and who should choose each."
   },
-  "/blog/semrush-vs-surfer-seo": {
-    "title": "Semrush vs Surfer SEO: Do You Need Both?",
-    "description": "Research the next topic or improve the draft in front of you? This guide compares Semrush and Surfer workflows, costs and when using both makes sense."
-  },
   "/blog/best-video-editing-software-for-youtube": {
     "title": "YouTube Video Editing Tools (2026): 5 Picks",
     "description": "Your editor may not cover your whole YouTube workflow. Compare editing, screen recording, remote interviews and stock assets to see which tool you need."
@@ -144,10 +140,6 @@ export const searchSnippets: Record<string, { title: string; description: string
   "/blog/kinsta-vs-cloudways": {
     "title": "Kinsta vs Cloudways: Which Fits Your Site?",
     "description": "Managed WordPress or a choice of cloud infrastructure? Compare Kinsta and Cloudways on setup, support, pricing and the work each leaves to you."
-  },
-  "/blog/skillshare-vs-masterclass": {
-    "title": "Skillshare vs MasterClass: Worth Paying For?",
-    "description": "Creative projects or lessons from well-known experts? Compare Skillshare and MasterClass on learning style, annual costs and what their certificates mean."
   },
   "/blog/preply-vs-lingoda": {
     "title": "Preply vs Lingoda: Tutors or Live Classes?",

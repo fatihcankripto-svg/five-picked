@@ -212,7 +212,7 @@ const defs: QuizDef[] = [
     relatedLinks: [
       { path: '/ai-tools', label: 'Explore the wider AI tools directory' },
       { path: '/blog/best-ai-tools-for-content-marketing', label: 'Build a content-marketing toolkit around your workflow' },
-      { path: '/blog/semrush-vs-surfer-seo', label: 'Compare Semrush research with Surfer article optimization' },
+      { path: '/compare/semrush-vs-surfer-seo', label: 'Compare Semrush research with Surfer article optimization' },
     ],
   },
   {
