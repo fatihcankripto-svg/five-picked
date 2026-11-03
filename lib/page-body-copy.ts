@@ -4,31 +4,31 @@ import type { Review } from '@/data/reviews'
 /** Display-only copy for the six requested routes. Editorial records and schema stay unchanged. */
 const categoryCopy: Record<string, { intro: string; cards?: Record<string, string> }> = {
   '/web-hosting-and-domains': {
-    intro: 'Find a home for your website, whether you are starting a personal project or running a growing business. Compare five hosting providers and see who each one suits.',
+    intro: 'Starting a blog or moving an existing site? Compare what each hosting provider manages for you, what you need to handle yourself and how the payment is structured.',
   },
   '/vpn-and-security': {
-    intro: 'Find a VPN that suits the way you use the internet. Compare five options for everyday privacy, public Wi-Fi and your devices, then check the plans before choosing.',
+    intro: 'How many devices do you need to connect, and where will you use them? Start with those questions, then compare these five VPNs by device support, plans and the limits that matter to you.',
   },
   '/video-and-design-software': {
     intro: 'Start with what you want to create: an edited video, a recording or a project using ready-made assets. Compare five tools and see which one fits your work.',
   },
   '/ai-tools': {
-    intro: 'Start with the job you want AI to help with, from creating a video to taking meeting notes. Choose an area below to compare five tools for that task.',
+    intro: 'Start with the job you want AI to help with: making a video, editing an image, taking meeting notes, planning content or answering customer questions. Choose that task below to see five options.',
     cards: {
       'video-and-voice': 'Create and edit videos, add narration or make a voiceover with AI tools.',
       'image-and-design': 'Generate images, edit photos and get help with everyday design work.',
       'meeting-notes': 'Let an AI assistant record, transcribe and summarize your meetings while you focus on the conversation.',
       'marketing-and-seo': 'Get help with writing, planning content, improving search visibility and running campaigns.',
-      'chatbots': 'Build a chatbot that uses your content to answer questions on your website or for your business, around the clock.',
+      'chatbots': 'Compare chatbots that answer questions using your website or business content.',
     },
   },
   '/software-and-productivity': {
-    intro: 'Choose the part of your work you want to make easier, from keeping notes to organizing a team. Each area below has five tools to compare.',
+    intro: 'Are your notes hard to find, or are tasks getting lost between apps? Choose the problem you want to fix below, then compare five tools for that part of your work.',
     cards: {
-      'note-taking': 'Keep your ideas and notes organized so you can find and build on them later.',
-      'project-management': 'Plan projects, track tasks and help your team stay focused on what matters.',
+      'note-taking': 'Collect notes and ideas in a place where you can find them again.',
+      'project-management': 'See who is doing what, track deadlines and keep project tasks together.',
       'cloud-storage': 'Store, sync and share files securely across your devices.',
-      'presentations': 'Build clear slides that look good and help you present with confidence.',
+      'presentations': 'Compare ways to draft, design and share a slide deck.',
       'automation': 'Connect your apps and let repetitive tasks run automatically.',
     },
   },

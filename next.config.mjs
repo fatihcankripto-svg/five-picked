@@ -9,6 +9,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/blog/semrush-vs-surfer-seo', destination: '/compare/semrush-vs-surfer-seo', statusCode: 301 },
+      { source: '/blog/skillshare-vs-masterclass', destination: '/compare/skillshare-vs-masterclass', statusCode: 301 },
       { source: '/marketing-and-seo', destination: '/ai-tools/marketing-and-seo', permanent: true },
       // Retain redirects only for retired routes; the two information guides serve their original URLs.
       { source: '/guides', destination: '/blog', statusCode: 301 },

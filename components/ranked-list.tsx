@@ -83,7 +83,7 @@ export function RankedList({
               href="/affiliate-disclosure"
               className="text-foreground underline underline-offset-4 hover:text-primary"
             >
-              Learn more
+              Affiliate disclosure
             </Link>
           </p>
         </div>

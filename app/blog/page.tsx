@@ -100,12 +100,6 @@ export default async function BlogIndexPage({ searchParams }: BlogPageProps) {
 
                 <div className="mt-5 flex flex-wrap items-center gap-4">
                   <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-sm font-semibold text-primary hover:opacity-80"
-                  >
-                    Read the guide →
-                  </Link>
-                  <Link
                     href={post.relatedListPath}
                     className="text-sm font-medium text-muted-foreground hover:text-foreground"
                   >

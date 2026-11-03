@@ -54,15 +54,15 @@ export function ToolCard({ tool, rank, showPricingTerms = true }: { tool: Tool; 
           <div><dt className="text-xs font-semibold uppercase tracking-wider text-primary">Standout strength</dt><dd className="mt-2 text-sm font-semibold leading-relaxed text-foreground">{decision?.standout ?? tool.tagline}</dd></div>
           <div><dt className="text-xs font-semibold uppercase tracking-wider text-primary">{pricing?.kind === 'variable' ? 'How pricing works' : 'Price & access'}</dt><dd className="mt-2 text-sm font-semibold leading-relaxed text-foreground">{tool.startingPrice}</dd></div>
         </dl>
-        {pricing && <p className="mt-3 text-xs leading-relaxed text-muted-foreground"><a href={pricing.sourceUrl} className="text-primary underline underline-offset-4">Official source</a> · Checked <time dateTime={pricing.checkedAt}>{formatDate(pricing.checkedAt)}</time>{showPricingTerms ? '. Currency, eligibility and billing terms apply; offers can change.' : '.'}</p>}
+        {pricing && <p className="mt-3 text-xs leading-relaxed text-muted-foreground"><a href={pricing.sourceUrl} className="text-primary underline underline-offset-4">{tool.name} pricing source</a> · Checked <time dateTime={pricing.checkedAt}>{formatDate(pricing.checkedAt)}</time>{showPricingTerms ? '. Currency, eligibility and billing terms apply; offers can change.' : '.'}</p>}
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h4 className="text-sm font-bold text-foreground tracking-wide uppercase">What it does</h4>
+            <p className="text-sm font-bold text-foreground tracking-wide uppercase">What it does</p>
             <p className="mt-3 leading-relaxed text-muted-foreground/90">{tool.whatItDoes}</p>
           </div>
           <div>
-            <h4 className="text-sm font-bold text-foreground tracking-wide uppercase">Strengths</h4>
+            <p className="text-sm font-bold text-foreground tracking-wide uppercase">Strengths</p>
             <ul className="mt-3 flex flex-col gap-3">
               {tool.strengths.map((strength) => (
                 <li key={strength} className="flex gap-3 text-sm leading-relaxed text-muted-foreground/90">
@@ -92,7 +92,7 @@ export function ToolCard({ tool, rank, showPricingTerms = true }: { tool: Tool; 
                 href={`/reviews/${review.toolSlug}`}
                 className="inline-flex h-11 items-center justify-center rounded-xl bg-background/50 border border-white/10 px-5 text-sm font-semibold text-foreground transition-all hover:bg-accent hover:border-primary/30"
               >
-                Read our review
+                Read our {tool.name} review
               </Link>
             )}
             <VisitButton tool={tool} />

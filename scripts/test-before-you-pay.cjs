@@ -78,12 +78,20 @@ assert(paymentChecksFor(find('upwork')).some((label) => label.includes('proposal
 assert.deepEqual(getPaymentCompanies(), companies, 'Stable output across repeated builds')
 if (process.argv.includes('--html')) {
   const html = fs.readFileSync(path.join(root, '.next/server/app/before-you-pay.html'), 'utf8')
-  for (const company of companies) assert.equal(html.split(`<details id="${company.slug}"`).length - 1, 1, `${company.slug}: readable server-rendered record`)
-  assert.equal((html.match(/type="checkbox"/g) ?? []).length, companies.length * paymentChecks.length)
-  assert(html.includes('<noscript>'), 'Evidence remains accessible without JavaScript')
-  assert(html.includes('Not recorded here.'), 'Missing information is visible, not silently filled')
-  assert(html.includes('Your ticks stay only while this page is open.'))
+  assert.equal((html.match(/type="checkbox"/g) ?? []).length, 0, 'The directory must not render all checklists')
+  assert(!html.includes('Not recorded here.'), 'Full company facts are not serialized into the directory')
+  assert(html.includes('<noscript>'))
   assert(html.includes('name="robots" content="index, follow"'))
-  console.log('PASS: complete server-rendered company records, five controls per company, no-JavaScript fallback and explicit evidence gaps')
+  for (const company of companies) {
+    assert(html.includes(`/before-you-pay/${company.slug}`), 'Every record has an ordinary link')
+    const detail = fs.readFileSync(path.join(root, `.next/server/app/before-you-pay/${company.slug}.html`), 'utf8')
+    assert.equal((detail.match(/type="checkbox"/g) ?? []).length, paymentChecks.length)
+    assert(detail.includes('content="noindex, follow"'))
+    assert(detail.includes('Your ticks stay only while this page is open.'))
+    for (const source of company.sources) assert(detail.includes(source.url.replace(/&/g, '&amp;')), `${company.slug}: preserve source link`)
+  }
+  const sitemap = fs.readFileSync(path.join(root, '.next/server/app/sitemap.xml.body'), 'utf8')
+  assert(!sitemap.includes('/before-you-pay/'), 'Utility detail pages stay outside the sitemap')
+  console.log(`PASS: lightweight directory and ${companies.length} readable noindex detail pages with five controls each`)
 }
 console.log(`PASS: ${companies.length} published companies, exact prices/dates/URLs, evidence gaps, affiliate safety, plan-specific renewals, search and category filters`)

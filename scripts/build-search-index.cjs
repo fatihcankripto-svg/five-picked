@@ -12,6 +12,7 @@ const resolve = Module._resolveFilename
 Module._resolveFilename = function (name, ...args) { return resolve.call(this, name.startsWith('@/') ? path.join(root, name.slice(2)) : name, ...args) }
 require.extensions['.ts'] = (module, filename) => module._compile(ts.transpile(fs.readFileSync(filename, 'utf8'), { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true }), filename)
 const { publishedCategories } = require('../data/all-categories.ts')
+const { getPaymentCompanies } = require('../lib/before-you-pay.ts')
 const { quizPages } = require('../lib/quiz-pages.ts')
 const { pageSearchKind, prepareSearch } = require('../lib/site-search.ts')
 
@@ -75,13 +76,30 @@ async function main() {
       const listPath = category.tools ? `/${category.slug}` : `/${category.slug}/${list.slug}`
       companies.set(tool.slug, { id: `company:${tool.slug}`, kind: 'company', href: `${listPath}#${tool.slug}`, title: tool.name, description: tool.tagline, body: [category.name, list.name, tool.whatItDoes, tool.bestFor, ...tool.strengths, tool.goodToKnow, new URL(tool.officialUrl).hostname].join(' ') })
     }
-    const entries = [...companies.values(), ...pages]
+    // These utility views are intentionally noindex for web search, but their
+    // dated payment notes must remain discoverable in our own site search.
+    // Use the same source records as the utility pages. Deployment adapters
+    // may relocate prerendered HTML before this post-build step runs.
+    const paymentRecords = getPaymentCompanies().map((company) => {
+      const facts = [company.price, company.access, company.renewal, company.limits]
+      const body = [
+        company.name, company.description, ...company.topics,
+        ...company.categories.map((category) => category.name),
+        company.audience, company.caution, company.roleNote ?? '', company.shortlistUpdatedAt,
+        ...facts.flatMap((fact) => [fact.label, ...fact.paragraphs, fact.checkedAt ?? '']),
+        ...company.extra.flatMap((fact) => [fact.label, ...fact.paragraphs]),
+        ...company.sources.map((source) => source.label),
+        ...company.guides.map((guide) => guide.label),
+      ].join(' ')
+      return { id: `payment:${company.slug}`, kind: 'tool', href: `/before-you-pay/${company.slug}`, title: `${company.name}: costs and terms`, description: company.description, body }
+    })
+    const entries = [...companies.values(), ...pages, ...paymentRecords]
     if (new Set(entries.map((entry) => entry.id)).size !== entries.length) throw new Error('Duplicate search entries')
     prepareSearch(entries)
     const output = path.join(root, 'public/site-search.json')
     fs.writeFileSync(`${output}.tmp`, JSON.stringify({ version: 1, entries }))
     fs.renameSync(`${output}.tmp`, output)
-    console.log(`Search index: ${pages.length} published pages + ${companies.size} companies; full page text, no hidden content`)
+    console.log(`Search index: ${pages.length} published pages + ${companies.size} companies + ${paymentRecords.length} payment records; full readable text`)
   } finally {
     server.kill('SIGTERM')
     await new Promise((done) => { if (server.exitCode !== null) done(); else server.once('exit', done) })

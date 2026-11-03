@@ -73,7 +73,6 @@ export const courseFreeLinks = [
   { path: '/blog/2026-online-course-price-index', label: 'See the ten-platform subscription and certificate cost snapshot' },
   { path: '/compare/skillshare-vs-masterclass', label: 'Weigh class projects against practitioner-led learning before enrolling' },
   { path: '/online-courses', label: 'Compare our five online learning platforms' },
-  { path: '/blog/skillshare-vs-masterclass', label: 'Explore Skillshare projects versus MasterClass lessons' },
   { path: '/quiz/online-courses', label: 'Find a course platform for your learning goals' },
   { path: '/compare/coursera-vs-datacamp', label: 'Compare Coursera and DataCamp before paying for access' },
 ] as const

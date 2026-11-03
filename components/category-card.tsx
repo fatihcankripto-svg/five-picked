@@ -25,13 +25,13 @@ export function CategoryCard({
   href: string; slug: string; name: string; description: string; meta: string; number?: string; headingLevel?: 'h2' | 'h3'
 }) {
   const frame = useRef<number | null>(null)
-  const cursor = useRef<{ node: HTMLAnchorElement; x: number; y: number } | null>(null)
+  const cursor = useRef<{ node: HTMLDivElement; x: number; y: number } | null>(null)
 
   useEffect(() => () => {
     if (frame.current !== null) cancelAnimationFrame(frame.current)
   }, [])
 
-  function followMouse(event: MouseEvent<HTMLAnchorElement>) {
+  function followMouse(event: MouseEvent<HTMLDivElement>) {
     cursor.current = { node: event.currentTarget, x: event.clientX, y: event.clientY }
     if (frame.current !== null) return
     frame.current = requestAnimationFrame(() => {
@@ -48,10 +48,9 @@ export function CategoryCard({
   const Heading = headingLevel
 
   return (
-    <Link
-      href={href}
+    <div
       onMouseMove={followMouse}
-      className="fp-card-glass fp-spot group flex h-full flex-col rounded-2xl p-6 focus-visible:outline-2 focus-visible:outline-offset-2"
+      className="fp-card-glass fp-spot group relative flex h-full flex-col rounded-2xl p-6"
     >
       <div className="flex items-start justify-between">
         <span className="flex size-12 items-center justify-center rounded-xl bg-background/50 border border-white/5 text-primary shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/10">
@@ -69,9 +68,9 @@ export function CategoryCard({
           />
         </div>
       </div>
-      <Heading className="mt-6 text-xl font-semibold text-foreground text-pretty group-hover:text-primary transition-colors">{name}</Heading>
+      <Heading className="mt-6 text-xl font-semibold text-foreground text-pretty group-hover:text-primary transition-colors"><Link href={href} className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2">{name}</Link></Heading>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground/90">{description}</p>
       <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-primary/80 group-hover:text-primary transition-colors">{meta}</p>
-    </Link>
+    </div>
   )
 }

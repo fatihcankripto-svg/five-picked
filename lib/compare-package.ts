@@ -89,7 +89,7 @@ export const packageComparePairs: ComparePair[] = [
   },
   {
     slug: 'skillshare-vs-masterclass', aSlug: 'skillshare', bSlug: 'masterclass', authorBio, lastReviewedAt: '2026-10-31',
-    framing: 'Choose by what you want to do after a lesson: complete a creative class project, or learn from an instructor’s demonstrations and perspective. This is a concise enrollment decision; the related blog explores the learning workflow more deeply.',
+    framing: 'Choose by what you want to do after a lesson: complete a creative class project, or learn from an instructor’s demonstrations and perspective. Compare the class you want to take, access conditions and the full payment before enrolling.',
     verdict: 'Consider Skillshare when making and submitting a class project fits your goal. Consider MasterClass when the specific instructor and class match the perspective you want to learn. Neither should be chosen as an automatic route to an accredited credential or permanent free library access.',
     aWinsWhen: ['You can name a creative project you want to complete using a listed class.', 'The class-project and community-feedback workflow fits how you learn.', 'You understand the trial end and annual payment before enrolling.'],
     bWinsWhen: ['A specific instructor or class matches the techniques or perspective you want to study.', 'You prefer to evaluate the class before building your own independent practice plan.', 'You have checked device and offline needs against the selected membership tier.'],
@@ -106,6 +106,7 @@ export const packageComparePairs: ComparePair[] = [
       { label: 'When access ends', a: skillshare.limits, b: masterclass.limits },
     ],
     migration: [
+      { title: 'Choose a class before choosing a membership', text: 'What do you want to do after a lesson? Name one class and the result you want: a project to make or an approach to practice. Read the outline and prerequisites, then decide whether the membership makes sense for that goal. Compare the full billing period rather than judging value from a monthly equivalent alone.' },
       { title: 'Move from MasterClass to Skillshare when you need a defined project', text: 'If viewing lessons is no longer enough, inspect a relevant Skillshare project and its prerequisites. Keep your own notes and work, and check the trial end before subscribing. No credit or progress transfer between platforms is promised.' },
       { title: 'Move from Skillshare to MasterClass when a specific instructor is the reason', text: 'Choose a named class that fills a gap in your learning rather than buying a broad catalog on reputation alone. Keep an independent practice plan; the new membership does not transfer previous course completion.' },
       { title: 'Who should choose neither yet?', text: 'If an employer or school requires an accredited credential, verify the exact course and issuer first. Neither a Skillshare class certificate nor regular MasterClass membership is presented here as a substitute for that requirement. Avoid either subscription if you cannot identify a relevant class or track its billing commitment.' },
