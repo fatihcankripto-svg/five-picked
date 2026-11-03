@@ -16,7 +16,7 @@ export function CategoryGrid() {
           Start with what you need
         </h2>
         <p className="mt-4 leading-relaxed text-muted-foreground">
-          {categoryCountLabel(publishedCategories.length)} to explore. Every published list contains five picks.
+          Browse {categoryCountLabel(publishedCategories.length)}, from AI and hosting to learning and travel.
         </p>
         <FiveDots className="mt-6" />
       </div>

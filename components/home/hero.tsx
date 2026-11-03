@@ -42,8 +42,8 @@ export function Hero() {
             className="fp-reveal mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty"
             style={delay(2)}
           >
-            No endless lists. Every published list has exactly five tools, ranked 1 to 5, so you can choose with
-            confidence and get back to work.
+            Compare tools for the job in front of you. See who each option suits, what it costs and what to
+            check before signing up.
           </p>
           <div className="fp-reveal mt-9 flex flex-col gap-3 sm:flex-row" style={delay(3)}>
             <a

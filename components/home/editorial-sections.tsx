@@ -12,7 +12,7 @@ export function EditorialSections() {
   return <>
     <section aria-labelledby="featured-heading" className="mx-auto max-w-6xl px-5 pt-20 sm:px-8">
       <h2 id="featured-heading" className="text-3xl font-semibold tracking-tight">Compare before you commit</h2>
-      <p className="mt-4 max-w-2xl text-muted-foreground">Practical differences, clear trade-offs and a starting point for your shortlist.</p>
+      <p className="mt-4 max-w-2xl text-muted-foreground">Choosing between two tools? Compare the work they support, the plans and the reasons to pick either one.</p>
       <div className="mt-8 grid gap-5 md:grid-cols-3">{comparePages.slice(0, 3).map((page) => <article key={page.slug} className="relative rounded-2xl border border-border bg-card p-6 hover:border-primary/50"><h3 className="text-lg font-semibold"><Link href={`/compare/${page.slug}`} className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2">{page.a.name} vs {page.b.name}</Link></h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{page.framing}</p></article>)}</div>
       <p className="mt-6"><Link href="/compare" className="text-primary underline underline-offset-4">All comparisons →</Link></p>
       <h2 className="mt-16 text-3xl font-semibold tracking-tight">Start with the right questions</h2>

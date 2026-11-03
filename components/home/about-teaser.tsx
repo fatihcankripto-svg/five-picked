@@ -17,8 +17,8 @@ export function AboutTeaser() {
         </div>
         <div className="flex flex-col gap-5 text-lg leading-relaxed text-muted-foreground">
           <p>
-            Most &ldquo;best of&rdquo; lists are long, padded and hard to trust. FIVE PICKED exists to do the
-            opposite: give you a small, considered shortlist and explain who each option is really for.
+            We keep each list to five options so you can compare them without losing track of what matters.
+            Each recommendation explains who it suits and what to check before paying.
           </p>
           <p>
             We are independent. We do not accept payment for placement, and we tell you plainly when a link may
