@@ -153,7 +153,7 @@ export const categories: Category[] = [
             ],
             goodToKnow: "Videos use credits, and free access is limited and may add a watermark. Paid plans add faster queues and commercial-use rights.",
             startingPrice: verifiedPricing["kling-ai"].label,
-            officialUrl: "https://klingai.com/",
+            officialUrl: "https://kling.ai/",
           },
             
           {
