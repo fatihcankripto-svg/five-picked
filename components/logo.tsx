@@ -36,7 +36,7 @@ export function Logo({ onClick }: { onClick?: () => void }) {
           5
         </span>
       </span>
-      <span className="text-sm font-semibold tracking-[0.18em] text-foreground">FIVE PICKED</span>
+      <span className="whitespace-nowrap text-xs font-semibold tracking-[0.14em] text-foreground min-[360px]:text-sm min-[360px]:tracking-[0.18em]">FIVE PICKED</span>
     </Link>
   )
 }

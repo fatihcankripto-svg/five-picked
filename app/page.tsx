@@ -32,8 +32,8 @@ export default function HomePage() {
       />
       <Hero />
       <CategoryMarquee />
-      <WhyFivePicked />
       <CategoryGrid />
+      <WhyFivePicked />
       <EditorialSections />
       <HowWeChooseStrip />
       <AboutTeaser />

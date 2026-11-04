@@ -1,6 +1,8 @@
 import { publishedCategories } from '@/data/all-categories'
 import { categoryMeta, categoryCountLabel } from '@/lib/category-stats'
-import { CategoryCard } from '@/components/category-card'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
+import { CategoryArtwork } from '@/components/home/category-artwork'
 import { SectionMarker } from '@/components/section-marker'
 import { FiveDots } from '@/components/five-dots'
 
@@ -21,17 +23,21 @@ export function CategoryGrid() {
         <FiveDots className="mt-6" />
       </div>
 
-      <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {publishedCategories.slice(0, 6).map((category, index) => (
           <li key={category.slug}>
-            <CategoryCard
-              href={`/${category.slug}`}
-              slug={category.slug}
-              name={category.name}
-              description={category.description}
-              meta={categoryMeta(category)}
-              number={String(index + 1).padStart(2, '0')}
-            />
+            <Link href={`/${category.slug}`} className="fp-home-category group">
+              <div className="relative overflow-hidden border-b border-white/5">
+                <CategoryArtwork slug={category.slug} />
+                <span aria-hidden="true" className="absolute left-5 top-4 text-[10px] tracking-widest text-muted-foreground/60">0{index+1}</span>
+                <ArrowUpRight aria-hidden="true" className="absolute right-5 top-4 size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+              </div>
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <h3 className="text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">{category.name}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{category.description}</p>
+                <p className="mt-5 text-[11px] font-semibold uppercase tracking-widest text-primary">{categoryMeta(category)}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
