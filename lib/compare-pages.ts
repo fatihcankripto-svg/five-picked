@@ -468,6 +468,7 @@ const pairs: ComparePair[] = [
   },
   {
     slug: 'coursera-vs-datacamp',
+    sources: [{ label: 'Coursera free course previews', url: 'https://blog.coursera.org/introducing-courseras-new-course-preview-experience/' }, { label: 'DataCamp plans and free access', url: 'https://www.datacamp.com/pricing' }],
     aSlug: 'coursera',
     bSlug: 'datacamp',
     framing:
@@ -477,28 +478,28 @@ const pairs: ComparePair[] = [
     aWinsWhen: [
       'You want a certificate from a university or company',
       'You want a wide range of subjects beyond data',
-      'You want to audit many courses for free',
+      'You want to preview a first module before choosing a course',
     ],
     bWinsWhen: [
       'Your goal is data, Python, SQL or AI specifically',
       'You want hands-on exercises, not just videos',
-      'You want a clear career track from beginner to job-ready',
+      'You want a structured track for practicing data skills',
     ],
     faqs: [
       {
         question: 'Which is better for a career change into data?',
         answer:
-          'DataCamp is more direct for data roles because it teaches by doing. Coursera is stronger if you also want a university-branded certificate on your CV.',
+          'DataCamp suits learners who want frequent coding exercises. Coursera offers university and industry courses across a wider range of subjects. Compare the syllabus and projects with the skills you need; a certificate alone does not guarantee a job.',
       },
       {
         question: 'Can I use Coursera for free?',
         answer:
-          'Many courses can be audited for free. Certificates and graded assignments need a paid plan or per-course fee.',
+          'You can preview the first module of most Coursera courses for free, including assessments when available in that module. Selected courses are free, and eligible learners can apply for financial aid. Check the chosen course for full access and certificate terms.',
       },
       {
         question: 'Which is better for AI skills?',
         answer:
-          'DataCamp covers practical AI and data skills with exercises. Coursera has deeper theory from university courses. Use both if you can afford it.',
+          'Choose by the course syllabus. DataCamp focuses on guided exercises, while Coursera offers courses from universities and companies. Start with one course that covers the skills and practice you need.',
       },
     ],
     relatedLinks: [{ path: '/free/best-free-online-course-platforms', label: 'Check preview limits and certificate access across five platforms' }],

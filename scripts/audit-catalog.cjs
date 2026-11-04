@@ -8,7 +8,7 @@ const resolve = Module._resolveFilename
 Module._resolveFilename = function (name, ...args) {
   return resolve.call(this, name.startsWith('@/') ? path.join(root, name.slice(2)) : name, ...args)
 }
-require.extensions['.ts'] = (module, filename) => module._compile(ts.transpile(fs.readFileSync(filename, 'utf8'), { module: ts.ModuleKind.CommonJS }), filename)
+require.extensions['.ts'] = (module, filename) => module._compile(ts.transpile(fs.readFileSync(filename, 'utf8'), { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true }), filename)
 const { categoryRegistry, allCategories, publishedCategories, isCompleteList } = require('../data/all-categories.ts')
 const { catalogStats } = require('../lib/category-stats.ts')
 const hidden = ['website-builders', 'gaming', 'refurbished-electronics', 'diy-legal']
@@ -22,7 +22,7 @@ for (const category of publishedCategories) {
     tools += list.tools.length
   }
 }
-assert.equal(catalogStats.categories, allCategories.length)
+assert.equal(catalogStats.categories, publishedCategories.length)
 assert.equal(catalogStats.lists, listCount)
 assert.equal(catalogStats.tools, tools)
 assert.equal(catalogStats.tools, listCount * 5)

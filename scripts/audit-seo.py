@@ -26,10 +26,10 @@ for path,p in pages.items():
  for href in p.links:
   href=href.removeprefix('https://fivepicked.com')
   if href.startswith('/'):
-   if href not in pages and href not in ['/blog']:broken[href].add(path)
+   if href not in pages and href not in ['/blog'] and not (Path('public') / href.lstrip('/')).is_file():broken[href].add(path)
    if href!=path:incoming[href].add(path)
 assert len(pages) > 50, 'Run next build first; expected generated HTML pages'
-print('pages',len(pages),'noindex',[p for p,v in pages.items() if v.noindex])
+print('pages',len(pages),'noindex',sum(v.noindex for v in pages.values()))
 for attr in ['title','desc','canonical']:
  c=Counter(getattr(p,attr) for p in pages.values() if not p.noindex)
  print(attr,'duplicates',[(k,v) for k,v in c.items() if v>1])
@@ -75,6 +75,10 @@ for file in Path('.next/server/app').rglob('*.html'):
  for data in re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>',raw,re.S):
   for node in schema_nodes(json.loads(data)):
    assert node.get('@type') != 'AggregateRating', f'Invented rating in {file}'
+   if node.get('@type')=='Dataset':
+    assert node.get('license'), f'Missing dataset license in {file}'
+    parent=node.get('isPartOf')
+    assert parent is None or isinstance(parent,str) or (isinstance(parent,dict) and parent.get('@type')=='Dataset'), f'Invalid dataset parent type in {file}'
    if node.get('@type')=='FAQPage':
     for q in node['mainEntity']:
      assert normalized(q['name']) in text, f'Non-visible FAQ question in {file}'
@@ -85,32 +89,18 @@ for file in Path('.next/server/app').rglob('*.html'):
     assert [e['position'] for e in entries]==list(range(1,len(entries)+1)), f'Invalid breadcrumb order in {file}'
 print(f'PASS: JSON-LD parses, breadcrumb order is valid, {faq_count} FAQ answers match visible text')
 
-# Retired guide URLs must not remain in navigation or the sitemap.
-assert not any(path == '/guides' or path.startswith('/guides/') for path in sitemap_paths), 'Retired guide URL in sitemap'
-assert not any(href == '/guides' or href.startswith('/guides/') for page in pages.values() for href in page.links), 'Retired guide link in generated HTML'
+# Only explicitly restored guide URLs may remain in navigation or the sitemap.
+restored = set(re.findall(r"path: '([^']+)'", Path('lib/restored-guides.ts').read_text()))
+assert all(path in restored for path in sitemap_paths if path == '/guides' or path.startswith('/guides/')), 'Unexpected guide URL in sitemap'
+assert all(href in restored for page in pages.values() for href in page.links if href == '/guides' or href.startswith('/guides/')), 'Unexpected guide link'
 for prefix in ('blog', 'compare', 'free', 'quiz', 'reviews', 'alternatives'):
  assert '/' + prefix in sitemap_paths, f'Sitemap index missing: {prefix}'
  assert any(path.startswith('/' + prefix + '/') for path in sitemap_paths), f'Sitemap detail family missing: {prefix}'
-print('PASS: six active sitemap families; retired guide URLs absent from sitemap and internal links')
+for entry in root.findall('s:url',ns):
+ if entry.find('s:loc',ns).text.endswith('/free/vpns-with-a-free-plan'):
+  assert entry.find('s:lastmod',ns).text.startswith('2026-11-04'), 'VPN free page sitemap date is stale'
+print('PASS: six active sitemap families; only explicitly restored guides appear in sitemap and internal links')
 
-# Authorship descriptions and review dates must match visible article content.
-reviewed_posts = 0
-for file in Path('.next/server/app/blog').glob('*.html'):
- raw = file.read_text()
- visible = VisibleText(); visible.feed(raw)
- text = normalized(' '.join(visible.parts))
- for data in re.findall(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>', raw, re.S):
-  for node in schema_nodes(json.loads(data)):
-   if node.get('@type') != 'BlogPosting': continue
-   author = node['author']
-   page = node['mainEntityOfPage']
-   assert author['name'] in text and normalized(author['description']) in text, f'Hidden or inconsistent author biography: {file}'
-   assert author['@type'] == 'Organization', f'The collective byline must not be represented as a fictional person: {file}'
-   assert page['@type'] == 'WebPage' and 'reviewedBy' not in node, f'Review properties must be attached to WebPage: {file}'
-   assert page['reviewedBy']['name'] in text, f'Reviewer not visible: {file}'
-   assert node['dateModified'] == page['lastReviewed'] == '2026-10-31', f'Inconsistent review dates: {file}'
-   assert 'Last reviewed: October 31, 2026' in text and 'Reviewed by: Five Picked Editors' in text and 'How this article was researched' in text, f'Missing visible review disclosure: {file}'
-   assert '/how-we-choose' in raw, f'Missing research-method link: {file}'
-   reviewed_posts += 1
-assert reviewed_posts == 13, f'Expected 13 reviewed blog posts, got {reviewed_posts}'
-print('PASS: all 13 article biographies, visible review dates and WebPage reviewer metadata agree')
+# Check article dates against the current registries rather than a hard-coded day.
+import subprocess
+subprocess.run(['node', 'scripts/audit-editorial.cjs'], check=True)

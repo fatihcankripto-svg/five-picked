@@ -1,6 +1,9 @@
-import runpy,urllib.request,concurrent.futures,xml.etree.ElementTree as ET,subprocess,time
-scope=runpy.run_path('scripts/audit-seo.py');Page=scope['Page'];base='http://127.0.0.1:3005'
-server=subprocess.Popen(['node','node_modules/next/dist/bin/next','start','--hostname','127.0.0.1','--port','3005'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+import runpy,urllib.request,concurrent.futures,xml.etree.ElementTree as ET,subprocess,time,socket
+scope=runpy.run_path('scripts/audit-seo.py');Page=scope['Page']
+with socket.socket() as sock:
+ sock.bind(('127.0.0.1',0));port=str(sock.getsockname()[1])
+base='http://127.0.0.1:'+port
+server=subprocess.Popen(['node','node_modules/next/dist/bin/next','start','--hostname','127.0.0.1','--port',port],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
 try:
  for attempt in range(25):
   try:xml=urllib.request.urlopen(base+'/sitemap.xml',timeout=2).read();break

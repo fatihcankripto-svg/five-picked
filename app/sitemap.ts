@@ -30,10 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryPages,
     // The blog registry includes the dated hosting price index and its reviewed date.
     // Includes the VPN and online course price indices through the blog registry and their reviewed dates.
-    route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.lastReviewedAt)),
+    route('/blog'), ...blogPosts.map((post) => route(`/blog/${post.slug}`, post.updatedAt ?? post.lastReviewedAt)),
     // Includes all three comparison packages through the shared comparison registry.
     route('/compare'), ...comparePages.map((page) => route(`/compare/${page.slug}`, page.lastReviewedAt ?? comparePagesUpdated)),
-    route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-ai-marketing-and-seo-tools' ? marketingSeoFreeEditorial.lastReviewedAt : page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : freePagesUpdated)),
+    route('/free'), ...freePages.map((page) => route(`/free/${page.slug}`, page.slug === 'best-free-ai-marketing-and-seo-tools' ? marketingSeoFreeEditorial.lastReviewedAt : page.slug === 'best-free-flight-booking-sites' ? flightFreeEditorial.lastReviewedAt : page.slug === 'vpns-with-a-free-plan' ? '2026-11-04' : freePagesUpdated)),
     route('/quiz'), ...quizPages.map((page) => route(`/quiz/${page.slug}`, quizPagesUpdated)),
     // Review registry includes all published reviews, including Kiwi.com, Surfer SEO and ExpressVPN.
     route('/reviews'), ...reviews.map((review) => route(`/reviews/${review.toolSlug}`, review.updated)),

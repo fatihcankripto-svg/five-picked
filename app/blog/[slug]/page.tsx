@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: { images: socialImages,
       title: post.metaTitle, description: post.metaDescription,
       url: `https://fivepicked.com/blog/${post.slug}`, siteName: 'FIVE PICKED',
-      type: 'article', publishedTime: post.publishedAt, modifiedTime: post.lastReviewedAt, authors: [post.author],
+      type: 'article', publishedTime: post.publishedAt, modifiedTime: post.updatedAt, authors: [post.author],
     },
     twitter: { images: socialImages, card: 'summary_large_image', title: post.metaTitle, description: post.metaDescription },
   })
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function ArticleJsonLd({ post }: { post: BlogPost }) {
   const data = {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.title,
-    description: post.metaDescription, datePublished: post.publishedAt, dateModified: post.lastReviewedAt,
+    description: post.metaDescription, datePublished: post.publishedAt, dateModified: post.updatedAt,
     author: { '@type': 'Organization', name: editorialIdentity.name, description: post.authorBio, url: editorialIdentity.url },
     publisher: siteOrganization,
     mainEntityOfPage: {
@@ -154,7 +154,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             FIVE PICKED is an independent recommendation site. Our recommendations explain product fit and trade-offs using editorial research. We use official sources, published data and credited third-party research rather than our own hands-on tests. Check the official product website for current prices and limits. We never rank a tool higher because of a partnership —{' '}
             <Link href="/how-we-choose" className="font-medium text-primary hover:opacity-80">How this article was researched</Link>
           </p>
-          <p className="mt-3 text-sm text-muted-foreground">Last updated: <time dateTime={post.lastReviewedAt}>{post.lastReviewedAt}</time></p>
+          <p className="mt-3 text-sm text-muted-foreground">Last updated: <time dateTime={post.updatedAt}>{post.updatedAt}</time></p>
         </aside>
 
         {related.length > 0 && (

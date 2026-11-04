@@ -25,7 +25,8 @@ console.log('PASS: 113 sourced observations and decision cues; published tools:'
 
 const fs = require('node:fs')
 const home = fs.readFileSync('.next/server/app/index.html', 'utf8')
-assert(home.includes('60+') && home.includes('Why FIVE PICKED?'), 'Homepage count or differentiator section missing')
+const { catalogStats } = require('../lib/category-stats.ts')
+assert(home.includes(`>${catalogStats.tools}</span>`) && home.includes('Hand-picked tools') && home.includes('Why FIVE PICKED?'), 'Homepage catalog count or differentiator section missing')
 assert.equal((home.match(/<link[^>]+as="font"/g) ?? []).length, 1, 'Expected one preloaded webfont')
 for (const [route, slug] of [['ai-tools/video-and-voice', 'fliki'], ['web-hosting-and-domains', 'hostinger'], ['ai-tools/marketing-and-seo', 'semrush']]) {
   const html = fs.readFileSync(`.next/server/app/${route}.html`, 'utf8')
@@ -33,4 +34,4 @@ for (const [route, slug] of [['ai-tools/video-and-voice', 'fliki'], ['web-hostin
   assert(html.includes(toolDecisions[slug].audience) && html.includes(verifiedPricing[slug].sourceUrl), slug)
   assert(!html.includes('See website'), `Old price placeholder present in ${route}`)
 }
-console.log('PASS: emitted decision cards, official-source links, 60+ homepage and single-font preload')
+console.log('PASS: emitted decision cards, official-source links, derived homepage count and single-font preload')

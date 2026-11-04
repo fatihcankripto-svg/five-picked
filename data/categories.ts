@@ -787,15 +787,15 @@ export const categories: Category[] = [
         tagline: 'University and industry courses with certificates you can add to your CV.',
         bestFor: "Learners taking university or industry courses who want a paid certificate for their CV",
         whatItDoes:
-          'Coursera offers thousands of courses and certificate programs from universities and companies. You can watch many courses for free, and pay only if you want the certificate or graded work.',
+          'Coursera offers courses and certificate programs from universities and companies. You can preview the first module of most courses for free before deciding whether to pay for full access.',
         strengths: [
           'Huge range: business, tech, data, health, languages and more',
           'Courses from well-known universities and companies',
-          'Many courses can be audited for free',
-          'Coursera Plus gives unlimited access for one price',
+          'Free first-module previews for most courses',
+          'Coursera Plus covers a selection of courses and programs',
         ],
         goodToKnow:
-          'Certificates and graded work need a paid plan, and individual courses are priced separately from Coursera Plus.',
+          'Check whether your chosen course is included in Coursera Plus. Full access and certificates usually require payment; eligible learners can apply for financial aid.',
         startingPrice: verifiedPricing["coursera"].label,
         officialUrl: 'https://www.coursera.org',
       },
