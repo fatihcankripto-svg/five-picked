@@ -11,8 +11,8 @@ export const blogTakeaways: Record<string, readonly string[]> = {
     'The snapshot does not establish historical inflation, measured service quality or a guaranteed future payment.',
   ],
   '2026-web-hosting-price-index': [
-    'IONOS Plus has the largest calculable renewal increase in the term-complete sample.',
-    'A low monthly equivalent can hide prepayment, renewal costs and time-limited included services.',
+    'Six offers were price-checked on November 4; the original ten-provider records keep their October 31 date.',
+    'The three-year scenarios match USD and a 12-month introduction, with taxes and extras excluded.',
     'The snapshot does not establish historical price inflation, account-specific taxes or a guaranteed future invoice.',
   ],
   'real-cost-of-email-marketing-2026': [

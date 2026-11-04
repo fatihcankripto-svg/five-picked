@@ -1,0 +1,80 @@
+[
+  {
+    "provider": "Hostinger",
+    "plan": "Premium",
+    "currency": "USD",
+    "introMonthly": 1.99,
+    "initialTermMonths": 48,
+    "renewalMonthly": 10.99,
+    "initialInvoice": 95.52,
+    "initialAmountBasis": "Published initial payment",
+    "sourceUrl": "https://www.hostinger.com/pricing",
+    "notes": "Renewal uses the same 48-month term. The displayed offer is a Black Friday promotion.",
+    "checkedAt": "2026-11-04"
+  },
+  {
+    "provider": "Bluehost",
+    "plan": "Starter",
+    "currency": "USD",
+    "introMonthly": 3.99,
+    "initialTermMonths": 36,
+    "renewalMonthly": 9.99,
+    "initialInvoice": null,
+    "initialAmountBasis": "Calculated term cost; checkout invoice not captured",
+    "sourceUrl": "https://www.bluehost.com/web-hosting",
+    "notes": "36-month initial term; the readable offer gives a renewal rate but does not resolve the next invoice duration. VAT/GST excluded.",
+    "checkedAt": "2026-11-04"
+  },
+  {
+    "provider": "SiteGround",
+    "plan": "StartUp",
+    "currency": "USD",
+    "introMonthly": 1.99,
+    "initialTermMonths": 12,
+    "renewalMonthly": 17.99,
+    "initialInvoice": null,
+    "initialAmountBasis": "Calculated term cost; checkout invoice not captured",
+    "sourceUrl": "https://www.siteground.com/web-hosting.htm",
+    "notes": "12-month prepayment. Early Black Friday offer. Renewal is displayed at 17.99 USD per month.",
+    "checkedAt": "2026-11-04"
+  },
+  {
+    "provider": "GreenGeeks",
+    "plan": "Lite",
+    "currency": "USD",
+    "introMonthly": 2.95,
+    "initialTermMonths": 12,
+    "renewalMonthly": 13.95,
+    "initialInvoice": null,
+    "initialAmountBasis": "Calculated term cost; checkout invoice not captured",
+    "sourceUrl": "https://www.greengeeks.com/shared-hosting/",
+    "notes": "12-month prepayment. Renewal is displayed at 13.95 USD per month.",
+    "checkedAt": "2026-11-04"
+  },
+  {
+    "provider": "IONOS",
+    "plan": "Plus",
+    "currency": "USD",
+    "introMonthly": 1.0,
+    "initialTermMonths": 12,
+    "renewalMonthly": 14.0,
+    "initialInvoice": null,
+    "initialAmountBasis": "Calculated term cost; payment schedule not established",
+    "sourceUrl": "https://www.ionos.com/hosting/web-hosting",
+    "notes": "One-year introductory commitment; monthly billing label does not establish an annual upfront invoice.",
+    "checkedAt": "2026-11-04"
+  },
+  {
+    "provider": "DreamHost",
+    "plan": "Web Hosting Launch, four-year offer",
+    "currency": "EUR",
+    "introMonthly": 1.99,
+    "initialTermMonths": 48,
+    "renewalMonthly": 7.99,
+    "initialInvoice": null,
+    "initialAmountBasis": "Calculated term cost; checkout invoice not captured",
+    "sourceUrl": "https://www.dreamhost.com/hosting/web-hosting/",
+    "notes": "EUR offer retained. Excluded from USD scenarios; not converted or treated as a US-market quote.",
+    "checkedAt": "2026-11-04"
+  }
+]

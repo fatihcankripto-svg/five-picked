@@ -1,0 +1,21 @@
+const assert = require('node:assert/strict')
+const fs = require('node:fs')
+const ts = require('typescript')
+const Module = require('node:module')
+const path = require('node:path')
+const filename = path.resolve(__dirname, '../lib/hosting-price-math.ts')
+const compiled = new Module(filename, module)
+compiled._compile(ts.transpile(fs.readFileSync(filename, 'utf8'), { module: ts.ModuleKind.CommonJS }), filename)
+const { hostingIntroTermCost, hostingThreeYearScenario } = compiled.exports
+const rows = require('../data/hosting-price-check-2026-11-04.json')
+const byProvider = Object.fromEntries(rows.map(row => [row.provider, row]))
+assert.equal(hostingThreeYearScenario(byProvider.IONOS), 348)
+assert.equal(hostingThreeYearScenario(byProvider.SiteGround), 455.64)
+assert.equal(hostingThreeYearScenario(byProvider.GreenGeeks), 370.2)
+assert.equal(hostingIntroTermCost(byProvider.Hostinger), 95.52)
+assert.equal(hostingIntroTermCost(byProvider.Bluehost), 143.64)
+for (const provider of ['Hostinger', 'Bluehost', 'DreamHost']) assert.equal(hostingThreeYearScenario(byProvider[provider]), null, provider)
+for (const overrides of [{introMonthly: 0}, {introMonthly: -1}, {introMonthly: NaN}, {renewalMonthly: null}, {renewalMonthly: Infinity}, {renewalMonthly: -1}, {initialTermMonths: null}, {currency: 'EUR'}]) {
+  assert.equal(hostingThreeYearScenario({...byProvider.IONOS, ...overrides}), null)
+}
+console.log('PASS: cost arithmetic and rejection of unmatched currency, term, trial and missing-rate inputs')
