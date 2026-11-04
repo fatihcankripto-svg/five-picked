@@ -24,3 +24,8 @@ Pending:
 - Website update is pending verified export. Existing account-setup evidence must not be presented as this completed integration check.
 - Riverside same-file editing was not performed; trial/billing gate remains. No product winner established.
 
+
+
+## Export follow-up (2026-11-04)
+
+The user explicitly approved an unlisted video publish. Publish succeeded: https://share.descript.com/view/8uZgv2PnVMS . The MP4 was downloaded and inspected: 720x1280, 30 fps, container duration 39.533333 s, audio duration 39.517007 s, 1,306,603 bytes. Original frames at 3 and 20 seconds show captions and the Descript watermark. Prior preview/caption-render uncertainty is resolved for those frames; full caption timing is not scored. The source was 25 fps; that rate was not preserved in the published output. The connected plan remains unverified. The earlier pending-export notes describe the pre-approval state.

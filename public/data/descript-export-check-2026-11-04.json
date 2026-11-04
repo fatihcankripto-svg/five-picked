@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-04",
+  "method": "Descript integration import/edit/publish; downloaded MP4 inspected with ffprobe; unmodified frames inspected at 3 and 20 seconds",
+  "inputDurationSeconds": 42.095,
+  "inputWidth": 1280,
+  "inputHeight": 720,
+  "inputFps": 25,
+  "editedCompositionDurationSeconds": 39.517,
+  "outputContainerDurationSeconds": 39.533333,
+  "outputAudioDurationSeconds": 39.517007,
+  "outputWidth": 720,
+  "outputHeight": 1280,
+  "outputFps": 30,
+  "outputBytes": 1306603,
+  "captionFramesInspectedSeconds": [
+    3,
+    20
+  ],
+  "captionsVisibleInInspectedFrames": true,
+  "descriptWatermarkVisible": true,
+  "shareUrl": "https://share.descript.com/view/8uZgv2PnVMS",
+  "workspacePlan": "not verified",
+  "riversideSameFileEditingTestCompleted": false,
+  "limitations": [
+    "Synthetic title-card sample, not natural speech or remote-recording quality",
+    "No measured processing-speed comparison",
+    "Not a universal free-plan entitlement claim",
+    "Two output frames inspected, not a full caption timing or accuracy evaluation"
+  ]
+}
