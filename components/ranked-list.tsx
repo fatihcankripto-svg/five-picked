@@ -8,6 +8,7 @@ import { Breadcrumbs, type Crumb } from '@/components/breadcrumbs'
 import { ComparisonTable } from '@/components/comparison-table'
 import { SectionMarker } from '@/components/section-marker'
 import { ToolCard } from '@/components/tool-card'
+import { ToolJumpNav } from '@/components/tool-jump-nav'
 import { getAllAlternativePages } from '@/lib/alternatives'
 import { absoluteUrl, formatDate, getOutboundLink } from '@/lib/site'
 
@@ -89,7 +90,7 @@ export function RankedList({
         </div>
       </header>
 
-      <nav aria-label="On this page" className="mt-8 rounded-xl border border-border p-5"><p className="text-sm font-semibold">On this page</p><ul className="mt-3 flex flex-wrap gap-x-5 gap-y-3 text-sm"><li><a href="#at-a-glance" className="text-primary underline underline-offset-4">Comparison</a></li>{tools.map((tool) => <li key={tool.slug}><a href={`#${tool.slug}`} className="text-primary underline underline-offset-4">{tool.name}</a></li>)}</ul></nav>
+      <ToolJumpNav items={[{ id: 'at-a-glance', label: 'Comparison' }, ...tools.map((tool) => ({ id: tool.slug, label: tool.name }))]} />
       {path === '/web-hosting-and-domains' && <p className="mt-6 text-sm text-muted-foreground">Want to evaluate a host before committing? <Link href="/free/best-free-web-hosting" className="text-primary underline underline-offset-4">Check hosting free trials and refund conditions</Link>. For a shortlist based on your needs, <Link href="/quiz/web-hosting-and-domains" className="text-primary underline underline-offset-4">take the six-question hosting finder</Link>.</p>}
       {path === '/ai-tools/marketing-and-seo' && <p className="mt-6 text-sm text-muted-foreground">Not sure which workflow to prioritize? <Link href="/quiz/ai-tools-marketing-and-seo" className="text-primary underline underline-offset-4">Find your marketing and SEO tool match</Link>.</p>}
       {path === '/video-and-design-software' && <p className="mt-6 text-sm text-muted-foreground">Before committing to an editor or asset library, <Link href="/free/best-free-video-and-design-software" className="text-primary underline underline-offset-4">check free access, watermarks and commercial-use conditions</Link>. To narrow down the workflow, <Link href="/quiz/video-and-design-software" className="text-primary underline underline-offset-4">take the seven-question video and design finder</Link>. For a focused choice, <Link href="/compare/capcut-vs-premiere-pro" className="text-primary underline underline-offset-4">use the CapCut versus Premiere decision comparison</Link>.</p>}

@@ -3,6 +3,7 @@ import { Check, Info, Star } from 'lucide-react'
 import type { Tool } from '@/data/categories'
 import { getReview } from '@/data/reviews'
 import { RankBadge } from '@/components/rank-badge'
+import { ToolMark } from '@/components/tool-mark'
 import { VisitButton } from '@/components/visit-button'
 import { verifiedPricing } from '@/data/tool-pricing'
 import { toolDecisions } from '@/data/tool-decisions'
@@ -33,20 +34,23 @@ export function ToolCard({ tool, rank, showPricingTerms = true }: { tool: Tool; 
           {rank}
         </span>
 
-        <header className="flex items-start gap-5">
-          <RankBadge rank={rank} />
-          <div className="min-w-0">
+        <header>
+          <div className="mb-4 flex items-center gap-2.5">
+            <RankBadge rank={rank} size="sm" />
             {isTop && (
-              <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-primary/50 bg-primary/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary shadow-[0_0_15px_-3px] shadow-primary/40">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
                 <Star aria-hidden="true" className="size-3.5 fill-primary" />
                 Top pick
               </span>
             )}
-            <h3 id={headingId} className={cn("text-2xl sm:text-3xl font-bold tracking-tight", isTop ? "text-primary" : "text-foreground")}>
+          </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <ToolMark slug={tool.slug} size="lg" />
+            <h3 id={headingId} className={cn("min-w-0 text-2xl sm:text-3xl font-bold tracking-tight", isTop ? "text-primary" : "text-foreground")}>
               {tool.name}
             </h3>
-            <p className="mt-2 text-base leading-relaxed text-muted-foreground/90 text-pretty">{tool.tagline}</p>
           </div>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground/90 text-pretty">{tool.tagline}</p>
         </header>
 
         <dl className="mt-6 grid gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:grid-cols-3 sm:p-5">

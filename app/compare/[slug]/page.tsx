@@ -9,6 +9,8 @@ import { Breadcrumbs } from '@/components/breadcrumbs'
 import { ComparisonTable } from '@/components/comparison-table'
 import { SectionMarker } from '@/components/section-marker'
 import { ToolCard } from '@/components/tool-card'
+import { ToolMark } from '@/components/tool-mark'
+import { ToolJumpNav } from '@/components/tool-jump-nav'
 import { comparePages, getComparePage } from '@/lib/compare-pages'
 import { absoluteUrl, formatDate, getOutboundLink } from '@/lib/site'
 
@@ -99,13 +101,16 @@ export default async function ComparePage({ params }: Props) {
 
       {page.lastReviewedAt && <p className="mt-6 text-sm text-muted-foreground">Last reviewed <time dateTime={page.lastReviewedAt}>{formatDate(page.lastReviewedAt)}</time>. {page.authorBio}</p>}
 
+      <ToolJumpNav items={[{ id: 'at-a-glance', label: 'Comparison' }, ...tools.map((tool) => ({ id: tool.slug, label: tool.name }))]} />
+
       <section className="mt-10 rounded-2xl border border-primary/30 bg-primary/[0.06] p-6">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-primary">Verdict</h2>
         <p className="mt-3 leading-relaxed text-foreground text-pretty">{page.verdict}</p>
       </section>
 
-      <section className="mt-12 grid gap-6 lg:grid-cols-2">
-        <div>
+      <section className="mt-12 grid gap-5 sm:grid-cols-2">
+        <div className="min-w-0 rounded-2xl border border-border bg-card p-5 sm:p-6">
+          <ToolMark slug={page.a.slug} size="lg" className="mb-5" />
           <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com', 'semrush-vs-surfer-seo', 'make-vs-n8n', 'pcloud-vs-dropbox', 'skillshare-vs-masterclass', 'monday-com-vs-asana', 'neuronwriter-vs-frase', 'upwork-vs-freelancer-com', 'clickup-vs-monday-com', 'fireflies-vs-otter', 'filmora-vs-camtasia'].includes(page.slug) ? `Choose ${page.a.name} if…` : `When ${page.a.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.aWinsWhen.map((item) => (
@@ -116,7 +121,8 @@ export default async function ComparePage({ params }: Props) {
             ))}
           </ul>
         </div>
-        <div>
+        <div className="min-w-0 rounded-2xl border border-border bg-card p-5 sm:p-6">
+          <ToolMark slug={page.b.slug} size="lg" className="mb-5" />
           <h2 className="text-xl font-semibold text-foreground">{['capcut-vs-premiere-pro', 'kiwi-com-vs-trip-com', 'semrush-vs-surfer-seo', 'make-vs-n8n', 'pcloud-vs-dropbox', 'skillshare-vs-masterclass', 'monday-com-vs-asana', 'neuronwriter-vs-frase', 'upwork-vs-freelancer-com', 'clickup-vs-monday-com', 'fireflies-vs-otter', 'filmora-vs-camtasia'].includes(page.slug) ? `Choose ${page.b.name} if…` : `When ${page.b.name} wins`}</h2>
           <ul className="mt-4 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
             {page.bWinsWhen.map((item) => (
@@ -130,7 +136,7 @@ export default async function ComparePage({ params }: Props) {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-xl font-semibold text-foreground">At a glance</h2>
+        <h2 id="at-a-glance" className="text-xl font-semibold text-foreground">At a glance</h2>
         <div className="mt-5">
           <ComparisonTable
             tools={tools}

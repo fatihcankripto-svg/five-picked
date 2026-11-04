@@ -57,6 +57,9 @@ export default function AffiliateDisclosurePage() {
         <Link href="/how-we-choose">How we choose</Link> page.
       </p>
 
+      <h2>Brand names and logos</h2>
+      <p>Brand names and logos belong to their respective owners. We use them to identify the products we discuss. Their appearance does not imply that the brand endorses FIVE PICKED or its recommendations.</p>
+
       <h2>Questions</h2>
       <p>
         If anything here is unclear, please <Link href="/contact">get in touch</Link>. We are happy to explain.

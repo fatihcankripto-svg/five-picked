@@ -425,3 +425,9 @@
   .fp-home-category:is(:hover,:focus-visible) .fp-art-stack { animation:fp-scene-drift 3s ease-in-out infinite; }
   .fp-home-category:is(:hover,:focus-visible) .fp-art-wave { animation:fp-wave-breathe 1.6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
 }
+
+/* Keep identities and navigation visible while inspecting long lists. */
+.fp-tool-tab[aria-current="location"] { color:var(--primary); background:oklch(0.82 0.145 75 / 10%); border-color:oklch(0.82 0.145 75 / 25%); }
+.fp-tool-nav ~ section :where(article,h2)[id] { scroll-margin-top:6rem; }
+.fp-tool-nav ul { scrollbar-width:thin; scrollbar-color:var(--border) transparent; }
+.fp-comparison th[scope="row"] { box-shadow:6px 0 12px -12px #000; }

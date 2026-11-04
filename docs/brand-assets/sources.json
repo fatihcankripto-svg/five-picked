@@ -1,0 +1,1170 @@
+[
+  {
+    "slug": "kling-ai",
+    "name": "Kling AI",
+    "url": "https://kling.ai/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://kling.ai/",
+    "status": "downloaded",
+    "sourceUrl": "https://s16-kling.klingai.com/kos/s101/nlav112918/kling-homepage-aio/logo-180x180.png",
+    "assetUrl": "https://s16-kling.klingai.com/kos/s101/nlav112918/kling-homepage-aio/logo-180x180.png",
+    "file": "kling-ai.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 3766,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "6cb6f7857be8c718a6d6768da67389e169abdacbe5402933378a19a812da9995"
+  },
+  {
+    "slug": "pictory",
+    "name": "Pictory",
+    "url": "https://pictory.ai",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://pictory.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://pictory.ai/wp-content/uploads/2022/03/cropped-Just-Octopus-with-oct-1.png",
+    "assetUrl": "https://pictory.ai/wp-content/uploads/2022/03/cropped-Just-Octopus-with-oct-1.png",
+    "file": "pictory.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 41576,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "72e9b61742bb6aa8b35f7a88ad85f179ac8ba32091ae4770960c7acdff12e389"
+  },
+  {
+    "slug": "synthesia",
+    "name": "Synthesia",
+    "url": "https://www.synthesia.io",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.synthesia.io",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.prod.website-files.com/65e89895c5a4b8d764c0d710/6618fd69d436784c0bba5e9e_webclip.png",
+    "assetUrl": "https://cdn.prod.website-files.com/65e89895c5a4b8d764c0d710/6618fd69d436784c0bba5e9e_webclip.png",
+    "file": "synthesia.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 3633,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "c7e6198818832392403352dff7289076dc9fdc1648fbb1543cb7cfec55a2916a"
+  },
+  {
+    "slug": "fliki",
+    "name": "Fliki",
+    "url": "https://fliki.ai",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://fliki.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.fliki.ai/public/favicon/favicon-32x32.png?v=0.1",
+    "assetUrl": "https://cdn.fliki.ai/public/favicon/favicon-32x32.png?v=0.1",
+    "file": "fliki.png",
+    "size": [
+      32,
+      32
+    ],
+    "bytes": 1574,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "263e2bebaac3ee218f40c36c53d61d1ee32fe5cad5f4d40663acf1efcad8a668"
+  },
+  {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "url": "https://elevenlabs.io",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://elevenlabs.io",
+    "status": "downloaded",
+    "sourceUrl": "https://elevenlabs.io/apple-icon.png?6592732ab34b1d42",
+    "assetUrl": "https://elevenlabs.io/apple-icon.png?6592732ab34b1d42",
+    "file": "elevenlabs.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 599,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "7936b8ae0c53b049edec573876bfb2b44b450fdce10675bd98f29182833d373e"
+  },
+  {
+    "slug": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "url": "https://firefly.adobe.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "Adobe requires separate rights for logos/product icons"
+  },
+  {
+    "slug": "ideogram",
+    "name": "Ideogram",
+    "url": "https://ideogram.ai",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "krea",
+    "name": "Krea",
+    "url": "https://www.krea.ai",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.krea.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://www.krea.ai/favicon/favicon-192.png",
+    "assetUrl": "https://www.krea.ai/favicon/favicon-192.png",
+    "file": "krea.png",
+    "size": [
+      192,
+      192
+    ],
+    "bytes": 3035,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "442af3d39273774e5228388aaf9adc7889fb3d65fb90b2c0649ff81b203e2bb4"
+  },
+  {
+    "slug": "openart",
+    "name": "OpenArt",
+    "url": "https://openart.ai",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://openart.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://openart.ai/pageforge-assets/favicon/apple-touch-icon.png",
+    "assetUrl": "https://openart.ai/pageforge-assets/favicon/apple-touch-icon.png",
+    "file": "openart.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 5032,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "aa0f75dd5d0af30730285079cd789586b7a32e66e891b3b8aa3e0cfe76ad9489"
+  },
+  {
+    "slug": "freepik",
+    "name": "Freepik",
+    "url": "https://www.freepik.com/",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "fireflies",
+    "name": "Fireflies.ai",
+    "url": "https://fireflies.ai",
+    "checkedAt": "2026-11-04",
+    "pageUrl": "https://fireflies.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://fireflies.ai/favicon.ico?favicon.373nsszgjbrgx.ico",
+    "assetUrl": "https://fireflies.ai/favicon.ico?favicon.373nsszgjbrgx.ico",
+    "file": "fireflies.png",
+    "size": [
+      48,
+      48
+    ],
+    "bytes": 1950,
+    "usageBasis": "Small editorial identification beside an independent description; no endorsement claimed. Official-site source is provenance, not a blanket copyright licence.",
+    "sha256": "8e0ca9f0538edb3e434e5ca06c7efcdba328b7f05c1685be730f840351a125ca"
+  },
+  {
+    "slug": "fathom",
+    "name": "Fathom",
+    "url": "https://fathom.ai",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "otter",
+    "name": "Otter.ai",
+    "url": "https://otter.ai",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://otter.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/618e943a80919a98b5e9bf69_apple-icon.png",
+    "assetUrl": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/618e943a80919a98b5e9bf69_apple-icon.png",
+    "file": "otter.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 3331,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "c3c1e1bd914136b91d541da523a65b0ae02bfe4602530356b5187f1139adacae"
+  },
+  {
+    "slug": "tldv",
+    "name": "tl;dv",
+    "url": "https://tldv.io",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://tldv.io",
+    "status": "downloaded",
+    "sourceUrl": "https://tldv.io/faviconV2.png",
+    "assetUrl": "https://tldv.io/faviconV2.png",
+    "file": "tldv.png",
+    "size": [
+      64,
+      64
+    ],
+    "bytes": 635,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "b8a06e659cb75cee96d4605b9279cc6ef47d58455e3c3758a552dc60ae10d21e"
+  },
+  {
+    "slug": "notta",
+    "name": "Notta",
+    "url": "https://www.notta.ai",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "semrush",
+    "name": "Semrush",
+    "url": "https://www.semrush.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.semrush.com",
+    "status": "downloaded",
+    "sourceUrl": "https://www.semrush.com/__static__/apple-touch-icon.fe16ae843d17.png",
+    "assetUrl": "https://www.semrush.com/__static__/apple-touch-icon.fe16ae843d17.png",
+    "file": "semrush.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 1734,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "f434313f7ba724388bef8a073327dbd32d71a7d8469c8922abb864dc7b3ca057"
+  },
+  {
+    "slug": "surfer-seo",
+    "name": "Surfer SEO",
+    "url": "https://surferseo.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://surfer.ai/",
+    "status": "downloaded",
+    "sourceUrl": "https://surfer.ai/favicon/icon-180.png",
+    "assetUrl": "https://surfer.ai/favicon/icon-180.png",
+    "file": "surfer-seo.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 2715,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "5dc52d11e640b4a65d55859703510a8a45aa08b46f6da3d889420a72810ed257"
+  },
+  {
+    "slug": "neuronwriter",
+    "name": "NeuronWriter",
+    "url": "https://neuronwriter.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://neuronwriter.com",
+    "status": "downloaded",
+    "sourceUrl": "https://neuronwriter.com/wp-content/uploads/2025/01/pobrane.png",
+    "assetUrl": "https://neuronwriter.com/wp-content/uploads/2025/01/pobrane.png",
+    "file": "neuronwriter.png",
+    "size": [
+      32,
+      32
+    ],
+    "bytes": 370,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "bf87ab3533e1782acb46ba9cf8b3a1747092d417a8bbfdbbde8cda7ab9064062"
+  },
+  {
+    "slug": "frase",
+    "name": "Frase",
+    "url": "https://www.frase.io",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.frase.io",
+    "status": "downloaded",
+    "sourceUrl": "https://www.frase.io/apple-touch-icon.png",
+    "assetUrl": "https://www.frase.io/apple-touch-icon.png",
+    "file": "frase.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 4649,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "b15f613cedf82e4caed32f51b502be8e460552480f5f7403241780621ab3efe2"
+  },
+  {
+    "slug": "writesonic",
+    "name": "Writesonic",
+    "url": "https://writesonic.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "tidio",
+    "name": "Tidio",
+    "url": "https://www.tidio.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.tidio.com",
+    "status": "downloaded",
+    "sourceUrl": "https://www.tidio.com/images/favicon/icon.svg",
+    "assetUrl": "https://www.tidio.com/images/favicon/icon.svg",
+    "file": "tidio.svg",
+    "size": null,
+    "bytes": 13752,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "cb770b2ac6d14a0066526e79294faa799606688b706fb0ceb6f5efe59ba40773"
+  },
+  {
+    "slug": "chatbase",
+    "name": "Chatbase",
+    "url": "https://www.chatbase.co",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.chatbase.co",
+    "status": "downloaded",
+    "sourceUrl": "https://www.chatbase.co/favicon.ico",
+    "assetUrl": "https://www.chatbase.co/favicon.ico",
+    "file": "chatbase.png",
+    "size": [
+      48,
+      48
+    ],
+    "bytes": 726,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "a43615343abf3dc0ec0bae6597d064315de2632461f2dfcf9ff54f2a134199db"
+  },
+  {
+    "slug": "landbot",
+    "name": "Landbot",
+    "url": "https://landbot.io",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://landbot.io",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.prod.website-files.com/5e1c4fb5db4d5243c0021d34/61fbe5483be78212776f02c9_webclip.jpg",
+    "assetUrl": "https://cdn.prod.website-files.com/5e1c4fb5db4d5243c0021d34/61fbe5483be78212776f02c9_webclip.jpg",
+    "file": "landbot.jpg",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 7072,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "b56f0e3411cc219337aec080296a7d9018ebbb9f5c632a427bfd3cb398273621"
+  },
+  {
+    "slug": "botpress",
+    "name": "Botpress",
+    "url": "https://botpress.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://botpress.com",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.prod.website-files.com/635c4eeb78332f7971255095/6a887680628e755606a2406b_bp-logo.jpg",
+    "assetUrl": "https://cdn.prod.website-files.com/635c4eeb78332f7971255095/6a887680628e755606a2406b_bp-logo.jpg",
+    "file": "botpress.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 5967,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "0ae3b32af24f131354909fdb545b4efcd058dccfc5cd0e21c096a720b0f17103"
+  },
+  {
+    "slug": "customgpt",
+    "name": "CustomGPT.ai",
+    "url": "https://customgpt.ai",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://customgpt.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://customgpt.ai/wp-content/themes/customgpt/assets/favicon/apple-touch-icon.png",
+    "assetUrl": "https://customgpt.ai/wp-content/themes/customgpt/assets/favicon/apple-touch-icon.png",
+    "file": "customgpt.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 7553,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "53615b8798bf10df4566aee3d20495e4d327c2abd71ba226939d37d32ca5bc94"
+  },
+  {
+    "slug": "hostinger",
+    "name": "Hostinger",
+    "url": "https://www.hostinger.com/",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "Hostinger logo rights require permission or affiliate-provided assets"
+  },
+  {
+    "slug": "bluehost",
+    "name": "Bluehost",
+    "url": "https://www.bluehost.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.bluehost.com/",
+    "status": "downloaded",
+    "sourceUrl": "https://www.bluehost.com/content/dam/bluehost/favicons/favicon.ico",
+    "assetUrl": "https://www.bluehost.com/content/dam/bluehost/favicons/favicon.ico",
+    "file": "bluehost.png",
+    "size": [
+      96,
+      96
+    ],
+    "bytes": 1411,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "6bc13ead7caefcf4584f536e0331e7cd2f4a0a3974a9eb0130270467da97cb21"
+  },
+  {
+    "slug": "cloudways",
+    "name": "Cloudways",
+    "url": "https://www.cloudways.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.cloudways.com/",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "kinsta",
+    "name": "Kinsta",
+    "url": "https://kinsta.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://kinsta.com/",
+    "status": "downloaded",
+    "sourceUrl": "https://kinsta.com/wp-content/uploads/2024/09/cropped-Kinsta-black-favicon-1-180x180.png",
+    "assetUrl": "https://kinsta.com/wp-content/uploads/2024/09/cropped-Kinsta-black-favicon-1-180x180.png",
+    "file": "kinsta.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 7311,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "4aef4658bbfa2a894ff0bf3317594a410b5a5bc80bb5506ccfd16c03e8fc9dd6"
+  },
+  {
+    "slug": "namecheap",
+    "name": "Namecheap",
+    "url": "https://www.namecheap.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.namecheap.com/",
+    "status": "downloaded",
+    "sourceUrl": "https://www.namecheap.com/assets/img/nc-icon/namecheap-icon-152x152.png",
+    "assetUrl": "https://www.namecheap.com/assets/img/nc-icon/namecheap-icon-152x152.png",
+    "file": "namecheap.png",
+    "size": [
+      152,
+      152
+    ],
+    "bytes": 1438,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "4726e0f27c721746a7df69c04f9643540a640fb8509e2f55ab209d6f4a90a134"
+  },
+  {
+    "slug": "nordvpn",
+    "name": "NordVPN",
+    "url": "https://nordvpn.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://nordvpn.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "surfshark",
+    "name": "Surfshark",
+    "url": "https://surfshark.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "expressvpn",
+    "name": "ExpressVPN",
+    "url": "https://www.expressvpn.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.expressvpn.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "proton-vpn",
+    "name": "Proton VPN",
+    "url": "https://protonvpn.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://protonvpn.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "private-internet-access",
+    "name": "Private Internet Access",
+    "url": "https://www.privateinternetaccess.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "coursera",
+    "name": "Coursera",
+    "url": "https://www.coursera.org",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "datacamp",
+    "name": "DataCamp",
+    "url": "https://www.datacamp.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "skillshare",
+    "name": "Skillshare",
+    "url": "https://www.skillshare.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "scrimba",
+    "name": "Scrimba",
+    "url": "https://scrimba.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://scrimba.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "masterclass",
+    "name": "MasterClass",
+    "url": "https://www.masterclass.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "mailerlite",
+    "name": "MailerLite",
+    "url": "https://www.mailerlite.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.mailerlite.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "kit",
+    "name": "Kit",
+    "url": "https://kit.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "getresponse",
+    "name": "GetResponse",
+    "url": "https://www.getresponse.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "beehiiv",
+    "name": "beehiiv",
+    "url": "https://www.beehiiv.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "systeme-io",
+    "name": "Systeme.io",
+    "url": "https://systeme.io",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "adobe-premiere-pro",
+    "name": "Adobe Premiere Pro",
+    "url": "https://www.adobe.com/products/premiere.html",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "Adobe requires separate rights for logos/product icons"
+  },
+  {
+    "slug": "filmora",
+    "name": "Filmora",
+    "url": "https://filmora.wondershare.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "envato-elements",
+    "name": "Envato Elements",
+    "url": "https://elements.envato.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://elements.envato.com",
+    "status": "downloaded",
+    "sourceUrl": "https://elements.envato.com/favicon.ico",
+    "assetUrl": "https://elements.envato.com/favicon.ico",
+    "file": "envato-elements.png",
+    "size": [
+      48,
+      48
+    ],
+    "bytes": 1690,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "fc9d95b8a0e6db1d6570b8d6841f338779de0e65fc074335f4edf653e4f830fc"
+  },
+  {
+    "slug": "riverside",
+    "name": "Riverside",
+    "url": "https://riverside.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://riverside.com",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e49_RS_favicon-black.png",
+    "assetUrl": "https://cdn.prod.website-files.com/685be7dcd32275d3830651d3/685be7dcd32275d383065e49_RS_favicon-black.png",
+    "file": "riverside.png",
+    "size": [
+      32,
+      32
+    ],
+    "bytes": 807,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "aa252a0ca692c34390fa3e694c289cf407951ddb65994a481f015f889c9dc302"
+  },
+  {
+    "slug": "camtasia",
+    "name": "Camtasia",
+    "url": "https://www.techsmith.com/video-editor.html",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "craft",
+    "name": "Craft",
+    "url": "https://www.craft.do",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "capacities",
+    "name": "Capacities",
+    "url": "https://capacities.io",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "evernote",
+    "name": "Evernote",
+    "url": "https://evernote.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "coda",
+    "name": "Coda",
+    "url": "https://coda.io",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://coda.io",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.coda.io/icons/png/color/coda-apple-167.png",
+    "assetUrl": "https://cdn.coda.io/icons/png/color/coda-apple-167.png",
+    "file": "coda.png",
+    "size": [
+      167,
+      167
+    ],
+    "bytes": 8227,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "e70564556e7eda8644ca9866f66bf4248f21a183c050dfcc9e6505f1cd0ffaff"
+  },
+  {
+    "slug": "mem",
+    "name": "Mem",
+    "url": "https://mem.ai",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "clickup",
+    "name": "ClickUp",
+    "url": "https://clickup.com",
+    "pageUrl": "https://clickup.com",
+    "checkedAt": "2026-11-05",
+    "status": "downloaded",
+    "sourceUrl": "https://clickup.com/favicons/apple-touch-icon.png",
+    "assetUrl": "https://clickup.com/favicons/apple-touch-icon.png",
+    "file": "clickup.png",
+    "size": [
+      192,
+      192
+    ],
+    "bytes": 8660,
+    "sha256": "fb45023441f0794d1ece6ef59542d360c8bf4f4c3bde2c84c4d546ae8019ed72",
+    "usageBasis": "Current official-site icon used for small editorial identification; guidelines: https://clickup.com/brand/trademark-guidelines"
+  },
+  {
+    "slug": "monday-com",
+    "name": "monday.com",
+    "url": "https://monday.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://monday.com",
+    "status": "needs-wordmark"
+  },
+  {
+    "slug": "asana",
+    "name": "Asana",
+    "url": "https://asana.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://asana.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "wrike",
+    "name": "Wrike",
+    "url": "https://www.wrike.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.wrike.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "teamwork",
+    "name": "Teamwork.com",
+    "url": "https://www.teamwork.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "pcloud",
+    "name": "pCloud",
+    "url": "https://www.pcloud.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.pcloud.com",
+    "status": "downloaded",
+    "sourceUrl": "https://pcdn-www.pcloud.com/ZWaA4/images/favicons/apple-icon-180x180.png",
+    "assetUrl": "https://pcdn-www.pcloud.com/ZWaA4/images/favicons/apple-icon-180x180.png",
+    "file": "pcloud.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 5693,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "2c8a78c5df9dcc9477bf6a4c912e9fee685abf6fa78deb8d89bfc57feb878d91"
+  },
+  {
+    "slug": "sync-com",
+    "name": "Sync.com",
+    "url": "https://www.sync.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.sync.com",
+    "status": "downloaded",
+    "sourceUrl": "https://www.sync.com/hubfs/assets-meta/apple-touch-icon.png",
+    "assetUrl": "https://www.sync.com/hubfs/assets-meta/apple-touch-icon.png",
+    "file": "sync-com.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 8317,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "43fc859d669759dea8ba1c0fd32722f761d96b58a211abc6001628bec504f21b"
+  },
+  {
+    "slug": "proton-drive",
+    "name": "Proton Drive",
+    "url": "https://proton.me/drive",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://proton.me/drive",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "icedrive",
+    "name": "Icedrive",
+    "url": "https://icedrive.net",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://icedrive.net",
+    "status": "downloaded",
+    "sourceUrl": "https://icedrive.net/favicons/apple-touch-icon.png",
+    "assetUrl": "https://icedrive.net/favicons/apple-touch-icon.png",
+    "file": "icedrive.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 14714,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "bf8ed5c1453c747e0ea9b0f82d0c94936003b5d7b576e9cd27691569bc01368e"
+  },
+  {
+    "slug": "dropbox",
+    "name": "Dropbox",
+    "url": "https://www.dropbox.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "Commercial website use requires checking with Dropbox; no permission evidenced"
+  },
+  {
+    "slug": "gamma",
+    "name": "Gamma",
+    "url": "https://gamma.app",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://gamma.app",
+    "status": "downloaded",
+    "sourceUrl": "https://static.gamma.app/favicons/apple-touch-icon.png",
+    "assetUrl": "https://static.gamma.app/favicons/apple-touch-icon.png",
+    "file": "gamma.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 19118,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "5b0607f9aace88ab521d1b39935000b79f49165d9b201f7e1ba9f81fe99ac40f"
+  },
+  {
+    "slug": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "url": "https://www.beautiful.ai",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.beautiful.ai",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.prod.website-files.com/59deb588800ae30001ec19c9/691b4ae4a724e6c686bfb035_BAI%20symbol%3Dfull%20color%20black.png",
+    "assetUrl": "https://cdn.prod.website-files.com/59deb588800ae30001ec19c9/691b4ae4a724e6c686bfb035_BAI%20symbol%3Dfull%20color%20black.png",
+    "file": "beautiful-ai.png",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 3559,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "67c4c274c606331ff6463c6156fb2f07cb188b05f23f5e42470d51b3c420c68c"
+  },
+  {
+    "slug": "pitch",
+    "name": "Pitch",
+    "url": "https://pitch.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "prezi",
+    "name": "Prezi",
+    "url": "https://prezi.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://prezi.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "visme",
+    "name": "Visme",
+    "url": "https://www.visme.co",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.visme.co",
+    "status": "downloaded",
+    "sourceUrl": "https://www.visme.co/apple-touch-icon.png",
+    "assetUrl": "https://www.visme.co/apple-touch-icon.png",
+    "file": "visme.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 1130,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "ed22ee7b2850b5977a0be50dcea4408d62d6c67bd87ddd183b3b43680e6b0234"
+  },
+  {
+    "slug": "make",
+    "name": "Make",
+    "url": "https://www.make.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.make.com",
+    "status": "downloaded",
+    "sourceUrl": "https://cdn.prod.website-files.com/6a294495bc84130c6dd0c4fd/6a7b9441756d01907cfc9bc0_favicon-32x32.png",
+    "assetUrl": "https://cdn.prod.website-files.com/6a294495bc84130c6dd0c4fd/6a7b9441756d01907cfc9bc0_favicon-32x32.png",
+    "file": "make.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 29619,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "65e6c1f87c96d9684efea91fe5d57c0e3201ebebb5a7397f26493ad0c7131afd"
+  },
+  {
+    "slug": "n8n",
+    "name": "n8n",
+    "url": "https://n8n.io",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://n8n.io",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "pabbly-connect",
+    "name": "Pabbly Connect",
+    "url": "https://www.pabbly.com/connect/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.pabbly.com/connect/",
+    "status": "downloaded",
+    "sourceUrl": "https://www.pabbly.com/wp-content/uploads/2026/01/favicon.png",
+    "assetUrl": "https://www.pabbly.com/wp-content/uploads/2026/01/favicon.png",
+    "file": "pabbly-connect.png",
+    "size": [
+      48,
+      48
+    ],
+    "bytes": 1938,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "03b9cf92ee06ebf4814e764a7ae14aba711eab207ce134dfb678552a2bc76469"
+  },
+  {
+    "slug": "activepieces",
+    "name": "Activepieces",
+    "url": "https://www.activepieces.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.activepieces.com",
+    "status": "downloaded",
+    "sourceUrl": "https://www.activepieces.com/favicon.svg",
+    "assetUrl": "https://www.activepieces.com/favicon.svg",
+    "file": "activepieces.svg",
+    "size": null,
+    "bytes": 906,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "b81576062e7964d1fb19ce3bdb2fc029b1c08b9df857b0298b326e559d02b616"
+  },
+  {
+    "slug": "latenode",
+    "name": "Latenode",
+    "url": "https://latenode.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "fiverr",
+    "name": "Fiverr",
+    "url": "https://www.fiverr.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.fiverr.com",
+    "status": "downloaded",
+    "sourceUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.487dee1.png",
+    "assetUrl": "https://fiverr-res.cloudinary.com/npm-assets/layout-service/favicon-32x32.487dee1.png",
+    "file": "fiverr.png",
+    "size": [
+      32,
+      32
+    ],
+    "bytes": 426,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "b81f7e0972cb24bd7188cf0bc82a2aa6fbda2292628ed23a62590215a8060467"
+  },
+  {
+    "slug": "upwork",
+    "name": "Upwork",
+    "url": "https://www.upwork.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "slug": "99designs",
+    "name": "99designs",
+    "url": "https://99designs.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://99designs.com",
+    "status": "downloaded",
+    "sourceUrl": "https://99designs.com/touch-icon-ipad-retina.png",
+    "assetUrl": "https://99designs.com/touch-icon-ipad-retina.png",
+    "file": "99designs.png",
+    "size": [
+      152,
+      152
+    ],
+    "bytes": 1097,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "b56aa02d079110c5468a3b793bc969e12ea917b5ac370a2111643628e44f1193"
+  },
+  {
+    "slug": "freelancer-com",
+    "name": "Freelancer.com",
+    "url": "https://www.freelancer.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.freelancer.com",
+    "status": "downloaded",
+    "sourceUrl": "https://www.f-cdn.com/assets/main/en/assets/app-icons/apple-touch-icon.png",
+    "assetUrl": "https://www.f-cdn.com/assets/main/en/assets/app-icons/apple-touch-icon.png",
+    "file": "freelancer-com.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 1512,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "f5a39ddfd6f373d1a1fa66dce8959361e50e120bce5e57bbad89b1af024b524f"
+  },
+  {
+    "slug": "toptal",
+    "name": "Toptal",
+    "url": "https://www.toptal.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.toptal.com",
+    "status": "downloaded",
+    "sourceUrl": "https://frontier-assets.toptal.com/992e7e6ce32e8969.svg",
+    "assetUrl": "https://frontier-assets.toptal.com/992e7e6ce32e8969.svg",
+    "file": "toptal.svg",
+    "size": null,
+    "bytes": 1671,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "474b1d5ec518b73ef1e80577bd6852f9bf5d935634366349494c96949e549718"
+  },
+  {
+    "slug": "babbel",
+    "name": "Babbel",
+    "url": "https://www.babbel.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.babbel.com/",
+    "status": "downloaded",
+    "sourceUrl": "https://www.babbel.com/apple-touch-icon.png",
+    "assetUrl": "https://www.babbel.com/apple-touch-icon.png",
+    "file": "babbel.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 1931,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "018dc6e74009d116f1ee2e1fdf0d08608e94528ca906e669986c1296e7e8fcce"
+  },
+  {
+    "slug": "lingoda",
+    "name": "Lingoda",
+    "url": "https://www.lingoda.com",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "<urlopen error timed out>"
+  },
+  {
+    "slug": "italki",
+    "name": "italki",
+    "url": "https://www.italki.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.italki.com",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "preply",
+    "name": "Preply",
+    "url": "https://preply.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://preply.com",
+    "status": "downloaded",
+    "sourceUrl": "https://static.preply.com/ds/icons/rebrand-23-v0/icon-180.png",
+    "assetUrl": "https://static.preply.com/ds/icons/rebrand-23-v0/icon-180.png",
+    "file": "preply.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 1944,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "d4f408aea40cebc89d569b43abe29d652a5e6d09218e8f072cbdd3efbcf4fba2"
+  },
+  {
+    "slug": "rocket-languages",
+    "name": "Rocket Languages",
+    "url": "https://www.rocketlanguages.com",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.rocketlanguages.com",
+    "status": "downloaded",
+    "sourceUrl": "https://www.rocketlanguages.com/favicon.svg",
+    "assetUrl": "https://www.rocketlanguages.com/favicon.svg",
+    "file": "rocket-languages.svg",
+    "size": null,
+    "bytes": 1997,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "10e7c2e26c7217fea859e0925b17c8c25e660ea39e35785846a83e2e77b94a8b"
+  },
+  {
+    "slug": "kiwi-com",
+    "name": "Kiwi.com",
+    "url": "https://www.kiwi.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.kiwi.com/en/",
+    "status": "downloaded",
+    "sourceUrl": "https://images.kiwi.com/favicons/icons/kiwicom/apple-icon-180x180.png",
+    "assetUrl": "https://images.kiwi.com/favicons/icons/kiwicom/apple-icon-180x180.png",
+    "file": "kiwi-com.png",
+    "size": [
+      180,
+      180
+    ],
+    "bytes": 2010,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "f06a5f314b824fddf5947e017e400ac2277b337153930781d2143b65157c6234"
+  },
+  {
+    "slug": "edreams",
+    "name": "eDreams",
+    "url": "https://www.edreams.com/",
+    "checkedAt": "2026-11-05",
+    "status": "name-only",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "slug": "cheapoair",
+    "name": "CheapOair",
+    "url": "https://www.cheapoair.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.cheapoair.com/",
+    "status": "name-only",
+    "reason": "No suitable official icon retrieved"
+  },
+  {
+    "slug": "alternative-airlines",
+    "name": "Alternative Airlines",
+    "url": "https://www.alternativeairlines.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://www.alternativeairlines.com/",
+    "status": "downloaded",
+    "sourceUrl": "https://n.alternativeairlines.com/images/aatags.svg?v=2",
+    "assetUrl": "https://n.alternativeairlines.com/images/aatags.svg?v=2",
+    "file": "alternative-airlines.svg",
+    "size": null,
+    "bytes": 488,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "3268c0c0f1254b03eb4bac52cc08d044cf63c1d9cc0f489feb3b69eb19b31d25"
+  },
+  {
+    "slug": "trip-com",
+    "name": "Trip.com",
+    "url": "https://www.trip.com/",
+    "checkedAt": "2026-11-05",
+    "pageUrl": "https://uk.trip.com/?locale=en-gb",
+    "status": "downloaded",
+    "sourceUrl": "https://uk.trip.com/favicon64.png",
+    "assetUrl": "https://uk.trip.com/favicon64.png",
+    "file": "trip-com.png",
+    "size": [
+      64,
+      64
+    ],
+    "bytes": 764,
+    "usageBasis": "Small editorial identification beside independent product descriptions. Official source establishes provenance, not a blanket licence.",
+    "sha256": "49ac7895e24baec5c896a04f32ef6a6a2372fd538a5730eebaa70c8baa500cb1"
+  }
+]
