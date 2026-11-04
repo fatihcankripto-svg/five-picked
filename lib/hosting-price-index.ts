@@ -123,6 +123,5 @@ export const hostingPriceIndexPost: BlogPost = {
       { '@type': 'DataDownload', name: 'October 31 ten-provider records', encodingFormat: 'text/csv', contentUrl: 'https://fivepicked.com/data/2026-web-hosting-price-index.csv' },
       { '@type': 'DataDownload', name: 'November 4 six-offer price check and scenarios', encodingFormat: 'text/csv', contentUrl: 'https://fivepicked.com/data/2026-web-hosting-price-check-2026-11-04.csv' },
     ],
-    isPartOf: { '@type': 'BlogPosting', '@id': url },
   },
 }

@@ -1,3 +1,4 @@
+import { datasetLicense, datasetLicenseNotice } from '@/lib/dataset-license'
 import { withIndexDecisionNotes } from '@/lib/price-index-decisions'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
@@ -57,7 +58,7 @@ export const onlineCoursePriceIndexPost: BlogPost = {
   authorBio: editorialIdentity.bio,
   category: 'Online Courses', keywords: ['online course price index 2026', 'course certificate costs', 'online learning subscription prices', 'course pricing dataset'],
   excerpt: 'A ten-platform official-source snapshot separating subscription payments, free access, completion certificates and organizational seats, with reproducible billing comparisons.',
-  content: withIndexDecisionNotes(prose.replace('{{TABLE}}', table).replace('{{BILLING}}', billingTable).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')), 'courses'),
+  content: withIndexDecisionNotes(prose.replace('{{TABLE}}', table).replace('{{BILLING}}', billingTable).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')), 'courses') + datasetLicenseNotice,
   faqs, relatedListPath: '/online-courses', relatedListLabel: 'Online courses: our five-platform shortlist',
   relatedLinks: [
     { path: '/online-courses', label: 'Explore our five-platform course shortlist' },
@@ -70,12 +71,12 @@ export const onlineCoursePriceIndexPost: BlogPost = {
     name: '2026 Online Course Price Index — October 31 official-source snapshot',
     description: 'Ten platform observations covering named products, original currencies, subscription and course-price evidence, free-access boundaries, certificate conditions, annual-payment evidence and organizational pricing. Four matched individual billing pairs support derived comparisons. Missing and ambiguous values remain explicit.',
     url, version: '2026-10-31', datePublished: '2026-10-31', dateModified: '2026-10-31', temporalCoverage: '2026-10-31', inLanguage: 'en',
+    license: datasetLicense(url),
     creator: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
     measurementTechnique: 'Official public pricing and help-page desk research, including disclosed official indexed help text. Annual-saving and monthly-payment-premium arithmetic only for four matched pairs. No checkout, teaching-quality experiment or historical price series.',
     variableMeasured: ['Platform', 'Selected product', 'Currency', 'Monthly payment where verified', 'Annual amount where established', 'Annual amount basis', 'Subscription or course price', 'Free access', 'Free limits', 'Trial conditions', 'Certificate policy', 'Annual-payment evidence', 'Team or corporate price', 'Source limitations', 'Source URLs', 'Review date'],
     citation: [...new Set(observations.flatMap((row) => row.sources.map((source) => source.url)))],
     isAccessibleForFree: true,
     distribution: { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: 'https://fivepicked.com/data/2026-online-course-price-index.csv' },
-    isPartOf: { '@type': 'BlogPosting', '@id': url },
   },
 }

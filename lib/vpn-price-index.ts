@@ -1,3 +1,4 @@
+import { datasetLicense, datasetLicenseNotice } from '@/lib/dataset-license'
 import { withIndexDecisionNotes } from '@/lib/price-index-decisions'
 import { editorialIdentity } from '@/lib/editorial-identity'
 import type { BlogPost } from '@/lib/blog-pages'
@@ -53,7 +54,7 @@ export const vpnPriceIndexPost: BlogPost = {
   authorBio: editorialIdentity.bio,
   category: 'VPN & Security', keywords: ['VPN price index 2026', 'VPN renewal prices', 'VPN pricing dataset', 'VPN subscription cost'],
   excerpt: 'Inspect ten official-source VPN offers, with billing intervals, free-plan limits, device policies and reproducible renewal calculations. Missing evidence stays explicit.',
-  content: withIndexDecisionNotes(prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')), 'vpn'),
+  content: withIndexDecisionNotes(prose.replace('{{TABLE}}', table).replace('{{FAQ}}', faqs.map((faq) => `<h3>${escape(faq.question)}</h3><p>${escape(faq.answer)}</p>`).join('')), 'vpn') + datasetLicenseNotice,
   faqs, relatedListPath: '/vpn-and-security', relatedListLabel: 'VPN and security: our five-provider shortlist',
   relatedLinks: [
     { path: '/vpn-and-security', label: 'Inspect the our VPN top 5' },
@@ -68,12 +69,12 @@ export const vpnPriceIndexPost: BlogPost = {
     name: '2026 VPN Price Index — October 31 official-source snapshot',
     description: 'Ten VPN offer observations with original currencies, introductory and renewal billing periods, free-access conditions, simultaneous devices, refund and additional-fee evidence. Five matched promotional observations are eligible for renewal calculations; missing or unlike values remain explicit.',
     url, version: '2026-10-31', datePublished: '2026-10-31', dateModified: '2026-10-31', temporalCoverage: '2026-10-31', inLanguage: 'en',
+    license: datasetLicense(url),
     creator: { '@type': 'Organization', name: 'FIVE PICKED', url: 'https://fivepicked.com' },
     measurementTechnique: 'Official-source public-page desk research. Published renewal invoices are normalized by months and compared with advertised introductory monthly labels. No account purchase or VPN performance testing.',
     variableMeasured: ['Provider', 'Plan', 'Currency', 'Advertised introductory monthly rate', 'Initial term in months', 'Initial invoice where verified', 'Renewal invoice', 'Renewal term in months', 'Ongoing free access', 'Simultaneous devices', 'Refund conditions', 'Setup and transaction evidence', 'Source URLs', 'Review date', 'Renewal comparison eligibility'],
     citation: [...new Set(observations.flatMap((row) => row.sources.map((source) => source.url)))],
     isAccessibleForFree: true,
     distribution: { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: 'https://fivepicked.com/data/2026-vpn-price-index.csv' },
-    isPartOf: { '@type': 'BlogPosting', '@id': url },
   },
 }
