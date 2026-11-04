@@ -688,6 +688,16 @@ ${blogPriceSnapshot(['adobe-premiere-pro'])}
 
 const riversideVsDescriptContent = `
 <p><strong>Riverside and Descript can both record remote guests and edit video through a transcript.</strong> You do not have to buy one for recording and the other for editing. Start with the job you need to finish: a guest interview, an episode made from existing files, or a set of clips for social media.</p>
+<section aria-labelledby="editing-example-preview" class="not-prose my-8 rounded-2xl border border-border bg-card p-5 sm:p-6">
+<h2 id="editing-example-preview" class="text-xl font-semibold text-foreground">See the Descript edit</h2>
+<p class="mt-2 text-sm leading-relaxed text-muted-foreground">A short example: we cut a sentence, corrected the transcript and added captions to a vertical video.</p>
+<div class="mt-5 grid gap-6 sm:grid-cols-2">
+<figure class="m-0"><div style="display:flex;align-items:center;justify-content:center;aspect-ratio:9/16;max-height:420px;background:#101014;border-radius:12px;overflow:hidden"><img src="/images/research/riverside-descript/descript-source-03s.jpg" width="1280" height="720" decoding="async" style="display:block;width:100%;height:auto" alt="Before editing: the horizontal FivePicked source video without captions" /></div><figcaption class="mt-3 text-sm leading-relaxed text-muted-foreground"><strong class="text-foreground">Before:</strong> a 42.10-second horizontal video with no captions.</figcaption></figure>
+<figure class="m-0"><video controls playsinline preload="none" width="720" height="1280" poster="/images/research/riverside-descript/descript-output-03s.jpg" aria-label="Play the edited Descript example with captions" style="display:block;width:100%;max-height:420px;background:#101014;border-radius:12px"><source src="/media/research/descript-editing-example-2026-11-04.mp4" type="video/mp4" />Your browser does not support embedded video. <a href="/media/research/descript-editing-example-2026-11-04.mp4">Download the edited video</a>.</video><figcaption class="mt-3 text-sm leading-relaxed text-muted-foreground"><strong class="text-foreground">After — press play:</strong> a 39.53-second vertical video with captions and a Descript watermark.</figcaption></figure>
+</div>
+<p class="mt-4 text-xs leading-relaxed text-muted-foreground">One synthetic sample edited through Descript’s integration. We did not run this same editing test in Riverside. <a href="#descript-editing-results" class="text-primary underline underline-offset-4">See the results and files</a>.</p>
+</section>
+
 
 <p>Choose Riverside if you want to record guests and finish the conversation in its editor. Consider Descript if you want recordings, imported files and transcript edits together in a Descript project. The useful question is which workflow fits your production, not which product has an editing or recording feature at all.</p>
 
@@ -719,7 +729,7 @@ const riversideVsDescriptContent = `
 </ul>
 <p>Descript's free plan lists 1 media hour per month, 100 one-time AI credits and 720p watermarked export. The one-time credit allowance is not a monthly refill. Riverside also offers a free plan with quality limits and a watermark. Confirm the selected plan's current terms before committing.</p>
 
-<h2>Our Descript editing example</h2>
+<h2 id="descript-editing-results">Our Descript editing example</h2>
 <p>We used Descript’s integration and Agent Underlord to cut a sentence from a short video, correct its transcript and create a captioned vertical version. Here is the <a href="https://share.descript.com/view/8uZgv2PnVMS" rel="noopener noreferrer">finished video</a>, checked November 4, 2026.</p>
 <table><caption>What changed in our sample</caption><thead><tr><th scope="col">Detail</th><th scope="col">Source</th><th scope="col">Exported result</th></tr></thead><tbody>
 <tr><th scope="row">Length</th><td>42.10 seconds</td><td>39.53 seconds after the sentence cut</td></tr>
@@ -727,8 +737,6 @@ const riversideVsDescriptContent = `
 <tr><th scope="row">Captions</th><td>None</td><td>Visible white text on a dark background; separate SRT also exported</td></tr>
 <tr><th scope="row">Frame rate and branding</th><td>25 fps; no Descript watermark</td><td>30 fps; visible Descript watermark</td></tr>
 </tbody></table>
-<figure><a href="/images/research/riverside-descript/descript-source-03s.jpg"><img src="/images/research/riverside-descript/descript-source-03s.jpg" width="1280" height="720" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px" alt="Original horizontal FivePicked test title card before editing, at three seconds" /></a><figcaption>Before: the 1280×720 source at 3 seconds, with no subtitles or Descript export watermark.</figcaption></figure>
-<figure><a href="/images/research/riverside-descript/descript-output-03s.jpg"><img src="/images/research/riverside-descript/descript-output-03s.jpg" width="720" height="1280" loading="lazy" decoding="async" style="display:block;width:100%;max-width:420px;height:auto;margin:auto;border-radius:12px" alt="Downloaded vertical Descript video at three seconds, showing white captions on black backing and a Descript watermark" /></a><figcaption>After: the 720×1280 export at 3 seconds. Captions and a Descript watermark are visible; the original title card is fitted without cropping.</figcaption></figure>
 <p><strong>The useful takeaway:</strong> Descript completed the sentence cut, transcript correction and vertical export in this example. Check the exported file before delivery: ours had a watermark and a different frame rate from the source. You can inspect the <a href="/data/descript-baseline-transcript-2026-11-04.txt" download>original transcript</a>, <a href="/data/descript-edited-transcript-2026-11-04.txt" download>edited transcript</a>, <a href="/data/descript-edited-captions-2026-11-04.srt" download>SRT captions</a> and <a href="/data/descript-export-check-2026-11-04.json" download>output measurements</a>.</p>
 <p><small>Scope: one title-card video with synthetic English narration, edited through the integration. The workspace’s plan was not verified. This is not a natural-speech accuracy test or a head-to-head Riverside test, and it does not establish which plan will meet your needs.</small></p>
 
