@@ -302,20 +302,30 @@ const copies: FreeCopy[] = [
   },
   {
     slug: 'vpns-with-a-free-plan',
-    title: 'VPN Free Plans, Trials and Refunds',
-    h1: 'VPN free plans vs trials: know the difference',
-    metaTitle: 'VPN Free Plans vs Trials: Proton, NordVPN and More',
+    title: 'Free VPN Plans: Unlimited Data, Limits and Trials',
+    h1: 'Free VPNs: unlimited data or more location choice?',
+    metaTitle: 'Free VPNs: Unlimited Data & Limits (2026)',
     metaDescription:
-      'Compare Proton VPN’s ongoing free plan with trials and refund offers from four paid VPNs. Understand payment, cancellation and app-store conditions.',
+      'Need a free VPN without a data cap? Compare Proton VPN Free with Windscribe’s monthly allowance, then see how paid trials and refund offers differ.',
     intro:
-      'An ongoing free plan, a time-limited trial and a money-back guarantee are different offers. Among these five picks, Proton VPN offers an ongoing free plan. The other four are paid services with trial or refund options that depend on where you subscribe. Do not count a refund offer as free access: it may require payment first.',
+      'Need a VPN you can keep using for free? Proton VPN Free has no data cap. Windscribe offers a monthly allowance with access to servers in 10 countries. Start with the limits that affect your use, then look at paid trials only if neither free option fits.',
     verdict:
-      'Start with Proton VPN if you need an ongoing free plan; its official pricing page confirms no data cap. For NordVPN, Surfshark, ExpressVPN and PIA, check the exact trial and refund terms for your device and purchase channel. Never assume an app-store purchase follows the provider’s website refund policy.',
+      'For uncapped free data, start with Proton VPN Free and accept its restrictions on server selection. For a specific location, check Windscribe’s free server list and monthly allowance. Neither plan is a promise that every streaming service will work. NordVPN, Surfshark, ExpressVPN and PIA below are paid alternatives with separate trial or refund conditions.',
     faqs: [
       {
         question: 'Is there a free VPN with no data limit?',
         answer:
-          'Proton VPN’s official pricing page confirms an ongoing free plan without a data limit. The other four entries here are paid VPNs, not equivalent ongoing free plans.',
+          'Yes. Proton VPN Free has no data or time cap and supports one device at a time. Its free server selection is restricted, so unlimited data does not mean unrestricted access to all locations or paid features.',
+      },
+      {
+        question: 'Is Windscribe Free unlimited?',
+        answer:
+          'No. Windscribe documents 10 GB per month with a confirmed email address, or 2 GB without one. Its policy also says unsubscribing from promotional emails reduces the allowance to 2 GB per month.',
+      },
+      {
+        question: 'Can I choose a country on Proton VPN Free?',
+        answer:
+          'Proton initially connects you to the fastest free server for your location. Changing servers assigns another server at random and starts a cooldown. The free plan does not provide unrestricted country selection.',
       },
       {
         question: 'Are free VPNs safe?',
@@ -323,9 +333,9 @@ const copies: FreeCopy[] = [
           'A free price alone does not establish safety. Review the provider, privacy policy, security documentation and the permissions requested by its app. A familiar brand name is not a substitute for checking those details.',
       },
       {
-        question: 'Is a cheap paid VPN better than a free one?',
+        question: 'Is a money-back guarantee a free VPN plan?',
         answer:
-          'A paid plan may suit you if you need features or locations not included in the free tier. Compare the total commitment and renewal price on each official website. See website for current pricing; do not choose by an unverified monthly headline.',
+          'No. A guarantee requires an eligible purchase followed by a refund request under the provider’s rules. An ongoing free plan does not depend on buying a subscription and claiming your money back. App-store and website refund rules can differ.',
       },
     ],
     toolSlugs: ['proton-vpn', 'nordvpn', 'surfshark', 'expressvpn', 'private-internet-access'],
@@ -605,6 +615,9 @@ export const freePages: FreePage[] = copies.filter((copy) => copy.toolSlugs.ever
     if (copy.slug === 'best-free-video-and-design-software') {
       const option = videoDesignFreeOptions.find((entry) => entry.slug === slug)!
       return { ...tool, goodToKnow: `${option.limits} ${option.commercial}` }
+    }
+    if (copy.slug === 'vpns-with-a-free-plan' && slug === 'proton-vpn') {
+      return { ...tool, startingPrice: 'Free plan available', tagline: 'Ongoing free VPN with no data cap and restricted server selection.', bestFor: 'Everyday use without a monthly data allowance', whatItDoes: 'Encrypts your connection with an ongoing free plan for one device at a time.', strengths: ['No data or time cap', 'One device at a time', 'No scheduled trial expiry'], goodToKnow: 'Free server changes are randomly assigned and have a cooldown. Paid features and supported streaming are separate.', decisionOverride: { audience: 'Everyday use without a monthly data allowance', standout: 'Unlimited data, with restrictions on server selection' } }
     }
     if (copy.slug === 'best-free-web-hosting') {
       const offer = hostingOffers.find((entry) => entry.slug === slug)!

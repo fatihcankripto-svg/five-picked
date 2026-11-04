@@ -1,3 +1,4 @@
+import { VpnFreeOptions } from '@/components/vpn-free-options'
 import { serializeJsonLd } from '@/lib/json-ld'
 import { pageMetadata } from '@/lib/metadata'
 import { MarketingSeoFreeOptions } from '@/components/marketing-seo-free-options'
@@ -49,6 +50,7 @@ export default async function FreePage({ params }: Props) {
   if (!page) notFound()
 
   const path = `/free/${page.slug}`
+  const updatedAt = page.slug === 'vpns-with-a-free-plan' ? '2026-11-04' : freePagesUpdated
 
   const itemListLd = {
     '@context': 'https://schema.org',
@@ -92,7 +94,7 @@ export default async function FreePage({ params }: Props) {
       <Breadcrumbs items={[{ label: 'Best free tools', href: '/free' }, { label: page.title }]} />
 
       <header className="mt-10">
-        <SectionMarker label={page.slug === 'best-free-ai-marketing-and-seo-tools' ? 'Free access, trials & credits' : page.slug === 'best-free-flight-booking-sites' ? 'Free search & booking costs' : page.slug === 'best-free-online-course-platforms' ? 'Free learning & certificate limits' : page.slug === 'best-free-video-and-design-software' ? 'Free access & export limits' : page.slug === 'best-free-web-hosting' ? 'Hosting trials & refunds' : 'Free plans'} />
+        <SectionMarker label={page.slug === 'vpns-with-a-free-plan' ? 'Free VPN limits & paid alternatives' : page.slug === 'best-free-ai-marketing-and-seo-tools' ? 'Free access, trials & credits' : page.slug === 'best-free-flight-booking-sites' ? 'Free search & booking costs' : page.slug === 'best-free-online-course-platforms' ? 'Free learning & certificate limits' : page.slug === 'best-free-video-and-design-software' ? 'Free access & export limits' : page.slug === 'best-free-web-hosting' ? 'Hosting trials & refunds' : 'Free plans'} />
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground text-balance sm:text-5xl">
           {page.h1}
         </h1>
@@ -104,8 +106,8 @@ export default async function FreePage({ params }: Props) {
           <p className="flex items-center gap-2">
             <CalendarDays aria-hidden="true" className="size-4 text-primary" />
             Last updated{' '}
-            <time dateTime={freePagesUpdated} className="text-foreground">
-              {formatDate(freePagesUpdated)}
+            <time dateTime={updatedAt} className="text-foreground">
+              {formatDate(updatedAt)}
             </time>
           </p>
           <p>
@@ -117,6 +119,7 @@ export default async function FreePage({ params }: Props) {
         </div>
       </header>
 
+      {page.slug === 'vpns-with-a-free-plan' && <VpnFreeOptions />}
       {page.slug === 'best-free-ai-marketing-and-seo-tools' && <MarketingSeoFreeOptions />}
       {page.slug === 'best-free-flight-booking-sites' && <FlightFreeOptions />}
       {page.slug === 'best-free-email-marketing-tools' && <EmailFreeOptions />}
@@ -135,10 +138,10 @@ export default async function FreePage({ params }: Props) {
 
       <section aria-labelledby="at-a-glance" className="mt-14">
         <h2 id="at-a-glance" className="text-xl font-semibold text-foreground">
-          At a glance
+          {page.slug === 'vpns-with-a-free-plan' ? 'Our VPN shortlist: free and paid access' : 'At a glance'}
         </h2>
         <div className="mt-5">
-          <ComparisonTable tools={page.tools} caption={`${page.slug === 'best-free-online-course-platforms' ? 'Course access and paid options' : page.slug === 'best-free-video-and-design-software' ? 'Video and design access options' : page.slug === 'best-free-web-hosting' ? 'Paid hosting plans and access options' : 'Free tools compared'}: ${page.title}`} />
+          <ComparisonTable tools={page.tools} caption={`${page.slug === 'vpns-with-a-free-plan' ? 'One ongoing free plan and four paid alternatives' : page.slug === 'best-free-online-course-platforms' ? 'Course access and paid options' : page.slug === 'best-free-video-and-design-software' ? 'Video and design access options' : page.slug === 'best-free-web-hosting' ? 'Paid hosting plans and access options' : 'Free tools compared'}: ${page.title}`} />
         </div>
       </section>
 
@@ -155,7 +158,7 @@ export default async function FreePage({ params }: Props) {
         </ol>
       </section>
 
-      {page.slug === 'vpns-with-a-free-plan' && <aside className="mt-10 rounded-xl border border-border p-5 text-sm leading-relaxed"><h2 className="font-semibold">Official offer terms</h2><p className="mt-3 text-muted-foreground">Checked October 31, 2026. Trial availability, payment details and refund eligibility differ by purchase channel; confirm the offer before subscribing.</p><ul className="mt-4 space-y-3 text-primary"><li><a href="https://protonvpn.com/pricing" className="underline">Proton VPN: ongoing free plan</a></li><li><a href="https://support.nordvpn.com/hc/en-us/articles/19744837091217-Does-NordVPN-have-a-free-trial" className="underline">NordVPN: trial eligibility and separate refund terms</a></li><li><a href="https://support.surfshark.com/hc/en-us/articles/360026123554-Does-Surfshark-offer-a-free-trial" className="underline">Surfshark: trial conditions</a></li><li><a href="https://www.expressvpn.com/features/money-back-guarantee" className="underline">ExpressVPN: trial and refund differences</a></li><li><a href="https://www.privateinternetaccess.com/vpn-features/free-trial-vpn" className="underline">PIA: app trial and website refund terms</a></li></ul></aside>}
+      {page.slug === 'vpns-with-a-free-plan' && <aside className="mt-10 rounded-xl border border-border p-5 text-sm leading-relaxed"><h2 className="font-semibold">Existing shortlist: free-plan, trial and refund sources</h2><p className="mt-3 text-muted-foreground">Checked October 31, 2026. Trial availability, payment details and refund eligibility differ by purchase channel; confirm the offer before subscribing.</p><ul className="mt-4 space-y-3 text-primary"><li><a href="https://protonvpn.com/pricing" className="underline">Proton VPN: ongoing free plan</a></li><li><a href="https://support.nordvpn.com/hc/en-us/articles/19744837091217-Does-NordVPN-have-a-free-trial" className="underline">NordVPN: trial eligibility and separate refund terms</a></li><li><a href="https://support.surfshark.com/hc/en-us/articles/360026123554-Does-Surfshark-offer-a-free-trial" className="underline">Surfshark: trial conditions</a></li><li><a href="https://www.expressvpn.com/features/money-back-guarantee" className="underline">ExpressVPN: trial and refund differences</a></li><li><a href="https://www.privateinternetaccess.com/vpn-features/free-trial-vpn" className="underline">PIA: app trial and website refund terms</a></li></ul></aside>}
       <section aria-labelledby="faq" className="mt-16">
         <h2 id="faq" className="text-xl font-semibold text-foreground">
           Frequently asked questions

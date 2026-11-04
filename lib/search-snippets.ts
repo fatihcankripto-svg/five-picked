@@ -310,8 +310,8 @@ export const searchSnippets: Record<string, { title: string; description: string
     "description": "How far can a free chatbot plan take your site? Compare access, usage limits and upgrade conditions before building your support or document assistant."
   },
   "/free/vpns-with-a-free-plan": {
-    "title": "Free VPN Plans vs Trials: Know the Difference",
-    "description": "Proton VPN has an ongoing free plan; other offers involve trials or refunds. Compare access, payment and cancellation conditions before choosing a VPN."
+    "title": "Free VPNs: Unlimited Data & Limits (2026)",
+    "description": "Need a free VPN without a data cap? Compare Proton VPN Free with Windscribe’s monthly allowance, then see how paid trials and refund offers differ."
   },
   "/free/best-free-email-marketing-tools": {
     "title": "Free Email Marketing: List & Sending Limits",
