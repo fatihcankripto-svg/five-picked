@@ -115,7 +115,7 @@ export const searchSnippets: Record<string, { title: string; description: string
   },
   "/blog/2026-web-hosting-price-index": {
     "title": "Web Hosting Price Index: Offers vs Renewals",
-    "description": "What does the low hosting rate leave out? Compare ten providers' entry offers, renewals and included services using a dated table and downloadable dataset."
+    "description": "Compare hosting entry prices and renewals, with three-year cost scenarios for selected USD offers, dated official sources and downloadable price data."
   },
   "/blog/real-cost-of-email-marketing-2026": {
     "title": "Email Marketing Costs (2026): Beyond the Plan",
@@ -158,8 +158,8 @@ export const searchSnippets: Record<string, { title: string; description: string
     "description": "Quick social edits or detailed desktop control? Compare CapCut and Premiere Pro on workflow, learning curve and costs to see when a switch makes sense."
   },
   "/blog/riverside-vs-descript": {
-    "title": "Riverside vs Descript: Recording & Editing",
-    "description": "Both record guests and edit through a transcript. Compare Riverside and Descript on podcast workflows, free-plan limits and what to check before paying."
+    "title": "Riverside vs Descript: Editing & Plan Limits",
+    "description": "Do you need both subscriptions? Compare remote recording, transcript editing and free-plan export limits before choosing Riverside or Descript."
   },
   "/compare": {
     "title": "Compare Tools: Which One Fits Your Work?",
@@ -491,7 +491,7 @@ export const searchSnippets: Record<string, { title: string; description: string
   },
   "/guides/shared-vs-cloud-vs-managed-wordpress-hosting": {
     "title": "Shared vs Cloud vs Managed WordPress Hosting",
-    "description": "Who manages the server, and what does your site need? Compare shared, VPS, cloud and managed WordPress hosting by control, maintenance and billing."
+    "description": "Who handles updates, backups and server maintenance? Compare shared, cloud and managed WordPress hosting by workload, control and billing."
   },
   "/tools": {
     "title": "Free Calculators: Timing & Freelance Fees",
