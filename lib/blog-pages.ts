@@ -719,6 +719,16 @@ const riversideVsDescriptContent = `
 </ul>
 <p>Descript's free plan lists 1 media hour per month, 100 one-time AI credits and 720p watermarked export. The one-time credit allowance is not a monthly refill. Riverside also offers a free plan with quality limits and a watermark. Confirm the selected plan's current terms before committing.</p>
 
+<h2>What we observed during account setup</h2>
+<p><strong>Checked November 4, 2026.</strong> We signed in to both products and followed their onboarding screens. This check covers account setup only; we did not complete a recording, transcript edit or video export.</p>
+<h3>Riverside: a trial offer at the end of onboarding</h3>
+<p>After choosing a podcast and editing workflow, our account showed a 14-day Pro trial offer. The displayed screen had no visible free-plan continuation control, and returning through the main site’s Login link brought us back to it. We did not activate the trial. This is what this account encountered, not evidence that every Riverside user must start a trial or that its free plan is unavailable.</p>
+<figure><a href="/images/research/riverside-descript/riverside-onboarding-trial.jpg"><img src="/images/research/riverside-descript/riverside-onboarding-trial.jpg" width="1363" height="936" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px" alt="Riverside onboarding screen offering a 14-day Pro trial, captured November 4, 2026" /></a><figcaption>Our account’s onboarding offer. The screenshot documents the offer shown, not trial activation or a completed editing test.</figcaption></figure>
+<h3>Descript: free account opened; editing check stopped by our browser</h3>
+<p>We selected the Free plan and opened a blank video project. The editor then reported that our cloud browser lacked WebGL graphics rendering. This prevented us from completing the editing check in that environment. It is not a finding about Descript’s editing quality or a restriction of its free plan.</p>
+<figure><a href="/images/research/riverside-descript/descript-browser-compatibility.jpg"><img src="/images/research/riverside-descript/descript-browser-compatibility.jpg" width="1363" height="936" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px" alt="Descript editor displaying a browser compatibility warning for missing WebGL in our test environment" /></a><figcaption>Descript’s compatibility warning in our cloud browser. No successful import, transcription or export is demonstrated here.</figcaption></figure>
+<p><strong>What this means for your choice:</strong> check the available account route and browser requirements before relying on a free plan for a deadline. These observations do not support a speed, quality or usability winner between the two products.</p>
+
 <h2>Do you need both tools?</h2>
 <p>Not automatically. If you already record in Riverside and want Descript's editing workflow, importing the recording can make sense. If either product covers your recording, editing and export needs on its own, start there instead of paying for overlapping features.</p>
 <p>Before choosing, take an episode from raw material to the file you would publish: bring in a guest or import a recording, remove an unwanted section, add captions if needed, and export. Note where you hit a plan limit or need another app. That is a practical way to compare your own workflow without relying on a generic winner.</p>
@@ -1534,10 +1544,10 @@ const editorialBlogPosts: BlogPost[] = [
     metaDescription:
       'Both record guests and edit through a transcript. Compare Riverside and Descript on podcast workflows, free-plan limits and what to check before paying.',
     publishedAt: '2026-10-30T18:00:00+03:00',
-    updatedAt: '2026-11-03',
+    updatedAt: '2026-11-04',
     author: editorialIdentity.name,
     authorBio: editorialAuthorBio,
-    lastReviewedAt: '2026-11-03',
+    lastReviewedAt: '2026-11-04',
     category: 'Video & Design',
     keywords: [
       'riverside vs descript',
