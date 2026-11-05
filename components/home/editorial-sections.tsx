@@ -1,3 +1,4 @@
+import { newsPhoto } from '@/lib/news-photos'
 import Image from 'next/image'
 import { news } from '@/lib/news'
 import Link from 'next/link'
@@ -28,7 +29,7 @@ export function EditorialSections() {
         <Link href="/news" className="shrink-0 text-sm text-primary hover:underline">All news →</Link>
       </div>
       <div className="grid gap-6 pt-6 md:grid-cols-3">{news.slice(0,3).map(item => <Link key={item.slug} href={`/news/${item.slug}`} className="group rounded-xl focus-visible:outline-2 focus-visible:outline-primary">
-        <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border"><Image src={`/news/${item.slug}.svg`} alt="" fill unoptimized className="object-cover transition-transform duration-300 group-hover:scale-105" /></div>
+        <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border"><Image src={newsPhoto(item).src} alt={newsPhoto(item).alt} style={{ objectPosition: newsPhoto(item).position }} fill unoptimized className="object-cover transition-transform duration-300 group-hover:scale-105" /></div>
         <p className="mt-4 text-xs uppercase tracking-wider text-primary">{item.company}</p><h3 className="mt-2 text-lg font-semibold leading-snug group-hover:text-primary">{item.title}</h3>
       </Link>)}</div>
     </section>
