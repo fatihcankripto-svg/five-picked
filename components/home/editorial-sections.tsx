@@ -20,5 +20,13 @@ export function EditorialSections() {
       <p className="mt-6"><Link href="/blog" className="text-primary underline underline-offset-4">All blog guides →</Link></p>
     </section>
     <section aria-labelledby="latest-heading" className="mx-auto max-w-6xl px-5 pt-20 sm:px-8"><h2 id="latest-heading" className="text-3xl font-semibold tracking-tight">Latest from the blog</h2><div className="mt-8 grid gap-5 md:grid-cols-3">{latest.map((post) => <article key={post.slug} className="relative rounded-2xl border border-border bg-card p-6 hover:border-primary/50"><p className="text-xs uppercase tracking-widest text-primary">{post.category}</p><h3 className="mt-3 text-lg font-semibold"><Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2">{post.title}</Link></h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p></article>)}</div><p className="mt-6"><Link href="/blog" className="text-primary underline underline-offset-4">All articles →</Link></p></section>
+    <section aria-labelledby="news-heading" className="mx-auto max-w-6xl px-5 pt-20 sm:px-8">
+      <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+        <p className="text-xs uppercase tracking-widest text-primary">AI, software and technology</p>
+        <h2 id="news-heading" className="mt-3 text-3xl font-semibold tracking-tight">Latest news</h2>
+        <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">Catch up on product launches, company announcements and the people behind the tools you use. Each brief links to its original source.</p>
+        <p className="mt-6"><Link href="/news" className="text-primary underline underline-offset-4">Read the latest news →</Link></p>
+      </div>
+    </section>
   </>
 }
