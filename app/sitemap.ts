@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [route(`/${category.slug}`, editorialDates.categories), ...subs.map((sub) => route(`/${category.slug}/${sub.slug}`, editorialDates.categories))]
   })
   const entries: MetadataRoute.Sitemap = [
-    route('/'), route('/categories'),
+    route('/'), route('/categories'), route('/news', '2026-11-05'),
     ...categoryPages,
     // The blog registry includes the dated hosting price index and its reviewed date.
     // Includes the VPN and online course price indices through the blog registry and their reviewed dates.
