@@ -1,3 +1,6 @@
+import { newsPhoto } from '@/lib/news-photos'
+import Image from 'next/image'
+import { news } from '@/lib/news'
 import Link from 'next/link'
 import { comparePages } from '@/lib/compare-pages'
 import { blogPosts } from '@/lib/blog-pages'
@@ -20,5 +23,15 @@ export function EditorialSections() {
       <p className="mt-6"><Link href="/blog" className="text-primary underline underline-offset-4">All blog guides →</Link></p>
     </section>
     <section aria-labelledby="latest-heading" className="mx-auto max-w-6xl px-5 pt-20 sm:px-8"><h2 id="latest-heading" className="text-3xl font-semibold tracking-tight">Latest from the blog</h2><div className="mt-8 grid gap-5 md:grid-cols-3">{latest.map((post) => <article key={post.slug} className="relative rounded-2xl border border-border bg-card p-6 hover:border-primary/50"><p className="text-xs uppercase tracking-widest text-primary">{post.category}</p><h3 className="mt-3 text-lg font-semibold"><Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2">{post.title}</Link></h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p></article>)}</div><p className="mt-6"><Link href="/blog" className="text-primary underline underline-offset-4">All articles →</Link></p></section>
+    <section aria-labelledby="news-heading" className="mx-auto max-w-6xl px-5 pt-20 sm:px-8">
+      <div className="flex items-end justify-between gap-4 border-b border-border pb-5">
+        <div><p className="text-xs uppercase tracking-widest text-primary">The companies behind your tools</p><h2 id="news-heading" className="mt-2 text-3xl font-semibold tracking-tight">In the news</h2></div>
+        <Link href="/news" className="shrink-0 text-sm text-primary hover:underline">All news →</Link>
+      </div>
+      <div className="grid gap-6 pt-6 md:grid-cols-3">{news.slice(0,3).map(item => <Link key={item.slug} href={`/news/${item.slug}`} className="group rounded-xl focus-visible:outline-2 focus-visible:outline-primary">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border"><Image src={newsPhoto(item).src} alt={newsPhoto(item).alt} style={{ objectPosition: newsPhoto(item).position }} fill unoptimized className="object-cover transition-transform duration-300 group-hover:scale-105" /></div>
+        <p className="mt-4 text-xs uppercase tracking-wider text-primary">{item.company}</p><h3 className="mt-2 text-lg font-semibold leading-snug group-hover:text-primary">{item.title}</h3>
+      </Link>)}</div>
+    </section>
   </>
 }

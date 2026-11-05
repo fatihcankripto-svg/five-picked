@@ -7,3 +7,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Production release integrity
+
+- Use `main` as the integration source for production.
+- Before publishing, fetch and compare `main` and `seo-duzeltme`; never publish a branch that omits already released changes from the other branch.
+- Merge divergent work and preserve newer news, affiliate settings, verified content, visual assets and navigation. Do not restore the whole site from an older deployment to fix one feature.
+- After a reconciliation, fast-forward both branches to the tested merge commit. Use expected-head checks; do not force-push over concurrent work.
+- Verify the production deployment commit and the fivepicked.com alias after release.

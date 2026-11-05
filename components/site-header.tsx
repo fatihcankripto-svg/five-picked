@@ -24,6 +24,7 @@ const makeTopLevel = (categoriesItems: { href: string; label: string }[]): TopLe
   { kind: 'link', id: 'before-you-pay', label: 'Before you pay', href: '/before-you-pay' },
   { kind: 'link', id: 'free', label: 'Free picks', href: '/free' },
   { kind: 'link', id: 'blog', label: 'Blog', href: '/blog' },
+  { kind: 'link', id: 'news', label: 'News', href: '/news' },
 ]
 
 export function SiteHeader({ categoriesItems }: { categoriesItems: { href: string; label: string }[] }) {

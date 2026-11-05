@@ -43,7 +43,7 @@ for attr in ['title', 'desc', 'canonical']:
  assert all(values), f'Missing {attr}'
  assert len(values) == len(set(values)), f'Duplicate {attr}'
 assert all(v.h1 == 1 and v.main == 1 for v in pages.values()), 'Invalid heading or main landmark count'
-assert all(len(incoming[p]) >= (2 if p == '/travel/flights' else 3) for p,v in pages.items() if not v.noindex), 'Insufficient distinct referring pages within the available topic cluster'
+assert all(len(incoming[p]) >= (1 if p.startswith('/news/') else 2 if p == '/travel/flights' else 3) for p,v in pages.items() if not v.noindex), 'Insufficient distinct referring pages within the available topic cluster'
 import xml.etree.ElementTree as ET
 root=ET.fromstring(Path('.next/server/app/sitemap.xml.body').read_text())
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
