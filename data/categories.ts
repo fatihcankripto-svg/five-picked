@@ -600,6 +600,7 @@ export const categories: Category[] = [
           'The lowest advertised prices need a long commitment, and plans renew at a higher price. Check the renewal price before you buy.',
         startingPrice: verifiedPricing["hostinger"].label,
         officialUrl: 'https://www.hostinger.com/',
+        affiliateUrl: 'https://sovrn.co/11vuy3o',
       },
       {
         slug: 'bluehost',
