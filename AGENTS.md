@@ -11,7 +11,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Production release integrity
 
 - Use `main` as the integration source for production.
-- Before publishing, fetch and compare `main` and `seo-duzeltme`; never publish a branch that omits already released changes from the other branch.
+- Before editing or publishing, fetch the latest `main` and preserve all released changes. `seo-duzeltme` and the two unused analytics branches were intentionally deleted; do not recreate them.
 - Merge divergent work and preserve newer news, affiliate settings, verified content, visual assets and navigation. Do not restore the whole site from an older deployment to fix one feature.
-- After a reconciliation, fast-forward both branches to the tested merge commit. Use expected-head checks; do not force-push over concurrent work.
+- Work from current `main`. Use expected-head checks when publishing; do not force-push over concurrent work.
 - Verify the production deployment commit and the fivepicked.com alias after release.
