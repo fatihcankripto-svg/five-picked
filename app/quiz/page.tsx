@@ -9,9 +9,9 @@ import { quizPages, quizPagesUpdated } from '@/lib/quiz-pages'
 import { absoluteUrl, formatDate } from '@/lib/site'
 
 const path = '/quiz'
-const title = 'Which Tool Is Right for Me? — 3-Question Quizzes (2026)'
+const title = 'Which Tool Is Right for Me? — Quick Tool Quizzes (2026)'
 const description =
-  'Answer three quick questions and get a tool recommendation from our top 5. Free, no signup, no email.'
+  'Answer a few quick questions and get a tool recommendation from our top 5. Free, no signup, no email.'
 
 export const metadata: Metadata = pageMetadata({
   title,
@@ -50,7 +50,7 @@ export default function QuizIndexPage() {
           Which tool is right for me?
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
-          Three questions, one recommendation from our top 5. No signup, no email, no tracking —
+          Answer a few questions to get a recommendation from our top 5. No signup, no email, no tracking —
           the quiz runs in your browser.
         </p>
         <p className="mt-3 text-sm text-muted-foreground">
